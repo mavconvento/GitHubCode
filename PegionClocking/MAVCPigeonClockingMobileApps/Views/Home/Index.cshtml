@@ -1,0 +1,83 @@
+﻿
+<div data-role="view" id="home" data-title="Main Menu" style="display: none;" data-reload="true" >
+    <div data-role="head">
+        <div data-role="navbar"  >			
+            <div class="logo" /><span>&nbsp;</span>
+        </div>
+    </div>
+ 	
+	<div class="pagetitle">@ViewBag.companyname</div>
+
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/Account/Login")" class="loginButton"  >
+					@Content.ButtonIcon("greaterthan")
+                    <span class="MultilineButtonLabel">Sign In</span></a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/MobileRegistration/MobileRegistration")" class="loginButton"  >
+					@Content.ButtonIcon("alert")
+                    <span class="MultilineButtonLabel">Register Mobile No</span></a></li>
+            </ul>
+        </li>
+    </ul>
+@*    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/Login/ChangePassword")" class="loginButton"  >
+					@Content.ButtonIcon("key")
+                    <span class="MultilineButtonLabel">Change your password</span></a></li>
+            </ul>
+        </li>
+    </ul>*@
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/Main/LoadMavcCard")" class="loginButton">
+					@Content.ButtonIcon("user")					
+                    <span class="MultilineButtonLabel">Load MAVC Card</span></a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@ViewBag.link" class="loginButton" data-rel="external" target="_blank" >		
+					@Content.ButtonIcon("globe")				 
+                    <span class="MultilineButtonLabel">Visit our website</span>
+                </a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/Home/ContactUs")" class="loginButton">
+					@Content.ButtonIcon("help")
+                    <span class="MultilineButtonLabel">Contact Us</span></a></li>
+            </ul>
+        </li>
+    </ul>
+    
+    
+
+    <div style="text-align:center; border-style:none;">
+        <span>
+
+		@foreach (var Item in ViewBag.smlist)
+  {
+			<a href="@Item.url" target="_blank" data-rel="external"><img class="socialIcons" src="@Item.src" alt="fblogo" /></a>
+  }
+
+        </span>
+    </div>
+
+    @CommonFooter.RollingFooter(Url)
+</div>
+
+

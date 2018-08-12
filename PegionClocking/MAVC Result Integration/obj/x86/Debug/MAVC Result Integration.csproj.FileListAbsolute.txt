@@ -1,0 +1,5 @@
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Result Integration\bin\Debug\MAVC Result Integration.exe
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Result Integration\bin\Debug\MAVC Result Integration.pdb
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Result Integration\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Result Integration\obj\x86\Debug\MAVC Result Integration.exe
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Result Integration\obj\x86\Debug\MAVC Result Integration.pdb

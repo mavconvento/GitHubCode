@@ -1,0 +1,16 @@
+﻿@using System.Web.Mvc;
+@using MAVCPigeonClockingMobileApps.Constants
+
+@helper Script(string scriptName, UrlHelper url){    
+    <script src="@url.Content("~/scripts/" + scriptName)" type="text/javascript"></script>
+}
+
+@helper ButtonIcon(string iconName){  
+	IconMappings iM = new IconMappings(iconName);
+	<span class="@iM.GetClass()">@iM.GetIcon()</span>
+}
+
+@helper CustomLabel(string labelName){  
+	lmsConstants lmsCons = new lmsConstants();
+	@lmsCons.GetCustomLabel( labelName );
+}

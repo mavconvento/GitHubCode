@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<div data-role="view" id="container" data-title="login" data-reload="false">
+    <div data-role="head">
+        <div data-role="navbar">
+            <a data-click="redirectToPortalMain" data-role="button" data-align="left">
+                @Content.ButtonIcon("home")
+                <span>Main Page</span></a>
+            <div class="logo" />
+            <span>&nbsp;</span>
+        </div>
+    </div>
+    <div class="pagetitle">
+        Contact Us
+    </div>
+    <div>
+        <p>
+            <span style="font-weight: bolder; font-size: large">Mark Adams V. Convento</span><br />
+            <span style="color: Blue">Operation Manager</span><br />
+        </p>
+        <p>
+            <span style="color:Red">Mobile # :</span><br />
+            <span>09985754822 (Smart)</span><br />
+            <span>09178135727 (Globe)</span>
+        </p>
+        <p>
+            <span style="color:Red">Email Address :</span><br />
+            <span><a href="mailto:cmarkadams@yahoo.com">cmarkadams@yahoo.com</a></span><br />
+        </p>
+        <p>
+            <span style="color:Red">Facebook E-group :</span><br />
+            <span><a href="https://www.facebook.com/groups/117772491735276/">Facebook/Mavc Pigeon Clocking</a></span><br />
+        </p>
+        <br />
+    </div>
+    @CommonFooter.RollingFooter(Url)
+</div>

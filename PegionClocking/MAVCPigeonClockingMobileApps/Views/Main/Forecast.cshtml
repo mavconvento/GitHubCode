@@ -1,0 +1,30 @@
+﻿<span>Forecast</span>
+<div data-role="view" id="FacilityView" data-title="Facilities" data-reload="true">
+    <div data-role="head">
+        <div data-role="navbar">
+            <a data-click="redirectToRacePage" data-role="button" data-align="left">
+                @Content.ButtonIcon("home")
+                <span>Race Page</span></a>
+            <div class="logo" />
+            <span>&nbsp;</span>
+        </div>
+    </div>
+    <div class="pagetitle">
+        FORECAST DETAILS</div>
+    @*        <ul data-role="listview" data-style="inset" id="facility-listview" data-type="group">
+     
+    </ul>*@
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <p class="">
+                @Html.Raw("<p>" + @ViewBag.Result + "</p>")
+            </p>
+        </li>
+    </ul>
+    @CommonFooter.RollingFooter(Url)
+</div>
+<script type="text/x-kendo-template" id="FacilityAccountListTemplate">
+    <div class="km-text">
+		<span>${Value}</span>
+	</div>
+</script>

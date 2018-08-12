@@ -1,0 +1,4 @@
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\Integrate_Result\bin\Debug\Integrate_Result.exe
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\Integrate_Result\bin\Debug\Integrate_Result.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\Integrate_Result\obj\x86\Debug\Integrate_Result.exe
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\Integrate_Result\obj\x86\Debug\Integrate_Result.pdb

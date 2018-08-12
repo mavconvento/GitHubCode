@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <!-- Kendo UI Mobile CSS -->
+    <link href="@Url.Content("~/Content/kendo/2014.1.416/kendo.mobile.all.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/KendoOverride.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.416/kendo.default.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/kendo/2014.1.416/kendo.common.min.css")" rel="stylesheet" type="text/css" />
+      
+    <link href="@Url.Content("~/Content/fontello/css/entypo.css")" rel="stylesheet" type="text/css" /> 
+	
+	<link href="@Url.Content("~/Content/custom.css")" rel="stylesheet" type="text/css" />
+
+    @Content.Script("kendo/2014.1.416/jquery.min.js", Url)
+    @Content.Script("kendo/2014.1.416/kendo.all.min.js", Url)
+    @Content.Script("kendo/2014.1.416/cultures/kendo.culture.en-AU.min.js", Url)
+
+   @* @Content.Script("kendo/2013.1.319/jquery.aspnetmvc.js", Url)*@
+
+    @Content.Script("_lwtMobile.js", Url)
+
+    <meta name="msapplication-tap-highlight" content="no" />
+</head>
+<body id="body">
+    @RenderBody()
+    @RenderSection("scripts", false)
+    <script>
+
+        var app;
+        var uniquewindowid;
+
+        if (app == null) {
+            app = new kendo.mobile.Application($(document.body), {
+                transition: "slide"
+							, platform: "ios"
+            });
+
+        }
+        kendo.culture("en-AU");
+
+        if (uniquewindowid == null || uniquewindowid == "") {
+            //alert("assign value to blank uniquewindowid");
+            uniquewindowid = guid();
+        } else {
+            CompareWinSessionid('@Url.Content("~/Json/GetWindowID")');
+        }
+
+        function redirectToLogin() {
+            redirect('@Url.Content("~/Account/login")');
+        }
+
+        function redirectToPortalMain() {
+            redirect('@Url.Content("~/Home/index")');
+        }
+
+        function redirectToMainPage() {
+            redirect('@Url.Content("~/Main/MainPage")');
+        }
+
+        function redirectToRacePage() {
+            redirect('@Url.Content("~/Main/Race")');
+        }
+
+        function redirectToSignOut() {
+            redirect('@Url.Content("~/Account/Logout")');
+        }
+    </script>
+</body>
+</html>

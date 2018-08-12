@@ -1,0 +1,374 @@
+﻿@model MAVCPigeonClockingMobileApps.Models.MobileRegistration
+@using MAVCPigeonClockingMobileApps.Constants;
+@using System.Data;
+@using System;
+
+@*[0] [110.2] : 19/5/2014 #1922  Pewee Commented part that disable datpicker.*@
+<div data-role="view" id="registermobilenostep1view" data-title="Register Mobile No - step 1"
+    data-show="RegisterMobileNo_ClearControl">
+    <div data-role="head">
+        <div data-role="navbar">
+            <a data-click="redirectToPortalMain" data-role="button" data-align="left">
+                @Content.ButtonIcon("home")
+                <span>Home</span></a>
+            <div class="logo">
+                <span>&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="pagetitle">
+            REGISTER MOBILE NO</div>
+        <div class="sectiontitle">
+            Step 1 of 3 - Choose Club:</div>
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label class="required">
+                    Club Name:
+                    @( Html.DropDownList("cboClubName", (SelectList)ViewData["clubname"], "",
+                    new { required = "required", validationMessage = "Club Name is required" }) )
+                </label>
+                <br />
+                <span class="k-invalid-msg" data-for="cboClubName"></span></li>
+            <li>
+                <label class="required">
+                    Member ID:
+                    <input type="number" id="MemberID" name="MemberID"  required="true" validationMessage="MemberID is required"/>
+                </label>
+                <br />
+			        <span class="k-invalid-msg" data-for="MemberID"></span>
+            </li>
+            <li>
+                <label class="required">
+                    Mobile No:
+                    <input type="number" id="MobileNo" name="MobileNo" required="true" validationMessage="MobileNo is required" />
+                </label>
+                <br />
+			        <span class="k-invalid-msg" data-for="MobileNo"></span>
+            </li>
+        </ul>
+        <div id="registermobileno_steponemessage" class="status">
+        </div>
+        <a data-role="button" id="registermobileno_btnBottomGroup1" data-click="btnRegisterMobileNoGroupClick"
+            class="center-button">Continue </a>
+    </div>
+    <br />
+    @CommonFooter.RollingFooter(Url)
+</div>
+<div data-role="view" id="registermobilenostep2view" data-title="Register Mobile No - step 2"
+    data-show="RegisterMobileNo_ClearControl">
+    <div data-role="head">
+        <div data-role="navbar">
+            <a data-click="redirectToPortalMain" data-role="button" data-align="left">
+                @Content.ButtonIcon("home")
+                <span>Home</span></a>
+            <div class="logo">
+                <span>&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <div class="pagetitle">
+        REGISTER MOBILE NO</div>
+    <div class="sectiontitle">
+        Step 2 of 3 - Password:</div>
+
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label class="required">Password:
+                <input  id="Password" type="password" name="Password" required="true" validationMessage="Password is required" />
+            </label>
+            <br />
+			<span class="k-invalid-msg" data-for="Password"></span>
+        </li>
+        <li>
+            <label class="required">Re-Enter Password:
+                <input id="ReenterPassTwo" name="ReenterPassTwo" type="password" required="true" validationMessage="Re-enter password" />
+            </label>
+            <br />
+			<span class="k-invalid-msg" data-for="ReenterPassTwo"></span>
+        </li>
+    </ul>
+    <div id="registermobileno_steptwomessage" class="status"> </div>
+    <a data-role="button" id="registermobile_btnBottomGroup2" data-role="button" data-click="btnRegisterMobileNoGroup2Click" class="center-button">Continue </a>
+    <br />
+    @CommonFooter.RollingFooter(Url)
+</div>
+<div data-role="view" id="registermobilenostep3view" data-title="Register Mobile No- step 3"
+    data-show="RegisterMobileNo_ClearControl">
+    <div data-role="head">
+        <div data-role="navbar">
+            <a data-click="redirectToPortalMain" data-role="button" data-align="left">
+                @Content.ButtonIcon("home")
+                <span>Home</span></a>
+            <div class="logo">
+                <span>&nbsp;</span>
+            </div>
+        </div>
+    </div>
+    <div class="pagetitle">
+        REGISTER MOBILE NO</div>
+    <div class="sectiontitle">
+        Step 3 of 3 - Enter Activation Code:</div>
+    <div class="formlabel">
+    </div>
+    <div id="hiddenDiv">
+        <ul data-role="listview" data-style="inset">
+            <li>
+                <label class="required">Activation Code:
+                    <input type="text" id="ActivationCode" name="activationcode" required="true" validationMessage="Activation code is required!" />
+                </label>
+                <span class="k-invalid-msg" data-for="ActivationCode"></span>
+            </li>
+        </ul>
+    </div>
+    <div id="registermobileno_stepthreemessage" class="status">
+    </div>
+    <a data-role="button" id="registermobileno_btnBottomGroup3" data-click="btnRegisterMobileNoGroup3Click"
+        class="center-button">Continue </a>
+    <br />
+    @CommonFooter.RollingFooter(Url)
+</div>
+<script type="text/javascript">
+    function RegisterMobileNo_ClearControl(e) {
+        var id = e.sender.element[0].id;
+        switch (id) {
+            case "registermobilenostep1view":
+                {
+                    $("#MemberID").val("");
+                    $("#MobileNo").val("");
+                    $("#registermobileno_steponemessage").hide().addClass("invalid");
+                    break;
+                }
+            case "registermobilenostep2view":
+                {
+                    $("#Password").val("");
+                    $("#ReenterPassTwo").val("");
+                    $("#registermobileno_steptwomessage").hide().addClass("invalid");
+                    break;
+                }
+            case "registermobilenostep3view":
+                {
+                    $("#ActivationCode").val("");
+                    $("#registermobileno_stepthreemessage").hide().addClass("invalid");
+                    break;
+                }
+            default:
+        }
+    }
+
+    function btnRegisterMobileNoGroupClick() {
+        ResetGroupButton();
+        $(".status").text("");
+        var validator = startvalidator();
+        ResetValidationErr();
+        if (validator.validate()) {
+            if (mobilenovalidator()) {
+                $('.k-invalid-msg').hide();
+                RegisterMobileNo_gotostep2();
+            }
+            else {
+                $(".status").text("Invalid Mobile no")
+                .removeClass("valid")
+                .addClass("invalid");
+            }
+
+        }
+        else {
+            $(".status").text("There is invalid data in the form. Please refer to error details")
+                .removeClass("valid")
+                .addClass("invalid");
+        }
+
+    }
+
+    function btnRegisterMobileNoGroup2Click() {
+
+        ResetGroupButton();
+        $(".status").text("");
+        var validator2 = startvalidatorstep2();
+        ResetValidationErr();
+        if (validator2.validate()) {
+            $('.k-invalid-msg').hide();
+            RegisterMobileNo_gotostep3();
+        }
+        else {
+            $(".status").text("There is invalid data in the form. Please refer to error details")
+                .removeClass("valid")
+                .addClass("invalid");
+        }
+    }
+
+    function btnRegisterMobileNoGroup3Click() {
+        ResetGroupButton();
+        $(".status").text("");
+        var validator = startvalidatorstep3();
+        ResetValidationErr();
+        if (validator.validate()) {
+            $('.k-invalid-msg').hide();
+            RegisterMobileNo_SubmitActivationCode();
+        }
+        else {
+            $(".status").text("There is invalid data in the form. Please refer to error details")
+                .removeClass("valid")
+                .addClass("invalid");
+        }
+
+    }
+
+
+    function RegisterMobileNo_gotostep2(e) {
+        var cboClubName = document.getElementById("cboClubName");
+        var clubNameCode = cboClubName.options[cboClubName.selectedIndex].value;
+        var clubNameText = cboClubName.options[cboClubName.selectedIndex].text;
+        var memberID = $("#MemberID").val();
+        var mobileNo = $("#MobileNo").val();
+        var $msg = $("#registermobileno_steponemessage");
+        var url = '@Url.Content("~/MobileRegistration/NewMemberRegistrationStep1")';
+        var nxtStep = '#registermobilenostep2view';
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { ClubID: clubNameCode, ClubName: clubNameText, MemberID: memberID, MobileNo: mobileNo },
+            dataType: "json",
+            success: function (mobileRegistration) {
+                if (mobileRegistration.Status) {
+                    $msg.hide();
+                    redirect(nxtStep);
+                }
+                else {
+                    $msg.html(mobileRegistration.Message).show();
+                };
+            },
+            error: function (xhr, status, error) {
+                $msg.html(error).show();
+            }
+        });
+    }
+
+
+    function RegisterMobileNo_gotostep3(e) {
+        var cboClubName = document.getElementById("cboClubName");
+        var clubNameCode = cboClubName.options[cboClubName.selectedIndex].value;
+        var clubNameText = cboClubName.options[cboClubName.selectedIndex].text;
+        var memberID = $("#MemberID").val();
+        var mobileNo = $("#MobileNo").val();
+        var password = $("#Password").val();
+        var reenter_password = $("#ReenterPassTwo").val();
+        var $msg = $("#registermobile_steptwomessage");
+        var $hiddenDiv = $("#hiddenDiv");
+        var url = '@Url.Content("~/Login/CreatePassword")';
+        var nxtStep = "#registermobilenostep3view";
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { ClubID: clubNameCode, ClubName: clubNameText, MemberID: memberID, MobileNo: mobileNo, Password: password, ReenterPassword: reenter_password },
+            dataType: "json",
+            success: function (data) {
+                var response = data.response;
+                if (response.Success) {
+                    $msg.hide();
+                    redirect(nxtStep);
+                }
+                else {
+                    $msg.html(response.Message).show();
+                }
+            },
+            error: function (xhr, status, error) {
+                $msg.html(error).show();
+            }
+        });
+
+    }
+
+    function RegisterMobileNo_SubmitActivationCode(e) {
+        var cboClubName = document.getElementById("cboClubName");
+        var clubNameCode = cboClubName.options[cboClubName.selectedIndex].value;
+        var clubNameText = cboClubName.options[cboClubName.selectedIndex].text;
+        var memberID = $("#MemberID").val();
+        var mobileNo = $("#MobileNo").val();
+        var password = $("#Password").val();
+        var activationcode = $("#ActivationCode").val();
+        var $errormsg = $("#registermobileno_stepthreemessage");
+
+        var url = '@Url.Content("~/Login/SubmitActivationCode")';
+        var gotoURL = '@Url.Content("~/Login/Login")';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { ClubID: clubNameCode, ClubName: clubNameText, MemberID: memberID, MobileNo: mobileNo, Password: password, Activationcode: activationcode },
+            dataType: "json",
+            success: function (data) {
+                var response = data.response;
+                if (response.Success) {
+                    $errormsg.hide();
+                    redirect(gotoURL);
+                } else {
+                    $errormsg.html(response.Message).show();
+                }
+            },
+            error: function (xhr, status, error) {
+                $errormsg.html(error).show();
+            }
+        });
+    }
+
+    function RegisterMobileNo_submitForm(e) {
+
+        $(".status").html("");
+        var validator = RegisterMobileNo_startvalidator();
+
+        if (validator.validate()) {
+            app.showLoading();
+            RegisterMobileNo_gotostep2();
+        }
+        else {
+            $(".status").html("There is invalid data in the form. Please refer to error details");
+        }
+    }
+
+    function ResetValidationErr() {
+        $(".status").text("");
+        $('.k-invalid-msg').hide();
+    }
+
+
+    function startvalidator() {
+        var validator = $("#registermobilenostep1view").kendoValidator({
+            rules: {},
+            messages: {}
+        }).data("kendoValidator");
+
+        return validator;
+    }
+
+    function mobilenovalidator() {
+        var value = $("#MobileNo").val()
+        if (value.length = 11) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    function startvalidatorstep2() {
+        var validator2 = $("#registermobilenostep2view").kendoValidator({
+            rules: {},
+            messages: {}
+        }).data("kendoValidator");
+
+        return validator2;
+    }
+    function startvalidatorstep3() {
+        var validator = $("#registermobilenostep3view").kendoValidator({
+            rules: {},
+            messages: {}
+        }).data("kendoValidator");
+
+        return validator;
+    }
+
+</script>

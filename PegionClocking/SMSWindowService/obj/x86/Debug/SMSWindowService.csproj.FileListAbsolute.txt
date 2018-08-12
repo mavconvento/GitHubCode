@@ -1,0 +1,33 @@
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SMSWindowService.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SMSWindowService.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.csprojResolveAssemblyReference.cache
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SerialPortTester.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.ProjectInstaller.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.csproj.GenerateResource.Cache
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\bin\Debug\SMSWindowService.exe
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\bin\Debug\SMSWindowService.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\bin\Debug\SerialPortTester.dll
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\bin\Debug\SerialPortTester.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\obj\x86\Debug\SMSWindowService.ProjectInstaller.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\obj\x86\Debug\SMSWindowService.csproj.GenerateResource.Cache
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\obj\x86\Debug\SMSWindowService.exe
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSWindowService\obj\x86\Debug\SMSWindowService.pdb
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SMSWindowService.exe
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SMSWindowService.pdb
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SerialPortTester.dll
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.ProjectInstaller.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.csproj.GenerateResource.Cache
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.exe
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.pdb
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.csprojResolveAssemblyReference.cache
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SMSWindowService.exe
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SMSWindowService.pdb
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\bin\Debug\SerialPortTester.dll
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.ProjectInstaller.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.csproj.GenerateResource.Cache
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.exe
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.pdb
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSWindowService\obj\x86\Debug\SMSWindowService.csprojResolveAssemblyReference.cache

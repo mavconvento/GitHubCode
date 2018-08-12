@@ -1,0 +1,5 @@
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Mobile Integration\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Mobile Integration\bin\Debug\MAVC Mobile Integration.exe
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Mobile Integration\bin\Debug\MAVC Mobile Integration.pdb
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Mobile Integration\obj\x86\Debug\MAVC Mobile Integration.exe
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Mobile Integration\obj\x86\Debug\MAVC Mobile Integration.pdb

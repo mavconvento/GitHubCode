@@ -1,0 +1,208 @@
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\bin\Debug\SMSModule.dll
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\bin\Debug\SMSModule.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\bin\Debug\SMSModule.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\obj\Debug\SMSModule.Resources.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\obj\Debug\SMSModule.dll
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\obj\Debug\SMSModule.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\SMSModule\obj\Debug\SMSModule.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\bin\Debug\SMSModule.dll
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\bin\Debug\SMSModule.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\bin\Debug\SMSModule.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.Resources.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.dll
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.dll
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.xml
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.dll
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.Resources.resources
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.dll
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.xml
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.dll
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.xml
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.dll
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.Resources.resources
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.dll
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.xml
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\MarkA\Desktop\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.pdb
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.dll
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.pdb
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SMSModule.xml
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.dll
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\bin\Debug\SerialPortTester.pdb
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.Resources.resources
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.dll
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.xml
+D:\Project\Server Deployment\Pigeon Clocking\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.pdb
+D:\Project\Server Deployment\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+D:\Project\Server Deployment\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+D:\Project\Server Deployment\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+D:\Project\Server Deployment\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+D:\Project\Server Deployment\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+D:\Project\Server Deployment\PegionClocking\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+D:\Project\Server Deployment\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+D:\Project\Server Deployment\PegionClocking\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+D:\Project\Server Deployment\PegionClocking\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+D:\Project\Server Deployment\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+D:\Project\Server Deployment\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+D:\Project\Server Deployment\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\obj\Debug\SMSModule.Resources.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\bin\Debug\SMSModule.dll
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\bin\Debug\SMSModule.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\bin\Debug\SMSModule.xml
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\bin\Debug\SerialPortTester.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\obj\Debug\SMSModule.dll
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\obj\Debug\SMSModule.xml
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\SMSModule\obj\Debug\SMSModule.pdb
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+E:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache

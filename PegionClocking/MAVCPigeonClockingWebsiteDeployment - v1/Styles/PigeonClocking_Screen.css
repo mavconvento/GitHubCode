@@ -1,0 +1,1003 @@
+﻿/*************************************
+
+ *************************************/
+
+
+/* ##### Common Styles ##### */
+
+body {
+  color: black;
+  background-color: rgb(240,240,240);
+  font-family: verdana, helvetica, arial, sans-serif;
+  font-size: 100%;  /* Enables font size scaling in MSIE */
+  margin: 0;
+  padding: 0;
+}
+
+html > body {
+  font-size: 8.5pt;
+}
+
+acronym, .titleTip {
+  border-bottom: 1px dotted rgb(153,153,153);
+  cursor: help;
+  margin: 0;
+  padding: 0 0 0.4px 0;
+}
+
+.doNotDisplay {
+  display: none;
+}
+
+.smallCaps {
+  font-size: 110%;
+  font-variant: small-caps;
+}
+
+
+/* ##### Header ##### */
+
+.superHeader {
+  color: white;
+  background-color: rgb(100,135,220);
+  height: 2em;
+}
+
+.superHeader a {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 91%;
+  margin: 0;
+  padding: 0 0.5ex 0 0.25ex;
+}
+
+.superHeader a:hover {
+  text-decoration: underline;
+}
+
+.superHeader .left {
+  position: absolute;
+  left: 1.5mm;
+  top: 0.75ex;
+}
+
+.superHeader .right {
+  position: absolute;
+  right: 1.5mm;
+  top: 0.75ex;
+}
+
+.midHeader {
+  color: rgb(39,78,144);
+  background-color: rgb(140,170,230);
+  /*new*/
+  height:50px;
+}
+
+/* new  doesnt work*/
+.midHeader img 
+{
+    top:10px;
+    
+    /*new*/
+    width:150px;
+    height:50px;
+    float: left;
+}
+
+.headerTitle {
+  font-size: 300%;  /*337%;*/
+  font-weight: normal;
+  margin: 0 0 0 4mm;
+  padding: 0.25ex 0;
+  
+  /*new*/
+  float: left;
+  font-family:Arial;
+}
+
+.subHeader-NEW {
+  color: white;
+  background-color: rgb(0,51,153);
+  margin: 0;
+  /*padding: 1ex 1ex 1ex 1.5mm;*/
+  padding: 0.5ex 1ex 1ex 1ex;
+  height: 1.2em;
+  vertical-align:middle;
+  text-align:right;
+}
+
+
+.subHeader {
+  color: white;
+  background-color: rgb(0,51,153);
+  margin: 0;
+  padding: 1ex 1ex 1ex 1.5mm;
+}
+
+.subHeader a {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0 0.75ex 0 0.5ex;
+}  
+
+.subHeader a:hover {
+  text-decoration: underline;
+}
+
+.superHeader .highlight, .subHeader .highlight {
+  color: rgb(253,160,91);
+  background-color: transparent;
+}
+
+
+/* ##### Side Bar ##### */
+
+#side-bar {
+  width: 14.8em;  /*13.2em;   */
+  float: left;
+  clear: left;
+  border-right: 1px solid rgb(153,153,153);
+  background-color:White;
+}
+
+#side-bar div {
+  border-bottom: 1px solid rgb(153,153,153);
+  width:inherit;
+  
+}
+
+.sideBarTitle {
+  font-weight: bold;
+  margin: 0 0 0.5em 1mm; /*2.5mm;*/
+  padding: 1em 0 0 0;
+}
+
+#side-bar ul {
+  list-style-type: none;
+  list-style-position: outside;
+  margin: 0;
+  padding: 0 0 1.1em 0;
+}
+
+#side-bar li {
+  margin: 0;
+  padding: 0.1ex 0;  /* Circumvents a rendering bug (?) in MSIE 6.0 */
+}
+
+#side-bar a, .thisPage {
+  color: rgb(0,102,204);
+  background-color: transparent;
+  text-decoration: none;
+  margin: 0;
+  /*padding: 0.75em 1ex 0.75em 5mm;*/
+  padding-bottom: 0.75em;
+  padding-top: 0.75em;
+
+  display: block;
+}
+
+.thisPage {
+  color: black;
+  background-color: white;
+  padding-left: 4mm;
+  border-top: 1px solid rgb(153,153,153);
+  border-bottom: 1px solid rgb(153,153,153);
+}
+
+
+#side-bar a:hover {
+  color: white;
+  background-color: rgb(100,135,220);
+  text-decoration: none;
+  
+  /*NEW - not sure why this is 2em less than the parent div */
+  width: 13em !important;
+  /*width: inherit !important; */
+}
+
+.sideBarText {
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+  padding: 0 1.5ex 0 2.5mm;
+  display: block;
+}
+
+#side-bar .sideBarText a {
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+#side-bar .sideBarText a:hover {
+  color: rgb(0,102,204);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* NEW */
+#side-bar .rmDisabled
+{
+  color: gray;
+  text-decoration: none;
+}
+
+/* NEW still testing, it doesn't work*/
+#side-bar .rmDisabled a:hover
+{
+    color: white;
+    width: 13em !important;
+    background-color: transparent;
+    text-decoration: none;
+  
+}
+
+.lighterBackground {
+  color: inherit;
+  background-color: white;
+}
+
+/* Data entry - new */
+/*------------------*/
+.DataEntrySectionTitle
+{
+  background-color: rgb(100,135,220);
+  height: 1.5em;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:normal;
+  text-align:left;
+  vertical-align:middle;
+}/*
+.mnttable {border-collapse: collapse; width: 100%;}
+	.mnttable tr td {width: 250px; padding: 5px;  font-weight:bold;}
+	.mnttable tr {}
+	.mnttable tr td + td {width:auto;}
+	.mnttable tr.secondrow {}
+	.mnttable tr:hover {}
+*/
+.DataEntryPanel   
+{
+    /* background-color: rgb(211,222,239); #D3DEEF;  */
+    border: 1px dashed #2F4F4F;  
+    border-top: none;  
+    padding: 5px;  
+    font-family: Arial;
+    font-size: 9pt;
+    padding-top: 10px;          
+    width: 99.5%;
+
+}
+.DataEntryTable 
+{
+    width: 100%;
+}
+.collapseSection
+{
+    width: 100%;
+    border: 1px dashed #2F4F4F;  
+    background-color: rgb(35,71,156);
+    font: normal small-caps bold 1.5em;
+    color: rgb(255,255,255);
+}
+.CollapseExpandImage
+{
+    float: right;
+}
+.dataEntrylabel
+{
+    width: auto;
+    text-align: right;
+    border: 1px dashed #2F4F4F;  
+    vertical-align: top;
+    
+}
+.dataEntryField
+{
+    width: 100px;
+    border: 1px dashed #2F4F4F;  
+    vertical-align: top;
+}      
+
+.validationSummary
+{
+    /*float: right;
+    position: fixed;*/
+    width: 100%;
+    border: 2px solid #2F4F4F;
+    visibility: hidden;   
+}
+/*#### BEGIN - LoanServ_2.Master styles (PD)*/
+.hdrTop
+{
+    border: 1px;
+    font-family: Calibri;
+    font-size: 12pt;
+    width: 100%;
+}
+.hdrTop .inner1
+{
+    width: 2%;
+    text-align: left;
+    
+}
+.hdrTop .inner2
+{
+    width: 10%;
+    text-align: right;
+    
+}
+.hdrMenuRibbon 
+{
+    position: relative;
+    width: 100%;
+}
+.float_button_bar
+{
+    float: left;
+    position:fixed;
+    bottom: 0px;
+    width: 98%;
+    height: 25px;
+    background-color: ThreeDDarkShadow;
+    z-index: 999;
+}
+.application-footer-movewithform 
+{
+	float: left; 
+	position: fixed; 
+	bottom: 0px; 
+	z-index: 999; 
+	width: 100%; 
+	margin-bottom: 0; 
+}
+.application-footer-movewithform .inner 
+{
+	background: url(../images/bg-main-nav.gif) 0 0 repeat-x; 
+	height: 20px; /* 30*/
+	/*padding: 2px 15px 9px 450px;*/
+    padding-bottom: 20px;
+    padding-top: 2px;
+	
+}
+.application-footer-movewithform .inner .button-group-a 
+{
+	/*float: left; */
+	/*margin-right: 10px;*/
+	/*display: block;*/
+	margin-left: auto;
+	margin-right: auto;
+	width: 17em;
+}
+.menuRibbon
+{
+    position: relative;
+    width: 85%;
+    height: 110px;/*inherit;*/
+}
+.menuRibbonTab
+{
+    height: 100px;
+}
+.menuRibbonGroup
+{
+    height: 100px;
+}
+.menuRibbonButton
+{
+/*    padding-left: 5px;
+    padding-right: 10px;
+    height: 80px;*/
+    width: 80px;
+
+}
+.menuSearch
+{   
+    position: absolute;
+    width: 15%;
+    height: 9em;
+    top:26px;
+    right: 0px;
+    font-family: Calibri;
+    font-size: larger;
+    background-color: Silver;
+}
+.leftMenu_BodyContent
+{
+    position: relative;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+.displayWindowName
+{
+    /*float: left;*/
+    position: relative;
+    width: 100%;
+    
+    background-color: rgb(35,71,156);
+    font-family: Arial;
+    font-size: 1.5em;
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(255,255,255);
+    z-index: 998;
+    
+}
+.leftMenu
+{
+    position: relative;
+    background-color: Fuchsia;
+    width: 10%;
+}
+.bodyContent
+{
+    position: absolute;
+    left: 150px;
+    height: auto;
+    font-family: Calibri;
+    text-align: left;    
+    width: 88%;
+    background-color:white;
+}
+.bottomFiller
+{
+    position: relative; 
+    bottom: 0px; 
+    width: 1px; 
+    height: 40px;   
+}
+/*#### END - LoanServ_2.Master styles (PD)*/    
+
+/*#### BEGIN - unordered list (ul, li) (PD)*/   
+.MyWrapper
+{
+    list-style:none;
+    /*width:665px;*/
+    width:300px;
+
+    padding: 10px 10px;
+    color:#000;
+    margin-left: 10px;
+}
+
+.MyWrapper li
+{
+    float:left;
+    clear:left;
+    margin:0;
+    padding:0 0 10px;
+    width: 350px;
+    /*border-bottom-style: dashed;*/
+}
+
+.MyWrapper li.liright
+{
+    float:right;
+    left: 0px;
+    clear:none;
+    width:300px;
+}
+.MyWrapper li.liright_2
+{
+    float:right;
+    clear:none;
+    width:300px;
+}
+
+.MyWrapper li.licombo
+{
+    width:230px; /*IE7*/
+}
+
+.MyWrapper li.libuttons
+{
+    float:none;
+    width:437px;
+    padding-top:9px;
+    text-align:right;
+}
+
+.MyWrapper li.libuttons input,
+.MyWrapper li.libuttons a
+{
+    margin-left:5px;
+}
+
+ul.MyWrapper .MyLabel
+{
+    float:left;
+    width:150px;
+    margin:0 4px 0 0;
+    color:#000;
+}
+
+.MyWrapper li.liright .MyLabel
+{
+    float:none;
+    display:inline;
+    line-height:23px;
+}
+
+.MyWrapper .RadComboBox
+{
+    display:block !important; /*IE8*/
+    float:left;
+}
+
+
+/*#### END - unordered list (ul, li) (PD)*/   
+
+/* main body - noside */
+.MainBody_NoSide
+{
+    margin: 0 1px 1px 1px;
+    padding: 1px;
+    width: 99%;
+}
+
+/* ##### Main Copy ##### */
+
+#main-copy {
+  color: black;
+  background-color: white;
+  text-align: justify;
+  line-height: 1.5em;
+  margin: 0 0 0 15em;
+  /* padding: 0.5mm 5mm 5mm 5mm; */
+  padding: 0.5mm 0.5mm 0.5mm 0.5mm;
+  /* border-left: 1px solid rgb(153,153,153); */
+  border-left: 0px solid rgb(153,153,153);
+}
+
+#main-copy p {
+  margin: 1em 1ex 2em 1ex;
+  padding: 0;
+}
+
+#main-copy a {
+  color: rgb(0,102,204);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#main-copy a:hover {
+  text-decoration: none;
+}
+
+#main-copy h1 {
+  color: white;
+  background-color: rgb(100,135,220);
+  font-size: 100%;
+  font-weight: bold;
+  margin: 3em 0 0 0;
+  padding: 0.5ex 0 0.5ex 1ex;
+}
+
+#main-copy .topOfPage {
+  color: white;
+  background-color: transparent;
+  font-size: 91%;
+  font-weight: bold;
+  text-decoration: none;
+  /* margin: 2.5ex 1ex 0 0; */ /* For MSIE */
+  margin: 0 0 0 0; 
+  padding: 0;
+  float: right;
+}
+
+/* For fully standards-compliant user agents */
+
+#main-copy > .topOfPage {
+  margin: 2.75ex 1ex 0 0;  
+}
+
+dl {
+  margin: 1em 1ex 2em 1ex;
+  padding: 0;
+}
+
+dt {
+  font-weight: bold;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+dd {
+  margin: 0 0 2em 2em;
+  padding: 0;
+}
+
+/*RadGrid column header*/
+/*
+.rgColumnHeaderNoLabel
+{
+    width: 50px;
+}
+.rgColumnHeaderLabel
+{
+    width: 100px;
+}
+*/
+
+
+/* ##### Footer ##### */
+
+#footer {
+  color: white;
+  background-color: rgb(100,135,220);
+  font-size: 91%;
+  margin: 0;
+  padding: 1em 2.5mm 2.5ex 2.5mm;
+  clear: both;
+}
+
+#footer .left {
+  line-height: 1.45em;
+  float: left;
+  clear: left;
+}
+
+#footer .right {
+  text-align: right;
+  line-height: 1.45em;
+}
+
+#footer a {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#footer a:hover {
+  text-decoration: none;
+}
+
+        .viewWrap
+        {
+            padding: 10px;  /* 15px */
+            /* background: #2291b5 0 0 url(Img/bluegradient.gif) repeat-x; */
+            background: #42b1d5 0 0 url(bluegradient_Mod.gif) repeat-x;
+        }
+        .contactWrap
+        {
+            padding: 10px 15px 15px 15px;
+            background: #fff;
+            color: #333;
+        }
+        .contactWrap td
+        {
+            padding: 0 20px 0 0;
+        }
+        .contactWrap td td
+        {
+            padding: 3px 20px 3px 0;
+        }
+        .contactWrap img
+        {
+            border: 1px solid #05679d;
+        }
+
+.clsEvenRow
+{
+    font-size: 10pt;
+    text-indent: 2mm;
+    font-family: Arial;
+    background-color: #dfefff;
+
+}
+.clsOddRow
+{
+    font-size: 10pt;
+    text-indent: 2mm;
+    font-family: Arial;
+    background-color: #c4e1ff;
+}
+
+.RadDock .innerWrp{margin:0;padding:10px;}
+
+.DashboardDiv
+{
+    border:2px solid #f4f4f4;
+    padding:2px;
+}
+
+.BreadCrumb
+{
+    height: 15px;
+    background: transparent url(Images/bg.png) repeat-x 0 0;
+    padding-top: 3px;  /* 46px */
+    
+    color:Blue;
+    
+}
+
+/*
+Created by: PD
+Date: 2011-11-15
+Description: For RadDock
+*/
+.RadDockZoneStyle
+{
+    border: 10px; 
+    margin-right: 1px; 
+    margin-bottom:1px; 
+    width:100%;
+}
+
+/* KT 6 Mar 2012 */
+.RadDockStyle
+{
+    margin-bottom:8px !important;   
+}
+
+/*
+CREATED BY: PD
+DATE: 19/12/2011
+DESCRIPTION: For RadNotification window
+*/
+.infoIcon, .notificationContent
+{
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+.infoIcon
+{
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    vertical-align: top;
+}        
+.notificationContent
+{
+    width: 240px;
+    vertical-align: bottom;
+}
+.MyWrapper2
+{
+    width:100%;
+	vertical-align:top;
+}
+.MyWrapper2_td_header
+{
+    /*padding:3px 5px;
+	text-transform:uppercase;*/
+    /*width: 50%;*/
+    /*border: 3px solid black;*/
+}
+.MyWrapper2_td_label
+{
+    /*padding:3px 10px;
+    width: 30%;
+    vertical-align:top;*/
+    /*border: 3px solid black;*/
+}
+.MyWrapper2_td
+{
+ /*   padding:3px 10px;
+    width: 70%;
+	vertical-align:top;
+	left:0;*/
+    /*border: 1px solid black;*/
+}
+.MyWrapper2_td_label_multi_col
+{
+    padding:3px 10px;
+    /*width: 50%;*/
+    vertical-align:top;
+    white-space:nowrap;
+    /*border: 3px solid black;*/
+}
+.MyWrapper2_td_multi_col
+{
+    padding:3px 10px;
+	/*width: 50%;*/
+	vertical-align:top;
+	white-space:nowrap;
+	/*border: 3px solid black;*/
+}
+.MyWrapper2_td_label_even
+{
+    padding:3px 10px;
+    vertical-align:top;
+    width:1px;
+    white-space:nowrap;
+    /*border: 3px solid black;*/
+}
+.MyWrapper2_td_even
+{
+    padding:3px 10px;
+	vertical-align:top;
+	left:0;
+	width:1px;
+	/*white-space:nowrap;*/
+    /*border: 1px solid black;*/
+}
+.td_section
+{
+    padding:3px 10px;
+    vertical-align:top;
+    width:600px;
+    white-space:nowrap;
+    /*border: 3px solid black;*/
+}
+.td_field_container
+{
+    /*padding:3px 10px;
+    vertical-align:top;
+    width:auto;*/
+    /*white-space:nowrap;*/
+    /*border: 1px solid black;*/
+    /*height: 20px;*/
+}
+/**/
+
+/*
+CREATED BY: PD
+DATE: 19/01/2012
+DESCRIPTION: For Form Fields
+*/
+.Amount_Field
+{
+    width: 10em;
+}
+.KeyID_Field
+{
+    width: 10em;
+}
+.Name_Field
+{
+    width: 15em;
+    font-size :x-large;
+}
+.StandardText_Field
+{
+    width: 15em;
+}
+.Combo_Field_Small
+{
+    width: 7em;
+}
+.Combo_Field_Medium
+{
+    width: 15em;
+}
+.Combo_Field_Large
+{
+    width: 25em;
+}
+.RequiredField
+{
+    color:Red;
+}
+/*
+CREATED BY: Ken Van
+DATE: 21/03/2012
+DESCRIPTION: For Form Fields
+*/
+
+.HTMLBody
+{
+    background-color : White;
+    vertical-align : top;    
+    height:100%;
+    margin:0px;
+    /*overflow:hidden;*/ /*PD 11/04/2012: disabled due to preventing browser scrollbars from appearing*/
+}
+.HTMLBodyPopup
+{
+    background-color : White;
+    vertical-align : top;    
+    height:100%;
+    margin:0px;
+    /*overflow:hidden;*/ /*PD 11/04/2012: disabled due to preventing browser scrollbars from appearing*/
+}
+.HTMLTable
+{
+    width: 99%;
+    vertical-align: top;
+    background-color: white;
+    margin:0px;
+    padding:0px;            
+}
+
+    .HTMLTable .TD_Heading
+    {
+       font-size : small;
+       background-color : white;
+    }
+    
+    .HTMLTable .TD_Label
+    {
+       background-color : Orange;
+    }
+    
+    .HTMLTable .TD_Text
+    {
+        font-size : x-large;
+        background-color : green;        
+    }
+       
+    .HTMLTable  TextBox
+    {
+       font-size : x-large;        
+       background-color : gray; 
+    }
+    
+    /* Field length of most datatypes  ------------------------------------------------------------- */
+    /* Companyname, Tradingname, Trustname */
+    .CompanyNameField
+    {       
+       width : 400px;
+       max-width : 400px;
+    }  
+    
+    /* Firstname Surname, Account Name */
+    .NameField 
+    {
+        width : 140px;
+        max-width : 140px;
+    }
+    
+    /* DateOnly */
+    .DateOnlyField
+    {
+        width : 100px;
+        max-width : 100px;
+    }
+    
+    /* Numeric field with decimal */
+    .NumericField
+    {
+        width : 100px;
+        max-width : 100px;
+    }
+    
+    /* Integer field */
+    .IntField
+    {
+        width : 30px;
+        max-width : 30px;
+    }
+    
+    /* Integer field */
+    .AmountField
+    {
+        width : 70px;
+        max-width : 70px;
+    }
+    
+    /* Rate field */
+    .RateField
+    {
+        width : 40px;
+        max-width : 40px;
+    }
+    
+     /*ACN, ABN */
+    .ACN
+    {       
+       width : 200px;
+       max-width : 200px;
+    }  
+
+     /*Website, Email */
+    .HTMLTable .Website
+    {       
+       width : 300px;
+       max-width : 300px;
+    }  
+    
+    /* Phone, fax, Mobile */
+    .ContactDevice
+    {
+       width : 120px;
+       max-width : 120px;
+    }
+/**/

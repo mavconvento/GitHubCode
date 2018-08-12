@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="MAVCPigeonClockingWebsite.Site1" %>
+
+<%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>MAVC Clocking System</title>
+    <asp:ContentPlaceHolder ID="cphHead" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="~/Styles/PigeonClocking_Screen.css" type="text/css" media="screen" />
+    <link rel="SHORTCUT ICON" href="~/Images/Logo.ico" />
+    <link rel="stylesheet" href="~/App_Themes/TransparentMod/Menu.TransparentMod.css"
+        type="text/css" media="screen" />
+    <style type="text/css">
+        .panelContents
+        {
+            height: 0%;
+            overflow: hidden;
+        }
+        
+        div .textCenter 
+        { vertical-align:text-bottom;
+            }
+            
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+        <Scripts>
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.Core.js" />
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQuery.js" />
+            <asp:ScriptReference Assembly="Telerik.Web.UI" Name="Telerik.Web.UI.Common.jQueryPlugins.js" />
+        </Scripts>
+    </telerik:RadScriptManager>
+    <!-- ##### Wrapper ##### -->
+    <div style="height: 100%; margin: 0px">
+        <table width="100%">
+            <tr>
+                <td width="90%">
+                    <!-- ##### Header ##### -->
+                    <div id="header">
+                        <div class="midHeader">
+                            <img src="../Images/Logo1.jpg" alt="MAVC Clocking Logo" />
+                            <span class="headerTitle">MAVC Pigeon Clocking</span>
+                        </div>
+                        <div class="subHeader-NEW">
+                            <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="12px"></asp:Label>
+                            <%--<telerik:RadMenu ID="rmMainMenu" runat="server" DataFieldID="MenuID" DataFieldParentID="ParentID"
+                                DataSourceID="SqlDataSource1" DataTextField="MenuText" DataNavigateUrlField="URL"
+                                EnableEmbeddedSkins="false" Skin="TransparentMod" OnItemDataBound="rmMainMenu_ItemDataBound">
+                            </telerik:RadMenu>--%>
+                        </div>
+                    </div>
+                   
+                </td>
+                <%--<td width="10%" valign="top">
+                    <div class="menuSearch-New">
+                        <uc1:LoanServSearch ID="LoanServSearch1" runat="server" />       
+                    </div>
+                </td>--%>
+            </tr>
+        </table>
+        <!-- ##### Main body ##### -->
+        <%-- <div id="main-copy"> --%>
+        <div style="height: 100%; margin: 0px">
+            <table class="MainBody_NoSide" style="height: 100%; margin: 0px">
+                <tr style="height: 100%; margin: 0px">
+                    <td style="height: 100%; margin: 0px">
+                        <asp:ContentPlaceHolder ID="cphMain" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+            <div class="bottomFiller">
+            </div>
+        </div>
+    </div>
+   <%-- <asp:TextBox ID="TextBox000" runat="server" Text="1" Visible="false"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="RequiredFieldValidator000" runat="server" ControlToValidate="TextBox000"
+        ErrorMessage="!" ValidationGroup="required">*</asp:RequiredFieldValidator>--%>
+    <!-- ##### Footer ##### -->
+    <div id="footer_buttonbar">
+        <div class="application-footer-movewithform">
+            <div class="inner">
+                <div class="button-group-a">
+                    <asp:ContentPlaceHolder ID="cphButtonBar" runat="server">
+                        <%--Buttons here--%>
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

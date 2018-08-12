@@ -1,0 +1,31 @@
+﻿@using System.Web.Mvc;
+@using MAVCPigeonClockingMobileApps.Constants; 
+
+@helper RollingHeader(UrlHelper url)
+{       
+    lmsConstants oConst = new lmsConstants();
+	string logoSrcSml = oConst.GetElement("logoSrcSmlheader");
+	string companyname = oConst.GetElement("companyname"); 	        
+
+    <div data-role="">
+        <div style="background:url(' @url.Content(logoSrcSml) ')  no-repeat right;  background-color:White; border: thin solid #C0C0C0; " >            
+            <div style="font-size:large; text-align: center;">@companyname</div>             
+        </div>
+    </div>       
+}
+
+@helper HomeHeader(UrlHelper url)
+{       
+    lmsConstants oConst = new lmsConstants();
+	string logoSrcSml = oConst.GetElement("logoSrcSmlheader");
+	string companyname = oConst.GetElement("companyname"); 	        
+
+    <div data-role="">
+        <div style="background:url(' @url.Content(logoSrcSml) ')  no-repeat right;  background-color:White; border: thin solid #C0C0C0; " >            
+            <div style="font-size:large; text-align: center;">@companyname</div>             
+        </div>
+    </div>       
+}
+
+
+

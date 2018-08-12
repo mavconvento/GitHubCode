@@ -1,0 +1,210 @@
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe.manifest
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.application
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.FrmCopyEntry.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryMultipleCategory.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionDetails.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransaction.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmAddResult.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmCalculator.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDistance.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberPerReleasePoint.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRegion.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberRingManagement.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMessages.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmModemSetup.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResults.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmBirdEntryMasterlist.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLogin.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceType.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmReportGeneration.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmStickerGeneration.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmUser.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategoryGroup.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategory.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleCategory.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmReleasePoint.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleDetails.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmSchedule.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmBroadcast.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmClub.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryBird.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLocation.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMain.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDataEntry.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberMasterlist.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceEntry.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResult.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.Inbox_View.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmViewClubRace.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.Properties.Resources.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionSummary.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.GenerateResource.Cache
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe.manifest
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.application
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmExportEclockData.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLoadCard.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmClocking.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmPaymentTransactionSummary.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.exe
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\bin\Debug\PegionClocking.exe.manifest
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\bin\Debug\PegionClocking.application
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\bin\Debug\PegionClocking.exe
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\bin\Debug\PegionClocking.pdb
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmClocking.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.FrmCopyEntry.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryMultipleCategory.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmExportEclockData.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmLoadCard.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmPaymentTransactionSummary.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionDetails.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmTransaction.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmAddResult.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmCalculator.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDistance.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberPerReleasePoint.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmRegion.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberRingManagement.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmMessages.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmModemSetup.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResults.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmBirdEntryMasterlist.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmLogin.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceType.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmReportGeneration.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmStickerGeneration.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmUser.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategoryGroup.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategory.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleCategory.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmReleasePoint.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleDetails.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmSchedule.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmBroadcast.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmClub.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryBird.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmLocation.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmMain.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDataEntry.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberMasterlist.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceEntry.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResult.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.Inbox_View.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmViewClubRace.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.Properties.Resources.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionSummary.resources
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.csproj.GenerateResource.Cache
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.exe.manifest
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.application
+E:\MyProject\MAVC Source Codes\SoureCode\Visual 2010 Version\PegionClocking\obj\x86\Debug\PegionClocking.frmChangePassword.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.pdb
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe.manifest
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.application
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.pdb
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmChangePassword.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmClocking.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.FrmCopyEntry.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryMultipleCategory.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmExportEclockData.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLoadCard.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmPaymentTransactionSummary.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionDetails.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransaction.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmAddResult.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmCalculator.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDistance.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberPerReleasePoint.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRegion.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberRingManagement.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMessages.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmModemSetup.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResults.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmBirdEntryMasterlist.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLogin.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceType.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmReportGeneration.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmStickerGeneration.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmUser.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategoryGroup.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategory.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleCategory.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmReleasePoint.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleDetails.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmSchedule.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmBroadcast.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmClub.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryBird.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLocation.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMain.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDataEntry.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberMasterlist.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceEntry.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResult.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.Inbox_View.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmViewClubRace.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.Properties.Resources.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionSummary.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.GenerateResource.Cache
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe.manifest
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.application
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csprojResolveAssemblyReference.cache
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmGenerateEclockInfo.resources
+E:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRFIDRegistration.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.pdb
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe.manifest
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.application
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\bin\Debug\PegionClocking.pdb
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmChangePassword.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.FrmCopyEntry.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryMultipleCategory.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmExportEclockData.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmGenerateEclockInfo.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLoadCard.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmPaymentTransactionSummary.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRFIDRegistration.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionDetails.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransaction.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmAddResult.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmCalculator.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDistance.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberPerReleasePoint.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRegion.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberRingManagement.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResults.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmBirdEntryMasterlist.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLogin.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceType.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmReportGeneration.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmStickerGeneration.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmUser.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategoryGroup.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceCategory.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleCategory.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmReleasePoint.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmScheduleDetails.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmSchedule.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmClub.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryBird.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmLocation.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMain.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberDataEntry.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmMemberMasterlist.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceEntry.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRaceResult.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.Inbox_View.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmViewClubRace.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.Properties.Resources.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionSummary.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.GenerateResource.Cache
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe.manifest
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.application
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRegisterMobileNumber.resources
+D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csprojResolveAssemblyReference.cache

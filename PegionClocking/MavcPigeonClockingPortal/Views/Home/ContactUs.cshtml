@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "ContactUs";
+}
+<div ng-controller="HomeContactUsController">
+    <div style="width: 100%;">
+        <table style="width: 600px;">
+            <tr>
+                <td style="margin: 0px; padding: 0px;">
+                    <div style="width: 100%;">
+                        <h2>
+                            Contact Us</h2>
+                    </div>
+                </td>
+                <td class="homeheader">
+                    <div class="loginmenu" ng-init="MainMenuItems" style="float: right; margin-top: 30px;
+                        margin-right: 8px; width: 100%">
+                        <ul style="color: Aqua">
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Home()" style="color: Aqua;">Home</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="OurProducts()" style="color: Aqua;">Our Products</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="PigeonProducts()" style="color: Aqua;">Sponsor and Pigeon Products</span></a>
+                                |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Tutorials()" style="color: Aqua;">Tutorials</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="TextFormat()" style="color: Aqua;">Text Formats</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ApplicationForm()" style="color: Aqua;">Application Form</span></a> |
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr style="padding: 0px; margin: 0px" />
+                </td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>
+                    <div style="margin-top:20px">
+                        <b>For New Application and Technical Support:</b><br /><br />
+                        <h4><b>Mark Adams V. Convento</b></h4>
+                        <p>
+                            Operation Manager<br />
+                            Mobile #: 09985754822<br />
+                            E-mail Address: cmarkadams@yahoo.com<br />
+                            Facebook : Mark Mavc
+                        </p>
+                        </pre>
+                    </div>
+                    <div style="margin-top:50px">
+                        <b>For Product Order:</b><br /><br />
+                        <h4><b>Johndee V. Convento</b></h4>
+                        <p>
+                            Mobile #: 09087478551<br />
+                            Facebook : Jandy Valois Convento
+                        </p>
+                    </div>
+                    <div style="margin-top:50px"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/AngularController/HomeContactUsController1.1.js"></script>
+}

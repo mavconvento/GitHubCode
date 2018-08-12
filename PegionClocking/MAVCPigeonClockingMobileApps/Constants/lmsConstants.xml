@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--[0][107.33] Pewee 12/2/2015 #2171 #2172 Rename Facility # to Facility ID, Sub Loan # to Account ID, make	<includethirdparty>0</includethirdparty>-->
+<constants>
+  <debugon>0</debugon>
+	<installation>1</installation>
+	<includethirdparty>0</includethirdparty>
+	<jsonerrormessage>An error occurred while processing your request./nPlease contact your administrator</jsonerrormessage>
+
+	<companyname>MAVC Pigeon Clocking</companyname>
+  
+	<logoSrcSmlheader>~/Images/MAVCPigeonClocking.jpg</logoSrcSmlheader>
+	<!--header-->
+	<logoSrcSml>~/Images/MAVCPigeonClocking.jpg</logoSrcSml>
+	<!--footer-->
+	<companycontactphone>94361310</companycontactphone>
+	<companycontactemail>support@customeronline.com.au</companycontactemail>
+	<facilitylistformurl>http://www.mavcpigeonclocking.com/default.aspx</facilitylistformurl>
+
+	<accountstatementsubjectline>MAVC Pigeon Clocking</accountstatementsubjectline>
+	<accountstatementbodyline>
+		<![CDATA[Please find attached account statement requested]]>
+	</accountstatementbodyline>
+
+	<companywebsiteurl>http://www.mavcpigeonclocking.com/default.aspx</companywebsiteurl>
+	<companywebsiteurlprivacy>http://www.mavcpigeonclocking.com/default.aspx</companywebsiteurlprivacy>
+
+	<customlabel>
+		<FacilityNo>Facility ID</FacilityNo>
+		<FacilityExternalNo>Loan #</FacilityExternalNo>
+		<AccountNo>Account ID</AccountNo>
+		<AccountExternalNo>Portion #</AccountExternalNo>
+		<ApplicantsScreenTitle>Borrowers / Guarantors</ApplicantsScreenTitle>		
+	</customlabel>
+
+	<uimessages>
+		<accountpayment>
+			<makenewaccountpayment>An additional payment may require up to 5 business days before funds are applied to the account.</makenewaccountpayment>
+			<cancelpaymentstep1>Cancelling this payment will only affect future payments.</cancelpaymentstep1>
+      <canceladditionalpaymentstep1>Additional Payment Cancel not allowed. Today's cut off time has been missed</canceladditionalpaymentstep1> <!--comment [1][107.21]-->
+		</accountpayment>		
+	</uimessages>
+
+	<SocialMediaIcons>
+		<icon>
+		  <url>https://www.facebook.com/pages/Sintex-Consolidated-Pty-Ltd/141943546000254?fref=ts</url>
+		  <src>~/Images/facebook.jpg</src>
+		</icon>
+		<icon>
+		  <url>http://www.twitter.com/resihomeloans</url>
+		  <src>~/Images/twitter.jpg</src>
+		</icon>
+		<icon>
+		  <url>http://www.podcast.com/resihomeloans</url>
+		  <src>~/Images/podcast.jpg</src>
+		</icon>
+		<icon>
+		  <url>http://www.youtube.com/resihomeloans</url>
+		  <src>~/Images/youtube.jpg</src>
+		</icon>
+	</SocialMediaIcons>
+
+  <termsandconditions>
+    <b></b>
+    <![CDATA[
+    <br />
+    <div style="text-align:center"><span style="color:Red">Internet Privacy Statement</span></div>
+    <br />
+    <b style="color:blue">Introduction</b>
+    <span class="MultilineTextLeftNormal">
+    The online services are provided and maintained by Sintex Consolidated Pty Ltd ABN 75 065 917 535, Australian Credit Licence 385129 (Sintex). 
+    Sintex and its related bodies corporate ("Sintex" or "we") may collect information in providing those services. 
+    This Privacy Statement applies to information collected by Sintex. It outlines how we manage your personal information and safeguard your privacy.
+    At Sintex, we understand that when accessing our website or interacting with us online, the privacy, security and confidentiality of 
+    personal information is important to our customers and we are bound by the Privacy Act 1998 (Cth) and 
+    the National Privacy Principles ("NPPs"). We are committed to protecting the personal and financial information that we hold about you.
+    </span>
+    <br />
+    <b style="color:blue">Information we collect</b>
+    <span class="MultilineTextLeftNormal">
+    Sintex only collects personal information that is reasonably necessary for us to perform our functions. 
+    The kind of personal information we collect and hold will depend upon the type of products and services that you request from us and may include:
+    <ul>
+      <li>information you give us when you request a product or service from us. 
+          This information may include your name, address, contact details and relevant identification documents;</li>
+      <li>financial information about you such as your financial position and information 
+          obtained from credit checks if you have authorised us to carry out those checks;</li>
+      <li>communications between us and your financial adviser or mortgage broker;</li>
+      <li>transactional information about the use of a product if you have or had a product with us; and</li>
+      <li>in a limited number of circumstances such as in some superannuation products</li>    
+    </ul>
+    </span>
+    <br />
+    <b style="color:blue">Quality of the personal information</b>
+    <span class="MultilineTextLeftNormal">
+    We aim to ensure that personal information we retain about you is accurate, complete and up to date. 
+    To enable this, we may regularly ask you to review, confirm and advise us of changes to your personal information.
+    </span>
+    <br />
+    <b style="color:blue">Securing your information</b>
+    <span class="MultilineTextLeftNormal">
+    Sintex stores personal information in a combination of computer storage facilities, paper-based files and other records. 
+    We will take reasonable steps to protect personal information from loss, misuse, unauthorised access, modification or disclosure.
+    </span>
+    <br />
+    <b style="color:blue">How we capture information?</b>
+    <span class="MultilineTextLeftNormal">
+    Sintex collects your personal information in a number of ways including:
+    <ul>
+      <li>directly from you, such as when you provide the information by phone, email or in an application form; and </li>
+      <li>from third parties such as credit reporting agencies, other credit providers, if you authorise us to do so. </li>
+    </ul>
+    </span>
+    <br />
+    <b style="color:blue">How we use your information</b>
+    <span class="MultilineTextLeftNormal">
+    Sintex may use your personal information in a number of ways including:
+    <ul>
+      <li>to verify your identity or transactions which you may enter into with us;</li>
+      <li>to provide the product and services that you request;</li>
+      <li>to administer and manage the provision of our products and services;</li>
+      <li>to respond to queries, complaints or to provide you with our general customer services;</li>
+      <li>to assess credit which you seek from Sintex loan programmes and to administer any credit a Sintex loan programme provides;</li>
+      <li>to comply with laws and regulatory requirements including complying with any request made by a 
+       governmental authority in connection with legal proceedings or the prevention or detection of fraud and crime;</li>
+      <li>to comply with Sintex's risk management policies and procedures.</li>
+      <li>to train our staff. 
+      We may use your personal information for additional purposes related to the purposes listed above.
+      We will not, however, use your personal information other than for:</li>
+      <li>a purpose made known to you;</li>
+      <li>a purpose you would reasonably expect;</li>
+      <li>a purpose required or permitted by law; or</li>
+      <li>a purpose otherwise authorised by you.</li>
+    </ul>
+    </span>
+    <br />
+    <b style="color:blue">Third party access to personal information</b>
+    <span class="MultilineTextLeftNormal">
+    We may contract out some of our functions such as mailing, 
+    settlement services or identification verification to external service providers from time to 
+    time and only in those instances will we disclose personal information to those providers. 
+    Only information pertinent to these products or services will be provided and 
+    confidentiality clauses feature in our service agreements with third party providers and suppliers.
+    Where we have obtained your approval to conduct credit checks, 
+    we may obtain personal information from or disclose personal information to credit reporting agencies.
+    When personal information is disclosed to a company operating 
+    in a foreign country, we will ensure that the information will be 
+    protected by a law or in a contract which upholds privacy principles similar to the NPPs.
+    </span>
+    <br />
+    <b style="color:blue">Access to your personal information</b>
+    <span class="MultilineTextLeftNormal">
+    You may request access to the personal information that we hold about you 
+    or request correction to personal information that we hold. Subject to the limited 
+    circumstances set out below, we will endeavour to process your request in 
+    a reasonable time. In order for us to process your request we will need 
+    to verify your identity and, in some circumstances, we may need to charge 
+    an administrative fee, of which we will inform you in advance.
+    In the event that we refuse you access to your personal information, we will provide you with an 
+    explanation for that refusal. These reasons may include:
+    <ul>
+      <li>an unreasonable impact on the privacy of other individuals;</li>
+      <li>the information relates to legal proceedings between Sintex and you;</li>
+      <li>the information would reveal our commercially-sensitive decision-making process; or</li>
+      <li>we are prevented by law from disclosing the information or providing access.</li>
+    </ul>
+    </span>
+    <br />
+    <b style="color:blue">Use of our web site or online account access</b>
+    <span class="MultilineTextLeftNormal">
+    We will collect some information from you when you visit the website maintained by Sintex. 
+    Your use of the facilities and services available through the website 
+    will determine the amount and type of information that we will collect about you. 
+    Some of this information will not be personal information because it will not reveal your identity.
+    The only personal information which we collect about you when you use the
+    website is what you tell us about yourself; for example, by completing an 
+    online form such as an application form or by asking for a 
+    disclosure document for our products or by sending us an email. 
+    We will record your email address if you send us an email.
+    <br />
+    <br />
+    If you are registered for our online account access via PC or smart 
+    device we may use your email address to advise you of upgrades to these services. 
+    We may also use your email address to send regular communication 
+    about financial information which you have indicated that you are interested in.
+    </span>
+    <br />
+    <b style="color:blue">Cookies</b>
+    <span class="MultilineTextLeftNormal">
+    When you visit the website, our server places small pieces of data known as 
+    'cookies' on your hard drive. Cookies are pieces of information that are 
+    transferred to your computer when you visit a website for record-keeping purposes. 
+    Most Web browsers are set to accept cookies. However, if you do not wish to receive 
+    any cookies you may set your Web browser to refuse cookies. We use cookies 
+    to provide us with aggregate (anonymous) information on how people use our 
+    website and to help us know what our customers find interesting and useful in our website. 
+    We do not link this information back to other information that you have provided to us.
+    </span>
+    <br />
+    <b style="color:blue">Changes to our Privacy Policy</b>
+    <span class="MultilineTextLeftNormal">
+    We may make changes to this Privacy Statement from time to time 
+    for any reason and will make concerted efforts to update the website in a timely manner.
+    </span>
+    <br />
+    <b style="color:blue">Contacting us</b>
+    <span class="MultilineTextLeftNormal">
+    If you would like more information about how we manage your personal information, 
+    please contact us on +61 2 9278 9780 or write to us at the following address:
+    The Privacy Officer 
+    Level 1, 458 Wattle Street
+    Ultimo, NSW 2007
+    Email: soloutions@sintex.com.au
+    If you wish to raise any concerns about any breach or potential breach of your privacy, 
+    please contact our Privacy Officer and we will make every 
+    effort to resolve your complaint internally. For more information on 
+    how you may lodge a complaint with the Federal Privacy Commissioner, 
+    please contact the Commissioner's hotline service on 1300 363 992.
+    </span>
+    <br />
+]]>
+  </termsandconditions>
+  <faqs>
+    <b></b>
+    <![CDATA[
+<b><u style="color:Red;"><span style="color:Red;">Mobile Banking FAQ’s</span></u></b>
+<span class="MultilineTextLeftNormal"><br />These answers to Frequently Asked Questions may assist you:</span>
+
+<span class="MultilineTextLeftNormal">
+<br /><b>What is Mobile Banking?</b><br />
+Mobile banking is a range of services and tools, customised and accessible via a mobile smart-phone.
+<br /><br />Key features:
+</span><br />
+<li style=" font-weight:normal">View all your loan details</li><br />
+<li style=" font-weight:normal">View current balances and past transactions</li><br />
+<li style=" font-weight:normal">Tools to change your contact details</li><br />
+<li style=" font-weight:normal">Tools to make additional payments, perform transfers, download statements and request redraws</li><br />
+<li style=" font-weight:normal">Access to useful forms and documents</li><br />
+<li style=" font-weight:normal">Access account manager contact details</li><br />
+
+<br /><b>What devices are supported?</b>
+<span class="MultilineTextLeftNormal">Currently Mobile Banking is available on iPhone, 
+Android, Windows and Blackberry phones.</span>
+
+<br /><b>Do I need to register for Mobile Banking?</b>
+<span class="MultilineTextLeftNormal">Not if you are already registered for Mobile Banking. If not, then call us to register now.</span>
+
+]]>
+  </faqs>
+  <security>
+    <b></b>
+    <![CDATA[
+<b><u style="color:Red;"><span style="color:Red;">Mobile Banking security tips</span></u></b>
+<span class="MultilineTextLeftNormal">Tips to protect your smart-phone and tablet devices:</span>
+<span class="MultilineTextLeftNormal"><br /><b>Protect your passwords</b> – ensure you keep 
+confidential your PIN and passwords and avoid using the same logon/passwords
+for multiple. Make sure your password or code is something that's hard for 
+others to guess but easy for you to remember.</span>
+
+<span class="MultilineTextLeftNormal"><br /><b>Lock</b> – 
+set your smart-phone and tablet to automatically lock. 
+The password will protect your device so that no-one else can
+use or view your information. 
+Also store your device in a secure location.</span>
+
+<span class="MultilineTextLeftNormal"><br /><b>Contact us if you lose your smart-phone or tablet</b> – 
+call us immediately to tell us about the loss and provide your new
+phone number.</span>
+
+<span class="MultilineTextLeftNormal"><br /><b>Clear your mobile devices</b> 
+of text messages from us especially before sharing, 
+discarding or selling your device.</span>
+
+<span class="MultilineTextLeftNormal"><br /><b>Be careful what you send via text</b> – 
+never use text messages to disclose any personal information, such as account
+numbers, passwords or other personal 
+information that could be used to steal your identity.</span>
+
+<span class="MultilineTextLeftNormal"><br /><b>Guard identity information carefully</b> 
+and only provide it to trusted people and entities. This includes date of birth, current
+address, driver’s licence and passport details.</span>
+
+<span class="MultilineTextLeftNormal"><br /><b>When using a public network</b> 
+ensure it is reputable and password protected.</span>
+
+<span class="MultilineTextLeftNormal"><br /><b>Sign out</b> after you have finished using mobile banking.</span><br />
+
+<b><u style="color:Red;"><span style="color:Red;">Mobile Banking secure environment</span></u></b>
+
+<span class="MultilineTextLeftNormal">
+When you sign into mobile banking you are entering a secure environment. 
+All information you enter is protected by 128-bit SSL encryption.
+<br /><br />
+If you’re inactive for more than 5-minutes you will automatically be signed out and you will need to sign in again.
+<br /><br />
+To leave you must click the Sign Out button.</span>
+]]>
+  </security>
+  <homehelp>
+    <![CDATA[<div class="sectiontitle">this is help. loaded from a xml element in lmsConstant.xml</div><br/><b>This statement must be read by each applicant and guarantor. By signing this Application Form you agree to the terms of this statement.</b> <i>This statement explains how we, a company name collect, use and disclose personal information. Personal information is information about and which identifies individuals, referred to in the application and includes information obtained from any source and, in respect of individual loan applicants and guarantors (if any), includes anything about credit worthiness, standing, history and capacity which, under or in accordance with the Privacy Act 1988, may lawfully be exchanged. We will not use or disclose information collected about you otherwise than for a purpose set out in this statement, a purpose you would reasonably expect, a purpose required or authorised by law, or a purpose otherwise disclosed to, or authorised by, you.</i>
+<br><b> 1. Purposes for which we collect and use personal information</b>
+<br>(a) You agree that personal information about you which may at any time be provided to us in connection with this loan application may be held and used by us to assess and process the application, to establish, provide and administer the loan and to execute your instructions.
+<br>(b) You agree that, in assessing an application for credit or, if relevant, in assessing whether to accept you as a guarantor, we may seek and obtain personal information about you from a credit reporting agency or another financial institution and may give personal information about you to another financial institution.
+<br>(c) You also agree that we may hold and use personal information about you for the purposes (as relevant) of:
+<li>considering any other application you may make to us;</li>
+<li>complying with legislative and regulatory requirements;</li>
+<li>performing administrative functions, including accounting, risk management, record keeping, archiving, systems development, credit scoring and staff training;</li>
+<li>managing our rights and obligations in relation to external payment systems;</li>
+<li>conducting market or customer satisfaction research;</li>
+<li>developing, establishing and administering alliances and other arrangements with other organisations in relation to the promotion, administration and use of our respective products and services;</li>
+<li>developing and identifying products and services that may interest you; (unless you ask us not to) providing you with information about other products and services; and</li>
+<li>verifying your identity and address as may be required under the Anti-Money Laundering and Counter Terrorism Financing Act 2006.
+<br>(d) Where personal information which we collect about you is sensitive information (such as information about health status, membership of a professional or trade association or a criminal record), you nevertheless consent to its collection by us.
+<br><b>2. Disclosure of personal information</b>
+<br>You agree that we may collect personal information about you from, and disclose it to, the following, as appropriate, even ifthe disclosure is to an organisation overseas which is not subject to privacy obligations equivalent to those which apply to us:<li>credit reporting agencies and other financial institutions;</li>
+<li>mortgage insurers used by us and reinsurers of any such mortgage insurer;</li>
+<li>our agents, contractors and external advisers whom we engage from time to time;</li>
+<li>your agents and contractors, including your finance broker, legal adviser, financial adviser, builder and settlement agent;</li>
+<li>your executor, administrator, trustee, guardian or attorney;</li>
+<li>your referees, including your employer;</li>
+<li>regulatory bodies, government agencies, law enforcement bodies and courts;</li>
+<li>any person who introduces you to us;</li>
+<li>other organisations (including Cuscal Limited) with whom we have alliances or arrangements for the purpose of promoting our respective products and services (and any agents used by us and our business partners in administering such an arrangement or alliance);</li>
+<li>debt collecting agencies;</li>
+<li>external payment systems operators;</li>
+<li>your and our insurers or prospective insurers and their underwriters;</li>
+<li>your guarantors and prospective guarantors;</li>
+<li>an organisation proposing to fund the acquisition of or acquire, any interest in any obligation you may owe us (whether undera loan, guarantee or security), that organisation’s agents, persons involved in assessing the risks and funding of the acquisition and, after acquisition, the purchaser and any manager;</li>
+<li>any person to the extent necessary, in our view, in order to carry out any instruction you give to us; and (unless you tell us not to) other organisations (including our related bodies corporate) for the marketing of their products and services. </li>
+<br><b>3. Personal information about third parties</b>
+<br>You represent that, if at any time you supply us with personal information about another person (eg, a referee or a person to whom a payment is to be directed), you are authorised to do so and you agree to inform that person who we are, that we will use and disclose their personal information for the purposes set out in paragraph 1 above, and that they can gain access to that information. 
+
+]]>
+  </homehelp>
+
+</constants>

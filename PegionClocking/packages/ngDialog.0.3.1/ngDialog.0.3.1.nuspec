@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>ngDialog</id>
+    <version>0.3.1</version>
+    <title>ngDialog</title>
+    <authors>Likeastore</authors>
+    <owners>Likeastore</owners>
+    <projectUrl>https://github.com/likeastore/ngDialog</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>https://github.com/likeastore/ngDialog</description>
+    <summary>ngDialog package</summary>
+    <tags>angular ngdialog dialog</tags>
+    <references />
+  </metadata>
+</package>

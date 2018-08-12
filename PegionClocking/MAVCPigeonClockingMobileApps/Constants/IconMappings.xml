@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<icons>
+	<icon name="greaterthan" class="font-entypo icon-chevron-right" icon=""></icon>
+	<icon name="key" class="font-entypo icon-key" icon=""></icon>
+  <!--<icon name="useradd" class="font-entypo icon-" icon=""></icon>-->
+	<icon name="user" class="font-entypo icon-user" icon=""></icon>
+	<icon name="globe" class="font-entypo icon-globe" icon=""></icon>
+	<icon name="help" class="font-entypo icon-help" icon=""></icon>
+	<icon name="alert" class="font-entypo icon-warning" icon=""></icon>
+	<icon name="home" class="font-entypo icon-home" icon=""></icon>
+	<icon name="phone" class="font-entypo icon-phone" icon=""></icon>
+	<icon name="email" class="font-entypo icon-mail" icon=""></icon>	
+	<icon name="tool" class="font-entypo icon-tools" icon=""></icon>
+	<icon name="setting" class="font-entypo icon-" icon=""></icon>
+	<icon name="book" class="font-entypo icon-book" icon=""></icon>
+	<icon name="locked" class="font-entypo icon-lock" icon=""></icon>
+	<icon name="unlocked" class="font-entypo icon-lock-open" icon=""></icon>
+	<icon name="info" class="font-entypo icon-info" icon=""></icon>
+	<icon name="" class="font-entypo icon-" icon=""></icon>
+	<icon name="" class="font-entypo icon-" icon=""></icon>
+	<icon name="" class="font-entypo icon-" icon=""></icon>
+	<icon name="" class="font-entypo icon-" icon=""></icon>
+</icons>

@@ -1,0 +1,10 @@
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClocking\MAVC Integration\bin\Debug\MAVC Integration.exe
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClocking\MAVC Integration\bin\Debug\MAVC Integration.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClocking\MAVC Integration\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClocking\MAVC Integration\obj\x86\Debug\MAVC Integration.exe
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClocking\MAVC Integration\obj\x86\Debug\MAVC Integration.pdb
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Integration\obj\x86\Debug\MAVC Integration.exe
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Integration\obj\x86\Debug\MAVC Integration.pdb
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Integration\bin\Debug\MAVC Integration.exe
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Integration\bin\Debug\MAVC Integration.pdb
+C:\Users\MarkA\Desktop\PegionClocking\MAVC Integration\obj\x86\Debug\ResolveAssemblyReference.cache

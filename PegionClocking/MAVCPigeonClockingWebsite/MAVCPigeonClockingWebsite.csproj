@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{545AF09E-2336-4F42-A7B2-CA5691FBC595}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MAVCPigeonClockingWebsite</RootNamespace>
+    <AssemblyName>MAVCPigeonClockingWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\MAVCPigeonClocking\MAVCPigeonClocking\bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>..\MAVCPigeonClocking\MAVCPigeonClocking\bin\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\RadCaptcha\0.wav" />
+    <Content Include="App_Data\RadCaptcha\1.wav" />
+    <Content Include="App_Data\RadCaptcha\2.wav" />
+    <Content Include="App_Data\RadCaptcha\3.wav" />
+    <Content Include="App_Data\RadCaptcha\4.wav" />
+    <Content Include="App_Data\RadCaptcha\5.wav" />
+    <Content Include="App_Data\RadCaptcha\6.wav" />
+    <Content Include="App_Data\RadCaptcha\7.wav" />
+    <Content Include="App_Data\RadCaptcha\8.wav" />
+    <Content Include="App_Data\RadCaptcha\9.wav" />
+    <Content Include="App_Data\RadCaptcha\A.wav" />
+    <Content Include="App_Data\RadCaptcha\B.wav" />
+    <Content Include="App_Data\RadCaptcha\C.wav" />
+    <Content Include="App_Data\RadCaptcha\D.wav" />
+    <Content Include="App_Data\RadCaptcha\E.wav" />
+    <Content Include="App_Data\RadCaptcha\F.wav" />
+    <Content Include="App_Data\RadCaptcha\G.wav" />
+    <Content Include="App_Data\RadCaptcha\H.wav" />
+    <Content Include="App_Data\RadCaptcha\I.wav" />
+    <Content Include="App_Data\RadCaptcha\J.wav" />
+    <Content Include="App_Data\RadCaptcha\K.wav" />
+    <Content Include="App_Data\RadCaptcha\L.wav" />
+    <Content Include="App_Data\RadCaptcha\M.wav" />
+    <Content Include="App_Data\RadCaptcha\N.wav" />
+    <Content Include="App_Data\RadCaptcha\O.wav" />
+    <Content Include="App_Data\RadCaptcha\P.wav" />
+    <Content Include="App_Data\RadCaptcha\Q.wav" />
+    <Content Include="App_Data\RadCaptcha\R.wav" />
+    <Content Include="App_Data\RadCaptcha\S.wav" />
+    <Content Include="App_Data\RadCaptcha\T.wav" />
+    <Content Include="App_Data\RadCaptcha\U.wav" />
+    <Content Include="App_Data\RadCaptcha\V.wav" />
+    <Content Include="App_Data\RadCaptcha\W.wav" />
+    <Content Include="App_Data\RadCaptcha\X.wav" />
+    <Content Include="App_Data\RadCaptcha\Y.wav" />
+    <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="App_Themes\TransparentMod\Menu.TransparentMod.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\ASRPC.png" />
+    <Content Include="Images\bg-main-nav.gif" />
+    <Content Include="Images\ClubLogo\BSRPC.png" />
+    <Content Include="Images\ClubLogo\EPFC.png" />
+    <Content Include="Images\ClubLogo\MBPRC.png" />
+    <Content Include="Images\ClubLogo\PHA.png" />
+    <Content Include="Images\ClubLogo\PPBC.png" />
+    <Content Include="Images\ClubLogo\PSP.png" />
+    <Content Include="Images\ClubLogo\QRC.png" />
+    <Content Include="Images\Logo.ico" />
+    <Content Include="Images\Logo.jpg" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Logo1.jpg" />
+    <Content Include="Images\ClubLogo\MMFC.png" />
+    <Content Include="Images\Portia-Map3.png" />
+    <Content Include="Images\SRPC.jpg" />
+    <Content Include="Images\ClubLogo\SRPC.png" />
+    <Content Include="OverAllRaceResult.aspx" />
+    <Content Include="RaceDetails.ascx" />
+    <Content Include="RaceResult.aspx" />
+    <Content Include="RaceResult_V1.ascx" />
+    <Content Include="RaceResult_V3.ascx" />
+    <Content Include="Styles\PigeonClocking_Screen.css" />
+    <Content Include="TextFile\ClubList.txt" />
+    <Content Include="TextFile\RaceResult\BSRPC\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\BSRPC\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\BSRPC\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\BSRPC\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\ASRPC\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\ASRPC\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\ASRPC\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\ASRPC\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDateRelease.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDateReleaseLatest.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails04142013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails04172013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails04192013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails04212013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails04242013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails04282013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails05052013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails05122013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails05192013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetails05262013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult04142013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult04172013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult04192013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult04212013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult04242013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult04282013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult05052013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult05122013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult05192013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResult05262013.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\PPBC\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\PSU\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\PSU\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\PSU\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\PSU\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\QRC\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\QRC\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\QRC\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\QRC\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\EPFC\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\EPFC\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\EPFC\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\EPFC\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\SRPC\RaceDetails.txt" />
+    <Content Include="TextFile\RaceResult\SRPC\RaceResult.txt" />
+    <Content Include="TextFile\RaceResult\TEST\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\TEST\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\TEST\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\TEST\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\MMFC\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\MMFC\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\MMFC\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\MMFC\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\PHILF\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\PHILF\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\PHILF\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\PHILF\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\PSP\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\PSP\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\PSP\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\PSP\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\SRPC\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\SRPC\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\SRPC\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\SRPC\RaceResultStatus.txt" />
+    <Content Include="TextFile\RaceResult\SUPRA\RaceDetailsLatest.txt" />
+    <Content Include="TextFile\RaceResult\SUPRA\RaceResultLatest.txt" />
+    <Content Include="TextFile\RaceResult\SUPRA\RaceResultResetStatus.txt" />
+    <Content Include="TextFile\RaceResult\SUPRA\RaceResultStatus.txt" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OverAllRaceResult.aspx.cs">
+      <DependentUpon>OverAllRaceResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OverAllRaceResult.aspx.designer.cs">
+      <DependentUpon>OverAllRaceResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaceDetails.ascx.cs">
+      <DependentUpon>RaceDetails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaceDetails.ascx.designer.cs">
+      <DependentUpon>RaceDetails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RaceResult.aspx.cs">
+      <DependentUpon>RaceResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaceResult.aspx.designer.cs">
+      <DependentUpon>RaceResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RaceResult_V1.ascx.cs">
+      <DependentUpon>RaceResult_V1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaceResult_V1.ascx.designer.cs">
+      <DependentUpon>RaceResult_V1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RaceResult_V3.ascx.cs">
+      <DependentUpon>RaceResult_V3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RaceResult_V3.ascx.designer.cs">
+      <DependentUpon>RaceResult_V3.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ReadTextFile.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\RadSpell\de-DE.tdf" />
+    <None Include="App_Data\RadSpell\en-US.tdf" />
+    <None Include="App_Data\RadSpell\fr-FR.tdf" />
+    <Content Include="Site1.Master" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57958</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

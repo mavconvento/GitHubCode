@@ -1,0 +1,24 @@
+﻿<systemsetting>
+  <timerInterval>1000</timerInterval>
+  <timeintervalbeforefileprocessing>500</timeintervalbeforefileprocessing>
+  <environment>SMSModemReciever</environment>
+  <processflow>Inbound</processflow>
+  <withencryption>no</withencryption>
+  <databaseConnectionMain>Data Source=LENOVO-PC\MSSQLSERVER2012;Database=PigeonClocking_main;User Id=sa;password=06242009;Connect Timeout=1200</databaseConnectionMain>
+  <databaseConnectionLocal>Data Source=LENOVO-PC\MSSQLSERVER2012;Database=SMSPigeonClockingDB1;User Id=sa;password=06242009;Connect Timeout=1200</databaseConnectionLocal>
+  <databaseConnectionWeb>Data Source=LENOVO-PC\MSSQLSERVER2012;Database=PigeonClockingWebDB1;User Id=sa;password=06242009;Connect Timeout=1200</databaseConnectionWeb>
+
+  <smssettings>
+    <type>Receiver</type>
+    <modemVersion>2.0</modemVersion>
+    <modemID>ReceiverSmart1</modemID>
+    <activationCode></activationCode>
+    <memoryType>ME</memoryType>
+    <messageType>ALL</messageType>
+    <baudRate>115200</baudRate>
+    <portNo>COM13</portNo>
+    <delay>1000</delay>
+    <additionalDelay>2000</additionalDelay>
+    <replyDelay>2000</replyDelay>
+  </smssettings>
+</systemsetting>

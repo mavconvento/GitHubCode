@@ -1,0 +1,115 @@
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+D:\Project\Server Deployment\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbprojResolveAssemblyReference.cache
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbproj.GenerateResource.Cache
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+C:\Users\LMSTMS\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+C:\Users\mavc\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\ResolveAssemblyReference.cache
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.read.1.tlog
+I:\MYFILES\MY PROJECT\MAVC Project\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+C:\Users\Mavc02\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbprojResolveAssemblyReference.cache
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbproj.GenerateResource.Cache
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbproj.GenerateResource.Cache
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Code\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.dll
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSModule.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\bin\Debug\SerialPortTester.pdb
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbprojResolveAssemblyReference.cache
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbproj.GenerateResource.Cache
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.xml
+C:\Users\MarkAdams\Desktop\MAVC Source Codes\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.pdb

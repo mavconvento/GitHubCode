@@ -1,0 +1,28 @@
+﻿@using System.Web.Mvc;
+@using MAVCPigeonClockingMobileApps.Constants; 
+
+@helper RollingFooter(UrlHelper url)
+{       
+    lmsConstants oConst = new lmsConstants();
+    string logoSrcSml = oConst.GetElement("logoSrcSml");    
+             
+    <div data-role="">
+        <div style="background:url(' @url.Content(logoSrcSml) ')  no-repeat right ;  background-color:White; border: thin solid #C0C0C0; " >
+            <div style="margin: .6em; font-size:x-small;">Copyright &copy; 2013</div> 
+            <div style="margin: .6em; font-size:x-small;">Mavc Pigeon Clocking</div>             
+        </div>
+    </div>       
+}
+
+@helper AbsoluteFooter(UrlHelper url)
+{                
+    lmsConstants oConst = new lmsConstants();
+    string logoSrcSml = oConst.GetElement("logoSrcSml");    
+    
+    <div data-role="footer" >
+        <div  style="background:url(' @url.Content(logoSrcSml) ')  no-repeat right;  background-color:White; border: thin solid #C0C0C0; " >
+            <div style="margin: .6em; font-size:x-small;">Copyright &copy; 2013</div> 
+            <div style="margin: .6em; font-size:x-small;">Mavc Pigeon Clocking</div>             
+        </div>
+    </div>       
+}

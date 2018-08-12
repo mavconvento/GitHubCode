@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<div data-role="view" id="container" data-title="login" data-reload="false">
+    <div data-role="head">
+        <div data-role="navbar">
+            <a data-click="redirectToPortalMain" data-role="button" data-align="left">
+                @Content.ButtonIcon("home")
+                <span>Main Page</span></a>
+            <div class="logo" />
+            <span>&nbsp;</span>
+        </div>
+    </div>
+    <div class="pagetitle">
+        Load MAVC Card
+    </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label>
+                Enter Mobile :
+                <input id="txtMobileNumber" type="text" class="alignRight" />
+            </label>
+        </li>
+        <li>
+            <label>
+                Enter Pin Number :
+                <input id="txtPinNumber" type="text" class="alignRight" />
+            </label>
+        </li>
+    </ul>
+    <p>
+        <span style="color: Red">Note: Please make sure you enter correct mobile number.</span>
+    </p>
+    <div style="text-align: center; padding: 5px 0px 5px 0px;">
+        <span id="login-message" class="status"></span>
+    </div>
+    <a id="signin" data-role="button" class="center-button" data-click="btnGroupLoginClick">
+        Send </a>
+    <br />
+    @CommonFooter.RollingFooter(Url)
+    <script>
+        function btnGroupLoginClick() {
+            var btnClicked = this.current().index();
+            ResetGroupButton();
+            switch (btnClicked) {
+                case 0: //Forecast
+                    {
+                        SendPinNumber();
+                        break;
+                    }
+                default:
+            }
+        }
+
+        function SendPinNumber(e) {
+            debugger;
+            var mobileNo = $("#txtMobileNumber").val();
+            var pinNumber = $("#txtPinNumber").val();
+            var $msg = $("#login-message");
+            var url = '@Url.Content("~/Main/SendPinNumber")';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: { PinNumber: pinNumber, MobileNumber: mobileNo },
+                dataType: "json",
+                success: function (data) {
+                    var response = data.response;
+                    if (response.Success) {
+                        $msg.hide();
+                        redirectToMainPage();
+                    }
+                    else {
+                        $msg.html(response.Message).show();
+                    }
+                },
+                error: function (xhr, status, error) {
+                    $msg.html(error).show();
+
+                }
+            });
+        }
+    </script>
+</div>

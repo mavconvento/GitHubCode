@@ -1,0 +1,29 @@
+﻿
+/* kendo css*/
+.km-ios .km-view .km-content .km-listgroupinset .km-group-title .km-text {
+    color: rgb(255, 255, 255);	
+}
+
+.km-ios .km-view .km-content .km-listgroupinset{
+	height:38px;
+}
+
+.km-ios .km-view .km-content .km-list > li .km-tabstrip  {
+    /*background-color: rgb(0, 187, 230);*/ /*field content*/
+}
+.km-ios .km-view .km-content .km-list .km-state-active .km-listview-link {
+    background-color: rgb(0, 163, 199);
+}
+.km-ios .km-view .km-content  {
+    background-color: rgb(255, 255, 255); /*form back ground*/
+}
+ 
+.km-tabstrip
+{
+    background-color: #FFFFFF;
+}
+
+.km-footer .km-footerfont
+{
+   margin: .6em; font-size:x-small;
+}

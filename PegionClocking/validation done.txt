@@ -1,0 +1,4 @@
+validation
+
+1. if ring number is already exists in the table it will prompt the user
+2. if lapno is greater than 1 the ring number must be exists in the first lap.

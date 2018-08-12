@@ -1,0 +1,125 @@
+﻿
+<div data-role="view" id="container" data-title="login" data-reload="true">    
+
+	<div data-role="head">
+        <div data-role="navbar"  >
+            <a data-click="redirectToPortalMain"  data-role="button" data-align="left">
+			@Content.ButtonIcon("home")
+			<span>Home</span></a>
+            <div class="logo" /><span>&nbsp;</span>
+        </div>
+    </div>
+    
+    <div class="pagetitle">SIGN IN</div>
+
+	<div class="sectiontitle1" style="text-align:center;"></div>
+
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label>
+                Mobile No:
+                <input type="text" id="mobileno" name="mobileno" value="09173540062" required="true" validationMessage="MobileNo is required!"/>
+            </label>
+            <br />
+			<span class="k-invalid-msg" data-for="mobileno"></span>
+        </li>
+        <li>
+            <label>
+                Password:
+                <input type="password" id="password" name="password" value="test" required="true" validationMessage="Password is required!" />
+            </label>
+            <br />
+			<span class="k-invalid-msg" data-for="password"></span>
+        </li>
+    </ul>
+    <div style="text-align: center; padding:5px 0px 5px 0px;">
+        <span id="login-message" class="status"></span>
+    </div>
+    <a id="signin" data-role="button" class="center-button" data-click="btnGroupLoginClick" >
+        Sign In
+    </a>
+    <br />
+    @CommonFooter.RollingFooter(Url)
+</div>
+<script type="text/javascript">
+
+    function authenticateUser(e) {
+        debugger;
+        var mobileNo = $("#mobileno").val();
+        var password = $("#password").val();
+        var $msg = $("#login-message");
+        var url = '@Url.Content("~/Account/ValidateLogin")';
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { UserName: mobileNo, Password: password, RememberMe: false, Uniquewindowid: uniquewindowid },
+            dataType: "json",
+            success: function (data) {
+                var response = data.response;
+                if (response.Success) {
+                    $msg.hide();
+                    redirectToMainPage();
+                }
+                else {
+                    $msg.html(response.Message).show();
+                }
+            },
+            error: function (xhr, status, error) {
+                $msg.html(error).show();
+
+            }
+        });
+    }
+
+    function btnHeaderClick() {
+        var btnClicked = this.current().index();
+
+        switch (btnClicked) {
+            case 0: //home
+                {
+                    var url = '@Url.Content("~/PortalHome/Index")';
+                    redirect(url);
+                    break;
+                }
+            default:
+        }
+    }
+
+    function btnGroupLoginClick() {
+
+        ResetGroupButton();
+        $(".status").text("");
+        var validator = startvalidator();
+        ResetValidationErr();
+        if (validator.validate()) {
+            $('.k-invalid-msg').hide();
+            authenticateUser();
+        }
+        else {
+            $(".status").text("There is invalid data in the form. Please refer to error details")
+                .removeClass("valid")
+                .addClass("invalid");
+        }
+    }
+
+    function ResetValidationErr() {
+        $(".status").text("");
+        $('.k-invalid-msg').hide();
+    }
+
+
+    function startvalidator() {
+        var validator = $("#container").kendoValidator({
+            rules: {},
+            messages: {}
+        }).data("kendoValidator");
+
+        return validator;
+    }
+
+    function redirectToMainPage() {
+        var url = '@Url.Content("~/Main/MainPage")';
+        redirect(url);
+    }
+
+</script>

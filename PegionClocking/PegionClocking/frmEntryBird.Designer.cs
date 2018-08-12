@@ -1,0 +1,1041 @@
+﻿namespace PegionClocking
+{
+    partial class frmEntryBird
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntryBird));
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblRaceSchedule = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMemberIDNo = new System.Windows.Forms.TextBox();
+            this.btnGO = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtMemberName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtStickerCode = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtRingNumber = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.chkMembershipExpired = new System.Windows.Forms.CheckBox();
+            this.lblBirdCount = new System.Windows.Forms.Label();
+            this.txtEntryID = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtEntryList = new System.Windows.Forms.DataGridView();
+            this.lblEntryRaceCategory = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.lblLap = new System.Windows.Forms.Label();
+            this.lblLocationName = new System.Windows.Forms.Label();
+            this.lblCoordinates = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtMemberCoordinates = new System.Windows.Forms.TextBox();
+            this.lblReleaseDate = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtReleasePointID = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtpExpirationDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDistance = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.lblReleaseTime = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.cmbRaceCategory = new System.Windows.Forms.ComboBox();
+            this.lblRaceScheduleCategory = new System.Windows.Forms.Label();
+            this.txtMemberID = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.cmbGroupCategory = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.btnSummary = new System.Windows.Forms.Button();
+            this.lblLapNo = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtEntryBarcodeID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.dtEntryMemberList = new System.Windows.Forms.DataGridView();
+            this.lblMemberEntryLabel = new System.Windows.Forms.Label();
+            this.lblMemberEntryList = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEntryList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEntryMemberList)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Race Release Point Details";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(499, 74);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Coordinates :";
+            // 
+            // lblRaceSchedule
+            // 
+            this.lblRaceSchedule.AutoSize = true;
+            this.lblRaceSchedule.Location = new System.Drawing.Point(227, 44);
+            this.lblRaceSchedule.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRaceSchedule.Name = "lblRaceSchedule";
+            this.lblRaceSchedule.Size = new System.Drawing.Size(42, 17);
+            this.lblRaceSchedule.TabIndex = 4;
+            this.lblRaceSchedule.Text = "value";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(475, 44);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 17);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Location Name :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 74);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(197, 17);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Race Schedule Category :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(87, 44);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(127, 17);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Race Schedule :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(119, 101);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Total Laps :";
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape4,
+            this.lineShape3,
+            this.lineShape2,
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(1191, 753);
+            this.shapeContainer1.TabIndex = 9;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 22;
+            this.lineShape4.X2 = 877;
+            this.lineShape4.Y1 = 144;
+            this.lineShape4.Y2 = 144;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 23;
+            this.lineShape3.X2 = 881;
+            this.lineShape3.Y1 = 297;
+            this.lineShape3.Y2 = 297;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 16;
+            this.lineShape2.X2 = 883;
+            this.lineShape2.Y1 = 27;
+            this.lineShape2.Y2 = 27;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 21;
+            this.lineShape1.X2 = 879;
+            this.lineShape1.Y1 = 104;
+            this.lineShape1.Y2 = 104;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(47, 199);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 17);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "Member ID :";
+            // 
+            // txtMemberIDNo
+            // 
+            this.txtMemberIDNo.BackColor = System.Drawing.Color.White;
+            this.txtMemberIDNo.Location = new System.Drawing.Point(141, 196);
+            this.txtMemberIDNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMemberIDNo.Name = "txtMemberIDNo";
+            this.txtMemberIDNo.Size = new System.Drawing.Size(189, 22);
+            this.txtMemberIDNo.TabIndex = 3;
+            // 
+            // btnGO
+            // 
+            this.btnGO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGO.Location = new System.Drawing.Point(340, 193);
+            this.btnGO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGO.Name = "btnGO";
+            this.btnGO.Size = new System.Drawing.Size(109, 28);
+            this.btnGO.TabIndex = 4;
+            this.btnGO.Text = "SEA&RCH";
+            this.btnGO.UseVisualStyleBackColor = true;
+            this.btnGO.Click += new System.EventHandler(this.btnGO_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(79, 235);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 17);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Name :";
+            // 
+            // txtMemberName
+            // 
+            this.txtMemberName.BackColor = System.Drawing.Color.White;
+            this.txtMemberName.Location = new System.Drawing.Point(141, 231);
+            this.txtMemberName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMemberName.Name = "txtMemberName";
+            this.txtMemberName.ReadOnly = true;
+            this.txtMemberName.Size = new System.Drawing.Size(315, 22);
+            this.txtMemberName.TabIndex = 3;
+            this.txtMemberName.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(153, 507);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 18);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Bird Count :";
+            // 
+            // txtStickerCode
+            // 
+            this.txtStickerCode.Enabled = false;
+            this.txtStickerCode.Location = new System.Drawing.Point(465, 305);
+            this.txtStickerCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStickerCode.Name = "txtStickerCode";
+            this.txtStickerCode.Size = new System.Drawing.Size(189, 22);
+            this.txtStickerCode.TabIndex = 6;
+            this.txtStickerCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStickerCode_KeyDown);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(359, 309);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 17);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Sticker Code :";
+            // 
+            // txtRingNumber
+            // 
+            this.txtRingNumber.Enabled = false;
+            this.txtRingNumber.Location = new System.Drawing.Point(143, 305);
+            this.txtRingNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRingNumber.Name = "txtRingNumber";
+            this.txtRingNumber.Size = new System.Drawing.Size(189, 22);
+            this.txtRingNumber.TabIndex = 5;
+            this.txtRingNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRingNumber_KeyDown);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(29, 305);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 17);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Band Number :";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(157, 718);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(103, 28);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "&Save Entry";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // chkMembershipExpired
+            // 
+            this.chkMembershipExpired.AutoSize = true;
+            this.chkMembershipExpired.Enabled = false;
+            this.chkMembershipExpired.Location = new System.Drawing.Point(471, 268);
+            this.chkMembershipExpired.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkMembershipExpired.Name = "chkMembershipExpired";
+            this.chkMembershipExpired.Size = new System.Drawing.Size(158, 21);
+            this.chkMembershipExpired.TabIndex = 25;
+            this.chkMembershipExpired.Text = "Membership Expired";
+            this.chkMembershipExpired.UseVisualStyleBackColor = true;
+            this.chkMembershipExpired.Visible = false;
+            // 
+            // lblBirdCount
+            // 
+            this.lblBirdCount.AutoSize = true;
+            this.lblBirdCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirdCount.Location = new System.Drawing.Point(275, 507);
+            this.lblBirdCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBirdCount.Name = "lblBirdCount";
+            this.lblBirdCount.Size = new System.Drawing.Size(17, 18);
+            this.lblBirdCount.TabIndex = 26;
+            this.lblBirdCount.Text = "0";
+            // 
+            // txtEntryID
+            // 
+            this.txtEntryID.Location = new System.Drawing.Point(821, 1);
+            this.txtEntryID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEntryID.Name = "txtEntryID";
+            this.txtEntryID.Size = new System.Drawing.Size(65, 22);
+            this.txtEntryID.TabIndex = 28;
+            this.txtEntryID.Text = "0";
+            this.txtEntryID.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(745, 5);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(66, 17);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "Entry ID :";
+            this.label15.Visible = false;
+            // 
+            // dtEntryList
+            // 
+            this.dtEntryList.AllowUserToAddRows = false;
+            this.dtEntryList.AllowUserToDeleteRows = false;
+            this.dtEntryList.AllowUserToOrderColumns = true;
+            this.dtEntryList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtEntryList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtEntryList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtEntryList.Location = new System.Drawing.Point(157, 491);
+            this.dtEntryList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtEntryList.Name = "dtEntryList";
+            this.dtEntryList.ReadOnly = true;
+            this.dtEntryList.Size = new System.Drawing.Size(0, 91);
+            this.dtEntryList.TabIndex = 29;
+            // 
+            // lblEntryRaceCategory
+            // 
+            this.lblEntryRaceCategory.AutoSize = true;
+            this.lblEntryRaceCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntryRaceCategory.Location = new System.Drawing.Point(159, 491);
+            this.lblEntryRaceCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEntryRaceCategory.Name = "lblEntryRaceCategory";
+            this.lblEntryRaceCategory.Size = new System.Drawing.Size(131, 17);
+            this.lblEntryRaceCategory.TabIndex = 30;
+            this.lblEntryRaceCategory.Text = "List of Entry for :";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Enabled = false;
+            this.btnClear.Location = new System.Drawing.Point(268, 718);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(103, 28);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "&Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Enabled = false;
+            this.btnDelete.Location = new System.Drawing.Point(379, 718);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(124, 28);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "&Delete Entry";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // lblLap
+            // 
+            this.lblLap.AutoSize = true;
+            this.lblLap.Location = new System.Drawing.Point(227, 101);
+            this.lblLap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLap.Name = "lblLap";
+            this.lblLap.Size = new System.Drawing.Size(42, 17);
+            this.lblLap.TabIndex = 34;
+            this.lblLap.Text = "value";
+            // 
+            // lblLocationName
+            // 
+            this.lblLocationName.AutoSize = true;
+            this.lblLocationName.Location = new System.Drawing.Point(612, 44);
+            this.lblLocationName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLocationName.Name = "lblLocationName";
+            this.lblLocationName.Size = new System.Drawing.Size(42, 17);
+            this.lblLocationName.TabIndex = 35;
+            this.lblLocationName.Text = "value";
+            // 
+            // lblCoordinates
+            // 
+            this.lblCoordinates.AutoSize = true;
+            this.lblCoordinates.Location = new System.Drawing.Point(612, 74);
+            this.lblCoordinates.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCoordinates.Name = "lblCoordinates";
+            this.lblCoordinates.Size = new System.Drawing.Size(42, 17);
+            this.lblCoordinates.TabIndex = 36;
+            this.lblCoordinates.Text = "value";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(41, 265);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(92, 17);
+            this.label21.TabIndex = 37;
+            this.label21.Text = "Coordinates :";
+            // 
+            // txtMemberCoordinates
+            // 
+            this.txtMemberCoordinates.BackColor = System.Drawing.Color.White;
+            this.txtMemberCoordinates.Location = new System.Drawing.Point(141, 265);
+            this.txtMemberCoordinates.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMemberCoordinates.Name = "txtMemberCoordinates";
+            this.txtMemberCoordinates.ReadOnly = true;
+            this.txtMemberCoordinates.Size = new System.Drawing.Size(315, 22);
+            this.txtMemberCoordinates.TabIndex = 4;
+            this.txtMemberCoordinates.TabStop = false;
+            // 
+            // lblReleaseDate
+            // 
+            this.lblReleaseDate.AutoSize = true;
+            this.lblReleaseDate.Location = new System.Drawing.Point(997, 44);
+            this.lblReleaseDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReleaseDate.Name = "lblReleaseDate";
+            this.lblReleaseDate.Size = new System.Drawing.Size(42, 17);
+            this.lblReleaseDate.TabIndex = 40;
+            this.lblReleaseDate.Text = "value";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(857, 44);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(130, 17);
+            this.label23.TabIndex = 39;
+            this.label23.Text = "Released Date  :";
+            // 
+            // txtReleasePointID
+            // 
+            this.txtReleasePointID.Location = new System.Drawing.Point(1027, 2);
+            this.txtReleasePointID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtReleasePointID.Name = "txtReleasePointID";
+            this.txtReleasePointID.Size = new System.Drawing.Size(63, 22);
+            this.txtReleasePointID.TabIndex = 42;
+            this.txtReleasePointID.Text = "0";
+            this.txtReleasePointID.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(895, 6);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 17);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Release Point ID :";
+            this.label5.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(465, 231);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(112, 17);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Expiration Date :";
+            this.label11.Visible = false;
+            // 
+            // dtpExpirationDate
+            // 
+            this.dtpExpirationDate.Enabled = false;
+            this.dtpExpirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpExpirationDate.Location = new System.Drawing.Point(587, 228);
+            this.dtpExpirationDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpExpirationDate.Name = "dtpExpirationDate";
+            this.dtpExpirationDate.Size = new System.Drawing.Size(151, 22);
+            this.dtpExpirationDate.TabIndex = 44;
+            this.dtpExpirationDate.Visible = false;
+            // 
+            // lblDistance
+            // 
+            this.lblDistance.AutoSize = true;
+            this.lblDistance.Location = new System.Drawing.Point(612, 101);
+            this.lblDistance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDistance.Name = "lblDistance";
+            this.lblDistance.Size = new System.Drawing.Size(42, 17);
+            this.lblDistance.TabIndex = 46;
+            this.lblDistance.Text = "value";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(521, 101);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(81, 17);
+            this.label18.TabIndex = 45;
+            this.label18.Text = "Distance :";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(857, 74);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(131, 17);
+            this.label19.TabIndex = 47;
+            this.label19.Text = "Released Time  :";
+            // 
+            // lblReleaseTime
+            // 
+            this.lblReleaseTime.AutoSize = true;
+            this.lblReleaseTime.Location = new System.Drawing.Point(997, 74);
+            this.lblReleaseTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblReleaseTime.Name = "lblReleaseTime";
+            this.lblReleaseTime.Size = new System.Drawing.Size(42, 17);
+            this.lblReleaseTime.TabIndex = 48;
+            this.lblReleaseTime.Text = "value";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(81, 143);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(125, 17);
+            this.label22.TabIndex = 50;
+            this.label22.Text = "Race Category :";
+            // 
+            // cmbRaceCategory
+            // 
+            this.cmbRaceCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRaceCategory.FormattingEnabled = true;
+            this.cmbRaceCategory.Location = new System.Drawing.Point(221, 139);
+            this.cmbRaceCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRaceCategory.Name = "cmbRaceCategory";
+            this.cmbRaceCategory.Size = new System.Drawing.Size(301, 24);
+            this.cmbRaceCategory.TabIndex = 51;
+            this.cmbRaceCategory.SelectedIndexChanged += new System.EventHandler(this.cmbRaceCategory_SelectedIndexChanged);
+            // 
+            // lblRaceScheduleCategory
+            // 
+            this.lblRaceScheduleCategory.AutoSize = true;
+            this.lblRaceScheduleCategory.Location = new System.Drawing.Point(227, 74);
+            this.lblRaceScheduleCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRaceScheduleCategory.Name = "lblRaceScheduleCategory";
+            this.lblRaceScheduleCategory.Size = new System.Drawing.Size(42, 17);
+            this.lblRaceScheduleCategory.TabIndex = 52;
+            this.lblRaceScheduleCategory.Text = "value";
+            // 
+            // txtMemberID
+            // 
+            this.txtMemberID.Location = new System.Drawing.Point(664, 2);
+            this.txtMemberID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMemberID.Name = "txtMemberID";
+            this.txtMemberID.Size = new System.Drawing.Size(65, 22);
+            this.txtMemberID.TabIndex = 54;
+            this.txtMemberID.Text = "0";
+            this.txtMemberID.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(569, 6);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(84, 17);
+            this.label17.TabIndex = 53;
+            this.label17.Text = "Member ID :";
+            this.label17.Visible = false;
+            // 
+            // btnNew
+            // 
+            this.btnNew.Enabled = false;
+            this.btnNew.Location = new System.Drawing.Point(25, 718);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(124, 28);
+            this.btnNew.TabIndex = 10;
+            this.btnNew.Text = "&New Member";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // cmbGroupCategory
+            // 
+            this.cmbGroupCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGroupCategory.FormattingEnabled = true;
+            this.cmbGroupCategory.Location = new System.Drawing.Point(756, 139);
+            this.cmbGroupCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbGroupCategory.Name = "cmbGroupCategory";
+            this.cmbGroupCategory.Size = new System.Drawing.Size(296, 24);
+            this.cmbGroupCategory.TabIndex = 58;
+            this.cmbGroupCategory.SelectedIndexChanged += new System.EventHandler(this.cmbGroupCategory_SelectedIndexChanged);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(565, 143);
+            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(175, 17);
+            this.label24.TabIndex = 57;
+            this.label24.Text = "Race Group Category :";
+            // 
+            // btnSummary
+            // 
+            this.btnSummary.Location = new System.Drawing.Point(829, 718);
+            this.btnSummary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSummary.Name = "btnSummary";
+            this.btnSummary.Size = new System.Drawing.Size(232, 28);
+            this.btnSummary.TabIndex = 11;
+            this.btnSummary.Text = "&View Summary";
+            this.btnSummary.UseVisualStyleBackColor = true;
+            this.btnSummary.Click += new System.EventHandler(this.btnSummary_Click);
+            // 
+            // lblLapNo
+            // 
+            this.lblLapNo.AutoSize = true;
+            this.lblLapNo.Location = new System.Drawing.Point(997, 101);
+            this.lblLapNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLapNo.Name = "lblLapNo";
+            this.lblLapNo.Size = new System.Drawing.Size(42, 17);
+            this.lblLapNo.TabIndex = 61;
+            this.lblLapNo.Text = "value";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(915, 101);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(75, 17);
+            this.label26.TabIndex = 60;
+            this.label26.Text = "Lap No. :";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(785, 222);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(391, 134);
+            this.dataGridView1.TabIndex = 62;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(781, 202);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(101, 17);
+            this.label25.TabIndex = 63;
+            this.label25.Text = "Ring Enrolled :";
+            // 
+            // button1
+            // 
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(1036, 190);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 28);
+            this.button1.TabIndex = 64;
+            this.button1.Text = "Ring Management";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(633, 718);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(195, 28);
+            this.button2.TabIndex = 65;
+            this.button2.Text = "&Upload Entry";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtEntryBarcodeID
+            // 
+            this.txtEntryBarcodeID.Location = new System.Drawing.Point(164, 416);
+            this.txtEntryBarcodeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEntryBarcodeID.Name = "txtEntryBarcodeID";
+            this.txtEntryBarcodeID.Size = new System.Drawing.Size(189, 22);
+            this.txtEntryBarcodeID.TabIndex = 1;
+            this.txtEntryBarcodeID.Visible = false;
+            this.txtEntryBarcodeID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBandID_KeyDown);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 420);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(123, 17);
+            this.label4.TabIndex = 67;
+            this.label4.Text = "Entry Barcode ID :";
+            this.label4.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(361, 414);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(209, 28);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "&VIEW ENTRY DETAILS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // dtEntryMemberList
+            // 
+            this.dtEntryMemberList.AllowUserToAddRows = false;
+            this.dtEntryMemberList.AllowUserToDeleteRows = false;
+            this.dtEntryMemberList.AllowUserToOrderColumns = true;
+            this.dtEntryMemberList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtEntryMemberList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dtEntryMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtEntryMemberList.Location = new System.Drawing.Point(25, 399);
+            this.dtEntryMemberList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtEntryMemberList.Name = "dtEntryMemberList";
+            this.dtEntryMemberList.ReadOnly = true;
+            this.dtEntryMemberList.Size = new System.Drawing.Size(1149, 311);
+            this.dtEntryMemberList.TabIndex = 69;
+            // 
+            // lblMemberEntryLabel
+            // 
+            this.lblMemberEntryLabel.AutoSize = true;
+            this.lblMemberEntryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberEntryLabel.Location = new System.Drawing.Point(24, 379);
+            this.lblMemberEntryLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMemberEntryLabel.Name = "lblMemberEntryLabel";
+            this.lblMemberEntryLabel.Size = new System.Drawing.Size(101, 17);
+            this.lblMemberEntryLabel.TabIndex = 70;
+            this.lblMemberEntryLabel.Text = "Entry List of ";
+            // 
+            // lblMemberEntryList
+            // 
+            this.lblMemberEntryList.AutoSize = true;
+            this.lblMemberEntryList.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMemberEntryList.Location = new System.Drawing.Point(1029, 377);
+            this.lblMemberEntryList.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMemberEntryList.Name = "lblMemberEntryList";
+            this.lblMemberEntryList.Size = new System.Drawing.Size(17, 18);
+            this.lblMemberEntryList.TabIndex = 72;
+            this.lblMemberEntryList.Text = "0";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(909, 377);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(98, 18);
+            this.label28.TabIndex = 71;
+            this.label28.Text = "Bird Count :";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(1069, 718);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(108, 28);
+            this.button4.TabIndex = 73;
+            this.button4.Text = "D&one";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Enabled = false;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(457, 193);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(281, 28);
+            this.button5.TabIndex = 74;
+            this.button5.Text = "COPY LAST ENTRY";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // frmEntryBird
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1191, 753);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.lblMemberEntryList);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.lblMemberEntryLabel);
+            this.Controls.Add(this.dtEntryMemberList);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.txtEntryBarcodeID);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblLapNo);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.btnSummary);
+            this.Controls.Add(this.cmbGroupCategory);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.btnNew);
+            this.Controls.Add(this.txtMemberID);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.lblRaceScheduleCategory);
+            this.Controls.Add(this.cmbRaceCategory);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.lblReleaseTime);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.lblDistance);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.dtpExpirationDate);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtReleasePointID);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblReleaseDate);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.txtMemberCoordinates);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.lblCoordinates);
+            this.Controls.Add(this.lblLocationName);
+            this.Controls.Add(this.lblLap);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.lblEntryRaceCategory);
+            this.Controls.Add(this.dtEntryList);
+            this.Controls.Add(this.txtEntryID);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.lblBirdCount);
+            this.Controls.Add(this.chkMembershipExpired);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtRingNumber);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtStickerCode);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtMemberName);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btnGO);
+            this.Controls.Add(this.txtMemberIDNo);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblRaceSchedule);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.shapeContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmEntryBird";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Entry Bird";
+            this.Load += new System.EventHandler(this.frmEntryBird_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtEntryList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtEntryMemberList)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblRaceSchedule;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label2;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtMemberIDNo;
+        private System.Windows.Forms.Button btnGO;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtMemberName;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtStickerCode;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtRingNumber;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.CheckBox chkMembershipExpired;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private System.Windows.Forms.Label lblBirdCount;
+        private System.Windows.Forms.TextBox txtEntryID;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView dtEntryList;
+        private System.Windows.Forms.Label lblEntryRaceCategory;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label lblLap;
+        private System.Windows.Forms.Label lblLocationName;
+        private System.Windows.Forms.Label lblCoordinates;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtMemberCoordinates;
+        private System.Windows.Forms.Label lblReleaseDate;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox txtReleasePointID;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtpExpirationDate;
+        private System.Windows.Forms.Label lblDistance;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblReleaseTime;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox cmbRaceCategory;
+        private System.Windows.Forms.Label lblRaceScheduleCategory;
+        private System.Windows.Forms.TextBox txtMemberID;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.ComboBox cmbGroupCategory;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btnSummary;
+        private System.Windows.Forms.Label lblLapNo;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtEntryBarcodeID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dtEntryMemberList;
+        private System.Windows.Forms.Label lblMemberEntryLabel;
+        private System.Windows.Forms.Label lblMemberEntryList;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+    }
+}

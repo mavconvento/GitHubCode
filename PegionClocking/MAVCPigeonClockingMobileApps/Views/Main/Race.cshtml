@@ -1,0 +1,281 @@
+﻿@model MAVCPigeonClockingMobileApps.Models.MainPage
+<div data-role="view" id="container" data-title="login" data-reload="false">
+    <div data-role="head">
+        <div data-role="navbar">
+            <a data-click="redirectToMainPage" data-role="button" data-align="left">
+                @Content.ButtonIcon("home")
+                <span>Main Page</span></a>
+            <div class="logo" />
+            <span>&nbsp;</span>
+        </div>
+    </div>
+    <div class="pagetitle">
+        MOBILE CLOCKING</div>
+    <div class="form-group">
+        <ul data-role="listview" data-style="inset">
+            <li class="address">
+                <label>
+                    Select Club Name:
+                    @( Html.DropDownList("ClubName", (SelectList)ViewData["clubname"], "Choose Club Name", new { @id = "ClubName", onchange = "MyFunction()" }))
+                </label>
+                <br />
+                <span class="k-invalid-msg" data-for="cboClubName"></span></li>
+            <li>
+                <label>
+                    Release Date:
+                    <input id="raceReleaseDate_dob" class="alignRight" />
+                </label>
+            </li>
+        </ul>
+    </div>
+    <div style="text-align: center; padding: 5px 0px 5px 0px;">
+        <span id="login-message" class="status" style="color: Red; font-size: 15px;"></span>
+    </div>
+    <div id="RaceDetailsSection">
+        <ul data-role="listview" data-style="inset">
+            <li style="font-weight: bold; text-align: center">
+                <label>
+                    Race Details</label>
+            </li>
+            <li>
+                <label>
+                    Release Point:
+                    <input id="txtReleasePoint" readonly="readonly" type="text" class="alignLeft" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Coordinates:
+                    <input id="txtCoordinates" readonly="readonly" type="text" class="alignLeft" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Release Time:
+                    <input id="txtReleaseTime" readonly="readonly" type="text" class="alignLeft" />
+                </label>
+            </li>
+            <li>
+                <label>
+                    Minimum Speed:
+                    <input id="txtMinSpeed" readonly="readonly" type="text" class="alignLeft" />
+                </label>
+            </li>
+             <li>
+                <label>
+                    Total Bird Entry:
+                    <input id="txtTotalBirdEntry" readonly="readonly" type="text" class="alignLeft" />
+                </label>
+            </li>
+        </ul>
+    </div>
+    <ul data-role="listview" data-style="inset">
+        <li>
+            <label>
+                Enter Sticker No :
+                <input id="txtStickerNo" type="text" class="alignRight" />
+            </label>
+        </li>
+    </ul>
+    <div style="text-align: center; padding: 5px 0px 5px 0px;">
+        <span id="status-message" class="stickerstatus" style="color: Red; font-size: 15px;">
+        </span>
+    </div>
+    <ul id="Race_btnBottonGroup1" data-role="buttongroup" data-select="btnRaceGroup1Click"
+        class="km-buttongroupTwo">
+        <li>Forecast</li>
+        <li>Send Sticker Number</li>
+    </ul>
+    <ul id="Race_btnBottonGroup2" data-role="buttongroup" data-select="btnRaceGroup2Click"
+        class="km-buttongroupTwo">
+        <li>MyEntry</li>
+        <li>MyResult</li>
+        <li>View Club Race Result</li>
+    </ul>
+  
+    @CommonFooter.RollingFooter(Url)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // create DatePicker from input HTML element
+            $(".status").hide();
+            $(".stickerstatus").hide();
+            var releaseDate = $("#raceReleaseDate_dob")
+            var date = new Date();
+            releaseDate.kendoDatePicker();
+            releaseDate.on("change", function () {
+                MyFunction();
+            });
+        });
+
+
+        function btnRaceGroup1Click() {
+            var btnClicked = this.current().index();
+            ResetGroupButton();
+            switch (btnClicked) {
+                case 0: //Forecast
+                    {
+                        SendForecast();
+                        break;
+                    }
+                case 1: //Send Sticker Number
+                    {
+                        SendStickerNumber();
+                        break;
+                    }
+
+                default:
+            }
+        }
+
+        function btnRaceGroup2Click() {
+            var btnClicked = this.current().index();
+            ResetGroupButton();
+            switch (btnClicked) {
+                case 0: //myentry
+                    {
+                        var url = '@Url.Content("~/Main/Entry")';
+                        break;
+                    }
+                case 1: //myresult
+                    {
+                        var url = '@Url.Content("~/Main/Result")';
+                        break;
+                    }
+                case 1: //clubresult
+                    {
+                        var url = '@Url.Content("~/Main/Result")';
+                        
+                        break;
+                    }
+                default:
+            }
+            window.location.href(url);
+        }
+
+        function GetSession() {
+            var value = '@Request.RequestContext.HttpContext.Session["ReleaseDate"]';
+            alert(value)
+        }
+
+        function SendStickerNumber() {
+            var releaseDateValue = $("#raceReleaseDate_dob").val();
+            var clubName = $("#ClubName").val();
+            var stickerNumber = $("#txtStickerNo").val();
+            var msg = $(".stickerstatus");
+            var url = '@Url.Content("~/Main/BirdClock")';
+
+            msg.hide();
+            //Json
+            var RaceDetailsOptions = {};
+            RaceDetailsOptions.url = "/Main/SendStickerNumber";
+            RaceDetailsOptions.type = "POST";
+            RaceDetailsOptions.data = JSON.stringify({ StickerNumber: stickerNumber, ClubName: clubName });
+            RaceDetailsOptions.datatype = "json";
+            RaceDetailsOptions.contentType = "application/json";
+            RaceDetailsOptions.success = function (mainPage) {
+                if (mainPage.ActionMessage != "") {
+                    if (mainPage.IsValid) {
+                        alert("Bird Clock Success!!!");
+                    }
+                    else {
+                        msg.text(mainPage.ActionMessage);
+                        msg.show();
+                    }
+                }
+                else {
+                    $("#txtReleasePoint").val(mainPage.ReleasePoint);
+                    $("#txtCoordinates").val(mainPage.Coordinates);
+                    $("#txtReleaseTime").val(mainPage.TimeRelease);
+                    $("#txtTotalBirdEntry").val(mainPage.TotalBirdEntry);
+                    $("#txtMinSpeed").val(mainPage.MinSpeed);
+                }
+                $("#txtStickerNo").val("");
+            };
+
+            RaceDetailsOptions.error = function () { alert("Error in Getting States!!"); };
+
+            $.ajax(RaceDetailsOptions);
+        }
+
+        function SendForecast() {
+            var releaseDateValue = $("#raceReleaseDate_dob").val();
+            var clubName = $("#ClubName").val();
+            var url = '@Url.Content("~/Main/Forecast")';
+            var msg = $(".stickerstatus");
+
+            msg.hide();
+            //Json
+            var RaceDetailsOptions = {};
+            RaceDetailsOptions.url = "/Main/SendForecast";
+            RaceDetailsOptions.type = "POST";
+            RaceDetailsOptions.data = JSON.stringify({ ClubName: clubName});
+            RaceDetailsOptions.datatype = "json";
+            RaceDetailsOptions.contentType = "application/json";
+            RaceDetailsOptions.success = function (mainPage) {
+                if (mainPage.ActionMessage != "") {
+                    if (mainPage.IsValid) {
+                        window.location.href(url);
+                    }
+                    else {
+                        msg.text(mainPage.ActionMessage);
+                        msg.show();
+                    }
+                }
+            };
+
+            RaceDetailsOptions.error = function () { alert("Error in Json Script!!"); };
+
+            $.ajax(RaceDetailsOptions);
+        }
+
+        function MyFunction() {
+            debugger;
+            var msg = $(".status");
+            var releaseDateValue = $("#raceReleaseDate_dob").val();
+            var clubName = $("#ClubName").val();
+
+            msg.hide();
+            $("#txtReleasePoint").val("");
+            $("#txtCoordinates").val("");
+            $("#txtReleaseTime").val("");
+            $("#txtTotalBirdEntry").val("");
+            $("#txtTotalBirdClock").val("");
+            $("#txtMinSpeed").val("");
+
+            if (releaseDateValue != "" && clubName != "") {
+                var RaceDetailsOptions = {};
+                RaceDetailsOptions.url = "/Main/RaceDetails";
+                RaceDetailsOptions.type = "POST";
+                RaceDetailsOptions.data = JSON.stringify({ ClubID: clubName, ReleaseDate: releaseDateValue });
+                RaceDetailsOptions.datatype = "json";
+                RaceDetailsOptions.contentType = "application/json";
+                RaceDetailsOptions.success = function (mainPage) {
+                    if (mainPage.ReleasePoint == "") {
+                        msg.text("No Race Schedule");
+                        msg.show();
+
+                    }
+                    else {
+                        $("#txtReleasePoint").val(mainPage.ReleasePoint);
+                        $("#txtCoordinates").val(mainPage.Coordinates);
+                        $("#txtReleaseTime").val(mainPage.TimeRelease);
+                        $("#txtTotalBirdEntry").val(mainPage.TotalBirdEntry);
+                        $("#txtMinSpeed").val(mainPage.MinSpeed);
+                        $("#txtStickerNo").empty();
+                        $("#txtStickerNo").prop("disabled", false);
+                    }
+                };
+
+                RaceDetailsOptions.error = function () { alert("Error in Getting States!!"); };
+
+                $.ajax(RaceDetailsOptions);
+
+            }
+            else {
+                $("#txtStickerNo").empty();
+                $("#txtStickerNo").prop("disabled", true);
+            }
+        }
+
+    </script>
+</div>

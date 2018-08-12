@@ -1,0 +1,10 @@
+﻿@font-face {
+  font-family: 'entypofonts';
+  src: url("../font/entypofonts.eot");
+  src: url("../font/entypofonts.eot") format('embedded-opentype'), 
+  url("../font/entypofonts.woff") format('woff'), 
+  url("../font/entypofonts.ttf") format('truetype'), 
+  url("../font/entypofonts.svg") format('svg');
+
+ 
+}

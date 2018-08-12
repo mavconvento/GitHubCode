@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout_Common.cshtml";
+}
+<style>
+    input
+    {
+        padding: 5px;
+        border: 1px solid #A5A5A5;
+    }
+    input.ng-dirty.ng-invalid
+    {
+        border: 1px solid red;
+        background-color: rgb(255, 244, 244);
+    }
+    .error
+    {
+        color: red;
+    }
+    
+    a
+    {
+        text-decoration: none;
+    }
+    .hover span:hover, .hover span:link
+    {
+        color: Green;
+        text-decoration: underline;
+    }
+    
+    ul, li
+    {
+        list-style-type: none;
+        list-style-position: inside;
+        margin: 0;
+        padding: 0;
+        padding-bottom: 10px;
+    }
+</style>
+<div ng-controller="HomeController">
+    <form novalidate name="frmLogin" ng-submit="Login()">
+    <div style="width: 100%; background-color: #0A0A2A">
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <div id="flashMessage" style="width: 100%; height: inherit;">
+                        <table style="width: 100%; height: inherit">
+                            <tr ng-show="!IsShowProducts" style="text-align: left;">
+                                <td colspan="2" style="margin-left: 50px; padding-left: 50px; padding-bottom:10px;">
+                                   <img src="../../Images/logo.jpg" style="width:80px; height:60px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td class="homeheader">
+                    <div class="loginmenu" ng-init="MainMenuItems" style="float: right; margin-top: 8px; margin-right:8px; width:100%">
+                        <ul style="color: Aqua">
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="OurProducts()" style="color: Aqua;">Our Products</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="PigeonProducts()" style="color: Aqua;">Sponsor and Pigeon Products</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ContactUs()" style="color: Aqua;">Contact Us</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Tutorials()" style="color: Aqua;">Tutorials</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="TextFormat()" style="color: Aqua;">Text Formats</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ApplicationForm()" style="color: Aqua;">Application Form</span></a> |</li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div ng-init="SetAuthenTokens('@ViewBag.cookiesUserName','@ViewBag.cookiesPassword')">
+    </div>
+    <div id="homepage" style="width: 100%; height: 400px;">
+        <div class="loginsection" style="float: left;">
+            <pre style="border-color: transparent; text-align: center"><b>Please enter your<br />Pilipinas Kalapati Clocking<br />Userid and Password.</b></pre>
+            <table style="margin-top: 5px; padding-top: 0px; margin-left: 30px">
+                <tr>
+                    <td style="vertical-align: top;">
+                        <table ng-show="!IsLogedIn" style="margin-top: 10px;">
+                            <!-- Here  ng-show="!IsLogedIn" means I want to hide table after loged in-->
+                            <tr>
+                                <td>
+                                    Mobile No.
+                                </td>
+                                <td class="column">
+                                    <!-- Here ng-class="Submitted?'ng-dirty':''" Means if submitted (clicked submit button) then make this dirty state 
+                            for show red border-->
+                                    <input class="form-control input-sm" style="width: 150px" type="text" ng-model="LoginData.Username"
+                                        name="cUsername" ng-class="Submitted?'ng-dirty':''" required autofocus />
+                                    <span class="error" ng-show="(frmLogin.cUsername.$dirty || Submitted) && frmLogin.cUsername.$error.required">
+                                        Username required</span>
+                                    <!-- ng-show="(f1.cUsername.$dirty || Submitted) && f1.cUsername.$error.required" Means I want to show this span only when 
+                            the control cUsername is invalid-->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Password
+                                </td>
+                                <td class="column">
+                                    <input class="form-control input-sm" style="width: 150px" type="password" ng-model="LoginData.Password"
+                                        name="cPassword" ng-class="Submitted?'ng-dirty':''" required autofocus />
+                                    <span class="error" ng-show="(frmLogin.cPassword.$dirty || Submitted) && frmLogin.cPassword.$error.required">
+                                        Password required</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td style="margin-top: 10px; padding-top: 10px; padding-left: 5px">
+                                    <input class="btn btn-default input-sm" type="submit" value="Login" style="width: 100px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="margin-top: 20px; padding-top: 43px">
+                                    <ul style="color: Aqua">
+                                        <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                            ng-click="RegisterPassword()" style="color: Aqua;">Did you have your password ?
+                                            Set password now!</span></a></li>
+                                        <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                            ng-click="ForgotPassword()" style="color: Aqua;">Forgot your password?</span></a></li>
+                                        <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                            ng-click="DownloadApplication()" style="color: Aqua;">Download Clocking System application.</span></a></li>
+                                        <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                            ng-click="DownloadPigeonApplication()" style="color: Aqua;">Download MAVC Peds Management application.</span></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div style="color: #000080; padding-left:10px">
+        <h3>
+            Welcome to PILIPINAS KALAPATI CLOCKING powered by MAVC Clocking System...</h3>
+        <div style="font-size: small">
+            <p>
+                offers an sms and electronic clocking which can use on pigeon racing in the Philippines.
+                Our service is aim to give best effort to help all the pigeon club organization
+                here in the Philippines to give the fair and honest race result. As of now we are
+                the cheapest cost compare in other clocking system in our country, and yet we are
+                giving a good service in our client.</p>
+            <p>
+                As we progress we already develop a web clocking which can be use of those player
+                with internet connection at home.And the latest product which is the Electronic
+                Clocking. E-Clock is aim to help those player which not able to monitor the training
+                on their pigeon and the most important is to secure the race result of our pigeon
+                during race.</p>
+            <p>
+                As a clocking provider we will never stop to develop a new way on how we will improve
+                our system on pigeon racing. Currently we are aiming to develop a program which
+                can be run in our mobile phone. Once the application is finished we will rollout
+                the product to help our pigeon fancier to secure the race result of our pigeon.
+                As we all know sms clocking is non-stable clocking since we are using wireless technology
+                which affected by different factor like Telecom maintenance, SMS network traffic
+                and Weather Condition.</p>
+        </div>
+    </div>
+    </form>
+</div>
+@section scripts{
+    <script src="~/Scripts/AngularController/HomeController1.3.js"></script>
+    <script type="text/ng-template" id="forgotPassword">
+        <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
+	    <div style="text-align:left; width:100%; size:10px; ">
+        <pre class="headerColor">Forgot Password</pre>
+            <pre >To obtain your password, please enter <br />your registered mobile number and a <br />sms message will be send to you.</pre>
+            <hr />
+            <div style="margin-top:40px"></div>
+            <hr />
+            <pre>Registered Mobile Number</pre>
+            <input type="text" ng-model="ForgotPasswordData.MobileNumber" style=" width:100%; "/><br /> <br />
+            </div>
+            <div style="text-align:center; margin-bottom:20px">
+            <input type="button" ng-click="SendPassword()" value="Send" style="width:80px" />
+            </div>
+            <hr />
+            <pre>If you not received any sms message, <br />please check if you enter a <br />valid and registered mobile number.</pre>
+            <pre style="color: Aqua">ex. 09175552211</pre>
+        </div>
+    </script>
+    <script type="text/ng-template" id="setpassword">
+        <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
+	    <div style="text-align:left; width:100%; size:10px; ">
+        <pre class="headerColor">Password Registration</pre>
+            <pre >To register your password, please enter <br />your registered mobile number and desire password.</pre>
+            <hr />
+            <div style="margin-top:20px"></div>
+            <hr />
+            <table style="margin-bottom:10px">
+            <tr>
+            <td> Registered Mobile Number :</td>
+            <td class="column"> <input type="text" ng-model="ForgotPasswordData.MobileNumber" style=" width:100%; "/></td>
+            </tr>
+            <tr>
+            <td style="text-align:right"> Enter Your Password :</td>
+            <td class="column"> <input type="text" ng-model="ForgotPasswordData.Password" style=" width:100%; "/></td>
+            </tr>
+            </table>
+            </div>
+            <div style="text-align:center; margin-bottom:20px; padding-bottom:5px">
+            <input type="button" ng-click="SetPassword()" value="Send" style="width:80px; height:28px" />
+            </div>
+            <hr />
+            <pre>Password confirmation will send via sms message.<br />Please enter a valid and registered mobile number.</br>Password should be one word only.</pre>
+        </div>
+    </script>
+}

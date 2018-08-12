@@ -1,0 +1,44 @@
+﻿
+<div data-role="view" id="home" data-title="Main Menu" style="display: none;" data-reload="true" >
+    <div data-role="head">
+       <div data-role="navbar">
+            <a data-click="redirectToCustomerMain" data-role="button" data-align="left">
+				@Content.ButtonIcon("home")
+				Home</a>
+			<a data-click="redirectToSignOut;" data-role="button" data-align="right">
+				@Content.ButtonIcon("greaterthan")
+				Sign Out</a>
+            <div class="logo" > <span>&nbsp;</span> </div>
+        </div>
+    </div>
+ 	
+	<div class="pagetitle">@ViewBag.companyname</div>
+     <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/Main/MyDetails")" class="loginButton"  >
+                    <span class="MultilineButtonLabel">My Details</span></a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/Main/Race")" class="loginButton"  >
+                    <span class="MultilineButtonLabel">Race</span></a></li>
+            </ul>
+        </li>
+    </ul>
+    <ul data-role="listview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+                <li><a href="@Url.Content("~/Main/Result")" class="loginButton">			
+                    <span class="MultilineButtonLabel">MAVC Load Balance</span></a></li>
+            </ul>
+        </li>
+    </ul>
+   
+    @CommonFooter.RollingFooter(Url)
+</div>
+
+

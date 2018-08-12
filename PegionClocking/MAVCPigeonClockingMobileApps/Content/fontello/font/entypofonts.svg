@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?> <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd" > <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+<defs >
+<font id="entypo" horiz-adv-x="930" ><font-face
+    font-family="Entypo"
+    font-weight="500"
+	  font-stretch="normal"
+	  units-per-em="1000"
+	  panose-1="2 0 6 3 0 0 0 0 0 0"
+	  ascent="850"
+	  descent="-150"
+	  bbox="14.9884 -150 1015.33 850"
+	  underline-thickness="50"
+	  underline-position="-100"
+	  />
+<missing-glyph horiz-adv-x="500" />
+</font>
+</defs>
+</svg>

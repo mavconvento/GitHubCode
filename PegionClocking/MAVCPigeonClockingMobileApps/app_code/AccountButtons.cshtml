@@ -1,0 +1,86 @@
+﻿@using System.Web.Mvc;
+
+@helper TopButtons(string HashedAccountNo, UrlHelper url, string HashedFacilityNo = "")
+{    
+   <ul id="AccountButtonTopButtons" data-role="buttongroup" class="km-buttongroupFour" data-select="btnAccountButtonHeaderClick">
+        <li>Payments</li>
+        <li>Redraw</li>
+        <li>Statement</li>
+        <li>Transfer</li>
+   </ul>
+   	<script>
+   		function btnAccountButtonHeaderClick() {
+   			var btnClicked = this.current().index();
+   			
+   			switch (btnClicked) {
+   				case 0: //Payments
+   					{
+   						var url = '@url.Content("~/FacilityAccountPayment/PaymentDetails")' + "?AccountID=" + '@HashedAccountNo';
+   						redirect(url);
+   						break;
+   					}
+   				case 1: //Redraw
+   					{
+   					    var url = '@url.Content("~/FacilityAccountRedraw/RedrawDetails")' + "?AccountID=" + '@HashedAccountNo';
+   						redirect(url);
+   						break;
+   					}
+   				case 2: //Statement
+   					{
+   						var url = '@url.Content("~/AccountTransaction/AccountStatement")' + "?AccountID=" + '@HashedAccountNo';
+   						redirect(url);
+   						break;
+   					}
+
+   				case 3: //RequestTransfer
+   					{
+   					    var url = '@url.Content("~/FacilityAccountRequestTransfer/RequestTransferDetails")' + "?AccountID=" + '@HashedAccountNo' + 
+                            '&FacilityID=' + '@HashedFacilityNo';
+   						redirect(url);
+   						break;
+   					}
+   				default:
+   			}
+   			ResetGroupButton();
+   		}
+	</script>
+}
+
+@helper BottomButtons(string HashedAccountNo, UrlHelper url)
+	{  
+    <ul id="AccountButtonBottomButtons" data-role="buttongroup" data-select="btnAccountButtonFooterClick" class="km-buttongroupThree">
+        <li>Applicant<br/>Details</li>
+        <li>Banking<br/>Details</li>
+        <li>Account<br/>Manager</li>
+    </ul>
+	<script>
+		function btnAccountButtonFooterClick() {
+			var btnClicked = this.current().index();
+			
+			switch (btnClicked) {
+				case 0: //Applicant List
+					{
+						var url = '@url.Content("~/Facility/FacilityBorrowers")' + "?AccountID=" + '@HashedAccountNo';
+						redirect(url);
+						break;
+					}
+				case 1: //Banking
+					{
+						var url = '@url.Content("~/Facility/FacilityAccountBankingDetails")' + "?AccountID=" + '@HashedAccountNo';
+						redirect(url);
+						break;
+					}
+				case 2: //Account Manager
+					{
+						var url = '@url.Content("~/Originator/OriginatorDetails")' + "?AccountID=" + '@HashedAccountNo';
+						redirect(url);
+						break;
+					}
+				default:
+			}
+			ResetGroupButton();
+		}
+	</script>
+
+}
+

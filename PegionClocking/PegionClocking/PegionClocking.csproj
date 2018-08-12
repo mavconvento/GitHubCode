@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5F8731C-A9B9-4EC6-B232-27523749DE57}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PegionClocking</RootNamespace>
+    <AssemblyName>PegionClocking</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Project\Server Deployment\MAVC PublisCopy\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3AE6F2F236EE9E3ABE8B5D6E5C62C2280C50FB9B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PegionClocking_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Global.cs" />
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCopyEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCopyEntry.Designer.cs">
+      <DependentUpon>FrmCopyEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEntryMultipleCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntryMultipleCategory.Designer.cs">
+      <DependentUpon>frmEntryMultipleCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportEclockData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportEclockData.Designer.cs">
+      <DependentUpon>frmExportEclockData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerateEclockInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGenerateEclockInfo.Designer.cs">
+      <DependentUpon>frmGenerateEclockInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLoadCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoadCard.Designer.cs">
+      <DependentUpon>frmLoadCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterMobileNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegisterMobileNumber.Designer.cs">
+      <DependentUpon>frmRegisterMobileNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRFIDRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRFIDRegistration.Designer.cs">
+      <DependentUpon>frmRFIDRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransactionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactionDetails.Designer.cs">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransaction.Designer.cs">
+      <DependentUpon>frmTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BIZ\Calculator.cs" />
+    <Compile Include="BIZ\Club.cs" />
+    <Compile Include="BIZ\Transaction.cs" />
+    <Compile Include="BIZ\Region.cs" />
+    <Compile Include="BIZ\ReportGeneration.cs" />
+    <Compile Include="BIZ\User.cs" />
+    <Compile Include="BIZ\RaceCategoryGroup.cs" />
+    <Compile Include="BIZ\RaceScheduleDetails.cs" />
+    <Compile Include="BIZ\Entry.cs" />
+    <Compile Include="BIZ\Location.cs" />
+    <Compile Include="BIZ\Member.cs" />
+    <Compile Include="BIZ\RaceCategory.cs" />
+    <Compile Include="BIZ\RaceReleasePoint.cs" />
+    <Compile Include="BIZ\RaceResult.cs" />
+    <Compile Include="BIZ\RaceSchedule.cs" />
+    <Compile Include="DAL\Archive.cs" />
+    <Compile Include="DAL\Calculator.cs" />
+    <Compile Include="DAL\Transaction.cs" />
+    <Compile Include="DAL\Inbox.cs" />
+    <Compile Include="DAL\StickerNumber.cs" />
+    <Compile Include="frmAddResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddResult.Designer.cs">
+      <DependentUpon>frmAddResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStickerGeneration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStickerGeneration.Designer.cs">
+      <DependentUpon>frmStickerGeneration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalculator.Designer.cs">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="DAL\Region.cs" />
+    <Compile Include="frmMemberDistance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemberDistance.Designer.cs">
+      <DependentUpon>frmMemberDistance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMemberPerReleasePoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemberPerReleasePoint.Designer.cs">
+      <DependentUpon>frmMemberPerReleasePoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegion.Designer.cs">
+      <DependentUpon>frmRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaceResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaceResults.Designer.cs">
+      <DependentUpon>frmRaceResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBirdEntryMasterlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBirdEntryMasterlist.Designer.cs">
+      <DependentUpon>frmBirdEntryMasterlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportGeneration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportGeneration.Designer.cs">
+      <DependentUpon>frmReportGeneration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\User.cs" />
+    <Compile Include="frmRaceCategoryGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaceCategoryGroup.Designer.cs">
+      <DependentUpon>frmRaceCategoryGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RaceCategoryGroup.cs" />
+    <Compile Include="frmRaceCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaceCategory.Designer.cs">
+      <DependentUpon>frmRaceCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScheduleCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduleCategory.Designer.cs">
+      <DependentUpon>frmScheduleCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReleasePoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReleasePoint.Designer.cs">
+      <DependentUpon>frmReleasePoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\RaceScheduleDetails.cs" />
+    <Compile Include="frmScheduleDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScheduleDetails.Designer.cs">
+      <DependentUpon>frmScheduleDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSchedule.Designer.cs">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Club.cs" />
+    <Compile Include="DAL\DatabaseConnection.cs" />
+    <Compile Include="DAL\Entry.cs" />
+    <Compile Include="DAL\Location.cs" />
+    <Compile Include="DAL\Member.cs" />
+    <Compile Include="DAL\RaceCategory.cs" />
+    <Compile Include="DAL\RaceReleasePoint.cs" />
+    <Compile Include="DAL\RaceResult.cs" />
+    <Compile Include="DAL\RaceSchedule.cs" />
+    <Compile Include="DAL\RaceScheduleCategory.cs" />
+    <Compile Include="frmClub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClub.Designer.cs">
+      <DependentUpon>frmClub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEntryBird.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEntryBird.Designer.cs">
+      <DependentUpon>frmEntryBird.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocation.Designer.cs">
+      <DependentUpon>frmLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMemberDataEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemberDataEntry.Designer.cs">
+      <DependentUpon>frmMemberDataEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMemberMasterlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemberMasterlist.Designer.cs">
+      <DependentUpon>frmMemberMasterlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMemberRingManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMemberRingManagement.Designer.cs">
+      <DependentUpon>frmMemberRingManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaceEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaceEntry.Designer.cs">
+      <DependentUpon>frmRaceEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaceResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaceResult.Designer.cs">
+      <DependentUpon>frmRaceResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRaceType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRaceType.Designer.cs">
+      <DependentUpon>frmRaceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInboxView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInboxView.Designer.cs">
+      <DependentUpon>frmInboxView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewClubRace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewClubRace.Designer.cs">
+      <DependentUpon>frmViewClubRace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPaymentTransactionSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPaymentTransactionSummary.Designer.cs">
+      <DependentUpon>frmPaymentTransactionSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BIZ\RaceScheduleCategory.cs" />
+    <Compile Include="frmTransactionSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransactionSummary.Designer.cs">
+      <DependentUpon>frmTransactionSummary.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCopyEntry.resx">
+      <DependentUpon>FrmCopyEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEntryMultipleCategory.resx">
+      <DependentUpon>frmEntryMultipleCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportEclockData.resx">
+      <DependentUpon>frmExportEclockData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerateEclockInfo.resx">
+      <DependentUpon>frmGenerateEclockInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLoadCard.resx">
+      <DependentUpon>frmLoadCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPaymentTransactionSummary.resx">
+      <DependentUpon>frmPaymentTransactionSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisterMobileNumber.resx">
+      <DependentUpon>frmRegisterMobileNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRFIDRegistration.resx">
+      <DependentUpon>frmRFIDRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransactionDetails.resx">
+      <DependentUpon>frmTransactionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransaction.resx">
+      <DependentUpon>frmTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddResult.resx">
+      <DependentUpon>frmAddResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalculator.resx">
+      <DependentUpon>frmCalculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberDistance.resx">
+      <DependentUpon>frmMemberDistance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberPerReleasePoint.resx">
+      <DependentUpon>frmMemberPerReleasePoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegion.resx">
+      <DependentUpon>frmRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberRingManagement.resx">
+      <DependentUpon>frmMemberRingManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaceResults.resx">
+      <DependentUpon>frmRaceResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBirdEntryMasterlist.resx">
+      <DependentUpon>frmBirdEntryMasterlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaceType.resx">
+      <DependentUpon>frmRaceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportGeneration.resx">
+      <DependentUpon>frmReportGeneration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStickerGeneration.resx">
+      <DependentUpon>frmStickerGeneration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaceCategoryGroup.resx">
+      <DependentUpon>frmRaceCategoryGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaceCategory.resx">
+      <DependentUpon>frmRaceCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScheduleCategory.resx">
+      <DependentUpon>frmScheduleCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReleasePoint.resx">
+      <DependentUpon>frmReleasePoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScheduleDetails.resx">
+      <DependentUpon>frmScheduleDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSchedule.resx">
+      <DependentUpon>frmSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClub.resx">
+      <DependentUpon>frmClub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEntryBird.resx">
+      <DependentUpon>frmEntryBird.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocation.resx">
+      <DependentUpon>frmLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberDataEntry.resx">
+      <DependentUpon>frmMemberDataEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberMasterlist.resx">
+      <DependentUpon>frmMemberMasterlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaceEntry.resx">
+      <DependentUpon>frmRaceEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRaceResult.resx">
+      <DependentUpon>frmRaceResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInboxView.resx">
+      <DependentUpon>frmInboxView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewClubRace.resx">
+      <DependentUpon>frmViewClubRace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmTransactionSummary.resx">
+      <DependentUpon>frmTransactionSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trimlogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

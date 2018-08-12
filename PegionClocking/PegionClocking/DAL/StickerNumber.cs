@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace PegionClocking.DAL
+{
+    public class StickerNumber
+    {
+        #region Constant
+        private const string SP_StickerLIST = "getStickerNumber";
+        #endregion
+
+        #region Variable
+        DAL.DatabaseConnection dbconn;
+        #endregion
+
+        #region Properties
+        public Int64 ClubID { get; set; }
+        public Int64 UserID { get; set; }
+        #endregion
+
+        #region Public Methods
+        public DataSet StickerSelectAll()
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn(SP_StickerLIST);
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                //dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Private Methods
+        #endregion
+    }
+}
