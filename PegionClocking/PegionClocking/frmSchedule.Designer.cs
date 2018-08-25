@@ -49,11 +49,10 @@
             // txtScheduleID
             // 
             this.txtScheduleID.BackColor = System.Drawing.Color.White;
-            this.txtScheduleID.Location = new System.Drawing.Point(1119, 15);
-            this.txtScheduleID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtScheduleID.Location = new System.Drawing.Point(755, 9);
             this.txtScheduleID.Name = "txtScheduleID";
             this.txtScheduleID.ReadOnly = true;
-            this.txtScheduleID.Size = new System.Drawing.Size(132, 22);
+            this.txtScheduleID.Size = new System.Drawing.Size(100, 20);
             this.txtScheduleID.TabIndex = 50;
             this.txtScheduleID.TabStop = false;
             this.txtScheduleID.Visible = false;
@@ -61,20 +60,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1023, 18);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(683, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 17);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 49;
             this.label2.Text = "Schedule ID";
             this.label2.Visible = false;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(183, 319);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Location = new System.Drawing.Point(131, 354);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 28);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 11;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -82,10 +79,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(291, 319);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Location = new System.Drawing.Point(212, 354);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 28);
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 12;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -103,12 +99,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(440, 43);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(330, 35);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(812, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(525, 342);
             this.dataGridView1.TabIndex = 54;
             this.dataGridView1.TabStop = false;
             // 
@@ -116,29 +111,26 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(436, 23);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(327, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 17);
+            this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 55;
             this.label3.Text = "Schedule List";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 38);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(9, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 57;
             this.label4.Text = "Season";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(75, 319);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Location = new System.Drawing.Point(50, 354);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 28);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 61;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -147,10 +139,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 102);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(9, 85);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 63;
             this.label1.Text = "Region Name";
             // 
@@ -158,10 +149,9 @@
             // 
             this.cmbRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRegion.FormattingEnabled = true;
-            this.cmbRegion.Location = new System.Drawing.Point(16, 122);
-            this.cmbRegion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRegion.Location = new System.Drawing.Point(12, 101);
             this.cmbRegion.Name = "cmbRegion";
-            this.cmbRegion.Size = new System.Drawing.Size(181, 24);
+            this.cmbRegion.Size = new System.Drawing.Size(137, 21);
             this.cmbRegion.Sorted = true;
             this.cmbRegion.TabIndex = 62;
             // 
@@ -169,20 +159,18 @@
             // 
             this.cmbSeason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSeason.FormattingEnabled = true;
-            this.cmbSeason.Location = new System.Drawing.Point(16, 58);
-            this.cmbSeason.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSeason.Location = new System.Drawing.Point(12, 47);
             this.cmbSeason.Name = "cmbSeason";
-            this.cmbSeason.Size = new System.Drawing.Size(241, 24);
+            this.cmbSeason.Size = new System.Drawing.Size(182, 21);
             this.cmbSeason.Sorted = true;
             this.cmbSeason.TabIndex = 64;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(268, 38);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(201, 31);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 17);
+            this.label5.Size = new System.Drawing.Size(29, 13);
             this.label5.TabIndex = 65;
             this.label5.Text = "Year";
             // 
@@ -190,18 +178,17 @@
             // 
             this.cmbYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(272, 58);
-            this.cmbYear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbYear.Location = new System.Drawing.Point(204, 47);
             this.cmbYear.Name = "cmbYear";
-            this.cmbYear.Size = new System.Drawing.Size(145, 24);
+            this.cmbYear.Size = new System.Drawing.Size(110, 21);
             this.cmbYear.Sorted = true;
             this.cmbYear.TabIndex = 66;
             // 
             // frmSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1268, 373);
+            this.ClientSize = new System.Drawing.Size(867, 389);
             this.Controls.Add(this.cmbYear);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbSeason);
@@ -216,7 +203,6 @@
             this.Controls.Add(this.txtScheduleID);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSchedule";

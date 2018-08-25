@@ -18,6 +18,7 @@ namespace PegionClocking
         public Inbox_View()
         {
             InitializeComponent();
+            dataGridView1.DoubleClick += new EventHandler(grid_DoubleClick);
         }
 
         private void Inbox_View_Load(object sender, EventArgs e)
@@ -40,6 +41,35 @@ namespace PegionClocking
             GetInbox();
         }
 
+        private void grid_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridView datagrid = this.dataGridView1;
+                Int64 index;
+                if (datagrid.RowCount > 0)
+                {
+                    //member = new BIZ.Member();
+                    index = datagrid.CurrentRow.Index;
+                    if ((string)datagrid.CurrentCell.Value.ToString() == "ADD TO RESULT")
+                    {
+                        frmAddResult addresult = new frmAddResult();
+                        addresult.StickerNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
+                        addresult.MobileNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value);
+                        addresult.DateRelease = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                        addresult.Time = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value);
+                        addresult.ClubID = ClubID;
+                        addresult.CallFrom = "INBOX";
+                        addresult.ShowDialog();
+                    }
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             try

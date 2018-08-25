@@ -7,7 +7,7 @@ using System.Data;
 
 namespace PegionClocking.BIZ
 {
-    class Member
+    class Member 
     {
 
         #region Variables
@@ -182,7 +182,6 @@ namespace PegionClocking.BIZ
                 throw ex;
             }
         }
-
         public DataTable ExportEClockMasterlist()
         {
             try
@@ -197,7 +196,6 @@ namespace PegionClocking.BIZ
                 throw ex;
             }
         }
-
         public DataSet MemberDetailsSearchByKey()
         {
             try

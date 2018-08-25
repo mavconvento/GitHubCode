@@ -42,20 +42,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 69);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(49, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 17);
+            this.label3.Size = new System.Drawing.Size(132, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "Race Schedule Category :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 31);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 17);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "Race Schedule :";
             // 
@@ -63,10 +62,9 @@
             // 
             this.cmbRaceScheduleCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRaceScheduleCategory.FormattingEnabled = true;
-            this.cmbRaceScheduleCategory.Location = new System.Drawing.Point(219, 65);
-            this.cmbRaceScheduleCategory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRaceScheduleCategory.Location = new System.Drawing.Point(187, 126);
             this.cmbRaceScheduleCategory.Name = "cmbRaceScheduleCategory";
-            this.cmbRaceScheduleCategory.Size = new System.Drawing.Size(472, 24);
+            this.cmbRaceScheduleCategory.Size = new System.Drawing.Size(355, 21);
             this.cmbRaceScheduleCategory.TabIndex = 19;
             this.cmbRaceScheduleCategory.SelectedIndexChanged += new System.EventHandler(this.cmbRaceScheduleCategory_SelectedIndexChanged);
             // 
@@ -74,20 +72,19 @@
             // 
             this.cmbRaceSchedule.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRaceSchedule.FormattingEnabled = true;
-            this.cmbRaceSchedule.Location = new System.Drawing.Point(219, 27);
-            this.cmbRaceSchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRaceSchedule.Location = new System.Drawing.Point(120, 12);
             this.cmbRaceSchedule.Name = "cmbRaceSchedule";
-            this.cmbRaceSchedule.Size = new System.Drawing.Size(472, 24);
+            this.cmbRaceSchedule.Size = new System.Drawing.Size(355, 21);
             this.cmbRaceSchedule.TabIndex = 11;
             this.cmbRaceSchedule.SelectedIndexChanged += new System.EventHandler(this.cmbRaceSchedule_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 116);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 17);
+            this.label2.Size = new System.Drawing.Size(125, 13);
             this.label2.TabIndex = 20;
             this.label2.Text = "List of Release Point";
             // 
@@ -103,18 +100,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtReleasePoint.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtReleasePoint.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtReleasePoint.Location = new System.Drawing.Point(39, 135);
-            this.dtReleasePoint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtReleasePoint.Location = new System.Drawing.Point(12, 68);
             this.dtReleasePoint.Name = "dtReleasePoint";
             this.dtReleasePoint.ReadOnly = true;
-            this.dtReleasePoint.Size = new System.Drawing.Size(896, 319);
+            this.dtReleasePoint.Size = new System.Drawing.Size(694, 301);
             this.dtReleasePoint.TabIndex = 21;
             // 
             // frmRaceEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 469);
+            this.ClientSize = new System.Drawing.Size(718, 381);
             this.Controls.Add(this.dtReleasePoint);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbRaceScheduleCategory);
@@ -122,7 +118,6 @@
             this.Controls.Add(this.cmbRaceSchedule);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRaceEntry";

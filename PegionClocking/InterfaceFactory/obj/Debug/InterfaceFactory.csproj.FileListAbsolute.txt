@@ -1,0 +1,5 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\InterfaceFactory\bin\Debug\InterfaceFactory.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\InterfaceFactory\bin\Debug\InterfaceFactory.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\InterfaceFactory\obj\Debug\InterfaceFactory.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\InterfaceFactory\obj\Debug\InterfaceFactory.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\InterfaceFactory\obj\Debug\InterfaceFactory.csprojResolveAssemblyReference.cache

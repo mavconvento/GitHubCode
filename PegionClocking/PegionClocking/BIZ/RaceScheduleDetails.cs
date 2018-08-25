@@ -27,6 +27,19 @@ namespace PegionClocking.BIZ
         public DateTime Loading { get; set; }
         public string LoadingTimeFrom { get; set; }
         public string LoadingTimeTo { get; set; }
+
+        //release point
+        public Int64 RaceReleasePointID { get; set; }
+        public string ReleaseTime { get; set; }
+        public Int64 LapNo { get; set; }
+        public double Multiplier { get; set; }
+        public string MinSpeed { get; set; }
+        public bool IsStop { get; set; }
+        public DateTime StopFromDate { get; set; }
+        public string StopFromTime { get; set; }
+        public DateTime StopToDate { get; set; }
+        public string StopToTime { get; set; }
+        public String Description { get; set; }
         #endregion
 
         #region Public Methods
@@ -110,6 +123,24 @@ namespace PegionClocking.BIZ
                 raceScheduleDetails.Loading = Loading.Date;
                 raceScheduleDetails.LoadingTimeFrom = LoadingTimeFrom;
                 raceScheduleDetails.LoadingTimeTo = LoadingTimeTo;
+                
+                //race release point
+                raceScheduleDetails.RaceReleasePointID = RaceReleasePointID;
+                //raceScheduleDetails.RaceScheduleDetailsID = RaceScheduleDetailsID;
+                //raceScheduleDetails.RaceScheduleCategoryID = RaceScheduleCategoryID;
+                //raceScheduleDetails.RaceScheduleCategoryName = RaceScheduleCategoryName;
+                raceScheduleDetails.ReleaseTime = ReleaseTime;
+                //raceScheduleDetails.ReleaseDate = ReleaseDate;
+                raceScheduleDetails.Multiplier = Multiplier;
+                raceScheduleDetails.LapNo = LapNo;
+                raceScheduleDetails.MinSpeed = MinSpeed;
+                raceScheduleDetails.IsStop = IsStop;
+                raceScheduleDetails.StopFromDate = StopFromDate.Date;
+                raceScheduleDetails.StopFromTime = StopFromTime;
+                raceScheduleDetails.StopToDate = StopToDate.Date;
+                raceScheduleDetails.StopToTime = StopToTime;
+                //raceScheduleDetails.RaceScheduleName = RaceScheduleName;
+                raceScheduleDetails.Description = Description;
             }
             catch (Exception ex)
             {

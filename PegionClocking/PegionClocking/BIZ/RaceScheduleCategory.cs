@@ -26,6 +26,7 @@ namespace PegionClocking.BIZ
         public Int64 RaceScheduleCategoryID { get; set; }
         public String RaceScheduleCategoryName { get; set; }
         public Int64 Lap { get; set; }
+        public Int64 RaceReleasePointID { get; set; }
         #endregion
 
         #region Public Methods
@@ -113,7 +114,7 @@ namespace PegionClocking.BIZ
                 raceScheduleCategory = new DAL.RaceScheduleCategory();
                 PopulateDataLayer();
                 raceScheduleCategory.RaceScheduleCategoryDelete();
-                MessageBox.Show("Record Successfully Deleted!", "Delete Record");
+                MessageBox.Show("Record Successfully Reset!", "Reset Record");
                 status = true;
                 return status;
             }
@@ -137,6 +138,7 @@ namespace PegionClocking.BIZ
                 raceScheduleCategory.RaceScheduleCategoryID = RaceScheduleCategoryID;
                 raceScheduleCategory.RaceScheduleCategoryName = RaceScheduleCategoryName;
                 raceScheduleCategory.Lap = Lap;
+                raceScheduleCategory.RaceReleasePointID = RaceReleasePointID;
             }
             catch (Exception ex)
             {

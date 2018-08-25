@@ -248,6 +248,13 @@ namespace PegionClocking
                 MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
             }
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmRegisterMobileNumber RegisterMobileNumber = new frmRegisterMobileNumber();
+            RegisterMobileNumber.ClubID = ClubID;
+            RegisterMobileNumber.UserID = UserID;
+            RegisterMobileNumber.ShowDialog();
+        }
         #endregion
 
         #region Private Methods

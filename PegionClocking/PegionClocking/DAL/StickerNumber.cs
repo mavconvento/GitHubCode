@@ -20,6 +20,7 @@ namespace PegionClocking.DAL
         #region Properties
         public Int64 ClubID { get; set; }
         public Int64 UserID { get; set; }
+        public String Code { get; set; }
         #endregion
 
         #region Public Methods
@@ -35,6 +36,30 @@ namespace PegionClocking.DAL
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
                 //dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataSet GetSticker()
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("GetSticker");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.Parameters.AddWithValue("@StickerCode", Code);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;

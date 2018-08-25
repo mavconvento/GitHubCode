@@ -106,7 +106,7 @@ namespace PegionClocking
                     colIndex = datagrid.CurrentCell.ColumnIndex;
                     if (colIndex == 5)
                     {
-                        ScheduleID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
+                        ScheduleID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
                         if (ScheduleID > 0)
                         {
                             DataTable dtresult = new DataTable();
@@ -127,11 +127,11 @@ namespace PegionClocking
                     }
                     else
                     {
-                        if (colIndex == 3)
+                        if (colIndex == 4)
                         {
                             frmScheduleDetails scheduleDetails = new frmScheduleDetails();
-                            scheduleDetails.ScheduleID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
-                            scheduleDetails.ScheduleName = datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value.ToString();
+                            scheduleDetails.ScheduleID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
+                            scheduleDetails.ScheduleName = datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value.ToString();
                             scheduleDetails.UserID = UserID;
                             scheduleDetails.ClubID = ClubID;
                             scheduleDetails.ShowDialog();
@@ -139,11 +139,11 @@ namespace PegionClocking
                         }
                         else
                         {
-                            if (colIndex == 4)
+                            if (colIndex == 5)
                             {
                                 frmScheduleCategory scheduleCategory = new frmScheduleCategory();
-                                scheduleCategory.ScheduleID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
-                                scheduleCategory.ScheduleName = datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value.ToString();
+                                scheduleCategory.ScheduleID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
+                                scheduleCategory.ScheduleName = datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value.ToString();
                                 scheduleCategory.UserID = UserID;
                                 scheduleCategory.ClubID = ClubID;
                                 scheduleCategory.ShowDialog();
@@ -192,7 +192,7 @@ namespace PegionClocking
                 style.Font = new Font(Font, FontStyle.Bold);
                 dataGridView1.Columns[3].DefaultCellStyle = style;
                 dataGridView1.Columns[4].DefaultCellStyle = style;
-                dataGridView1.Columns[5].DefaultCellStyle = style;
+                //dataGridView1.Columns[5].DefaultCellStyle = style;
             }
             catch (Exception ex)
             {
@@ -307,7 +307,7 @@ namespace PegionClocking
                 }
 
                 this.cmbYear.Items.Clear();
-                for (int i = 2014; i < 2050; i++)
+                for (int i = DateTime.Now.Year ; i < DateTime.Now.Year + 5; i++)
                 {
                     this.cmbYear.Items.Add(i);
                 }

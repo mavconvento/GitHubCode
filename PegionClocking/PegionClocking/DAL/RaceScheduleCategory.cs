@@ -10,13 +10,13 @@ namespace PegionClocking.DAL
     class RaceScheduleCategory
     {
         #region Constant
-        private const string SP_RACESHEDULESEARCHBYRACESCHEDULE = "RaceScheduleCategorySearchByRaceSchedule";
+        private const string SP_RACESHEDULESEARCHBYRACESCHEDULE = "RaceSceduleDetailsSelectAll"; //"RaceScheduleCategorySearchByRaceSchedule";
         private const string SP_RACESHEDULECATEGORYSAVE = "RaceScheduleCategorySave";
         private const string SP_RACESHEDULECATEGORYDELETE = "RaceScheduleCategoryDelete";
         private const string SP_RACESHEDULECATEGORYSELECTALL = "RaceScheduleCategorySelectAll";
         private const string SP_RACESHEDULECATEGORYSEARCHBYKEY = "RaceScheduleCategorySearchByKey";
         #endregion
-            
+
         #region Variable
         DAL.DatabaseConnection dbconn;
         #endregion
@@ -29,6 +29,7 @@ namespace PegionClocking.DAL
         public String RaceScheduleName { get; set; }
         public Int64 RaceScheduleCategoryID { get; set; }
         public String RaceScheduleCategoryName { get; set; }
+        public Int64 RaceReleasePointID { get; set; }
         public Int64 Lap { get; set; }
         #endregion
 
@@ -46,7 +47,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.Clear();
                 //dbconn.sqlComm.Parameters.AddWithValue("@ID", ID);
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
-                dbconn.sqlComm.Parameters.AddWithValue("@RaceSchedule", RaceScheduleName);
+                dbconn.sqlComm.Parameters.AddWithValue("@ScheduleName", RaceScheduleName);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
@@ -100,6 +101,9 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceScheduleCategoryID", RaceScheduleCategoryID);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceScheduleCategoryName", RaceScheduleCategoryName);
                 dbconn.sqlComm.Parameters.AddWithValue("@Lap", Lap);
+                dbconn.sqlComm.Parameters.AddWithValue("@IsMain", true);
+                dbconn.sqlComm.Parameters.AddWithValue("@RaceScheduleName", RaceScheduleName);
+                dbconn.sqlComm.Parameters.AddWithValue("@RaceReleasePointID", RaceReleasePointID);
                 dbconn.sqlComm.ExecuteNonQuery();
                 dbconn.sqlConn.Close();
                 //return dataResult;
@@ -144,7 +148,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceScheduleID", RaceScheduleID);
-
+                dbconn.sqlComm.Parameters.AddWithValue("@RaceScheduleName", RaceScheduleName);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

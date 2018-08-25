@@ -23,15 +23,15 @@ namespace PegionClocking
         #region Properties
         public Int64 ClubID { get; set; }
         public Int64 UserID { get; set; }
-        public Int64 RaceReleasePointID { get; set; }
         public Int64 RaceScheduleCategoryID { get; set; }
         public Int64 RaceScheduleDetailsID { get; set; }
         public String RaceScheduleCategoryName { get; set; }
-        public string ReleaseTime { get; set; }
         public string ReleaseDate { get; set; }
+        public string LocationName { get; set; }
+        public Int64 RaceReleasePointID { get; set; }
+        public string ReleaseTime { get; set; }
         public Int64 LapNo { get; set; }
         public double Multiplier { get; set; }
-        public string LocationName { get; set; }
         public string MinSpeed { get; set; }
         public bool IsStop { get; set; }
         public DateTime StopFromDate { get; set; }
@@ -83,12 +83,6 @@ namespace PegionClocking
                 this.groupBox2.Enabled = false;
             }
         }
-        #endregion
-
-        #region Properties
-        #endregion
-
-        #region Public Methods
         #endregion
 
         #region Private Methods

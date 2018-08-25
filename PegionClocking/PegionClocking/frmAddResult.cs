@@ -14,6 +14,10 @@ namespace PegionClocking
         #region Properties
         public Int64 ClubID { get; set; }
         public DateTime DateRelease { get; set; }
+        public String StickerNumber { get; set; }
+        public String Time { get; set; }
+        public String MobileNumber { get; set; }
+        public String CallFrom { get; set; }
         #endregion
 
         #region Events
@@ -27,6 +31,12 @@ namespace PegionClocking
             try
             {
                 dateTimePicker1.Value = DateRelease;
+                if (CallFrom == "INBOX")
+                {
+                    this.txtArrivalTime.Text = Time.Replace("+32","");
+                    this.txtSender.Text = MobileNumber;
+                    this.txtStickerCode.Text = StickerNumber;
+                }
             }
             catch (Exception ex)
             {
@@ -81,6 +91,13 @@ namespace PegionClocking
 
                 throw ex;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmStickerFinder stickerFinder = new frmStickerFinder();
+            stickerFinder.ShowDialog();
+            if (!string.IsNullOrEmpty(stickerFinder.StickerNumber)) this.txtStickerCode.Text = stickerFinder.StickerNumber;
         }
     }
 }

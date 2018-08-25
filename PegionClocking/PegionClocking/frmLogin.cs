@@ -12,7 +12,7 @@ namespace PegionClocking
     public partial class frmLogin : Form
     {
         #region Constants
-        const string VERSION = "3.0";
+        const string VERSION = "4.1";
         #endregion
 
         #region Variable
@@ -109,7 +109,7 @@ namespace PegionClocking
             try
             {
                 GetControlValue();
-                if (UserName.ToUpper() == "ADMINISTRATOR" && Password == "04212016mavc")
+                if (UserName.ToUpper() == "ADMINISTRATOR" && Password == "06081986cv5M")
                 {
                     UserID = 9000;
                     ClubID = 9000;

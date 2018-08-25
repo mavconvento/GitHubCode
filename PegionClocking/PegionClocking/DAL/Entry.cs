@@ -45,13 +45,15 @@ namespace PegionClocking.DAL
             {
                  DataSet dataResult = new DataSet();
                 dbconn = new DatabaseConnection();
-                dbconn.DatabaseConn("GetEntryDetailsByBarcodeID");
+                dbconn.DatabaseConn("GetEntryIdentity");
 
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
-                dbconn.sqlComm.Parameters.AddWithValue("@EntryBarcodeID", BarcodeBandID);
-                
+                dbconn.sqlComm.Parameters.AddWithValue("@BarcodeID", BarcodeBandID);
+                dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
+                dbconn.sqlComm.Parameters.AddWithValue("@RaceScheduleName", RaceScheduleName);
+
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

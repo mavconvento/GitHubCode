@@ -1,3 +1,4 @@
+--exec [dbo].[RaceScheduleCategorySelectAll] 3,0,'north race 2018'
 alter proc [dbo].[RaceScheduleCategorySelectAll]
 	@ClubID varchar(100),
 	@RaceScheduleID BIGINT,
@@ -10,10 +11,10 @@ BEGIN
 END
 
 SELECT sc.RaceScheduleCategoryID as "Category ID",
-	   'DELETE' as " ",
+	   --'DELETE' as " ",
 	   LocationName as "Location Name",
 	   DateRelease as "Date Release",
-	   Lap,
+	   LapNo,
 	   Multiplier as "Points"
 from RaceScheduleCategory sc
 	inner join RaceReleasePoint rr on rr.RaceScheduleCategoryID=sc.RaceScheduleCategoryID and rr.IsActive=1
@@ -22,6 +23,4 @@ where sc.Clubid=@Clubid
 	and sc.RaceScheduleCategoryName = 'OverAllResult'
 	and sc.IsActive=1
 --group by sc.RaceScheduleCategoryID,RaceScheduleCategoryName,Lap
-order by sc.RaceScheduleCategoryID
-
-
+order by LapNo

@@ -1,0 +1,4 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\bin\Debug\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\bin\Debug\DomainObjects.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\obj\Debug\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\obj\Debug\DomainObjects.pdb

@@ -167,7 +167,11 @@ namespace PegionClocking.BIZ
                     dtEnrtry = dtResult.Tables[0];
                     entryList.DataSource = dtEnrtry;
                     lblcount.Text = string.Format("{0:#,##0}", dtEnrtry.Rows.Count.ToString());
+                    entryList.Columns[0].Visible = false;
                     entryList.Columns[3].Visible = false;
+                    entryList.Columns[4].Visible = false;
+                    entryList.Columns[5].Visible = false;
+                    entryList.Columns[8].Visible = false;
                 }
             }
             catch (Exception ex)

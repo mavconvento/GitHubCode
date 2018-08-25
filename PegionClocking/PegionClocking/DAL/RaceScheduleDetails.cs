@@ -31,6 +31,19 @@ namespace PegionClocking.DAL
         public DateTime Loading { get; set; }
         public string LoadingTimeFrom { get; set; }
         public string LoadingTimeTo { get; set; }
+
+        //release point
+        public Int64 RaceReleasePointID { get; set; }
+        public string ReleaseTime { get; set; }
+        public Int64 LapNo { get; set; }
+        public double Multiplier { get; set; }
+        public string MinSpeed { get; set; }
+        public bool IsStop { get; set; }
+        public DateTime StopFromDate { get; set; }
+        public string StopFromTime { get; set; }
+        public DateTime StopToDate { get; set; }
+        public string StopToTime { get; set; }
+        public String Description { get; set; }
         #endregion
 
         #region Public Methods
@@ -53,6 +66,17 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@Loading", Loading);
                 dbconn.sqlComm.Parameters.AddWithValue("@LoadingTimeFrom", LoadingTimeFrom);
                 dbconn.sqlComm.Parameters.AddWithValue("@LoadingTimeTo", LoadingTimeTo);
+                dbconn.sqlComm.Parameters.AddWithValue("@RaceReleasePointID", RaceReleasePointID);
+                dbconn.sqlComm.Parameters.AddWithValue("@TimeReleased", ReleaseTime);
+                dbconn.sqlComm.Parameters.AddWithValue("@Multiplier", Multiplier);
+                dbconn.sqlComm.Parameters.AddWithValue("@LapNo", LapNo);
+                dbconn.sqlComm.Parameters.AddWithValue("@MinSpeed", MinSpeed);
+                dbconn.sqlComm.Parameters.AddWithValue("@IsStop", IsStop);
+                dbconn.sqlComm.Parameters.AddWithValue("@StopFromDate", StopFromDate);
+                dbconn.sqlComm.Parameters.AddWithValue("@StopFromTime", StopFromTime);
+                dbconn.sqlComm.Parameters.AddWithValue("@StopToDate", @StopToDate);
+                dbconn.sqlComm.Parameters.AddWithValue("@StopToTime", StopToTime);
+                dbconn.sqlComm.Parameters.AddWithValue("@Description", Description);
                 dbconn.sqlComm.ExecuteNonQuery();
                 dbconn.sqlConn.Close();
                 //return dataResult;

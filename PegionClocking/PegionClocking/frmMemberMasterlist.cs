@@ -26,6 +26,7 @@ namespace PegionClocking
         public string MemberIDNo { get; set; }
         //public string Name { get; set; }
         public string MobileNumber { get; set; }
+        public String ActionFrom { get; set; }
 
         #endregion
 
@@ -38,7 +39,12 @@ namespace PegionClocking
 
         private void frmMemberMasterlist_Load(object sender, EventArgs e)
         {
-            MemberDetailsSelectAll();
+            if (ActionFrom != "Entry")
+            {
+                MemberDetailsSelectAll();
+                this.dataGridView1.Columns[0].Visible = false;
+                this.dataGridView1.Columns[1].Visible = false;
+            }
         }
         #endregion
 
@@ -75,32 +81,54 @@ namespace PegionClocking
                 {
                     member = new BIZ.Member();
                     index = datagrid.CurrentRow.Index;
-                    ID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
-                    if ( Convert.ToInt64(ID) > 0)
+                    if ((string)datagrid.CurrentCell.Value.ToString() == "EDIT")
                     {
-                        DataTable dtresult = new DataTable();
-                        DataTable dtResultSMS = new DataTable();
-                        PopulateBussinessLayer();
-                        dtresult = member.MemberDetailsSearchByKey().Tables[0];
-                        dtResultSMS = member.MemberDetailsSearchByKey().Tables[1];
-
-                        if (dtresult.Rows.Count > 0)
+                        ID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
+                        if (Convert.ToInt64(ID) > 0)
                         {
-                            frmMemberDataEntry memberDataentry = new frmMemberDataEntry();
-                            memberDataentry.ClubID = ClubID;
-                            memberDataentry.UserID = UserID;
-                            memberDataentry.RecordSearched = dtresult;
-                            memberDataentry.RecordSearchedSMS = dtResultSMS;
-                            memberDataentry.IsEdit = true;
-                            memberDataentry.PopulateControl();
-                            memberDataentry.ShowDialog();
-                            MemberDetailsSelectAll(); //Refresh value of data grid
-                        }
-                        else
-                        {
-                            MessageBox.Show("No record is found", "Search");
-                        }
+                            DataTable dtresult = new DataTable();
+                            DataTable dtResultSMS = new DataTable();
+                            PopulateBussinessLayer();
+                            dtresult = member.MemberDetailsSearchByKey().Tables[0];
+                            dtResultSMS = member.MemberDetailsSearchByKey().Tables[1];
 
+                            if (dtresult.Rows.Count > 0)
+                            {
+                                frmMemberDataEntry memberDataentry = new frmMemberDataEntry();
+                                memberDataentry.ClubID = ClubID;
+                                memberDataentry.UserID = UserID;
+                                memberDataentry.RecordSearched = dtresult;
+                                memberDataentry.RecordSearchedSMS = dtResultSMS;
+                                memberDataentry.IsEdit = true;
+                                memberDataentry.PopulateControl();
+                                memberDataentry.ShowDialog();
+                                MemberDetailsSelectAll(); //Refresh value of data grid
+                            }
+                            else
+                            {
+                                MessageBox.Show("No record is found", "Search");
+                            }
+
+                        }
+                    }
+                    else if ((string)datagrid.CurrentCell.Value.ToString() == "SELECT")
+                    {
+                        ID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
+                        if (Convert.ToInt64(ID) > 0)
+                        {
+                            DataTable dtresult = new DataTable();
+                            DataTable dtResultSMS = new DataTable();
+                            PopulateBussinessLayer();
+                            dtresult = member.MemberDetailsSearchByKey().Tables[0];
+                            //dtResultSMS = member.MemberDetailsSearchByKey().Tables[1];
+
+                            if (dtresult.Rows.Count > 0)
+                            {
+                                MemberID = txtID.Text = dtresult.Rows[0]["ID"].ToString();
+                                MemberIDNo = dtresult.Rows[0]["MemberIDNo"].ToString();
+                                this.Close();
+                            }
+                        }
                     }
                 }
             }
@@ -143,6 +171,14 @@ namespace PegionClocking
         {
             ID=txtID.Text;
             MemberDetailsSelectAll();
+
+            if (ActionFrom == "Entry")
+            {
+                this.dataGridView1.Columns[0].Visible = false;
+                this.dataGridView1.Columns[2].Visible = false;
+                this.dataGridView1.Columns[3].Visible = false;
+                this.dataGridView1.Columns[7].Visible = false;
+            }
         }
         
     }

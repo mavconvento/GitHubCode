@@ -75,9 +75,9 @@ namespace PegionClocking
         }
         private void cmbRaceSchedule_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SetRaceScheduleCategoryItems();
+            //SetRaceScheduleCategoryItems();
             ClearControl();
-            if (this.cmbRaceScheduleCategory.Text != "")
+            if (this.cmbRaceSchedule.Text != "")
             {
                 this.groupBox1.Enabled = true;
             }

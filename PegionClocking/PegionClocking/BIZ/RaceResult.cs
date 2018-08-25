@@ -14,6 +14,7 @@ namespace PegionClocking.BIZ
 
         #region Variable
         DAL.RaceResult raceResult;
+        DAL.StickerNumber stickerNumber;
         #endregion
 
         #region Properties
@@ -53,6 +54,21 @@ namespace PegionClocking.BIZ
                 DataSet dataResult = new DataSet();
                 PopulateDataLayer();
                 dataResult = raceResult.ViewClubRace();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataSet GetSticker()
+        {
+            try
+            {
+                stickerNumber = new DAL.StickerNumber();
+                DataSet dataResult = new DataSet();
+                stickerNumber.Code = StickerCode;
+                dataResult = stickerNumber.GetSticker();
                 return dataResult;
             }
             catch (Exception ex)

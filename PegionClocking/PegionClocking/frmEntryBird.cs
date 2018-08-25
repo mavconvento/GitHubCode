@@ -88,7 +88,7 @@ namespace PegionClocking
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           
+
         }
         private void btnSummary_Click(object sender, EventArgs e)
         {
@@ -106,6 +106,13 @@ namespace PegionClocking
         {
             GetEntryDetails();
         }
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            frmMemberDataEntry memberDataEntry = new frmMemberDataEntry();
+            memberDataEntry.ClubID = ClubID;
+            memberDataEntry.UserID = UserID;
+            memberDataEntry.ShowDialog();
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             try
@@ -114,6 +121,34 @@ namespace PegionClocking
             }
             catch (Exception ex)
             {
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+        }
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmRaceCategoryGroup raceCategoryGroup = new frmRaceCategoryGroup();
+                raceCategoryGroup.ClubID = ClubID;
+                raceCategoryGroup.UserID = UserID;
+                raceCategoryGroup.ShowDialog();
+                PopulateCombobox();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+
+        }
+        private void btnSearchIdentity_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetEntryIdentity();
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
             }
         }
@@ -232,6 +267,33 @@ namespace PegionClocking
                 MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
             }
         }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtMemberIDNo.Text = "";
+                frmMemberMasterlist memberMasterlist = new frmMemberMasterlist();
+                memberMasterlist.ClubID = ClubID;
+                memberMasterlist.UserID = UserID;
+                memberMasterlist.Width = 761;
+                memberMasterlist.Height = 293;
+                memberMasterlist.FormBorderStyle = FormBorderStyle.FixedSingle;
+                memberMasterlist.ActionFrom = "Entry";
+                memberMasterlist.ShowDialog();
+
+                this.txtMemberIDNo.Text = memberMasterlist.MemberIDNo;
+                if (txtMemberIDNo.Text != "")
+                {
+                    GetMemberDetails();
+                } 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+
+        }
         private void txtBandID_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -254,6 +316,28 @@ namespace PegionClocking
                 e.Handled = true;
                 System.Windows.Forms.SendKeys.Send("{TAB}");
             }
+        }
+        private void txtMemberIDNo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                GetMemberDetails();
+            }
+        }
+        private void txtEntryIdentity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                System.Windows.Forms.SendKeys.Send("{TAB}");
+            }
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            frmRegisterMobileNumber RegisterMobileNumber = new frmRegisterMobileNumber();
+            RegisterMobileNumber.ClubID = ClubID;
+            RegisterMobileNumber.UserID = UserID;
+            RegisterMobileNumber.ShowDialog();
         }
         #endregion
 
@@ -309,6 +393,19 @@ namespace PegionClocking
         #endregion
 
         #region Private
+        private void GetEntryIdentity()
+        {
+            try
+            {
+                GetEntryDetails();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        
         private void CopyLastEntry()
         {
             try
@@ -321,7 +418,7 @@ namespace PegionClocking
                 copyEntry.RaceReleasePointID = RaceReleasePointID;
                 copyEntry.MemberID = MemberID;
                 copyEntry.ShowDialog();
-                
+
                 //on dialogbox close
                 GetMemberRingEnrolled();
                 EntryListGetByMemberIDNo();
@@ -329,7 +426,7 @@ namespace PegionClocking
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
         }
@@ -402,13 +499,13 @@ namespace PegionClocking
                 txtMemberCoordinates.Text = "";
                 txtStickerCode.Text = "";
                 txtRingNumber.Text = "";
-                txtEntryBarcodeID.Text = "";
+                txtEntryIdentity.Text = "";
                 this.BandID = 0;
                 dtpExpirationDate.Value = DateTime.Now;
                 chkMembershipExpired.Checked = false;
                 GetControlValue();  //reset properties value
                 ReadOnlyControl(false);
-                txtEntryBarcodeID.Focus();
+                txtEntryIdentity.Focus();
                 button5.Enabled = false;
                 this.dtEntryMemberList.DataSource = null;
             }
@@ -431,6 +528,8 @@ namespace PegionClocking
             GetControlValue();
             PopulateBusinessLayer(Common.Common.RaceEntryClassType.Entry);
             entry.EntryGetByMemberIDNo(this.dtEntryMemberList, this.lblMemberEntryList);
+
+
         }
         private void GetControlValue()
         {
@@ -445,7 +544,7 @@ namespace PegionClocking
                 RaceScheduleCategoryName = lblRaceScheduleCategory.Text;
                 StickerCode = txtStickerCode.Text;
                 RingNumber = txtRingNumber.Text;
-                BarcodeBandID = txtEntryBarcodeID.Text;
+                BarcodeBandID = txtEntryIdentity.Text;  //txtEntryBarcodeID.Text;
                 RaceReleasePointID = Convert.ToInt64(txtReleasePointID.Text);
                 this.lblMemberEntryLabel.Text = "Entry List of " + MemberIDNo;
                 this.lblEntryRaceCategory.Text = "List of Entry for : " + RaceCategoryName + "/" + RaceCategoryGroupName;
@@ -472,6 +571,7 @@ namespace PegionClocking
                     button5.Enabled = true;
                     GetMemberRingEnrolled();
                     EntryListGetByMemberIDNo();
+                    this.txtRingNumber.Focus();
                 }
                 else
                 {
@@ -497,13 +597,14 @@ namespace PegionClocking
                     if ((MessageBox.Show("Are you sure! You would like to delete this record?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes))
                     {
                         PopulateBusinessLayer(Common.Common.RaceEntryClassType.Entry);
-                        if (entry.EntryDelete()) {
+                        if (entry.EntryDelete())
+                        {
                             this.txtEntryID.Text = "0";
                             this.txtRingNumber.Text = "";
                             this.txtStickerCode.Text = "";
                             this.txtEntryBarcodeID.Text = "";
                             this.BandID = 0;
-                            this.txtRingNumber.Focus(); 
+                            this.txtRingNumber.Focus();
                             EntryListGetByRaceReleasePoint();
                             EntryListGetByMemberIDNo();
                         }
@@ -530,21 +631,21 @@ namespace PegionClocking
                     {
                         if ((string)datagrid.CurrentCell.Value.ToString() == "EDIT")
                         {
-                            MemberIDNo = datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value.ToString();
-                            BandID = (Int64)datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value;
-                            RingNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value.ToString();
-                            StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value.ToString();
-                            txtEntryBarcodeID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value);
+                            MemberIDNo = datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value.ToString();
+                            BandID = (Int64)datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value;
+                            RingNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
+                            StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
+                            txtEntryIdentity.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[8].Value);
                             PopulateControlValue("MemberDataFromGrid");
                             GetMemberDetails();
                         }
                         else if ((string)datagrid.CurrentCell.Value.ToString() == " + ")
                         {
                             frmEntryMultipleCategory frmMultiplyCategory = new frmEntryMultipleCategory();
-                            frmMultiplyCategory.BandNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value.ToString();
-                            frmMultiplyCategory.StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value.ToString();
+                            frmMultiplyCategory.BandNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
+                            frmMultiplyCategory.StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
                             frmMultiplyCategory.EntryID = datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
-                            frmMultiplyCategory.OrigCategory = datagrid.Rows[Convert.ToInt32(index)].Cells[8].Value.ToString();
+                            frmMultiplyCategory.OrigCategory = datagrid.Rows[Convert.ToInt32(index)].Cells[10].Value.ToString();
                             frmMultiplyCategory.ClubID = ClubID;
                             frmMultiplyCategory.MemberID = txtMemberID.Text;
                             frmMultiplyCategory.ShowDialog();
@@ -731,7 +832,7 @@ namespace PegionClocking
                         this.txtEntryID.Text = "0";
                         this.txtRingNumber.Text = "";
                         this.txtStickerCode.Text = "";
-                        this.txtEntryBarcodeID.Text = "";
+                        this.txtEntryIdentity.Text = "";
                         this.BandID = 0;
                         this.txtRingNumber.Focus();
                         GetMemberRingEnrolled();
@@ -769,6 +870,10 @@ namespace PegionClocking
                 releasePointSummary.ShowDialog();
             }
         }
+
+
+
         #endregion
+
     }
 }

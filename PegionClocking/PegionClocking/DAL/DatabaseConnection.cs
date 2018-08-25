@@ -12,7 +12,19 @@ namespace PegionClocking.DAL
     class DatabaseConnection
     {
         #region Constants
+        //production
         private const string cryptoKey = "cryptoKey";
+        private const string SERVERNAME = "204.93.160.206";
+        private const string DATABASENAME = "pigeon_mavcpigeonclocking";
+        private const string USERNAME = "sa";
+        private const string PASSWORD = "06242009";
+
+        //local
+        //private const string cryptoKey = "cryptoKey";
+        //private const string SERVERNAME = @"PHPPC03X4NW\SQLEXPRESS";
+        //private const string DATABASENAME = "pigeon_mavcpigeonclocking";
+        //private const string USERNAME = "sa";
+        //private const string PASSWORD = "06081986cv5M";
         #endregion
 
         #region Variables
@@ -78,10 +90,10 @@ namespace PegionClocking.DAL
                     TextReader tr = new StreamReader(connectionString);
                     using (tr)
                     {
-                        servername = Decrypt(tr.ReadLine());
-                        databasename = Decrypt(tr.ReadLine());
-                        username = Decrypt(tr.ReadLine());
-                        password = Decrypt(tr.ReadLine());
+                        servername = SERVERNAME; //Decrypt(tr.ReadLine());
+                        databasename = DATABASENAME; //Decrypt(tr.ReadLine());
+                        username = USERNAME; //Decrypt(tr.ReadLine());
+                        password = PASSWORD; //Decrypt(tr.ReadLine());
                     }
                 }
             }

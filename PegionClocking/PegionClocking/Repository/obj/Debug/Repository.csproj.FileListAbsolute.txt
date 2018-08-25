@@ -1,0 +1,4 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\Repository.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\Repository.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\obj\Debug\Repository.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\obj\Debug\Repository.pdb

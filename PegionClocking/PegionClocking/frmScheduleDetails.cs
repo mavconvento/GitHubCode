@@ -33,6 +33,19 @@ namespace PegionClocking
         public string LoadingTimeFrom { get; set; }
         public string LoadingTimeTo { get; set; }
 
+        //release point
+        public Int64 RaceReleasePointID { get; set; }
+        public string ReleaseTime { get; set; }
+        public Int64 LapNo { get; set; }
+        public double Multiplier { get; set; }
+        public string MinSpeed { get; set; }
+        public bool IsStop { get; set; }
+        public DateTime StopFromDate { get; set; }
+        public string StopFromTime { get; set; }
+        public DateTime StopToDate { get; set; }
+        public string StopToTime { get; set; }
+        public String Description { get; set; }
+
         public DataTable RecordSearched { get; set; }
         public Boolean IsEdit { get; set; }
         #endregion
@@ -85,6 +98,17 @@ namespace PegionClocking
         {
             ClearControl();
         }
+        private void chkIsStop_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkIsStop.Checked)
+            {
+                this.groupBox2.Enabled = true;
+            }
+            else
+            {
+                this.groupBox2.Enabled = false;
+            }
+        }
         #endregion
 
         #region Properties
@@ -117,6 +141,21 @@ namespace PegionClocking
                 txtLoadingTimeTo.Text = "";
                 txtID.Text = "0";
                 IsEdit = false;
+
+                cmbHour.Text = "";
+                cmbMinute.Text = "";
+                txtMultiplier.Text = "1.00";
+                txtLapNo.Text = "1";
+                cmbMinSpeed.Text = MinSpeed;
+                chkIsStop.Checked = false;
+                dtpStopFromDate.Value = DateTime.Now;
+                txtStopFromTime.Text = "00:00";
+                dtpStopToDate.Value = DateTime.Now;
+                txtStopToTime.Text = "00:00";
+                IsEdit = false;
+                txtReleasePointID.Text = "0";
+                txtRemarks.Text = "";
+
                 cmbLocation.Focus();
             }
             catch (Exception ex)
@@ -136,6 +175,18 @@ namespace PegionClocking
                 Loading = dtpLoadingDate.Value;
                 LoadingTimeFrom = txtLoadingTimeFrom.Text;
                 LoadingTimeTo = txtLoadingTimeTo.Text;
+
+                RaceReleasePointID = Convert.ToInt64(txtReleasePointID.Text);
+                ReleaseTime = cmbHour.Text + ':' + cmbMinute.Text;
+                LapNo = Convert.ToInt64(txtLapNo.Text);
+                Multiplier = Convert.ToDouble(txtMultiplier.Text);
+                MinSpeed = cmbMinSpeed.Text;
+                IsStop = chkIsStop.Checked;
+                StopFromDate = dtpStopFromDate.Value;
+                StopFromTime = txtStopFromTime.Text;
+                StopToDate = dtpStopToDate.Value;
+                StopToTime = txtStopToTime.Text;
+                Description = txtRemarks.Text;
             }
             catch (Exception ex)
             {
@@ -148,21 +199,71 @@ namespace PegionClocking
             {
                 DataGridView datagrid = this.dataGridView1;
                 Int64 index;
+                String time = "";
+                String[] hm;
+
                 if (datagrid.RowCount > 0)
                 {
                     raceScheduleDetails = new BIZ.RaceScheduleDetails();
                     index = datagrid.CurrentRow.Index;
-                    LocationName = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
-                    if (LocationName != "")
+                    if ((string)datagrid.CurrentCell.Value.ToString() == "EDIT")
                     {
-                        this.cmbLocation.SelectedItem = LocationName;
-                        this.txtID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
-                        //this.txtLocationID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
-                        this.dtpLoadingDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value);
-                        string[] loadingTime = datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value.ToString().Split('-');
-                        this.txtLoadingTimeFrom.Text = loadingTime.GetValue(0).ToString().Trim();
-                        this.txtLoadingTimeTo.Text = loadingTime.GetValue(1).ToString().Trim();
-                        this.dtpDateRelease.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value);
+                        LocationName = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
+                        if (LocationName != "")
+                        {
+                            this.cmbLocation.SelectedItem = LocationName;
+                            this.txtID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
+                            this.txtLocationID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
+                            this.dtpLoadingDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                            string[] loadingTime = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString().Split('-');
+                            this.txtLoadingTimeFrom.Text = loadingTime.GetValue(0).ToString().Trim();
+                            this.txtLoadingTimeTo.Text = loadingTime.GetValue(1).ToString().Trim();
+                            this.dtpDateRelease.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value);
+                            
+                            //release point details
+                            this.txtReleasePointID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[9].Value);
+                            this.txtLapNo.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[10].Value);
+                            this.txtMultiplier.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[11].Value);
+                            this.cmbMinSpeed.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[12].Value);
+                            this.txtRemarks.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[13].Value);
+                            this.chkIsStop.Checked = Convert.ToBoolean(datagrid.Rows[Convert.ToInt32(index)].Cells[14].Value);
+                         
+                            if (chkIsStop.Checked)
+                            {
+                                this.dtpStopFromDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[15].Value);
+                                this.txtStopFromTime.Text = datagrid.Rows[Convert.ToInt32(index)].Cells[16].Value.ToString();
+                                this.dtpStopToDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[17].Value);
+                                this.txtStopToTime.Text = datagrid.Rows[Convert.ToInt32(index)].Cells[18].Value.ToString();
+                            }
+                            else
+                            {
+                                this.dtpStopFromDate.Value = DateTime.Now;
+                                this.txtStopFromTime.Text = "00:00";
+                                this.dtpStopToDate.Value = DateTime.Now;
+                                this.txtStopToTime.Text = "00:00";
+                            }
+                            //this.dtpDateRelease.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[9].Value);
+                            time = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[8].Value);
+                            hm = time.Split(':');
+
+                            if (hm.Length == 2)
+                            {
+                                if (Convert.ToString(hm[0]).Length == 1)
+                                {
+                                    this.cmbHour.Text = "0" + Convert.ToString(hm[0]);
+                                }
+                                else
+                                {
+                                    this.cmbHour.Text = Convert.ToString(hm[0]);
+                                }
+                                this.cmbMinute.Text = Convert.ToString(hm[1]);
+                            }
+                            else
+                            {
+                                cmbHour.Text = "";
+                                cmbMinute.Text = "";// .Text = "";
+                            }
+                        }
                     }
                 }
             }
@@ -200,6 +301,15 @@ namespace PegionClocking
                 ScheduleDetailsSelectAll();
                 this.dataGridView1.Columns[0].Visible = false;
                 this.dataGridView1.Columns[1].Visible = false;
+                this.dataGridView1.Columns[5].Visible = false;  //Loading
+                this.dataGridView1.Columns[6].Visible = false;  //LoadingTimeFrom
+                this.dataGridView1.Columns[9].Visible = false;  //RaceReleasePointID
+                this.dataGridView1.Columns[13].Visible = false; //Description
+                this.dataGridView1.Columns[14].Visible = false; //IsStop
+                this.dataGridView1.Columns[15].Visible = false; //StopFromDate
+                this.dataGridView1.Columns[16].Visible = false; //StopFromTime
+                this.dataGridView1.Columns[17].Visible = false; //StopToDate
+                this.dataGridView1.Columns[18].Visible = false; //StopToTime
             }
             catch (Exception ex)
             {
@@ -289,6 +399,21 @@ namespace PegionClocking
                         raceScheduleDetails.Loading = Loading;
                         raceScheduleDetails.LoadingTimeFrom = LoadingTimeFrom;
                         raceScheduleDetails.LoadingTimeTo = LoadingTimeTo;
+                        raceScheduleDetails.RaceReleasePointID = RaceReleasePointID;
+                        //raceScheduleDetails.RaceScheduleDetailsID = RaceScheduleDetailsID;
+                        //raceScheduleDetails.RaceScheduleCategoryID = RaceScheduleCategoryID;
+                        //raceScheduleDetails.RaceScheduleCategoryName = RaceScheduleCategoryName;
+                        raceScheduleDetails.ReleaseTime = ReleaseTime;
+                        //raceScheduleDetails.ReleaseDate = ReleaseDate;
+                        raceScheduleDetails.Multiplier = Multiplier;
+                        raceScheduleDetails.LapNo = LapNo;
+                        raceScheduleDetails.MinSpeed = MinSpeed;
+                        raceScheduleDetails.IsStop = IsStop;
+                        raceScheduleDetails.StopFromDate = StopFromDate;
+                        raceScheduleDetails.StopFromTime = StopFromTime;
+                        raceScheduleDetails.StopToDate = StopToDate;
+                        raceScheduleDetails.StopToTime = StopToTime;
+                        raceScheduleDetails.Description = Description;
                         break;
                 }
             }
@@ -335,8 +460,9 @@ namespace PegionClocking
                 MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
             }
         }
+
         #endregion
 
-
+      
     }
 }

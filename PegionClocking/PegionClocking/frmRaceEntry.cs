@@ -43,7 +43,7 @@ namespace PegionClocking
         }
         private void cmbRaceSchedule_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SetRaceScheduleCategoryItems();
+            //SetRaceScheduleCategoryItems();
             GetReleasePoint();
         }
         private void cmbRaceScheduleCategory_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,29 +63,32 @@ namespace PegionClocking
                 if (datagrid.RowCount > 0)
                 {
                     index = datagrid.CurrentRow.Index;
-                    ID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
-                    raceReleasePoint = new BIZ.RaceReleasePoint();
-
-                    if (ID > 0)
+                    if ((string)datagrid.CurrentCell.Value.ToString() == "SELECT")
                     {
-                        RaceReleasePointID = ID;
-                        DataTable dtresult = new DataTable();
-                        PopulateBusinessLayer(Common.Common.RaceEntryClassType.RaceReleasePoint);
-                        dtresult = raceReleasePoint.RaceReleasePointGetbyKey();
+                        ID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
+                        raceReleasePoint = new BIZ.RaceReleasePoint();
 
-                        if (dtresult.Rows.Count > 0)
+                        if (ID > 0)
                         {
-                            frmEntryBird entryBird = new frmEntryBird();
-                            entryBird.RaceReleasePointData = dtresult;
-                            entryBird.ClubID = ClubID;
-                            entryBird.UserID = UserID;
-                            entryBird.PopulateControlValue("RaceReleasePoint");
-                            entryBird.ShowDialog();
-                            //MemberDetailsSelectAll(); //Refresh value of data grid
-                        }
-                        else
-                        {
-                            MessageBox.Show("No record is found", "Search");
+                            RaceReleasePointID = ID;
+                            DataTable dtresult = new DataTable();
+                            PopulateBusinessLayer(Common.Common.RaceEntryClassType.RaceReleasePoint);
+                            dtresult = raceReleasePoint.RaceReleasePointGetbyKey();
+
+                            if (dtresult.Rows.Count > 0)
+                            {
+                                frmEntryBird entryBird = new frmEntryBird();
+                                entryBird.RaceReleasePointData = dtresult;
+                                entryBird.ClubID = ClubID;
+                                entryBird.UserID = UserID;
+                                entryBird.PopulateControlValue("RaceReleasePoint");
+                                entryBird.ShowDialog();
+                                //MemberDetailsSelectAll(); //Refresh value of data grid
+                            }
+                            else
+                            {
+                                MessageBox.Show("No record is found", "Search");
+                            }
                         }
                     }
                 }
@@ -121,7 +124,7 @@ namespace PegionClocking
                         raceReleasePoint.RaceReleasePointID = ID;
                         raceReleasePoint.ClubID = ClubID;
                         raceReleasePoint.UserID = UserID;
-                        raceReleasePoint.RaceScheduleCategoryName = RaceScheduleCategoryName;
+                        raceReleasePoint.RaceScheduleCategoryName = RaceScheduleName; // RaceScheduleCategoryName;
                         break;
 
                 }
@@ -191,6 +194,12 @@ namespace PegionClocking
                 DataTable dtRaceScheduleCategory;
                 dtRaceScheduleCategory = raceReleasePoint.RaceReleasePointGetbyRaceScheduleCategory();
                 dtReleasePoint.DataSource = dtRaceScheduleCategory;
+
+                if (dtRaceScheduleCategory.Rows.Count > 0)
+                {
+                    dtReleasePoint.Columns[0].Visible = false;
+                    dtReleasePoint.Columns[1].Visible = false;
+                }
             }
             catch (Exception ex)
             {

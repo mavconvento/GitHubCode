@@ -32,6 +32,7 @@ namespace PegionClocking
         public String RaceCategoryGroupName { get; set; }
         public DateTime DateReleased { get; set; }
         public String RaceScheduleName { get; set; }
+        public Int64 RaceReleasePointID { get; set; }
         #endregion
 
         #region "Events"
@@ -64,7 +65,7 @@ namespace PegionClocking
         {
             if (cmbCategory.Text != "" && cmbCategoryGroup.Text != "")
             {
-            ViewResult();
+                ViewResult();
             }
             else
             {
@@ -75,9 +76,90 @@ namespace PegionClocking
         {
             SetRaceScheduleCategoryItems();
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveCategory();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Please set your Category and Group", "Error");
+            }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ScheduleCategoryDelete();
+                ViewResult();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Please set your Category and Group", "Error");
+            }
+        }
         #endregion
 
         #region "Private Methods"
+        private void SaveCategory()
+        {
+            try
+            {
+                raceScheduleCategory = new BIZ.RaceScheduleCategory();
+                GetControlValue();
+                PopulateBusinessLayer(Common.Common.RaceResult.RaceScheduleCategory);
+                if (raceScheduleCategory.Save())
+                {
+                    ClearControl();
+                    ScheduleCategorySelectAll();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+        }
+        private void ScheduleCategoryDelete()
+        {
+            try
+            {
+                raceScheduleCategory = new BIZ.RaceScheduleCategory();
+                GetControlValue();
+                if ((MessageBox.Show("Are you sure! You would like to reset this record?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes))
+                {
+                    PopulateBusinessLayer(Common.Common.RaceResult.RaceScheduleCategory);
+                    raceScheduleCategory.ScheduleCategoryDelete();
+                    ClearControl();
+                    ScheduleCategorySelectAll();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+        }
+        private void ScheduleCategorySelectAll()
+        {
+            try
+            {
+                raceScheduleCategory = new BIZ.RaceScheduleCategory();
+                PopulateBusinessLayer(Common.Common.RaceResult.RaceScheduleCategory);
+                raceScheduleCategory.ScheduleCategorySelectAll(this.dataGridView2);
+                DataGridViewCellStyle style = new DataGridViewCellStyle();
+                style.Font = new Font(Font, FontStyle.Bold);
+                dataGridView2.Columns[1].DefaultCellStyle = style;
+                //dataGridView2.Columns[4].DefaultCellStyle = style;
+                dataGridView2.Columns[0].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+        }
         private void PopulateBusinessLayer(Common.Common.RaceResult Type)
         {
             try
@@ -101,6 +183,8 @@ namespace PegionClocking
                         raceScheduleCategory.UserID = UserID;
                         raceScheduleCategory.ClubID = ClubID;
                         raceScheduleCategory.RaceScheduleName = RaceScheduleName;
+                        raceScheduleCategory.RaceScheduleCategoryName = RaceScheduleCategoryName;
+                        raceScheduleCategory.RaceReleasePointID = RaceReleasePointID;
                         break;
                     case Common.Common.RaceResult.RaceSchedule:
                         raceSchedule.UserID = UserID;
@@ -129,9 +213,12 @@ namespace PegionClocking
                     cmbRaceScheduleCategory.Items.Clear();      //CLEAR ITEMS
                     foreach (DataRow dtrow in dtRaceScheduleCategory.Rows)
                     {
-                        cmbRaceScheduleCategory.Items.Add(dtrow["Category Name"].ToString());
+                        string release = dtrow["RaceReleasePointID"].ToString() + "-|| " + dtrow["Date Release"].ToString() + " | " + dtrow["LocationName"].ToString();
+                        cmbRaceScheduleCategory.Items.Add(release);
                     }
                 }
+                ScheduleCategorySelectAll();
+
             }
             catch (Exception ex)
             {
@@ -189,13 +276,24 @@ namespace PegionClocking
         }
         private void GetControlValue()
         {
-            RaceScheduleCategoryName = cmbRaceScheduleCategory.Text;
+            string[] releaseDate = cmbRaceScheduleCategory.Text.Split('-');
+            if (releaseDate.Length > 1) RaceReleasePointID = Convert.ToInt64(releaseDate[0]);
+            RaceScheduleCategoryName = "OverAllResult";
             RaceCategoryGroupName = cmbCategoryGroup.Text;
             RaceCategoryName = cmbCategory.Text;
             RaceScheduleName = cmbRaceSchedule.Text;
         }
         private void ClearControl()
         {
+            try
+            {
+                this.cmbRaceScheduleCategory.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
         private void ViewResult()
         {
@@ -206,7 +304,7 @@ namespace PegionClocking
                 ClearControl();
                 GetControlValue();
                 PopulateBusinessLayer(Common.Common.RaceResult.RaceResult);
-                dtResult=raceResults.RaceResultGetByScheduleCategory();
+                dtResult = raceResults.RaceResultGetByScheduleCategory();
                 if (dtResult.Tables.Count > 0)
                 {
                     this.dataGridView1.DataSource = dtResult.Tables[0];
@@ -218,12 +316,11 @@ namespace PegionClocking
             }
             catch (Exception ex)
             {
-            MessageBox.Show(ex.Message,"Error");
+                MessageBox.Show(ex.Message, "Error");
             }
         }
+
+
         #endregion
-
-       
-
     }
 }
