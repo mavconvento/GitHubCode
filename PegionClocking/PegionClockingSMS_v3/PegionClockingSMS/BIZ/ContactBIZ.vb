@@ -1,6 +1,7 @@
 ﻿Public Class ContactBIZ
 #Region "Variables"
     Private contactDAL As ContactDAL
+    Private club As Club
 #End Region
     Public Sub GetContacts(ByVal dtgridContacts As DataGridView, ByVal isSelectAll As Boolean, ByVal contactCollection As String, ByVal clubname As String)
         Try
@@ -19,13 +20,12 @@
             Throw ex
         End Try
     End Sub
-    Public Function GetClubList() As DataSet
+    Public Function GetClubList() As String
         Try
-            contactDAL = New ContactDAL()
-            Dim dtresult As DataSet
+            club = New Club()
+            Dim dtresult As String = club.GetClub()
 
-            dtresult = contactDAL.GetClubList()
-
+            'dtresult = contactDAL.GetClubList()
             Return dtresult
         Catch ex As Exception
             Throw ex

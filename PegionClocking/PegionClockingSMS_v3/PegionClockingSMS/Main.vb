@@ -2,6 +2,7 @@
 Imports System.Threading
 Imports System.ComponentModel
 Imports System.IO.Ports
+Imports System.Management
 
 Public Class Main
 #Region "Variables"
@@ -171,6 +172,8 @@ Public Class Main
     End Sub
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Me.txtMobileNumber.Text = ""
+        Me.lblreceivercount.Text = "0"
+        Me.txtMobileNumber.Focus()
     End Sub
     Private Sub btnSend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSend.Click
         btnSend.Enabled = False
@@ -180,8 +183,8 @@ Public Class Main
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         StartWithoutActivation()
     End Sub
-    Private Sub dynamicLinkLabel_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles dynamicLinkLabel.LinkClicked
-        dynamicLinkLabel.LinkVisited = True
+    Private Sub dynamicLinkLabel_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs)
+        'dynamicLinkLabel.LinkVisited = True
         System.Diagnostics.Process.Start("http://www.pigeonclocking.somee.com")
     End Sub
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
@@ -235,6 +238,7 @@ Public Class Main
         Me.cmbBaudRate.Text = "115200"
         Me.cmbMemory.Text = "GSM Memory"
         Me.cmbMessageType.Text = "ALL"
+        Me.lblreceivercount.Text = "0"
     End Sub
     Private Sub GetComboBoxItem()
         Me.cmbMemory.Items.Add("GSM Memory")
@@ -350,7 +354,7 @@ Public Class Main
                     End If
                     counter += 1
                     Me.ProgressBar1.Value = counter
-                    Thread.Sleep(3500)
+                    Thread.Sleep(2000)
                 Next
                 If (status) Then
                     MessageBox.Show("Message Sent", "Sending Message")
@@ -390,8 +394,17 @@ Public Class Main
         Return IsReply
     End Function
     Private Sub GetPort()
-        For Each portName As String In SerialPort.GetPortNames()
-            If portName <> "COM1" Then cmbPort.Items.Add(portName)
+        'For Each portName As String In SerialPort.GetPortNames()
+        '    If portName <> "COM1" Then cmbPort.Items.Add(portName)
+        'Next 
+        Dim club As Club = New Club()
+        Dim modemType As String = club.GetModem()
+        Dim searcher As New ManagementObjectSearcher("root\CIMV2", "SELECT * FROM Win32_PnPEntity")
+        For Each queryObj As ManagementObject In searcher.Get()
+            If InStr(queryObj("Caption"), modemType) > 0 Then
+                Dim portName As String = queryObj("Caption").ToString().Replace(modemType, "").Replace("(", "").Replace(")", "").Trim()
+                cmbPort.Items.Add(portName)
+            End If
         Next
     End Sub
     Private Sub ActivateVerificationCode()
@@ -488,6 +501,7 @@ Public Class Main
                 Me.cmbPort.Enabled = False
                 Me.cmbMessageType.Enabled = False
                 Me.GroupBox4.Enabled = True
+                Me.Button2.Enabled = True
                 InitializeModem()
             Else
                 MessageBox.Show(errorMessage, "Error")
@@ -499,6 +513,7 @@ Public Class Main
             Me.cmbPort.Enabled = True
             Me.cmbMessageType.Enabled = True
             Me.GroupBox4.Enabled = False
+            Me.Button2.Enabled = False
         End If
     End Sub
 
@@ -528,5 +543,9 @@ Public Class Main
         If Me.rbReceive.Checked Then
             Me.cmbInbox.Enabled = False
         End If
+    End Sub
+
+    Private Sub GroupBox3_Enter(sender As Object, e As EventArgs) Handles GroupBox3.Enter
+
     End Sub
 End Class

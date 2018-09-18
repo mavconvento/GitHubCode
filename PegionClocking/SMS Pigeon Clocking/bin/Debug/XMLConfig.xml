@@ -9,16 +9,17 @@
   <databaseConnectionWeb>Data Source=LENOVO-PC\MSSQLSERVER2012;Database=PigeonClockingWebDB1;User Id=sa;password=06242009;Connect Timeout=1200</databaseConnectionWeb>
 
   <smssettings>
-    <type>Sender</type>
+    <type>Receiver</type>
     <modemVersion>2.0</modemVersion>
-    <modemID>1:Sender 1</modemID>
+    <modemID>Backup 1</modemID>
     <activationCode></activationCode>
     <memoryType>ME</memoryType>
     <messageType>ALL</messageType>
     <baudRate>115200</baudRate>
-    <portNo>COM13</portNo>
+    <portNo>COM8</portNo>
     <delay>1000</delay>
     <additionalDelay>2000</additionalDelay>
     <replyDelay>2000</replyDelay>
+    <integrationType>1</integrationType>
   </smssettings>
 </systemsetting>

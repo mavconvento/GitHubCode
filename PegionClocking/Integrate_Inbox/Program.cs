@@ -111,7 +111,7 @@ namespace Integrate_Inbox
                         foreach (DataRow item in dtResult.Tables[0].Rows)
                         {
                             id = item["ID"].ToString();
-                            integrateInbox.SaveInbox("web", item["SMSID"].ToString(), item["SMSContent"].ToString(), item["Sender"].ToString(), item["SMSDate"].ToString(), item["SMSTime"].ToString(), item["ActivationCode"].ToString(), item["ModemID"].ToString(), item["IsProcess"].ToString(), "SMS", out ReplyMessage, out Keyword);
+                            integrateInbox.SaveInbox("web", item["SMSID"].ToString(), item["SMSContent"].ToString(), item["Sender"].ToString(), item["SMSDate"].ToString(), item["SMSTime"].ToString(), item["ActivationCode"].ToString(), item["ModemID"].ToString(), item["IsProcess"].ToString(), Common.GetSource(), out ReplyMessage, out Keyword);
                             integrateInbox.UpdateInboxImport("local", id, ReplyMessage, Keyword);
                         }
                         Console.WriteLine("Finished Inbox Integration from Local to Web");

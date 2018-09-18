@@ -49,11 +49,11 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -82,6 +82,7 @@
     <Compile Include="Contacts.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DAL\Club.vb" />
     <Compile Include="DAL\ContactDAL.vb" />
     <Compile Include="DAL\DatabaseConnection.vb" />
     <Compile Include="DAL\SMSDAL.vb" />

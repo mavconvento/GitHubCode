@@ -126,7 +126,7 @@
             Else
                 Remark = "Manual"
             End If
-            If status = "Success" Then SMSDal.OutBoxSave(message, mobilenumber, status, Remark, InboxID, InboxType)
+            'If status = "Success" Then SMSDal.OutBoxSave(message, mobilenumber, status, Remark, InboxID, InboxType)
             Return True
         Catch ex As Exception
             SMSDal.OutBoxSave(message, mobilenumber, "Error", ex.Message, "0", InboxType)

@@ -875,5 +875,9 @@ namespace PegionClocking
 
         #endregion
 
+        private void shapeContainer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

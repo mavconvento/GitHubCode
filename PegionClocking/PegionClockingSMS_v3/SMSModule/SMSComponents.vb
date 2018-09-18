@@ -5,7 +5,7 @@ Imports System.IO.Ports
 Imports SerialFix = SerialPortTester.SerialPortFixer
 
 Public Class SMSComponents
-    Private Const delayValue As Decimal = 2.0
+    Private Const delayValue As Decimal = 3.0
     Public WithEvents SMSPort As SerialPort
     Public Event Sending(ByVal Done As Boolean)
     Public Event DataReceived(ByVal Message As String)
@@ -85,7 +85,7 @@ Public Class SMSComponents
             If SMSPort.IsOpen = True Then
                 SMSPort.WriteLine("AT")
                 DELAY(delayValue)
-                SMSPort.WriteLine("AT+CMGF=1" & vbCrLf)
+                SMSPort.WriteLine("AT+CMGF=1" & vbCrLf) 'set command message format to text mode(1)
 
                 'If isDeleted Then
                 '    DELAY(delayValue)

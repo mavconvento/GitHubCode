@@ -82,23 +82,27 @@ namespace Integrate_Inbox
                 if (ConnectionType == "local")
                 {
                     connectionString = sysDir + "\\ConnectionString.inf";
+                    if (File.Exists(connectionString))
+                    {
+                        TextReader tr = new StreamReader(connectionString);
+                        using (tr)
+                        {
+                            servername = tr.ReadLine(); //Decrypt();
+                            databasename = tr.ReadLine(); //Decrypt();
+                            username = tr.ReadLine(); //Decrypt();
+                            password = tr.ReadLine(); //Decrypt();
+                        }
+                    }
                 }
                 else
                 {
-                    connectionString = sysDir + "\\ConnectionString_webDB.inf";
+                    servername = "204.93.160.206";
+                    databasename = "pigeon_mavcpigeonclocking";
+                    username = "sa";
+                    password = "06242009";
                 }   
 
-                if (File.Exists(connectionString))
-                {
-                    TextReader tr = new StreamReader(connectionString);
-                    using (tr)
-                    {
-                        servername = tr.ReadLine(); //Decrypt();
-                        databasename = tr.ReadLine(); //Decrypt();
-                        username = tr.ReadLine(); //Decrypt();
-                        password = tr.ReadLine(); //Decrypt();
-                    }
-                }
+                
             }
             catch (Exception ex)
             {

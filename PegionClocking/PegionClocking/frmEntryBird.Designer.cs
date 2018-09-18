@@ -1,4 +1,5 @@
-﻿namespace PegionClocking
+﻿
+namespace PegionClocking
 {
     partial class frmEntryBird
     {
@@ -192,6 +193,7 @@
             this.shapeContainer1.Size = new System.Drawing.Size(893, 579);
             this.shapeContainer1.TabIndex = 9;
             this.shapeContainer1.TabStop = false;
+            this.shapeContainer1.Load += new System.EventHandler(this.shapeContainer1_Load);
             // 
             // lineShape4
             // 
@@ -820,7 +822,6 @@
             this.button5.TabIndex = 74;
             this.button5.Text = "COPY LAST ENTRY";
             this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnSearchIdentity

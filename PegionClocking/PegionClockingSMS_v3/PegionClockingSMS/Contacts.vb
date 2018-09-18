@@ -39,19 +39,19 @@
 #Region "Private Methods"
     Private Sub GetClubList()
         Try
-            Dim dtResult As DataSet
+            Dim dtResult As String
             contactBIZ = New ContactBIZ()
             dtResult = contactBIZ.GetClubList()
 
             Me.ComboBox1.Items.Clear()
-
-            If (dtResult.Tables.Count > 0) Then
-                If (dtResult.Tables(0).Rows.Count > 0) Then
-                    For Each dr As DataRow In dtResult.Tables(0).Rows
-                        Me.ComboBox1.Items.Add(dr("ClubAbbreviation"))
-                    Next
-                End If
-            End If
+            Me.ComboBox1.Items.Add(dtResult)
+            'If (dtResult.Tables.Count > 0) Then
+            '    If (dtResult.Tables(0).Rows.Count > 0) Then
+            '        For Each dr As DataRow In dtResult.Tables(0).Rows
+            '            Me.ComboBox1.Items.Add(dr("ClubAbbreviation"))
+            '        Next
+            '    End If
+            'End If
 
         Catch ex As Exception
 

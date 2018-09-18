@@ -16,15 +16,18 @@ Public Class DatabaseConnection
 
         Dim connectionstring As String = sysdir & "\ConnectionString.inf"
 
+        servername = "204.93.160.206"
+        username = "sa"
+        password = "06242009"
+
         If File.Exists(connectionstring) Then
             Using tr As TextReader = New StreamReader(connectionstring)
-                servername = tr.ReadLine
-                databasename = tr.ReadLine
-                username = tr.ReadLine
-                password = tr.ReadLine
+                databasename = "pigeonclocking_" + tr.ReadLine
             End Using
         End If
     End Sub
+
+
 
     Public Sub DatabaseConnection(ByVal procname As String)
         Me.ReadConnecntionStringFile()

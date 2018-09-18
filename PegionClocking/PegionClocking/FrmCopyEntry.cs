@@ -84,6 +84,18 @@ namespace PegionClocking
                 MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
             }
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetLastEntry();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }  
+        }
         private void GetLastEntry()
         {
             try
@@ -94,6 +106,7 @@ namespace PegionClocking
                 entry.MemberID = MemberID;
                 entry.ClubID = ClubID;
                 entry.RaceReleasePointID = RaceReleasePointID;
+                entry.ReleaseDate = dtpDateRelease.Value;
                 dtResult = entry.GetLastEntry();
 
                 if (dtResult.Tables.Count > 0)
@@ -146,6 +159,8 @@ namespace PegionClocking
                 throw ex;
             }
         }
-        #endregion       
+        #endregion
+
+
     }
 }

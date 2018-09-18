@@ -63,3 +63,11 @@ F:\Pigeon Clocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\GenerateResourc
 F:\Pigeon Clocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.exe
 C:\Users\MarkAdams\Dropbox\MAVC Confidential\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\bin\Debug\PostResult.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\bin\Debug\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.frmPostResult.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.Properties.Resources.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.csproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.pdb

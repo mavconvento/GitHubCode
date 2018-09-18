@@ -36,6 +36,7 @@ namespace PegionClocking.DAL
         public string Remarks { get; set; }
         public string MemberIDNo { get; set; }
         public Boolean Isuploaded { get; set; }
+        public DateTime ReleaseDate { get; set; }
         #endregion
 
         #region Public Methods
@@ -156,6 +157,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceScheduleCategoryName", RaceScheduleCategoryName);
                 dbconn.sqlComm.Parameters.AddWithValue("@MemberID", MemberID);
                 dbconn.sqlComm.Parameters.AddWithValue("@ReleasepointID", RaceReleasePointID);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", ReleaseDate);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

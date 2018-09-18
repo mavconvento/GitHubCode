@@ -31,6 +31,7 @@ namespace PegionClocking.BIZ
         public Int64 BandID { get; set; }
         public string RingNumber { get; set; }
         public string BarcodeBandID { get; set; }
+        public DateTime ReleaseDate { get; set; }
         #endregion
 
         #region Public Methods
@@ -217,6 +218,7 @@ namespace PegionClocking.BIZ
                     entry.BandID = BandID;
                     entry.RingNumber = RingNumber;
                     entry.BarcodeBandID = BarcodeBandID;
+                    entry.ReleaseDate = ReleaseDate;
                     entry.MemberID = MemberID;
                 }
                 else if (type == "releasepoint")

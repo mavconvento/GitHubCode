@@ -11,7 +11,7 @@
   <smssettings>
     <type>Receiver</type>
     <modemVersion>2.0</modemVersion>
-    <modemID>Receiver 1</modemID>
+    <modemID>Backup 1</modemID>
     <activationCode></activationCode>
     <memoryType>ME</memoryType>
     <messageType>ALL</messageType>
