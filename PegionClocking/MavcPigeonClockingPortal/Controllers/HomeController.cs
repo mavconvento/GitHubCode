@@ -128,9 +128,46 @@ namespace MavcPigeonClockingPortal.Controllers
         {
             JsonResponse response = new JsonResponse();
             LoginData lData = new LoginData();
+            DAL.Common common = new DAL.Common();
 
             var dt = lData.ForgotPassword(forgotPasswordData).Tables[0];
             response.Message = LWT.Common.LWTSafeTypes.SafeString(dt.Rows[0]["ErrMsg"]);
+
+            if (response.Message.Contains("Your password will send to your mobile."))
+            {
+                string[] value = response.Message.Split('|');
+                response.Message = value[0];
+                var sms = "Your Password: " + value[1];
+                //send password via sms
+                var ret = itexmo(forgotPasswordData.MobileNumber, sms, "PR-MARKA754822_4H5EX");
+                if (ret.ToString() == "0")
+                {
+                    common.ChargeText(forgotPasswordData.MobileNumber);
+                    response.Message = value[0];
+                }
+                else
+                {
+                    response.Message = "Error detected while password is sending on your mobile number.";
+                }
+            }
+            else if (response.Message.Contains("OTP"))
+            {
+                string[] value = response.Message.Split('|');
+                var sms = "Your Security Code: " + value[1];
+                response.Remarks = "OTP";
+
+                //send security code via sms
+                var ret = itexmo(forgotPasswordData.MobileNumber, sms, "PR-MARKA754822_4H5EX");
+                if (ret.ToString() == "0")
+                {
+                    common.ChargeText(forgotPasswordData.MobileNumber);
+                    response.Message = "To verify your request, please enter the security code sent on your mobile number.";
+                }
+                else
+                {
+                    response.Message = "Error detected while sending security code on your mobile number. Please click [Change Password] button again.";
+                }
+            }
 
             return Json(new { data = response }, JsonRequestBehavior.AllowGet);
         }
@@ -182,5 +219,25 @@ namespace MavcPigeonClockingPortal.Controllers
             Response.Cookies.Add(cookiePassword);
         }
 
+         private object itexmo(string Number, string Message, string API_CODE, Boolean isImportant = false)
+        {
+            object functionReturnValue = null;
+            using (System.Net.WebClient client = new System.Net.WebClient())
+            {
+                System.Collections.Specialized.NameValueCollection parameter = new System.Collections.Specialized.NameValueCollection();
+                string url = "https://www.itexmo.com/php_api/api.php";
+                parameter.Add("1", Number);
+                parameter.Add("2", Message);
+                parameter.Add("3", API_CODE);
+
+                if (isImportant)
+                {
+                    parameter.Add("5", "HIGH");
+                }
+                dynamic rpb = client.UploadValues(url, "POST", parameter);
+                functionReturnValue = (new System.Text.UTF8Encoding()).GetString(rpb);
+            }
+            return functionReturnValue;
+        }
     }
 }

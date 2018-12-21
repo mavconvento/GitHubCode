@@ -209,7 +209,6 @@ D:\MyProject\MAVC Source Codes\PegionClocking\SMSModule\obj\Debug\SMSModule.vbpr
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
-C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.dll

@@ -2,3 +2,8 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\Re
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\Repository.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\obj\Debug\Repository.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\obj\Debug\Repository.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\InterfaceFactory.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\DomainObjects.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\bin\Debug\InterfaceFactory.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Repository\obj\Debug\Repository.csprojResolveAssemblyReference.cache

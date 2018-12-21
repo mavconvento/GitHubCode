@@ -33,6 +33,7 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@UserName", mLoginData.UserName);
                 dbconn.sqlComm.Parameters.AddWithValue("@Password", mLoginData.Password);
 
@@ -70,6 +71,7 @@ namespace MavcPigeonClockingPortal.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@MobileNumber", mForgotPasswordData.MobileNumber);
                 dbconn.sqlComm.Parameters.AddWithValue("@Password", mForgotPasswordData.Password);
                 dbconn.sqlComm.Parameters.AddWithValue("@ActionType", mForgotPasswordData.ActionType);
+                dbconn.sqlComm.Parameters.AddWithValue("@SecurityCode", mForgotPasswordData.SecurityCode);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;

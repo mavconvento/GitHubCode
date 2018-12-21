@@ -526,6 +526,9 @@ Public Class Main
     End Sub
 
     Private Sub txtMessage_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtMessage.TextChanged
+        If Len(Me.txtMessage.Text) > 145 Then
+            Me.txtMessage.Text = txtMessage.Text.Substring(0, 145)
+        End If
         Me.Label8.Text = "Text Message : " & Len(Me.txtMessage.Text)
     End Sub
 

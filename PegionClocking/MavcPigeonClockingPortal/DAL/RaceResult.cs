@@ -34,6 +34,7 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@UserName", UserID);
                 dbconn.sqlComm.Parameters.AddWithValue("@NotExpired",  1);
                 dbconn.sqlComm.Parameters.AddWithValue("@RequestFrom", "pilipinaskalapati");
@@ -70,9 +71,10 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", 0);
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubName", ClubID);
-                dbconn.sqlComm.Parameters.AddWithValue("@ReturnAll", 1);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReturnAll", 0);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
@@ -105,9 +107,10 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", 0);
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubName", ClubID);
-                dbconn.sqlComm.Parameters.AddWithValue("@ReturnAll", 1);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReturnAll", 0);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
@@ -138,11 +141,12 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID",  0);
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubName", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate",  ReleaseDate);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceCategory",  BirdCategory);
-                dbconn.sqlComm.Parameters.AddWithValue("@RaceCategoryGroup",  RaceCategory);
+                dbconn.sqlComm.Parameters.AddWithValue("@RaceCategoryGroup", RaceCategory);
                 dbconn.sqlComm.Parameters.AddWithValue("@Version",  0);
                 dbconn.sqlComm.Parameters.AddWithValue("@Name",  SearchName);
                 dbconn.sqlComm.Parameters.AddWithValue("@IsFromWeb", 1);
@@ -176,6 +180,7 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", 0);
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubName", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", ReleaseDate);
@@ -215,6 +220,7 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", 0);
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubName", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", ReleaseDate);

@@ -34,8 +34,23 @@
         padding: 0;
         padding-bottom: 10px;
     }
+
+    .loader {
+        background-color:#fff;
+        position: fixed;
+        left:25%;
+        top:25%;
+        width: 100px;
+        height: 100px;
+        margin: -50px 0 0 -50px;
+        opacity: 0.5;
+        z-index:10000;
+    }
 </style>
 <div ng-controller="RaceResultController">
+    <div class="loader" ng-show="loading">
+        <img src="~/Images/loadingspinner.gif" />
+    </div>
     <div id="Filter" ng-init="SetInitialValues()" ng-cloak>
         <table class="table removeborder" style="width: 100%; padding-top: 10px; margin-top: 10px;">
             <tr>
@@ -53,7 +68,7 @@
                 </td>
                 <td>
                     <select style="width: 150px" class="form-control input-sm" data-ng-model="RaceResultFilter.BirdCategory"
-                        data-ng-options="c.dESCRIPTION as c.dESCRIPTION for c in BirdCategory | filter: {clubID : RaceResultFilter.ClubName.clubID}:true">
+                        data-ng-options="c.dESCRIPTION as c.dESCRIPTION for c in BirdCategory">
                         <option value="">All</option>
                     </select>
                 </td>
@@ -62,7 +77,7 @@
                 </td>
                 <td>
                     <select style="width: 150px" class="form-control input-sm" data-ng-model="RaceResultFilter.GroupCategory"
-                        data-ng-options="c.raceGroup as c.raceGroup for c in GroupCategory | filter: {clubID : RaceResultFilter.ClubName.clubID}:true">
+                        data-ng-options="c.raceGroup as c.raceGroup for c in GroupCategory">
                         <option value="">All</option>
                     </select>
                 </td>
@@ -93,8 +108,8 @@
             </tr>
             <tr>
                 <td colspan="2" style="width: 600px">
-                    <span style="color: #8dc63f; font-size: 20px"><b>Access Number : {{RaceResultFilter.AccessNumber}}</b></span>
-                    <span style="color: #8dc63f; font-size: 20px"><b>Access Number : {{RaceResultFilter.AccessNumber}}</b></span>
+                    <span style="color: #8dc63f; font-size: 20px"><b>Access Number :</b></span><br />
+                    <span style="color: #8dc63f; font-size: 15px">{{RaceResultFilter.AccessNumber}}</span>
                 </td>
                 <td style="position: absolute; left: 1100px; width: 100px !important">
                     <img src="{{RaceResultFilter.URL}}" style="width: inherit; height: auto" />
@@ -117,9 +132,9 @@
         </table>
     </div>
     <div id="RaceDetails" style="margin-top: 10px">
-        <table>
+        <table class="pcscreen">
             <tr>
-                <td class="columnName">
+                <td class="columnName" style="width: 250px">
                     <span style="font-size: 15px">Race Description :</span>
                 </td>
                 <td colspan="5">
@@ -155,8 +170,8 @@
                             </td>
                             <td ng-show="RaceDetails.Coordinates != ''" style="vertical-align: bottom; padding-left: 10px;">
                                 <li class="hover" style="margin: 0px; padding: 0px"><a href="#" style="" class="customheader">
-                                    <span ng-click="ViewMaps(RaceDetails.Latitude,RaceDetails.Longtitude,RaceDetails.LiberationPoint,RaceDetails.Coordinates)" style="color: Aqua;
-                                        font-size: small"><b>View</b></span></a></li>
+                                    <span ng-click="ViewMaps(RaceDetails.Latitude,RaceDetails.Longtitude,RaceDetails.LiberationPoint,RaceDetails.Coordinates)"
+                                        style="color: Aqua; font-size: small"><b>View</b></span></a></li>
                             </td>
                         </tr>
                     </table>
@@ -199,7 +214,7 @@
                     <span>Release Time :</span>
                 </td>
                 <td>
-                    <span>{{RaceDetails.ReleaseTime}}</span>
+                    <span ng-bind-html="RaceDetails.ReleaseTime"></span>
                 </td>
                 <td class="columnName">
                     <span>Total Bird Entry : </span>
@@ -208,6 +223,114 @@
                     {{RaceDetails.TotalBirdEntry}}
                 </td>
                 <td>
+                </td>
+            </tr>
+        </table>
+        <table class="mobilescreen">
+            <tr>
+                <td class="columnName" style="width: 250px">
+                    <span style="font-size: 15px">Race Description :</span>
+                </td>
+                <td colspan="5">
+                    <span style="color: #8dc63f; font-size: 15px;">{{RaceDetails.Description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Liberation Point : </span>
+                </td>
+                <td style="width: 250px">
+                    {{RaceDetails.LiberationPoint}}
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Minimum Speed : </span>
+                </td>
+                <td style="width: 200px">
+                    {{RaceDetails.MinSpeed}}
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Coordinate : </span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="coordinates">
+                    <table>
+                        <tr>
+                            <td>
+                                {{RaceDetails.Coordinates}}
+                            </td>
+                            <td ng-show="RaceDetails.Coordinates != ''" style="vertical-align: bottom; padding-left: 10px;">
+                                <li class="hover" style="margin: 0px; padding: 0px"><a href="#" style="" class="customheader">
+                                    <span ng-click="ViewMaps(RaceDetails.Latitude,RaceDetails.Longtitude,RaceDetails.LiberationPoint,RaceDetails.Coordinates)"
+                                        style="color: Aqua; font-size: small"><b>View</b></span></a></li>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Release Time :</span>
+                </td>
+                <td>
+                    <span ng-bind-html="RaceDetails.ReleaseTime"></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Lap No. : </span>
+                </td>
+                <td>
+                    {{RaceDetails.LapNo}}
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Total Bird Entry : </span>
+                </td>
+                <td>
+                    {{RaceDetails.TotalBirdEntry}}
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Bird Entry Count :</span>
+                </td>
+                <td>
+                    <span>{{RaceDetails.BirdEntryCount}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span>Total Bird Clock : </span>
+                </td>
+                <td>
+                    {{RaceDetails.TotalBirdClock}}
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <b style="color: Red">Stop Time</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span style="margin-left: 10px; padding-left: 10px;">To (Sunrise next day) :</span>
+                </td>
+                <td>
+                    {{RaceDetails.Sunrise}}
+                </td>
+            </tr>
+            <tr>
+                <td class="columnName">
+                    <span style="margin-left: 10px; padding-left: 10px;">From (Sunset) :</span>
+                </td>
+                <td>
+                    {{RaceDetails.Sunset}}
                 </td>
             </tr>
         </table>
@@ -286,40 +409,40 @@
         </table>
     </div>
     <hr />
-    <div>
+    <div loading-pane="isPaneShown">
         <span style="color: #8dc63f; font-size: 15px; margin-left: 10px"><b>Race Result Summary</b></span>
         <table data-ng-table="tableParams" class="table">
             <tr data-ng-repeat="raceResult in $data">
                 <td data-title="'Rank'" data-sortable="'Rank'">
                     {{raceResult.rank}}
                 </td>
-                <td data-title="'Member/Loft Name'" data-sortable="'memberName'">
+                <td data-title="'Member/Loft Name'" data-sortable="'memberName'" style="width: 200px;">
                     {{raceResult.memberName}}
                 </td>
                 <td data-title="'Location/Coordinates'" data-sortable="">
-                    <li class="hover" style="margin: 0px; padding: 0px; text-align:center"><a href="#" style="" class="customheader">
-                        <span ng-click="ViewMaps(raceResult.latitude,raceResult.longtitude,raceResult.memberName,raceResult.coordinates)" style="color: Aqua;
-                            font-size: small"><b>View</b></span></a></li>
+                    <li class="hover" style="margin: 0px; padding: 0px; text-align: center"><a href="#"
+                        style="" class="customheader"><span ng-click="ViewMaps(raceResult.latitude,raceResult.longtitude,raceResult.memberName,raceResult.coordinates)"
+                            style="color: Aqua; font-size: small"><b>View</b></span></a></li>
                 </td>
-                <td data-title="'Distance (M)'" data-sortable="'distance'">
+                <td data-title="'Distance (KM)'" data-sortable="'distance'" style="text-align: center;">
                     {{raceResult.distance}}
                 </td>
-                <td data-title="'Band/Ring Number'" data-sortable="'ringNumber'">
+                <td data-title="'Band/Ring Number'" data-sortable="'ringNumber'" style="width: 200px">
                     {{raceResult.ringNumber}}
                 </td>
                 <td data-title="'Sticker Code'" data-sortable="'code'">
                     {{raceResult.code}}
                 </td>
-                <td data-title="'Arrival Time'" data-sortable="'arrival'" style="width: 150px">
+                <td data-title="'Arrival Time'" data-sortable="'arrival'" style="text-align: center;">
                     {{raceResult.arrival}}
                 </td>
-                <td data-title="'Flight'" data-sortable="'flight'">
+                <td data-title="'Flight'" data-sortable="'flight'" style="text-align: center;">
                     {{raceResult.flight}}
                 </td>
-                <td data-title="'Speed (MPM)'" data-sortable="'speed'">
+                <td data-title="'Speed (MPM)'" data-sortable="'speed'" style="text-align: center;">
                     {{raceResult.speed}}
                 </td>
-                <td data-title="'Source'" data-sortable="'remarks'">
+                <td data-title="'Source'" data-sortable="'remarks'" style="width: 50px">
                     {{raceResult.remarks}}
                 </td>
             </tr>
@@ -327,5 +450,5 @@
     </div>
 </div>
 @section scripts{
-    <script src="~/Scripts/AngularController/RaceResult1.1.js" type="text/javascript"></script>
+    <script src="~/Scripts/AngularController/RaceResult1.5.js" type="text/javascript"></script>
 }

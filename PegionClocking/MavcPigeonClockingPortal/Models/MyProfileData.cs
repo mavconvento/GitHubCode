@@ -138,10 +138,10 @@ namespace MavcPigeonClockingPortal.Models
             return dtResult;
         }
 
-        public DataTable UnregMobileNumber(string ClubID, String Mobilenumber)
+        public DataTable UnregMobileNumber(string ClubID, String Mobilenumber, string UserID)
         {
             DAL.MyProfile myProfile = new DAL.MyProfile();
-            DataSet dsResult = myProfile.UnregMobileNumber(ClubID, Mobilenumber, "UNREG");
+            DataSet dsResult = myProfile.UnregMobileNumber(ClubID, Mobilenumber,UserID, "UNREG");
             DataTable dtResult = new DataTable();
 
             if (dsResult.Tables.Count > 0)

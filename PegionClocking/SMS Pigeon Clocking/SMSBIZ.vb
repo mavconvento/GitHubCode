@@ -3,6 +3,7 @@
 
 #Region "Variables"
     Private SMSDal As New SMSDAL
+    Private CommonClass As New Common
     Private SMSMod As SMSModule.SMSComponents
     Private isSendReplyValue As Boolean = True
     Private portNameValue As String = ""
@@ -202,6 +203,7 @@
 
         Try
             SMSDal = New SMSDAL()
+            CommonClass = New Common()
             message = message.Replace("""", "").Replace(",,", ",")
             array = message.Split(",")
 
@@ -218,7 +220,12 @@
 
             SMSDal.ActivationCode = ActivationCode
 
-            SMSDal.InboxSave(ID, Content, Sender, DateReceived, TimeReceived, ModemID)
+            If (CommonClass.ReadConnecntionStringTypeFile() = "local") Then
+                SMSDal.InboxSaveToLocal(ID, Content, Sender, DateReceived, TimeReceived, ModemID)
+            Else
+                SMSDal.InboxSave(ID, Content, Sender, DateReceived, TimeReceived, ModemID)
+            End If
+
             SMSMod.PortNo = PortName
             SMSMod.DeleteDelay = DeleteDelay
             SMSMod.DeleteReadSMS(CType(ID, Integer)) 'delete sms in storage

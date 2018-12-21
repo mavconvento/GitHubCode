@@ -54,14 +54,14 @@
                                 {{club.LoftName}}
                             </td>
                         </tr>
-                        @*<tr>
+                        <tr>
                             <td>
-                                Coordinates
+                                Membership Status
                             </td>
                             <td>
-                                {{club.Coodinates}}
+                                {{club.MembershipStatus}}
                             </td>
-                        </tr>*@
+                        </tr>
                         <tr>
                         <td colspan="2" style="padding-bottom:5px" ><input style="width:150px" type="button" value="View Distance " ng-click="GotoMyDistance(club)"/></td>
                         </tr>
@@ -91,10 +91,10 @@
                                 {{mList.dateRegistered}}
                             </td>
                             <td>
-                            <input type="button" value="Unreg" ng-click="UnregMobileNumber(mList.mobileNumber,mList.clubID)" />
+                            <input type="button" value="Unreg" ng-click="UnregMobileNumber(mList.mobileNumber,mList.clubAbbreviation,@ViewBag.cookiesUserName)" />
                             </td>
                              <td>
-                            <input type="button" value="Load MAVC Card" ng-click="LoanMavcCard(mList.mobileNumber,mList.clubID)" />
+                            <input type="button" value="Load MAVC Card" ng-click="LoanMavcCard(mList.mobileNumber,mList.clubAbbreviation)" />
                             </td>
                              <td>
                             <input type="button" value="Pasaload" ng-click="Pasaload(mList.mobileNumber)" />
@@ -107,10 +107,10 @@
     </div>
 </div>
 @section scripts{
-    <script src="~/Scripts/AngularController/MyProfile1.1.js" type="text/javascript"></script>
+    <script src="~/Scripts/AngularController/MyProfile1.4.js" type="text/javascript"></script>
     <script type="text/ng-template" id="unreg">
         <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
-	    <div style="text-align:left; width:100%; size:10px; ">
+	    <div style="text-align:left; width:100%; font-size:10px; ">
         <pre class="headerColor">Unregister Mobile Number</pre>
             <pre >Are you sure you want to unreg this mobile number</pre>
             <div style="text-align:center; margin-bottom:20px; padding-bottom:5px">
@@ -121,7 +121,7 @@
     </script>
     <script type="text/ng-template" id="loadMavcCard">
         <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
-	    <div style="text-align:left; width:100%; size:10px; ">
+	    <div style="text-align:left; width:100%; font-size:10px; ">
         <pre class="headerColor">Load MAVC Access Card</pre>
             <pre >To load your mavc card, please enter <br />Mavc Card Pin Number</pre>
             <hr />
@@ -142,7 +142,7 @@
     </script>
     <script type="text/ng-template" id="pasaload">
         <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
-	    <div style="text-align:left; width:100%; size:10px; ">
+	    <div style="text-align:left; width:100%; font-size:10px; ">
         <pre class="headerColor">Pasaload</pre>
             <pre >To pasaload, please enter <br />mobile number where you will transfer the load</pre>
             <hr />

@@ -134,6 +134,8 @@ namespace MavcPigeonClockingPortal.Models
         public RaceResultDetailsData GetRaceDetails(String ClubID, String BirdCategory, String RaceCategory, DateTime ReleaseDate, String SearchName, String Sender)
         {
             DAL.RaceResult raceResult = new DAL.RaceResult();
+            if (string.IsNullOrEmpty(BirdCategory)) BirdCategory = "All";
+            if (string.IsNullOrEmpty(RaceCategory)) RaceCategory = "All";
             DataSet dsResult = raceResult.GetRaceDetails(ClubID, BirdCategory, RaceCategory, ReleaseDate, SearchName, Sender);
             DataTable dtResult = new DataTable();
             RaceResultDetailsData details = new RaceResultDetailsData();
@@ -164,6 +166,8 @@ namespace MavcPigeonClockingPortal.Models
         public DataTable GetRaceResult(String ClubID, String BirdCategory, String RaceCategory, DateTime ReleaseDate, String SearchName)
         {
             DAL.RaceResult raceResult = new DAL.RaceResult();
+            if (string.IsNullOrEmpty(BirdCategory)) BirdCategory = "All";
+            if (string.IsNullOrEmpty(RaceCategory)) RaceCategory = "All";
             DataSet dsResult = raceResult.GetRaceResult(ClubID, BirdCategory, RaceCategory, ReleaseDate, SearchName);
             DataTable dtResult = new DataTable();
             if (dsResult.Tables.Count > 0)
@@ -176,6 +180,8 @@ namespace MavcPigeonClockingPortal.Models
         public DataTable GetRaceEntry(String ClubID, String BirdCategory, String RaceCategory, DateTime ReleaseDate, String SearchName, String Sender)
         {
             DAL.RaceResult raceResult = new DAL.RaceResult();
+            if (string.IsNullOrEmpty(BirdCategory)) BirdCategory = "All";
+            if (string.IsNullOrEmpty(RaceCategory)) RaceCategory = "All";
             DataSet dsResult = raceResult.GetRaceEntry(ClubID, BirdCategory, RaceCategory, ReleaseDate, SearchName, Sender);
             DataTable dtResult = new DataTable();
             if (dsResult.Tables.Count > 0)

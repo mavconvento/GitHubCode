@@ -11,8 +11,8 @@ namespace SMSWindowService.Factory.Inbound
     public class InboundProcess
     {
 
-        XMLConfig oSetting;
-        XmlNode oNode;
+        //XMLConfig oSetting;
+        //XmlNode oNode;
 
         public void GetInboundProcess(String Type, SMSComponent smsComponent)
         {

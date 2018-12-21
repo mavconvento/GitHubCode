@@ -461,8 +461,19 @@ namespace PegionClocking
             }
         }
 
+
         #endregion
 
-      
+        private void chkIsStop_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (this.chkIsStop.Checked)
+            {
+                this.groupBox2.Enabled = true;
+            }
+            else
+            {
+                this.groupBox2.Enabled = false;
+            }
+        }
     }
 }

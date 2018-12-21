@@ -37,3 +37,41 @@ E:\MyProject\MAVC Source Codes\SoureCode\MavcPigeonClockingPortal\bin\Microsoft.
 E:\MyProject\MAVC Source Codes\SoureCode\MavcPigeonClockingPortal\obj\Release\MavcPigeonClockingPortal.csprojResolveAssemblyReference.cache
 E:\MyProject\MAVC Source Codes\SoureCode\MavcPigeonClockingPortal\obj\Release\MavcPigeonClockingPortal.dll
 E:\MyProject\MAVC Source Codes\SoureCode\MavcPigeonClockingPortal\obj\Release\MavcPigeonClockingPortal.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\MavcPigeonClockingPortal.dll.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\MavcPigeonClockingPortal.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\MavcPigeonClockingPortal.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Antlr3.Runtime.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\EntityFramework.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Microsoft.Web.Infrastructure.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Newtonsoft.Json.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Net.Http.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Net.Http.Formatting.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Net.Http.WebRequest.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Http.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Http.WebHost.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Mvc.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Optimization.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Providers.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Razor.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.WebPages.Deployment.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.WebPages.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.WebPages.Razor.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\WebGrease.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Microsoft.ReportViewer.Common.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\EntityFramework.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Newtonsoft.Json.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Net.Http.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Net.Http.Formatting.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Net.Http.WebRequest.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Http.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Http.WebHost.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Mvc.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.Razor.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.WebPages.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.WebPages.Deployment.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.Web.WebPages.Razor.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Microsoft.ReportViewer.WebForms.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\obj\Release\MavcPigeonClockingPortal.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\obj\Release\MavcPigeonClockingPortal.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\obj\Release\MavcPigeonClockingPortal.pdb

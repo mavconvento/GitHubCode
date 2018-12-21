@@ -226,6 +226,11 @@ namespace PegionClocking
                         lblLap.Text = dtResult.Tables[0].Rows[0]["Lap"].ToString();
                         lblTotalBirds.Text = dtResult.Tables[0].Rows[0]["TotalBird"].ToString();
                         lblTotalSMSCount.Text = dtResult.Tables[0].Rows[0]["SMSCount"].ToString();
+                        lblClockingPercentage.Text = "0 %";
+                        if (lblTotalBirds.Text != "0" && lblTotalBirds.Text != "" && lblTotalSMSCount.Text != "")
+                        {
+                            lblClockingPercentage.Text = Convert.ToString(Convert.ToDecimal(Decimal.Parse(lblTotalSMSCount.Text) / Decimal.Parse(lblTotalBirds.Text) * 100)) + " %";
+                        }
                         version = dtResult.Tables[0].Rows[0]["Version"].ToString();
                     }
 
@@ -250,5 +255,9 @@ namespace PegionClocking
         }
         #endregion
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

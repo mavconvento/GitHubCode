@@ -1,4 +1,6 @@
 ﻿
+Imports System.IO
+
 Public Class SMSDAL
     Implements IDisposable
 
@@ -34,6 +36,25 @@ Public Class SMSDAL
                 .sqlconn.Close()
             End With
             Return message
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+    Public Function InboxSaveToLocal(ByVal SMSID As String, ByVal SMSContent As String, ByVal Sender As String, ByVal SMSDate As String, ByVal SMSTime As String, ByVal ModemIDValue As String) As String
+        Dim sysdir As String = ""
+        sysdir = My.Application.Info.DirectoryPath
+        Dim strFile As String = sysdir + "\SMSStorage\InboxLog_" & DateTime.Today.ToString("dd-MMM-yyyy") & ".txt"
+        Dim sw As StreamWriter
+        Try
+            If (Not File.Exists(strFile)) Then
+                sw = File.CreateText(strFile)
+                sw.WriteLine(String.Concat(SMSID, "|", SMSContent, "|", Sender, "|", SMSDate, "|", SMSTime, "|", ModemIDValue))
+            Else
+                sw = File.AppendText(strFile)
+                sw.WriteLine(String.Concat(SMSID, "|", SMSContent, "|", Sender, "|", SMSDate, "|", SMSTime, "|", ModemIDValue))
+            End If
+            sw.Close()
+            Return Nothing
         Catch ex As Exception
             Throw ex
         End Try

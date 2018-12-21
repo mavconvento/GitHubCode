@@ -52,6 +52,9 @@
             this.label21 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblClockingPercentage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +139,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 180);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(982, 327);
+            this.dataGridView1.Size = new System.Drawing.Size(982, 330);
             this.dataGridView1.TabIndex = 8;
             // 
             // label4
@@ -215,7 +218,7 @@
             // lblTotalBirds
             // 
             this.lblTotalBirds.AutoSize = true;
-            this.lblTotalBirds.Location = new System.Drawing.Point(528, 104);
+            this.lblTotalBirds.Location = new System.Drawing.Point(547, 104);
             this.lblTotalBirds.Name = "lblTotalBirds";
             this.lblTotalBirds.Size = new System.Drawing.Size(33, 13);
             this.lblTotalBirds.TabIndex = 23;
@@ -224,7 +227,7 @@
             // lblTotalSMSCount
             // 
             this.lblTotalSMSCount.AutoSize = true;
-            this.lblTotalSMSCount.Location = new System.Drawing.Point(528, 128);
+            this.lblTotalSMSCount.Location = new System.Drawing.Point(547, 128);
             this.lblTotalSMSCount.Name = "lblTotalSMSCount";
             this.lblTotalSMSCount.Size = new System.Drawing.Size(33, 13);
             this.lblTotalSMSCount.TabIndex = 22;
@@ -234,7 +237,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(415, 128);
+            this.label20.Location = new System.Drawing.Point(434, 128);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(111, 13);
             this.label20.TabIndex = 21;
@@ -244,7 +247,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(437, 104);
+            this.label21.Location = new System.Drawing.Point(456, 104);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(88, 13);
             this.label21.TabIndex = 20;
@@ -253,7 +256,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(784, 151);
+            this.button2.Location = new System.Drawing.Point(784, 123);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(210, 23);
             this.button2.TabIndex = 24;
@@ -264,7 +267,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(784, 124);
+            this.button3.Location = new System.Drawing.Point(784, 94);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(210, 23);
             this.button3.TabIndex = 25;
@@ -272,11 +275,44 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(784, 152);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(210, 23);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "Post Official Result";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(547, 152);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 13);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "value";
+            // 
+            // lblClockingPercentage
+            // 
+            this.lblClockingPercentage.AutoSize = true;
+            this.lblClockingPercentage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClockingPercentage.Location = new System.Drawing.Point(412, 151);
+            this.lblClockingPercentage.Name = "lblClockingPercentage";
+            this.lblClockingPercentage.Size = new System.Drawing.Size(133, 13);
+            this.lblClockingPercentage.TabIndex = 27;
+            this.lblClockingPercentage.Text = "Clocking Percentage :";
+            // 
             // frmRaceResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 526);
+            this.ClientSize = new System.Drawing.Size(1006, 539);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblClockingPercentage);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblTotalBirds);
@@ -334,5 +370,8 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblClockingPercentage;
     }
 }

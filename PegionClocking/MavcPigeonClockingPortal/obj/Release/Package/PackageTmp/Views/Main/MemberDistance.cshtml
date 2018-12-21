@@ -2,14 +2,14 @@
     ViewBag.Title = "Member Distance";
 }
 <div ng-controller="MemberDistanceController">
-    <div ng-init="GetMemberDistance(@ViewBag.ClubID,'@ViewBag.MemberIDNo')">
+    <div ng-init="GetMemberDistance('@ViewBag.ClubID','@ViewBag.MemberIDNo')">
         <table>
             <tr>
                 <td style="width:100px; text-align:right; padding-right:5px">
                     <span>MemberID No. :</span>
                 </td>
                 <td>
-                    <span>{{MemberDistance.memberInfo.memberIDNo}}</span>
+                    <span>@ViewBag.MemberIDNo</span>
                 </td>
             </tr>
             <tr>

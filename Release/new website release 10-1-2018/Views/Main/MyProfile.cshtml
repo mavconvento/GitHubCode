@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "My Profile";
+}
+<div ng-controller="MyProfileController">
+    <div ng-init="GetProfileData(@ViewBag.cookiesUserName)">
+    </div>
+    <div>
+        <table>
+            <tr ng-repeat="club in ClubCollection">
+                <td>
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <span class="headerColor" style="font-size: 15px"><b>{{club.ClubName}}</b></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                MemberID
+                            </td>
+                            <td>
+                                {{club.MemberIdNo}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                First Name
+                            </td>
+                            <td>
+                                {{club.FirstName}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Middle Name
+                            </td>
+                            <td>
+                                {{club.MiddleName}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Last Name
+                            </td>
+                            <td>
+                                {{club.LastName}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Loft Name
+                            </td>
+                            <td>
+                                {{club.LoftName}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Membership Status
+                            </td>
+                            <td>
+                                {{club.MembershipStatus}}
+                            </td>
+                        </tr>
+                        <tr>
+                        <td colspan="2" style="padding-bottom:5px" ><input style="width:150px" type="button" value="View Distance " ng-click="GotoMyDistance(club)"/></td>
+                        </tr>
+                    </table>
+                    <table class="table" style="width: 600px !important">
+                        <tr>
+                            <th>
+                                Mobile Number
+                            </th>
+                            <th>
+                                Balance
+                            </th>
+                            <th>
+                                Date Registered
+                            </th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr ng-repeat="mList in MyProfile | filter: {clubName : club.ClubName}">
+                            <td data-title="Mobile Number" >
+                                {{mList.mobileNumber}}
+                            </td>
+                            <td data-title="Balance">
+                                {{mList.balance}}
+                            </td>
+                            <td data-title="Date Registered">
+                                {{mList.dateRegistered}}
+                            </td>
+                            <td>
+                            <input type="button" value="Unreg" ng-click="UnregMobileNumber(mList.mobileNumber,mList.clubAbbreviation)" />
+                            </td>
+                             <td>
+                            <input type="button" value="Load MAVC Card" ng-click="LoanMavcCard(mList.mobileNumber,mList.clubAbbreviation)" />
+                            </td>
+                             <td>
+                            <input type="button" value="Pasaload" ng-click="Pasaload(mList.mobileNumber)" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/AngularController/MyProfile1.3.js" type="text/javascript"></script>
+    <script type="text/ng-template" id="unreg">
+        <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
+	    <div style="text-align:left; width:100%; size:10px; ">
+        <pre class="headerColor">Unregister Mobile Number</pre>
+            <pre >Are you sure you want to unreg this mobile number</pre>
+            <div style="text-align:center; margin-bottom:20px; padding-bottom:5px">
+            <input type="button" ng-click="Unreg(true)" value="Yes" style="width:80px; height:28px" />
+            <input type="button" ng-click="Unreg(false)" value="No" style="width:80px; height:28px" />
+            </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="loadMavcCard">
+        <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
+	    <div style="text-align:left; width:100%; size:10px; ">
+        <pre class="headerColor">Load MAVC Access Card</pre>
+            <pre >To load your mavc card, please enter <br />Mavc Card Pin Number</pre>
+            <hr />
+            <div style="margin-top:20px"></div>
+            <hr />
+            <table style="margin-bottom:10px">
+            <tr>
+            <td style="text-align:right"> Enter Pin Number :</td>
+            <td class="column"> <input type="text" ng-model="MyProfileFilter.PinNumber" style=" width:100%; "/></td>
+            </tr>
+            </table>
+            </div>
+            <div style="text-align:center; margin-bottom:20px; padding-bottom:5px">
+            <input type="button" ng-click="LoadNow()" value="Send" style="width:80px; height:28px" />
+            </div>
+            <hr />
+        </div>
+    </script>
+    <script type="text/ng-template" id="pasaload">
+        <div style="background-color:#404040; color:white; border-bottom-style:solid; padding:5px">
+	    <div style="text-align:left; width:100%; size:10px; ">
+        <pre class="headerColor">Pasaload</pre>
+            <pre >To pasaload, please enter <br />mobile number where you will transfer the load</pre>
+            <hr />
+            <div style="margin-top:20px"></div>
+            <hr />
+            <table style="margin-bottom:10px">
+            <tr>
+            <td style="text-align:right"> Enter Mobile Number :</td>
+            <td class="column"> <input type="text" ng-model="MyProfileFilter.ToMobileNumber" style=" width:100%; "/></td>
+            </tr>
+            <tr>
+            <td style="text-align:right">Amount :</td>
+            <td class="column"> <input type="text" ng-model="MyProfileFilter.PasaloadAmount" style=" width:80%; "/></td>
+            </tr>
+            </table>
+            </div>
+            <div style="text-align:center; margin-bottom:20px; padding-bottom:5px">
+            <input type="button" ng-click="PasaloadNow()" value="Send" style="width:80px; height:28px" />
+            </div>
+            <hr />
+        </div>
+    </script>
+}

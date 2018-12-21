@@ -278,6 +278,7 @@
     <Content Include="Images\ClubLogo\UCPC.png" />
     <Content Include="Images\ClubLogo\UFPRC.png" />
     <Content Include="Images\ClubLogo\UPHA.png" />
+    <Content Include="Images\loadingspinner.gif" />
     <Content Include="Images\lock.png" />
     <Content Include="Images\logo.jpg" />
     <Content Include="Images\logo.png" />
@@ -293,6 +294,7 @@
     <Content Include="Images\Products\ClockingProducts\USBCableExtension.jpg" />
     <Content Include="Images\Products\FerryProbiotic\FerryProbiotic.jpg" />
     <Content Include="Images\Products\FerryProbiotic\LogoFerryProbiotic.jpg" />
+    <Content Include="Images\Products\MegaSystem\megasystemlogo.jpg" />
     <Content Include="Images\Products\SkyWarriors.jpg" />
     <Content Include="Images\Products\trimlogo.png" />
     <Content Include="Images\Products\TRIMProducts\ChelatedMinerals.jpg" />
@@ -328,12 +330,12 @@
     <Content Include="Scripts\AngularController\HomeTutorialsController1.0.js" />
     <Content Include="Scripts\AngularController\MapsController1.1.js" />
     <Content Include="Scripts\AngularController\IndexController1.1.js" />
-    <Content Include="Scripts\AngularController\HomeController1.3.js" />
+    <Content Include="Scripts\AngularController\HomeController1.4.js" />
     <Content Include="Scripts\AngularController\MemberDistance1.1.js" />
     <Content Include="Scripts\AngularController\MyApp1.1.js" />
-    <Content Include="Scripts\AngularController\MyProfile1.2.js" />
+    <Content Include="Scripts\AngularController\MyProfile1.4.js" />
     <Content Include="Scripts\AngularController\ngVideoController.js" />
-    <Content Include="Scripts\AngularController\RaceResult1.3.js" />
+    <Content Include="Scripts\AngularController\RaceResult1.5.js" />
     <Content Include="Scripts\AngularController\SMSLogs1.1.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

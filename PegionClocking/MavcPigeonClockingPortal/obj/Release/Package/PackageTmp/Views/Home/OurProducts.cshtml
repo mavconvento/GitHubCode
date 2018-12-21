@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Our Products";
+}
+<div ng-controller="HomeOurProductsController">
+    <div style="width: 100%;">
+        <table style="width: 600px;">
+            <tr>
+                <td style="margin: 0px; padding: 0px;">
+                    <div style="width: 100%;">
+                        <h2>
+                            Our Products</h2>
+                    </div>
+                </td>
+                <td class="homeheader">
+                    <div class="loginmenu" ng-init="MainMenuItems" style="float: right; margin-top: 30px;
+                        margin-right: 8px; width: 100%">
+                        <ul style="color: Aqua">
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Home()" style="color: Aqua;">Home</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="PigeonProducts()" style="color: Aqua;">Sponsor and Pigeon Products</span></a>
+                                |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ContactUs()" style="color: Aqua;">Contact Us</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Tutorials()" style="color: Aqua;">Tutorials</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="TextFormat()" style="color: Aqua;">Text Formats</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ApplicationForm()" style="color: Aqua;">Application Form</span></a> |
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr style="padding: 0px; margin: 0px" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="padding-top: 10px; height:inherit;">
+        <h4>
+            Clocking Products</h4>
+        <div class="productitem">
+            <ul>
+                <li>
+                    <div>
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/BarcodePigeonSticker.jpg"
+                            alt="Alternate Text" />
+                        <br />
+                        Barcode Pigeon Sticker<br />
+                        Price : Php 4.00
+                    </div>
+                </li>
+                <li>
+                    <div div style="width: inherit;">
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/MobilePigeonSticker.jpg"
+                            alt="Alternate Text" />
+                        <br />
+                        Mobile Number Pigeon Sticker<br />
+                        Price : Php 2.00 (minimum order 200pcs)
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/AccessCard.jpg"
+                            alt="Alternate Text" />
+                        <br />
+                        Access Card<br />
+                        Price : Php 28.00
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/BarcodeReader.jpg"
+                            alt="Alternate Text" />
+                        <br />
+                        Barcode Reader<br />
+                        Price : 2000.00
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="padding-top: 40px;">
+        <h4>
+            Electronic Clocking Products</h4>
+        <div class="productitem">
+            <ul>
+                <li>
+                    <div>
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/RFIDReader.jpg"
+                            alt="Alternate Text" /><br />
+                        RFID Reader<br />
+                        Price : Php 2000.00
+                    </div>
+                </li>
+                <li>
+                    <div div style="width: inherit;">
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/EclockSDCard.jpg"
+                            alt="Alternate Text" /><br />
+                        E-Clock SD Card<br />
+                        Price : Php 100.00
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/RFIDPigeonTag.jpg"
+                            alt="Alternate Text" /><br />
+                        RFID Pigeon Tags<br />
+                        Price : Php 100.00
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img style="width: 150px; height: 150px;" src="~/Images/Products/ClockingProducts/USBCableExtension.jpg"
+                            alt="Alternate Text" /><br />
+                        USB Cable Extension<br />
+                        Price : 100.00
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="padding-bottom: 20px">
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/AngularController/HomeOurProductsController1.1.js"></script>
+}

@@ -509,7 +509,7 @@ namespace PegionClocking
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(351, 209);
+            this.label11.Location = new System.Drawing.Point(565, 188);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(85, 13);
             this.label11.TabIndex = 43;
@@ -520,7 +520,7 @@ namespace PegionClocking
             // 
             this.dtpExpirationDate.Enabled = false;
             this.dtpExpirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpExpirationDate.Location = new System.Drawing.Point(442, 206);
+            this.dtpExpirationDate.Location = new System.Drawing.Point(656, 185);
             this.dtpExpirationDate.Name = "dtpExpirationDate";
             this.dtpExpirationDate.Size = new System.Drawing.Size(82, 20);
             this.dtpExpirationDate.TabIndex = 7;
@@ -816,7 +816,7 @@ namespace PegionClocking
             // 
             this.button5.Enabled = false;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(350, 152);
+            this.button5.Location = new System.Drawing.Point(350, 207);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(144, 23);
             this.button5.TabIndex = 74;
@@ -827,31 +827,34 @@ namespace PegionClocking
             // btnSearchIdentity
             // 
             this.btnSearchIdentity.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchIdentity.Location = new System.Drawing.Point(257, 152);
+            this.btnSearchIdentity.Location = new System.Drawing.Point(257, 120);
             this.btnSearchIdentity.Name = "btnSearchIdentity";
             this.btnSearchIdentity.Size = new System.Drawing.Size(82, 23);
             this.btnSearchIdentity.TabIndex = 2;
             this.btnSearchIdentity.Text = "S&EARCH";
             this.btnSearchIdentity.UseVisualStyleBackColor = true;
+            this.btnSearchIdentity.Visible = false;
             this.btnSearchIdentity.Click += new System.EventHandler(this.btnSearchIdentity_Click);
             // 
             // txtEntryIdentity
             // 
             this.txtEntryIdentity.BackColor = System.Drawing.Color.White;
-            this.txtEntryIdentity.Location = new System.Drawing.Point(108, 154);
+            this.txtEntryIdentity.Location = new System.Drawing.Point(108, 122);
             this.txtEntryIdentity.Name = "txtEntryIdentity";
             this.txtEntryIdentity.Size = new System.Drawing.Size(143, 20);
             this.txtEntryIdentity.TabIndex = 1;
+            this.txtEntryIdentity.Visible = false;
             this.txtEntryIdentity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEntryIdentity_KeyDown);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(28, 156);
+            this.label16.Location = new System.Drawing.Point(28, 124);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(74, 13);
             this.label16.TabIndex = 77;
             this.label16.Text = "Entry Identity :";
+            this.label16.Visible = false;
             // 
             // shapeContainer2
             // 
@@ -892,7 +895,7 @@ namespace PegionClocking
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(31, 125);
+            this.button6.Location = new System.Drawing.Point(40, 149);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(144, 23);
             this.button6.TabIndex = 79;
@@ -903,7 +906,7 @@ namespace PegionClocking
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(181, 125);
+            this.button7.Location = new System.Drawing.Point(195, 149);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(144, 23);
             this.button7.TabIndex = 80;

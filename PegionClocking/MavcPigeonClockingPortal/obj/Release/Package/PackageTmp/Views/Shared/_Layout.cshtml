@@ -20,8 +20,18 @@
     <script src="~/Scripts/AngularController/MyApp1.1.js"></script>
     <script src="~/Scripts/AngularController/CommonController1.1.js"></script>
     <link href="~/Content/Common.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://widget.time.is/en.js"></script>
+    <script type="text/javascript">
+        time_is_widget.init({ Philippines_z42c: { template: "TIME<br>DATE<br>SUN", date_format: "dayname, monthname dnum, year", sun_format: "Sunrise: srhour:srminute Sunset: sshour:ssminute", coords: "13.0000000,122.0000000" } });
+    </script>
 </head>
 <body ng-app="MyApp" class="PortalCss">
+    <div style="background-color: transparent; margin-top:10px">
+        <a href="https://time.is/Philippines" id="time_is_link" rel="nofollow" style="font-size: 20px;
+            color: white; background: transparent">Time in Server:</a> <span id="Philippines_z42c"
+                                                                             style="font-size: 20px; color: white; background: transparent"></span>
+    </div>
+    <hr />
     <div ng-controller="CommonController">
         <div class="ng-cloak">
             <div id="bodysection">
@@ -35,8 +45,10 @@
                             </td>
                             <td class="menu" style="width: 100px; padding-left: 30px;">
                                 <ul ng-click="Logout">
-                                    <li><a href="~/Home/Login" style="color: #8dc63f; text-decoration: none;">
-                                        <img src="~/Images/lock.png" style="width: 10px; height: 10px; padding-right: 5px;" />Logout</a>
+                                    <li>
+                                        <a href="~/Home/Login" style="color: #8dc63f; text-decoration: none;">
+                                            <img src="~/Images/lock.png" style="width: 10px; height: 10px; padding-right: 5px;" />Logout
+                                        </a>
                                     </li>
                                 </ul>
                             </td>
@@ -45,20 +57,22 @@
                 </div>
                 <table class="logo">
                     <tr>
-                        <td>
-                            <img src="~/Images/logo.png" style="width: 190px; height: auto" />
+                        <td style="width: 40%; padding-right: 20px;">
+                            <img src="~/Images/logo.jpg" style="width: 110px; height: auto" />
                         </td>
-                        <td style="width: 110px; padding-left: 70px">
-                            <img src="~/Images/Products/BigThreeFeeds.jpg" style="width: inherit; height: 92px" />
-                        </td>
+                        @*<td style="width: 110px; padding-left: 70px">
+                                <img src="~/Images/Products/BigThreeFeeds.jpg" style="width: inherit; height: 92px" />
+                            </td>*@
                         <td style="width: 130px; padding-left: 5px">
-                            <img src="~/Images/Products/FerryProbiotic.jpg" style="width: inherit; height: 92px" />
+                            <img src="~/Images/Products/FerryProbiotic/LogoFerryProbiotic.jpg" style="width: inherit;
+                                height: 92px" />
                         </td>
                         <td style="width: 110px; padding-left: 5px">
-                            <img src="~/Images/Products/SkyWarriors.jpg" style="width: inherit; height: 92px" />
-                        </td>
+                                <img src="~/Images/Products/MegaSystem/megasystemlogo.jpg" style="width: inherit; height: 92px" />
+                            </td>
                         <td style="width: 300px; padding-left: 5px">
-                            <img src="~/Images/Products/HeaderAdvertisement.png" style="width: inherit; height: 92px" />
+                            <img src="~/Images/Products/TRIMProducts/HeaderAdvertisement.png" style="width: inherit;
+                                height: 92px" />
                         </td>
                     </tr>
                 </table>
@@ -66,7 +80,8 @@
                     <hr />
                     <ul>
                         <li data-active-link="" class="menu_item" ng-class="getClass('{{menu.url}}')" ng-repeat="menu in MainMenuItems">
-                            <a ng-href="{{menu.url}}">{{menu.menuName}}</a> |</li>
+                            <a ng-href="{{menu.url}}">{{menu.menuName}}</a> |
+                        </li>
                     </ul>
                     <hr />
                 </div>

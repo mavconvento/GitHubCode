@@ -10,8 +10,6 @@
     //    var coordinates = $location.$$search.coordinates;
     //    };
 
-
-
     //Populate all location
     var latitute = $location.$$search.latitude;
     var longtitude = $location.$$search.longtitude;
@@ -22,24 +20,36 @@
     //this is for default map focus when load first time
     $scope.map = { center: { latitude: latitute, longitude: longtitude }, zoom: 15 }
 
-    $scope.markers = [];
+    //$scope.markers = [];
     $scope.locations = [];
 
     //get marker info
-    $scope.markers = [];
-    $scope.markers.push({
-        id: 0,
-        coords: { latitude: latitute, longitude: longtitude },
-        title: liberationpoint,
-        address: coordinates
-        //image: data.data.ImagePath
-    });
+    //$scope.markers = [];
+    //$scope.markers.push({
+    //    id: 0,
+    //    coords: { latitude: latitute, longitude: longtitude },
+    //    title: liberationpoint,
+    //    address: coordinates
+    //    //image: data.data.ImagePath
+    //});
 
     //set map focus to center
     $scope.map.center.latitude = latitute;
     $scope.map.center.longitude = longtitude;
 
+    $scope.cities = [
+               { title: 'Sydney', lat: latitute, lng: longtitude }
+    ];
 
+    for (var i = 0; i < $scope.cities.length; i++) {
+
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng($scope.cities[i].lat, $scope.cities[i].lng),
+            map: $scope.map,
+            title: $scope.cities[i].title
+        });
+    }
     //set map focus to center
     //    $scope.map.center.latitude = 22.590406;
     //    $scope.map.center.longitude = 88.366034;

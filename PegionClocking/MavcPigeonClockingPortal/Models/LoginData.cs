@@ -16,6 +16,8 @@ namespace MavcPigeonClockingPortal.Models
     {
         public String MobileNumber { get; set; }
         public String Password { get; set; }
+        public String ReTypePassword { get; set; }
+        public String SecurityCode { get; set; }
         public String ActionType { get; set; }
     }
 

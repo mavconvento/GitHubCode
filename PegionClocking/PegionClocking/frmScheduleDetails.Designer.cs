@@ -653,6 +653,7 @@
             this.chkIsStop.TabIndex = 17;
             this.chkIsStop.Text = "Clocking Stop";
             this.chkIsStop.UseVisualStyleBackColor = true;
+            this.chkIsStop.CheckedChanged += new System.EventHandler(this.chkIsStop_CheckedChanged_1);
             // 
             // label24
             // 

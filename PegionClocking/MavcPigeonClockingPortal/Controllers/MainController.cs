@@ -39,7 +39,8 @@ namespace MavcPigeonClockingPortal.Controllers
         public ActionResult MemberDistance()
         {
             ViewBag.ClubID =LWT.Common.LWTSafeTypes.SafeString(Request.QueryString["ClubID"]);
-            ViewBag.MemberIDNo = LWT.Common.LWTSafeTypes.SafeString(Request.QueryString["MemberIdNo"]);
+            var memberid = LWT.Common.LWTSafeTypes.SafeString(Request.QueryString["MemberIDNo"]).Replace('|', '#');
+            ViewBag.MemberIDNo = memberid;
             GetAuthenCookies();
             return View();
         }

@@ -34,6 +34,7 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@mobilenumber", mobileNumber);
                 dbconn.sqlComm.Parameters.AddWithValue("@RequestFrom", "pilipinaskalapati");
 
@@ -69,6 +70,7 @@ namespace MavcPigeonClockingPortal.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@MemberIDNo", MemberID);
                 dbconn.sqlComm.Parameters.AddWithValue("@IsFromPilipinasKalapati", true);
@@ -122,12 +124,12 @@ namespace MavcPigeonClockingPortal.DAL
             }
         }
 
-        public DataSet UnregMobileNumber(string ClubID, String mobileNumber, string keyword)
+        public DataSet UnregMobileNumber(string ClubID, String mobileNumber,string UserID, string keyword)
         {
             try
             {
                 DAL.Common common = new DAL.Common();
-                return common.WebClockingSave(ClubID, mobileNumber, keyword, "Unreg");
+                return common.WebClockingSave(ClubID, mobileNumber, keyword, "Unreg", UserID);
             }
             catch (Exception ex)
             {

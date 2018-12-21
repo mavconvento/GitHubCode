@@ -505,7 +505,7 @@ namespace PegionClocking
                 chkMembershipExpired.Checked = false;
                 GetControlValue();  //reset properties value
                 ReadOnlyControl(false);
-                txtEntryIdentity.Focus();
+                txtMemberIDNo.Focus();
                 button5.Enabled = false;
                 this.dtEntryMemberList.DataSource = null;
             }

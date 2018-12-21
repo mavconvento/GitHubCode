@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--[0][107.33] Pewee 12/2/2015 #2171 #2172 Rename Facility # to Facility ID, Sub Loan # to Account ID, make	<includethirdparty>0</includethirdparty>-->
+<constants>
+  <debugon>0</debugon>
+	<installation>1</installation>
+	<includethirdparty>0</includethirdparty>
+	<jsonerrormessage>An error occurred while processing your request./nPlease contact your administrator</jsonerrormessage>
+
+	<companyname>Nexus</companyname>
+  
+	<logoSrcSmlheader>~/Images/logo.jpg</logoSrcSmlheader>
+	<!--header-->
+	<logoSrcSml>~/Images/logo.jpg</logoSrcSml>
+	<!--footer-->
+	<companywebsiteurl>http://www.nexuspartners.com.au/</companywebsiteurl>
+	<customlabel>
+	</customlabel>
+
+	<!--<uimessages>
+		<accountpayment>
+			<makenewaccountpayment>An additional payment may require up to 5 business days before funds are applied to the account.</makenewaccountpayment>
+			<cancelpaymentstep1>Cancelling this payment will only affect future payments.</cancelpaymentstep1>
+      <canceladditionalpaymentstep1>Additional Payment Cancel not allowed. Today's cut off time has been missed</canceladditionalpaymentstep1> --><!--comment [1][107.21]--><!--
+		</accountpayment>		
+	</uimessages>-->
+
+	<SocialMediaIcons>
+		<icon>
+		  <url>https://www.facebook.com/pages/Sintex-Consolidated-Pty-Ltd/141943546000254?fref=ts</url>
+		  <src>~/Images/facebook.jpg</src>
+		</icon>
+		<icon>
+		  <url>http://www.twitter.com/resihomeloans</url>
+		  <src>~/Images/twitter.jpg</src>
+		</icon>
+		<icon>
+		  <url>http://www.podcast.com/resihomeloans</url>
+		  <src>~/Images/podcast.jpg</src>
+		</icon>
+		<icon>
+		  <url>http://www.youtube.com/resihomeloans</url>
+		  <src>~/Images/youtube.jpg</src>
+		</icon>
+	</SocialMediaIcons>
+</constants>

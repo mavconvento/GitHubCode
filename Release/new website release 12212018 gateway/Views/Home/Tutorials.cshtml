@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Tutorials";
+}
+<div ng-controller="HomeTutorialsController">
+    <div style="width: 100%;">
+        <table style="width: 600px;">
+            <tr>
+                <td style="margin: 0px; padding: 0px;">
+                    <div style="width: 100%;">
+                        <h2>
+                            Tutorials</h2>
+                    </div>
+                </td>
+                <td class="homeheader">
+                    <div class="loginmenu" ng-init="MainMenuItems" style="float: right; margin-top: 30px;
+                        margin-right: 8px; width: 100%">
+                        <ul style="color: Aqua">
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Home()" style="color: Aqua;">Home</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="OurProducts()" style="color: Aqua;">Our Products</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="PigeonProducts()" style="color: Aqua;">Sponsor and Pigeon Products</span></a>
+                                |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ContactUs()" style="color: Aqua;">Contact Us</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="TextFormat()" style="color: Aqua;">Text Formats</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ApplicationForm()" style="color: Aqua;">Application Form</span></a> |
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr style="padding: 0px; margin: 0px" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="tutorials">
+        <ul style="color: Aqua;">
+            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                ng-click="" style="color: Aqua;"><b>E-Clock Pigeon Clocking Demo</b></span></a>
+                <br />
+                <video id="video1" width="420">
+                    <source src="/Video/ElectronicClockingDemo.mp4" type="video/mp4" >
+                    Your browser does not support HTML5 video.
+                </video>
+                <br />
+                <button ng-click="playPause()">
+                    Play/Pause</button>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+@section scripts{
+    <script src="~/Scripts/AngularController/HomeTutorialsController1.0.js"></script>
+}

@@ -69,11 +69,14 @@ D:\MyProject\MAVC Source Codes\PegionClocking\Integrate_Inbox\bin\Debug\SMSWindo
 D:\MyProject\MAVC Source Codes\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.csprojResolveAssemblyReference.cache
 D:\MyProject\MAVC Source Codes\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.exe
 D:\MyProject\MAVC Source Codes\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.exe.config
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.exe
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\DataAccess.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\SMSWindowService.exe
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\DataAccess.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\SMSWindowService.pdb
-C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.csprojResolveAssemblyReference.cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.exe
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.pdb

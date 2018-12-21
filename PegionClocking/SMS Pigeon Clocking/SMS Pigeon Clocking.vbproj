@@ -72,6 +72,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.vb" />
     <Compile Include="Config\Config.vb" />
     <Compile Include="DatabaseConnection.vb" />
     <Compile Include="Module1.vb" />
@@ -124,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\XMLConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SMSStorage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

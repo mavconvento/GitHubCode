@@ -32,13 +32,13 @@ namespace MavcPigeonClockingPortal.Controllers
             return jsonResult;
         }
 
-        public ActionResult UnregMobileNumber(string ClubID, string MobileNumber)
+        public ActionResult UnregMobileNumber(string ClubID, string MobileNumber,string UserID)
         {
             MyProfileData lData = new MyProfileData();
             var settings = new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() };
             var jsonResult = new ContentResult
             {
-                Content = JsonConvert.SerializeObject(lData.UnregMobileNumber(ClubID, MobileNumber), settings),
+                Content = JsonConvert.SerializeObject(lData.UnregMobileNumber(ClubID, MobileNumber, UserID), settings),
                 ContentType = "application/json"
             };
 
