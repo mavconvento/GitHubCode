@@ -38,6 +38,9 @@ namespace SMSWindowService.Entity
                 smsComponent.MessageType = oNode.SelectSingleNode("smssettings/messageType").InnerXml;
                 smsComponent.Type = oNode.SelectSingleNode("smssettings/type").InnerXml;
                 smsComponent.IntegrationType = oNode.SelectSingleNode("smssettings/integrationType").InnerXml;
+                smsComponent.ApplicationStartMode = oNode.SelectSingleNode("smssettings/applicationStartMode").InnerXml;
+                smsComponent.TestMobileNumber = oNode.SelectSingleNode("smssettings/testMobileNumber").InnerXml;
+                smsComponent.AutostartDelay = oNode.SelectSingleNode("smssettings/autostartdelay").InnerXml;
 
                 return smsComponent;
             }

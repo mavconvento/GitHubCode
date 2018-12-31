@@ -13,6 +13,7 @@ namespace SMSWindowService.Entity
     public class SMSComponent
     {
         String StrValue = "";
+        public SerialPort SMSPort;
         public int BaudRate { get; set; }
         public String MessageType { get; set; }
         public String PortNo { get; set; }
@@ -25,7 +26,9 @@ namespace SMSWindowService.Entity
         public Int32 DeleteDelay { get; set; }
         public Int32 SleepValue { get; set; }
         public String IntegrationType { get; set; }
-        public SerialPort SMSPort;
+        public String ApplicationStartMode { get; set; }
+        public String TestMobileNumber { get; set; }
+        public String AutostartDelay { get; set; }
         public String Type { get; set; }
 
         public void ComPortSetup()

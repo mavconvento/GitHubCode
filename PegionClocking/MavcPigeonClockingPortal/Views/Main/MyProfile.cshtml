@@ -97,7 +97,7 @@
                             <input type="button" value="Load MAVC Card" ng-click="LoanMavcCard(mList.mobileNumber,mList.clubAbbreviation)" />
                             </td>
                              <td>
-                            <input type="button" value="Pasaload" ng-click="Pasaload(mList.mobileNumber)" />
+                            <input type="button" value="Pasaload" ng-click="Pasaload(mList.mobileNumber)" ng-show="mList.allowPasaload" />
                             </td>
                         </tr>
                     </table>
@@ -151,11 +151,11 @@
             <table style="margin-bottom:10px">
             <tr>
             <td style="text-align:right"> Enter Mobile Number :</td>
-            <td class="column"> <input type="text" ng-model="MyProfileFilter.ToMobileNumber" style=" width:100%; "/></td>
+            <td class="column"> <input type="text" ng-model="MyProfileFilter.ToMobileNumber" placeholder="09XXXXXXXXX" style= "width:100%;"/></td>
             </tr>
             <tr>
             <td style="text-align:right">Amount :</td>
-            <td class="column"> <input type="text" ng-model="MyProfileFilter.PasaloadAmount" style=" width:80%; "/></td>
+            <td class="column"> <input type="text" ng-model="MyProfileFilter.PasaloadAmount" style="width:80%;"/></td>
             </tr>
             </table>
             </div>

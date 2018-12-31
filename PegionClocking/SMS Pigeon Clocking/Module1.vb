@@ -9,8 +9,12 @@ Module Module1
     Private MessageType As String
     Private NetworkType As String
     Private ProcessType As String
+    Private ApplicationStartMode As String
+    Private TestMobileNumber As String
+    Private AutoStartDelay As String
     Private InboxID As String
     Private IsReply As Boolean
+    Private IsAuto As Boolean
     Private DelDelay As Integer
     Private SMSDal As New SMSDAL
     Private smsmod As SMSModule.SMSComponents
@@ -23,18 +27,9 @@ Module Module1
     End Sub
 
     Private Sub Start()
+start:
         Dim IsError As String
         Try
-
-            'NetworkType = GetNetworkType()
-            'DelDelay = DeleteDelay()
-            'ModemID = GetModemID()
-            'PortName = GetPortNumber()
-            'BaudRate = "115200"
-            'MemoryType = "SM"
-            'MessageType = "ALL"
-            'InboxID = "Inbox 1"
-            'IsError = "0"
 
             Dim smscomponent As New SMSComponent
             smscomponent = SMSWindowService.Entity.Config.GetSMSComponent()
@@ -47,9 +42,14 @@ Module Module1
             MemoryType = smscomponent.MemoryType
             MessageType = smscomponent.MessageType
             ProcessType = smscomponent.Type
+            ApplicationStartMode = smscomponent.ApplicationStartMode
+            TestMobileNumber = smscomponent.TestMobileNumber
+            AutoStartDelay = smscomponent.AutostartDelay
+
             InboxID = "Inbox 1"
             IsError = "0"
-start:
+            IsAuto = False
+
             Dim IsSet As String = "0"
             'IsError = "-1"
             Console.Clear()
@@ -64,6 +64,17 @@ start:
 
             If (ProcessType = "Receiver") Then IsReply = False
             If (ProcessType = "Sender") Then IsReply = True
+
+            If (ApplicationStartMode = "auto") Then
+                IsAuto = True
+                Console.WriteLine("Starting Automatically....")
+                Console.WriteLine("---------------------------")
+
+                For index = 0 To Convert.ToInt32(AutoStartDelay)
+                    Console.WriteLine("Start On: " + (Convert.ToInt32(AutoStartDelay) - index).ToString())
+                    System.Threading.Thread.Sleep(1000)
+                Next
+            End If
 
             InitializeModem()
             StartSMS(IsError)
@@ -97,6 +108,7 @@ start:
     Private Sub StartSMS(ByVal IsFromError As String)
         Try
             Dim index As Integer
+            Dim smsTestStatus As Boolean
             Dim isTest As String
             Dim MobileNumber As String = ""
 
@@ -105,23 +117,32 @@ start:
             Else
                 If IsReply Then
                     Console.Clear()
-                    Console.WriteLine("Press 1 to Test Sender")
-                    Console.WriteLine("Press any key to start reply")
-                    isTest = Console.ReadLine()
+                    If Not IsAuto Then
+                        Console.WriteLine("Press 1 to Test Sender")
+                        Console.WriteLine("Press any key to start reply")
+                        isTest = Console.ReadLine()
 
-                    If isTest = "1" Then
+                        If isTest = "1" Then
+                            Console.Clear()
+                            Console.WriteLine("Please Enter Mobile Number")
+                            MobileNumber = Console.ReadLine()
+                        End If
+                        If MobileNumber <> "" Then smsTestStatus = TestSender(MobileNumber)
                         Console.Clear()
-                        Console.WriteLine("Please Enter Mobile Number")
-                        MobileNumber = Console.ReadLine()
-                    End If
-                    If MobileNumber <> "" Then TestSender(MobileNumber)
-                    Console.Clear()
-                    Console.WriteLine("PRESS 1 TO CONTINUE....")
-                    isTest = Console.ReadLine()
-                    If isTest = 1 Then
-                        GoTo STARTNOW
+                        Console.WriteLine("PRESS 1 TO CONTINUE....")
+                        isTest = Console.ReadLine()
+                        If isTest = 1 Then
+                            GoTo STARTNOW
+                        Else
+                            GoTo EXITNOW
+                        End If
                     Else
-                        GoTo EXITNOW
+                        smsTestStatus = TestSender(TestMobileNumber)
+                        If smsTestStatus Then
+                            GoTo STARTNOW
+                        Else
+                            GoTo EXITNOW
+                        End If
                     End If
                 End If
             End If
@@ -155,9 +176,10 @@ EXITNOW:
         End Try
     End Sub
 
-    Private Sub TestSender(ByVal mobileno As String)
+    Private Function TestSender(ByVal mobileno As String, Optional IsAuto As Boolean = False) As Boolean
         Try
             Dim status As Boolean
+            Dim smsMessage As String
             SMS = New SMSBIZ()
             smsmod = New SMSModule.SMSComponents
 
@@ -167,24 +189,26 @@ EXITNOW:
             SMS.MessageType = MessageType
             SMS.BaudRate = BaudRate
             mobileno = mobileno
+            smsMessage = "Test successful"
+
+            'for auto start app
+            If IsAuto Then
+                smsMessage = "Auto Sending Test successful"
+            End If
 
             If mobileno <> "" Then
-                If SMS.SendSMS(mobileno, "Test successful", False, -1, "Broadcast") Then
+                If SMS.SendSMS(mobileno, smsMessage, False, -1, "Broadcast") Then
                     status = True
                 Else
                     status = False
                 End If
             End If
 
-            If (status) Then
-                Console.WriteLine("Message Sent")
-            Else
-                Console.WriteLine("Message Sending Failed")
-            End If
+            Return status
         Catch ex As Exception
             Throw ex
         End Try
-    End Sub
+    End Function
 
     Private Function GetNetworkType() As String
         Dim networkTypeValue As String = ""

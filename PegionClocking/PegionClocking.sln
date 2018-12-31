@@ -1,6 +1,15 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{13CA3A32-BCD7-4D21-A1E9-0FD3A21FACCF}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PegionClocking", "PegionClocking\PegionClocking.csproj", "{E5F8731C-A9B9-4EC6-B232-27523749DE57}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAVC IntegrationV2", "MAVC Integration V2\MAVC IntegrationV2.csproj", "{F02031DF-D523-4FB0-B5DD-A9AD242A43AD}"
@@ -38,13 +47,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortalApplication", "PortalApplication\PortalApplication.csproj", "{6F004C94-597A-4F6B-98B6-73FDA87A057D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebRaceResult", "WebRaceResult\WebRaceResult.csproj", "{3A50C934-617D-4051-AFEE-A39B591510B1}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{13CA3A32-BCD7-4D21-A1E9-0FD3A21FACCF}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PigeonManagement", "PigeonManagement\PigeonManagement.vdproj", "{41B00A1B-ED4A-445F-B5FF-9F4F0430F750}"
 EndProject

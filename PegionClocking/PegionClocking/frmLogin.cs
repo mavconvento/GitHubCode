@@ -12,7 +12,7 @@ namespace PegionClocking
     public partial class frmLogin : Form
     {
         #region Constants
-        const string VERSION = "4.3";
+        const string VERSION = "5.0";
         #endregion
 
         #region Variable

@@ -1,0 +1,5 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonClocking_local_Globe1\bin\Debug\PigeonClocking_local_Globe1.dacpac
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonClocking_local_Globe1\bin\Debug\PigeonClocking_local_Globe1.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonClocking_local_Globe1\bin\Debug\PigeonClocking_local_Globe1.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonClocking_local_Globe1\obj\Debug\PigeonClocking_local_Globe1.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonClocking_local_Globe1\obj\Debug\PigeonClocking_local_Globe1.pdb

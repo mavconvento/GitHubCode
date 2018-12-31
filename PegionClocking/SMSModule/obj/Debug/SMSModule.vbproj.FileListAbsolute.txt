@@ -214,3 +214,4 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.G
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache

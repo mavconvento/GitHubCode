@@ -13,7 +13,7 @@ namespace DataAccess.GatewaySMSIntegration
         DataAccess.DatabaseConnection dbconn;
         #endregion
 
-        public DataSet SMSGatewayOutboxSave(string dbSource,string SMSContent, string Keyword, string Sender, string Status)
+        public DataSet SMSGatewayOutboxSave(string dbSource,string SMSContent, string Keyword, string Sender, string Status, string InboxID)
         {
             try
             {
@@ -29,6 +29,7 @@ namespace DataAccess.GatewaySMSIntegration
                 dbconn.sqlComm.Parameters.AddWithValue("@Keyword", Keyword);
                 dbconn.sqlComm.Parameters.AddWithValue("@MobileNumber", Sender);
                 dbconn.sqlComm.Parameters.AddWithValue("@Status", Status);
+                dbconn.sqlComm.Parameters.AddWithValue("@InboxID", InboxID);
                 dbconn.sqlComm.ExecuteNonQuery();
                 dbconn.sqlConn.Close();
 

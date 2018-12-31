@@ -4,9 +4,6 @@
   <environment>SMSModemReciever</environment>
   <processflow>Inbound</processflow>
   <withencryption>no</withencryption>
-  <databaseConnectionMain>Data Source=LENOVO-PC\MSSQLSERVER2012;Database=PigeonClocking_main;User Id=sa;password=06242009;Connect Timeout=1200</databaseConnectionMain>
-  <databaseConnectionLocal>Data Source=LENOVO-PC\MSSQLSERVER2012;Database=SMSPigeonClockingDB1;User Id=sa;password=06242009;Connect Timeout=1200</databaseConnectionLocal>
-  <databaseConnectionWeb>Data Source=LENOVO-PC\MSSQLSERVER2012;Database=PigeonClockingWebDB1;User Id=sa;password=06242009;Connect Timeout=1200</databaseConnectionWeb>
 
   <smssettings>
     <type>Reciever</type>
@@ -20,6 +17,9 @@
     <delay>1000</delay>
     <additionalDelay>0</additionalDelay>
     <replyDelay>0</replyDelay>
-    <integrationType>1</integrationType>
+    <integrationType>1</integrationType> <!-- 1:LocalStorageToWeb 2:WebToLocal -->
+    <applicationStartMode>auto</applicationStartMode>  <!--value must be auto/manual-->
+    <testMobileNumber>09985754822</testMobileNumber> 
+    <autostartdelay>20</autostartdelay> 
   </smssettings>
 </systemsetting>

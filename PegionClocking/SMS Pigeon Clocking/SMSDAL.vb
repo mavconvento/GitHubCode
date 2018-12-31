@@ -87,7 +87,7 @@ Public Class SMSDAL
     Public Function GetRecordForReply(ByVal activationcode As String, ByVal inboxID As String) As DataTable
         Dim dtResult As New DataTable
         If DbConn.sqlconn.State = ConnectionState.Open Then DbConn.sqlconn.Close()
-        DbConn.DatabaseConnection("GetRecordForReply", "web")
+        DbConn.DatabaseConnection("GetRecordForReply")
         Try
             With DbConn
                 .sqlconn.Open()

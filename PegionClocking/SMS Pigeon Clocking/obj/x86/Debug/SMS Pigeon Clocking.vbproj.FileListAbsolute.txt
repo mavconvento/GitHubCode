@@ -174,3 +174,7 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMSWindo
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS_Pigeon_Clocking.Resources.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbproj.GenerateResource.Cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.exe.manifest
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\bin\Debug\SMS Pigeon Clocking.application
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.exe.manifest
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMS Pigeon Clocking\obj\x86\Debug\SMS Pigeon Clocking.application

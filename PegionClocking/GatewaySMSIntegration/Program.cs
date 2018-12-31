@@ -42,18 +42,21 @@ namespace GatewaySMSIntegration
 
                             //send sms reply
                             string Status = PostMessageForReply(Sender, ReplyMessage);
-                            Console.WriteLine("==================================");
-                            Console.WriteLine("SMSContent: " + SMSContent);
-                            Console.WriteLine("Sender: " + Sender);
-                            Console.WriteLine("Keyword: " + Keyword);
-                            Console.WriteLine("Status: " + Status);
-                            Console.WriteLine("==================================");
+                            Console.WriteLine("==============================================================");
+                            Console.WriteLine("      ModemID: " + modemID);
+                            Console.WriteLine("   SMSContent: " + SMSContent);
+                            Console.WriteLine(" ReplyMessage: " + ReplyMessage);
+                            Console.WriteLine("       Sender: " + Sender);
+                            Console.WriteLine("      Keyword: " + Keyword);
+                            Console.WriteLine("       Status: " + Status);
+                            Console.WriteLine("==============================================================");
 
                             //save outbox into database
-                            gateway.SMSGatewayOutboxSave("local", SMSContent, Keyword, Sender, Status);
+                            gateway.SMSGatewayOutboxSave("local", SMSContent, Keyword, Sender, Status, InboxID);
                         }
                     }
                 }
+                goto start;
             }
             catch (Exception ex)
             {

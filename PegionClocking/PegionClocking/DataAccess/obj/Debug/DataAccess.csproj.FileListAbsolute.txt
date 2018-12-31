@@ -2,4 +2,8 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\bin\Debug\Da
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\bin\Debug\DataAccess.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Debug\DataAccess.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\PegionClocking\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\PegionClocking\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Debug\DataAccess.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache

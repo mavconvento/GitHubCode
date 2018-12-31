@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A50C934-617D-4051-AFEE-A39B591510B1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebRaceResult</RootNamespace>
+    <AssemblyName>WebRaceResult</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="LWT.Common">
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\LWT.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder, Version=1.0.51206.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Microsoft.Practices.ObjectBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfMetamorphosis">
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\PdfMetamorphosis.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Telerik.Web.Design, Version=2011.2.915.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Telerik.Web.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI">
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins">
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\Telerik.Web.UI.Skins.dll</HintPath>
+    </Reference>
+    <Reference Include="WebService">
+      <HintPath>..\..\..\..\..\..\LMS-TMS\LoanWare\LWT.LoanWare\bin\WebService.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\O2010\Calendar.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\Calendar\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\Calendar\sprite.gif" />
+    <Content Include="App_Themes\O2010\ComboBox.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\ComboBox\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\ComboBox\rcbSprite.png" />
+    <Content Include="App_Themes\O2010\ComboBox\rcbSpriteIE6.png" />
+    <Content Include="App_Themes\O2010\DataPager.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\DataPager\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\DataPager\sprite.png" />
+    <Content Include="App_Themes\O2010\Grid.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\Grid\ButtonSprites.gif" />
+    <Content Include="App_Themes\O2010\Grid\contextMenu.gif" />
+    <Content Include="App_Themes\O2010\Grid\export.gif" />
+    <Content Include="App_Themes\O2010\Grid\loading_small.gif" />
+    <Content Include="App_Themes\O2010\Grid\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\Grid\rgDrag.gif" />
+    <Content Include="App_Themes\O2010\Grid\sprite.gif" />
+    <Content Include="App_Themes\O2010\Grid\sprite.png" />
+    <Content Include="App_Themes\O2010\Input.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\Input\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\Input\sprite.gif" />
+    <Content Include="App_Themes\O2010\ListBox.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\ListBox\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\ListBox\rlbButtonDisabled.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbButtonDisabledIE6.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbButtonHover.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbButtonHoverIE6.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbButtonNormal.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbButtonNormalIE6.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbDropClue.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbHeaderFooter.png" />
+    <Content Include="App_Themes\O2010\ListBox\rlbSprite.png" />
+    <Content Include="App_Themes\O2010\ListView.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\ListView\CheckBoxSprites.gif" />
+    <Content Include="App_Themes\O2010\ListView\drag.gif" />
+    <Content Include="App_Themes\O2010\ListView\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\ListView\sprite.gif" />
+    <Content Include="App_Themes\O2010\ListView\sprite.png" />
+    <Content Include="App_Themes\O2010\Menu.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\Menu\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\Menu\rmRootExpand.png" />
+    <Content Include="App_Themes\O2010\Menu\rmRoundedLeft.png" />
+    <Content Include="App_Themes\O2010\Menu\rmRoundedLeft_rtl.png" />
+    <Content Include="App_Themes\O2010\Menu\rmRoundedRight.png" />
+    <Content Include="App_Themes\O2010\Menu\rmRoundedRight_rtl.png" />
+    <Content Include="App_Themes\O2010\Menu\rmSprite.png" />
+    <Content Include="App_Themes\O2010\Menu\rmVSprite.png" />
+    <Content Include="App_Themes\O2010\Slider.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\Slider\DragHandle.gif" />
+    <Content Include="App_Themes\O2010\Slider\DragHandleDown.gif" />
+    <Content Include="App_Themes\O2010\Slider\DragVerticalHandle.gif" />
+    <Content Include="App_Themes\O2010\Slider\DragVerticalHandleRight.gif" />
+    <Content Include="App_Themes\O2010\Slider\Handles.gif" />
+    <Content Include="App_Themes\O2010\Slider\HandlesVertical.gif" />
+    <Content Include="App_Themes\O2010\Slider\ItemHorizontalBgr.gif" />
+    <Content Include="App_Themes\O2010\Slider\ItemVerticalBgr.gif" />
+    <Content Include="App_Themes\O2010\Slider\LargeChangeHorizontal.gif" />
+    <Content Include="App_Themes\O2010\Slider\LargeChangeMiddleHorizontal.gif" />
+    <Content Include="App_Themes\O2010\Slider\LargelChangeCenterVertical.gif" />
+    <Content Include="App_Themes\O2010\Slider\LargelChangeVertical.gif" />
+    <Content Include="App_Themes\O2010\Slider\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\Slider\SelectedRegionHorizontalBgr.gif" />
+    <Content Include="App_Themes\O2010\Slider\SelectedRegionVerticalBgr.gif" />
+    <Content Include="App_Themes\O2010\Slider\SmallChangeCenterVertical.gif" />
+    <Content Include="App_Themes\O2010\Slider\SmallChangeHorizontal.gif" />
+    <Content Include="App_Themes\O2010\Slider\SmallChangeMiddleHorizontal.gif" />
+    <Content Include="App_Themes\O2010\Slider\SmallChangeVertical.gif" />
+    <Content Include="App_Themes\O2010\Slider\TrackBgr.gif" />
+    <Content Include="App_Themes\O2010\Slider\TrackVerticalBgr.gif" />
+    <Content Include="App_Themes\O2010\TabStrip.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\TabStrip\Level2Bg.png" />
+    <Content Include="App_Themes\O2010\TabStrip\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\TabStrip\TabStripStates.png" />
+    <Content Include="App_Themes\O2010\TabStrip\TabStripVStates.png" />
+    <Content Include="App_Themes\O2010\TreeView.RadGridSkin_Office2010Blue.css" />
+    <Content Include="App_Themes\O2010\TreeView\BottomLine.png" />
+    <Content Include="App_Themes\O2010\TreeView\BottomLine_rtl.png" />
+    <Content Include="App_Themes\O2010\TreeView\FirstNodeSpan.png" />
+    <Content Include="App_Themes\O2010\TreeView\FirstNodeSpan_rtl.png" />
+    <Content Include="App_Themes\O2010\TreeView\ItemHoveredBg.png" />
+    <Content Include="App_Themes\O2010\TreeView\ItemSelectedBg.png" />
+    <Content Include="App_Themes\O2010\TreeView\LoadingIcon.gif" />
+    <Content Include="App_Themes\O2010\TreeView\MiddleLine.png" />
+    <Content Include="App_Themes\O2010\TreeView\MiddleLine_rtl.png" />
+    <Content Include="App_Themes\O2010\TreeView\NodeSpan.png" />
+    <Content Include="App_Themes\O2010\TreeView\NodeSpan_rtl.png" />
+    <Content Include="App_Themes\O2010\TreeView\PlusMinus.png" />
+    <Content Include="App_Themes\O2010\TreeView\RadGridSkin_Office2010Blue.gif" />
+    <Content Include="App_Themes\O2010\TreeView\SingleLine.png" />
+    <Content Include="App_Themes\O2010\TreeView\SingleLine_rtl.png" />
+    <Content Include="App_Themes\O2010\TreeView\TopLine.png" />
+    <Content Include="App_Themes\O2010\TreeView\TopLine_rtl.png" />
+    <Content Include="App_Themes\O2010\TreeView\TriState.png" />
+    <Content Include="App_Themes\TransparentMod\Menu.TransparentMod.css" />
+    <Content Include="App_Themes\TransparentMod\Menu\rmRootExpand.png" />
+    <Content Include="App_Themes\TransparentMod\Menu\rmScroll.png" />
+    <Content Include="App_Themes\TransparentMod\Menu\rmSprite.png" />
+    <Content Include="App_Themes\TransparentMod\Menu\rmVSprite.png" />
+    <Content Include="App_Themes\TransparentMod\Menu\TransparentMod.gif" />
+    <Content Include="Default.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BIZ\RaceResult.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="DAL\RaceResult.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="build.environment" />
+    <Content Include="LWTEnterpriseLibrary.config" />
+    <Content Include="Site1.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55793</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

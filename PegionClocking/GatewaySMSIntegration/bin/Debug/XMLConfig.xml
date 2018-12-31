@@ -7,7 +7,7 @@
   <smssettings>
     <type>Sender</type>
     <modemVersion>2.0</modemVersion>
-    <modemID>1:Sender 1</modemID>
+    <modemID>1:Gateway 1</modemID>
     <activationCode></activationCode>
     <memoryType>ME</memoryType>
     <messageType>ALL</messageType>

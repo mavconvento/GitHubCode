@@ -80,3 +80,6 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\DataAccess.p
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\SMSWindowService.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.exe
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.pdb
+C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.exe.config
+C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.exe
+C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.pdb

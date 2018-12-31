@@ -39,14 +39,14 @@
             this.txtFilename = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtFileCount = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBrowseTemplate
             // 
-            this.btnBrowseTemplate.Location = new System.Drawing.Point(775, 54);
-            this.btnBrowseTemplate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBrowseTemplate.Location = new System.Drawing.Point(581, 44);
             this.btnBrowseTemplate.Name = "btnBrowseTemplate";
-            this.btnBrowseTemplate.Size = new System.Drawing.Size(133, 28);
+            this.btnBrowseTemplate.Size = new System.Drawing.Size(100, 23);
             this.btnBrowseTemplate.TabIndex = 0;
             this.btnBrowseTemplate.Text = "Browse Template";
             this.btnBrowseTemplate.UseVisualStyleBackColor = true;
@@ -54,18 +54,16 @@
             // 
             // txtTemplate
             // 
-            this.txtTemplate.Location = new System.Drawing.Point(89, 54);
-            this.txtTemplate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTemplate.Location = new System.Drawing.Point(67, 44);
             this.txtTemplate.Name = "txtTemplate";
-            this.txtTemplate.Size = new System.Drawing.Size(676, 22);
+            this.txtTemplate.Size = new System.Drawing.Size(508, 20);
             this.txtTemplate.TabIndex = 1;
             // 
             // btnGenerateSticker
             // 
-            this.btnGenerateSticker.Location = new System.Drawing.Point(400, 150);
-            this.btnGenerateSticker.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerateSticker.Location = new System.Drawing.Point(210, 152);
             this.btnGenerateSticker.Name = "btnGenerateSticker";
-            this.btnGenerateSticker.Size = new System.Drawing.Size(215, 39);
+            this.btnGenerateSticker.Size = new System.Drawing.Size(161, 32);
             this.btnGenerateSticker.TabIndex = 2;
             this.btnGenerateSticker.Text = "Generate Sticker for Printing";
             this.btnGenerateSticker.UseVisualStyleBackColor = true;
@@ -74,72 +72,76 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 58);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(10, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Template";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 86);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(4, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Destination";
             // 
             // txtDestination
             // 
-            this.txtDestination.Location = new System.Drawing.Point(89, 86);
-            this.txtDestination.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDestination.Location = new System.Drawing.Point(67, 70);
             this.txtDestination.Name = "txtDestination";
-            this.txtDestination.Size = new System.Drawing.Size(676, 22);
+            this.txtDestination.Size = new System.Drawing.Size(508, 20);
             this.txtDestination.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 122);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(10, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 17);
+            this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "File Name";
             // 
             // txtFilename
             // 
-            this.txtFilename.Location = new System.Drawing.Point(89, 118);
-            this.txtFilename.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFilename.Location = new System.Drawing.Point(67, 96);
             this.txtFilename.Name = "txtFilename";
-            this.txtFilename.Size = new System.Drawing.Size(435, 22);
+            this.txtFilename.Size = new System.Drawing.Size(327, 20);
             this.txtFilename.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 26);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(10, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 17);
+            this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "File Count";
             // 
             // txtFileCount
             // 
-            this.txtFileCount.Location = new System.Drawing.Point(89, 22);
-            this.txtFileCount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFileCount.Location = new System.Drawing.Point(67, 18);
             this.txtFileCount.Name = "txtFileCount";
-            this.txtFileCount.Size = new System.Drawing.Size(160, 22);
+            this.txtFileCount.Size = new System.Drawing.Size(121, 20);
             this.txtFileCount.TabIndex = 9;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(377, 152);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 32);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Generate Card for Printing";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // frmStickerGeneration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 204);
+            this.ClientSize = new System.Drawing.Size(695, 204);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtFileCount);
             this.Controls.Add(this.label3);
@@ -151,9 +153,8 @@
             this.Controls.Add(this.txtTemplate);
             this.Controls.Add(this.btnBrowseTemplate);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmStickerGeneration";
-            this.Text = "Sticker Generation";
+            this.Text = "Sticker / Card Generation";
             this.Load += new System.EventHandler(this.frmStickerGeneration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -172,5 +173,6 @@
         private System.Windows.Forms.TextBox txtFilename;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFileCount;
+        private System.Windows.Forms.Button button1;
     }
 }
