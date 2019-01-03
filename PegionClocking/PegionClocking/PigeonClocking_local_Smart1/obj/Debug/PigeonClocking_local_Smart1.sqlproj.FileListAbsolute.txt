@@ -1,5 +1,0 @@
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\PigeonClocking_local_Smart1\bin\Debug\PigeonClocking_local_Smart1.dacpac
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\PigeonClocking_local_Smart1\bin\Debug\PigeonClocking_local_Smart1.dll
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\PigeonClocking_local_Smart1\bin\Debug\PigeonClocking_local_Smart1.pdb
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\PigeonClocking_local_Smart1\obj\Debug\PigeonClocking_local_Smart1.dll
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\PigeonClocking_local_Smart1\obj\Debug\PigeonClocking_local_Smart1.pdb

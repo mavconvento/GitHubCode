@@ -1,0 +1,21 @@
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\bin\Debug\NewWinFormCsharpWebCam.exe.config
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\bin\Debug\NewWinFormCsharpWebCam.exe
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\bin\Debug\NewWinFormCsharpWebCam.pdb
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\bin\Debug\WebCam_Capture.dll
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.csprojResolveAssemblyReference.cache
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.Form1.resources
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.Properties.Resources.resources
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.csproj.GenerateResource.cache
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.csproj.CoreCompileInputs.cache
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.csproj.CopyComplete
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.exe
+C:\Users\TURGAY\Documents\Visual Studio 2017\Projects\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.pdb
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\bin\Debug\NewWinFormCsharpWebCam.exe.config
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.exe
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.pdb
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\bin\Debug\NewWinFormCsharpWebCam.exe
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\bin\Debug\NewWinFormCsharpWebCam.pdb
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.csprojResolveAssemblyReference.cache
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.Form1.resources
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.Properties.Resources.resources
+C:\Users\82245\Downloads\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\NewWinFormCsharpWebCam\obj\Debug\NewWinFormCsharpWebCam.csproj.GenerateResource.Cache

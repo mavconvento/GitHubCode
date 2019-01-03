@@ -1,0 +1,13 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\NewWinFormCsharpWebCam.exe.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\NewWinFormCsharpWebCam.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\NewWinFormCsharpWebCam.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\NewWinFormCsharpWebCam.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\NewWinFormCsharpWebCam.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.csproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.PhotoCapture.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.Properties.Resources.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\DataAccess.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\DataAccess.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.csproj.ResolveComReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.frmReportGeneration.resources

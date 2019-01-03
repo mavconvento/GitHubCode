@@ -1,0 +1,38 @@
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\obj\Debug\ResolveAssemblyReference.cache
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.UserControl1.resources
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\obj\Debug\GenerateResource.read.1.tlog
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\obj\Debug\GenerateResource.write.1.tlog
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\bin\Debug\WebCamCapture.dll
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\bin\Debug\WebCamCapture.pdb
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.dll
+D:\ProjetosTestes\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.pdb
+D:\Projetos\C#\TesteWebCam\WebCamCapture\bin\Debug\WebCamCapture.dll
+D:\Projetos\C#\TesteWebCam\WebCamCapture\bin\Debug\WebCamCapture.pdb
+D:\Projetos\C#\TesteWebCam\WebCamCapture\obj\Debug\ResolveAssemblyReference.cache
+D:\Projetos\C#\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.UserControl1.resources
+D:\Projetos\C#\TesteWebCam\WebCamCapture\obj\Debug\GenerateResource.read.1.tlog
+D:\Projetos\C#\TesteWebCam\WebCamCapture\obj\Debug\GenerateResource.write.1.tlog
+D:\Projetos\C#\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.dll
+D:\Projetos\C#\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.pdb
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\bin\Debug\WebCamCapture.dll
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\bin\Debug\WebCamCapture.pdb
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.UserControl1.resources
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.dll
+C:\Users\Samuel\Desktop\TesteWebCam\WebCamCapture\obj\Debug\WebCamCapture.pdb
+C:\Users\82245\Downloads\Webcam Capture\C#\WebCamCapture\bin\Debug\WebCamCapture.dll
+C:\Users\82245\Downloads\Webcam Capture\C#\WebCamCapture\bin\Debug\WebCamCapture.pdb
+C:\Users\82245\Downloads\Webcam Capture\C#\WebCamCapture\obj\Debug\WebCamCapture.csprojResolveAssemblyReference.cache
+C:\Users\82245\Downloads\Webcam Capture\C#\WebCamCapture\obj\Debug\WebCamCapture.UserControl1.resources
+C:\Users\82245\Downloads\Webcam Capture\C#\WebCamCapture\obj\Debug\WebCamCapture.csproj.GenerateResource.Cache
+C:\Users\82245\Downloads\Webcam Capture\C#\WebCamCapture\obj\Debug\WebCamCapture.dll
+C:\Users\82245\Downloads\Webcam Capture\C#\WebCamCapture\obj\Debug\WebCamCapture.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebCamCapture\bin\Debug\WebCamCapture.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebCamCapture\bin\Debug\WebCamCapture.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebCamCapture\obj\Debug\WebCamCapture.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebCamCapture\obj\Debug\WebCamCapture.UserControl1.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebCamCapture\obj\Debug\WebCamCapture.csproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebCamCapture\obj\Debug\WebCamCapture.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebCamCapture\obj\Debug\WebCamCapture.pdb

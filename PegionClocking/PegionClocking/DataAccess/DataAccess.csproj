@@ -44,6 +44,7 @@
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="GatewaySMSIntegration\GatewaySMS.cs" />
     <Compile Include="IntegrationInbox\IntegrateInboxDAL.cs" />
+    <Compile Include="PigeonIDSystem\Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
