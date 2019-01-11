@@ -2,3 +2,4 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\bin\Debug\DomainObjects.
 C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\bin\Debug\DomainObjects.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\obj\Debug\DomainObjects.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\obj\Debug\DomainObjects.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\DomainObjects\obj\Debug\DomainObjects.csprojResolveAssemblyReference.cache

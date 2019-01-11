@@ -1,0 +1,5 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Helper\bin\Debug\Helper.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Helper\bin\Debug\Helper.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Helper\obj\Debug\Helper.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\Helper\obj\Debug\Helper.pdb

@@ -11,3 +11,5 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\DataAccess.dl
 C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\DataAccess.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.csproj.ResolveComReference.cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\obj\Debug\PigeonIDSystem.frmReportGeneration.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\Helper.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PigeonIDSystem\bin\Debug\Helper.pdb

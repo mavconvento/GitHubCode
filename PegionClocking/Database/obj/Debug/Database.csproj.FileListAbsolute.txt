@@ -1,0 +1,4 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\Database\bin\Debug\Database.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\Database\bin\Debug\Database.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\Database\obj\Debug\Database.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\Database\obj\Debug\Database.pdb

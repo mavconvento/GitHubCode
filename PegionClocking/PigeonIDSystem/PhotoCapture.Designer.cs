@@ -57,9 +57,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lblcount = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bntVideoSource
@@ -98,7 +104,7 @@
             // bntCapture
             // 
             this.bntCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntCapture.Location = new System.Drawing.Point(40, 186);
+            this.bntCapture.Location = new System.Drawing.Point(23, 557);
             this.bntCapture.Name = "bntCapture";
             this.bntCapture.Size = new System.Drawing.Size(163, 23);
             this.bntCapture.TabIndex = 7;
@@ -143,7 +149,7 @@
             // 
             this.imgCapture.BackColor = System.Drawing.Color.White;
             this.imgCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgCapture.Location = new System.Drawing.Point(209, 215);
+            this.imgCapture.Location = new System.Drawing.Point(23, 187);
             this.imgCapture.Name = "imgCapture";
             this.imgCapture.Size = new System.Drawing.Size(163, 160);
             this.imgCapture.TabIndex = 10;
@@ -152,7 +158,7 @@
             // imgVideo
             // 
             this.imgVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgVideo.Location = new System.Drawing.Point(40, 215);
+            this.imgVideo.Location = new System.Drawing.Point(23, 391);
             this.imgVideo.Name = "imgVideo";
             this.imgVideo.Size = new System.Drawing.Size(163, 160);
             this.imgVideo.TabIndex = 9;
@@ -257,20 +263,21 @@
             // 
             // dtList
             // 
+            this.dtList.AllowUserToAddRows = false;
             this.dtList.AllowUserToDeleteRows = false;
             this.dtList.AllowUserToOrderColumns = true;
             this.dtList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtList.Location = new System.Drawing.Point(398, 29);
+            this.dtList.Location = new System.Drawing.Point(390, 29);
             this.dtList.Name = "dtList";
-            this.dtList.Size = new System.Drawing.Size(438, 377);
+            this.dtList.Size = new System.Drawing.Size(487, 520);
             this.dtList.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(395, 13);
+            this.label6.Location = new System.Drawing.Point(387, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 30;
@@ -279,9 +286,9 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(209, 412);
+            this.btnSave.Location = new System.Drawing.Point(191, 557);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(163, 23);
+            this.btnSave.Size = new System.Drawing.Size(95, 23);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save Record";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -290,7 +297,7 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(103, 412);
+            this.btnNew.Location = new System.Drawing.Point(292, 557);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(100, 23);
             this.btnNew.TabIndex = 9;
@@ -336,7 +343,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(370, 215);
+            this.label9.Location = new System.Drawing.Point(93, 171);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 20);
             this.label9.TabIndex = 33;
@@ -345,7 +352,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(673, 412);
+            this.button2.Location = new System.Drawing.Point(714, 555);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 23);
             this.button2.TabIndex = 34;
@@ -353,11 +360,67 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(207, 187);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(163, 160);
+            this.pictureBox1.TabIndex = 35;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(20, 171);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.TabIndex = 37;
+            this.label11.Text = "Pigeon Photo :";
+            // 
+            // lblcount
+            // 
+            this.lblcount.AutoSize = true;
+            this.lblcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcount.Location = new System.Drawing.Point(716, 12);
+            this.lblcount.Name = "lblcount";
+            this.lblcount.Size = new System.Drawing.Size(72, 13);
+            this.lblcount.TabIndex = 38;
+            this.lblcount.Text = "Total Birds:";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(23, 353);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(163, 23);
+            this.button3.TabIndex = 39;
+            this.button3.Text = "Clear Photo";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(207, 353);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(163, 23);
+            this.button4.TabIndex = 40;
+            this.button4.Text = "Clear Photo";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // PhotoCapture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(850, 441);
+            this.ClientSize = new System.Drawing.Size(889, 590);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.lblcount);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.imgCapture);
@@ -392,11 +455,12 @@
             this.MaximizeBox = false;
             this.Name = "PhotoCapture";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PigeonID System";
+            this.Text = "PigeonID System V1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgVideo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,6 +497,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblcount;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }
 

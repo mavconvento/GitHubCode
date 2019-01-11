@@ -98,6 +98,10 @@
       <Project>{4d63ece3-668a-47ef-a936-a0c0ca2124ae}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PegionClocking\Helper\Helper.csproj">
+      <Project>{6ed5aa94-e068-44ce-b7ab-b8398479b034}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

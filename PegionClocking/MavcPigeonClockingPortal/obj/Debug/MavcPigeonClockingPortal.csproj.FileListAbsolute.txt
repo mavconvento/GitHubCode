@@ -272,3 +272,4 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\System.We
 C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\bin\Microsoft.ReportViewer.WebForms.xml
 C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\obj\Debug\MavcPigeonClockingPortal.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\obj\Debug\MavcPigeonClockingPortal.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\MavcPigeonClockingPortal\obj\Debug\MavcPigeonClockingPortal.csprojResolveAssemblyReference.cache

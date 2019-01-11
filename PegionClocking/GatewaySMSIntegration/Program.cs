@@ -11,6 +11,7 @@ namespace GatewaySMSIntegration
     {
         static void Main(string[] args)
         {
+            //Delete_outgoing("PR-MARKA754822_4H5EX");
             ProcessReply();
         }
 
@@ -49,6 +50,7 @@ namespace GatewaySMSIntegration
                             Console.WriteLine("       Sender: " + Sender);
                             Console.WriteLine("      Keyword: " + Keyword);
                             Console.WriteLine("       Status: " + Status);
+                            Console.WriteLine("    ReplyTime: " + DateTime.Today.ToShortDateString() + " " + DateTime.Today.ToLongTimeString());
                             Console.WriteLine("==============================================================");
 
                             //save outbox into database
@@ -147,6 +149,23 @@ namespace GatewaySMSIntegration
                 functionReturnValue = (new System.Text.UTF8Encoding()).GetString(rpb);
             }
             return functionReturnValue;
+        }
+        private static object Delete_outgoing(string API_CODE)
+        {
+            object functionReturnValue = null;
+            using (System.Net.WebClient client = new System.Net.WebClient())
+            {
+                System.Collections.Specialized.NameValueCollection parameter = new System.Collections.Specialized.NameValueCollection();
+                string url = "https://www.itexmo.com/php_api/delete_outgoing_all.php";
+                //parameter.Add("1", Number);
+                //parameter.Add("2", Message);
+                parameter.Add("apicode", API_CODE);
+
+                
+                dynamic rpb = client.UploadValues(url, "POST", parameter);
+                functionReturnValue = (new System.Text.UTF8Encoding()).GetString(rpb);
+            }
+              return functionReturnValue;
         }
         //########################################################################################
         //API END     '###########################################################################

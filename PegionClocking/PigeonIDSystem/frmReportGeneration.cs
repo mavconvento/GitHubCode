@@ -58,7 +58,8 @@ namespace PigeonIDSystem
                 //saveDialog.ShowDialog();
                 //FileName = saveDialog.FileName;
                 string templatePath = "";
-                templatePath = AppDomain.CurrentDomain.BaseDirectory + @"ReportGenerate\" + MemberID + ".xls";
+                //templatePath = AppDomain.CurrentDomain.BaseDirectory + @"ReportGenerate\" + MemberID + ".xls";
+                templatePath = @"C:\PigeonIDSystem\" + MemberID + ".xls";
                 FileName = templatePath;
 
                 if (FileName != "")
