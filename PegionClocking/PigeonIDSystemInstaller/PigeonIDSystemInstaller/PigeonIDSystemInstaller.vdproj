@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3D9C0B3EAD822488DA2F97EBA4727284"
+        "OwnerKey" = "8:_0CE2CB6236FA4369AB683711569244BD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_54208599C8944F9FA7C673C844B22495"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -70,6 +76,12 @@
         "Entry"
         {
         "MsmKey" = "8:_88C42DA22264488AAF1EC51FC3A80A21"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8C529630639C44F286B97B5E9AC73377"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -112,13 +124,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_253B590A94A74182A0D1AE4F4692FDD8"
+        "OwnerKey" = "8:_54208599C8944F9FA7C673C844B22495"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_54208599C8944F9FA7C673C844B22495"
+        "OwnerKey" = "8:_253B590A94A74182A0D1AE4F4692FDD8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -137,6 +149,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_ADF13EC6E37418D2A2857A6522AA8E51"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3D9C0B3EAD822488DA2F97EBA4727284"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -163,6 +181,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -179,6 +205,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -321,6 +355,37 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3D9C0B3EAD822488DA2F97EBA4727284"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Helper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3D9C0B3EAD822488DA2F97EBA4727284"
+                    {
+                    "Name" = "8:Helper.DLL"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Helper.DLL"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_68310A75053F42A485AA819ED8B47E85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_54208599C8944F9FA7C673C844B22495"
             {
             "AssemblyRegister" = "3:1"
@@ -436,6 +501,26 @@
             {
             "SourcePath" = "8:..\\..\\PigeonIDSystem\\bin\\Debug\\NewWinFormCsharpWebCam.vshost.exe.config"
             "TargetName" = "8:NewWinFormCsharpWebCam.vshost.exe.config"
+            "Tag" = "8:"
+            "Folder" = "8:_68310A75053F42A485AA819ED8B47E85"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8C529630639C44F286B97B5E9AC73377"
+            {
+            "SourcePath" = "8:..\\..\\PigeonIDSystem\\bin\\Debug\\datapath.inf"
+            "TargetName" = "8:datapath.inf"
             "Tag" = "8:"
             "Folder" = "8:_68310A75053F42A485AA819ED8B47E85"
             "Condition" = "8:"

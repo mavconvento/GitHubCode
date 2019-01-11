@@ -6,3 +6,4 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Data\bin\Debug\Integrate_Dat
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Data\bin\Debug\Integrate_Data.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Data\obj\x86\Debug\Integrate_Data.exe
 C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Data\obj\x86\Debug\Integrate_Data.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Data\obj\x86\Debug\Integrate_Data.csprojResolveAssemblyReference.cache
