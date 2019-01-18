@@ -1,0 +1,9 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\bin\Debug\MAVCEclock.exe.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\obj\Debug\MAVCEclock.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\obj\Debug\MAVCEclock.Form1.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\obj\Debug\MAVCEclock.Properties.Resources.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\obj\Debug\MAVCEclock.csproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\bin\Debug\MAVCEclock.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\bin\Debug\MAVCEclock.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\obj\Debug\MAVCEclock.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVCEclock\obj\Debug\MAVCEclock.pdb

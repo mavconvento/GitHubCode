@@ -44,6 +44,7 @@ namespace PegionClocking
                 MemberDetailsSelectAll();
                 this.dataGridView1.Columns[0].Visible = false;
                 this.dataGridView1.Columns[1].Visible = false;
+                this.dataGridView1.Columns[3].Visible = false;
             }
         }
         #endregion

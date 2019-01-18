@@ -554,6 +554,39 @@
   <ItemGroup>
     <None Include="Resources\trimlogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elliot_Grieveson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-152879__340.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark-blue-sky-ufo-1920x1080-wallpaper49341.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\220px-User_icon_2.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock-outline-filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\moving-wallpapers-for-mac-6773134.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Elliot_Grieveson1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\race-flag-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a8d38297b0bf4b138f05d364c9bcfe8a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

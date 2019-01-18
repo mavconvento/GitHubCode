@@ -63,6 +63,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
@@ -105,10 +108,10 @@
             // bntCapture
             // 
             this.bntCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntCapture.Location = new System.Drawing.Point(23, 557);
+            this.bntCapture.Location = new System.Drawing.Point(23, 595);
             this.bntCapture.Name = "bntCapture";
             this.bntCapture.Size = new System.Drawing.Size(163, 23);
-            this.bntCapture.TabIndex = 7;
+            this.bntCapture.TabIndex = 10;
             this.bntCapture.Text = "Capture Pigeon Photo";
             this.bntCapture.UseVisualStyleBackColor = true;
             this.bntCapture.Click += new System.EventHandler(this.bntCapture_Click);
@@ -150,7 +153,7 @@
             // 
             this.imgCapture.BackColor = System.Drawing.Color.White;
             this.imgCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgCapture.Location = new System.Drawing.Point(23, 187);
+            this.imgCapture.Location = new System.Drawing.Point(23, 225);
             this.imgCapture.Name = "imgCapture";
             this.imgCapture.Size = new System.Drawing.Size(163, 160);
             this.imgCapture.TabIndex = 10;
@@ -159,7 +162,7 @@
             // imgVideo
             // 
             this.imgVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgVideo.Location = new System.Drawing.Point(23, 391);
+            this.imgVideo.Location = new System.Drawing.Point(23, 429);
             this.imgVideo.Name = "imgVideo";
             this.imgVideo.Size = new System.Drawing.Size(163, 160);
             this.imgVideo.TabIndex = 9;
@@ -213,7 +216,7 @@
             // txtRingNumber
             // 
             this.txtRingNumber.Enabled = false;
-            this.txtRingNumber.Location = new System.Drawing.Point(88, 86);
+            this.txtRingNumber.Location = new System.Drawing.Point(88, 89);
             this.txtRingNumber.Name = "txtRingNumber";
             this.txtRingNumber.Size = new System.Drawing.Size(183, 20);
             this.txtRingNumber.TabIndex = 4;
@@ -230,15 +233,15 @@
             // txtColor
             // 
             this.txtColor.Enabled = false;
-            this.txtColor.Location = new System.Drawing.Point(88, 139);
+            this.txtColor.Location = new System.Drawing.Point(88, 166);
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(183, 20);
-            this.txtColor.TabIndex = 6;
+            this.txtColor.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 115);
+            this.label4.Location = new System.Drawing.Point(51, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 25;
@@ -247,7 +250,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(45, 142);
+            this.label5.Location = new System.Drawing.Point(45, 169);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 27;
@@ -257,10 +260,10 @@
             // 
             this.cbmSex.Enabled = false;
             this.cbmSex.FormattingEnabled = true;
-            this.cbmSex.Location = new System.Drawing.Point(88, 112);
+            this.cbmSex.Location = new System.Drawing.Point(88, 139);
             this.cbmSex.Name = "cbmSex";
             this.cbmSex.Size = new System.Drawing.Size(183, 21);
-            this.cbmSex.TabIndex = 5;
+            this.cbmSex.TabIndex = 6;
             // 
             // dtList
             // 
@@ -271,7 +274,7 @@
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtList.Location = new System.Drawing.Point(398, 29);
             this.dtList.Name = "dtList";
-            this.dtList.Size = new System.Drawing.Size(479, 520);
+            this.dtList.Size = new System.Drawing.Size(479, 560);
             this.dtList.TabIndex = 10;
             // 
             // label6
@@ -287,10 +290,10 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(191, 557);
+            this.btnSave.Location = new System.Drawing.Point(191, 595);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 23);
-            this.btnSave.TabIndex = 8;
+            this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Save Record";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -298,10 +301,10 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(292, 557);
+            this.btnNew.Location = new System.Drawing.Point(292, 595);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(100, 23);
-            this.btnNew.TabIndex = 9;
+            this.btnNew.TabIndex = 12;
             this.btnNew.Text = "New Member";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.button2_Click);
@@ -344,7 +347,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(93, 171);
+            this.label9.Location = new System.Drawing.Point(93, 209);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 20);
             this.label9.TabIndex = 33;
@@ -353,10 +356,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(714, 555);
+            this.button2.Location = new System.Drawing.Point(713, 595);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(163, 23);
-            this.button2.TabIndex = 34;
+            this.button2.TabIndex = 15;
             this.button2.Text = "Generate List for Printing";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
@@ -365,7 +368,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(207, 187);
+            this.pictureBox1.Location = new System.Drawing.Point(207, 225);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(163, 160);
             this.pictureBox1.TabIndex = 35;
@@ -374,7 +377,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 171);
+            this.label11.Location = new System.Drawing.Point(20, 209);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 37;
@@ -393,10 +396,10 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(23, 353);
+            this.button3.Location = new System.Drawing.Point(23, 391);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(163, 23);
-            this.button3.TabIndex = 39;
+            this.button3.TabIndex = 8;
             this.button3.Text = "Clear Photo";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -404,10 +407,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(207, 353);
+            this.button4.Location = new System.Drawing.Point(207, 391);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(163, 23);
-            this.button4.TabIndex = 40;
+            this.button4.TabIndex = 9;
             this.button4.Text = "Clear Photo";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -415,19 +418,50 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(398, 557);
+            this.button5.Location = new System.Drawing.Point(398, 595);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(100, 23);
-            this.button5.TabIndex = 41;
+            this.button5.TabIndex = 13;
             this.button5.Text = "Delete Member";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(555, 595);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(152, 23);
+            this.button6.TabIndex = 14;
+            this.button6.Text = "SYNC E-CLOCK TIME ";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(88, 112);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(183, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(22, 115);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "RFID Tag :";
             // 
             // PhotoCapture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 590);
+            this.ClientSize = new System.Drawing.Size(889, 628);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -516,6 +550,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
     }
 }
 

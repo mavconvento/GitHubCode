@@ -35,6 +35,7 @@ namespace PegionClocking
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
+            this.Hide();
             Common.Global.ClubNameConnection = "";
             Login();
         }
@@ -192,6 +193,7 @@ namespace PegionClocking
                     {
                         HideControl();
                     }
+                    this.Show();
                 }
             }
             catch (Exception ex)
