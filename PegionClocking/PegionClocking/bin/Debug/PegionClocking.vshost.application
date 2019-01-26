@@ -4,7 +4,7 @@
   <description asmv2:publisher="PegionClocking" asmv2:product="PegionClocking" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
-    <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
+    <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
     <dependentAssembly dependencyType="install" codebase="PegionClocking.exe.manifest" size="4218">
@@ -14,7 +14,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dhw5Ai8L4ZB1IJQOgACAACCyV9f6SyJkuB2HBfxozUw=</dsig:DigestValue>
+        <dsig:DigestValue>3PaqGfm7SN/CMQ5xZqA76avt8EwK6N9kOuObX7RN1j4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

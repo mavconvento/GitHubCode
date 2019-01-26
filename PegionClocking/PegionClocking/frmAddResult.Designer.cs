@@ -68,16 +68,17 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(13, 19);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(549, 137);
+            this.groupBox4.Size = new System.Drawing.Size(549, 148);
             this.groupBox4.TabIndex = 104;
             this.groupBox4.TabStop = false;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(400, 84);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(400, 94);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 23);
             this.button1.TabIndex = 105;
@@ -89,8 +90,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(125, 108);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(125, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 13);
             this.label4.TabIndex = 116;
@@ -100,8 +101,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(232, 108);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(232, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 115;
@@ -111,8 +112,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 69);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(6, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 114;
@@ -130,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(18, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
@@ -140,6 +141,7 @@
             // txtSender
             // 
             this.txtSender.BackColor = System.Drawing.Color.White;
+            this.txtSender.ForeColor = System.Drawing.Color.Black;
             this.txtSender.Location = new System.Drawing.Point(121, 46);
             this.txtSender.Name = "txtSender";
             this.txtSender.Size = new System.Drawing.Size(272, 20);
@@ -149,7 +151,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(11, 49);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(104, 13);
@@ -159,7 +161,8 @@
             // txtStickerCode
             // 
             this.txtStickerCode.BackColor = System.Drawing.Color.White;
-            this.txtStickerCode.Location = new System.Drawing.Point(232, 85);
+            this.txtStickerCode.ForeColor = System.Drawing.Color.Black;
+            this.txtStickerCode.Location = new System.Drawing.Point(232, 95);
             this.txtStickerCode.Name = "txtStickerCode";
             this.txtStickerCode.Size = new System.Drawing.Size(161, 20);
             this.txtStickerCode.TabIndex = 85;
@@ -168,8 +171,8 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(229, 69);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(229, 79);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(93, 13);
             this.label12.TabIndex = 86;
@@ -178,7 +181,8 @@
             // txtArrivalTime
             // 
             this.txtArrivalTime.BackColor = System.Drawing.Color.White;
-            this.txtArrivalTime.Location = new System.Drawing.Point(128, 85);
+            this.txtArrivalTime.ForeColor = System.Drawing.Color.Black;
+            this.txtArrivalTime.Location = new System.Drawing.Point(128, 95);
             this.txtArrivalTime.Name = "txtArrivalTime";
             this.txtArrivalTime.Size = new System.Drawing.Size(98, 20);
             this.txtArrivalTime.TabIndex = 82;
@@ -197,8 +201,8 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(125, 69);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(125, 79);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 83;
@@ -207,16 +211,17 @@
             // dtArrivalDate
             // 
             this.dtArrivalDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtArrivalDate.Location = new System.Drawing.Point(9, 85);
+            this.dtArrivalDate.Location = new System.Drawing.Point(9, 95);
             this.dtArrivalDate.Name = "dtArrivalDate";
             this.dtArrivalDate.Size = new System.Drawing.Size(113, 20);
             this.dtArrivalDate.TabIndex = 84;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.Control;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(15, 182);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(547, 31);
@@ -234,6 +239,7 @@
             this.ClientSize = new System.Drawing.Size(572, 234);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button3);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

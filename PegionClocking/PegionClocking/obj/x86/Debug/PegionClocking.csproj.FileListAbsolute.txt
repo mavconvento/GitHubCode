@@ -263,4 +263,4 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClo
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.application
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmStickerFinder.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Microsoft.VisualBasic.dll
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.ResolveComReference.cache

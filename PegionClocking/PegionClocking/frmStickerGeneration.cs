@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -42,6 +43,13 @@ namespace PegionClocking
         {
             try
             {
+                string format = "EXCEL";
+
+                if (this.radioButton2.Checked)
+                {
+                    format = "PDF";
+                }
+
                 DAL.StickerNumber stickerNumber = new DAL.StickerNumber();
                 if (this.txtFileCount.Text != "" && this.txtDestination.Text != "" && this.txtFilename.Text != "" && this.txtTemplate.Text != "")
                 {
@@ -52,7 +60,7 @@ namespace PegionClocking
                     {
                         path = this.txtDestination.Text + "\\" + this.txtFilename.Text + "_" + index + ".xls";
                         System.IO.File.Copy(this.txtTemplate.Text, path, true);
-                        GenerateNow(stickerNumber.StickerSelectAll(), path, index, recordCount);
+                        GenerateNow(stickerNumber.StickerSelectAll(), path, index, recordCount,format, this.txtDestination.Text, this.txtFilename.Text + "_" + index);
                         index += 1;
                     }
                     MessageBox.Show("Sticker Generated sucessfully", "Sticker Generation");
@@ -64,7 +72,7 @@ namespace PegionClocking
             }
         }
 
-        private void GenerateNow(DataSet dt, string Template, Int64 index, Int64 recordcount)
+        private void GenerateNow(DataSet dt, string Template, Int64 index, Int64 recordcount, string format,string path, string filename)
         {
             try
             {
@@ -96,6 +104,18 @@ namespace PegionClocking
                 {
                     excelApp.Visible = true;
                 }
+
+                if (format == "PDF")
+                {
+                    if (!Directory.Exists(path + "\\PDF"))
+                    {
+                        Directory.CreateDirectory(path + "\\PDF\\");
+                    }
+                    ws = wb.Sheets[1];
+                    ws.ExportAsFixedFormat(excel.XlFixedFormatType.xlTypePDF, path + "\\PDF\\" + filename + ".pdf");
+                }
+
+                
                 wb.Close();
                 excelApp.Quit();
                 System.Runtime.InteropServices.Marshal.FinalReleaseComObject(excelApp);
@@ -132,8 +152,7 @@ namespace PegionClocking
                 throw ex;
             }
         }
-
-        private void GenerateCardNow(DataSet dt, string Template, Int64 index, Int64 recordcount)
+       private void GenerateCardNow(DataSet dt, string Template, Int64 index, Int64 recordcount)
         {
             try
             {

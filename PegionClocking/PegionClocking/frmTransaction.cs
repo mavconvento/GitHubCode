@@ -302,7 +302,7 @@ namespace PegionClocking
                 txtQuantity.Text = RecordSearched.Rows[0]["Quantity"].ToString();
                 txtUnitPrize.Text = RecordSearched.Rows[0]["Unit"].ToString();
                 txtPaymentAmount.Text = RecordSearched.Rows[0]["PaymentAmount"].ToString();
-                dpPaymentDate.Value = Convert.ToDateTime(RecordSearched.Rows[0]["PaymentDate"]);
+                dpPaymentDate.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["PaymentDate"].ToString());
                 cmbOrderStatus.SelectedItem = RecordSearched.Rows[0]["OrderStatus"].ToString();
             }
             catch (Exception ex)

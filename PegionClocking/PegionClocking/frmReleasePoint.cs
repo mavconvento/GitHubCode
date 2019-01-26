@@ -182,9 +182,9 @@ namespace PegionClocking
                             this.chkIsStop.Checked = Convert.ToBoolean(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
                             if (chkIsStop.Checked)
                             {
-                                this.dtpStopFromDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
+                                this.dtpStopFromDate.Value = Common.Common.ConvertDate(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value.ToString());
                                 this.txtStopFromTime.Text = datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value.ToString();
-                                this.dtpStopToDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                                this.dtpStopToDate.Value = Common.Common.ConvertDate(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value.ToString());
                                 this.txtStopToTime.Text = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
                             }
                             else
@@ -194,7 +194,7 @@ namespace PegionClocking
                                 this.dtpStopToDate.Value = DateTime.Now;
                                 this.txtStopToTime.Text = "00:00";
                             }
-                            this.dtpDateRelease.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[9].Value);
+                            this.dtpDateRelease.Value = Common.Common.ConvertDate(datagrid.Rows[Convert.ToInt32(index)].Cells[9].Value.ToString());
                             time = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[10].Value);
                             hm = time.Split(':');
 
@@ -321,7 +321,7 @@ namespace PegionClocking
                     txtDistanceLongMinutes.Text = RecordSearched.Rows[0]["DistanceLongMinutes"].ToString();
                     txtDistanceLongSeconds.Text = RecordSearched.Rows[0]["DistanceLongSecond"].ToString();
                     cmbLongSign.Text = RecordSearched.Rows[0]["DistanceLongSign"].ToString();
-                    dtpDateRelease.Value = Convert.ToDateTime(RecordSearched.Rows[0]["DateRelease"]);
+                    dtpDateRelease.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["DateRelease"].ToString());
                     txtRemarks.Text = RecordSearched.Rows[0]["Description"].ToString();
                 }
             }

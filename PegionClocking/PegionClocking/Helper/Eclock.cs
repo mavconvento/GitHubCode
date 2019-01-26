@@ -16,8 +16,8 @@ namespace Helper
             {
                
                 DateTime now = new DateTime();
-                now = DateTime.Now.AddSeconds(1);
-                System.Threading.Thread.Sleep(500);
+                now = DateTime.Now.AddSeconds(2);
+                //System.Threading.Thread.Sleep(500);
                 string Time = "$TiMe$" + now.Year.ToString().Substring(2).PadLeft(2, '0') + now.Month.ToString().PadLeft(2, '0') + now.Day.ToString().PadLeft(2, '0');
                 Time = Time + "w" + now.Hour.ToString().PadLeft(2, '0') + now.Minute.ToString().PadLeft(2, '0') + now.Second.ToString().PadLeft(2, '0') + "x#";
                 comPort.Open();

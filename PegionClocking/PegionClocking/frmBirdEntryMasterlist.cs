@@ -169,5 +169,70 @@ namespace PegionClocking
             lblLapNo.Text = RaceReleasePointData.Rows[0]["LapNo"].ToString();
         }
         #endregion
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRaceScheduleCategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblReleaseTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblReleaseDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCoordinates_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLocationName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLapNo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void shapeContainer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

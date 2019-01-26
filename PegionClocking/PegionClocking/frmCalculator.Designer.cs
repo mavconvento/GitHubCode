@@ -40,12 +40,12 @@
             this.label17 = new System.Windows.Forms.Label();
             this.txtDistanceLongDegree = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.txtDistanceLatMinutes = new System.Windows.Forms.TextBox();
             this.txtDistanceLatSeconds = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.cmbLocation = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -119,6 +119,7 @@
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(6, 80);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(353, 82);
@@ -220,16 +221,6 @@
             this.label18.TabIndex = 36;
             this.label18.Text = "o";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(208, 23);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(12, 16);
-            this.label16.TabIndex = 30;
-            this.label16.Text = "\'";
-            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -239,16 +230,6 @@
             this.label19.Size = new System.Drawing.Size(12, 16);
             this.label19.TabIndex = 37;
             this.label19.Text = "\'";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(150, 21);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(17, 16);
-            this.label15.TabIndex = 28;
-            this.label15.Text = "o";
             // 
             // label20
             // 
@@ -277,6 +258,26 @@
             this.txtDistanceLatSeconds.TabIndex = 4;
             this.txtDistanceLatSeconds.Text = "0";
             this.txtDistanceLatSeconds.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(150, 21);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(17, 16);
+            this.label15.TabIndex = 28;
+            this.label15.Text = "o";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(208, 23);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(12, 16);
+            this.label16.TabIndex = 30;
+            this.label16.Text = "\'";
             // 
             // cmbLocation
             // 
@@ -362,13 +363,15 @@
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(397, 176);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(473, 31);
             this.button3.TabIndex = 6;
             this.button3.Text = "CLICK TO &CALCULATE";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtCutoff
@@ -428,13 +431,15 @@
             // 
             // btnGo
             // 
+            this.btnGo.BackColor = System.Drawing.Color.Transparent;
+            this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.Location = new System.Drawing.Point(217, 175);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(56, 23);
             this.btnGo.TabIndex = 4;
             this.btnGo.Text = "&GO!";
-            this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.UseVisualStyleBackColor = false;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // groupBox2
@@ -702,6 +707,7 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.dtReleaseDate);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(397, 24);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(232, 129);
@@ -717,6 +723,7 @@
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.dtArrivalDate);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(635, 24);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(235, 129);
@@ -790,6 +797,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cmbLocation);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;

@@ -60,8 +60,8 @@ namespace PegionClocking
                     txtDistanceLongMinutes.Text = item["DistanceLongMinutes"].ToString();
                     txtDistanceLongSeconds.Text = item["DistanceLongSecond"].ToString();
                     cmbLongSign.Text = item["DistanceLongSign"].ToString();
-                    dtReleaseDate.Value = Convert.ToDateTime(item["DateRelease"]);
-                    dtArrivalDate.Value = Convert.ToDateTime(item["DateRelease"]);
+                    dtReleaseDate.Value = Common.Common.ConvertDate(item["DateRelease"].ToString());
+                    dtArrivalDate.Value = Common.Common.ConvertDate(item["DateRelease"].ToString());
                     txtReleaseTime.Text = item["ReleaseTime"].ToString();
                 }
             }

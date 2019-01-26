@@ -258,8 +258,8 @@ namespace PegionClocking
                     cmbVersion.Text = RecordSearched.Rows[0]["Version"].ToString();
                     chkIsBackUp.Checked = (bool)RecordSearched.Rows[0]["IsBackup"];
                     chkMAVCSticker.Checked = (bool)RecordSearched.Rows[0]["IsMAVCStickerUsed"];
-                    dtpLastSubcriptionDate.Value =(DateTime)RecordSearched.Rows[0]["LastSubscriptionDate"];
-                    dtpSubcriptionDate.Value = (DateTime)RecordSearched.Rows[0]["SubscriptionDate"];
+                    dtpLastSubcriptionDate.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["LastSubscriptionDate"].ToString());
+                    dtpSubcriptionDate.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["SubscriptionDate"].ToString());
                     comboBox1.SelectedItem = RecordSearched.Rows[0]["Server"];
                 }
             }

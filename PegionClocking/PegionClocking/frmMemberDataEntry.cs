@@ -451,7 +451,7 @@ namespace PegionClocking
                     cmbExtName.Text = RecordSearched.Rows[0]["ExtensionName"].ToString();
                     txtLoftName.Text = RecordSearched.Rows[0]["LoftName"].ToString();
                     txtAddress.Text = RecordSearched.Rows[0]["Address"].ToString();
-                    dtpDateofBirth.Value = Convert.ToDateTime(RecordSearched.Rows[0]["DateofBirth"].ToString());
+                    dtpDateofBirth.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["DateofBirth"].ToString());
                     txtDistanceLatDegree.Text = RecordSearched.Rows[0]["DistanceLatDegree"].ToString();
                     txtDistanceLatMinutes.Text = RecordSearched.Rows[0]["DistanceLatMinutes"].ToString();
                     txtDistanceLatSeconds.Text = RecordSearched.Rows[0]["DistanceLatSeconds"].ToString();
@@ -460,9 +460,9 @@ namespace PegionClocking
                     txtDistanceLongMinutes.Text = RecordSearched.Rows[0]["DistanceLongMinutes"].ToString();
                     txtDistanceLongSeconds.Text = RecordSearched.Rows[0]["DistanceLongSeconds"].ToString();
                     cmbLongSign.Text = RecordSearched.Rows[0]["DistanceLongSign"].ToString();
-                    dtpDateofMembership.Value = Convert.ToDateTime(RecordSearched.Rows[0]["DateofMembership"].ToString());
-                    dtpLastRenewalDate.Value = Convert.ToDateTime(RecordSearched.Rows[0]["LastRenewalDate"].ToString());
-                    dtpDateofExpiration.Value = Convert.ToDateTime(RecordSearched.Rows[0]["DateofExpiration"].ToString());
+                    dtpDateofMembership.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["DateofMembership"].ToString());
+                    dtpLastRenewalDate.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["LastRenewalDate"].ToString());
+                    dtpDateofExpiration.Value = Common.Common.ConvertDate(RecordSearched.Rows[0]["DateofExpiration"].ToString());
                     chkDeactivateMember.Checked = Convert.ToBoolean(RecordSearched.Rows[0]["DeactivateMember"]);
                     this.dataGridView1.DataSource = RecordSearchedSMS;
                 }

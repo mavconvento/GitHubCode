@@ -36,14 +36,16 @@
             // 
             // btnChangePassword
             // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangePassword.Location = new System.Drawing.Point(82, 79);
-            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChangePassword.Location = new System.Drawing.Point(87, 101);
+            this.btnChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(122, 24);
             this.btnChangePassword.TabIndex = 0;
             this.btnChangePassword.Text = "&SAVE";
-            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.UseVisualStyleBackColor = false;
             this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // label1
@@ -61,7 +63,7 @@
             // txtChangePassword
             // 
             this.txtChangePassword.Location = new System.Drawing.Point(11, 37);
-            this.txtChangePassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtChangePassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtChangePassword.Name = "txtChangePassword";
             this.txtChangePassword.Size = new System.Drawing.Size(258, 20);
             this.txtChangePassword.TabIndex = 2;
@@ -72,12 +74,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PegionClocking.Properties.Resources.background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(291, 136);
+            this.ClientSize = new System.Drawing.Size(284, 136);
             this.Controls.Add(this.txtChangePassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnChangePassword);
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmChangePassword";

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PegionClocking
@@ -18,6 +21,7 @@ namespace PegionClocking
         BIZ.RaceScheduleDetails raceScheduleDetails;
         BIZ.Location location;
         //BIZ.ReportGeneration reportGeneration;
+
         #endregion
 
         #region Properties
@@ -55,6 +59,7 @@ namespace PegionClocking
         {
             InitializeComponent();
             dataGridView1.DoubleClick += new EventHandler(grid_DoubleClick);
+            
         }
         private void frmScheduleDetails_Load_1(object sender, EventArgs e)
         {
@@ -202,6 +207,8 @@ namespace PegionClocking
                 String time = "";
                 String[] hm;
 
+                string value = Thread.CurrentThread.CurrentUICulture.Name;
+
                 if (datagrid.RowCount > 0)
                 {
                     raceScheduleDetails = new BIZ.RaceScheduleDetails();
@@ -214,11 +221,11 @@ namespace PegionClocking
                             this.cmbLocation.SelectedItem = LocationName;
                             this.txtID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
                             this.txtLocationID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
-                            this.dtpLoadingDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                            this.dtpLoadingDate.Value =Common.Common.ConvertDate((datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value.ToString()));
                             string[] loadingTime = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString().Split('-');
                             this.txtLoadingTimeFrom.Text = loadingTime.GetValue(0).ToString().Trim();
                             this.txtLoadingTimeTo.Text = loadingTime.GetValue(1).ToString().Trim();
-                            this.dtpDateRelease.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value);
+                            this.dtpDateRelease.Value = Common.Common.ConvertDate(datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString());
                             
                             //release point details
                             this.txtReleasePointID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[9].Value);
@@ -230,9 +237,9 @@ namespace PegionClocking
                          
                             if (chkIsStop.Checked)
                             {
-                                this.dtpStopFromDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[15].Value);
+                                this.dtpStopFromDate.Value = Common.Common.ConvertDate(datagrid.Rows[Convert.ToInt32(index)].Cells[15].Value.ToString());
                                 this.txtStopFromTime.Text = datagrid.Rows[Convert.ToInt32(index)].Cells[16].Value.ToString();
-                                this.dtpStopToDate.Value = Convert.ToDateTime(datagrid.Rows[Convert.ToInt32(index)].Cells[17].Value);
+                                this.dtpStopToDate.Value = Common.Common.ConvertDate(datagrid.Rows[Convert.ToInt32(index)].Cells[17].Value.ToString());
                                 this.txtStopToTime.Text = datagrid.Rows[Convert.ToInt32(index)].Cells[18].Value.ToString();
                             }
                             else

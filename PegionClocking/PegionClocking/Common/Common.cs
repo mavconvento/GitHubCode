@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Data;
 using System.Security.Cryptography;
 using System.IO;
+using System.Globalization;
 
 namespace PegionClocking.Common
 {
@@ -74,6 +75,21 @@ namespace PegionClocking.Common
                 throw ex;
             }
         }
+
+        public static DateTime ConvertDate(string value)
+        {
+            try
+            {
+                return DateTime.ParseExact(value, "M/d/yyyy", CultureInfo.InvariantCulture);
+            }
+            catch (Exception)
+            {
+                return Convert.ToDateTime(value);
+                //throw;
+            }
+           
+        }
+
         public enum MemberMenu
         {
             MemberDataEntry,

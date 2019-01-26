@@ -40,75 +40,81 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(137, 57);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(116, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 15);
+            this.label3.Size = new System.Drawing.Size(91, 12);
             this.label3.TabIndex = 12;
             this.label3.Text = "Ex. 09985554343";
             // 
             // txtPinNumber
             // 
-            this.txtPinNumber.Location = new System.Drawing.Point(137, 91);
-            this.txtPinNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPinNumber.Location = new System.Drawing.Point(119, 73);
             this.txtPinNumber.Name = "txtPinNumber";
-            this.txtPinNumber.Size = new System.Drawing.Size(232, 22);
+            this.txtPinNumber.Size = new System.Drawing.Size(175, 20);
             this.txtPinNumber.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 94);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(23, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 17);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "MemberID No.";
+            this.label2.Text = "MemberID No. :";
             // 
             // txtMobileNumber
             // 
             this.txtMobileNumber.AccessibleDescription = "";
-            this.txtMobileNumber.Location = new System.Drawing.Point(137, 28);
-            this.txtMobileNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMobileNumber.Location = new System.Drawing.Point(119, 25);
             this.txtMobileNumber.Name = "txtMobileNumber";
-            this.txtMobileNumber.Size = new System.Drawing.Size(232, 22);
+            this.txtMobileNumber.Size = new System.Drawing.Size(175, 20);
             this.txtMobileNumber.TabIndex = 9;
             this.txtMobileNumber.Tag = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 32);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 17);
+            this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Mobile Number";
+            this.label1.Text = "Mobile Number :";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(125, 181);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(94, 147);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 28);
+            this.button1.Size = new System.Drawing.Size(119, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Register Now";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmRegisterMobileNumber
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 222);
+            this.BackgroundImage = global::PegionClocking.Properties.Resources.background2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(305, 180);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtPinNumber);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMobileNumber);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRegisterMobileNumber";
