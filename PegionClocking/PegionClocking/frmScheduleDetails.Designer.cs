@@ -335,10 +335,10 @@
             // 
             // btnDone
             // 
-            this.btnDone.BackColor = System.Drawing.Color.Transparent;
+            this.btnDone.BackColor = System.Drawing.Color.Teal;
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDone.ForeColor = System.Drawing.Color.Black;
+            this.btnDone.ForeColor = System.Drawing.Color.White;
             this.btnDone.Location = new System.Drawing.Point(251, 520);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(69, 23);
@@ -349,10 +349,10 @@
             // 
             // btnAddLocation
             // 
-            this.btnAddLocation.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddLocation.BackColor = System.Drawing.Color.Teal;
             this.btnAddLocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddLocation.ForeColor = System.Drawing.Color.Black;
+            this.btnAddLocation.ForeColor = System.Drawing.Color.White;
             this.btnAddLocation.Location = new System.Drawing.Point(86, 520);
             this.btnAddLocation.Name = "btnAddLocation";
             this.btnAddLocation.Size = new System.Drawing.Size(78, 23);
@@ -363,10 +363,10 @@
             // 
             // btnRemoveLocation
             // 
-            this.btnRemoveLocation.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemoveLocation.BackColor = System.Drawing.Color.Teal;
             this.btnRemoveLocation.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemoveLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveLocation.ForeColor = System.Drawing.Color.Black;
+            this.btnRemoveLocation.ForeColor = System.Drawing.Color.White;
             this.btnRemoveLocation.Location = new System.Drawing.Point(170, 520);
             this.btnRemoveLocation.Name = "btnRemoveLocation";
             this.btnRemoveLocation.Size = new System.Drawing.Size(75, 23);
@@ -446,8 +446,9 @@
             // 
             // btnView
             // 
-            this.btnView.BackColor = System.Drawing.Color.Transparent;
+            this.btnView.BackColor = System.Drawing.Color.Teal;
             this.btnView.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnView.ForeColor = System.Drawing.Color.White;
             this.btnView.Location = new System.Drawing.Point(335, 56);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(51, 23);
@@ -497,10 +498,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(566, 520);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(257, 23);
@@ -591,10 +592,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(13, 520);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 23);

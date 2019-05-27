@@ -17,6 +17,7 @@ namespace PegionClocking
         #region Properties
         public Int64 ClubID { get; set; }
         public Int64 UserID { get; set; }
+        public string MemberIDNo { get; set; }
         public Boolean IsAdmin { get; set; }
         #endregion
 
@@ -28,6 +29,7 @@ namespace PegionClocking
 
         private void frmRegisterMobileNumber_Load(object sender, EventArgs e)
         {
+            this.txtPinNumber.Text = MemberIDNo;
             Common.Global.IsMainDatabase = false;
         }
 

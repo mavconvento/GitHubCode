@@ -85,7 +85,7 @@
             // txtClubAbbreviation
             // 
             this.txtClubAbbreviation.Location = new System.Drawing.Point(128, 67);
-            this.txtClubAbbreviation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtClubAbbreviation.Margin = new System.Windows.Forms.Padding(2);
             this.txtClubAbbreviation.Name = "txtClubAbbreviation";
             this.txtClubAbbreviation.Size = new System.Drawing.Size(223, 20);
             this.txtClubAbbreviation.TabIndex = 78;
@@ -105,7 +105,7 @@
             // txtReaderID
             // 
             this.txtReaderID.Location = new System.Drawing.Point(128, 96);
-            this.txtReaderID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReaderID.Margin = new System.Windows.Forms.Padding(2);
             this.txtReaderID.Name = "txtReaderID";
             this.txtReaderID.Size = new System.Drawing.Size(223, 20);
             this.txtReaderID.TabIndex = 84;
@@ -124,11 +124,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(169, 178);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 24);
             this.button1.TabIndex = 85;
@@ -142,7 +142,7 @@
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.Location = new System.Drawing.Point(128, 132);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(80, 17);
             this.checkBox1.TabIndex = 86;
@@ -168,7 +168,7 @@
             this.Controls.Add(this.label4);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRFIDRegistration";

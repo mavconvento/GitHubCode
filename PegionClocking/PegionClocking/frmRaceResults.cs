@@ -82,7 +82,7 @@ namespace PegionClocking
             {
                 SaveCategory();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 MessageBox.Show("Please set your Category and Group", "Error");

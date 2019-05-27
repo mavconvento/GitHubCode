@@ -58,7 +58,7 @@ namespace PegionClocking.DAL
                 throw ex;
             }
         }
-        public DataSet RaceResultAddFromBackup()
+        public DataSet RaceResultAddFromBackup(string source)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@StickerNumber", StickerCode);
                 dbconn.sqlComm.Parameters.AddWithValue("@Arrival", Arrival);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceReleaseDate", DateRelease);
-                dbconn.sqlComm.Parameters.AddWithValue("@Source", "Back-up");
+                dbconn.sqlComm.Parameters.AddWithValue("@Source", source);
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;

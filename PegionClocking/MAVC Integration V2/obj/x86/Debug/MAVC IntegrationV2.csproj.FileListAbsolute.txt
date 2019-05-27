@@ -60,3 +60,5 @@ D:\MyProject\MAVC Source Codes\PegionClocking\MAVC Integration V2\obj\x86\Debug\
 D:\MyProject\MAVC Source Codes\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.pdb
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.exe
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.pdb

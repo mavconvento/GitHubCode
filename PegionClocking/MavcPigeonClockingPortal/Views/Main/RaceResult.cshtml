@@ -2,32 +2,30 @@
     ViewBag.Title = "Race Result";
 }
 <style type="text/css">
-    input
-    {
+    input {
         padding: 5px;
         border: 1px solid #A5A5A5;
     }
-    input.ng-dirty.ng-invalid
-    {
-        border: 1px solid red;
-        background-color: rgb(255, 244, 244);
-    }
-    .error
-    {
+
+        input.ng-dirty.ng-invalid {
+            border: 1px solid red;
+            background-color: rgb(255, 244, 244);
+        }
+
+    .error {
         color: red;
     }
-    
-    a
-    {
+
+    a {
         text-decoration: none;
     }
-    .hover span:hover, .hover span:link
-    {
+
+    .hover span:hover, .hover span:link {
         color: Green;
         text-decoration: underline;
     }
-    ul, li
-    {
+
+    ul, li {
         list-style-type: none;
         list-style-position: inside;
         margin: 0;
@@ -36,15 +34,15 @@
     }
 
     .loader {
-        background-color:#fff;
+        background-color: #fff;
         position: fixed;
-        left:25%;
-        top:25%;
+        left: 25%;
+        top: 25%;
         width: 100px;
         height: 100px;
         margin: -50px 0 0 -50px;
         opacity: 0.5;
-        z-index:10000;
+        z-index: 10000;
     }
 </style>
 <div ng-controller="RaceResultController">
@@ -59,7 +57,7 @@
                 </td>
                 <td>
                     <select style="width: 350px" class="form-control input-sm" data-ng-model="RaceResultFilter.ClubName"
-                        data-ng-options="c.clubName for c in ClubNameList" ng-change="GetAccessNumber(RaceResultFilter.ClubName)">
+                            data-ng-options="c.clubName for c in ClubNameList" ng-change="GetAccessNumber(RaceResultFilter.ClubName)">
                         <option value="">Select Club Name</option>
                     </select>
                 </td>
@@ -68,7 +66,7 @@
                 </td>
                 <td>
                     <select style="width: 150px" class="form-control input-sm" data-ng-model="RaceResultFilter.BirdCategory"
-                        data-ng-options="c.dESCRIPTION as c.dESCRIPTION for c in BirdCategory">
+                            data-ng-options="c.dESCRIPTION as c.dESCRIPTION for c in BirdCategory">
                         <option value="">All</option>
                     </select>
                 </td>
@@ -77,7 +75,7 @@
                 </td>
                 <td>
                     <select style="width: 150px" class="form-control input-sm" data-ng-model="RaceResultFilter.GroupCategory"
-                        data-ng-options="c.raceGroup as c.raceGroup for c in GroupCategory">
+                            data-ng-options="c.raceGroup as c.raceGroup for c in GroupCategory">
                         <option value="">All</option>
                     </select>
                 </td>
@@ -90,7 +88,7 @@
                     <div class="col-md-6">
                         <p class="input-group">
                             <input type="text" class="form-control input-sm DatePicker" uib-datepicker-popup="{{format}}"
-                                ng-model="RaceResultFilter.RaceReleaseDate" is-open="popup1.opened" />
+                                   ng-model="RaceResultFilter.RaceReleaseDate" is-open="popup1.opened" />
                             <span class="input-group-btn">
                                 <button type="button" class="btn default-btn input-sm" ng-click="open1()">
                                     <i class="glyphicon glyphicon-calendar"></i>
@@ -117,10 +115,14 @@
             </tr>
             <tr>
                 <td colspan="6">
-                    <span style="color: #8dc63f; font-size: 15px; font-family: Arial"><b>Mahalagang Paalala:
-                        I-send sa dalawang access number ang clock ng inyong ibon para siguradong pumasok.
-                        <br />
-                        Huwag din kalimutan na magtext sa back-up ng inyong club.</b></span>
+                    <span style="color: #8dc63f; font-size: 15px; font-family: Arial">
+                        <b>
+                            Mahalagang Paalala:
+                            I-send sa dalawang access number ang clock ng inyong ibon para siguradong pumasok.
+                            <br />
+                            Huwag din kalimutan na magtext sa back-up ng inyong club.
+                        </b>
+                    </span>
                 </td>
             </tr>
             <tr>
@@ -169,18 +171,21 @@
                                 {{RaceDetails.Coordinates}}
                             </td>
                             <td ng-show="RaceDetails.Coordinates != ''" style="vertical-align: bottom; padding-left: 10px;">
-                                <li class="hover" style="margin: 0px; padding: 0px"><a href="#" style="" class="customheader">
-                                    <span ng-click="ViewMaps(RaceDetails.Latitude,RaceDetails.Longtitude,RaceDetails.LiberationPoint,RaceDetails.Coordinates)"
-                                        style="color: Aqua; font-size: small"><b>View</b></span></a></li>
+                                <li class="hover" style="margin: 0px; padding: 0px">
+                                    <a href="#" style="" class="customheader">
+                                        <span ng-click="ViewMaps(RaceDetails.Latitude,RaceDetails.Longtitude,RaceDetails.LiberationPoint,RaceDetails.Coordinates)"
+                                              style="color: Aqua; font-size: small"><b>View</b></span>
+                                    </a>
+                                </li>
                             </td>
                         </tr>
                     </table>
                 </td>
                 <td class="columnName">
-                    <span>Bird Entry Count :</span>
+                    <span>Total Bird Clock : </span>
                 </td>
                 <td>
-                    <span>{{RaceDetails.BirdEntryCount}}</span>
+                    {{RaceDetails.TotalBirdClock}}
                 </td>
                 <td class="columnName">
                     <span>From (Sunset) :</span>
@@ -197,10 +202,10 @@
                     {{RaceDetails.LapNo}}
                 </td>
                 <td class="columnName">
-                    <span>Total Bird Clock : </span>
+                    <span>Bird Entry Count :</span>
                 </td>
                 <td>
-                    {{RaceDetails.TotalBirdClock}}
+                    <span>{{RaceDetails.BirdEntryCount}}</span>
                 </td>
                 <td class="columnName">
                     <span>To (Sunrise next day) :</span>
@@ -217,13 +222,12 @@
                     <span ng-bind-html="RaceDetails.ReleaseTime"></span>
                 </td>
                 <td class="columnName">
-                    <span>Total Bird Entry : </span>
+                    @*<span>Total Bird Entry : </span>*@
                 </td>
                 <td>
-                    {{RaceDetails.TotalBirdEntry}}
+                    @*{{RaceDetails.TotalBirdEntry}}*@
                 </td>
-                <td>
-                </td>
+                <td></td>
             </tr>
         </table>
         <table class="mobilescreen">
@@ -264,9 +268,12 @@
                                 {{RaceDetails.Coordinates}}
                             </td>
                             <td ng-show="RaceDetails.Coordinates != ''" style="vertical-align: bottom; padding-left: 10px;">
-                                <li class="hover" style="margin: 0px; padding: 0px"><a href="#" style="" class="customheader">
-                                    <span ng-click="ViewMaps(RaceDetails.Latitude,RaceDetails.Longtitude,RaceDetails.LiberationPoint,RaceDetails.Coordinates)"
-                                        style="color: Aqua; font-size: small"><b>View</b></span></a></li>
+                                <li class="hover" style="margin: 0px; padding: 0px">
+                                    <a href="#" style="" class="customheader">
+                                        <span ng-click="ViewMaps(RaceDetails.Latitude,RaceDetails.Longtitude,RaceDetails.LiberationPoint,RaceDetails.Coordinates)"
+                                              style="color: Aqua; font-size: small"><b>View</b></span>
+                                    </a>
+                                </li>
                             </td>
                         </tr>
                     </table>
@@ -288,12 +295,20 @@
                     {{RaceDetails.LapNo}}
                 </td>
             </tr>
+            @*<tr>
+                    <td class="columnName">
+                        <span>Total Bird Entry : </span>
+                    </td>
+                    <td>
+                        {{RaceDetails.TotalBirdEntry}}
+                    </td>
+                </tr>*@
             <tr>
                 <td class="columnName">
-                    <span>Total Bird Entry : </span>
+                    <span>Total Bird Clock : </span>
                 </td>
                 <td>
-                    {{RaceDetails.TotalBirdEntry}}
+                    {{RaceDetails.TotalBirdClock}}
                 </td>
             </tr>
             <tr>
@@ -302,14 +317,6 @@
                 </td>
                 <td>
                     <span>{{RaceDetails.BirdEntryCount}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td class="columnName">
-                    <span>Total Bird Clock : </span>
-                </td>
-                <td>
-                    {{RaceDetails.TotalBirdClock}}
                 </td>
             </tr>
             <tr>
@@ -347,7 +354,7 @@
                             </td>
                             <td style="padding-left: 5px">
                                 <input class="form-control input-sm" ng-model="RaceResultFilter.SearchName" type="text"
-                                    name="searchName" />
+                                       name="searchName" />
                             </td>
                             <td style="padding-left: 5px">
                                 <input type="button" class="btn btn-default input-sm" value="Search" style="color: Black;
@@ -376,7 +383,7 @@
                             </td>
                             <td style="width: 100px; padding-left: 5px">
                                 <input type="text" class="form-control input-sm" ng-model="RaceResultFilter.StickerNumber"
-                                    style="width: 150px" name="StickerName" />
+                                       style="width: 150px" name="StickerName" />
                             </td>
                             <td style="padding-left: 5px">
                                 <input type="button" class="btn btn-default" value="Send" ng-click="Send(@ViewBag.cookiesUserName)" style="color: Black; height: 30px; width: 70px;" />
@@ -413,24 +420,31 @@
         <span style="color: #8dc63f; font-size: 15px; margin-left: 10px"><b>Race Result Summary</b></span>
         <table data-ng-table="tableParams" class="table">
             <tr data-ng-repeat="raceResult in $data">
-                <td data-title="'Rank'" data-sortable="'Rank'">
+                <td data-title="'Rank'" data-sortable="'Rank'" style="width: 50px;">
                     {{raceResult.rank}}
                 </td>
                 <td data-title="'Member/Loft Name'" data-sortable="'memberName'" style="width: 200px;">
                     {{raceResult.memberName}}
                 </td>
-                <td data-title="'Location/Coordinates'" data-sortable="">
-                    <li class="hover" style="margin: 0px; padding: 0px; text-align: center"><a href="#"
-                        style="" class="customheader"><span ng-click="ViewMaps(raceResult.latitude,raceResult.longtitude,raceResult.memberName,raceResult.coordinates)"
-                            style="color: Aqua; font-size: small"><b>View</b></span></a></li>
+                <td data-title="'Map'" data-sortable="">
+                    <li class="hover" style="margin: 0px; padding: 0px; text-align: center">
+                        <a href="#"
+                           style="" class="customheader">
+                            <span ng-click="ViewMaps(raceResult.latitude,raceResult.longtitude,raceResult.memberName,raceResult.coordinates)"
+                                  style="color: Aqua; font-size: small"><b>View</b></span>
+                        </a>
+                    </li>
                 </td>
-                <td data-title="'Distance (KM)'" data-sortable="'distance'" style="text-align: center;">
+                <td data-title="'Distance(KM)'" data-sortable="'distance'" style="text-align: center; width: 120px;">
                     {{raceResult.distance}}
                 </td>
-                <td data-title="'Band/Ring Number'" data-sortable="'ringNumber'" style="width: 200px">
+                <td data-title="'Total Entry'" data-sortable="'totalentry'" style="text-align: center; width: 100px;">
+                    {{raceResult.totalEntry}}
+                </td>
+                <td data-title="'Band/Ring Number'" data-sortable="'ringNumber'" style="text-align: center;width: 200px">
                     {{raceResult.ringNumber}}
                 </td>
-                <td data-title="'Sticker Code'" data-sortable="'code'">
+                <td data-title="'Sticker Code'" data-sortable="'code'" style="text-align: center">
                     {{raceResult.code}}
                 </td>
                 <td data-title="'Arrival Time'" data-sortable="'arrival'" style="text-align: center;">

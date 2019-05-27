@@ -180,6 +180,24 @@ namespace PegionClocking.BIZ
                 throw ex;
             }
         }
+
+        public DataSet GetStickerCredit()
+        {
+            try
+            {
+                DataSet dtResult = new DataSet();
+                DataTable dtEnrtry = new DataTable();
+
+                entry = new DAL.Entry();
+                PopulateDataLayer("entry");
+                return entry.GetStickerCredit();
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public Boolean EntryDelete()
         {
             try

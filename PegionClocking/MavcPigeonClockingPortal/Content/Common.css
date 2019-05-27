@@ -1,11 +1,9 @@
 ﻿
-.logo
-{
+.logo {
     margin-top: 25px;
 }
 
-.SimpleAnchor table tr td a, .SimpleAnchor tr td a, .SimpleAnchor td a
-{
+.SimpleAnchor table tr td a, .SimpleAnchor tr td a, .SimpleAnchor td a {
     text-decoration: none;
     color: White;
     background-color: transparent !important;
@@ -13,77 +11,68 @@
     padding: 0px;
 }
 
-.PortalCss
-{
+.PortalCss {
     background-color: #1c2833;
     line-height: 1.4;
     font-size: 12px;
     color: #F3F3F4;
-    font-family: "Roboto Condensed" ,Arial,sans-serif;
+    font-family: "Roboto Condensed",Arial,sans-serif;
     font-weight: 300;
     margin: 0px 10% 0px 10%;
 }
 
-.PortalCss_common_1
-{
+.PortalCss_common_1 {
     line-height: 1.4;
     font-size: 12px;
     color: white;
-    font-family: "Roboto Condensed" ,Arial,sans-serif;
+    font-family: "Roboto Condensed",Arial,sans-serif;
     font-weight: 300;
     margin: 0px 10% 0px 10%;
 }
 
-.PortalCss_main
-{
+.PortalCss_main {
     background-color: #eaecee;
     line-height: 1.4;
     font-size: 12px;
     color: #F3F3F4;
-    font-family: "Roboto Condensed" ,Arial,sans-serif;
+    font-family: "Roboto Condensed",Arial,sans-serif;
     font-weight: 300;
     width: 100%;
     margin: 0px auto 0px auto;
 }
 
-.homeheader
-{
+.homeheader {
     text-align: right;
     width: 60%;
     margin: 0px;
     padding: 0px;
 }
 
-#homepage
-{
+#homepage {
     background-image: url("/Images/Background/homepage.jpg");
     background-repeat: no-repeat;
     background-size: 100% 150%;
 }
 
-.mainlayout
-{
+.mainlayout {
     background-image: url("/Images/Background/profile.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
 }
 
-#profile table
-{
+#profile table {
 }
 
-.headerColor
-{
+.headerColor {
     color: #8dc63f;
 }
-.Common
-{
+
+.Common {
     margin-top: 25px;
 }
 
-#flashMessage
-{
+#flashMessage {
     height: 100px;
     width: 90%;
     text-align: center;
@@ -91,220 +80,191 @@
 }
 
 
-#flashMessage hr
-{
-    height: 5px;
-    background-color: White;
-    margin: 4px;
-}
+    #flashMessage hr {
+        height: 5px;
+        background-color: White;
+        margin: 4px;
+    }
 
-#flashMessage table tbody tr td, #flashMessage table tbody tr
-{
-    height: 10px;
-    padding: 0px;
-    margin: 10px;
-}
+    #flashMessage table tbody tr td, #flashMessage table tbody tr {
+        height: 10px;
+        padding: 0px;
+        margin: 10px;
+    }
 
-.htmltable table, .htmltable tr, .htmltable td, .htmltable th
-{
+.htmltable table, .htmltable tr, .htmltable td, .htmltable th {
     border-spacing: 0px;
     border-collapse: collapse;
     border-style: solid !important;
 }
 
-button, input, select, textarea
-{
+button, input, select, textarea {
     color: Black !important;
 }
 
-.current_menu_item a
-{
+.current_menu_item a {
     color: #8dc63f;
     text-decoration: none;
 }
 
-.inactive_menu_item a
-{
+.inactive_menu_item a {
     color: white;
     text-decoration: none;
 }
 
-.column
-{
+.column {
     padding-top: 5px;
     padding-left: 3px;
 }
 
-.columnName
-{
+.columnName {
     text-align: right;
     padding-right: 10px;
 }
 
-.menu ul
-{
+.menu ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
 
-.menu ul li
-{
+    .menu ul li {
+        display: inline;
+        background-color: transparent;
+        margin: 0px;
+        padding: 0 1px 0 1px;
+    }
+
+.loginmenu ul li {
     display: inline;
     background-color: transparent;
     margin: 0px;
     padding: 0 1px 0 1px;
 }
 
-.loginmenu ul li
-{
-    display: inline;
-    background-color: transparent;
-    margin: 0px;
-    padding: 0 1px 0 1px;
-}
-
-.menu_item
-{
+.menu_item {
     background-color: transparent;
 }
 
-.menu_item a
-{
-    padding: 0 0 0 10px;
-}
+    .menu_item a {
+        padding: 0 0 0 10px;
+    }
 
-.menu_item a:hover
-{
-    color: #8dc63f;
-}
+        .menu_item a:hover {
+            color: #8dc63f;
+        }
 
-.text-v-middle
-{
+.text-v-middle {
     vertical-align: middle;
 }
 
-.removeborder td
-{
+.removeborder td {
     border-style: none !important;
 }
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9
-{
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
     padding-left: 0px !important;
 }
 
-.btn-group-vertical > .btn, .btn-group > .btn
-{
+.btn-group-vertical > .btn, .btn-group > .btn {
     margin-top: 20px;
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
-{
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
     display: none !important;
 }
 
-.loading-pane
-{
+.loading-pane {
     position: absolute;
     background: url("http://oi62.tinypic.com/2pqsuc0.jpg");
 }
 
-.loading-pane .spinner-image
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url("http://oi58.tinypic.com/2emfu9w.jpg") center center no-repeat;
-}
+    .loading-pane .spinner-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url("http://oi58.tinypic.com/2emfu9w.jpg") center center no-repeat;
+    }
 
-.loginsection
-{
+.loginsection {
     background-color: black;
     width: 320px;
-    height: 380px;
+    height: 650px;
     float: left;
-    margin: 250px 10px 10px 100px;
+    margin: 100px 10px 10px 100px;
 }
 
-.productitem ul li
-{
+.iframe {
+    width: 320px;
+    height: 180px;
+}
+
+.productitem ul li {
     display: inline-block;
     background-color: transparent;
     margin: 0px;
     padding: 0 1px 0 1px;
 }
 
-.productitem div
-{
+.productitem div {
     padding-left: 20px;
     padding-bottom: 20px;
 }
 
-.pigeonproducts img
-{
+.pigeonproducts img {
     width: 230px;
     height: 150px;
 }
 
-.pigeonproducts p
-{
+.pigeonproducts p {
     font-size: 15px;
 }
 
-.pigeonproduct
-{
+.pigeonproduct {
     vertical-align: top;
     width: 230px;
     height: 150px;
     text-align: center;
 }
 
-.tutorials ul
-{
+.tutorials ul {
     display: list-item;
     list-style: none;
     margin-top: 20px;
 }
 
-.tutorials ul a
-{
-    font-size: 20px;
-}
+    .tutorials ul a {
+        font-size: 20px;
+    }
 
-.mobilescreen
-{
+.mobilescreen {
     display: none;
 }
 
-@media screen and (max-width:500px)
-{
-    .mobilescreen
-    {
-       display:list-item;
-       list-style-type:none;
+@media screen and (max-width:500px) {
+    .mobilescreen {
+        display: list-item;
+        list-style-type: none;
     }
-    
-    .coordinates
-    {
-        margin-left:60px;
-        padding-left:60px;
-        font-weight :bold;
-        }
 
-    .PortalCss_main
-    {
+    .coordinates {
+        margin-left: 60px;
+        padding-left: 60px;
+        font-weight: bold;
+    }
+
+    .PortalCss_main {
         background-color: #eaecee;
         line-height: 1.4;
         font-size: 12px;
         color: #F3F3F4;
-        font-family: "Roboto Condensed" ,Arial,sans-serif;
+        font-family: "Roboto Condensed",Arial,sans-serif;
         font-weight: 300;
         width: 100%;
         margin: 0px 0px 0px 0px;
     }
 
-    .loginmenu ul li
-    {
+    .loginmenu ul li {
         list-style-type: none;
         display: list-item;
         background-color: transparent;
@@ -313,42 +273,41 @@ button, input, select, textarea
         font-size: large;
     }
 
-    .loginsection
-    {
+    .loginsection {
         background-color: black;
-        width: 250px;
-        height: 380px;
-        margin: 250px 10px 10px 80px;
+        width: 260px;
+        height: 600px;
+        margin: 100px 10px 10px 80px;
         font-size: 10px;
     }
 
-    #homepage
-    {
+    .iframe {
+        width: 260px;
+        height: 200px;
+    }
+
+    #homepage {
         background-image: url("/Images/Background/homepage.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
 
-    .pcscreen
-    {
+    .pcscreen {
         display: none;
     }
 
-    .productitem ul
-    {
+    .productitem ul {
         list-style: none;
     }
 
-    .productitem ul li
-    {
-        display: list-item;
-        background-color: transparent;
-        margin: 0px;
-        padding: 0 1px 0 1px;
-    }
+        .productitem ul li {
+            display: list-item;
+            background-color: transparent;
+            margin: 0px;
+            padding: 0 1px 0 1px;
+        }
 
-    .mainlayout
-    {
+    .mainlayout {
         background-image: url("/Images/Background/mainlayout.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -357,20 +316,16 @@ button, input, select, textarea
         margin-bottom: 50px;
     }
 
-    .pigeonproducts img
-    {
+    .pigeonproducts img {
         width: 100%;
         height: 150px;
     }
 
-    .pigeonproducts p
-    {
+    .pigeonproducts p {
         font-size: 10px;
     }
 
-    .tutorials video
-    {
+    .tutorials video {
         width: 280px;
     }
-
 }

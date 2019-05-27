@@ -64,6 +64,7 @@ namespace PegionClocking
         private void frmEntryBird_Load(object sender, EventArgs e)
         {
             PopulateCombobox();
+            GetStickerCredit();
             dtEntryMemberList.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
         }
         private void btnGO_Click(object sender, EventArgs e)
@@ -285,7 +286,7 @@ namespace PegionClocking
                 if (txtMemberIDNo.Text != "")
                 {
                     GetMemberDetails();
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -337,6 +338,7 @@ namespace PegionClocking
             frmRegisterMobileNumber RegisterMobileNumber = new frmRegisterMobileNumber();
             RegisterMobileNumber.ClubID = ClubID;
             RegisterMobileNumber.UserID = UserID;
+            RegisterMobileNumber.MemberIDNo = txtMemberIDNo.Text;
             RegisterMobileNumber.ShowDialog();
         }
         #endregion
@@ -405,7 +407,7 @@ namespace PegionClocking
                 throw ex;
             }
         }
-        
+
         private void CopyLastEntry()
         {
             try
@@ -528,8 +530,27 @@ namespace PegionClocking
             GetControlValue();
             PopulateBusinessLayer(Common.Common.RaceEntryClassType.Entry);
             entry.EntryGetByMemberIDNo(this.dtEntryMemberList, this.lblMemberEntryList);
+        }
 
+        private void GetStickerCredit()
+        {
+            entry = new BIZ.Entry();
+            GetControlValue();
+            PopulateBusinessLayer(Common.Common.RaceEntryClassType.Entry);
 
+            DataSet dtresult = entry.GetStickerCredit();
+            if (dtresult.Tables.Count > 0)
+            {
+                if (dtresult.Tables[0].Rows.Count > 0)
+                {
+                    if (dtresult.Tables[0].Rows[0]["Credit"].ToString() != "")
+                    {
+                        lblLabelStickerCredit.Visible = true;
+                        lblStickerCredit.Visible = true;
+                        lblStickerCredit.Text = dtresult.Tables[0].Rows[0]["Credit"].ToString();
+                    }
+                }
+            }
         }
         private void GetControlValue()
         {
@@ -763,6 +784,7 @@ namespace PegionClocking
         {
             try
             {
+                cmbRaceCategory.Items.Clear();
                 raceCategory = new BIZ.RaceCategory();
                 PopulateBusinessLayer(Common.Common.RaceEntryClassType.RaceCategory);
 
@@ -821,28 +843,36 @@ namespace PegionClocking
             {
 
                 GetControlValue();
-                if (RaceCategoryGroupName != "" && RaceCategoryName != "")
+                if (lblStickerCredit.Text != "0")
                 {
-                    entry = new BIZ.Entry();
-                    PopulateBusinessLayer(Common.Common.RaceEntryClassType.Entry);
-                    if (entry.Save() && !IsEdit)
+                    if (RaceCategoryGroupName != "" && RaceCategoryName != "")
                     {
-                        //ClearControl(); 
-                        //this.txtMemberIDNo.Focus();
-                        this.txtEntryID.Text = "0";
-                        this.txtRingNumber.Text = "";
-                        this.txtStickerCode.Text = "";
-                        this.txtEntryIdentity.Text = "";
-                        this.BandID = 0;
-                        this.txtRingNumber.Focus();
-                        GetMemberRingEnrolled();
+                        entry = new BIZ.Entry();
+                        PopulateBusinessLayer(Common.Common.RaceEntryClassType.Entry);
+                        if (entry.Save() && !IsEdit)
+                        {
+                            //ClearControl(); 
+                            //this.txtMemberIDNo.Focus();
+                            this.txtEntryID.Text = "0";
+                            this.txtRingNumber.Text = "";
+                            this.txtStickerCode.Text = "";
+                            this.txtEntryIdentity.Text = "";
+                            this.BandID = 0;
+                            this.txtRingNumber.Focus();
+                            GetMemberRingEnrolled();
+                        }
+                        EntryListGetByMemberIDNo();
+                        EntryListGetByRaceReleasePoint();
+                        GetStickerCredit();
                     }
-                    EntryListGetByMemberIDNo();
-                    EntryListGetByRaceReleasePoint();
+                    else
+                    {
+                        MessageBox.Show("Please select Race Category and Race Group Category, Invalid Entry", "Error");
+                    }
                 }
-                else
+                else if (lblStickerCredit.Text == "0")
                 {
-                    MessageBox.Show("Please select Race Category and Race Group Category, Invalid Entry", "Error");
+                    MessageBox.Show("Your sticker credit limit is zero. Please contact PKC Admin.", "Error");
                 }
             }
             catch (Exception ex)

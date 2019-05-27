@@ -115,6 +115,8 @@ namespace PegionClocking
             this.btnGetMemberID = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.lblLabelStickerCredit = new System.Windows.Forms.Label();
+            this.lblStickerCredit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtEntryList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtEntryMemberList)).BeginInit();
@@ -261,9 +263,10 @@ namespace PegionClocking
             // 
             // btnGO
             // 
-            this.btnGO.BackColor = System.Drawing.Color.White;
+            this.btnGO.BackColor = System.Drawing.Color.Teal;
             this.btnGO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGO.ForeColor = System.Drawing.Color.Transparent;
             this.btnGO.Location = new System.Drawing.Point(257, 178);
             this.btnGO.Name = "btnGO";
             this.btnGO.Size = new System.Drawing.Size(82, 23);
@@ -345,11 +348,11 @@ namespace PegionClocking
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackColor = System.Drawing.Color.Teal;
             this.btnSave.Enabled = false;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(116, 548);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(77, 23);
@@ -384,7 +387,7 @@ namespace PegionClocking
             // 
             // txtEntryID
             // 
-            this.txtEntryID.Location = new System.Drawing.Point(616, 1);
+            this.txtEntryID.Location = new System.Drawing.Point(991, 51);
             this.txtEntryID.Name = "txtEntryID";
             this.txtEntryID.Size = new System.Drawing.Size(50, 20);
             this.txtEntryID.TabIndex = 28;
@@ -394,7 +397,7 @@ namespace PegionClocking
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(559, 4);
+            this.label15.Location = new System.Drawing.Point(1120, 20);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(51, 13);
             this.label15.TabIndex = 27;
@@ -428,11 +431,11 @@ namespace PegionClocking
             // 
             // btnClear
             // 
-            this.btnClear.BackColor = System.Drawing.Color.Transparent;
+            this.btnClear.BackColor = System.Drawing.Color.Teal;
             this.btnClear.Enabled = false;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(199, 548);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(77, 23);
@@ -443,11 +446,11 @@ namespace PegionClocking
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackColor = System.Drawing.Color.Teal;
             this.btnDelete.Enabled = false;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(282, 548);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(93, 23);
@@ -534,7 +537,7 @@ namespace PegionClocking
             // 
             // txtReleasePointID
             // 
-            this.txtReleasePointID.Location = new System.Drawing.Point(770, 2);
+            this.txtReleasePointID.Location = new System.Drawing.Point(1145, 52);
             this.txtReleasePointID.Name = "txtReleasePointID";
             this.txtReleasePointID.Size = new System.Drawing.Size(48, 20);
             this.txtReleasePointID.TabIndex = 42;
@@ -544,7 +547,7 @@ namespace PegionClocking
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(671, 5);
+            this.label5.Location = new System.Drawing.Point(1046, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 41;
@@ -647,7 +650,7 @@ namespace PegionClocking
             // 
             // txtMemberID
             // 
-            this.txtMemberID.Location = new System.Drawing.Point(498, 2);
+            this.txtMemberID.Location = new System.Drawing.Point(1059, 18);
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(50, 20);
             this.txtMemberID.TabIndex = 54;
@@ -657,7 +660,7 @@ namespace PegionClocking
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(427, 5);
+            this.label17.Location = new System.Drawing.Point(988, 21);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 13);
             this.label17.TabIndex = 53;
@@ -666,11 +669,11 @@ namespace PegionClocking
             // 
             // btnNew
             // 
-            this.btnNew.BackColor = System.Drawing.Color.Transparent;
+            this.btnNew.BackColor = System.Drawing.Color.Teal;
             this.btnNew.Enabled = false;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.ForeColor = System.Drawing.Color.Black;
+            this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Location = new System.Drawing.Point(17, 548);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(93, 23);
@@ -702,10 +705,10 @@ namespace PegionClocking
             // 
             // btnSummary
             // 
-            this.btnSummary.BackColor = System.Drawing.Color.Transparent;
+            this.btnSummary.BackColor = System.Drawing.Color.Teal;
             this.btnSummary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSummary.ForeColor = System.Drawing.Color.Black;
+            this.btnSummary.ForeColor = System.Drawing.Color.White;
             this.btnSummary.Location = new System.Drawing.Point(620, 548);
             this.btnSummary.Name = "btnSummary";
             this.btnSummary.Size = new System.Drawing.Size(174, 23);
@@ -762,8 +765,8 @@ namespace PegionClocking
             this.dataGridView1.Location = new System.Drawing.Point(562, 180);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
@@ -783,7 +786,7 @@ namespace PegionClocking
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.Enabled = false;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -797,10 +800,10 @@ namespace PegionClocking
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(473, 548);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(146, 23);
@@ -869,8 +872,8 @@ namespace PegionClocking
             this.dtEntryMemberList.Location = new System.Drawing.Point(19, 324);
             this.dtEntryMemberList.Name = "dtEntryMemberList";
             this.dtEntryMemberList.ReadOnly = true;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dtEntryMemberList.RowsDefaultCellStyle = dataGridViewCellStyle6;
@@ -912,10 +915,10 @@ namespace PegionClocking
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackColor = System.Drawing.Color.Teal;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(800, 548);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(81, 23);
@@ -926,7 +929,7 @@ namespace PegionClocking
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackColor = System.Drawing.Color.Teal;
             this.button5.Enabled = false;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -990,7 +993,7 @@ namespace PegionClocking
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.BackColor = System.Drawing.Color.Teal;
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
@@ -1004,7 +1007,7 @@ namespace PegionClocking
             // 
             // btnGetMemberID
             // 
-            this.btnGetMemberID.BackColor = System.Drawing.Color.Transparent;
+            this.btnGetMemberID.BackColor = System.Drawing.Color.Teal;
             this.btnGetMemberID.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGetMemberID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGetMemberID.Location = new System.Drawing.Point(350, 178);
@@ -1017,7 +1020,7 @@ namespace PegionClocking
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackColor = System.Drawing.Color.Teal;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(40, 149);
@@ -1030,7 +1033,7 @@ namespace PegionClocking
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackColor = System.Drawing.Color.Teal;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.Location = new System.Drawing.Point(195, 149);
@@ -1041,6 +1044,29 @@ namespace PegionClocking
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // lblLabelStickerCredit
+            // 
+            this.lblLabelStickerCredit.AutoSize = true;
+            this.lblLabelStickerCredit.BackColor = System.Drawing.Color.Transparent;
+            this.lblLabelStickerCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLabelStickerCredit.Location = new System.Drawing.Point(623, 9);
+            this.lblLabelStickerCredit.Name = "lblLabelStickerCredit";
+            this.lblLabelStickerCredit.Size = new System.Drawing.Size(181, 13);
+            this.lblLabelStickerCredit.TabIndex = 81;
+            this.lblLabelStickerCredit.Text = "Sticker CreditLimit Remaining :";
+            this.lblLabelStickerCredit.Visible = false;
+            // 
+            // lblStickerCredit
+            // 
+            this.lblStickerCredit.AutoSize = true;
+            this.lblStickerCredit.BackColor = System.Drawing.Color.Transparent;
+            this.lblStickerCredit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStickerCredit.Location = new System.Drawing.Point(804, 10);
+            this.lblStickerCredit.Name = "lblStickerCredit";
+            this.lblStickerCredit.Size = new System.Drawing.Size(0, 13);
+            this.lblStickerCredit.TabIndex = 82;
+            this.lblStickerCredit.Visible = false;
+            // 
             // frmEntryBird
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1049,6 +1075,8 @@ namespace PegionClocking
             this.BackgroundImage = global::PegionClocking.Properties.Resources.background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(893, 579);
+            this.Controls.Add(this.lblStickerCredit);
+            this.Controls.Add(this.lblLabelStickerCredit);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.btnGetMemberID);
@@ -1220,5 +1248,7 @@ namespace PegionClocking
         private System.Windows.Forms.Button btnGetMemberID;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label lblLabelStickerCredit;
+        private System.Windows.Forms.Label lblStickerCredit;
     }
 }

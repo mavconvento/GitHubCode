@@ -169,6 +169,7 @@
             // 
             // btnGO
             // 
+            this.btnGO.BackColor = System.Drawing.Color.Teal;
             this.btnGO.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGO.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGO.Location = new System.Drawing.Point(251, 39);
@@ -176,7 +177,7 @@
             this.btnGO.Size = new System.Drawing.Size(51, 23);
             this.btnGO.TabIndex = 3;
             this.btnGO.Text = "&GO!";
-            this.btnGO.UseVisualStyleBackColor = true;
+            this.btnGO.UseVisualStyleBackColor = false;
             this.btnGO.Click += new System.EventHandler(this.btnGO_Click);
             // 
             // txtMemberIDNo
@@ -218,7 +219,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackColor = System.Drawing.Color.Teal;
             this.btnDelete.Enabled = false;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,7 +233,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackColor = System.Drawing.Color.Teal;
             this.btnSave.Enabled = false;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,7 +247,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.BackColor = System.Drawing.Color.Transparent;
+            this.btnNew.BackColor = System.Drawing.Color.Teal;
             this.btnNew.Enabled = false;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,7 +373,7 @@
             // 
             this.txtRange2.BackColor = System.Drawing.Color.White;
             this.txtRange2.Enabled = false;
-            this.txtRange2.Location = new System.Drawing.Point(283, 172);
+            this.txtRange2.Location = new System.Drawing.Point(283, 173);
             this.txtRange2.Name = "txtRange2";
             this.txtRange2.Size = new System.Drawing.Size(80, 20);
             this.txtRange2.TabIndex = 72;
@@ -471,7 +472,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(356, 322);

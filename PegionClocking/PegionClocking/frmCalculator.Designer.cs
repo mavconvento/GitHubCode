@@ -363,7 +363,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackColor = System.Drawing.Color.Teal;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(397, 176);
@@ -431,7 +431,7 @@
             // 
             // btnGo
             // 
-            this.btnGo.BackColor = System.Drawing.Color.Transparent;
+            this.btnGo.BackColor = System.Drawing.Color.Teal;
             this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGo.Location = new System.Drawing.Point(217, 175);

@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblversion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -125,17 +125,17 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblversion
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Californian FB", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(625, 276);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Version 8.1";
+            this.lblversion.AutoSize = true;
+            this.lblversion.BackColor = System.Drawing.Color.Transparent;
+            this.lblversion.Font = new System.Drawing.Font("Californian FB", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblversion.ForeColor = System.Drawing.Color.White;
+            this.lblversion.Location = new System.Drawing.Point(625, 276);
+            this.lblversion.Name = "lblversion";
+            this.lblversion.Size = new System.Drawing.Size(54, 16);
+            this.lblversion.TabIndex = 20;
+            this.lblversion.Text = "Version";
             // 
             // frmLogin
             // 
@@ -144,7 +144,7 @@
             this.BackgroundImage = global::PegionClocking.Properties.Resources.dark_blue_sky_ufo_1920x1080_wallpaper49341;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(713, 301);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblversion);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
@@ -177,6 +177,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblversion;
     }
 }

@@ -164,6 +164,7 @@ Public Class SMSComponents
                     message = SMSPort.ReadExisting
                     DELAY(delayValue)
                 End If
+
                 If MessageType = "REC UNREAD" Or MessageType = "ALL" Then
                     If Not message.Contains("+CMGL:") Then
                         SMSPort.DiscardInBuffer()

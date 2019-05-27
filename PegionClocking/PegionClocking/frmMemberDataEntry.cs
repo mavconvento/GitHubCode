@@ -253,6 +253,7 @@ namespace PegionClocking
             frmRegisterMobileNumber RegisterMobileNumber = new frmRegisterMobileNumber();
             RegisterMobileNumber.ClubID = ClubID;
             RegisterMobileNumber.UserID = UserID;
+            RegisterMobileNumber.MemberIDNo = this.txtMemberIDNo.Text;
             RegisterMobileNumber.ShowDialog();
         }
         #endregion

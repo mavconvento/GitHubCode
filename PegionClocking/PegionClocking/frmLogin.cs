@@ -12,7 +12,7 @@ namespace PegionClocking
     public partial class frmLogin : Form
     {
         #region Constants
-        const string VERSION = "8.1";
+        const string VERSION = "8.4";
         #endregion
 
         #region Variable
@@ -36,6 +36,7 @@ namespace PegionClocking
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            this.lblversion.Text = "Version " + VERSION;
             Common.Global.ClubNameConnection = "";
         }
 

@@ -80,6 +80,7 @@ namespace PegionClocking
                 frmAddResult addResult = new frmAddResult();
                 addResult.DateRelease = dateTimePicker1.Value.Date;
                 addResult.ClubID = ClubID;
+                addResult.Source = "Back-up";
                 addResult.ShowDialog();
                 ViewResult();
             }
@@ -257,7 +258,13 @@ namespace PegionClocking
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            frmAddResult addResult = new frmAddResult();
+            addResult.DateRelease = dateTimePicker1.Value.Date;
+            addResult.ClubID = ClubID;
+            addResult.Source = "Bundy Clock";
+            addResult.Text = "Add Race Result From Bundy Clock";
+            addResult.ShowDialog();
+            ViewResult();
         }
     }
 }

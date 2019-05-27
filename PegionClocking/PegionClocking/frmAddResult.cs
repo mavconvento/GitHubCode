@@ -18,6 +18,7 @@ namespace PegionClocking
         public String Time { get; set; }
         public String MobileNumber { get; set; }
         public String CallFrom { get; set; }
+        public String Source { get; set; }
         #endregion
 
         #region Events
@@ -33,7 +34,7 @@ namespace PegionClocking
                 dateTimePicker1.Value = DateRelease;
                 if (CallFrom == "INBOX")
                 {
-                    this.txtArrivalTime.Text = Time.Replace("+32","");
+                    this.txtArrivalTime.Text = Time.Replace("+32", "");
                     this.txtSender.Text = MobileNumber;
                     this.txtStickerCode.Text = StickerNumber;
                 }
@@ -48,7 +49,7 @@ namespace PegionClocking
         {
             try
             {
-                AddRaceResultFromBackup();
+                AddRaceResultFromBackup(Source);
             }
             catch (Exception ex)
             {
@@ -72,7 +73,7 @@ namespace PegionClocking
         }
         #endregion
 
-        private void AddRaceResultFromBackup()
+        private void AddRaceResultFromBackup(string source)
         {
             try
             {
@@ -83,8 +84,12 @@ namespace PegionClocking
                 raceresult.ReleasedDate = DateRelease;
                 raceresult.Sender = txtSender.Text;
                 raceresult.Arrival = dtArrivalDate.Value.Date.ToShortDateString() + " " + txtArrivalTime.Text;
-                raceresult.RaceResultAddFromBackup();
+                raceresult.RaceResultAddFromBackup(source);
                 MessageBox.Show("Race result save.");
+
+                txtStickerCode.Text = "";
+                txtArrivalTime.Text = "";
+                txtArrivalTime.Focus();
             }
             catch (Exception ex)
             {

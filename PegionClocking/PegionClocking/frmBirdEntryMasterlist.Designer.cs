@@ -366,10 +366,10 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackColor = System.Drawing.Color.Teal;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(617, 160);
+            this.button2.Location = new System.Drawing.Point(617, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(210, 23);
             this.button2.TabIndex = 83;
@@ -427,7 +427,7 @@
             // 
             // btn
             // 
-            this.btn.BackColor = System.Drawing.Color.Transparent;
+            this.btn.BackColor = System.Drawing.Color.Teal;
             this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn.Location = new System.Drawing.Point(616, 126);

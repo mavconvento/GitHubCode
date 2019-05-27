@@ -31,14 +31,14 @@ namespace PegionClocking.BIZ
         #endregion
 
         #region Public Methods
-        public DataSet RaceResultAddFromBackup()
+        public DataSet RaceResultAddFromBackup(string source)
         {
             try
             {
                 raceResult = new DAL.RaceResult();
                 DataSet dataResult = new DataSet();
                 PopulateDataLayer();
-                dataResult = raceResult.RaceResultAddFromBackup();
+                dataResult = raceResult.RaceResultAddFromBackup(source);
                 return dataResult;
             }
             catch (Exception ex)

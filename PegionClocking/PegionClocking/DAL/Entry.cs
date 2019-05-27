@@ -222,6 +222,35 @@ namespace PegionClocking.DAL
                 throw ex;
             }
         }
+
+        public DataSet GetStickerCredit()
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("GetStickerCredit");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
+                //dbconn.sqlComm.Parameters.AddWithValue("@RaceReleasePointID", RaceReleasePointID);
+                //dbconn.sqlComm.Parameters.AddWithValue("@RaceCategory", RaceCategoryName);
+                //dbconn.sqlComm.Parameters.AddWithValue("@RaceCategoryGroup", RaceCategoryGroupName);
+                //dbconn.sqlComm.Parameters.AddWithValue("@MemberID", MemberID);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void MemberDetailsDelete()
         {
             try

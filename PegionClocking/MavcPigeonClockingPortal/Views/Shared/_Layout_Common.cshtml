@@ -20,17 +20,12 @@
     <script src="~/Scripts/AngularController/MyApp1.1.js" type="text/javascript"></script>
     <script src="~/Scripts/AngularController/CommonController1.1.js" type="text/javascript"></script>
     <link href="~/Content/Common.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://widget.time.is/en.js"></script>
+    @*<script type="text/javascript" src="http://widget.time.is/en.js"></script>
     <script type="text/javascript">
         time_is_widget.init({ Philippines_z42c: { template: "TIME<br>DATE<br>SUN", date_format: "dayname, monthname dnum, year", sun_format: "Sunrise: srhour:srminute Sunset: sshour:ssminute", coords: "13.0000000,122.0000000"} });
-    </script>
+    </script>*@
 </head>
 <body ng-app="MyApp" class="PortalCss_main">
-    <div style="background-color: Black;  margin-top:10px">
-        <a href="https://time.is/Philippines" id="time_is_link" rel="nofollow" style="font-size: 20px;
-            color: white; background: black">Time in Server:</a> <span id="Philippines_z42c"
-                style="font-size: 20px; color: white; background: black"></span>
-    </div>
     <div ng-controller="CommonController">
         <div class="ng-cloak">
             <div id="bodysection">

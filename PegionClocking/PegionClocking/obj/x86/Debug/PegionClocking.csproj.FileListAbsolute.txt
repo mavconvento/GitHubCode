@@ -208,8 +208,14 @@ D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\Pegio
 D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.application
 D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRegisterMobileNumber.resources
 D:\MyProject\MAVC Source Codes\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csprojResolveAssemblyReference.cache
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe.manifest
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.application
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Microsoft.VisualBasic.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.ResolveComReference.cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmChangePassword.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.FrmCopyEntry.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryMultipleCategory.resources
@@ -219,6 +225,7 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClo
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmPaymentTransactionSummary.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRegisterMobileNumber.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmRFIDRegistration.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmStickerFinder.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionDetails.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransaction.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmAddResult.resources
@@ -253,14 +260,7 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClo
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.Properties.Resources.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmTransactionSummary.resources
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.GenerateResource.Cache
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe.config
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe.manifest
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.application
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.exe
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.pdb
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe.manifest
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.application
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmStickerFinder.resources
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Microsoft.VisualBasic.dll
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.ResolveComReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.pdb

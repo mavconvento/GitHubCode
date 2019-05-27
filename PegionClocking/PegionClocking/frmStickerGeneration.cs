@@ -113,6 +113,12 @@ namespace PegionClocking
                     }
                     ws = wb.Sheets[1];
                     ws.ExportAsFixedFormat(excel.XlFixedFormatType.xlTypePDF, path + "\\PDF\\" + filename + ".pdf");
+
+                    if (checkBox1.Checked)
+                    {
+                        ws = wb.Sheets[3];
+                        ws.ExportAsFixedFormat(excel.XlFixedFormatType.xlTypePDF, path + "\\PDF\\" + filename + "_1.pdf");
+                    }
                 }
 
                 
