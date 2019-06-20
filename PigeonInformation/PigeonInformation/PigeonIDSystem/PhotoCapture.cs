@@ -63,7 +63,7 @@ namespace PigeonIDSystem
 
         private void bntSave_Click(object sender, EventArgs e)
         {
-            Helper.SaveImageCapture(imgCapture.Image);
+            Common.SaveImageCapture(imgCapture.Image);
         }
 
         private void bntVideoFormat_Click(object sender, EventArgs e)
@@ -468,9 +468,9 @@ namespace PigeonIDSystem
         {
             try
             {
-                DataAccess.PigeonIDSystem.Member member = new DataAccess.PigeonIDSystem.Member();
+                //DataAccess.PigeonIDSystem.Member member = new DataAccess.PigeonIDSystem.Member();
                 DataSet dsResult = new DataSet();
-                dsResult = member.GetAllPigeonDetails("local", this.txtMemberID.Text);
+                //dsResult = member.GetAllPigeonDetails("local", this.txtMemberID.Text);
                 if (dsResult.Tables.Count > 0)
                 {
                     dtList.DataSource = dsResult.Tables[0];
@@ -576,7 +576,7 @@ namespace PigeonIDSystem
         {
             try
             {
-                frmReportGeneration reportGeneration = new frmReportGeneration();
+                ReportGeneration reportGeneration = new ReportGeneration();
                 DataTable dt = new DataTable();
                 dt = (DataTable)this.dtList.DataSource;
                 if (dt.Rows.Count > 0)
@@ -653,7 +653,7 @@ namespace PigeonIDSystem
             try
             {
                 Eclock eclock = new Eclock();
-                eclock.SyncTime();
+                eclock.SyncTime("");
             }
             catch (Exception ex)
             {

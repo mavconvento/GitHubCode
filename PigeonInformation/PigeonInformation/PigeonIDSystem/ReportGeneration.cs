@@ -11,7 +11,7 @@ using excel = Microsoft.Office.Interop.Excel;
 
 namespace PigeonIDSystem
 {
-    public partial class frmReportGeneration : Form
+    public partial class ReportGeneration : Form
     {
         public DataTable dtRecord { get; set; }
         public DataSet dtMemberDistance { get; set; }
@@ -24,7 +24,7 @@ namespace PigeonIDSystem
         public String  MemberID { get; set; }
         public DataTable dtBillingStatement { get; set; }
 
-        public frmReportGeneration()
+        public ReportGeneration()
         {
             InitializeComponent();
             bw.WorkerReportsProgress = true;
@@ -33,7 +33,7 @@ namespace PigeonIDSystem
             bw.ProgressChanged += new ProgressChangedEventHandler(bw_ProgressChanged);
             bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(bw_RunWorkerCompleted);
         }
-        private void frmReportGeneration_Load(object sender, EventArgs e)
+        private void ReportGeneration_Load(object sender, EventArgs e)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace PigeonIDSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Helper.CustomError(ex.Message), "Error");
+                MessageBox.Show(Common.CustomError(ex.Message), "Error");
             }
         }
         private void Stop()

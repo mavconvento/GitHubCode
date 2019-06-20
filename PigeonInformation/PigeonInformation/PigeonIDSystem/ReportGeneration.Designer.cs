@@ -1,6 +1,6 @@
 ﻿namespace PigeonIDSystem
 {
-    partial class frmReportGeneration
+    partial class ReportGeneration
     {
         /// <summary>
         /// Required designer variable.
@@ -62,9 +62,9 @@
             this.Controls.Add(this.progressBar1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmReportGeneration";
+            this.Name = "ReportGeneration";
             this.Text = "Report Generation";
-            this.Load += new System.EventHandler(this.frmReportGeneration_Load);
+            this.Load += new System.EventHandler(this.ReportGeneration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

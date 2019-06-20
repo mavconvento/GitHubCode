@@ -1,0 +1,6 @@
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.pdb

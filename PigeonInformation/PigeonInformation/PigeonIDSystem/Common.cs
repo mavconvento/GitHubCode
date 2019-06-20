@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace PigeonIDSystem
 {
     //Design by Pongsakorn Poosankam
-    class Helper
+    public class Common
     {
 
         public static void SaveImageCapture(System.Drawing.Image image)
