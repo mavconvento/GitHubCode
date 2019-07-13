@@ -1,6 +1,11 @@
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\BusinessLayer.dll
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\BusinessLayer.pdb
-C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.dll
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csprojAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DomainObjects.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete

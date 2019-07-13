@@ -1,6 +1,6 @@
 ﻿namespace PigeonIDSystem
 {
-    partial class ReportGeneration
+    partial class frmReportGeneration
     {
         /// <summary>
         /// Required designer variable.

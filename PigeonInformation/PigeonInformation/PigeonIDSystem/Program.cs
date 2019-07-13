@@ -16,7 +16,7 @@ namespace PigeonIDSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PhotoCapture());
+            Application.Run(new frmMenu());
         }
     }
 }

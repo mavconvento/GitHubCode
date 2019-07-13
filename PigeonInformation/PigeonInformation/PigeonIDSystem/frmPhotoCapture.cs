@@ -11,15 +11,18 @@ using System.Security.Cryptography;
 using PigeonIDSystem;
 using System.IO;
 using Helper;
+using System.IO.Ports;
+using System.Management;
 
 namespace PigeonIDSystem
 {
-    public partial class PhotoCapture : Form
+    public partial class frmPhotoCapture : Form
     {
-        WebCam webcam;
         public Int64 PigeonID { get; set; }
         public String ActionType { get; set; }
-        public PhotoCapture()
+        public String ClubName { get; set; }
+
+        public frmPhotoCapture()
         {
             InitializeComponent();
             dtList.DoubleClick += new EventHandler(grid_DoubleClick);
@@ -27,37 +30,26 @@ namespace PigeonIDSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            webcam = new WebCam();
-            webcam.InitializeWebCam(ref imgVideo);
-            webcam.Start();
+            Common.CreateStorageFolder();
             ComboBoxItem();
-            CreateStorageFolder();
-        }
-
-        private void bntStart_Click(object sender, EventArgs e)
-        {
-            webcam.Start();
-        }
-
-        private void bntStop_Click(object sender, EventArgs e)
-        {
-            webcam.Stop();
-        }
-
-        private void bntContinue_Click(object sender, EventArgs e)
-        {
-            webcam.Continue();
+            ClubName = Common.GetClub();
         }
 
         private void bntCapture_Click(object sender, EventArgs e)
         {
+            frmCapturePhoto capture = new frmCapturePhoto();
+            capture.ShowDialog();
+
+            Image photo = capture.PigeonPhoto;
+
+
             if (imgCapture.Image != null)
             {
-                pictureBox1.Image = imgVideo.Image;
+                pictureBox1.Image = photo;
             }
             else
             {
-                imgCapture.Image = imgVideo.Image;
+                imgCapture.Image = photo;
             }
         }
 
@@ -68,12 +60,12 @@ namespace PigeonIDSystem
 
         private void bntVideoFormat_Click(object sender, EventArgs e)
         {
-            webcam.ResolutionSetting();
+            //webcam.ResolutionSetting();
         }
 
         private void bntVideoSource_Click(object sender, EventArgs e)
         {
-            webcam.AdvanceSetting();
+            //webcam.AdvanceSetting();
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -101,6 +93,8 @@ namespace PigeonIDSystem
             this.txtName.Text = "";
             this.txtRingNumber.Text = "";
             this.cbmSex.SelectedIndex = -1;
+            this.cmbCategory.SelectedIndex = -1;
+            this.txtrfid.Text = "";
             this.txtColor.Text = "";
             this.imgCapture.Image = null;
             this.pictureBox1.Image = null;
@@ -110,57 +104,24 @@ namespace PigeonIDSystem
             this.txtMemberID.Focus();
         }
 
-        private void CreateStorageFolder()
-        {
-            try
-            {
-                string images = @"C:\PigeonIDSystem\Images";
-                if (!Directory.Exists(images))
-                {
-                    Directory.CreateDirectory(images);
-                }
-
-                string members = @"C:\PigeonIDSystem\Members";
-                if (!Directory.Exists(members))
-                {
-                    Directory.CreateDirectory(members);
-                }
-
-                string pigeonDetails = @"C:\PigeonIDSystem\PigeonDetails";
-                if (!Directory.Exists(pigeonDetails))
-                {
-                    Directory.CreateDirectory(pigeonDetails);
-                }
-
-                string pigeonList = @"C:\PigeonIDSystem\PigeonList";
-                if (!Directory.Exists(pigeonList))
-                {
-                    Directory.CreateDirectory(pigeonList);
-                }
-
-
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error");
-            }
-        }
         private void grid_DoubleClick(object sender, EventArgs e)
         {
             try
             {
                 DataGridView datagrid = this.dtList;
                 int index;
-                Int64 PigeonID;
+                //Int64 PigeonID;
                 String BandNumber = "";
+                String RFID = "";
                 if (datagrid.RowCount > 0)
                 {
                     index = datagrid.CurrentRow.Index;
-                    PigeonID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
-                    BandNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
-                    string Sex = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value);
-                    string Color = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                    //PigeonID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
+                    BandNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
+                    RFID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
+                    string Category = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value);
+                    string Sex = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                    string Color = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value);
 
                     if (BandNumber != "")
                     {
@@ -172,7 +133,12 @@ namespace PigeonIDSystem
                             int indexitem = -1;
                             if (Sex != "") indexitem = cbmSex.FindString(Sex);
                             cbmSex.SelectedIndex = indexitem;
-                            LoadImage(BandNumber, txtMemberID.Text);
+
+                            if (Category != "") indexitem = cmbCategory.FindString(Category);
+                            cmbCategory.SelectedIndex = indexitem;
+
+                            txtrfid.Text = RFID;
+                            LoadImage(RFID, txtMemberID.Text);
                             txtRingNumber.Enabled = false;
                         }
                         else if ((string)datagrid.CurrentCell.Value.ToString() == "DELETE")
@@ -181,10 +147,11 @@ namespace PigeonIDSystem
                             {
                                 ActionType = "DELETE";
                                 string path = ReadText.ReadFilePath("datapath");
-                                string[] pigeonList = SetPigeonList(ActionType, PigeonID.ToString(), BandNumber, "", "").ToArray();
+                                string[] pigeonList = SetPigeonList(ActionType, "0", BandNumber, "", "", RFID, "").ToArray();
                                 System.IO.File.WriteAllLines(path + "pigeonlist\\" + txtMemberID.Text + ".txt", pigeonList);
                                 GetPigeonList(txtMemberID.Text);
                                 ActionType = "";
+                                ClearControl();
                                 MessageBox.Show("Record Deleted.", "Delete Record");
                             }
                         }
@@ -212,6 +179,23 @@ namespace PigeonIDSystem
                 cbmSex.Items.Add(cock);
 
                 cbmSex.SelectedIndex = -1;
+
+                ComboboxItem yb = new ComboboxItem();
+                yb.Text = "YB";
+                yb.Value = "YB";
+                cmbCategory.Items.Add(yb);
+
+                ComboboxItem ob = new ComboboxItem();
+                ob.Text = "OB";
+                ob.Value = "OB";
+                cmbCategory.Items.Add(ob);
+
+                ComboboxItem both = new ComboboxItem();
+                both.Text = "BOTH";
+                both.Value = "BOTH";
+                cmbCategory.Items.Add(both);
+
+                cmbCategory.SelectedIndex = -1;
             }
             catch (Exception ex)
             {
@@ -224,27 +208,32 @@ namespace PigeonIDSystem
         {
             try
             {
-                if (txtMemberID.Text == "" || txtName.Text == "" || txtRingNumber.Text == "" || imgCapture.Image == null)
+                if (txtMemberID.Text == "" || txtName.Text == "" || txtrfid.Text == "" || cmbCategory.Text == "" || cbmSex.Text == "" || txtColor.Text == "" || txtRingNumber.Text == "" )
                 {
                     MessageBox.Show("Please filled-up required field.", "Error");
                 }
                 else
                 {
-                    Boolean status = SavetoFile(txtMemberID.Text, txtName.Text, PigeonID, txtRingNumber.Text, cbmSex.Text, txtColor.Text, imgCapture, pictureBox1);
-                    MessageBox.Show("Record Save.", "Save");
-                    GetPigeonList(this.txtMemberID.Text);
+                    Boolean status = SavetoFile(txtMemberID.Text, txtName.Text, PigeonID, txtRingNumber.Text, cbmSex.Text, txtColor.Text, imgCapture, pictureBox1, txtrfid.Text, cmbCategory.Text);
 
-                    //clear control
-                    this.txtRingNumber.Text = "";
-                    this.cbmSex.SelectedIndex = -1;
-                    this.txtColor.Text = "";
-                    this.PigeonID = 0;
-                    this.imgCapture.Image = null;
-                    this.pictureBox1.Image = null;
-                    this.ActionType = "";
-                    txtRingNumber.Enabled = true;
-                    this.txtRingNumber.Focus();
+                    if (status)
+                    {
+                        MessageBox.Show("Record Save.", "Save");
+                        GetPigeonList(this.txtMemberID.Text);
 
+                        //clear control
+                        this.txtRingNumber.Text = "";
+                        this.txtrfid.Text = "";
+                        this.cbmSex.SelectedIndex = -1;
+                        this.cmbCategory.SelectedIndex = -1;
+                        this.txtColor.Text = "";
+                        this.PigeonID = 0;
+                        this.imgCapture.Image = null;
+                        this.pictureBox1.Image = null;
+                        this.ActionType = "";
+                        txtRingNumber.Enabled = true;
+                        this.txtRingNumber.Focus();
+                    } 
                 }
             }
             catch (Exception ex)
@@ -254,25 +243,35 @@ namespace PigeonIDSystem
             }
         }
 
-        private Boolean SavetoFile(string MemberIDNo, string MemberName, Int64 PigeonID, string BandNumber, string Sex, string Color, PictureBox Photo1, PictureBox Photo2)
+        private Boolean SavetoFile(string MemberIDNo, string MemberName, Int64 PigeonID, string BandNumber, string Sex, string Color, PictureBox Photo1, PictureBox Photo2, string RFID, String category)
         {
             try
             {
                 string path = ReadText.ReadFilePath("datapath");
+                string detailspath = path + "pigeondetails\\" + MemberIDNo + "\\" + RFID + ".txt";
+                string memberpath = path + "members\\" + MemberIDNo + ".txt";
+                string pigeonlistpath = path + "pigeonlist\\" + MemberIDNo + ".txt";
+
+                if (ActionType != "EDIT" && File.Exists(detailspath))
+                {
+                    MessageBox.Show("Tag already assign to other bird.", "Error");
+                    return false;
+                }
 
                 string[] memberDetails = { MemberIDNo, MemberName, };
-                string[] pigeonDetails = { BandNumber, Sex, Color };
+                string[] pigeonDetails = { BandNumber, RFID, category, Sex, Color };
 
-                string[] pigeonList = SetPigeonList(ActionType, PigeonID.ToString(), BandNumber, Sex, Color).ToArray();
-                System.IO.File.WriteAllLines(path + "members\\" + MemberIDNo + ".txt", memberDetails); //memberdetails
-                System.IO.File.WriteAllLines(path + "pigeonlist\\" + MemberIDNo + ".txt", pigeonList); //memberpigeonlist
+                string[] pigeonList = SetPigeonList(ActionType, PigeonID.ToString(), BandNumber, Sex, Color, RFID, category).ToArray();
+
+                System.IO.File.WriteAllLines(memberpath, memberDetails); //memberdetails
+                System.IO.File.WriteAllLines(pigeonlistpath, pigeonList); //memberpigeonlist
 
                 string pigeondetailsDirectory = path + "pigeondetails\\" + MemberIDNo;
                 if (!Directory.Exists(pigeondetailsDirectory))
                 {
                     Directory.CreateDirectory(pigeondetailsDirectory);
                 }
-                System.IO.File.WriteAllLines(path + "pigeondetails\\" + MemberIDNo + "\\" + BandNumber + ".txt", pigeonDetails); //pigeondetails
+                System.IO.File.WriteAllLines(detailspath, pigeonDetails); //pigeondetails
 
 
                 string pigeonimageDirectory = path + "images\\" + MemberIDNo;
@@ -283,17 +282,18 @@ namespace PigeonIDSystem
 
                 if (Photo1.Image != null)
                 {
-                    string filename = pigeonimageDirectory + "\\" + BandNumber + ".txt";
+                    string filename = pigeonimageDirectory + "\\" + RFID + ".txt";
                     File.WriteAllBytes(filename, GetPhoto(imgCapture));
                 }
 
                 if (Photo2.Image != null)
                 {
-                    string filename = pigeonimageDirectory + "\\" + BandNumber + "_P2" + ".txt";
+                    string filename = pigeonimageDirectory + "\\" + RFID + "_P2" + ".txt";
                     File.WriteAllBytes(filename, GetPhoto(pictureBox1));
                 }
 
                 return true;
+
             }
             catch (Exception)
             {
@@ -306,15 +306,6 @@ namespace PigeonIDSystem
         {
             try
             {
-                //DataAccess.PigeonIDSystem.Member member = new DataAccess.PigeonIDSystem.Member();
-                //DataSet dsResult = new DataSet();
-                //dsResult = member.GetAllPigeonDetails("local", this.txtMemberID.Text);
-                //if (dsResult.Tables.Count > 0)
-                //{
-                //    dtList.DataSource = dsResult.Tables[0];
-                //    lblcount.Text = "Total Birds: " + dtList.Rows.Count.ToString();
-                //}
-
                 DataTable pigeonList = new DataTable();
 
                 DataColumn dc1 = new DataColumn();
@@ -323,24 +314,32 @@ namespace PigeonIDSystem
                 DataColumn dc2 = new DataColumn();
                 dc2.ColumnName = "DELETE";
 
-                DataColumn dc3 = new DataColumn();
-                dc3.ColumnName = "PigeonID";
+                //DataColumn dc3 = new DataColumn();
+                //dc3.ColumnName = "PigeonID";
 
                 DataColumn dc4 = new DataColumn();
                 dc4.ColumnName = "BandNumber";
 
                 DataColumn dc5 = new DataColumn();
-                dc5.ColumnName = "Sex";
+                dc5.ColumnName = "TagID";
 
                 DataColumn dc6 = new DataColumn();
-                dc6.ColumnName = "Color";
+                dc6.ColumnName = "Category";
+
+                DataColumn dc7 = new DataColumn();
+                dc7.ColumnName = "Sex";
+
+                DataColumn dc8 = new DataColumn();
+                dc8.ColumnName = "Color";
 
                 pigeonList.Columns.Add(dc1);
                 pigeonList.Columns.Add(dc2);
-                pigeonList.Columns.Add(dc3);
+                //pigeonList.Columns.Add(dc3);
                 pigeonList.Columns.Add(dc4);
                 pigeonList.Columns.Add(dc5);
                 pigeonList.Columns.Add(dc6);
+                pigeonList.Columns.Add(dc7);
+                pigeonList.Columns.Add(dc8);
 
                 string path = ReadText.ReadFilePath("datapath");
                 string filepath = path + "pigeonlist\\" + memberid + ".txt";
@@ -354,10 +353,12 @@ namespace PigeonIDSystem
                         DataRow dr = pigeonList.NewRow();
                         dr["EDIT"] = "EDIT";
                         dr["DELETE"] = "DELETE";
-                        dr["PigeonID"] = value[0].ToString();
+                        //dr["PigeonID"] = value[0].ToString();
                         dr["BandNumber"] = value[1].ToString();
-                        dr["Color"] = value[2].ToString();
-                        dr["Sex"] = value[3].ToString();
+                        dr["TagID"] = value[2].ToString();
+                        dr["Category"] = value[3].ToString();
+                        dr["Color"] = value[4].ToString();
+                        dr["Sex"] = value[5].ToString();
                         pigeonList.Rows.Add(dr);
                     }
 
@@ -373,7 +374,7 @@ namespace PigeonIDSystem
             }
         }
 
-        private List<string> SetPigeonList(string action, string PigeonID, string BandNumber, string Sex, string Color)
+        private List<string> SetPigeonList(string action, string PigeonID, string BandNumber, string Sex, string Color, string RFID, String Category)
         {
             try
             {
@@ -389,31 +390,32 @@ namespace PigeonIDSystem
                         //if (item.Index.ToString() == PigeonID)
                         if (item.Cells["BandNumber"].Value.ToString() == BandNumber)
                         {
-                            pigeonListCollection.Add(item.Index.ToString() + "|" + BandNumber + "|" + Color + "|" + Sex);
+                            pigeonListCollection.Add(item.Index.ToString() + "|" + BandNumber + "|" + RFID + "|" + Category + "|" + Color + "|" + Sex);
                         }
                         else
                         {
-                            pigeonListCollection.Add(item.Index.ToString() + "|" + item.Cells["BandNumber"].Value + "|" + item.Cells["Color"].Value + "|" + item.Cells["Sex"].Value);
+                            pigeonListCollection.Add(item.Index.ToString() + "|" + item.Cells["BandNumber"].Value + "|" + item.Cells["TagID"].Value + "|" + item.Cells["Category"].Value + "|" + item.Cells["Color"].Value + "|" + item.Cells["Sex"].Value);
                         }
                     }
                     else if (action == "DELETE")
                     {
                         if (item.Cells["BandNumber"].Value.ToString() != BandNumber)
                         {
-                            pigeonListCollection.Add(counter + "|" + item.Cells["BandNumber"].Value + "|" + item.Cells["Color"].Value + "|" + item.Cells["Sex"].Value);
+                            pigeonListCollection.Add(counter + "|" + item.Cells["BandNumber"].Value + "|" + item.Cells["TagID"].Value + "|" + item.Cells["Category"].Value + "|" + item.Cells["Color"].Value + "|" + item.Cells["Sex"].Value);
                             counter++;
                         }
                     }
                     else
                     {
-                        pigeonListCollection.Add(item.Index.ToString() + "|" + item.Cells["BandNumber"].Value + "|" + item.Cells["Color"].Value + "|" + item.Cells["Sex"].Value);
+                        pigeonListCollection.Add(item.Index.ToString() + "|" + item.Cells["BandNumber"].Value + "|" + item.Cells["TagID"].Value + "|" + item.Cells["Category"].Value + "|" + item.Cells["Color"].Value + "|" + item.Cells["Sex"].Value);
                     }
                 }
 
                 if (string.IsNullOrEmpty(action))
                 {
-                    pigeonListCollection.Add(dv.Rows.Count + "|" + BandNumber + "|" + Color + "|" + Sex);
+                    pigeonListCollection.Add(dv.Rows.Count + "|" + BandNumber + "|" + RFID + "|" + Category + "|" + Color + "|" + Sex);
                 }
+
                 return pigeonListCollection;
             }
             catch (Exception ex)
@@ -423,21 +425,21 @@ namespace PigeonIDSystem
             }
         }
 
-        private void LoadImage(string bandnumber, string memberid)
+        private void LoadImage(string rfid, string memberid)
         {
             try
             {
                 string path = ReadText.ReadFilePath("datapath") + "images\\" + memberid + "\\";
-                if (File.Exists(path + bandnumber + ".txt"))
+                if (File.Exists(path + rfid + ".txt"))
                 {
-                    string filename = path + bandnumber + ".txt";
+                    string filename = path + rfid + ".txt";
                     MemoryStream ms = new MemoryStream(File.ReadAllBytes(filename));
                     imgCapture.Image = Image.FromStream(ms);
                 }
 
-                if (File.Exists(path + bandnumber + "_P2" + ".txt"))
+                if (File.Exists(path + rfid + "_P2" + ".txt"))
                 {
-                    string filename = path + bandnumber + "_P2" + ".txt";
+                    string filename = path + rfid + "_P2" + ".txt";
                     MemoryStream ms = new MemoryStream(File.ReadAllBytes(filename));
                     pictureBox1.Image = Image.FromStream(ms);
 
@@ -454,7 +456,6 @@ namespace PigeonIDSystem
         {
             try
             {
-                //photo_aray = (byte[])drow[4];
                 MemoryStream ms = new MemoryStream(image);
                 return Image.FromStream(ms);
             }
@@ -468,9 +469,7 @@ namespace PigeonIDSystem
         {
             try
             {
-                //DataAccess.PigeonIDSystem.Member member = new DataAccess.PigeonIDSystem.Member();
                 DataSet dsResult = new DataSet();
-                //dsResult = member.GetAllPigeonDetails("local", this.txtMemberID.Text);
                 if (dsResult.Tables.Count > 0)
                 {
                     dtList.DataSource = dsResult.Tables[0];
@@ -487,17 +486,6 @@ namespace PigeonIDSystem
         {
             try
             {
-                //DataAccess.PigeonIDSystem.Member member = new DataAccess.PigeonIDSystem.Member();
-                //DataSet dsResult = new DataSet();
-                //dsResult = member.GetMemberDetails("local", this.txtMemberID.Text);
-                //if (dsResult.Tables.Count > 0)
-                //{
-                //    if (dsResult.Tables[0].Rows.Count > 0)
-                //    {
-                //        this.txtName.Text = dsResult.Tables[0].Rows[0]["MemberName"].ToString();
-                //    }
-                //}
-
                 string path = ReadText.ReadFilePath("datapath");
                 string filepath = path + "members\\" + memberID + ".txt";
 
@@ -563,7 +551,11 @@ namespace PigeonIDSystem
                 this.txtName.Enabled = value;
                 this.txtRingNumber.Enabled = value;
                 this.cbmSex.Enabled = value;
+                this.cmbCategory.Enabled = value;
                 this.txtColor.Enabled = value;
+                this.txtrfid.Enabled = value;
+                this.btnRead.Enabled = value;
+                this.btnSync.Enabled = value;
             }
             catch (Exception ex)
             {
@@ -576,7 +568,7 @@ namespace PigeonIDSystem
         {
             try
             {
-                ReportGeneration reportGeneration = new ReportGeneration();
+                frmReportGeneration reportGeneration = new frmReportGeneration();
                 DataTable dt = new DataTable();
                 dt = (DataTable)this.dtList.DataSource;
                 if (dt.Rows.Count > 0)
@@ -633,8 +625,8 @@ namespace PigeonIDSystem
                         string path = ReadText.ReadFilePath("datapath");
                         File.Delete(path + "members\\" + MemberIDNo + ".txt"); //memberdetails
                         File.Delete(path + "pigeonlist\\" + MemberIDNo + ".txt"); //memberpigeonlist
-                        Directory.Delete(path + "pigeonDetails\\" + MemberIDNo,true);
-                        Directory.Delete(path + "images\\" + MemberIDNo,true);
+                        Directory.Delete(path + "pigeonDetails\\" + MemberIDNo, true);
+                        Directory.Delete(path + "images\\" + MemberIDNo, true);
                         MessageBox.Show("Record Deleted.", "Delete Record");
                         ClearControl();
                     }
@@ -652,14 +644,61 @@ namespace PigeonIDSystem
         {
             try
             {
-                Eclock eclock = new Eclock();
-                eclock.SyncTime("");
+
+                DataTable dt = new DataTable();
+                dt = (DataTable)this.dtList.DataSource;
+
+                frmSyncEclock sync = new frmSyncEclock();
+                sync.DataList = dt;
+                sync.ClubName = ClubName;
+                sync.ActionType = "BANDED";
+                sync.ShowDialog();
+
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message, "Error");
             }
+        }
+
+        private void cbmSex_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMemberID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmReadRFID readRFID = new frmReadRFID();
+            readRFID.ShowDialog();
+            this.txtrfid.Text = readRFID.RFIDTags;
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)this.dtList.DataSource;
+
+            frmSyncEclock sync = new frmSyncEclock();
+            sync.DataList = dt;
+            sync.ClubName = ClubName;
+            sync.ActionType = "CLOCK";
+            sync.ShowDialog();
         }
     }
 
@@ -673,4 +712,5 @@ namespace PigeonIDSystem
             return Text;
         }
     }
+
 }

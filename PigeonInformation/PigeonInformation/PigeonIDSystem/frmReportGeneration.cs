@@ -11,7 +11,7 @@ using excel = Microsoft.Office.Interop.Excel;
 
 namespace PigeonIDSystem
 {
-    public partial class ReportGeneration : Form
+    public partial class frmReportGeneration : Form
     {
         public DataTable dtRecord { get; set; }
         public DataSet dtMemberDistance { get; set; }
@@ -24,7 +24,7 @@ namespace PigeonIDSystem
         public String  MemberID { get; set; }
         public DataTable dtBillingStatement { get; set; }
 
-        public ReportGeneration()
+        public frmReportGeneration()
         {
             InitializeComponent();
             bw.WorkerReportsProgress = true;

@@ -4,11 +4,27 @@ using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Management;
 
 namespace Helper
 {
     public class Eclock
     {
+        public void InitializeEclock(String comPortNumber)
+        {
+            try
+            {
+                SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+                comPort.Open();
+                comPort.Close();
+                comPort.Dispose();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
         public void SyncTime(String comPortNumber)
         {
             SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
@@ -16,9 +32,9 @@ namespace Helper
             {
 
                 DateTime now = new DateTime();
-                now = DateTime.Now.AddSeconds(2);
+                now = DateTime.Now.AddSeconds(1);
                 //System.Threading.Thread.Sleep(500);
-                string Time = "$TiMe$" + now.Year.ToString().Substring(2).PadLeft(2, '0') + now.Month.ToString().PadLeft(2, '0') + now.Day.ToString().PadLeft(2, '0');
+                string Time = "$TiMe$" + now.Year.ToString() + now.Month.ToString().PadLeft(2, '0') + now.Day.ToString().PadLeft(2, '0');
                 int daysOfWeek = 0;
 
                 switch (now.DayOfWeek.ToString().ToUpper())
@@ -80,12 +96,49 @@ namespace Helper
 
         public string ReceiveData(String comPortNumber)
         {
-            SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
-            comPort.Open();
-            String incommingData = comPort.ReadExisting();
-            comPort.Close();
-            comPort.Dispose();
-            return incommingData;
+            try
+            {
+                SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+                comPort.Open();
+                System.Threading.Thread.Sleep(800);
+                String incommingData = comPort.ReadExisting();
+                while (!incommingData.Contains("dataend"))
+                {
+                    incommingData = comPort.ReadExisting();
+                }
+                comPort.Close();
+                comPort.Dispose();
+                return incommingData;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public String GetPort()
+        {
+
+            String value = "";
+            ManagementClass processClass = new ManagementClass("Win32_PnPEntity");
+
+            ManagementObjectCollection Ports = processClass.GetInstances();
+            string device = "No recognized";
+            foreach (ManagementObject property in Ports)
+            {
+                if (property.GetPropertyValue("Name") != null)
+                    if (property.GetPropertyValue("Name").ToString().Contains("USB") &&
+                        property.GetPropertyValue("Name").ToString().Contains("COM"))
+                    {
+                        Console.WriteLine(property.GetPropertyValue("Name").ToString());
+                        device = property.GetPropertyValue("Name").ToString();
+
+                        if (device.Contains("USB-SERIAL CH340")) value = device; ;
+                    }
+
+            }
+            return value;
         }
     }
 }
