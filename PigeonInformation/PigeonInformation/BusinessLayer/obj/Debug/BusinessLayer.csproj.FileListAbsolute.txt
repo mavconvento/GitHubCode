@@ -9,3 +9,12 @@ C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DataLayer.pdb
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DomainObjects.pdb
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DataLayer.dll
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DomainObjects.dll
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\bin\Debug\DomainObjects.pdb
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\BusinessLayer\obj\Debug\BusinessLayer.pdb
