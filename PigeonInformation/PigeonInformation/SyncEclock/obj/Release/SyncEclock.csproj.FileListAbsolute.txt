@@ -1,0 +1,16 @@
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\SyncEclock.exe.config
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\SyncEclock.exe
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\SyncEclock.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\BusinessLayer.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\DataLayer.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\Helper.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\BusinessLayer.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\DataLayer.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\DomainObjects.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Release\Helper.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Release\SyncEclock.csprojAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Release\SyncEclock.csproj.CoreCompileInputs.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Release\SyncEclock.csproj.CopyComplete
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Release\SyncEclock.exe
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Release\SyncEclock.pdb

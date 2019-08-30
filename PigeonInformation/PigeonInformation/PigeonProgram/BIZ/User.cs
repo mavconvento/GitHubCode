@@ -31,6 +31,7 @@ namespace PigeonProgram.BIZ
         public String ContactNumber { get; set; }
         public Int64 Resolution { get; set; }
         public Int64 ResolutionY { get; set; }
+        public String BackgroundImages { get; set; }
         #endregion
 
         #region Public Methods

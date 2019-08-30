@@ -19,3 +19,11 @@ D:\MyProject\MAVC Source Codes\PegionClocking\Encryption\obj\x86\Debug\Encryptio
 D:\MyProject\MAVC Source Codes\PegionClocking\Encryption\obj\x86\Debug\Encryption.csproj.GenerateResource.Cache
 D:\MyProject\MAVC Source Codes\PegionClocking\Encryption\obj\x86\Debug\Encryption.exe
 D:\MyProject\MAVC Source Codes\PegionClocking\Encryption\obj\x86\Debug\Encryption.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\bin\Debug\Encryption.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\bin\Debug\Encryption.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\obj\x86\Debug\Encryption.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\obj\x86\Debug\Encryption.Form1.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\obj\x86\Debug\Encryption.Properties.Resources.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\obj\x86\Debug\Encryption.csproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\obj\x86\Debug\Encryption.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\Encryption\obj\x86\Debug\Encryption.pdb

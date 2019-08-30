@@ -16,6 +16,7 @@ namespace PigeonProgram
     {
         public Int64 UserID { get; set; }
         public DataSet PedigreeSetup { get; set; }
+        public String BackgroundImages { get; set; }
 
         public PrinterSetup()
         {
@@ -125,6 +126,8 @@ namespace PigeonProgram
                 blluser.Resolution = Convert.ToInt64(txtresolution.Text);
                 blluser.ResolutionY = Convert.ToInt64(txtResolutionY.Text);
                 blluser.Logo = Common.Common.GetImage(this.pbLogo);
+                blluser.BackgroundImages = txtbackground.Text;
+                this.BackgroundImages = txtbackground.Text;
                 PedigreeSetup = blluser.PedigreeSetup(UserID);
 
             }
@@ -162,6 +165,30 @@ namespace PigeonProgram
         private void btnRemove_Click(object sender, EventArgs e)
         {
             pbLogo.Image = null;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog f = new OpenFileDialog();
+                f.InitialDirectory = "C:/Picture/";
+                f.Filter = "All Files|*.*|JPEGs|*.jpg|Bitmaps|*.bmp|GIFs|*.gif";
+                f.FilterIndex = 2;
+
+                if (f.ShowDialog() == DialogResult.OK)
+                {
+                    //pbLogo.Image = Image.FromFile(f.FileName);
+                    //pbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+                    //pbLogo.BorderStyle = BorderStyle.Fixed3D;
+                    this.txtbackground.Text = f.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }

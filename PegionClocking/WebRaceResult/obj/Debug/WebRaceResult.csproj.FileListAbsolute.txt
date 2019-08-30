@@ -55,3 +55,17 @@ D:\MyProject\MAVC Source Codes\PegionClocking\WebRaceResult\bin\Microsoft.Practi
 D:\MyProject\MAVC Source Codes\PegionClocking\WebRaceResult\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
 D:\MyProject\MAVC Source Codes\PegionClocking\WebRaceResult\bin\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.xml
 D:\MyProject\MAVC Source Codes\PegionClocking\WebRaceResult\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\WebRaceResult.dll.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\WebRaceResult.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\WebRaceResult.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.ReportViewer.Common.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.Practices.ObjectBuilder.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\bin\Microsoft.ReportViewer.WebForms.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\obj\Debug\WebRaceResult.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\obj\Debug\WebRaceResult.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\WebRaceResult\obj\Debug\WebRaceResult.pdb

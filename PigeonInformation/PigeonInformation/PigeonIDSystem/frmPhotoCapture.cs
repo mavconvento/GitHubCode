@@ -30,7 +30,6 @@ namespace PigeonIDSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Common.CreateStorageFolder();
             ComboBoxItem();
             ClubName = Common.GetClub();
         }
@@ -116,12 +115,13 @@ namespace PigeonIDSystem
                 if (datagrid.RowCount > 0)
                 {
                     index = datagrid.CurrentRow.Index;
+                    int addcellindex = 1;
                     //PigeonID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
-                    BandNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
-                    RFID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
-                    string Category = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value);
-                    string Sex = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
-                    string Color = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value);
+                    BandNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2 + addcellindex].Value);
+                    RFID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3 + addcellindex].Value);
+                    string Category = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[4 + addcellindex].Value);
+                    string Sex = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[5 + addcellindex].Value);
+                    string Color = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[6 + addcellindex].Value);
 
                     if (BandNumber != "")
                     {
@@ -145,13 +145,18 @@ namespace PigeonIDSystem
                         {
                             if ((MessageBox.Show("Are you sure! You would like to delete this record?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes))
                             {
+                              
                                 ActionType = "DELETE";
                                 string path = ReadText.ReadFilePath("datapath");
                                 string[] pigeonList = SetPigeonList(ActionType, "0", BandNumber, "", "", RFID, "").ToArray();
-                                System.IO.File.WriteAllLines(path + "pigeonlist\\" + txtMemberID.Text + ".txt", pigeonList);
+                                System.IO.File.WriteAllLines(path + "\\pigeonlist\\" + txtMemberID.Text + ".txt", pigeonList);
                                 GetPigeonList(txtMemberID.Text);
+
+                                string deletePath = path + "\\pigeondetails\\" + txtMemberID.Text + "\\" + RFID + ".txt";
+                                if (File.Exists(deletePath)) File.Delete(deletePath);
+                                
                                 ActionType = "";
-                                ClearControl();
+                                //ClearControl();
                                 MessageBox.Show("Record Deleted.", "Delete Record");
                             }
                         }
@@ -208,7 +213,7 @@ namespace PigeonIDSystem
         {
             try
             {
-                if (txtMemberID.Text == "" || txtName.Text == "" || txtrfid.Text == "" || cmbCategory.Text == "" || cbmSex.Text == "" || txtColor.Text == "" || txtRingNumber.Text == "" )
+                if (txtMemberID.Text == "" || txtName.Text == "" || txtrfid.Text == "" || cmbCategory.Text == "" || cbmSex.Text == "" || txtColor.Text == "" || txtRingNumber.Text == "")
                 {
                     MessageBox.Show("Please filled-up required field.", "Error");
                 }
@@ -233,7 +238,7 @@ namespace PigeonIDSystem
                         this.ActionType = "";
                         txtRingNumber.Enabled = true;
                         this.txtRingNumber.Focus();
-                    } 
+                    }
                 }
             }
             catch (Exception ex)
@@ -248,9 +253,9 @@ namespace PigeonIDSystem
             try
             {
                 string path = ReadText.ReadFilePath("datapath");
-                string detailspath = path + "pigeondetails\\" + MemberIDNo + "\\" + RFID + ".txt";
-                string memberpath = path + "members\\" + MemberIDNo + ".txt";
-                string pigeonlistpath = path + "pigeonlist\\" + MemberIDNo + ".txt";
+                string detailspath = path + "\\pigeondetails\\" + MemberIDNo + "\\" + RFID + ".txt";
+                string memberpath = path + "\\members\\" + MemberIDNo + ".txt";
+                string pigeonlistpath = path + "\\pigeonlist\\" + MemberIDNo + ".txt";
 
                 if (ActionType != "EDIT" && File.Exists(detailspath))
                 {
@@ -266,7 +271,7 @@ namespace PigeonIDSystem
                 System.IO.File.WriteAllLines(memberpath, memberDetails); //memberdetails
                 System.IO.File.WriteAllLines(pigeonlistpath, pigeonList); //memberpigeonlist
 
-                string pigeondetailsDirectory = path + "pigeondetails\\" + MemberIDNo;
+                string pigeondetailsDirectory = path + "\\pigeondetails\\" + MemberIDNo;
                 if (!Directory.Exists(pigeondetailsDirectory))
                 {
                     Directory.CreateDirectory(pigeondetailsDirectory);
@@ -274,7 +279,7 @@ namespace PigeonIDSystem
                 System.IO.File.WriteAllLines(detailspath, pigeonDetails); //pigeondetails
 
 
-                string pigeonimageDirectory = path + "images\\" + MemberIDNo;
+                string pigeonimageDirectory = path + "\\images\\" + MemberIDNo;
                 if (!Directory.Exists(pigeonimageDirectory))
                 {
                     Directory.CreateDirectory(pigeonimageDirectory);
@@ -314,8 +319,8 @@ namespace PigeonIDSystem
                 DataColumn dc2 = new DataColumn();
                 dc2.ColumnName = "DELETE";
 
-                //DataColumn dc3 = new DataColumn();
-                //dc3.ColumnName = "PigeonID";
+                DataColumn dc3 = new DataColumn();
+                dc3.ColumnName = "SeqNo";
 
                 DataColumn dc4 = new DataColumn();
                 dc4.ColumnName = "BandNumber";
@@ -334,7 +339,7 @@ namespace PigeonIDSystem
 
                 pigeonList.Columns.Add(dc1);
                 pigeonList.Columns.Add(dc2);
-                //pigeonList.Columns.Add(dc3);
+                pigeonList.Columns.Add(dc3);
                 pigeonList.Columns.Add(dc4);
                 pigeonList.Columns.Add(dc5);
                 pigeonList.Columns.Add(dc6);
@@ -342,24 +347,25 @@ namespace PigeonIDSystem
                 pigeonList.Columns.Add(dc8);
 
                 string path = ReadText.ReadFilePath("datapath");
-                string filepath = path + "pigeonlist\\" + memberid + ".txt";
+                string filepath = path + "\\pigeonlist\\" + memberid + ".txt";
                 if (File.Exists(filepath))
                 {
                     string[] pigeonCollection = ReadText.ReadTextFile(filepath);
-
+                    int seqNumber = 1;
                     foreach (string item in pigeonCollection)
                     {
                         string[] value = item.Split('|');
                         DataRow dr = pigeonList.NewRow();
                         dr["EDIT"] = "EDIT";
                         dr["DELETE"] = "DELETE";
-                        //dr["PigeonID"] = value[0].ToString();
+                        dr["SeqNo"] = seqNumber.ToString();
                         dr["BandNumber"] = value[1].ToString();
                         dr["TagID"] = value[2].ToString();
                         dr["Category"] = value[3].ToString();
                         dr["Color"] = value[4].ToString();
                         dr["Sex"] = value[5].ToString();
                         pigeonList.Rows.Add(dr);
+                        seqNumber++;
                     }
 
                 }
@@ -429,7 +435,7 @@ namespace PigeonIDSystem
         {
             try
             {
-                string path = ReadText.ReadFilePath("datapath") + "images\\" + memberid + "\\";
+                string path = ReadText.ReadFilePath("datapath") + "\\images\\" + memberid + "\\";
                 if (File.Exists(path + rfid + ".txt"))
                 {
                     string filename = path + rfid + ".txt";
@@ -487,7 +493,7 @@ namespace PigeonIDSystem
             try
             {
                 string path = ReadText.ReadFilePath("datapath");
-                string filepath = path + "members\\" + memberID + ".txt";
+                string filepath = path + "\\members\\" + memberID + ".txt";
 
                 if (File.Exists(filepath))
                 {
@@ -547,6 +553,7 @@ namespace PigeonIDSystem
         {
             try
             {
+                //this.txtMobileNumber.Enabled = value;
                 this.txtMemberID.Enabled = !value;
                 this.txtName.Enabled = value;
                 this.txtRingNumber.Enabled = value;
@@ -568,17 +575,17 @@ namespace PigeonIDSystem
         {
             try
             {
-                frmReportGeneration reportGeneration = new frmReportGeneration();
                 DataTable dt = new DataTable();
                 dt = (DataTable)this.dtList.DataSource;
+                frmPrint print = new frmPrint();
+
                 if (dt.Rows.Count > 0)
                 {
-                    reportGeneration.MemberID = txtMemberID.Text.ToUpper();
-                    reportGeneration.MemberName = txtName.Text.ToUpper();
-                    reportGeneration.Type = "PigeonList";
-                    reportGeneration.dtRecord = dt;
-                    reportGeneration.ShowDialog();
-                }
+                    print.DataForPrint = dt;
+                    print.PlayerName = txtName.Text;
+                    print.ListType = "Banded Pigeon";
+                    print.ShowDialog();
+                }  
             }
             catch (Exception ex)
             {
@@ -623,10 +630,10 @@ namespace PigeonIDSystem
                     if (MessageBox.Show("Are you sure. You would like to delete this member?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         string path = ReadText.ReadFilePath("datapath");
-                        File.Delete(path + "members\\" + MemberIDNo + ".txt"); //memberdetails
-                        File.Delete(path + "pigeonlist\\" + MemberIDNo + ".txt"); //memberpigeonlist
-                        Directory.Delete(path + "pigeonDetails\\" + MemberIDNo, true);
-                        Directory.Delete(path + "images\\" + MemberIDNo, true);
+                        File.Delete(path + "\\members\\" + MemberIDNo + ".txt"); //memberdetails
+                        File.Delete(path + "\\pigeonlist\\" + MemberIDNo + ".txt"); //memberpigeonlist
+                        Directory.Delete(path + "\\pigeonDetails\\" + MemberIDNo, true);
+                        Directory.Delete(path + "\\images\\" + MemberIDNo, true);
                         MessageBox.Show("Record Deleted.", "Delete Record");
                         ClearControl();
                     }
@@ -651,6 +658,8 @@ namespace PigeonIDSystem
                 frmSyncEclock sync = new frmSyncEclock();
                 sync.DataList = dt;
                 sync.ClubName = ClubName;
+                sync.DataStartIndex = 1;
+                sync.DataEndtIndex = dt.Rows.Count;
                 sync.ActionType = "BANDED";
                 sync.ShowDialog();
 
@@ -684,6 +693,7 @@ namespace PigeonIDSystem
 
         private void button8_Click(object sender, EventArgs e)
         {
+            this.txtrfid.Focus();
             frmReadRFID readRFID = new frmReadRFID();
             readRFID.ShowDialog();
             this.txtrfid.Text = readRFID.RFIDTags;
@@ -699,6 +709,13 @@ namespace PigeonIDSystem
             sync.ClubName = ClubName;
             sync.ActionType = "CLOCK";
             sync.ShowDialog();
+        }
+
+        private void button8_Click_1(object sender, EventArgs e)
+        {
+            frmAssignMobileNumber assignMobileNumber = new frmAssignMobileNumber();
+            assignMobileNumber.MemberID = txtMemberID.Text;
+            assignMobileNumber.ShowDialog();
         }
     }
 

@@ -62,3 +62,6 @@ C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\MAVC Integration V2\o
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.exe
 C:\Adams\GitHub\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC Integration V2.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVC Integration V2\bin\Debug\MAVC Integration V2.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVC Integration V2\bin\Debug\MAVC Integration V2.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\MAVC Integration V2\obj\x86\Debug\MAVC IntegrationV2.csprojResolveAssemblyReference.cache

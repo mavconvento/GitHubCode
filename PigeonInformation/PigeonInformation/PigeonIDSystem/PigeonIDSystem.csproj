@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAssignMobileNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAssignMobileNumber.Designer.cs">
+      <DependentUpon>frmAssignMobileNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCapturePhoto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
       <DependentUpon>frmSyncEclock.cs</DependentUpon>
     </Compile>
     <Compile Include="WebCam.cs" />
+    <EmbeddedResource Include="frmAssignMobileNumber.resx">
+      <DependentUpon>frmAssignMobileNumber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCapturePhoto.resx">
       <DependentUpon>frmCapturePhoto.cs</DependentUpon>
     </EmbeddedResource>

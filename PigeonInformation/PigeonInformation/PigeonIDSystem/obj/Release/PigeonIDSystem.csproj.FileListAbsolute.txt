@@ -1,0 +1,16 @@
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.csprojAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.csproj.ResolveComReference.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmCapturePhoto.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmEntry.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmPrint.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmSyncAll.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmMenu.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmReadRFID.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmReportGeneration.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmPhotoCapture.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.Properties.Resources.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmResult.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmSetClub.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.frmSyncEclock.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.csproj.GenerateResource.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Release\PigeonIDSystem.csproj.CoreCompileInputs.cache

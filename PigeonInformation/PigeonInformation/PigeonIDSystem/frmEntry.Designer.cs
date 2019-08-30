@@ -67,6 +67,7 @@
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnRead = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
@@ -75,7 +76,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(858, 541);
+            this.button6.Location = new System.Drawing.Point(858, 543);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(168, 23);
             this.button6.TabIndex = 71;
@@ -117,12 +118,13 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(738, 542);
+            this.button2.Location = new System.Drawing.Point(912, 518);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 23);
             this.button2.TabIndex = 73;
             this.button2.Text = "PRINT LIST";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtName
             // 
@@ -172,7 +174,7 @@
             this.btnNew.Location = new System.Drawing.Point(232, 542);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(119, 23);
-            this.btnNew.TabIndex = 13;
+            this.btnNew.TabIndex = 14;
             this.btnNew.Text = "NEW MEMBER";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -183,7 +185,7 @@
             this.btnSave.Location = new System.Drawing.Point(12, 541);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(95, 23);
-            this.btnSave.TabIndex = 11;
+            this.btnSave.TabIndex = 12;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -417,12 +419,13 @@
             // 
             this.btnSync.Enabled = false;
             this.btnSync.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSync.Location = new System.Drawing.Point(357, 541);
+            this.btnSync.Location = new System.Drawing.Point(642, 544);
             this.btnSync.Name = "btnSync";
             this.btnSync.Size = new System.Drawing.Size(120, 23);
             this.btnSync.TabIndex = 15;
             this.btnSync.Text = "SYNC E-CLOCK";
             this.btnSync.UseVisualStyleBackColor = true;
+            this.btnSync.Visible = false;
             this.btnSync.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
@@ -431,7 +434,7 @@
             this.button5.Location = new System.Drawing.Point(114, 541);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(106, 23);
-            this.button5.TabIndex = 12;
+            this.button5.TabIndex = 13;
             this.button5.Text = "CLEAR";
             this.button5.UseVisualStyleBackColor = true;
             // 
@@ -455,7 +458,7 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
             this.txtCategory.Size = new System.Drawing.Size(51, 20);
-            this.txtCategory.TabIndex = 102;
+            this.txtCategory.TabIndex = 11;
             // 
             // label7
             // 
@@ -474,16 +477,28 @@
             this.btnRead.Location = new System.Drawing.Point(325, 144);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(93, 23);
-            this.btnRead.TabIndex = 104;
+            this.btnRead.TabIndex = 7;
             this.btnRead.Text = "READ TAGS";
             this.btnRead.UseVisualStyleBackColor = true;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(493, 544);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(143, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "UNLOCK E-CLOCK";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // frmEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 576);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.label7);
@@ -575,5 +590,6 @@
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnRead;
+        private System.Windows.Forms.Button button1;
     }
 }

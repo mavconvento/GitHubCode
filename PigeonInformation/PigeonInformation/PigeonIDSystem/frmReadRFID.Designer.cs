@@ -42,6 +42,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Close";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // backgroundWorker1
@@ -66,7 +67,7 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Reading Pigeon Tag:";
             // 
-            // ReadRFID
+            // frmReadRFID
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -74,7 +75,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button1);
-            this.Name = "ReadRFID";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmReadRFID";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ReadRFID";
             this.Load += new System.EventHandler(this.ReadRFID_Load);

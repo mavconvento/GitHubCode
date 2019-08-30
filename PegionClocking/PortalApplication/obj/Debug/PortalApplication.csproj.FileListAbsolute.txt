@@ -56,3 +56,16 @@ D:\MyProject\MAVC Source Codes\PegionClocking\PortalApplication\bin\Microsoft.Pr
 D:\MyProject\MAVC Source Codes\PegionClocking\PortalApplication\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
 D:\MyProject\MAVC Source Codes\PegionClocking\PortalApplication\bin\Microsoft.Practices.ObjectBuilder.dll
 D:\MyProject\MAVC Source Codes\PegionClocking\PortalApplication\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\PortalApplication.dll.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\PortalApplication.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\PortalApplication.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\Microsoft.ReportViewer.WebForms.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\Microsoft.ReportViewer.Common.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\Microsoft.Practices.EnterpriseLibrary.Caching.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\bin\Microsoft.ReportViewer.WebForms.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\obj\Debug\PortalApplication.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\obj\Debug\PortalApplication.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PortalApplication\obj\Debug\PortalApplication.pdb

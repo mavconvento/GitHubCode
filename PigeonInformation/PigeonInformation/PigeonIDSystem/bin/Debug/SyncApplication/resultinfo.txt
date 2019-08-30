@@ -1,4 +1,3 @@
-TCPC
-20190713
-C:\Users\mavc\Dropbox\EclockData\TCPC\
-13/07/2019
+0001
+20190825
+C:\Users\82245\Dropbox\EclockData\tcpc\  

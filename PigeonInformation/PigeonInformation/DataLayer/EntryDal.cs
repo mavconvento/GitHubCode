@@ -43,7 +43,8 @@ namespace DataLayer
                 dbconn.sqlComm.Parameters.AddWithValue("@BirdCategory", entry.RaceCategoryName);
                 dbconn.sqlComm.Parameters.AddWithValue("@DateRelease", entry.ReleaseDate);
                 dbconn.sqlComm.Parameters.AddWithValue("@RingNumber", entry.RingNumber);
-
+                dbconn.sqlComm.Parameters.AddWithValue("@MobileNumber", entry.MobileNumber);
+                
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

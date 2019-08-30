@@ -35,6 +35,28 @@ namespace PigeonIDSystem
 
         }
 
+        public static void Logs(string ErrorMessage)
+        {
+            string path = ReadText.ReadFilePath("datapath");
+            string dateString = DateTime.Today.Year.ToString() + DateTime.Today.Month.ToString().PadLeft(2, '0') + DateTime.Today.Day.ToString().PadLeft(2, '0');
+            string errorLogs = path + @"\" + dateString + ".txt";
+
+            if (File.Exists(errorLogs))
+            {
+                using (StreamWriter sw = File.AppendText(errorLogs))
+                {
+                    sw.WriteLine(ErrorMessage);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.CreateText(errorLogs))
+                {
+                    sw.WriteLine(ErrorMessage);
+                }
+            }
+        }
+
         public static String CustomError(string message)
         {
             try
@@ -87,6 +109,11 @@ namespace PigeonIDSystem
                     Directory.CreateDirectory(pigeonList);
                 }
 
+                string pigeonMobileNumberList = path + @"\PigeonMobileList";
+                if (!Directory.Exists(pigeonMobileNumberList))
+                {
+                    Directory.CreateDirectory(pigeonMobileNumberList);
+                }
 
                 string entryList = path + @"\Entry";
                 if (!Directory.Exists(entryList))
@@ -112,17 +139,16 @@ namespace PigeonIDSystem
         {
             try
             {
-                string path = ReadText.ReadFilePath("datapath");
-                string club = path + @"\ClubInfo.txt";
-                if (!File.Exists(club))
+                string sysDir = AppDomain.CurrentDomain.BaseDirectory;
+                string filepath = sysDir + "club.txt";
+
+                if (!File.Exists(filepath))
                 {
                     frmSetClub clubform = new frmSetClub();
                     clubform.ShowDialog();
                 }
                 else
                 {
-                    //string path = ReadText.ReadFilePath("datapath");
-                    string filepath = path + "\\ClubInfo.txt";
                     if (File.Exists(filepath))
                     {
                         string[] clublist = ReadText.ReadTextFile(filepath);

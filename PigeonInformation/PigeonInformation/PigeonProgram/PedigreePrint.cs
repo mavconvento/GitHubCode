@@ -40,10 +40,10 @@ namespace PigeonProgram
                 else
                 {
                     LoadPedigree();
-                    this.WindowState = FormWindowState.Maximized;
+                    //this.WindowState = FormWindowState.Maximized;
                 }
-                
-             
+
+
             }
             catch (Exception ex)
             {
@@ -76,16 +76,21 @@ namespace PigeonProgram
                         Resolution = (Int64)PedigreeSetup.Tables[0].Rows[0]["Resolution"];
                         ResolutionY = (Int64)PedigreeSetup.Tables[0].Rows[0]["ResolutionY"];
 
+        
                         //if ((Boolean)PedigreeSetup.Tables[0].Rows[0]["Istrial"])
                         //{
                         //    this.button1.Enabled = false;
                         //}
                     }
+                    Resolution = 100;
+                    ResolutionY = 100;
+                    Bitmap a = new Bitmap(printer.BackgroundImages);
+                    this.BackgroundImage = a;
                 }
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
         }
@@ -196,6 +201,11 @@ namespace PigeonProgram
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

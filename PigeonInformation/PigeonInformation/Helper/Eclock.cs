@@ -19,9 +19,9 @@ namespace Helper
                 comPort.Close();
                 comPort.Dispose();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Common.Logs(ex.Message);
             }
 
         }
@@ -81,7 +81,20 @@ namespace Helper
                 throw;
             }
         }
-        public bool SendData(String Data, String comPortNumber)
+        public bool SendData(String Data, SerialPort comPort)
+        {
+            //SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+            comPort.Open();
+            foreach (char item in Data)
+            {
+                comPort.Write(item.ToString());
+            }
+            comPort.Close();
+            comPort.Dispose();
+            return true;
+        }
+
+        public bool SendData(String Data, string comPortNumber)
         {
             SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
             comPort.Open();
@@ -94,20 +107,81 @@ namespace Helper
             return true;
         }
 
-        public string ReceiveData(String comPortNumber)
+        public string ReceiveData(SerialPort comPort)
         {
             try
             {
-                SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+
+                //if (comPort.IsOpen) comPort.Close();
+
                 comPort.Open();
                 System.Threading.Thread.Sleep(800);
                 String incommingData = comPort.ReadExisting();
-                while (!incommingData.Contains("dataend"))
+                int counter = 0;
+                bool Isread = true;
+                while (Isread)
                 {
                     incommingData = comPort.ReadExisting();
+                    counter++;
+                    if (incommingData.Contains("dataend") & incommingData.Contains("datastart"))
+                    {
+                        Isread = false;
+                    }
+                    else if (counter > 1000000 &&  string.IsNullOrEmpty(incommingData)) 
+                    {
+                        Isread = false;
+                    }
+                    else if (incommingData.Trim().Length > 50)
+                    {
+                        incommingData = "";
+                        Isread = false;
+                    }
                 }
                 comPort.Close();
                 comPort.Dispose();
+
+                if (!incommingData.Contains("dataend") & !incommingData.Contains("datastart"))
+                {
+                    incommingData = "";
+                }
+                return incommingData;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public string ReceiveDataResult(string message,SerialPort comPort)
+        {
+            try
+            {
+
+                comPort.Open();
+                foreach (char item in message)
+                {
+                    comPort.Write(item.ToString());
+                }
+
+                System.Threading.Thread.Sleep(1000);
+                String incommingData = "";
+                bool Isread = true;
+                while (Isread)
+                {
+                    incommingData = comPort.ReadExisting();
+                    if (incommingData.Contains("dataend") & incommingData.Contains("datastart"))
+                    {
+                        Isread = false;
+                   }
+                } 
+                comPort.Close();
+                comPort.Dispose();
+
+                if (!incommingData.Contains("dataend") & !incommingData.Contains("datastart"))
+                {
+                    incommingData = "";
+                }
                 return incommingData;
             }
             catch (Exception)
@@ -134,7 +208,16 @@ namespace Helper
                         Console.WriteLine(property.GetPropertyValue("Name").ToString());
                         device = property.GetPropertyValue("Name").ToString();
 
-                        if (device.Contains("USB-SERIAL CH340")) value = device; ;
+                        if (device.Contains("USB-SERIAL CH340"))
+                        {
+                            value = device;
+                            break;
+                        }
+                        else if (device.Contains("USB Serial Device"))
+                        {
+                            value = device;
+                            break;
+                        }
                     }
 
             }

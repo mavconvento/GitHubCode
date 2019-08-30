@@ -98,12 +98,13 @@ namespace PigeonIDSystem
                 string path = ReadText.ReadFilePath("datapath");
                 string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
 
-                string entryDirectory = path + "entry\\" + dateString;
+                string entryDirectory = path + "\\entry\\" + dateString;
 
                 string pathSyncApplication = AppDomain.CurrentDomain.BaseDirectory + "SyncApplication";
                 string EntryLogs = pathSyncApplication + "\\entrylogs.txt";
 
-                string bandedFileName = path + "PigeonDetails\\" + MemberID + "\\" + RFID + ".txt";
+                string bandedFileName = path + "\\PigeonDetails\\" + MemberID + "\\" + RFID + ".txt";
+                string MobileFileName = path + "\\PigeonMobileList\\" + RFID + ".txt";
                 if (File.Exists(bandedFileName))
                 {
                     string[] pigeondetails = ReadText.ReadTextFile(bandedFileName);
@@ -114,8 +115,16 @@ namespace PigeonIDSystem
                     entryObject.ReleaseDate = this.DateRelease;
                     entryObject.RingNumber = pigeondetails[0];
                     entryObject.RaceCategoryName = pigeondetails[2];
+                    entryObject.MobileNumber = "";
                     entryObject.RaceCategoryGroupName = "EClock";
                     entryObject.RFID = RFID;
+                                    
+                    if (File.Exists(MobileFileName))
+                    {
+                        string[] pigeonMobileCollection = ReadText.ReadTextFile(MobileFileName);
+                        string[] values = pigeonMobileCollection[0].ToString().Split('|');
+                        entryObject.MobileNumber = values[1].ToString().Trim();
+                    }
 
                     DataSet dtResult = new DataSet();
                     dtResult = entryBll.EclockEntrySave(entryObject);
@@ -180,7 +189,7 @@ namespace PigeonIDSystem
 
                 string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
 
-                string resultDirectory = path + "result\\" + dateString;
+                string resultDirectory = path + "\\result\\" + dateString;
                 string resultLogs = pathSyncApplication + "\\resultlogs.txt";
 
                 string resultFileName = resultDirectory + "\\" + MemberID + "\\" + RFID + ".txt";

@@ -15,6 +15,9 @@ namespace PigeonIDSystem
     public partial class frmReadRFID : Form
     {
         public String RFIDTags { get; set; }
+        public String comPortNumber { get; set; }
+        SerialPort comPort;
+
         public frmReadRFID()
         {
             InitializeComponent();
@@ -30,10 +33,32 @@ namespace PigeonIDSystem
 
         private void ReadRFID_Load(object sender, EventArgs e)
         {
-            if (backgroundWorker1.IsBusy != true)
+            string[] ports = SerialPort.GetPortNames();
+
+            Eclock eclock = new Eclock();
+            string serialPort = eclock.GetPort();
+
+            foreach (var item in ports)
             {
-                // Start the asynchronous operation.
-                backgroundWorker1.RunWorkerAsync();
+                if (serialPort.Contains(item)) comPortNumber = item;
+            }
+            if (!String.IsNullOrEmpty(comPortNumber))
+            {
+                comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+
+                //var value = ReadID();
+                //RFIDTags = value;
+
+                if (backgroundWorker1.IsBusy != true)
+                {
+                    // Start the asynchronous operation.
+                    backgroundWorker1.RunWorkerAsync();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Club Reader not detected.", "Error");
+                this.Close();
             }
         }
 
@@ -41,49 +66,56 @@ namespace PigeonIDSystem
         {
             try
             {
+
                 Eclock eclock = new Eclock();
-                string serialPort = eclock.GetPort();
-                string[] ports = SerialPort.GetPortNames();
-                string commPort = "";
-                foreach (var item in ports)
+                //if (!comPort.IsOpen) comPort.Open();
+                if (!String.IsNullOrEmpty(comPortNumber))
                 {
-                    if (serialPort.Contains(item)) commPort = item;
-                }
-
-                if (!String.IsNullOrEmpty(commPort))
-                {
-
                     //String entryCollection = "12345678|14220397|12345678|12345678|12345678|12345678|12345678|12345678|15212437";
                     //String[] entryList = entryCollection.Split('|');
-
                     bool transmit = false;
                     while (!transmit)
                     {
                         //eclock.SendData("$Race$" + item + "#", commPort);
-                        String inComingData = eclock.ReceiveData(commPort);
+                        String inComingData = eclock.ReceiveData(comPort);
                         if (inComingData != "")
                         {
                             return PrintData(inComingData);
+                        }
+                        else
+                        {
+                            //this.Close();
+                            transmit = true;
+                            backgroundWorker1.CancelAsync();
                         }
                     }
 
                 }
                 return "";
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
-            }  
+                throw;
+            }
         }
 
         private static String PrintData(string data)
         {
-            Console.WriteLine();
             String[] value = data.Split('|');
-            if (value[1] != "noresult")
+            int index = 0;
+
+            foreach (var item in value)
             {
-                return value[1];
+                if (item == "datastart")
+                {
+                    string rfid = value[index + 1];
+                    if (rfid != "noresult")
+                    {
+                        return rfid;
+                    }
+                    break;
+                }
+                index++;
             }
 
             return "";
@@ -91,12 +123,9 @@ namespace PigeonIDSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (backgroundWorker1.WorkerSupportsCancellation == true)
             {
                 // Cancel the asynchronous operation.
                 backgroundWorker1.CancelAsync();
-                this.Close();
-                //backgroundWorker1.ReportProgress(100);
             }
         }
 
@@ -111,9 +140,9 @@ namespace PigeonIDSystem
             }
             else
             {
-                    var value = ReadID();
-                    RFIDTags = value;
-                    if (value != "") e.Cancel = true;
+                var value = ReadID();
+                RFIDTags = value;
+                e.Cancel = true;
             }
 
         }
@@ -136,5 +165,15 @@ namespace PigeonIDSystem
                 this.Close();
             }
         }
+
+        //private void frmReadRFID_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    if (!String.IsNullOrEmpty(comPortNumber))
+        //    {
+        //        //if (this.comPort.IsOpen) comPort.Close();
+        //        comPort.Dispose();
+        //    }
+
+        //}
     }
 }

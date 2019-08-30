@@ -1,0 +1,9 @@
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Release\DataLayer.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Release\DataLayer.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Release\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Release\DomainObjects.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Release\DataLayer.csprojAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Release\DataLayer.csproj.CoreCompileInputs.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Release\DataLayer.csproj.CopyComplete
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Release\DataLayer.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Release\DataLayer.pdb

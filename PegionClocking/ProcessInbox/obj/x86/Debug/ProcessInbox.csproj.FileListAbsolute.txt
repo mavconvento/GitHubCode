@@ -42,3 +42,8 @@ D:\MyProject\MAVC Source Codes\PegionClocking\ProcessInbox\bin\Debug\ProcessInbo
 D:\MyProject\MAVC Source Codes\PegionClocking\ProcessInbox\bin\Debug\ProcessInbox.pdb
 D:\MyProject\MAVC Source Codes\PegionClocking\ProcessInbox\obj\x86\Debug\ProcessInbox.exe
 D:\MyProject\MAVC Source Codes\PegionClocking\ProcessInbox\obj\x86\Debug\ProcessInbox.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\ProcessInbox\bin\Debug\ProcessInbox.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\ProcessInbox\bin\Debug\ProcessInbox.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\ProcessInbox\obj\x86\Debug\ProcessInbox.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\ProcessInbox\obj\x86\Debug\ProcessInbox.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\ProcessInbox\obj\x86\Debug\ProcessInbox.pdb

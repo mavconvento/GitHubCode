@@ -15,5 +15,6 @@ namespace DomainObjects
         public String RFID { get; set; }
         public string RaceCategoryName { get; set; }
         public string RaceCategoryGroupName { get; set; }
+        public String MobileNumber { get; set; }
     }
 }

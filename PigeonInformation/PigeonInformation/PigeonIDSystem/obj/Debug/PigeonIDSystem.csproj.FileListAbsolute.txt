@@ -70,3 +70,5 @@ C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Pi
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\bin\Debug\DomainObjects.pdb
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\bin\Debug\Helper.pdb
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\bin\Debug\DataLayer.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\PigeonIDSystem.frmPrint.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\PigeonIDSystem.frmAssignMobileNumber.resources

@@ -33,7 +33,7 @@ namespace SyncEclock
             {
                 MemberID = pigeonCollection[0];
                 DateRelease = pigeonCollection[1];
-                DataPath = pigeonCollection[2];
+                DataPath = pigeonCollection[2].Trim();
                 GetResult();
 
             }
@@ -41,7 +41,7 @@ namespace SyncEclock
             {
                 ClubName = pigeonCollection[0];
                 DateRelease = pigeonCollection[1];
-                DataPath = pigeonCollection[2];
+                DataPath = pigeonCollection[2].Trim();
                 ReleaseDate = Convert.ToDateTime(pigeonCollection[3]);
                 SyncResultToDatabase();
             }
@@ -49,7 +49,7 @@ namespace SyncEclock
             {
                 ClubName = pigeonCollection[0];
                 DateRelease = pigeonCollection[1];
-                DataPath = pigeonCollection[2];
+                DataPath = pigeonCollection[2].Trim();
                 ReleaseDate = Convert.ToDateTime(pigeonCollection[3]);
                 SyncEntryToDatabase();
             }
@@ -194,6 +194,7 @@ namespace SyncEclock
                             foreach (var entry in entryList)
                             {
                                 string bandedFileName = path + "PigeonDetails\\" + filenameValue[0] + "\\" + entry + ".txt";
+                                string MobileFileName = path + "\\PigeonMobileList\\" + entry + ".txt";
                                 if (File.Exists(bandedFileName))
                                 {
                                     string[] pigeondetails = ReadText.ReadTextFile(bandedFileName);
@@ -206,6 +207,14 @@ namespace SyncEclock
                                     entryObject.RaceCategoryName = pigeondetails[2];
                                     entryObject.RaceCategoryGroupName = "EClock";
                                     entryObject.RFID = entry;
+                                    entryObject.MobileNumber = "";
+
+                                    if (File.Exists(MobileFileName))
+                                    {
+                                        string[] pigeonMobileCollection = ReadText.ReadTextFile(MobileFileName);
+                                        string[] values = pigeonMobileCollection[0].ToString().Split('|');
+                                        entryObject.MobileNumber = values[1].ToString().Trim();
+                                    }
 
                                     DataSet dtResult = new DataSet();
                                     dtResult = entryBll.EclockEntrySave(entryObject);
@@ -284,43 +293,6 @@ namespace SyncEclock
             }
         }
 
-        private static void GetEclockInfo()
-        {
-            try
-            {
-                Eclock eclock = new Eclock();
-                string serialPort = eclock.GetPort();
-                string[] ports = SerialPort.GetPortNames();
-                string commPort = "";
-                foreach (var item in ports)
-                {
-                    if (serialPort.Contains(item)) commPort = item;
-                }
-
-                if (!String.IsNullOrEmpty(commPort))
-                {
-                    bool transmit = false;
-                    while (!transmit)
-                    {
-                        eclock.SendData("$Info$#", commPort);
-                        String inComingData = eclock.ReceiveData(commPort);
-                        if (inComingData != "")
-                        {
-                            PrintData(inComingData, "");
-                            //eclock.SendData("Done" + item + "#", commPort);
-                            transmit = true;
-                        }
-                    }
-                }
-            }
-
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
         private static void GetResult()
         {
             try
@@ -328,21 +300,19 @@ namespace SyncEclock
                 Eclock eclock = new Eclock();
                 string serialPort = eclock.GetPort();
                 string[] ports = SerialPort.GetPortNames();
-                string commPort = "";
+                string comPortNumber = "";
                 foreach (var item in ports)
                 {
-                    if (serialPort.Contains(item)) commPort = item;
+                    if (serialPort.Contains(item)) comPortNumber = item;
                 }
 
-                if (!String.IsNullOrEmpty(commPort))
+
+
+                SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+                if (!String.IsNullOrEmpty(comPortNumber))
                 {
 
-                    //String entryCollection = "12345678|14220397|12345678|12345678|12345678|12345678|12345678|12345678|15212437";
-                    //String[] entryList = entryCollection.Split('|');
-
-                    //string path = ReadText.ReadFilePath("datapath");
-                    //string dateString = this.dateTimePicker1.Value.Year.ToString() + this.dateTimePicker1.Value.Month.ToString().PadLeft(2, '0') + this.dateTimePicker1.Value.Day.ToString().PadLeft(2, '0');
-
+                    DataPath = DataPath.Trim();
                     string entryDirectory = DataPath + "entry\\" + DateRelease;
                     string filepath = entryDirectory + "\\" + MemberID + ".txt";
 
@@ -359,13 +329,16 @@ namespace SyncEclock
                             File.Delete(filepathList);
                         }
 
+                        eclock.SendData("$Stat$", comPort);
+                        System.Threading.Thread.Sleep(1000);
+
                         foreach (var item in entryCollection)
                         {
                             bool transmit = false;
                             while (!transmit)
                             {
-                                eclock.SendData("$Race$" + item + "#", commPort);
-                                String inComingData = eclock.ReceiveData(commPort);
+                                //eclock.SendData(, comPort);
+                                String inComingData = eclock.ReceiveDataResult("$Race$" + item + "#",comPort);
                                 if (inComingData != "")
                                 {
                                     PrintData(inComingData, item);
@@ -374,6 +347,9 @@ namespace SyncEclock
                                 }
                             }
                         }
+
+                        eclock.SendData("$Done$|#", comPort);
+
                     }
 
                 }

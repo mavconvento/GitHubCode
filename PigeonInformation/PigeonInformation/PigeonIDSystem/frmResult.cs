@@ -82,7 +82,7 @@ namespace PigeonIDSystem
             try
             {
                 string path = ReadText.ReadFilePath("datapath");
-                string filepath = path + "members\\" + memberID + ".txt";
+                string filepath = path + "\\members\\" + memberID + ".txt";
 
                 if (File.Exists(filepath))
                 {
@@ -115,8 +115,8 @@ namespace PigeonIDSystem
                 //DataColumn dc2 = new DataColumn();
                 //dc2.ColumnName = "DELETE";
 
-                //DataColumn dc3 = new DataColumn();
-                //dc3.ColumnName = "PigeonID";
+                DataColumn dc2 = new DataColumn();
+                dc2.ColumnName = "SeqID";
 
                 DataColumn dc4 = new DataColumn();
                 dc4.ColumnName = "BandNumber";
@@ -137,7 +137,7 @@ namespace PigeonIDSystem
                 dc3.ColumnName = "Arrival";
 
                 //pigeonList.Columns.Add(dc1);
-                //pigeonList.Columns.Add(dc2);
+                pigeonList.Columns.Add(dc2);
                 
                 pigeonList.Columns.Add(dc4);
                 pigeonList.Columns.Add(dc5);
@@ -152,7 +152,7 @@ namespace PigeonIDSystem
                 //string entryDirectory = path + "entry\\" + dateString;
                 //string filepath = entryDirectory + "\\" + memberid + ".txt";
 
-                string resultDirectory = path + "result\\" + dateString;
+                string resultDirectory = path + "\\result\\" + dateString;
                 string filepath = resultDirectory + "\\" + memberid + ".txt";
 
                 //string filepathList = entryDirectory + "\\" + MemberID + ".txt";
@@ -160,7 +160,7 @@ namespace PigeonIDSystem
                 if (File.Exists(filepath))
                 {
                     string[] entryCollection = ReadText.ReadTextFile(filepath);
-
+                    int counter = 1;
                     foreach (var rfid in entryCollection)
                     {
                         string birdDetailsPath = path + "\\PigeonDetails\\" + memberid + "\\" + rfid + ".txt";
@@ -169,7 +169,7 @@ namespace PigeonIDSystem
                         DataRow dr = pigeonList.NewRow();
                         //dr["EDIT"] = "EDIT";
                         //dr["DELETE"] = "DELETE";
-                        //dr["PigeonID"] = pigeonDetailsCollection[0].ToString();
+                        dr["SeqID"] = counter;
                         dr["BandNumber"] = pigeonDetailsCollection[0].ToString();
                         dr["TagID"] = pigeonDetailsCollection[1].ToString();
                         dr["Category"] = pigeonDetailsCollection[2].ToString();
@@ -185,6 +185,7 @@ namespace PigeonIDSystem
                         }
 
                         pigeonList.Rows.Add(dr);
+                        counter++;
                     }
                 }
 
@@ -254,6 +255,22 @@ namespace PigeonIDSystem
             syncAll.ActionTypeDescription = "Result";
             syncAll.ShowDialog();
             this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)this.dtList.DataSource;
+
+            if (dt.Rows.Count > 0)
+            {
+                frmPrint print = new frmPrint();
+                print.DataForPrint = dt;
+                print.PlayerName = txtName.Text;
+                print.ListType = "Pigeon Result";
+                print.ShowDialog();
+            }
+            
         }
     }
 }

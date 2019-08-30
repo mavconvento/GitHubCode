@@ -1,0 +1,6 @@
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\bin\Release\Helper.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\bin\Release\Helper.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Release\Helper.csproj.CoreCompileInputs.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Release\Helper.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Release\Helper.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Release\Helper.csprojAssemblyReference.cache
