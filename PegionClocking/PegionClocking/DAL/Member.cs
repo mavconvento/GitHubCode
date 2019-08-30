@@ -65,6 +65,60 @@ namespace PegionClocking.DAL
         #endregion
 
         #region Public Methods
+        public DataSet UnregMobileNumber(string ClubID, String mobileNumber, string UserID, string keyword)
+        {
+            try
+            {
+                DAL.Member common = new DAL.Member();
+                return common.WebClockingSave(ClubID, mobileNumber, keyword, "Unreg", UserID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataSet WebClockingSave(String ClubID, String SMSMobileNumber, String Keyword, String Action, string UserID = "", String SMSMobileNumberTo = "")
+        {
+
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("WebClockingSave");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.AddWithValue("@ClubName", ClubID);
+                dbconn.sqlComm.Parameters.AddWithValue("@SMSMobileNumber", SMSMobileNumber);
+                dbconn.sqlComm.Parameters.AddWithValue("@SMSMobileNumberTo", SMSMobileNumberTo);
+                dbconn.sqlComm.Parameters.AddWithValue("@StickerCode", Keyword);
+                dbconn.sqlComm.Parameters.AddWithValue("@Action", Action);
+                dbconn.sqlComm.Parameters.AddWithValue("@UserID", UserID);
+                dbconn.sqlComm.Parameters.AddWithValue("@RequestAction", "Mobile");
+                dbconn.sqlComm.Parameters.AddWithValue("@IsFromPilipinasKalapati", true);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+        }
+
         public DataSet Save()
         {
             try

@@ -23,6 +23,7 @@ namespace PegionClocking.BIZ
         public String EntryID { get; set; }
         public Int64 RaceCategoryGroupID { get; set; }
         public String RaceCategoryGroupName { get; set; }
+        public String EntryList { get; set; }
         #endregion
 
         #region Public Methods

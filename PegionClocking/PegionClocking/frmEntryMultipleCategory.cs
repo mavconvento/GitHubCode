@@ -24,6 +24,9 @@ namespace PegionClocking
         public String MemberID { get; set; }
         public Int64 ClubID { get; set; }
         public String OrigCategory { get; set; }
+        public String EntryList { get; set; }
+        public String BandNumberList { get; set; }
+        public String Action { get; set; }
         #endregion
 
         #region Events
@@ -97,8 +100,23 @@ namespace PegionClocking
         {
             try
             {
-                txtBandNumber.Text = BandNumber;
-                txtStickerCode.Text = StickerCode;
+                if (EntryList != "")
+                {
+                    string[] bandlist = BandNumberList.Split('|');
+                    foreach (string item in bandlist)
+                    {
+                        listBox1.Items.Add(item);
+                        this.listBox1.Visible = true;
+                        this.label2.Visible = false;
+                        this.txtBandNumber.Visible = false;
+                        this.txtStickerCode.Visible = false;
+                    }
+                }
+                else
+                {
+                    txtBandNumber.Text = BandNumber;
+                    txtStickerCode.Text = StickerCode;
+                }
             }
             catch (Exception ex)
             {
@@ -114,6 +132,7 @@ namespace PegionClocking
                 raceCategoryGroup.EntryID = EntryID;
                 raceCategoryGroup.MemberID = MemberID;
                 raceCategoryGroup.RaceCategoryGroupName = this.cmbCategoryList.Text;
+                raceCategoryGroup.EntryList = EntryList;
                 SetCategoryList(raceCategoryGroup.AddEntryCategory());
             }
             catch (Exception ex)
@@ -126,11 +145,13 @@ namespace PegionClocking
         {
             try
             {
+                Action = "REMOVE";
                 raceCategoryGroup = new BIZ.RaceCategoryGroup();
                 raceCategoryGroup.ClubID = ClubID;
                 raceCategoryGroup.EntryID = EntryID;
                 raceCategoryGroup.MemberID = MemberID;
                 raceCategoryGroup.RaceCategoryGroupName = this.cmbCategoryList.Text;
+                raceCategoryGroup.EntryList = EntryList;
                 SetCategoryList(raceCategoryGroup.RemoveEntryCategory());
             }
             catch (Exception ex)
@@ -160,12 +181,26 @@ namespace PegionClocking
         {
             try
             {
-                lstCategory.Items.Clear();
-                cmbCategoryList.Text = "";
-                foreach (DataRow item in dtResult.Tables[0].Rows)
+                if (EntryList != "")
                 {
-                    lstCategory.Items.Add(item["CategoryName"]);
+                    if (lstCategory.Items.IndexOf(cmbCategoryList.Text) > -1)
+                    {
+                        if (Action == "REMOVE")
+                            lstCategory.Items.Remove(cmbCategoryList.Text);
+                        else
+                            lstCategory.Items.Add(cmbCategoryList.Text);
+                    }
                 }
+                else
+                {
+                    lstCategory.Items.Clear();
+                    foreach (DataRow item in dtResult.Tables[0].Rows)
+                    {
+                        lstCategory.Items.Add(item["CategoryName"]);
+                    }
+                }
+
+                cmbCategoryList.Text = "";
             }
             catch (Exception ex)
             {

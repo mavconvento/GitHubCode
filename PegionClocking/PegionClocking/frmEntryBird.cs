@@ -663,10 +663,30 @@ namespace PegionClocking
                         else if ((string)datagrid.CurrentCell.Value.ToString() == " + ")
                         {
                             frmEntryMultipleCategory frmMultiplyCategory = new frmEntryMultipleCategory();
-                            frmMultiplyCategory.BandNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
-                            frmMultiplyCategory.StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
-                            frmMultiplyCategory.EntryID = datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
-                            frmMultiplyCategory.OrigCategory = datagrid.Rows[Convert.ToInt32(index)].Cells[10].Value.ToString();
+                            if (Convert.ToBoolean(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value))
+                            {
+                                string entrylist = "";
+                                string bandlist = "";
+                                foreach (DataGridViewRow item in datagrid.Rows)
+                                {
+                                    if (Convert.ToBoolean(item.Cells[0].Value))
+                                    {
+                                        entrylist = entrylist == "" ? datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString() : entrylist + "|" + datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
+                                        bandlist = bandlist == "" ? datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString() : bandlist + "|" + datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
+                                    }
+                                }
+
+                                frmMultiplyCategory.BandNumberList = bandlist;
+                                frmMultiplyCategory.EntryList = entrylist;
+                            }
+                            else
+                            {
+                                frmMultiplyCategory.BandNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
+                                frmMultiplyCategory.StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
+                                frmMultiplyCategory.EntryID = datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
+                                frmMultiplyCategory.OrigCategory = datagrid.Rows[Convert.ToInt32(index)].Cells[10].Value.ToString();
+                                frmMultiplyCategory.MemberID = txtMemberID.Text;
+                            }
                             frmMultiplyCategory.ClubID = ClubID;
                             frmMultiplyCategory.MemberID = txtMemberID.Text;
                             frmMultiplyCategory.ShowDialog();

@@ -27,6 +27,7 @@ namespace PegionClocking.DAL
         public String EntryID { get; set; }
         public Int64 RaceCategoryGroupID { get; set; }
         public String RaceCategoryGroupName { get; set; }
+        public String EntryList { get; set; }
         #endregion
 
         #region Public Methods
@@ -45,6 +46,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@EntryID", EntryID);
                 dbconn.sqlComm.Parameters.AddWithValue("@MemberID", MemberID);
                 dbconn.sqlComm.Parameters.AddWithValue("@CategoryName", RaceCategoryGroupName);
+                dbconn.sqlComm.Parameters.AddWithValue("EntryList", EntryList);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);
@@ -72,7 +74,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@EntryID", EntryID);
                 dbconn.sqlComm.Parameters.AddWithValue("@MemberID", MemberID);
                 dbconn.sqlComm.Parameters.AddWithValue("@CategoryName", RaceCategoryGroupName);
-
+                dbconn.sqlComm.Parameters.AddWithValue("EntryList", EntryList);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

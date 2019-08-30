@@ -52,6 +52,7 @@ namespace PegionClocking
         public frmMemberDataEntry()
         {
             InitializeComponent();
+            dataGridView1.DoubleClick += new EventHandler(DTMobileNumberList_DoubleClick);
         }
         private void frmMemberDataEntry_Load(object sender, EventArgs e)
         {
@@ -255,10 +256,45 @@ namespace PegionClocking
             RegisterMobileNumber.UserID = UserID;
             RegisterMobileNumber.MemberIDNo = this.txtMemberIDNo.Text;
             RegisterMobileNumber.ShowDialog();
+            GetMobileNumberList();
         }
         #endregion
 
         #region Private Methods
+        private void DTMobileNumberList_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridView datagrid = this.dataGridView1;
+                Int64 index;
+                if (datagrid.RowCount > 0)
+                {
+                    member = new BIZ.Member();
+                    index = datagrid.CurrentRow.Index;
+                    string mobileNo = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
+                    if (mobileNo != "")
+                    {
+                        if ((string)datagrid.CurrentCell.Value.ToString() == "UNREG")
+                        {
+                            if (MessageBox.Show("Do you want to unregister this mobile number?", "Unreg", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            {
+                                DataTable dtResult = member.UnregMobileNumber(ClubID.ToString(), mobileNo, UserID.ToString());
+                                if (dtResult.Rows.Count > 0)
+                                {
+                                    MessageBox.Show(dtResult.Rows[0][0].ToString(), "Unreg");
+                                }
+
+                                GetMobileNumberList();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
+        }
         private void InitializeControl()
         {
             if (IsEdit)
@@ -419,7 +455,7 @@ namespace PegionClocking
                 member.LastRenewalDate = LastRenewalDate;
                 member.DateofExpiration = DateofExpiration;
                 member.DeactivateMember = DeActivatedMember;
-                
+
             }
             catch (Exception ex)
             {
@@ -433,6 +469,21 @@ namespace PegionClocking
                 case Common.Common.ApplyBusinessRules.Save:
 
                     break;
+            }
+        }
+
+        private void GetMobileNumberList()
+        {
+            try
+            {
+                DataTable dtResultSMS = new DataTable();
+                dtResultSMS = member.MemberDetailsSearchByKey().Tables[1];
+                this.dataGridView1.DataSource = dtResultSMS;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
         #endregion

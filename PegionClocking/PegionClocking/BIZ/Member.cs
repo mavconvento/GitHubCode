@@ -103,6 +103,20 @@ namespace PegionClocking.BIZ
         #endregion
 
         #region Public Methods
+        public DataTable UnregMobileNumber(string ClubID, String Mobilenumber, string UserID)
+        {
+            member = new DAL.Member();
+            DataSet dsResult = member.UnregMobileNumber(ClubID, Mobilenumber, UserID, "UNREG");
+            DataTable dtResult = new DataTable();
+
+            if (dsResult.Tables.Count > 0)
+            {
+                dtResult = dsResult.Tables[0];
+            }
+
+            return dtResult;
+        }
+
         public Boolean Save()
         {
             try
