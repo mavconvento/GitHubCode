@@ -42,7 +42,7 @@ namespace PigeonIDSystem
             {
                 //this.txtrfid.Enabled = value;
                 this.txtMemberID.Enabled = value;
-                //this.btnRead.Enabled = value;
+                this.btnSyncTraining.Enabled = value;
                 this.btnSync.Enabled = value;
                 this.dateTimePicker1.Enabled = !value;
             }
@@ -216,7 +216,7 @@ namespace PigeonIDSystem
             sync.ClubName = ClubName;
             sync.MemberID = txtMemberID.Text;
             sync.DateRelease = this.dateTimePicker1.Value;
-            sync.ActionType = "RESULT";
+            sync.ActionType = "RESULTRACE";
             sync.ShowDialog();
 
             GetPigeonList(this.txtMemberID.Text);
@@ -271,6 +271,18 @@ namespace PigeonIDSystem
                 print.ShowDialog();
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmSyncEclock sync = new frmSyncEclock();
+            sync.ClubName = ClubName;
+            sync.MemberID = txtMemberID.Text;
+            sync.DateRelease = this.dateTimePicker1.Value;
+            sync.ActionType = "RESULTTRAINING";
+            sync.ShowDialog();
+
+            GetPigeonList(this.txtMemberID.Text);
         }
     }
 }

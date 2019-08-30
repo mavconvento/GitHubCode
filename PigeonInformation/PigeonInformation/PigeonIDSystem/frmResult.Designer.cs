@@ -50,6 +50,7 @@
             this.bntContinue = new System.Windows.Forms.Button();
             this.bntStop = new System.Windows.Forms.Button();
             this.bntStart = new System.Windows.Forms.Button();
+            this.btnSyncTraining = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,11 +69,11 @@
             // 
             this.btnSync.Enabled = false;
             this.btnSync.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSync.Location = new System.Drawing.Point(140, 550);
+            this.btnSync.Location = new System.Drawing.Point(15, 549);
             this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(120, 23);
+            this.btnSync.Size = new System.Drawing.Size(182, 23);
             this.btnSync.TabIndex = 117;
-            this.btnSync.Text = "SYNC E-CLOCK";
+            this.btnSync.Text = "SYNC E-CLOCK RACE";
             this.btnSync.UseVisualStyleBackColor = true;
             this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
             // 
@@ -128,9 +129,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(295, 549);
+            this.button2.Location = new System.Drawing.Point(415, 520);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 23);
+            this.button2.Size = new System.Drawing.Size(168, 23);
             this.button2.TabIndex = 125;
             this.button2.Text = "PRINT LIST";
             this.button2.UseVisualStyleBackColor = true;
@@ -149,9 +150,9 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(15, 549);
+            this.btnNew.Location = new System.Drawing.Point(15, 520);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(119, 23);
+            this.btnNew.Size = new System.Drawing.Size(182, 23);
             this.btnNew.TabIndex = 116;
             this.btnNew.Text = "NEW MEMBER";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -176,7 +177,7 @@
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtList.Location = new System.Drawing.Point(15, 165);
             this.dtList.Name = "dtList";
-            this.dtList.Size = new System.Drawing.Size(568, 374);
+            this.dtList.Size = new System.Drawing.Size(568, 345);
             this.dtList.TabIndex = 118;
             // 
             // label2
@@ -280,11 +281,24 @@
             this.bntStart.Text = "Start";
             this.bntStart.UseVisualStyleBackColor = true;
             // 
+            // btnSyncTraining
+            // 
+            this.btnSyncTraining.Enabled = false;
+            this.btnSyncTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSyncTraining.Location = new System.Drawing.Point(203, 549);
+            this.btnSyncTraining.Name = "btnSyncTraining";
+            this.btnSyncTraining.Size = new System.Drawing.Size(183, 23);
+            this.btnSyncTraining.TabIndex = 139;
+            this.btnSyncTraining.Text = "SYNC E-CLOCK TRAINING RESULT";
+            this.btnSyncTraining.UseVisualStyleBackColor = true;
+            this.btnSyncTraining.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(602, 584);
+            this.ClientSize = new System.Drawing.Size(596, 584);
+            this.Controls.Add(this.btnSyncTraining);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btnSync);
             this.Controls.Add(this.button3);
@@ -340,5 +354,6 @@
         private System.Windows.Forms.Button bntContinue;
         private System.Windows.Forms.Button bntStop;
         private System.Windows.Forms.Button bntStart;
+        private System.Windows.Forms.Button btnSyncTraining;
     }
 }

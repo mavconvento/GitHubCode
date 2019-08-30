@@ -13,3 +13,4 @@ C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\He
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.dll
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.csprojAssemblyReference.cache

@@ -152,6 +152,7 @@ namespace PegionClocking.BIZ
                 raceCategoryGroup.RaceCategoryGroupName = RaceCategoryGroupName;
                 raceCategoryGroup.EntryID = EntryID;
                 raceCategoryGroup.MemberID = MemberID;
+                raceCategoryGroup.EntryList = EntryList;
             }
             catch (Exception ex)
             {

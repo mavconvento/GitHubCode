@@ -127,13 +127,18 @@ namespace PegionClocking
         {
             try
             {
-                raceCategoryGroup = new BIZ.RaceCategoryGroup();
-                raceCategoryGroup.ClubID = ClubID;
-                raceCategoryGroup.EntryID = EntryID;
-                raceCategoryGroup.MemberID = MemberID;
-                raceCategoryGroup.RaceCategoryGroupName = this.cmbCategoryList.Text;
-                raceCategoryGroup.EntryList = EntryList;
-                SetCategoryList(raceCategoryGroup.AddEntryCategory());
+                if (this.cmbCategoryList.Text != "")
+                {
+                    raceCategoryGroup = new BIZ.RaceCategoryGroup();
+                    raceCategoryGroup.ClubID = ClubID;
+                    raceCategoryGroup.EntryID = EntryID;
+                    raceCategoryGroup.MemberID = MemberID;
+                    raceCategoryGroup.RaceCategoryGroupName = this.cmbCategoryList.Text;
+                    raceCategoryGroup.EntryList = EntryList;
+                    Action = "ADD";
+                    SetCategoryList(raceCategoryGroup.AddEntryCategory());
+                }
+                
             }
             catch (Exception ex)
             {
@@ -145,14 +150,17 @@ namespace PegionClocking
         {
             try
             {
-                Action = "REMOVE";
-                raceCategoryGroup = new BIZ.RaceCategoryGroup();
-                raceCategoryGroup.ClubID = ClubID;
-                raceCategoryGroup.EntryID = EntryID;
-                raceCategoryGroup.MemberID = MemberID;
-                raceCategoryGroup.RaceCategoryGroupName = this.cmbCategoryList.Text;
-                raceCategoryGroup.EntryList = EntryList;
-                SetCategoryList(raceCategoryGroup.RemoveEntryCategory());
+                if (this.cmbCategoryList.Text != "")
+                {
+                    Action = "REMOVE";
+                    raceCategoryGroup = new BIZ.RaceCategoryGroup();
+                    raceCategoryGroup.ClubID = ClubID;
+                    raceCategoryGroup.EntryID = EntryID;
+                    raceCategoryGroup.MemberID = MemberID;
+                    raceCategoryGroup.RaceCategoryGroupName = this.cmbCategoryList.Text;
+                    raceCategoryGroup.EntryList = EntryList;
+                    SetCategoryList(raceCategoryGroup.RemoveEntryCategory());
+                }
             }
             catch (Exception ex)
             {
@@ -185,10 +193,11 @@ namespace PegionClocking
                 {
                     if (lstCategory.Items.IndexOf(cmbCategoryList.Text) > -1)
                     {
-                        if (Action == "REMOVE")
-                            lstCategory.Items.Remove(cmbCategoryList.Text);
-                        else
-                            lstCategory.Items.Add(cmbCategoryList.Text);
+                        if (Action == "REMOVE") lstCategory.Items.Remove(cmbCategoryList.Text); 
+                    }
+                    else
+                    {
+                        if (Action == "ADD") lstCategory.Items.Add(cmbCategoryList.Text);
                     }
                 }
                 else

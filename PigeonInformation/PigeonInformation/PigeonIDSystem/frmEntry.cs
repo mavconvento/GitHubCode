@@ -19,6 +19,7 @@ namespace PigeonIDSystem
         public String ClubName { get; set; }
         public Int64 PigeonID { get; set; }
         public String ActionType { get; set; }
+        public String EntryList { get; set; }
         public frmEntry()
         {
             InitializeComponent();
@@ -245,6 +246,8 @@ namespace PigeonIDSystem
                         dr["Category"] = pigeonDetailsCollection[2].ToString();
                         dr["Color"] = pigeonDetailsCollection[4].ToString();
                         dr["Sex"] = pigeonDetailsCollection[3].ToString();
+
+                        EntryList = EntryList == "" ? pigeonDetailsCollection[1].ToString() : EntryList + "|" + pigeonDetailsCollection[1].ToString();
                         pigeonList.Rows.Add(dr);
                         counter++;
                     }
@@ -275,23 +278,30 @@ namespace PigeonIDSystem
 
             string birdDetailsPath = path + "\\PigeonDetails\\" + txtMemberID.Text + "\\" + txtrfid.Text + ".txt";
 
-            if (File.Exists(birdDetailsPath))
+            if (EntryList != "" && EntryList.Contains(txtrfid.Text))
             {
-                string[] pigeonDetailsCollection = ReadText.ReadTextFile(birdDetailsPath);
-                txtRingNumber.Text = pigeonDetailsCollection[0];
-                txtSex.Text = pigeonDetailsCollection[3];
-                txtColor.Text = pigeonDetailsCollection[4];
-                txtCategory.Text = pigeonDetailsCollection[2];
-                LoadImage(txtrfid.Text, txtMemberID.Text);
-                Save();
+                MessageBox.Show("Bird Already Entry.", "Information");
+                this.txtrfid.Text = "";
             }
             else
             {
-                MessageBox.Show("Bird not found!", "Error");
-                this.txtrfid.Text = "";
-                this.txtrfid.Focus();
+                if (File.Exists(birdDetailsPath))
+                {
+                    string[] pigeonDetailsCollection = ReadText.ReadTextFile(birdDetailsPath);
+                    txtRingNumber.Text = pigeonDetailsCollection[0];
+                    txtSex.Text = pigeonDetailsCollection[3];
+                    txtColor.Text = pigeonDetailsCollection[4];
+                    txtCategory.Text = pigeonDetailsCollection[2];
+                    LoadImage(txtrfid.Text, txtMemberID.Text);
+                    Save();
+                }
+                else
+                {
+                    MessageBox.Show("Bird not found!", "Error");
+                    this.txtrfid.Text = "";
+                    this.txtrfid.Focus();
+                }
             }
-
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -300,6 +310,7 @@ namespace PigeonIDSystem
             {
                 if (this.txtMemberID.Text != "")
                 {
+                    EntryList = "";
                     ControlState(true);
                     GetPigeonList(this.txtMemberID.Text);
                     GetMemberName(this.txtMemberID.Text);

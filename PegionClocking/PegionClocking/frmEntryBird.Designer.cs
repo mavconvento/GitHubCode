@@ -207,7 +207,7 @@ namespace PegionClocking
             this.shapeContainer1.Size = new System.Drawing.Size(893, 579);
             this.shapeContainer1.TabIndex = 9;
             this.shapeContainer1.TabStop = false;
-            this.shapeContainer1.Load += new System.EventHandler(this.shapeContainer1_Load);
+            //this.shapeContainer1.Load += new System.EventHandler(this.shapeContainer1_Load);
             // 
             // lineShape4
             // 
@@ -871,7 +871,6 @@ namespace PegionClocking
             this.dtEntryMemberList.DefaultCellStyle = dataGridViewCellStyle5;
             this.dtEntryMemberList.Location = new System.Drawing.Point(19, 324);
             this.dtEntryMemberList.Name = "dtEntryMemberList";
-            this.dtEntryMemberList.ReadOnly = true;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -879,6 +878,7 @@ namespace PegionClocking
             this.dtEntryMemberList.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtEntryMemberList.Size = new System.Drawing.Size(862, 218);
             this.dtEntryMemberList.TabIndex = 69;
+            //this.dtEntryMemberList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtEntryMemberList_CellContentClick);
             // 
             // lblMemberEntryLabel
             // 

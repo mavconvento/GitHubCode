@@ -29,12 +29,20 @@ namespace SyncEclock
             string[] actionValue = ReadText.ReadTextFile(Actionfilepath);
 
 
-            if (actionValue[0].ToUpper() == "RESULT")
+            if (actionValue[0].ToUpper() == "RESULTRACE")
             {
                 MemberID = pigeonCollection[0];
                 DateRelease = pigeonCollection[1];
                 DataPath = pigeonCollection[2].Trim();
-                GetResult();
+                GetResult("RACE");
+
+            }
+            if (actionValue[0].ToUpper() == "RESULTTRAINING")
+            {
+                MemberID = pigeonCollection[0];
+                DateRelease = pigeonCollection[1];
+                DataPath = pigeonCollection[2].Trim();
+                GetResult("TRAINING");
 
             }
             else if (actionValue[0].ToUpper() == "RESULTDB")
@@ -293,7 +301,7 @@ namespace SyncEclock
             }
         }
 
-        private static void GetResult()
+        private static void GetResult(string action)
         {
             try
             {
@@ -301,12 +309,17 @@ namespace SyncEclock
                 string serialPort = eclock.GetPort();
                 string[] ports = SerialPort.GetPortNames();
                 string comPortNumber = "";
+                string rtype = "";
+
+                if (action == "TRAINING")
+                {
+                    rtype = "T";
+                }
+
                 foreach (var item in ports)
                 {
                     if (serialPort.Contains(item)) comPortNumber = item;
                 }
-
-
 
                 SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
                 if (!String.IsNullOrEmpty(comPortNumber))
@@ -338,7 +351,7 @@ namespace SyncEclock
                             while (!transmit)
                             {
                                 //eclock.SendData(, comPort);
-                                String inComingData = eclock.ReceiveDataResult("$Race$" + item + "#",comPort);
+                                String inComingData = eclock.ReceiveDataResult("$Race$" + rtype + item + "#",comPort);
                                 if (inComingData != "")
                                 {
                                     PrintData(inComingData, item);

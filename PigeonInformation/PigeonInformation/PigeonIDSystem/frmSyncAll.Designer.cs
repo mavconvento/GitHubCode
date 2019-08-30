@@ -65,7 +65,7 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Sync to Database Error Logs";
             // 
-            // ResultSyncAll
+            // frmSyncAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,7 +73,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dtList);
-            this.Name = "ResultSyncAll";
+            this.Name = "frmSyncAll";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sync All";
             this.Load += new System.EventHandler(this.SyncAll_Load);

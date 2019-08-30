@@ -652,11 +652,11 @@ namespace PegionClocking
                     {
                         if ((string)datagrid.CurrentCell.Value.ToString() == "EDIT")
                         {
-                            MemberIDNo = datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value.ToString();
-                            BandID = (Int64)datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value;
-                            RingNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
-                            StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
-                            txtEntryIdentity.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[8].Value);
+                            MemberIDNo = datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value.ToString();
+                            BandID = (Int64)datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value;
+                            RingNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
+                            StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[8].Value.ToString();
+                            txtEntryIdentity.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[9].Value);
                             PopulateControlValue("MemberDataFromGrid");
                             GetMemberDetails();
                         }
@@ -669,22 +669,23 @@ namespace PegionClocking
                                 string bandlist = "";
                                 foreach (DataGridViewRow item in datagrid.Rows)
                                 {
-                                    if (Convert.ToBoolean(item.Cells[0].Value))
+                                    if (Convert.ToBoolean(item.Cells[3].Value))
                                     {
-                                        entrylist = entrylist == "" ? datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString() : entrylist + "|" + datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
-                                        bandlist = bandlist == "" ? datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString() : bandlist + "|" + datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
+                                        entrylist = entrylist == "" ? item.Cells[0].Value.ToString() : entrylist + "|" + item.Cells[0].Value.ToString();
+                                        bandlist = bandlist == "" ? item.Cells[7].Value.ToString() : bandlist + "|" + item.Cells[7].Value.ToString();
                                     }
                                 }
 
+                                frmMultiplyCategory.EntryID = "0";
                                 frmMultiplyCategory.BandNumberList = bandlist;
                                 frmMultiplyCategory.EntryList = entrylist;
                             }
                             else
                             {
-                                frmMultiplyCategory.BandNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value.ToString();
-                                frmMultiplyCategory.StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
+                                frmMultiplyCategory.BandNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
+                                frmMultiplyCategory.StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[8].Value.ToString();
                                 frmMultiplyCategory.EntryID = datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value.ToString();
-                                frmMultiplyCategory.OrigCategory = datagrid.Rows[Convert.ToInt32(index)].Cells[10].Value.ToString();
+                                frmMultiplyCategory.OrigCategory = datagrid.Rows[Convert.ToInt32(index)].Cells[11].Value.ToString();
                                 frmMultiplyCategory.MemberID = txtMemberID.Text;
                             }
                             frmMultiplyCategory.ClubID = ClubID;
@@ -925,9 +926,6 @@ namespace PegionClocking
 
         #endregion
 
-        private void shapeContainer1_Load(object sender, EventArgs e)
-        {
-
-        }
+     
     }
 }

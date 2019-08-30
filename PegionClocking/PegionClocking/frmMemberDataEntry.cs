@@ -476,7 +476,10 @@ namespace PegionClocking
         {
             try
             {
+                member = new BIZ.Member();
                 DataTable dtResultSMS = new DataTable();
+                GetControlValue();
+                PopulateBussinessLayer();
                 dtResultSMS = member.MemberDetailsSearchByKey().Tables[1];
                 this.dataGridView1.DataSource = dtResultSMS;
             }

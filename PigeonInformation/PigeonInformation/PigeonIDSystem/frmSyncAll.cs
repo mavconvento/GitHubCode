@@ -29,6 +29,7 @@ namespace PigeonIDSystem
 
         private void SyncAll_Load(object sender, EventArgs e)
         {
+            ClubName = ClubName.Replace(@"\", "");
             this.label1.Text = ActionTypeDescription + " Sync to Database Error Logs";
             string pathSyncApplication = AppDomain.CurrentDomain.BaseDirectory + "SyncApplication";
             if (ActionType == "ENTRYDB")
@@ -250,7 +251,7 @@ namespace PigeonIDSystem
                         }
                     }
                 }
-                ReadEntryLogs();
+                ReadResultLogs();
             }
             catch (Exception ex)
             {

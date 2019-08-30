@@ -58,9 +58,13 @@ namespace PigeonIDSystem
                 {
                     SyncResultInDatabase();
                 }
-                else if (ActionType == "RESULT")
+                else if (ActionType == "RESULTRACE")
                 {
-                    SyncResult();
+                    SyncResult(ActionType);
+                }
+                else if (ActionType == "RESULTTRAINING")
+                {
+                    SyncResult(ActionType);
                 }
                 else if (ActionType == "CLOCK")
                 {
@@ -87,7 +91,7 @@ namespace PigeonIDSystem
             }
         }
 
-        private void SyncResult()
+        private void SyncResult(string action)
         {
             try
             {
@@ -98,7 +102,7 @@ namespace PigeonIDSystem
                 string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
 
                 string[] args = { MemberID, dateString, ReadText.ReadFilePath("datapath") };
-                string[] actionargs = { "RESULT", "LOCAL" };
+                string[] actionargs = { action, "LOCAL" };
 
                 System.IO.File.WriteAllLines(filepath, args); //pigeondetails
                 System.IO.File.WriteAllLines(Actionfilepath, actionargs); //pigeondetails
