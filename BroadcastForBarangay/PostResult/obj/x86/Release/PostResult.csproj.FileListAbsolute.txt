@@ -1,0 +1,8 @@
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\bin\Release\PostResult.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\bin\Release\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\obj\x86\Release\PostResult.frmPostResult.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\obj\x86\Release\PostResult.Properties.Resources.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\obj\x86\Release\PostResult.csproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\obj\x86\Release\PostResult.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\obj\x86\Release\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PostResult\obj\x86\Release\PostResult.csprojResolveAssemblyReference.cache

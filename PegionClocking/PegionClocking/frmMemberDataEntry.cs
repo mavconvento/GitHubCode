@@ -45,6 +45,7 @@ namespace PegionClocking
         public DataTable RecordSearched { get; set; }
         public DataTable RecordSearchedSMS { get; set; }
         public Boolean IsEdit { get; set; }
+        public Boolean IsDirect { get; set; }
         public Boolean IsDelete { get; set; }
         #endregion
 
@@ -56,6 +57,7 @@ namespace PegionClocking
         }
         private void frmMemberDataEntry_Load(object sender, EventArgs e)
         {
+            IsDirect = false;
             InitializeControl();
             PopulateCombobox();
         }
@@ -251,12 +253,23 @@ namespace PegionClocking
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            IsDirect = true;
+            Save();
+            
             frmRegisterMobileNumber RegisterMobileNumber = new frmRegisterMobileNumber();
             RegisterMobileNumber.ClubID = ClubID;
             RegisterMobileNumber.UserID = UserID;
             RegisterMobileNumber.MemberIDNo = this.txtMemberIDNo.Text;
             RegisterMobileNumber.ShowDialog();
             GetMobileNumberList();
+
+            if (!IsEdit)
+            {
+                ClearControl();
+                this.txtMemberIDNo.Focus();
+            }
+
+            IsDirect = false;
         }
         #endregion
 
@@ -313,7 +326,17 @@ namespace PegionClocking
                 member = new BIZ.Member();
                 GetControlValue();
                 PopulateBussinessLayer();
-                if (member.Save() && !IsEdit) { ClearControl(); this.txtMemberIDNo.Focus(); }
+                var IsSave = member.Save();
+
+                if (IsSave && !IsEdit)
+                {
+                    if (!IsDirect)
+                    {
+                        ClearControl();
+                        this.txtMemberIDNo.Focus();
+                        MessageBox.Show("Member Record Save!", "Record Save");
+                    }
+                }
             }
             catch (Exception ex)
             {

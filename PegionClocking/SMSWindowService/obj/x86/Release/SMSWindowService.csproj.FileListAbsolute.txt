@@ -1,0 +1,8 @@
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\bin\Release\SMSWindowService.exe
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\bin\Release\SMSWindowService.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\bin\Release\SerialPortTester.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\obj\x86\Release\SMSWindowService.ProjectInstaller.resources
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\obj\x86\Release\SMSWindowService.csproj.GenerateResource.Cache
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\obj\x86\Release\SMSWindowService.exe
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\obj\x86\Release\SMSWindowService.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\SMSWindowService\obj\x86\Release\SMSWindowService.csprojResolveAssemblyReference.cache

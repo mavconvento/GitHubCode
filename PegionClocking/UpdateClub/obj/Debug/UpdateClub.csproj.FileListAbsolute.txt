@@ -1,0 +1,10 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\bin\Debug\UpdateClub.exe.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\bin\Debug\UpdateClub.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\bin\Debug\UpdateClub.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\bin\Debug\BusinessImplementation.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\bin\Debug\DataAccess.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\bin\Debug\BusinessImplementation.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\bin\Debug\DataAccess.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\obj\Debug\UpdateClub.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\obj\Debug\UpdateClub.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\UpdateClub\obj\Debug\UpdateClub.pdb

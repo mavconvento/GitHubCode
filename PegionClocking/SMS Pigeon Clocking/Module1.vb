@@ -23,7 +23,7 @@ Module Module1
 
     Sub Main()
         Start()
-        Console.ReadLine()
+        'Console.ReadLine()
     End Sub
 
     Private Sub Start()
@@ -85,9 +85,23 @@ start:
             Console.WriteLine(ex.Message)
             Console.WriteLine("---------------------------")
             Console.WriteLine("Initializing Modem Due To Error")
-            System.Threading.Thread.Sleep(9000)
+            System.Threading.Thread.Sleep(5000)
             IsError = "-1"
-            GoTo start
+
+            If ex.Message.Contains("The system cannot find the file specified") Then
+                Dim a As Process
+                Dim path As String = AppDomain.CurrentDomain.BaseDirectory
+                a = Process.Start(path + "\\SMS Pigeon Clocking.exe")
+            ElseIf (ex.Message.Contains("is in use.")) Then
+                Dim a As Process
+                Dim path As String = AppDomain.CurrentDomain.BaseDirectory
+                a = Process.Start(path + "\\SMS Pigeon Clocking.exe")
+            Else
+                GoTo start
+            End If
+
+            'a.WaitForExit()
+            'GoTo start
         End Try
     End Sub
 
@@ -137,7 +151,7 @@ start:
                             GoTo EXITNOW
                         End If
                     Else
-                        smsTestStatus = TestSender(TestMobileNumber)
+                        smsTestStatus = TestSender(TestMobileNumber, True)
                         If smsTestStatus Then
                             GoTo STARTNOW
                         Else

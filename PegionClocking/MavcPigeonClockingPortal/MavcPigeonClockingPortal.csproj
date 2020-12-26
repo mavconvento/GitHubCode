@@ -400,6 +400,7 @@
     <None Include="Fonts\glyphicons-halflings-regular.ttf" />
     <None Include="Fonts\glyphicons-halflings-regular.woff" />
     <None Include="Fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\mavcpigeon.pubxml" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <None Include="Scripts\ng-table.min.js.map" />
     <Content Include="Views\Main\RaceResult.cshtml" />

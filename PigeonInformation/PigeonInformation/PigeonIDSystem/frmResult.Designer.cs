@@ -108,7 +108,7 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(415, 549);
+            this.button6.Location = new System.Drawing.Point(604, 549);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(168, 23);
             this.button6.TabIndex = 123;
@@ -120,7 +120,7 @@
             // 
             this.lblcount.AutoSize = true;
             this.lblcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcount.Location = new System.Drawing.Point(476, 149);
+            this.lblcount.Location = new System.Drawing.Point(622, 149);
             this.lblcount.Name = "lblcount";
             this.lblcount.Size = new System.Drawing.Size(72, 13);
             this.lblcount.TabIndex = 137;
@@ -129,7 +129,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(415, 520);
+            this.button2.Location = new System.Drawing.Point(604, 520);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(168, 23);
             this.button2.TabIndex = 125;
@@ -177,7 +177,7 @@
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtList.Location = new System.Drawing.Point(15, 165);
             this.dtList.Name = "dtList";
-            this.dtList.Size = new System.Drawing.Size(568, 345);
+            this.dtList.Size = new System.Drawing.Size(757, 345);
             this.dtList.TabIndex = 118;
             // 
             // label2
@@ -297,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 584);
+            this.ClientSize = new System.Drawing.Size(784, 584);
             this.Controls.Add(this.btnSyncTraining);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.btnSync);

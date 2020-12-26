@@ -127,6 +127,12 @@ namespace PigeonIDSystem
                     Directory.CreateDirectory(resultList);
                 }
 
+                string pigeonLogs = path + @"\Logs";
+                if (!Directory.Exists(pigeonLogs))
+                {
+                    Directory.CreateDirectory(pigeonLogs);
+                }
+
             }
             catch (Exception ex)
             {

@@ -209,7 +209,7 @@ namespace MavcPigeonClockingPortal.DAL
             }
         }
 
-        public DataSet GetRaceEntry(String ClubID, String BirdCategory, String RaceCategory, DateTime ReleaseDate, String SearchName,String Sender)
+        public DataSet GetRaceEntry(String ClubID, String BirdCategory, String RaceCategory, DateTime ReleaseDate, String SearchName,String Sender,String Source = "")
         {
             try
             {
@@ -230,6 +230,7 @@ namespace MavcPigeonClockingPortal.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@Name", SearchName);
                 dbconn.sqlComm.Parameters.AddWithValue("@IsFromWeb", 1);
                 dbconn.sqlComm.Parameters.AddWithValue("@Sender", Sender);
+                dbconn.sqlComm.Parameters.AddWithValue("@Source", Source);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;

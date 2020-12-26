@@ -1,0 +1,25 @@
+﻿<systemsetting>
+  <timerInterval>1000</timerInterval>
+  <timeintervalbeforefileprocessing>500</timeintervalbeforefileprocessing>
+  <environment>SMSModemReciever</environment>
+  <processflow>Inbound</processflow>
+  <withencryption>no</withencryption>
+
+  <smssettings>
+    <type>Reciever</type>
+    <modemVersion>2.0</modemVersion>
+    <modemID>Backup 1</modemID>
+    <activationCode></activationCode>
+    <memoryType>ME</memoryType>
+    <messageType>ALL</messageType>
+    <baudRate>115200</baudRate>
+    <portNo>COM8</portNo>
+    <delay>1000</delay>
+    <additionalDelay>0</additionalDelay>
+    <replyDelay>0</replyDelay>
+    <integrationType>1</integrationType> <!-- 1:LocalStorageToWeb 2:WebToLocal -->
+    <applicationStartMode>auto</applicationStartMode>  <!--value must be auto/manual-->
+    <testMobileNumber>09985754822</testMobileNumber> 
+    <autostartdelay>20</autostartdelay> 
+  </smssettings>
+</systemsetting>

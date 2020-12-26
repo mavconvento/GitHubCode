@@ -30,6 +30,7 @@ namespace PegionClocking
         public DateTime DateReleased { get; set; }
         public String StickerCode { get; set; }
         public String PigeonID { get; set; }
+        public String Name { get; set; }
         #endregion
 
         #region "Events"
@@ -148,6 +149,7 @@ namespace PegionClocking
                         raceResult.ReleasedDate = DateReleased;
                         raceResult.RaceCategoryGroupName = RaceCategoryGroupName;
                         raceResult.RaceCategoryName = RaceCategoryName;
+                        raceResult.Name = Name;
                         break;
                 }
             }
@@ -197,6 +199,7 @@ namespace PegionClocking
             DateReleased = this.dateTimePicker1.Value;
             RaceCategoryGroupName = cmbCategoryGroup.Text;
             RaceCategoryName = cmbCategory.Text;
+            Name = this.textBox1.Text;
         }
         private void ClearControl()
         {
@@ -205,6 +208,7 @@ namespace PegionClocking
             lblLap.Text = "";
             lblTotalBirds.Text = "";
             lblTotalSMSCount.Text = "";
+            lblClockingPercentage.Text = "";
         }
         private void ViewResult()
         {
@@ -230,7 +234,7 @@ namespace PegionClocking
                         lblClockingPercentage.Text = "0 %";
                         if (lblTotalBirds.Text != "0" && lblTotalBirds.Text != "" && lblTotalSMSCount.Text != "")
                         {
-                            lblClockingPercentage.Text = Convert.ToString(Convert.ToDecimal(Decimal.Parse(lblTotalSMSCount.Text) / Decimal.Parse(lblTotalBirds.Text) * 100)) + " %";
+                            lblClockingPercentage.Text = Convert.ToString(Math.Round(Convert.ToDecimal(Decimal.Parse(lblTotalSMSCount.Text) / Decimal.Parse(lblTotalBirds.Text) * 100),2)) + " %";
                         }
                         version = dtResult.Tables[0].Rows[0]["Version"].ToString();
                     }

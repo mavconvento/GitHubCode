@@ -45,16 +45,6 @@
     <Compile Include="Member.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\DomainObjects\DomainObjects.csproj">
-      <Project>{abb69ec2-5603-46c1-b2e6-421dcf840e22}</Project>
-      <Name>DomainObjects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\InterfaceFactory\InterfaceFactory.csproj">
-      <Project>{40255a79-37d8-4322-a504-7c58bd92100d}</Project>
-      <Name>InterfaceFactory</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

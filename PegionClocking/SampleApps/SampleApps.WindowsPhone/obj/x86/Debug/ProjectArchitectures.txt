@@ -1,0 +1,1 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\SampleApps\SampleApps.WindowsPhone\SampleApps.WindowsPhone.csproj;x86

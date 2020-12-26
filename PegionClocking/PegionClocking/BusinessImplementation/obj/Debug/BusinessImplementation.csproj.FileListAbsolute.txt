@@ -1,5 +1,5 @@
-C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\BusinessImplementation\obj\Debug\BusinessImplementation.csprojResolveAssemblyReference.cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\BusinessImplementation\bin\Debug\BusinessImplementation.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\BusinessImplementation\bin\Debug\BusinessImplementation.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\BusinessImplementation\obj\Debug\BusinessImplementation.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\BusinessImplementation\obj\Debug\BusinessImplementation.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClocking\BusinessImplementation\obj\Debug\BusinessImplementation.csprojResolveAssemblyReference.cache

@@ -25,6 +25,31 @@ namespace Helper
             }
 
         }
+        public void ResetEclock(String comPortNumber)
+        {
+            SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+            try
+            {
+                //System.Threading.Thread.Sleep(500);
+                string Command = "$ReSt$#";
+
+                comPort.Open();
+                foreach (char item in Command)
+                {
+                    comPort.Write(item.ToString());
+                }
+                comPort.Close();
+                comPort.Dispose();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public void SyncTime(String comPortNumber)
         {
             SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
@@ -123,19 +148,35 @@ namespace Helper
                 {
                     incommingData = comPort.ReadExisting();
                     counter++;
+
                     if (incommingData.Contains("dataend") & incommingData.Contains("datastart"))
                     {
-                        Isread = false;
+                        String[] value = incommingData.Split('|');
+                        int index = 0;
+
+                        foreach (var item in value)
+                        {
+                            if (item == "datastart")
+                            {
+                                string rfid = value[index + 1];
+                                if (rfid.Length >= 5)
+                                {
+                                    Isread = false;
+                                }
+                                break;
+                            }
+                            index++;
+                        }   
                     }
                     else if (counter > 1000000 &&  string.IsNullOrEmpty(incommingData)) 
                     {
                         Isread = false;
                     }
-                    else if (incommingData.Trim().Length > 50)
-                    {
-                        incommingData = "";
-                        Isread = false;
-                    }
+                    //else if (incommingData.Trim().Length > 50)
+                    //{
+                    //    incommingData = "";
+                    //    Isread = false;
+                    //}
                 }
                 comPort.Close();
                 comPort.Dispose();
@@ -144,6 +185,7 @@ namespace Helper
                 {
                     incommingData = "";
                 }
+                
                 return incommingData;
             }
             catch (Exception)
@@ -152,6 +194,8 @@ namespace Helper
                 throw;
             }
         }
+
+
 
         public string ReceiveDataResult(string message,SerialPort comPort)
         {

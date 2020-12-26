@@ -17,5 +17,8 @@
     <additionalDelay>0</additionalDelay>
     <replyDelay>0</replyDelay>
     <integrationType>1</integrationType>
+	<applicationStartMode></applicationStartMode>
+	<testMobileNumber></testMobileNumber>
+	<autostartdelay></autostartdelay>
   </smssettings>
 </systemsetting>

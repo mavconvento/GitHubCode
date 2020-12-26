@@ -125,7 +125,7 @@ namespace PegionClocking.BIZ
                 member = new DAL.Member();
                 PopulateDataLayer();
                 member.Save();
-                MessageBox.Show("Member Record Save!", "Record Save");
+                //MessageBox.Show("Member Record Save!", "Record Save");
                 status = true;
                 return status;
             }

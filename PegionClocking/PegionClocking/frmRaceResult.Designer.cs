@@ -55,14 +55,16 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblClockingPercentage = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(113, 12);
+            this.dateTimePicker1.Location = new System.Drawing.Point(23, 32);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(223, 20);
             this.dateTimePicker1.TabIndex = 0;
             // 
             // label1
@@ -81,7 +83,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(364, 15);
+            this.label2.Location = new System.Drawing.Point(254, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 3;
@@ -91,18 +93,18 @@
             // 
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(435, 11);
+            this.cmbCategory.Location = new System.Drawing.Point(257, 32);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(154, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(224, 21);
             this.cmbCategory.TabIndex = 4;
             // 
             // cmbCategoryGroup
             // 
             this.cmbCategoryGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategoryGroup.FormattingEnabled = true;
-            this.cmbCategoryGroup.Location = new System.Drawing.Point(665, 12);
+            this.cmbCategoryGroup.Location = new System.Drawing.Point(493, 30);
             this.cmbCategoryGroup.Name = "cmbCategoryGroup";
-            this.cmbCategoryGroup.Size = new System.Drawing.Size(168, 21);
+            this.cmbCategoryGroup.Size = new System.Drawing.Size(230, 21);
             this.cmbCategoryGroup.TabIndex = 6;
             // 
             // label3
@@ -110,7 +112,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(617, 15);
+            this.label3.Location = new System.Drawing.Point(490, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 5;
@@ -121,7 +123,7 @@
             this.button1.BackColor = System.Drawing.Color.Teal;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(26, 51);
+            this.button1.Location = new System.Drawing.Point(26, 61);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(967, 27);
             this.button1.TabIndex = 7;
@@ -337,6 +339,24 @@
             this.lblClockingPercentage.TabIndex = 27;
             this.lblClockingPercentage.Text = "Clocking Percentage :";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(766, 31);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(227, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(763, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Search Name :";
+            // 
             // frmRaceResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,6 +364,8 @@
             this.BackgroundImage = global::PegionClocking.Properties.Resources.background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 539);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblClockingPercentage);
             this.Controls.Add(this.button4);
@@ -404,5 +426,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblClockingPercentage;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
     }
 }

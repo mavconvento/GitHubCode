@@ -13,6 +13,7 @@ namespace PigeonProgram
     public partial class PigeonDetails : Form
     {
         #region Properties
+        public String AppsVersion { get; set; }
         public Int64 PigeonID { get; set; }
         public Int64 UserID { get; set; }
         public String TrialVersion { get; set; }
@@ -20,6 +21,9 @@ namespace PigeonProgram
         public String PigeonName { get; set; }
         public Boolean Istrial { get; set; }
         public Boolean WithErrors { get; set; }
+        public Boolean IsAddParent { get; set; }
+        public String AddParentGender { get; set; }
+        public String AddBird { get; set; }
         #endregion
 
 
@@ -34,6 +38,7 @@ namespace PigeonProgram
         {
             try
             {
+                
                 Login();
             }
             catch (Exception ex)
@@ -90,7 +95,7 @@ namespace PigeonProgram
                 {
                     MessageBox.Show("Error has been detected in the form", "Error");
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -110,7 +115,7 @@ namespace PigeonProgram
                     frmLogin login = new frmLogin();
                     login.ShowDialog();
                     UserID = login.UserID;
-                    TrialVersion = login.VERSION;
+                    TrialVersion = login.Version;
                     Istrial = login.Istrial;
 
                     if (UserID == 0)
@@ -123,14 +128,14 @@ namespace PigeonProgram
                 PopulateComboBox();
                 LoadPigeonList();
                 this.Text = "Pigeon Details " + TrialVersion;
-
+                if (TrialVersion == "") this.Text = this.Text + "(Version " + AppsVersion + ")";
 
                 if (BandNumber != "" && BandNumber != null || PigeonID > 0)
                 {
                     GetPigeonDetails();
                     System.Drawing.Size size = new Size();
-                    size.Width = 571;
-                    size.Height = 568;
+                    size.Width = 573;
+                    size.Height = 650;
                     this.Size = size;
                     dtPigeonList.Visible = false;
                     btnClear.Visible = false;
@@ -142,6 +147,30 @@ namespace PigeonProgram
                     this.MaximizeBox = false;
                     this.MinimizeBox = false;
                 }
+                else if (IsAddParent)
+                {
+                    GetPigeonDetails();
+                    System.Drawing.Size size = new Size();
+                    size.Width = 573;
+                    size.Height = 650;
+                    this.Size = size;
+                    dtPigeonList.Visible = false;
+                    this.btnAddCock.Visible = false;
+                    this.btnAddHen.Visible = false;
+                    this.cmbGender.SelectedItem = AddParentGender;
+                    this.cmbPigeonType.SelectedItem = "BREEDER";
+                    this.cmbPigeonType.Enabled = false;
+                    this.cmbGender.Enabled = false;
+                    //btnClear.Visible = false;
+                    //btnSave.Visible = false;
+                    //btnBrowsePicture.Visible = false;
+                    //button5.Visible = false;
+                    //button6.Visible = false;
+                    //button7.Visible = false;
+                    this.MaximizeBox = false;
+                    this.MinimizeBox = false;
+                }
+
             }
             catch (Exception ex)
             {
@@ -203,6 +232,7 @@ namespace PigeonProgram
 
                 //Get All Cock
                 GetAllCockPigeon();
+
             }
             catch (Exception ex)
             {
@@ -253,7 +283,17 @@ namespace PigeonProgram
                 pigeonDetails.Category = cmbRaceCategory.Text.ToUpper();
                 pigeonDetails.ParentCock = cmbParentCock.Text.ToUpper();
                 pigeonDetails.ParentHen = cmbParentHen.Text.ToUpper();
+                pigeonDetails.RFIDTag = txtrfid.Text;
+                Color color = this.txtBackgroundColor.BackColor;
+                pigeonDetails.BackColor = color.A.ToString() + ' ' + color.R + ' ' + color.G + ' ' + color.B; ;
                 pigeonDetails.PigeonDetailsSave();
+
+
+                if (IsAddParent)
+                {
+                    AddBird = txtPigeonName.Text + "|" + txtBandNumber.Text;
+                    this.Close();
+                }
 
                 //set list of Pigeon.
                 LoadPigeonList();
@@ -290,6 +330,8 @@ namespace PigeonProgram
                 txtLine.Text = "";
                 txtOwner.Text = "";
                 txtAchievement.Text = "";
+                txtrfid.Text = "";
+                txtBackgroundColor.BackColor = Color.White;
                 pbPigenPicture.Image = null;
                 checkBox1.Checked = false;
                 dtDateHactchAcquired.Value = DateTime.Now;
@@ -321,7 +363,7 @@ namespace PigeonProgram
                 this.cmbParentHen.Items.Add("");
                 foreach (DataRow item in dtResult.Tables[0].Rows)
                 {
-                    this.cmbParentHen.Items.Add(item["PigeonName"].ToString());
+                    this.cmbParentHen.Items.Add(item["PigeonName"].ToString().ToUpper());
                 }
             }
             catch (Exception ex)
@@ -344,7 +386,7 @@ namespace PigeonProgram
                 this.cmbParentCock.Items.Add("");
                 foreach (DataRow item in dtResult.Tables[0].Rows)
                 {
-                    this.cmbParentCock.Items.Add(item["PigeonName"].ToString());
+                    this.cmbParentCock.Items.Add(item["PigeonName"].ToString().ToUpper());
                 }
             }
             catch (Exception ex)
@@ -405,7 +447,7 @@ namespace PigeonProgram
                 {
                     BIZ.PigeonDetails pigenDetails = new BIZ.PigeonDetails();
                     index = datagrid.CurrentRow.Index;
-                    if ((string)datagrid.CurrentCell.Value.ToString() == "SELECT")
+                    if ((string)datagrid.CurrentCell.Value.ToString() == "EDIT")
                     {
                         PigeonID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
                         if (PigeonID > 0)
@@ -413,6 +455,15 @@ namespace PigeonProgram
                             GetPigeonDetails();
                         }
                     }
+                    if ((string)datagrid.CurrentCell.Value.ToString() == "PEDS")
+                    {
+                        PigeonID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
+                        if (PigeonID > 0)
+                        {
+                            ShowPeds();
+                        }
+                    }
+
                     else if ((string)datagrid.CurrentCell.Value.ToString() == "DELETE")
                     {
                         PigeonID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
@@ -445,6 +496,7 @@ namespace PigeonProgram
                 DataSet dtResult = new DataSet();
                 pigeonDetails.PigeonID = PigeonID;
                 pigeonDetails.BandNumber = BandNumber;
+                pigeonDetails.RFIDTag = txtrfid.Text;
                 dtResult = pigeonDetails.GetPigeonDetails();
 
                 if (dtResult.Tables.Count > 0)
@@ -463,6 +515,16 @@ namespace PigeonProgram
                         dtDateHactchAcquired.Value = (DateTime)dtResult.Tables[0].Rows[0]["HatchDateOrAcquiredDate"];
                         txtOwner.Text = dtResult.Tables[0].Rows[0]["Owner"].ToString().ToUpper();
                         txtLine.Text = dtResult.Tables[0].Rows[0]["Breed"].ToString().ToUpper();
+                        txtrfid.Text = dtResult.Tables[0].Rows[0]["rfidtag"].ToString().ToUpper();
+
+                        string color = dtResult.Tables[0].Rows[0]["BackColor"].ToString();
+
+                        if (!string.IsNullOrEmpty(color))
+                        {
+                            string[] rgb = dtResult.Tables[0].Rows[0]["BackColor"].ToString().Split(' ');
+                            txtBackgroundColor.BackColor = System.Drawing.Color.FromArgb(int.Parse(rgb[0]), int.Parse(rgb[1]), int.Parse(rgb[2]), int.Parse(rgb[3]));
+                        }
+
                         if (dtResult.Tables[0].Rows[0]["ParentCock"].ToString() != "")
                         {
                             cmbParentCock.SelectedItem = dtResult.Tables[0].Rows[0]["ParentCock"].ToString().ToUpper();
@@ -495,6 +557,8 @@ namespace PigeonProgram
                 throw ex;
             }
         }
+
+
         private void DeletePigeonDetails(Int64 PigeonID)
         {
             try
@@ -543,17 +607,21 @@ namespace PigeonProgram
 
         private void button4_Click(object sender, EventArgs e)
         {
+            ShowPeds();
+        }
+
+        private void ShowPeds()
+        {
             if (PigeonID == 0) return;
             Pedigree pedigree = new Pedigree();
             pedigree.PigeonID = PigeonID;
             pedigree.UserID = UserID;
             pedigree.Istrial = Istrial;
 
-            //this.Hide();
+            this.Hide();
             pedigree.ShowDialog();
-            //this.Show();
+            this.Show();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (PigeonID == 0) return;
@@ -631,6 +699,77 @@ namespace PigeonProgram
             {
 
                 MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.txtrfid.Focus();
+                frmReadRFID readRFID = new frmReadRFID();
+                readRFID.ShowDialog();
+                this.txtrfid.Text = readRFID.RFIDTags;
+                if (txtrfid.Text != "" && PigeonID == 0)
+                {
+                    GetPigeonDetails();
+                    ShowPeds();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            ColorDialog color = new ColorDialog();
+            color.ShowDialog();
+            this.txtBackgroundColor.BackColor = color.Color;
+            //this.txtBackgroundColor.Text = color.Color.A.ToString() + ' ' + color.Color.R + ' ' + color.Color.G + ' ' + color.Color.B;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            PigeonProgram.PigeonDetails frmPigeonDetails = new PigeonDetails();
+            //frmPigeonDetails.BandNumber = this.cmbParentHen.Text;
+            frmPigeonDetails.UserID = this.UserID;
+            frmPigeonDetails.IsAddParent = true;
+            frmPigeonDetails.AddParentGender = "HEN";
+
+            this.Hide();
+            frmPigeonDetails.ShowDialog();
+            this.Show();
+
+            //Get All Hen
+            if (frmPigeonDetails.AddBird != "")
+            {
+                GetAllHenPigeon();
+                LoadPigeonList();
+                this.cmbParentHen.SelectedItem = frmPigeonDetails.AddBird.ToUpper();
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            PigeonProgram.PigeonDetails frmPigeonDetails = new PigeonDetails();
+            //frmPigeonDetails.BandNumber = this.cmbParentHen.Text;
+            frmPigeonDetails.UserID = this.UserID;
+            frmPigeonDetails.IsAddParent = true;
+            frmPigeonDetails.AddParentGender = "COCK";
+
+            this.Hide();
+            frmPigeonDetails.ShowDialog();
+            this.Show();
+
+            //Get All Cock
+            if (frmPigeonDetails.AddBird != "")
+            {
+                GetAllCockPigeon();
+                LoadPigeonList();
+                this.cmbParentCock.SelectedItem = frmPigeonDetails.AddBird.ToUpper();
             }
         }
     }

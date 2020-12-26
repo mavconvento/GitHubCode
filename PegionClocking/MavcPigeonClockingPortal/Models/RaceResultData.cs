@@ -19,6 +19,7 @@ namespace MavcPigeonClockingPortal.Models
         public String clubAbbreviation { get; set; }
         public String accessNumber { get; set; }
         public String daysRemaining { get; set; }
+        public String dbName { get; set; }
     }
 
     public class BirdCategoryList
@@ -177,12 +178,12 @@ namespace MavcPigeonClockingPortal.Models
             return dtResult;
         }
 
-        public DataTable GetRaceEntry(String ClubID, String BirdCategory, String RaceCategory, DateTime ReleaseDate, String SearchName, String Sender)
+        public DataTable GetRaceEntry(String ClubID, String BirdCategory, String RaceCategory, DateTime ReleaseDate, String SearchName, String Sender,String Source = "")
         {
             DAL.RaceResult raceResult = new DAL.RaceResult();
             if (string.IsNullOrEmpty(BirdCategory)) BirdCategory = "All";
             if (string.IsNullOrEmpty(RaceCategory)) RaceCategory = "All";
-            DataSet dsResult = raceResult.GetRaceEntry(ClubID, BirdCategory, RaceCategory, ReleaseDate, SearchName, Sender);
+            DataSet dsResult = raceResult.GetRaceEntry(ClubID, BirdCategory, RaceCategory, ReleaseDate, SearchName, Sender, Source);
             DataTable dtResult = new DataTable();
             if (dsResult.Tables.Count > 0)
             {

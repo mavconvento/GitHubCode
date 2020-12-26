@@ -109,7 +109,7 @@ namespace PigeonIDSystem
                 if (item == "datastart")
                 {
                     string rfid = value[index + 1];
-                    if (rfid != "noresult")
+                    if (rfid != "noresult" && rfid != "0")
                     {
                         return rfid;
                     }

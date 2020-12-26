@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
@@ -10,9 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PigeonProgram</RootNamespace>
     <AssemblyName>PigeonProgram</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -38,6 +39,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -47,6 +49,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -70,6 +73,24 @@
     <Compile Include="BIZ\PigeonDetails.cs" />
     <Compile Include="BIZ\User.cs" />
     <Compile Include="Common\Common.cs" />
+    <Compile Include="frmReadRFID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReadRFID.Designer.cs">
+      <DependentUpon>frmReadRFID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedigree5thGenPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedigree5thGenPrint.Designer.cs">
+      <DependentUpon>Pedigree5thGenPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PedigreeVerticalPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PedigreeVerticalPrint.Designer.cs">
+      <DependentUpon>PedigreeVerticalPrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="PedigreePrint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +144,15 @@
     <Compile Include="Treatment.Designer.cs">
       <DependentUpon>Treatment.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmReadRFID.resx">
+      <DependentUpon>frmReadRFID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedigree5thGenPrint.resx">
+      <DependentUpon>Pedigree5thGenPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PedigreeVerticalPrint.resx">
+      <DependentUpon>PedigreeVerticalPrint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PedigreePrint.resx">
       <DependentUpon>PedigreePrint.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +179,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Race Result.resx">
       <DependentUpon>Race Result.cs</DependentUpon>
@@ -156,6 +187,7 @@
     <EmbeddedResource Include="Treatment.resx">
       <DependentUpon>Treatment.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -188,7 +220,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{6ed5aa94-e068-44ce-b7ab-b8398479b034}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

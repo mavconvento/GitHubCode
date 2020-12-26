@@ -100,7 +100,7 @@ namespace PegionClocking
         {
             try
             {
-                if (EntryList != "")
+                if (!String.IsNullOrEmpty(EntryList))
                 {
                     string[] bandlist = BandNumberList.Split('|');
                     foreach (string item in bandlist)
@@ -116,6 +116,7 @@ namespace PegionClocking
                 {
                     txtBandNumber.Text = BandNumber;
                     txtStickerCode.Text = StickerCode;
+                    this.listBox1.Visible = false;
                 }
             }
             catch (Exception ex)

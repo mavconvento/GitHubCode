@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using PigeonProgram.Common;
 
 namespace PigeonProgram
 {
@@ -59,20 +60,66 @@ namespace PigeonProgram
                     {
                         LoadPicture(pictureBox1, (byte[])dtresult.Tables[0].Rows[0]["Picture"]);
                         txtRoot.Text = dtresult.Tables[0].Rows[0]["Root"].ToString();
+
+                        string color = dtresult.Tables[0].Rows[0]["BackColor"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtRoot);
+
                         txtFirstLevelCock.Text = dtresult.Tables[0].Rows[0]["FirstLevelCock"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorFirstLevelCock"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtFirstLevelCock);
+
                         txtFirstLevelHen.Text = dtresult.Tables[0].Rows[0]["FirstLevelHen"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorFirstLevelHen"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtFirstLevelHen);
+
                         txtSecondLevelCock1.Text = dtresult.Tables[0].Rows[0]["SecondLevelCock1"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorSecondLevelCock1"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtSecondLevelCock1);
+
                         txtSecondLevelHen1.Text = dtresult.Tables[0].Rows[0]["SecondLevelHen1"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorSecondLevelHen1"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtSecondLevelHen1);
+                        
                         txtSecondLevelCock2.Text = dtresult.Tables[0].Rows[0]["SecondLevelCock2"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorSecondLevelCock2"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtSecondLevelCock2);
+
                         txtSecondLevelHen2.Text = dtresult.Tables[0].Rows[0]["SecondLevelHen2"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorSecondLevelHen2"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtSecondLevelHen2);
+
                         txtThirdLevelCock1.Text = dtresult.Tables[0].Rows[0]["ThirdLevelCock1"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelCock1"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelCock1);
+
                         txtThirdLevelCock2.Text = dtresult.Tables[0].Rows[0]["ThirdLevelCock2"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelCock2"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelCock2);
+
                         txtThirdLevelCock3.Text = dtresult.Tables[0].Rows[0]["ThirdLevelCock3"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelCock3"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelCock3);
+
                         txtThirdLevelCock4.Text = dtresult.Tables[0].Rows[0]["ThirdLevelCock4"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelCock4"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelCock4);
+
                         txtThirdLevelHen1.Text = dtresult.Tables[0].Rows[0]["ThirdLevelHen1"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelHen1"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelHen1);
+
                         txtThirdLevelHen2.Text = dtresult.Tables[0].Rows[0]["ThirdLevelHen2"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelHen2"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelHen2);
+
                         txtThirdLevelHen3.Text = dtresult.Tables[0].Rows[0]["ThirdLevelHen3"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelHen3"].ToString();
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelHen3);
+
                         txtThirdLevelHen4.Text = dtresult.Tables[0].Rows[0]["ThirdLevelHen4"].ToString();
+                        color = dtresult.Tables[0].Rows[0]["ColorThirdLevelHen4"].ToString(); 
+                        if (!string.IsNullOrEmpty(color)) Common.Common.SetBackColor(color, txtThirdLevelHen4);
+
                     }
                 }
 
@@ -83,6 +130,13 @@ namespace PigeonProgram
                 throw ex;
             }
         }
+
+        //private void SetBackColor(string color, TextBox txtbox)
+        //{
+        //    string[] rgb = color.Split(' ');
+        //    txtbox.BackColor = System.Drawing.Color.FromArgb(int.Parse(rgb[0]), int.Parse(rgb[1]), int.Parse(rgb[2]), int.Parse(rgb[3]));
+        //}
+
         private void LoadPicture(PictureBox pbPigeon, byte[] images)
         {
             try
@@ -244,12 +298,44 @@ namespace PigeonProgram
             try
             {
                 if (PigeonID == 0) return;
-                PedigreePrint pedigree = new PedigreePrint();
-                pedigree.PigeonID = PigeonID;
-                pedigree.UserID = UserID;
-                //this.Hide();
-                pedigree.ShowDialog();
-                //this.Show();
+
+                PrinterSetup printer = new PrinterSetup();
+                printer.UserID = UserID;
+                printer.ShowDialog();
+
+                this.Hide();
+                if (printer.IsFourthGen)
+                {
+                    Pedigree5thGenPrint pedigree = new Pedigree5thGenPrint();
+                    pedigree.PedigreeSetup = printer.PedigreeSetup;
+                    pedigree.BackgroundImages = printer.BackgroundImages;
+                    pedigree.PigeonID = PigeonID;
+                    pedigree.UserID = UserID;
+                    pedigree.IsShowOwnerDetails = printer.IsShowOwnerDetails;
+                    pedigree.ShowDialog();
+                }
+                else if (printer.IsHorizontal)
+                {
+                    PedigreePrint pedigree = new PedigreePrint();
+                    pedigree.PedigreeSetup = printer.PedigreeSetup;
+                    pedigree.BackgroundImages = printer.BackgroundImages;
+                    pedigree.PigeonID = PigeonID;
+                    pedigree.UserID = UserID;
+                    pedigree.IsShowOwnerDetails = printer.IsShowOwnerDetails;
+                    pedigree.ShowDialog();
+                }
+                else
+                {
+                    PedigreeVerticalPrint pedigree = new PedigreeVerticalPrint();
+                    pedigree.PedigreeSetup = printer.PedigreeSetup;
+                    pedigree.BackgroundImages = printer.BackgroundImages;
+                    pedigree.PigeonID = PigeonID;
+                    pedigree.UserID = UserID;
+                    pedigree.IsShowOwnerDetails = printer.IsShowOwnerDetails;
+                    pedigree.ShowDialog();
+                }
+                
+                this.Show();
             }
             catch (Exception ex)
             {
@@ -258,5 +344,9 @@ namespace PigeonProgram
             }
         }
 
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

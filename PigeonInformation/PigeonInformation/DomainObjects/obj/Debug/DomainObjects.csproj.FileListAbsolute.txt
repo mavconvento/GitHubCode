@@ -1,11 +1,10 @@
-C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.dll
-C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.pdb
-C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csproj.CoreCompileInputs.cache
-C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.dll
-C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.pdb
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.dll
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.pdb
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csprojResolveAssemblyReference.cache
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.dll
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.pdb
-C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csprojAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.pdb
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csproj.CoreCompileInputs.cache
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.dll
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.pdb

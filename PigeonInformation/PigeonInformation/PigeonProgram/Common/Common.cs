@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PigeonProgram.Common
 {
-    class Common
+    public static class Common
     {
         private const string cryptoKey = "cryptoKey";
 
@@ -49,6 +50,11 @@ namespace PigeonProgram.Common
                 throw;
             }
             return result;
+        }
+        public static void SetBackColor(string color, TextBox txtbox)
+        {
+            string[] rgb = color.Split(' ');
+            txtbox.BackColor = System.Drawing.Color.FromArgb(int.Parse(rgb[0]), int.Parse(rgb[1]), int.Parse(rgb[2]), int.Parse(rgb[3]));
         }
         public static String CustomError(string message)
         {

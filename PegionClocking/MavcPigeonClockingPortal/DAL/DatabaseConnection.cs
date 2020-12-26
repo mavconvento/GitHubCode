@@ -97,8 +97,9 @@ namespace MavcPigeonClockingPortal.DAL
         {
             try
             {
-                string connstr = "Address=204.93.160.206;database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
-                sqlConn=new SqlConnection();
+                //string connstr = "Address=204.93.160.206;database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
+                string connstr = "Address=198.38.94.72;database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
+                sqlConn =new SqlConnection();
                 sqlComm=new SqlCommand();
                 //this.ReadConnecntionStringFile(type);
                 //if (Common.Global.ClubNameConnection != "" && !Common.Global.IsMainDatabase) databasename = "pigeonclocking" + Common.Global.ClubNameConnection;
@@ -106,7 +107,8 @@ namespace MavcPigeonClockingPortal.DAL
                 {
                     DAL.Common common = new Common();
                     string dbName = common.GetDBName(type) ;
-                    connstr = "Address=204.93.160.206;database=pigeonclocking_" + dbName + ";user id=sa;pwd=06242009";
+                    //connstr = "Address=204.93.160.206;database=pigeonclocking_" + dbName + ";user id=sa;pwd=06242009";
+                    connstr = "Address=198.38.94.72;database=pigeonclocking_" + dbName + ";user id=sa;pwd=06242009";
                 }
                 sqlConn.ConnectionString = connstr;
                 sqlComm.Connection = sqlConn;

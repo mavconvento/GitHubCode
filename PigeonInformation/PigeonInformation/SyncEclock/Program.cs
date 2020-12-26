@@ -94,7 +94,7 @@ namespace SyncEclock
                             string[] memberid = filename[filename.Length - 1].Split('.');
 
                             //result is value is RFID
-                            foreach (var result in resultList) 
+                            foreach (var result in resultList)
                             {
                                 string resultFileName = resultDirectory + "\\" + memberid[0] + "\\" + result + ".txt";
                                 if (File.Exists(resultFileName))
@@ -120,8 +120,10 @@ namespace SyncEclock
                                         {
                                             String Remarks = dtResult.Tables[0].Rows[0]["Remarks"].ToString();
 
-                                            if (Remarks.ToUpper() != "SUCCESS")
+                                            if (!Remarks.ToUpper().Contains("SUCCESS"))
                                             {
+                                                //string[] rdetails = Remarks.Split('|');
+
                                                 String LogContents = memberid[0] + "|" + result + "|" + resultdetails[3] + "|" + Remarks + "|";
 
                                                 Console.WriteLine("----------------");
@@ -148,12 +150,41 @@ namespace SyncEclock
                                             }
                                             else
                                             {
+
+                                                string[] rdetails = Remarks.Split('|');
+
+                                                //String LogContents = memberid[0] + "|" + result + "|" + resultdetails[3] + "|" + Remarks + "|";
+
                                                 Console.WriteLine("----------------");
                                                 Console.WriteLine(memberid[0]);
                                                 Console.WriteLine(result);
                                                 Console.WriteLine(resultdetails[0]);
-                                                Console.WriteLine(Remarks);
+                                                Console.WriteLine(rdetails[1]); //distance
+                                                Console.WriteLine(rdetails[2]); //flight
+                                                Console.WriteLine(rdetails[3]); //speed
+                                                Console.WriteLine(rdetails[0]); //remarks
                                                 Console.WriteLine("----------------");
+
+
+                                                if (File.Exists(resultFileName))
+                                                {
+                                                    string[] resultdetail = new string[] {rdetails[2], rdetails[3]};
+                                                    resultdetails = resultdetails.Concat(resultdetail).Distinct().ToArray();
+
+                                                    //string[] datacol = { MemberID, item, value[1], value[2], value[3] };
+                                                    System.IO.File.WriteAllLines(resultFileName, resultdetails); //memberpigeonlist
+
+                                                    //using (StreamWriter sw = File.AppendText(resultFileName))
+                                                    //{
+                                                    //    sw.WriteLine(rdetails[2]);
+                                                    //}
+
+                                                    //using (StreamWriter sw = File.AppendText(resultFileName))
+                                                    //{
+                                                    //    sw.WriteLine(rdetails[3]);
+                                                    //}
+                                                }
+
                                             }
                                         }
                                     }
@@ -351,7 +382,7 @@ namespace SyncEclock
                             while (!transmit)
                             {
                                 //eclock.SendData(, comPort);
-                                String inComingData = eclock.ReceiveDataResult("$Race$" + rtype + item + "#",comPort);
+                                String inComingData = eclock.ReceiveDataResult("$Race$" + rtype + item + "#", comPort);
                                 if (inComingData != "")
                                 {
                                     PrintData(inComingData, item);

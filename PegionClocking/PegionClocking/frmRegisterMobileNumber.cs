@@ -30,6 +30,7 @@ namespace PegionClocking
         private void frmRegisterMobileNumber_Load(object sender, EventArgs e)
         {
             this.txtPinNumber.Text = MemberIDNo;
+            this.txtMobileNumber.Focus();
             Common.Global.IsMainDatabase = false;
         }
 

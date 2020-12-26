@@ -57,7 +57,77 @@ namespace MavcPigeonClockingPortal.DAL
 
         }
 
+        public DataSet LoadBalance(String userID)
+        {
+            try
+            {
+
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("GetCheckLoadBalance");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.AddWithValue("@MobileNumber",userID);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+
+        }
+
         public DataSet ResetPassword(ForgotPasswordData mForgotPasswordData)
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("ForgotPassword");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.Parameters.AddWithValue("@MobileNumber", mForgotPasswordData.MobileNumber);
+                dbconn.sqlComm.Parameters.AddWithValue("@Password", mForgotPasswordData.Password);
+                dbconn.sqlComm.Parameters.AddWithValue("@ActionType", mForgotPasswordData.ActionType);
+                dbconn.sqlComm.Parameters.AddWithValue("@SecurityCode", mForgotPasswordData.SecurityCode);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+        }
+
+        public DataSet ChangePassword(ForgotPasswordData mForgotPasswordData)
         {
             try
             {

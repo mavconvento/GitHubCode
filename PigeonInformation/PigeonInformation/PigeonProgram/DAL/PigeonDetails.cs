@@ -58,6 +58,8 @@ namespace PigeonProgram.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@ParentHen", PigeonDetail.ParentHen);
                 dbconn.sqlComm.Parameters.AddWithValue("@TypeOfBreeding", PigeonDetail.TypeofBreeding);
                 dbconn.sqlComm.Parameters.AddWithValue("@PigeonType", PigeonDetail.PigeonType);
+                dbconn.sqlComm.Parameters.AddWithValue("@RfidTag", PigeonDetail.RFIDTag);
+                dbconn.sqlComm.Parameters.AddWithValue("@BackColor", PigeonDetail.BackColor);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
@@ -166,6 +168,7 @@ namespace PigeonProgram.DAL
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@PigeonID", PigeonDetail.PigeonID);
                 dbconn.sqlComm.Parameters.AddWithValue("@BandNumber", PigeonDetail.BandNumber);
+                dbconn.sqlComm.Parameters.AddWithValue("@RfidTag", PigeonDetail.RFIDTag);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
@@ -217,6 +220,7 @@ namespace PigeonProgram.DAL
                 dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@PigeonID", PigeonDetail.PigeonID);
+                dbconn.sqlComm.Parameters.AddWithValue("@IsFourthGen", PigeonDetail.IsFourthGen);
 
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;

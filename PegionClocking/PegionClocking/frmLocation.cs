@@ -37,6 +37,7 @@ namespace PegionClocking
 
         public DataTable RecordSearched { get; set; }
         public Boolean IsEdit { get; set; }
+        public Boolean IsCallFromOtherPage { get; set; }
         #endregion
 
         #region Events
@@ -50,10 +51,30 @@ namespace PegionClocking
             ClearControl();
             PopulateCombobox();
             LocationSelectAll();
+
+            if (LocationID > 0)
+            {
+                DataTable dtresult = new DataTable();
+                dtresult = LocationGet();
+                if (dtresult.Rows.Count > 0)
+                {
+                    this.txtLocationName.Enabled = false;
+                    this.cmbRegion.Enabled = false;
+                    this.button2.Enabled = false;
+                    this.button3.Enabled = false;
+                    RecordSearched = dtresult;
+                    PopulateControl();
+                }
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
             Save();
+
+            if (IsCallFromOtherPage)
+            {
+                this.Close();
+            }
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -130,9 +151,9 @@ namespace PegionClocking
                     LocationID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value);
                     if (LocationID > 0)
                     {
-                        DataTable dtresult = new DataTable();
-                        PopulateBussinessLayer(Common.Common.Location.Location);
-                        dtresult = location.LocationSearchByKey();
+                        DataTable dtresult = LocationGet();
+                        //PopulateBussinessLayer(Common.Common.Location.Location);
+                        //dtresult = location.LocationSearchByKey();
 
                         if (dtresult.Rows.Count > 0)
                         {
@@ -151,6 +172,13 @@ namespace PegionClocking
             {
                 MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
             }
+        }
+
+        private DataTable LocationGet()
+        {
+            DataTable dtresult = new DataTable();
+            PopulateBussinessLayer(Common.Common.Location.Location);
+            return location.LocationSearchByKey();
         }
         private void LocationDelete()
         {

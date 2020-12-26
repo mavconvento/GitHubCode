@@ -12,15 +12,15 @@ namespace PigeonProgram.DAL
     {
         #region Constants
         private const string cryptoKey = "cryptoKey";
+        private const string SERVERNAME = "198.38.94.72";
+        private const string DATABASENAME = "PigeonManagement";
+        private const string USERNAME = "sa";
+        private const string PASSWORD = "06242009";
         #endregion
 
         #region Variables
         public SqlConnection sqlConn;
         public SqlCommand sqlComm;
-        string servername = "";
-        string databasename = "";
-        string username = "";
-        string password = "";
         #endregion
 
         #region Private Methods
@@ -63,32 +63,32 @@ namespace PigeonProgram.DAL
             }
             return result;
         }
-        private void ReadConnecntionStringFile()
-        {
-            try
-            {
-                string sysDir = "";
-                string connectionString = "";
-                sysDir = AppDomain.CurrentDomain.BaseDirectory;
-                connectionString = sysDir + "\\ConnectionString.inf";
+        //private void ReadConnecntionStringFile()
+        //{
+        //    try
+        //    {
+        //        string sysDir = "";
+        //        string connectionString = "";
+        //        sysDir = AppDomain.CurrentDomain.BaseDirectory;
+        //        connectionString = sysDir + "\\ConnectionString.inf";
 
-                if (File.Exists(connectionString))
-                {
-                    TextReader tr = new StreamReader(connectionString);
-                    using (tr)
-                    {
-                        servername = Decrypt(tr.ReadLine());
-                        databasename = Decrypt(tr.ReadLine());
-                        username = Decrypt(tr.ReadLine());
-                        password = Decrypt(tr.ReadLine());
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
+        //        if (File.Exists(connectionString))
+        //        {
+        //            TextReader tr = new StreamReader(connectionString);
+        //            using (tr)
+        //            {
+        //                servername = Decrypt(tr.ReadLine());
+        //                databasename = Decrypt(tr.ReadLine());
+        //                username = Decrypt(tr.ReadLine());
+        //                password = Decrypt(tr.ReadLine());
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
         #endregion
 
         #region Public Methods
@@ -98,8 +98,8 @@ namespace PigeonProgram.DAL
             {
                 sqlConn=new SqlConnection();
                 sqlComm=new SqlCommand();
-                this.ReadConnecntionStringFile();
-                sqlConn.ConnectionString = "Address=" + servername + ";database=" + databasename + ";user id=" + username + ";pwd=" + password;
+                //this.ReadConnecntionStringFile();
+                sqlConn.ConnectionString = "Address=" + SERVERNAME + ";database=" + DATABASENAME + ";user id=" + USERNAME + ";pwd=" + PASSWORD;
                 sqlComm.Connection = sqlConn;
                 sqlComm.CommandText = procName;
                 sqlComm.CommandType = System.Data.CommandType.StoredProcedure;

@@ -60,11 +60,11 @@ namespace PigeonIDSystem
                 {
                     index = datagrid.CurrentRow.Index;
                     //PigeonID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
-                    BandNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
-                    RFID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
-                    string Category = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
-                    string Sex = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value);
-                    string Color = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                    BandNumber = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
+                    RFID = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
+                    string Category = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value);
+                    string Sex = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value);
+                    string Color = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value);
 
                     if (BandNumber != "")
                     {
@@ -235,21 +235,26 @@ namespace PigeonIDSystem
                     foreach (var rfid in entryCollection)
                     {
                         string birdDetailsPath = path + "\\PigeonDetails\\" + memberid + "\\" + rfid + ".txt";
-                        string[] pigeonDetailsCollection = ReadText.ReadTextFile(birdDetailsPath);
 
-                        DataRow dr = pigeonList.NewRow();
-                        //dr["EDIT"] = "EDIT";
-                        dr["DELETE"] = "DELETE";
-                        dr["SeqID"] = counter;
-                        dr["BandNumber"] = pigeonDetailsCollection[0].ToString();
-                        dr["TagID"] = pigeonDetailsCollection[1].ToString();
-                        dr["Category"] = pigeonDetailsCollection[2].ToString();
-                        dr["Color"] = pigeonDetailsCollection[4].ToString();
-                        dr["Sex"] = pigeonDetailsCollection[3].ToString();
+                        if (File.Exists(birdDetailsPath))
+                        {
+                            string[] pigeonDetailsCollection = ReadText.ReadTextFile(birdDetailsPath);
 
-                        EntryList = EntryList == "" ? pigeonDetailsCollection[1].ToString() : EntryList + "|" + pigeonDetailsCollection[1].ToString();
-                        pigeonList.Rows.Add(dr);
-                        counter++;
+                            DataRow dr = pigeonList.NewRow();
+                            //dr["EDIT"] = "EDIT";
+                            dr["DELETE"] = "DELETE";
+                            dr["SeqID"] = counter;
+                            dr["BandNumber"] = pigeonDetailsCollection[0].ToString();
+                            dr["TagID"] = pigeonDetailsCollection[1].ToString();
+                            dr["Category"] = pigeonDetailsCollection[2].ToString();
+                            dr["Color"] = pigeonDetailsCollection[4].ToString();
+                            dr["Sex"] = pigeonDetailsCollection[3].ToString();
+
+                            EntryList = EntryList == "" ? pigeonDetailsCollection[1].ToString() : EntryList + "|" + pigeonDetailsCollection[1].ToString();
+                            pigeonList.Rows.Add(dr);
+                            counter++;
+                        }
+                        
                     }
                 }
 
@@ -443,10 +448,10 @@ namespace PigeonIDSystem
 
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 
@@ -564,6 +569,46 @@ namespace PigeonIDSystem
                 print.ShowDialog();
             }
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string memberID = this.txtMemberID.Text;
+                string path = ReadText.ReadFilePath("datapath");
+                string filepath = path + "\\PigeonList\\" + memberID + ".txt";
+
+                string[] pigeonlist = GetPigeonForEntry(filepath);
+                string[] entryCol = { };
+                if (pigeonlist.Count() > 0)
+                {
+                    foreach (var item in pigeonlist)
+                    {
+                        string[] pigeonDetails = item.Split('|');
+                        string[] entry = { pigeonDetails[2] };
+
+                        entryCol = entryCol.Concat(entry).Distinct().ToArray();
+                    }
+
+                    string dateString = this.dateTimePicker1.Value.Year.ToString() + this.dateTimePicker1.Value.Month.ToString().PadLeft(2, '0') + this.dateTimePicker1.Value.Day.ToString().PadLeft(2, '0');
+                    string entryDirectory = path + "\\entry\\" + dateString;
+                    string entryfilepath = entryDirectory + "\\" + memberID + ".txt";
+
+                    System.IO.File.WriteAllLines(entryfilepath, entryCol); //entrylist
+                    GetPigeonList(this.txtMemberID.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private string[] GetPigeonForEntry(string path)
+        {
+            return ReadText.ReadTextFile(path);
         }
     }
 }

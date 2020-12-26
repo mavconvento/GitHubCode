@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -43,13 +44,40 @@ namespace PigeonIDSystem
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            Common.GetClub();
+           string club = Common.GetClub();
+
+            if (club != "")
+            {
+                this.Text = "Menu (" + club.ToUpper().Replace(@"\","") + ")";
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             frmSetClub clubform = new frmSetClub();
             clubform.ShowDialog();
+
+            string club = Common.GetClub();
+
+            if (club != "")
+            {
+                this.Text = "Menu (" + club.ToUpper().Replace(@"\", "") + ")";
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //DataTable dt = new DataTable();
+            //dt = (DataTable)this.dtList.DataSource;
+
+            frmSyncEclock sync = new frmSyncEclock();
+            //sync.DataList = dt;
+            //sync.ClubName = ClubName;
+            //sync.DataStartIndex = ;
+            //sync.DataEndtIndex = dt.Rows.Count;
+            sync.ActionType = "UPLOADPROGRAM";
+            sync.ShowDialog();
+
         }
     }
 }

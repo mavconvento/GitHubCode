@@ -1,0 +1,20 @@
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\DLL Class.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\DLL Class.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\DLL Class.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Release\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.Contacts.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.FrmAutoReply.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.Main.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.Resources.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.vbproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Release\PegionClockingSMS.pdb

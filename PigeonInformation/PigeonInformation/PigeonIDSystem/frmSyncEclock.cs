@@ -66,6 +66,31 @@ namespace PigeonIDSystem
                 {
                     SyncResult(ActionType);
                 }
+                else if (ActionType == "UPLOADPROGRAM")
+                {
+                    string path = AppDomain.CurrentDomain.BaseDirectory + "ProgramLoader";
+                    var process = Process.Start(path + "\\ConsoleApp1.exe");
+                    process.WaitForExit();
+                    var exitCode = process.ExitCode;
+                    this.Close();
+                }
+                else if (ActionType == "RESET")
+                {
+                    Eclock eclock = new Eclock();
+                    string serialPort = eclock.GetPort();
+                    string[] ports = SerialPort.GetPortNames();
+                    string commPort = "";
+                    foreach (var item in ports)
+                    {
+                        if (serialPort.Contains(item)) commPort = item;
+                    }
+
+                    if (commPort != "")
+                    {
+                        eclock.SyncTime(commPort);
+                    }
+                    this.Close();
+                }
                 else if (ActionType == "CLOCK")
                 {
                     Eclock eclock = new Eclock();
@@ -220,7 +245,7 @@ namespace PigeonIDSystem
                                         item["TagID"].ToString() + "|" +
                                         item["Category"].ToString() + "|" +
                                         item["Color"].ToString() + "|" +
-                                        item["Sex"].ToString().Substring(0, 1) + (mobileNumber != "" ?  "|" + mobileNumber + "|#" : "|#");
+                                        item["Sex"].ToString().Substring(0, 1) + (mobileNumber != "" ? "|" + mobileNumber + "|#" : "|#");
 
                         eclock.SendData(bandedData, commPort);
                         this.txtCount.Text = counter.ToString();
@@ -316,7 +341,6 @@ namespace PigeonIDSystem
 
         private void SyncEclock_Load(object sender, EventArgs e)
         {
-            ClubName = ClubName.Replace(@"\", "");
 
             Eclock eclock = new Eclock();
             string serialPort = eclock.GetPort();

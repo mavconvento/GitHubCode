@@ -72,3 +72,9 @@ C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Pi
 C:\Users\mavc\Documents\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\bin\Debug\DataLayer.pdb
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\PigeonIDSystem.frmPrint.resources
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\PigeonIDSystem.frmAssignMobileNumber.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\PigeonIDSystem.frmRegisterRFID.resources
+C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\bin\Debug\PrinterUtility.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\bin\Debug\NewWinFormCsharpWebCam.exe.config
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\PigeonIDSystem.csproj.ResolveComReference.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\NewWinFormCsharpWebCam.exe
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\PigeonIDSystem\obj\Debug\NewWinFormCsharpWebCam.pdb

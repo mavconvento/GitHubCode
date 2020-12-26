@@ -1,0 +1,14 @@
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SMSSendingQue.exe.config
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SMSSendingQue.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SMSSendingQue.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\DLL Class.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\DLL Class.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\DLL Class.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\bin\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\obj\Debug\SMSSendingQue.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\obj\Debug\SMSSendingQue.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSSendingQue\obj\Debug\SMSSendingQue.pdb

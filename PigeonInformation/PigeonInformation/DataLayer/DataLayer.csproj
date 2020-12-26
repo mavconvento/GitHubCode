@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="EntryDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -29,6 +29,7 @@ namespace PegionClocking.DAL
         public String StickerCode { get; set; }
         public String Arrival { get; set; }
         public String PigeonID { get; set; }
+        public String Name { get; set; }
         #endregion
 
         #region Public Methods
@@ -47,6 +48,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", DateRelease.Date);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceCategory", RaceCategoryName);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceCategoryGroup", RaceCategoryGroupName);
+                dbconn.sqlComm.Parameters.AddWithValue("@Name", Name);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

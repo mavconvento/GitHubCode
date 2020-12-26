@@ -1,0 +1,5 @@
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\bin\Release\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\bin\Release\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\obj\Release\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\obj\Release\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\obj\Release\SerialPortTester.csprojResolveAssemblyReference.cache

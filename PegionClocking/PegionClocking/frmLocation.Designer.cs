@@ -83,8 +83,9 @@
             this.groupBox1.Controls.Add(this.label19);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label20);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 98);
+            this.groupBox1.Location = new System.Drawing.Point(15, 102);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(328, 99);
             this.groupBox1.TabIndex = 2;
@@ -131,10 +132,10 @@
             // 
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(29, 30);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(22, 30);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(51, 13);
+            this.label21.Size = new System.Drawing.Size(61, 13);
             this.label21.TabIndex = 42;
             this.label21.Text = "Latitude :";
             // 
@@ -142,10 +143,10 @@
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(19, 57);
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(12, 57);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(60, 13);
+            this.label22.Size = new System.Drawing.Size(71, 13);
             this.label22.TabIndex = 43;
             this.label22.Text = "Longitude :";
             // 
@@ -255,24 +256,25 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(100, 13);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Location Name";
+            this.label1.Text = "Location Name :";
             // 
             // txtLocationName
             // 
-            this.txtLocationName.Location = new System.Drawing.Point(98, 39);
+            this.txtLocationName.Location = new System.Drawing.Point(115, 39);
             this.txtLocationName.MaxLength = 15;
             this.txtLocationName.Name = "txtLocationName";
-            this.txtLocationName.Size = new System.Drawing.Size(242, 20);
+            this.txtLocationName.Size = new System.Drawing.Size(229, 20);
             this.txtLocationName.TabIndex = 1;
             // 
             // txtLocationID
             // 
             this.txtLocationID.BackColor = System.Drawing.Color.White;
-            this.txtLocationID.Location = new System.Drawing.Point(98, 13);
+            this.txtLocationID.Location = new System.Drawing.Point(115, 12);
             this.txtLocationID.Name = "txtLocationID";
             this.txtLocationID.ReadOnly = true;
             this.txtLocationID.Size = new System.Drawing.Size(100, 20);
@@ -284,11 +286,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(13, 16);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(36, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
+            this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 49;
-            this.label2.Text = "LocationID";
+            this.label2.Text = "LocationID :";
             this.label2.Visible = false;
             // 
             // button1
@@ -373,17 +376,17 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(356, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 55;
-            this.label3.Text = "Location List";
+            this.label3.Text = "Location List :";
             // 
             // cmbRegion
             // 
             this.cmbRegion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbRegion.FormattingEnabled = true;
-            this.cmbRegion.Location = new System.Drawing.Point(98, 71);
+            this.cmbRegion.Location = new System.Drawing.Point(115, 68);
             this.cmbRegion.Name = "cmbRegion";
-            this.cmbRegion.Size = new System.Drawing.Size(197, 21);
+            this.cmbRegion.Size = new System.Drawing.Size(229, 21);
             this.cmbRegion.Sorted = true;
             this.cmbRegion.TabIndex = 2;
             // 
@@ -391,17 +394,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(13, 71);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(22, 71);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
+            this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 57;
-            this.label4.Text = "Region Name";
+            this.label4.Text = "Region Name :";
             // 
             // frmLocation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PegionClocking.Properties.Resources.background2;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(885, 255);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbRegion);

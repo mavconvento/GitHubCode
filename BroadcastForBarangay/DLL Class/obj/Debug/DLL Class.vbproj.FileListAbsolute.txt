@@ -1,0 +1,16 @@
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Debug\DLL Class.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Debug\DLL_Class.Resources.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Debug\DLL Class.vbproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Debug\DLL Class.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\DLL Class.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\DLL Class.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\DLL Class.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\PostResult.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Debug\DLL Class.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Debug\DLL Class.pdb

@@ -12,6 +12,7 @@ namespace PigeonProgram
     public partial class frmLogin : Form
     {
         #region Constants
+        const string VERSION = "4.3";
         #endregion
 
         #region Variable
@@ -22,11 +23,12 @@ namespace PigeonProgram
         public Int64 ClubID { get; set; }
         public Int64 UserID { get; set; }
         public Boolean Istrial { get; set; }
+        public Boolean IsExpired { get; set; }
         public Boolean IsAdmin { get; set; }
         public String UserName { get; set; }
         public String Password { get; set; }
         public String ClubName { get; set; }
-        public String VERSION { get; set; }
+        public String Version { get; set; }
         #endregion
 
         #region Events
@@ -37,6 +39,7 @@ namespace PigeonProgram
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            this.Text = "MAVC Peds Management (Version " + VERSION + ")";
             //Common.Global.ClubNameConnection = "";
         }
 
@@ -110,6 +113,7 @@ namespace PigeonProgram
             try
             {
                 GetControlValue();
+                UserID = 0;
                 if (UserName.ToUpper() == "ADMINISTRATOR" && Password == "04212016mavc")
                 {
                     UserID = 9000;
@@ -126,20 +130,33 @@ namespace PigeonProgram
                     if (dtResult.Rows.Count > 0)
                     {
                         UserID = Convert.ToInt64(dtResult.Rows[0]["UserID"]);
-                        VERSION = Convert.ToString(dtResult.Rows[0]["Version"]);
+                        Version = Convert.ToString(dtResult.Rows[0]["Version"]);
                         Istrial = Convert.ToBoolean(dtResult.Rows[0]["IsTrial"]);
                     }
                     else
                     {
                         MessageBox.Show("Invalid Username or Password");
+                        return;
                     }
 
-                    if (VERSION == "Expired")
+                    if (Version == "Expired")
                     {
-                        MessageBox.Show("Trial Period Expired");
+                        MessageBox.Show("Period Expired");
+                        return;
                     }
                 }
-                if (UserID > 0) this.Close();
+
+                if (UserID > 0)
+                {
+                    PigeonDetails pd = new PigeonDetails();
+                    this.Hide();
+                    pd.UserID = UserID;
+                    pd.Istrial = Istrial;
+                    pd.TrialVersion = this.Version;
+                    pd.AppsVersion = VERSION;
+                    pd.ShowDialog();
+                    this.Close();
+                };
             }
             catch (Exception ex)
             {

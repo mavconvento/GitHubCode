@@ -1,0 +1,335 @@
+﻿@{
+    ViewBag.Title = "Sponsor and Pigeon Products";
+}
+<div ng-controller="HomePigeonProductsController">
+    <div style="width: 100%;">
+        <table style="width: 600px;">
+            <tr>
+                <td style="margin: 0px; padding: 0px;">
+                    <div style="width: 100%;">
+                        <h2>
+                            Pigeon Products and Sponsor</h2>
+                    </div>
+                </td>
+                <td class="homeheader">
+                    <div class="loginmenu" ng-init="MainMenuItems" style="float: right; margin-top: 30px;
+                        margin-right: 8px; width: 100%">
+                        <ul style="color: Aqua">
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Home()" style="color: Aqua;">Home</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="OurProducts()" style="color: Aqua;">Our Products</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ContactUs()" style="color: Aqua;">Contact Us</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="Tutorials()" style="color: Aqua;">Tutorials</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="TextFormat()" style="color: Aqua;">Text Formats</span></a> |</li>
+                            <li class="hover"><a href="#" style="padding: 0; margin: 0" class="customheader"><span
+                                ng-click="ApplicationForm()" style="color: Aqua;">Application Form</span></a> |
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <hr style="padding: 0px; margin: 0px" />
+                </td>
+            </tr>
+        </table>
+        <table class="pigeonproducts" style="margin-top: 20px; width:500px !important;">
+            @*Ferry Probiotic*@
+            <tr>
+                <td style="padding-bottom: 10px; margin-bottom: 10px; width:500px !important;">
+                    <table>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <img src="~/Images/Products/FerryProbiotic/LogoFerryProbiotic.jpg" style="width: 100px;
+                                                height: 30px; padding-right: 10px;" />
+                                        </td>
+                                        <td>
+                                            <h4>
+                                                Ferry's Probiotics</h4>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td style="vertical-align: top; width:40%">
+                                            <img src="~/Images/Products/FerryProbiotic/FerryProbiotic.jpg" />
+                                            <br />
+                                            Ferry's Probiotic<br />
+                                            Price : 200.00 (500ml)
+                                        </td>
+                                        <td style="padding-left: 10px; width:500px;">
+                                            <p>
+                                                <b>"Formulated for pigeons. Organic healthy food. 100% Organic."</b><br />
+                                                <br />
+                                                Ferry's probiotics- are healthy bacteria which feeds on the bad unhealthy bacteria
+                                                in the intestine...
+                                                <br />
+                                                .For good health
+                                                <br />
+                                                .Better digestion
+                                                <br />
+                                                .For good plumage
+                                                <br />
+                                                .Enhance appetite
+                                                <br />
+                                                .Better performance
+                                                <br />
+                                                <br />
+                                                fortified with good bacteria "milk kefir"
+                                                <br />
+                                                directions for use:
+                                                <br />
+                                                1spoon per litter of water (Non-chlorinated) after bacterial and deworming: 10days
+                                                straight (morning only)
+                                                <br />
+                                                breeding: 3times a week
+                                                <br />
+                                                training and derby: 1 or 2 times a week (tuesday and thursday)
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            @*TRI-M Product Section*@
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <img src="~/Images/Products/trimlogo.png" style="width: 100px; height: 30px;
+                                                padding-right: 10px;" />
+                                        </td>
+                                        <td>
+                                            <h4>
+                                                TRI-M HOBB Options</h4>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/FastCharger.jpg" />
+                                            <br />
+                                            Fast Charger<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/GIDigest.jpg" />
+                                            <br />
+                                            G.I Digest<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/CureGold.jpg" />
+                                            <br />
+                                            Cure Gold<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/ChelatedMinerals.jpg" />
+                                            <br />
+                                            Chelated Minerals<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/GIGuard.jpg" />
+                                            <br />
+                                            G.I. Guard<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/InOut.jpg" />
+                                            <br />
+                                            In Out<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/KanCure.jpg" />
+                                            <br />
+                                            Kan Cure<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/Nutri2big.jpg" />
+                                            <br />
+                                            Nutri 2big<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/OmegaStar.jpg" />
+                                            <br />
+                                            Omega Start<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/PowerYeast.jpg" />
+                                            <br />
+                                            Power Yeast<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-top:10px;">
+                                <table>
+                                    <tr>
+                                        <td class="pigeonproduct">
+                                            <img style="width: 140px; height: 150px;" src="~/Images/Products/TRIMProducts/SalmoAID.jpg" />
+                                            <br />
+                                            Salmo AID<br />
+                                            Price :
+                                        </td>
+                                        <td style="padding-left: 10px">
+                                            <p>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/AngularController/HomePigeonProductsController1.1.js"></script>
+}

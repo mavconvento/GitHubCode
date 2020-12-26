@@ -158,22 +158,23 @@ Public Class SMSComponents
                 DELAY(delayValue)
                 SMSPort.DiscardInBuffer()
                 DELAY(delayValue)
-                If MessageType = "REC READ" Or MessageType = "ALL" Then
-                    SMSPort.WriteLine("AT+CMGL=""REC READ""" & vbCrLf)
+
+                'If MessageType = "REC READ" Or MessageType = "ALL" Then
+                SMSPort.WriteLine("AT+CMGL=""REC READ""" & vbCrLf)
+                DELAY(delayValue + 6)
+                message = SMSPort.ReadExisting
+                DELAY(delayValue)
+                'End If
+
+                'If MessageType = "REC UNREAD" Or MessageType = "ALL" Then
+                If Not message.Contains("+CMGL:") Then
+                    SMSPort.DiscardInBuffer()
+                    DELAY(delayValue)
+                    SMSPort.WriteLine("AT+CMGL=""ALL""" & vbCrLf)
                     DELAY(delayValue + 6)
                     message = SMSPort.ReadExisting
                     DELAY(delayValue)
-                End If
-
-                If MessageType = "REC UNREAD" Or MessageType = "ALL" Then
-                    If Not message.Contains("+CMGL:") Then
-                        SMSPort.DiscardInBuffer()
-                        DELAY(delayValue)
-                        SMSPort.WriteLine("AT+CMGL=""REC UNREAD""" & vbCrLf)
-                        DELAY(delayValue + 6)
-                        message = SMSPort.ReadExisting
-                        DELAY(delayValue)
-                    End If
+                    'End If
                 End If
                 SMSPort.WriteTimeout = 30
                 'DELAY(4)

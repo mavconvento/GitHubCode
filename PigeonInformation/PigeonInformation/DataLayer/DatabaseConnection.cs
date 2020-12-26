@@ -14,7 +14,7 @@ namespace DataLayer
         #region Constants
         //production
         private const string cryptoKey = "cryptoKey";
-        private const string SERVERNAME = "204.93.160.206";
+        private const string SERVERNAME = "198.38.94.72";
         private const string DATABASENAME = "pigeon_mavcpigeonclocking";
         private const string USERNAME = "sa";
         private const string PASSWORD = "06242009";

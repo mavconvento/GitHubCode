@@ -15,7 +15,7 @@ namespace PigeonProgram
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PedigreePrint());
+            Application.Run(new frmLogin());
         }
     }
 }

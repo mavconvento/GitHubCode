@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PrinterUtility, Version=1.0.2.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\PrinterUtility.1.2.0\lib\PrinterUtility.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -72,6 +75,12 @@
     </Compile>
     <Compile Include="frmPrint.Designer.cs">
       <DependentUpon>frmPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegisterRFID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegisterRFID.Designer.cs">
+      <DependentUpon>frmRegisterRFID.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSyncAll.cs">
       <SubType>Form</SubType>
@@ -138,6 +147,9 @@
     <EmbeddedResource Include="frmPrint.resx">
       <DependentUpon>frmPrint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRegisterRFID.resx">
+      <DependentUpon>frmRegisterRFID.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSyncAll.resx">
       <DependentUpon>frmSyncAll.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +184,7 @@
     <EmbeddedResource Include="frmSyncEclock.resx">
       <DependentUpon>frmSyncEclock.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

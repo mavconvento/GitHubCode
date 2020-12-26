@@ -28,6 +28,7 @@ namespace PegionClocking.BIZ
         public String StickerCode { get; set; }
         public String Arrival { get; set; }
         public String PigeonID { get; set; }
+        public  String Name { get; set; }
         #endregion
 
         #region Public Methods
@@ -138,6 +139,7 @@ namespace PegionClocking.BIZ
                 raceResult.StickerCode = StickerCode;
                 raceResult.Arrival = Arrival;
                 raceResult.PigeonID = PigeonID;
+                raceResult.Name = Name;
             }
             catch (Exception ex)
             {

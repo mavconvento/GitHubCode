@@ -97,7 +97,7 @@ namespace DataAccess
                 }
                 else
                 {
-                    servername = "204.93.160.206";
+                    servername = "198.38.94.72";
                     databasename = "pigeon_mavcpigeonclocking";
                     username = "sa";
                     password = "06242009";
@@ -125,6 +125,7 @@ namespace DataAccess
                 sqlComm.Connection = sqlConn;
                 sqlComm.CommandText = procName;
                 sqlComm.CommandType = System.Data.CommandType.StoredProcedure;
+
             }
             catch (Exception ex)
             {

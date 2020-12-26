@@ -1,0 +1,19 @@
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SerialPortTester\bin\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SerialPortTester\bin\Debug\SerialPortTester.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SerialPortTester\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SerialPortTester\bin\Debug\SerialPortTester.dll
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SerialPortTester\bin\Debug\SerialPortTester.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SerialPortTester\obj\Debug\ResolveAssemblyReference.cache
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.dll
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\bin\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\bin\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\obj\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SerialPortTester\obj\Debug\SerialPortTester.pdb

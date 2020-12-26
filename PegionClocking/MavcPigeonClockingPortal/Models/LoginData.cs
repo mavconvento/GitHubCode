@@ -48,7 +48,28 @@ namespace MavcPigeonClockingPortal.Models
          
         }
 
+        public DataSet GetLoadBalance(String userID)
+        {
+            try
+            {
+                DAL.Login login = new Login();
+                return login.LoadBalance(userID);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public DataSet ForgotPassword(ForgotPasswordData resetPasswordData)
+        {
+            DAL.Login login = new Login();
+            return login.ResetPassword(resetPasswordData);
+        }
+
+        public DataSet ChangePassword(ForgotPasswordData resetPasswordData)
         {
             DAL.Login login = new Login();
             return login.ResetPassword(resetPasswordData);

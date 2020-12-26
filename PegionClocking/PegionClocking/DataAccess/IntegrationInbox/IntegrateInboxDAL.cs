@@ -227,5 +227,69 @@ namespace DataAccess.IntegrationInbox
                 throw ex;
             }
         }
+
+        private string UpdateClub(string dbSource, string smscontent)
+        {
+            try
+            {
+                string clubName = "";
+                DataSet dtResult = new DataSet();
+                dbconn = new DatabaseConnection(dbSource);
+
+                if (Common.GetConnStringTypeSource() == "local") //for club backup storage
+                {
+                    clubName = Common.DBName();
+                }
+                else
+                {
+                    dbconn.DatabaseConn("GetClubPilipinasKalapati");
+                    if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                    dbconn.sqlConn.Open();
+                    dbconn.sqlComm.CommandTimeout = 0;
+                    dbconn.sqlComm.Parameters.Clear();
+                    dbconn.sqlComm.Parameters.AddWithValue("@SMSContent", smscontent);
+                    dbconn.sqlComm.Parameters.Add("@ClubName", SqlDbType.VarChar, 5000).Direction = ParameterDirection.Output;
+                    dbconn.sqlComm.ExecuteNonQuery();
+                    clubName = Convert.ToString(dbconn.sqlComm.Parameters["@ClubName"].Value);
+                    dbconn.sqlConn.Close();
+                }
+                return clubName;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private DataSet GetClubForUpdate(string dbSource, string smscontent)
+        {
+            try
+            {
+
+                DataSet dtResult = new DataSet();
+                dbconn = new DatabaseConnection(dbSource);
+
+                dbconn.DatabaseConn("GetClubPilipinasKalapati");
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.Parameters.AddWithValue("@SMSContent", smscontent);
+                dbconn.sqlComm.Parameters.Add("@ClubName", SqlDbType.VarChar, 5000).Direction = ParameterDirection.Output;
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dtResult);
+                dbconn.sqlConn.Close();
+
+                return dtResult;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

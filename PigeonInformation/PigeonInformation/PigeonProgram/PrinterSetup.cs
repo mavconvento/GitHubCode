@@ -17,7 +17,9 @@ namespace PigeonProgram
         public Int64 UserID { get; set; }
         public DataSet PedigreeSetup { get; set; }
         public String BackgroundImages { get; set; }
-
+        public Boolean IsHorizontal { get; set; }
+        public bool IsFourthGen { get; set; }
+        public bool IsShowOwnerDetails { get; set; }
         public PrinterSetup()
         {
             InitializeComponent();
@@ -118,17 +120,26 @@ namespace PigeonProgram
         {
             try
             {
+                IsHorizontal = true;
                 BIZ.User blluser = new BIZ.User();
                 blluser.Name = txtName.Text;
                 blluser.LoftName = txtLoftName.Text;
                 blluser.Address = txtAddress.Text;
                 blluser.ContactNumber = txtContactNumber.Text;
-                blluser.Resolution = Convert.ToInt64(txtresolution.Text);
-                blluser.ResolutionY = Convert.ToInt64(txtResolutionY.Text);
+                blluser.Resolution = int.Parse(txtresolution.Text);
+                blluser.ResolutionY = int.Parse(txtResolutionY.Text);
                 blluser.Logo = Common.Common.GetImage(this.pbLogo);
                 blluser.BackgroundImages = txtbackground.Text;
                 this.BackgroundImages = txtbackground.Text;
                 PedigreeSetup = blluser.PedigreeSetup(UserID);
+                this.IsFourthGen = this.checkBox1.Checked;
+                this.IsShowOwnerDetails = this.checkBox2.Checked;
+
+                if (radioButton2.Checked)
+                {
+                    IsHorizontal = false;
+                }
+
 
             }
             catch (Exception ex)
@@ -189,6 +200,24 @@ namespace PigeonProgram
 
                 MessageBox.Show(ex.Message, "Error");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            GetColor();
+        }
+
+        private string GetColor()
+        {
+            string colors = "";
+            ColorDialog color = new ColorDialog();
+            color.ShowDialog();
+            colors = color.Color.Name.ToString();
+            return colors;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
         }
     }
 }

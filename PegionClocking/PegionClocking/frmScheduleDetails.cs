@@ -482,5 +482,16 @@ namespace PegionClocking
                 this.groupBox2.Enabled = false;
             }
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            frmLocation location = new frmLocation();
+            location.ClubID = ClubID;
+            location.UserID = UserID;
+            location.LocationID = Convert.ToInt64(this.txtLocationID.Text);
+            location.Width = 365;
+            location.IsCallFromOtherPage = true;
+            location.ShowDialog();
+        }
     }
 }

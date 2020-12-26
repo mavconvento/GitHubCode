@@ -663,7 +663,7 @@ namespace PegionClocking
                         else if ((string)datagrid.CurrentCell.Value.ToString() == " + ")
                         {
                             frmEntryMultipleCategory frmMultiplyCategory = new frmEntryMultipleCategory();
-                            if (Convert.ToBoolean(datagrid.Rows[Convert.ToInt32(index)].Cells[0].Value))
+                            if (Convert.ToBoolean(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value))
                             {
                                 string entrylist = "";
                                 string bandlist = "";
@@ -805,6 +805,7 @@ namespace PegionClocking
         {
             try
             {
+                cmbGroupCategory.Items.Clear();
                 cmbRaceCategory.Items.Clear();
                 raceCategory = new BIZ.RaceCategory();
                 PopulateBusinessLayer(Common.Common.RaceEntryClassType.RaceCategory);

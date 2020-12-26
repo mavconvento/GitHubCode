@@ -1,0 +1,16 @@
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\DLL Class.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\DLL Class.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\DLL Class.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\PostResult.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\bin\Release\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Release\DLL Class.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Release\DLL_Class.Resources.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Release\DLL Class.vbproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Release\DLL Class.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Release\DLL Class.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\DLL Class\obj\Release\DLL Class.pdb

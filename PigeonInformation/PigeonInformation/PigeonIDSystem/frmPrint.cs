@@ -51,8 +51,6 @@ namespace PigeonIDSystem
             {
             }
 
-            verdana10Font = new Font("Verdana", 10);
-
             PrintLayout();
             // Initially select the source code file.
             string file_path = AppDomain.CurrentDomain.BaseDirectory + "print.txt";
@@ -79,9 +77,9 @@ namespace PigeonIDSystem
             dataPrint.Add(count);
             dataPrint.Add("Date: " + DateTime.Today.ToLongDateString());
             dataPrint.Add(Environment.NewLine);
-            dataPrint.Add("-------------------------------------------------------------------------------------");
+            dataPrint.Add("------------------------------------------------------------------");
             dataPrint.Add(title);
-            dataPrint.Add("-------------------------------------------------------------------------------------");
+            dataPrint.Add("------------------------------------------------------------------");
             foreach (DataRow item in DataForPrint.Rows)
             {
                 string line = "";
@@ -92,8 +90,8 @@ namespace PigeonIDSystem
                         line = line == "" ? item[col.ColumnName].ToString().ToUpper() : line + " | " + item[col.ColumnName].ToString().ToUpper();
                     }
                 }
-                dataPrint.Add("-------------------------------------------------------------------------------------");
-                line = line + Environment.NewLine;
+                dataPrint.Add("------------------------------------------------------------------");
+                //line = line + Environment.NewLine;
                 dataPrint.Add(line);
             }
 
@@ -168,21 +166,28 @@ namespace PigeonIDSystem
             //Create a StreamReader object  
             reader = new StreamReader(filename);
 
+            verdana10Font = new Font("Verdana", 10);
+
             // Display the print preview dialog.
-            ppdTextFile.ShowDialog();
+            pdocTextFile.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            pdocTextFile.DefaultPageSettings.Landscape = false;
+            //pdocTextFile.DefaultPageSettings.Margins.Left
+            pdocTextFile.Print();
+
+            reader.Close();
+            this.Close();
         }
 
 
-        private void pdocTextFile_PrintPage_1(object sender, PrintPageEventArgs e)
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            //Get the Graphics object  
             Graphics g = e.Graphics;
             float linesPerPage = 0;
             float yPos = 0;
             int count = 0;
             //Read margins from PrintPageEventArgs  
-            float leftMargin = e.MarginBounds.Left;
-            float topMargin = e.MarginBounds.Top;
+            float leftMargin = e.MarginBounds.Left - 50;
+            float topMargin = e.MarginBounds.Top - 50;
             string line = null;
             //Calculate the lines per page on the basis of the height of the page and the height of the font  
             linesPerPage = e.MarginBounds.Height / verdana10Font.GetHeight(g);
@@ -194,7 +199,6 @@ namespace PigeonIDSystem
                 //Draw text  
                 g.DrawString(line, verdana10Font, Brushes.Black, leftMargin, yPos, new StringFormat());
                 //Move to next line  
-
                 count++;
             }
             //If PrintPageEventArgs has more pages to print  

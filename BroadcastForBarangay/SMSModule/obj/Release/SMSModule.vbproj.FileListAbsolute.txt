@@ -1,0 +1,11 @@
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\bin\Release\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\bin\Release\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\bin\Release\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\bin\Release\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\bin\Release\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\obj\Release\SMSModule.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\obj\Release\SMSModule.Resources.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\obj\Release\SMSModule.vbproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\obj\Release\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\obj\Release\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\SMSModule\obj\Release\SMSModule.pdb

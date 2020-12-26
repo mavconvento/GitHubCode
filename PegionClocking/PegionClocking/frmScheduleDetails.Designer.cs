@@ -102,6 +102,7 @@
             this.cmbMinute = new System.Windows.Forms.ComboBox();
             this.cmbHour = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -111,6 +112,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.cmbLongSign);
             this.groupBox1.Controls.Add(this.txtDistanceLatDegree);
             this.groupBox1.Controls.Add(this.txtDistanceLongSeconds);
@@ -129,9 +131,9 @@
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(15, 139);
+            this.groupBox1.Location = new System.Drawing.Point(19, 128);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 87);
+            this.groupBox1.Size = new System.Drawing.Size(375, 105);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Coordinates";
@@ -140,7 +142,7 @@
             // 
             this.cmbLongSign.Enabled = false;
             this.cmbLongSign.FormattingEnabled = true;
-            this.cmbLongSign.Location = new System.Drawing.Point(293, 56);
+            this.cmbLongSign.Location = new System.Drawing.Point(287, 45);
             this.cmbLongSign.Name = "cmbLongSign";
             this.cmbLongSign.Size = new System.Drawing.Size(51, 21);
             this.cmbLongSign.Sorted = true;
@@ -149,7 +151,7 @@
             // txtDistanceLatDegree
             // 
             this.txtDistanceLatDegree.BackColor = System.Drawing.Color.White;
-            this.txtDistanceLatDegree.Location = new System.Drawing.Point(114, 28);
+            this.txtDistanceLatDegree.Location = new System.Drawing.Point(108, 17);
             this.txtDistanceLatDegree.Name = "txtDistanceLatDegree";
             this.txtDistanceLatDegree.ReadOnly = true;
             this.txtDistanceLatDegree.Size = new System.Drawing.Size(39, 20);
@@ -158,7 +160,7 @@
             // txtDistanceLongSeconds
             // 
             this.txtDistanceLongSeconds.BackColor = System.Drawing.Color.White;
-            this.txtDistanceLongSeconds.Location = new System.Drawing.Point(222, 56);
+            this.txtDistanceLongSeconds.Location = new System.Drawing.Point(216, 45);
             this.txtDistanceLongSeconds.Name = "txtDistanceLongSeconds";
             this.txtDistanceLongSeconds.ReadOnly = true;
             this.txtDistanceLongSeconds.Size = new System.Drawing.Size(52, 20);
@@ -167,7 +169,7 @@
             // txtDistanceLongMinutes
             // 
             this.txtDistanceLongMinutes.BackColor = System.Drawing.Color.White;
-            this.txtDistanceLongMinutes.Location = new System.Drawing.Point(169, 56);
+            this.txtDistanceLongMinutes.Location = new System.Drawing.Point(163, 45);
             this.txtDistanceLongMinutes.Name = "txtDistanceLongMinutes";
             this.txtDistanceLongMinutes.ReadOnly = true;
             this.txtDistanceLongMinutes.Size = new System.Drawing.Size(39, 20);
@@ -177,7 +179,7 @@
             // 
             this.cmbLatSign.Enabled = false;
             this.cmbLatSign.FormattingEnabled = true;
-            this.cmbLatSign.Location = new System.Drawing.Point(293, 27);
+            this.cmbLatSign.Location = new System.Drawing.Point(287, 16);
             this.cmbLatSign.Name = "cmbLatSign";
             this.cmbLatSign.Size = new System.Drawing.Size(51, 21);
             this.cmbLatSign.Sorted = true;
@@ -186,7 +188,7 @@
             // txtDistanceLongDegree
             // 
             this.txtDistanceLongDegree.BackColor = System.Drawing.Color.White;
-            this.txtDistanceLongDegree.Location = new System.Drawing.Point(114, 56);
+            this.txtDistanceLongDegree.Location = new System.Drawing.Point(108, 45);
             this.txtDistanceLongDegree.Name = "txtDistanceLongDegree";
             this.txtDistanceLongDegree.ReadOnly = true;
             this.txtDistanceLongDegree.Size = new System.Drawing.Size(39, 20);
@@ -196,7 +198,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(151, 52);
+            this.label18.Location = new System.Drawing.Point(145, 41);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(17, 16);
             this.label18.TabIndex = 36;
@@ -206,7 +208,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(206, 55);
+            this.label19.Location = new System.Drawing.Point(200, 44);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(12, 16);
             this.label19.TabIndex = 37;
@@ -216,7 +218,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(151, 24);
+            this.label15.Location = new System.Drawing.Point(145, 13);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(17, 16);
             this.label15.TabIndex = 28;
@@ -226,7 +228,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(273, 57);
+            this.label20.Location = new System.Drawing.Point(267, 46);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(14, 16);
             this.label20.TabIndex = 38;
@@ -235,7 +237,7 @@
             // txtDistanceLatMinutes
             // 
             this.txtDistanceLatMinutes.BackColor = System.Drawing.Color.White;
-            this.txtDistanceLatMinutes.Location = new System.Drawing.Point(169, 28);
+            this.txtDistanceLatMinutes.Location = new System.Drawing.Point(163, 17);
             this.txtDistanceLatMinutes.Name = "txtDistanceLatMinutes";
             this.txtDistanceLatMinutes.ReadOnly = true;
             this.txtDistanceLatMinutes.Size = new System.Drawing.Size(39, 20);
@@ -244,7 +246,7 @@
             // txtDistanceLatSeconds
             // 
             this.txtDistanceLatSeconds.BackColor = System.Drawing.Color.White;
-            this.txtDistanceLatSeconds.Location = new System.Drawing.Point(222, 28);
+            this.txtDistanceLatSeconds.Location = new System.Drawing.Point(216, 17);
             this.txtDistanceLatSeconds.Name = "txtDistanceLatSeconds";
             this.txtDistanceLatSeconds.ReadOnly = true;
             this.txtDistanceLatSeconds.Size = new System.Drawing.Size(52, 20);
@@ -254,7 +256,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(273, 27);
+            this.label17.Location = new System.Drawing.Point(267, 16);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(14, 16);
             this.label17.TabIndex = 32;
@@ -264,7 +266,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(206, 27);
+            this.label16.Location = new System.Drawing.Point(200, 16);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(12, 16);
             this.label16.TabIndex = 30;
@@ -275,7 +277,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(53, 31);
+            this.label21.Location = new System.Drawing.Point(47, 20);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(61, 13);
             this.label21.TabIndex = 42;
@@ -286,7 +288,7 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(36, 59);
+            this.label22.Location = new System.Drawing.Point(30, 48);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(78, 13);
             this.label22.TabIndex = 43;
@@ -462,7 +464,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 236);
+            this.label5.Location = new System.Drawing.Point(16, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 13);
             this.label5.TabIndex = 59;
@@ -470,7 +472,7 @@
             // 
             // dtpDateRelease
             // 
-            this.dtpDateRelease.Location = new System.Drawing.Point(15, 254);
+            this.dtpDateRelease.Location = new System.Drawing.Point(15, 264);
             this.dtpDateRelease.Name = "dtpDateRelease";
             this.dtpDateRelease.Size = new System.Drawing.Size(200, 20);
             this.dtpDateRelease.TabIndex = 10;
@@ -870,7 +872,7 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(304, 253);
+            this.label27.Location = new System.Drawing.Point(304, 263);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(16, 24);
             this.label27.TabIndex = 129;
@@ -942,7 +944,7 @@
             "57",
             "58",
             "59"});
-            this.cmbMinute.Location = new System.Drawing.Point(325, 255);
+            this.cmbMinute.Location = new System.Drawing.Point(325, 265);
             this.cmbMinute.Name = "cmbMinute";
             this.cmbMinute.Size = new System.Drawing.Size(57, 21);
             this.cmbMinute.TabIndex = 12;
@@ -961,7 +963,7 @@
             "10",
             "11",
             "12"});
-            this.cmbHour.Location = new System.Drawing.Point(244, 255);
+            this.cmbHour.Location = new System.Drawing.Point(244, 265);
             this.cmbHour.Name = "cmbHour";
             this.cmbHour.Size = new System.Drawing.Size(54, 21);
             this.cmbHour.TabIndex = 11;
@@ -971,11 +973,25 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(240, 236);
+            this.label28.Location = new System.Drawing.Point(240, 246);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(92, 13);
             this.label28.TabIndex = 117;
             this.label28.Text = "Time Release :";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Teal;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(140, 74);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(135, 23);
+            this.button3.TabIndex = 130;
+            this.button3.Text = "&Update Coordinates";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // frmScheduleDetails
             // 
@@ -1108,5 +1124,6 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtMultiplier;
+        private System.Windows.Forms.Button button3;
     }
 }

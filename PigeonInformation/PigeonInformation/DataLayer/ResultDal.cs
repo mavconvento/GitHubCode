@@ -21,7 +21,6 @@ namespace DataLayer
         #endregion
 
         #region Properties
-
         #endregion
 
         #region Public Methods

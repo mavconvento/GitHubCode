@@ -1,0 +1,9 @@
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\bin\Debug\SMSSolution.exe.config
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\bin\Debug\SMSSolution.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\bin\Debug\SMSSolution.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\bin\Debug\SMSWindowService.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\bin\Debug\SMSWindowService.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\obj\Debug\SMSSolution.csprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\obj\Debug\SMSSolution.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\SMSSolution\obj\Debug\SMSSolution.pdb

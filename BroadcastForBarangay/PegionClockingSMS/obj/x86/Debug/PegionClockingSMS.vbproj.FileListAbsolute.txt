@@ -1,0 +1,199 @@
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\bin\Debug\SMSModule.dll
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\bin\Debug\SMSModule.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\bin\Debug\SMSModule.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PostResult.exe
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\SMSModule.dll
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PostResult.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\SMSModule.pdb
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\SMSModule.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+D:\PROGRAM DEVELOP\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+\\192.168.1.88\program develop\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+\\192.168.1.88\program develop\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+\\192.168.1.88\program develop\vb.net\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PostResult.exe
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\SMSModule.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\PostResult.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\bin\Debug\SMSModule.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v2\PegionClockingSMS\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.exe
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.xml
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Desktop\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.exe
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.dll
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.dll
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.xml
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.pdb
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.write.1.tlog
+\\10.10.1.108\e\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+\\10.10.1.108\e\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+\\10.10.1.108\e\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.exe
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.dll
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.dll
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.pdb
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.pdb
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.xml
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.pdb
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\ResolveAssemblyReference.cache
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.read.1.tlog
+Z:\PIGEON CLOCKING\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.exe
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.dll
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.dll
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.xml
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.pdb
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\MAVC CLOCKING\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\GenerateResource.write.1.tlog
+F:\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+F:\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+F:\Pigeon Clocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.exe
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+C:\Adams\GitHub\GitHubCode\PegionClocking\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.vbproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.exe
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\PostResult.pdb
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\bin\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.vbproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\PegionClockingSMS.exe
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\PegionClockingSMS.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\PegionClockingSMS.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\SMSModule.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\SerialPortTester.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\SMSModule.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\SMSModule.xml
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\SerialPortTester.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.vbprojResolveAssemblyReference.cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Contacts.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.FrmAutoReply.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Main.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.Resources.resources
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\obj\x86\Debug\PegionClockingSMS.vbproj.GenerateResource.Cache
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\DLL Class.dll
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\DLL Class.pdb
+C:\Adams\GitHub\GitHubCode\BroadcastForBarangay\PegionClockingSMS\bin\Debug\DLL Class.xml

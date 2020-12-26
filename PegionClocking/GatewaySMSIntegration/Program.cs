@@ -13,6 +13,8 @@ namespace GatewaySMSIntegration
         {
             //Delete_outgoing("PR-MARKA754822_4H5EX");
             ProcessReply();
+
+            //PostMessageForReply("09688530922","Testing","sample sending");
         }
 
         private static void ProcessReply()
@@ -23,7 +25,7 @@ namespace GatewaySMSIntegration
                 DataSet dsResult = new DataSet();
                 DataAccess.GatewaySMSIntegration.GatewaySMS gateway = new DataAccess.GatewaySMSIntegration.GatewaySMS();
                 SMSWindowService.Entity.SMSComponent smscomponent = new SMSWindowService.Entity.SMSComponent();
-               
+
                 smscomponent = SMSWindowService.Entity.Config.GetSMSComponent();
                 var modemID = smscomponent.ModemID;
 
@@ -42,7 +44,7 @@ namespace GatewaySMSIntegration
                             string InboxID = item["InboxID"].ToString();
 
                             //send sms reply
-                            string Status = PostMessageForReply(Sender, ReplyMessage);
+                            string Status = PostMessageForReply(Sender, ReplyMessage, SMSContent);
                             Console.WriteLine("==============================================================");
                             Console.WriteLine("      ModemID: " + modemID);
                             Console.WriteLine("   SMSContent: " + SMSContent);
@@ -66,9 +68,13 @@ namespace GatewaySMSIntegration
                 goto start;
             }
         }
-        private static string PostMessageForReply(string MobileNumber, string ReplyMessage)
+        private static string PostMessageForReply(string MobileNumber, string ReplyMessage, string SMSContent)
         {
-            var ret = itexmo(MobileNumber, ReplyMessage, "PR-MARKA754822_4H5EX");
+            string SenderID = "MAVC-PKC";
+
+            //if (SMSContent.ToUpper().Contains("RMCOLR")) SenderID = "RMC-OLR";
+
+            var ret = itexmo(MobileNumber, ReplyMessage, "PR-MARKA754822_4H5EX", SenderID, "nc]xkei6ti");
             var status = "";
             if (ret.ToString() == "0")
             {
@@ -130,7 +136,7 @@ namespace GatewaySMSIntegration
         //########################################################################################
         //iTexmo API for C# / ASP --> go to www.itexmo.com/developers.php for API Documentation
         //########################################################################################
-        private static object itexmo(string Number, string Message, string API_CODE, Boolean isImportant = false)
+        private static object itexmo(string Number, string Message, string API_CODE, string SenderID,string Password, Boolean isImportant = false)
         {
             object functionReturnValue = null;
             using (System.Net.WebClient client = new System.Net.WebClient())
@@ -140,11 +146,15 @@ namespace GatewaySMSIntegration
                 parameter.Add("1", Number);
                 parameter.Add("2", Message);
                 parameter.Add("3", API_CODE);
+                parameter.Add("6", SenderID);
+                parameter.Add("passwd", Password);
+
 
                 if (isImportant)
                 {
                     parameter.Add("5", "HIGH");
                 }
+
                 dynamic rpb = client.UploadValues(url, "POST", parameter);
                 functionReturnValue = (new System.Text.UTF8Encoding()).GetString(rpb);
             }
@@ -161,11 +171,11 @@ namespace GatewaySMSIntegration
                 //parameter.Add("2", Message);
                 parameter.Add("apicode", API_CODE);
 
-                
+
                 dynamic rpb = client.UploadValues(url, "POST", parameter);
                 functionReturnValue = (new System.Text.UTF8Encoding()).GetString(rpb);
             }
-              return functionReturnValue;
+            return functionReturnValue;
         }
         //########################################################################################
         //API END     '###########################################################################

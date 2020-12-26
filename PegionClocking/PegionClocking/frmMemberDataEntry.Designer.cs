@@ -161,7 +161,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(861, 22);
+            this.label4.Location = new System.Drawing.Point(914, 21);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 7;
@@ -272,7 +272,7 @@
             // 
             // dtpDateofBirth
             // 
-            this.dtpDateofBirth.Location = new System.Drawing.Point(942, 20);
+            this.dtpDateofBirth.Location = new System.Drawing.Point(995, 19);
             this.dtpDateofBirth.Name = "dtpDateofBirth";
             this.dtpDateofBirth.Size = new System.Drawing.Size(200, 20);
             this.dtpDateofBirth.TabIndex = 8;
@@ -280,7 +280,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(825, 53);
+            this.label11.Location = new System.Drawing.Point(878, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(108, 13);
             this.label11.TabIndex = 20;
@@ -288,14 +288,14 @@
             // 
             // dtpDateofMembership
             // 
-            this.dtpDateofMembership.Location = new System.Drawing.Point(943, 50);
+            this.dtpDateofMembership.Location = new System.Drawing.Point(996, 49);
             this.dtpDateofMembership.Name = "dtpDateofMembership";
             this.dtpDateofMembership.Size = new System.Drawing.Size(200, 20);
             this.dtpDateofMembership.TabIndex = 9;
             // 
             // dtpLastRenewalDate
             // 
-            this.dtpLastRenewalDate.Location = new System.Drawing.Point(942, 86);
+            this.dtpLastRenewalDate.Location = new System.Drawing.Point(995, 85);
             this.dtpLastRenewalDate.Name = "dtpLastRenewalDate";
             this.dtpLastRenewalDate.Size = new System.Drawing.Size(200, 20);
             this.dtpLastRenewalDate.TabIndex = 10;
@@ -303,7 +303,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(829, 89);
+            this.label12.Location = new System.Drawing.Point(882, 88);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(104, 13);
             this.label12.TabIndex = 22;
@@ -311,7 +311,7 @@
             // 
             // dtpDateofExpiration
             // 
-            this.dtpDateofExpiration.Location = new System.Drawing.Point(942, 118);
+            this.dtpDateofExpiration.Location = new System.Drawing.Point(995, 117);
             this.dtpDateofExpiration.Name = "dtpDateofExpiration";
             this.dtpDateofExpiration.Size = new System.Drawing.Size(200, 20);
             this.dtpDateofExpiration.TabIndex = 11;
@@ -319,7 +319,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(837, 123);
+            this.label13.Location = new System.Drawing.Point(890, 122);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 13);
             this.label13.TabIndex = 24;
@@ -558,7 +558,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(459, 321);
+            this.button1.Location = new System.Drawing.Point(512, 321);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(153, 28);
             this.button1.TabIndex = 19;
@@ -592,7 +592,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Size = new System.Drawing.Size(421, 100);
+            this.dataGridView1.Size = new System.Drawing.Size(473, 100);
             this.dataGridView1.TabIndex = 49;
             // 
             // chkDeactivateMember
@@ -615,7 +615,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(618, 321);
+            this.button2.Location = new System.Drawing.Point(671, 321);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(192, 28);
             this.button2.TabIndex = 20;
@@ -629,7 +629,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PegionClocking.Properties.Resources.background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(822, 368);
+            this.ClientSize = new System.Drawing.Size(874, 368);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.chkDeactivateMember);
             this.Controls.Add(this.dataGridView1);

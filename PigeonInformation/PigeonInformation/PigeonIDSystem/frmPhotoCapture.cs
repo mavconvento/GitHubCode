@@ -718,6 +718,24 @@ namespace PigeonIDSystem
             assignMobileNumber.MemberID = txtMemberID.Text;
             assignMobileNumber.ShowDialog();
         }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            frmRegisterRFID registerRFID = new frmRegisterRFID();
+            registerRFID.ShowDialog();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)this.dtList.DataSource;
+
+            frmSyncEclock sync = new frmSyncEclock();
+            sync.DataList = dt;
+            sync.ClubName = ClubName;
+            sync.ActionType = "RESET";
+            sync.ShowDialog();
+        }
     }
 
     public class ComboboxItem

@@ -44,11 +44,11 @@
             // 
             this.btnPreview.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPreview.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreview.Location = new System.Drawing.Point(170, 104);
+            this.btnPreview.Location = new System.Drawing.Point(140, 97);
             this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(75, 23);
+            this.btnPreview.Size = new System.Drawing.Size(106, 23);
             this.btnPreview.TabIndex = 17;
-            this.btnPreview.Text = "Preview";
+            this.btnPreview.Text = "PRINT NOW";
             this.btnPreview.UseVisualStyleBackColor = true;
             this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
@@ -111,10 +111,6 @@
             this.ofdTextFile.FileName = "openFileDialog1";
             this.ofdTextFile.Filter = "Text files|*.txt|All files|*.*";
             // 
-            // pdocTextFile
-            // 
-            this.pdocTextFile.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdocTextFile_PrintPage_1);
-            // 
             // ppdTextFile
             // 
             this.ppdTextFile.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -130,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 139);
+            this.ClientSize = new System.Drawing.Size(390, 137);
             this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.btnSelectFile);
             this.Controls.Add(this.txtFile);

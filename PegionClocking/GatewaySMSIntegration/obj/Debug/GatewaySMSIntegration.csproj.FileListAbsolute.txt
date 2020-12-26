@@ -20,3 +20,14 @@ C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\GatewaySMSIntegration
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\SMSWindowService.pdb
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Debug\GatewaySMSIntegration.csprojResolveAssemblyReference.cache
 C:\Adams\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Debug\GatewaySMSIntegration.csprojResolveAssemblyReference.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\GatewaySMSIntegration.exe.config
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Debug\GatewaySMSIntegration.exe
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Debug\GatewaySMSIntegration.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\GatewaySMSIntegration.exe
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\GatewaySMSIntegration.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\DataAccess.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\SMSWindowService.exe
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\SerialPortTester.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\DataAccess.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Debug\SMSWindowService.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Debug\GatewaySMSIntegration.csprojResolveAssemblyReference.cache

@@ -1,0 +1,62 @@
+﻿@using System.Web.Mvc;
+@using MavcPigeonClockingPortal.Constants;
+@helper RollingFooter(UrlHelper url)
+    {       
+        lmsConstants oConst = new lmsConstants();
+        string logoSrcSml = oConst.GetElement("logoSrcSml");    
+             
+    <div data-role="footer">
+        <div>
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <div style="margin: .6em; font-size: x-small;">
+                            Copyright &copy; 2016 MAVC Pigeon Clocking Philippines</div>
+                    </td>
+                    <td style="text-align: right; vertical-align: middle;">
+                        <div style="margin: .6em; font-size: x-small;">
+                           Pigeon Products <img src="~/Images/trimlogo.png" style=" margin-left:5px; height: 20px; width: 50px" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>       
+}
+@helper RollingFooter_Black(UrlHelper url)
+    {       
+        lmsConstants oConst = new lmsConstants();
+        string logoSrcSml = oConst.GetElement("logoSrcSml");    
+             
+    <div data-role="footer">
+        <div>
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <div style="margin: .6em; font-size: x-small; color:Black !important;">
+                            Copyright &copy; 2016 MAVC Pigeon Clocking Philippines</div>
+                    </td>
+                    <td style="text-align: right; vertical-align: middle; color:Black !important;">
+                        <div style="margin: .6em; font-size: x-small;">
+                           Pigeon Products <img src="~/Images/trimlogo.png" style=" margin-left:5px; height: 20px; width: 50px" />
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>       
+}
+@helper AbsoluteFooter(UrlHelper url)
+    {                
+        lmsConstants oConst = new lmsConstants();
+        string logoSrcSml = oConst.GetElement("logoSrcSml");    
+    
+    <div data-role="footer">
+        <div  style="background:url(' @url.Content(logoSrcSml) ')  no-repeat right;  background-color:White; border: thin solid #C0C0C0; " >
+            <div style="margin: .6em; font-size: x-small;">
+                Copyright &copy; 2013</div>
+            <div style="margin: .6em; font-size: x-small;">
+                Loanworks Technologies Pty Ltd</div>
+        </div>
+    </div>       
+}

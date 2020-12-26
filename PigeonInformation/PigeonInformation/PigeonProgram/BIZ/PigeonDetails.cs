@@ -8,7 +8,7 @@ namespace PigeonProgram.BIZ
 {
     public class PigeonDetails
     {
-        
+        public String RFIDTag { get; set; }
         public Int64 PigeonID { get; set; }
         public String PigeonName { get; set; }
         public String BandNumber { get; set; }
@@ -42,6 +42,7 @@ namespace PigeonProgram.BIZ
         public String Rank { get; set; }
         public String Distance { get; set; }
         public String Speed { get; set; }
+        public String BackColor { get; set; }
 
         public String Treatment { get; set; }
         public DateTime TreatmentDate { get; set; }
@@ -51,6 +52,7 @@ namespace PigeonProgram.BIZ
         public String FilterYear { get; set; }
         public String FilterBreed { get; set; }
         public String FilterPigeonName { get; set; }
+        public bool IsFourthGen { get; set; }
 
         public DataSet PigeonDetailsSave()
         {

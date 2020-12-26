@@ -136,6 +136,12 @@ namespace PigeonIDSystem
                 DataColumn dc3 = new DataColumn();
                 dc3.ColumnName = "Arrival";
 
+                DataColumn dc9 = new DataColumn();
+                dc9.ColumnName = "Flight";
+
+                DataColumn dc10 = new DataColumn();
+                dc10.ColumnName = "Speed";
+
                 //pigeonList.Columns.Add(dc1);
                 pigeonList.Columns.Add(dc2);
                 
@@ -145,6 +151,8 @@ namespace PigeonIDSystem
                 pigeonList.Columns.Add(dc7);
                 pigeonList.Columns.Add(dc8);
                 pigeonList.Columns.Add(dc3);
+                pigeonList.Columns.Add(dc9);
+                pigeonList.Columns.Add(dc10);
 
                 string path = ReadText.ReadFilePath("datapath");
                 string dateString = this.dateTimePicker1.Value.Year.ToString() + this.dateTimePicker1.Value.Month.ToString().PadLeft(2, '0') + this.dateTimePicker1.Value.Day.ToString().PadLeft(2, '0');
@@ -176,12 +184,20 @@ namespace PigeonIDSystem
                         dr["Color"] = pigeonDetailsCollection[4].ToString();
                         dr["Sex"] = pigeonDetailsCollection[3].ToString();
 
+                        
+
                         String resultDetailsPath = resultDirectory + "\\" + memberid + "\\" + rfid + ".txt";
 
                         if (File.Exists(resultDetailsPath))
                         {
                             string[] resultDetails = ReadText.ReadTextFile(resultDetailsPath);
                             dr["Arrival"] = resultDetails[3] + " " + resultDetails[4];
+
+                            if (resultDetails.Count() > 5)
+                            {
+                                dr["Flight"] = resultDetails[5];
+                                dr["Speed"] = resultDetails[6];
+                            }
                         }
 
                         pigeonList.Rows.Add(dr);
@@ -254,6 +270,7 @@ namespace PigeonIDSystem
             syncAll.ActionType = "RESULTDB";
             syncAll.ActionTypeDescription = "Result";
             syncAll.ShowDialog();
+            GetPigeonList(this.txtMemberID.Text);
             this.Show();
         }
 
