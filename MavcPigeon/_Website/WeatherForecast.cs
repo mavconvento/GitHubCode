@@ -1,6 +1,6 @@
 using System;
 
-namespace MySite
+namespace _Website
 {
     public class WeatherForecast
     {
