@@ -1,0 +1,9 @@
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\bin\Debug\netcoreapp3.1\DomainObject.deps.json
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\bin\Debug\netcoreapp3.1\DomainObject.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\bin\Debug\netcoreapp3.1\DomainObject.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.AssemblyInfoInputs.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.AssemblyInfo.cs
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.csproj.CoreCompileInputs.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.csprojAssemblyReference.cache

@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BussinessLayer.Contracts;
-//using Repository.Database;
 using Microsoft.Extensions.Configuration;
-using System.Net.Http;
-//using Microsoft.AspNetCore.Http;
-using repo = Repository.Contracts;
-using IAccount = BussinessLayer.Contracts.IAccount;
-using Microsoft.AspNetCore.Http;
+using Repository.Contracts;
 using DomainObject;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -18,10 +13,10 @@ namespace BussinessLayer
 {
     public class AccountService : IAccount
     {
-        private readonly repo.IAccount _account;
+        private readonly IAccountRepository _account;
         private readonly IConfiguration _configuration;
 
-        public AccountService(repo.IAccount accountServices, IConfiguration configuration)
+        public AccountService(IAccountRepository accountServices, IConfiguration configuration)
         {
             _account = accountServices ?? throw new ArgumentNullException(nameof(accountServices));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
