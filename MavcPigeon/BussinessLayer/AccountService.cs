@@ -72,17 +72,31 @@ namespace BussinessLayer
             throw new NotImplementedException();
         }
 
-        public async Task<string> Upsert(User user)
+        public async Task<string> Update(User user)
         {
             try
             {
-                return await _account.Upsert(user);
+                return await _account.Update(user);
             }
             catch (Exception ex)
             {
                 throw ex;
             }
             
+        }
+
+        public async Task<string> Insert(User user)
+        {
+            try
+            {
+
+                return await _account.Insert(user);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
         }
     }
 }

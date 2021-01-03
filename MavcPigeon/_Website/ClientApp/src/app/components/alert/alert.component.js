@@ -17,19 +17,6 @@ var AlertComponent = /** @class */ (function () {
         this.alertService = alertService;
     }
     AlertComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.subscription = this.alertService.getAlert()
-            .subscribe(function (message) {
-            switch (message && message.type) {
-                case 'success':
-                    message.cssClass = 'alert alert-success';
-                    break;
-                case 'error':
-                    message.cssClass = 'alert alert-danger';
-                    break;
-            }
-            _this.message = message;
-        });
     };
     AlertComponent.prototype.ngOnDestroy = function () {
         this.subscription.unsubscribe();

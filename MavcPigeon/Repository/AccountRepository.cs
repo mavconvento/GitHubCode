@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Repository.Database;
 using System.Threading.Tasks;
-
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using System.Linq;
-using System.Net.Http;
 using Repository.Contracts;
 using DomainObject;
+using DomainObject.AppServices;
 //using Newtonsoft.Json;
 
 namespace Repository
@@ -46,9 +40,9 @@ namespace Repository
             }
         }
 
-        public async Task<string> Upsert(User user)
+        public async Task<string> Update(User user)
         {
-            using (var transaction  = await _dbcontext.Database.BeginTransactionAsync())
+            using (var transaction = await _dbcontext.Database.BeginTransactionAsync())
             {
                 try
                 {
@@ -57,7 +51,6 @@ namespace Repository
                     if (exists == null)
                     {
                         user.DateCreated = DateTime.Now;
-
                         _dbcontext.Add(user);
                         _dbcontext.SaveChanges();
                     }
@@ -73,6 +66,38 @@ namespace Repository
                 {
                     transaction.Rollback();
                     throw;
+                }
+
+            }
+        }
+
+        public async Task<string> Insert(User user)
+        {
+            using (var transaction  = await _dbcontext.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    var exists = _dbcontext.User.Where(x => x.UserName == user.UserName).FirstOrDefault();
+
+                    if (exists == null)
+                    {
+                        user.DateCreated = DateTime.Now;
+                        _dbcontext.Add(user);
+                        _dbcontext.SaveChanges();
+                    }
+                    else
+                    {
+                        //transaction.Rollback();
+                        throw new CustomException("Email Address already exists");
+                    }
+
+                    transaction.Commit();
+                    return null;
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    throw ex;
                 }
                
             }    

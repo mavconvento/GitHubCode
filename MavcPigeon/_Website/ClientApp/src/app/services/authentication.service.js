@@ -23,6 +23,9 @@ var AuthenticationService = /** @class */ (function () {
         this.http = http;
         this.isUserLoginSubject = new rxjs_1.BehaviorSubject(false);
         this.currentUserSubject = new rxjs_1.BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
+        if (this.currentUserSubject) {
+            this.isUserLoginSubject.next(true);
+        }
         this.currentUser = this.currentUserSubject.asObservable();
         this._baseUrl = baseUrl;
     }

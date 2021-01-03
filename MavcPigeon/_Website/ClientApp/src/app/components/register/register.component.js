@@ -52,8 +52,6 @@ var RegisterComponent = /** @class */ (function () {
     RegisterComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
-        // reset alerts on submit
-        this.alertService.clear();
         // stop here if form is invalid
         if (this.registerForm.invalid) {
             return;
@@ -62,9 +60,12 @@ var RegisterComponent = /** @class */ (function () {
         this.userService.register(this.registerForm.value)
             .pipe(operators_1.first())
             .subscribe(function (data) {
+            _this.alertService.successNotification('Registration Complete.');
             _this.router.navigate(['/login']);
         }, function (error) {
             _this.loading = false;
+            console.log(error);
+            _this.alertService.errorNotification(error);
         });
     };
     RegisterComponent = __decorate([

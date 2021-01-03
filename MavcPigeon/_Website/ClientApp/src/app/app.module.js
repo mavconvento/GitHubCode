@@ -27,6 +27,10 @@ var login_component_1 = require("./components/login/login.component");
 var alert_component_1 = require("./components/alert/alert.component");
 var register_component_1 = require("./components/register/register.component");
 var auth_guard_1 = require("./helpers/auth.guard");
+var profile_component_1 = require("./components/profile/profile.component");
+var race_result_component_1 = require("./components/race-result/race-result.component");
+var online_clocking_component_1 = require("./components/online-clocking/online-clocking.component");
+var main_menu_component_1 = require("./components/main-menu/main-menu.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -41,7 +45,11 @@ var AppModule = /** @class */ (function () {
                 logout_component_1.LogoutComponent,
                 login_component_1.LoginComponent,
                 alert_component_1.AlertComponent,
-                register_component_1.RegisterComponent
+                register_component_1.RegisterComponent,
+                profile_component_1.ProfileComponent,
+                race_result_component_1.RaceResultComponent,
+                online_clocking_component_1.OnlineClockingComponent,
+                main_menu_component_1.MainMenuComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -50,8 +58,10 @@ var AppModule = /** @class */ (function () {
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forRoot([
                     { path: '', component: home_component_1.HomeComponent, pathMatch: 'full' },
-                    { path: 'counter', component: counter_component_1.CounterComponent, },
-                    { path: 'fetch-data', component: fetch_data_component_1.FetchDataComponent, canActivate: [auth_guard_1.AuthGuard] },
+                    //{ path: 'counter', component: CounterComponent, },
+                    { path: 'profile', component: profile_component_1.ProfileComponent, canActivate: [auth_guard_1.AuthGuard] },
+                    { path: 'race-result', component: race_result_component_1.RaceResultComponent, canActivate: [auth_guard_1.AuthGuard] },
+                    { path: 'online-clocking', component: online_clocking_component_1.OnlineClockingComponent, canActivate: [auth_guard_1.AuthGuard] },
                     { path: 'login', component: login_component_1.LoginComponent },
                     { path: 'register', component: register_component_1.RegisterComponent },
                     { path: 'logout', component: logout_component_1.LogoutComponent },

@@ -14,6 +14,11 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+
+    if (this.currentUserSubject) {
+      this.isUserLoginSubject.next(true);
+    }
+
     this.currentUser = this.currentUserSubject.asObservable();
     this._baseUrl = baseUrl;
   }

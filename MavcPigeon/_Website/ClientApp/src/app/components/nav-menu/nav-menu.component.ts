@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { Observable } from 'rxjs';
-import { Helpers } from '../../helpers/helpers';
 import { User } from '../../models/user';
 import { AuthenticationService} from '../../services/authentication.service'
 
@@ -21,6 +20,7 @@ export class NavMenuComponent implements OnInit  {
   };
 
   ngOnInit() {
+
   };
   
   collapse() {

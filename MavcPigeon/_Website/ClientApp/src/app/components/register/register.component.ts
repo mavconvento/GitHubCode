@@ -50,9 +50,6 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    // reset alerts on submit
-    this.alertService.clear();
-
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
@@ -64,10 +61,13 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          this.alertService.successNotification('Registration Complete.')
           this.router.navigate(['/login']);
         },
         error => {
           this.loading = false;
+          console.log(error);
+          this.alertService.errorNotification(error);
         });
   }
 }

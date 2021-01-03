@@ -47,8 +47,6 @@ var LoginComponent = /** @class */ (function () {
     LoginComponent.prototype.onSubmit = function () {
         var _this = this;
         this.submitted = true;
-        // reset alerts on submit
-        this.alertService.clear();
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
@@ -59,7 +57,7 @@ var LoginComponent = /** @class */ (function () {
             .subscribe(function (data) {
             _this.router.navigate([_this.returnUrl]);
         }, function (error) {
-            _this.alertService.error(error);
+            _this.alertService.errorNotification(error);
             _this.loading = false;
         });
     };

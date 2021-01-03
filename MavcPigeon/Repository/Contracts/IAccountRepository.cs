@@ -8,7 +8,8 @@ namespace Repository.Contracts
 {
     public interface IAccountRepository
     {
-        Task<String> Upsert(User user);
+        Task<String> Insert(User user);
+        Task<String> Update(User user);
         Task<User> Authenticate(string userName, string password);
     }
 }

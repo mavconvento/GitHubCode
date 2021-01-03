@@ -9,7 +9,6 @@ import { User } from './models/user';
 })
 export class AppComponent {
   title = 'app';
-
   currentUser: User;
 
   constructor(

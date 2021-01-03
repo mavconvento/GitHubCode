@@ -26,7 +26,8 @@ var ErrorInterceptor = /** @class */ (function () {
                 _this.authenticationService.logout();
                 location.reload(true);
             }
-            var error = err.error.message || err.statusText;
+            console.log(err);
+            var error = err.error || err.statusText;
             return rxjs_1.throwError(error);
         }));
     };

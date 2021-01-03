@@ -1,44 +1,64 @@
 import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
 
 @Injectable({ providedIn: 'root' })
 export class AlertService {
-  private subject = new Subject<any>();
-  private keepAfterRouteChange = false;
-
   constructor(private router: Router) {
-    // clear alert messages on route change unless 'keepAfterRouteChange' flag is true
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationStart) {
-        if (this.keepAfterRouteChange) {
-          // only keep for a single route change
-          this.keepAfterRouteChange = false;
-        } else {
-          // clear alert message
-          this.clear();
-        }
+  }
+
+  simpleNotification() {
+    swal.fire('Simple Notification');
+  }
+
+  successNotification(message:string) {
+    swal.fire('', message, 'success')
+  }
+
+  errorNotification(message: any) {
+
+    swal.fire('', message, 'error')
+  }
+
+  alertConfirmation() {
+    swal.fire({
+      position: 'top-end',
+      title: 'Are you sure?',
+      text: 'This process is irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, go ahead.',
+      cancelButtonText: 'No, let me think'
+    }).then((result) => {
+      if (result.value) {
+        swal.fire(
+          'Removed!',
+          'Item removed successfully.',
+          'success'
+        )
+      } else if (result.dismiss === swal.DismissReason.cancel) {
+        swal.fire(
+          'Cancelled',
+          'Item is safe.)',
+          'error'
+        )
       }
-    });
+    })
   }
 
-  getAlert(): Observable<any> {
-    return this.subject.asObservable();
-  }
 
-  success(message: string, keepAfterRouteChange = false) {
-    this.keepAfterRouteChange = keepAfterRouteChange;
-    this.subject.next({ type: 'success', text: message });
-  }
+  async emailNotification() {
+    const { value: email } = await swal.fire({
+      position: 'bottom-end',
+      title: 'Input email address',
+      input: 'email',
+      inputPlaceholder: 'Enter your email address'
+    })
 
-  error(message: string, keepAfterRouteChange = false) {
-    this.keepAfterRouteChange = keepAfterRouteChange;
-    this.subject.next({ type: 'error', text: message });
-  }
-
-  clear() {
-    // clear by calling subject.next() without parameters
-    this.subject.next();
+    if (email) {
+      swal.fire(`Entered email: ${email}`)
+    }
   }
 }

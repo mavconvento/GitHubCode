@@ -20,6 +20,10 @@ import { LoginComponent } from './components/login/login.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthGuard } from './helpers/auth.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+import { RaceResultComponent } from './components/race-result/race-result.component';
+import { OnlineClockingComponent } from './components/online-clocking/online-clocking.component';
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { AuthGuard } from './helpers/auth.guard';
     LogoutComponent,
     LoginComponent,
     AlertComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent,
+    RaceResultComponent,
+    OnlineClockingComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -40,8 +48,10 @@ import { AuthGuard } from './helpers/auth.guard';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent, },
-      { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthGuard] },
+      //{ path: 'counter', component: CounterComponent, },
+      { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+      { path: 'race-result', component: RaceResultComponent, canActivate: [AuthGuard] },
+      { path: 'online-clocking', component: OnlineClockingComponent, canActivate: [AuthGuard] },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'logout', component: LogoutComponent },

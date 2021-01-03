@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DomainObject;
 using BussinessLayer;
 using BussinessLayer.Contracts;
+using BussinessLayer.Helper;
 using System.Net;
 
 namespace _Website.Controllers
@@ -33,11 +34,8 @@ namespace _Website.Controllers
             }
             catch (Exception ex)
             {
-                ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
-
-                return StatusCode((int)HttpStatusCode.InternalServerError, "Error Detected");
-
-                throw;
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomMesageError(ex.Message).Message);
             }
         }
 
@@ -46,16 +44,12 @@ namespace _Website.Controllers
         {
             try
             {
-
-                return Ok(await _account.Upsert(user));
+                return Ok(await _account.Insert(user));
             }
             catch (Exception ex)
             {
-                ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "", "");
-
-                return StatusCode((int)HttpStatusCode.InternalServerError, "Error Detected");
-
-                throw;
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "", "");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomMesageError(ex.Message).Message);
             }
         }
     }

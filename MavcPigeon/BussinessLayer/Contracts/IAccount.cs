@@ -8,7 +8,8 @@ namespace BussinessLayer.Contracts
 {
     public interface IAccount
     {
-        Task<String> Upsert(User user);
+        Task<String> Insert(User user);
+        Task<String> Update(User user);
         Task<User> Authenticate(string username, string password);
         Task<String> Delete();
         Task<List<AccountService>> GetAll();
