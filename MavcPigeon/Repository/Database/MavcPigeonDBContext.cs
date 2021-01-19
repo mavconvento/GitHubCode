@@ -22,6 +22,7 @@ namespace Repository.Database
         }
 
         public DbSet<User> User { get; set; }
+        public DbSet<FileUpload> FileUploads { get; set; }
         public DbSet<ExceptionLog> ExceptionLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

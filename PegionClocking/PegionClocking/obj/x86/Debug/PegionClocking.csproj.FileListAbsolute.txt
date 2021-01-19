@@ -274,7 +274,6 @@ C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Pe
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\PegionClocking.pdb
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Microsoft.VisualBasic.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
-C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csprojResolveAssemblyReference.cache
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmChangePassword.resources
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.FrmCopyEntry.resources
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.frmEntryMultipleCategory.resources

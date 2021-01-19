@@ -9,7 +9,7 @@ namespace Repository.Contracts
     public interface IAccountRepository
     {
         Task<String> Insert(User user);
-        Task<String> Update(User user);
+        Task<String> Update(Profile profile);
         Task<User> Authenticate(string userName, string password);
     }
 }

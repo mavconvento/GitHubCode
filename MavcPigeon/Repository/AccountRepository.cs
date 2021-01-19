@@ -5,6 +5,7 @@ using System.Linq;
 using Repository.Contracts;
 using DomainObject;
 using DomainObject.AppServices;
+using Repository.Helper;
 //using Newtonsoft.Json;
 
 namespace Repository
@@ -18,14 +19,14 @@ namespace Repository
             _dbcontext = dBContext ?? throw new ArgumentNullException(nameof(dBContext));
         }
 
-        public async Task<User> Authenticate(string userName,string password)
+        public async Task<User> Authenticate(string userName, string password)
         {
             using (var transaction = await _dbcontext.Database.BeginTransactionAsync())
             {
                 try
                 {
                     var userdetails = _dbcontext.User.Where(x => x.UserName.Equals(userName) && x.Password.Equals(password)).FirstOrDefault();
-                    
+
                     //remove password this will be exposed in ui
                     userdetails.Password = null;
 
@@ -40,27 +41,61 @@ namespace Repository
             }
         }
 
-        public async Task<string> Update(User user)
+        public async Task<string> Update(Profile profile)
         {
             using (var transaction = await _dbcontext.Database.BeginTransactionAsync())
             {
                 try
                 {
-                    var exists = _dbcontext.User.Where(x => x.UserName == user.UserName).FirstOrDefault();
+                    var user = _dbcontext.User.Where(x => x.UserID == profile.UserID).FirstOrDefault();
 
-                    if (exists == null)
+                    //return if not exists
+                    if (user == null)
                     {
-                        user.DateCreated = DateTime.Now;
-                        _dbcontext.Add(user);
-                        _dbcontext.SaveChanges();
-                    }
-                    else
-                    {
-
+                        transaction.Rollback();
+                        return null;
                     }
 
+
+                    Guid fileUploadID = Guid.NewGuid();
+                    if (profile.Image != null)
+                    {
+                        if (user.FileUploadID != null)
+                        {
+                            var fileUpload = _dbcontext.FileUploads.Where(x => x.FileUploadID == user.FileUploadID).FirstOrDefault();
+                            fileUploadID = fileUpload.FileUploadID;
+                            fileUpload.Data = Helper.ImageUpload.GetImageAsBytes(profile.Image);
+
+                            _dbcontext.Attach(fileUpload);
+                            _dbcontext.Entry(fileUpload).Property("Data").IsModified = true;
+                        }
+                        else
+                        {
+                            FileUpload file = new FileUpload
+                            {
+                                FileUploadID = fileUploadID,
+                                Data = Helper.ImageUpload.GetImageAsBytes(profile.Image),
+                                FileName = profile.Image.FileName,
+                                FileType = profile.Image.ContentType
+                            };
+                            _dbcontext.Add(file);
+                        }
+
+
+
+                        user.FileUploadID = fileUploadID;
+                    }
+
+                    user.LoftName = profile.LoftName;
+
+                    _dbcontext.Attach(user);
+                    _dbcontext.Entry(user).Property("LoftName").IsModified = true;
+                    _dbcontext.Entry(user).Property("FileUploadID").IsModified = true;
+
+                    _dbcontext.SaveChanges();
                     transaction.Commit();
-                    return null;
+
+                    return fileUploadID.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -73,7 +108,7 @@ namespace Repository
 
         public async Task<string> Insert(User user)
         {
-            using (var transaction  = await _dbcontext.Database.BeginTransactionAsync())
+            using (var transaction = await _dbcontext.Database.BeginTransactionAsync())
             {
                 try
                 {
@@ -81,6 +116,7 @@ namespace Repository
 
                     if (exists == null)
                     {
+                        user.UserID = Guid.NewGuid();
                         user.DateCreated = DateTime.Now;
                         _dbcontext.Add(user);
                         _dbcontext.SaveChanges();
@@ -99,8 +135,8 @@ namespace Repository
                     transaction.Rollback();
                     throw ex;
                 }
-               
-            }    
+
+            }
         }
     }
 }

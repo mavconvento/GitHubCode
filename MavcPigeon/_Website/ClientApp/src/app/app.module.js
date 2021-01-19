@@ -31,6 +31,9 @@ var profile_component_1 = require("./components/profile/profile.component");
 var race_result_component_1 = require("./components/race-result/race-result.component");
 var online_clocking_component_1 = require("./components/online-clocking/online-clocking.component");
 var main_menu_component_1 = require("./components/main-menu/main-menu.component");
+var profile_details_component_1 = require("./components/dialog/profile-details/profile-details.component");
+var animations_1 = require("@angular/platform-browser/animations");
+var link_number_component_1 = require("./components/dialog/link-number/link-number.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -49,11 +52,14 @@ var AppModule = /** @class */ (function () {
                 profile_component_1.ProfileComponent,
                 race_result_component_1.RaceResultComponent,
                 online_clocking_component_1.OnlineClockingComponent,
-                main_menu_component_1.MainMenuComponent
+                main_menu_component_1.MainMenuComponent,
+                profile_details_component_1.ProfileDetailsComponent,
+                link_number_component_1.LinkNumberComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
                 http_1.HttpClientModule,
+                animations_1.BrowserAnimationsModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forRoot([
@@ -77,7 +83,8 @@ var AppModule = /** @class */ (function () {
                 core_1.CUSTOM_ELEMENTS_SCHEMA,
                 core_1.NO_ERRORS_SCHEMA
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            entryComponents: [profile_details_component_1.ProfileDetailsComponent]
         })
     ], AppModule);
     return AppModule;

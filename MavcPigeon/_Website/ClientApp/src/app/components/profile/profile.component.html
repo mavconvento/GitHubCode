@@ -1,1 +1,21 @@
-<p>profile works!</p>
+<div class="container">
+  <div class="flex-container" fxLayout="row" fxLayoutGap="10px">
+    <div>
+      <img *ngIf="profileImage"  mat-card-image src="{{profileImage}}" alt="profile">
+    </div>
+    <div class="flex-container" fxLayout="column">
+      <div class="flex-container" fxLayout="column">
+        <span>Global ID: {{globalID}}</span>
+        <span>Name: {{name}}</span>
+        <span>Loft Name: {{loftName}}</span>
+        <span>Email Address: {{emailAddress}}</span>
+        <span (click)="openDialog()" ><mat-icon style="font-size:15px">edit</mat-icon></span>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="flex-container" fxLayout="column" fxLayoutGap="10px">
+    <span (click)="openDialog()"><mat-icon style="font-size:15px; font-weight:bold; color:green;">add</mat-icon>Link registered mobile number.</span>
+    <span>Registered Club and Mobile No. </span>
+  </div>
+</div>

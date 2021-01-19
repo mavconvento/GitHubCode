@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace DomainObject
 {
+   
     [Table("mavcpigeon_user")]
     public class User
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid? UserID { get; set; }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Int64? DisplayID { get; set; }
         public string FirstName { get; set; }
@@ -19,6 +21,8 @@ namespace DomainObject
         public string UserName { get; set; }
         public string Password { get; set; }
         public DateTime DateCreated { get; set; }
+        public String LoftName { get; set; }
+        public Guid? FileUploadID { get; set; }
 
         [NotMapped]
         public string Token { get; set; }

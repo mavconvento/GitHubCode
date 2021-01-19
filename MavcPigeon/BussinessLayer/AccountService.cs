@@ -16,9 +16,9 @@ namespace BussinessLayer
         private readonly IAccountRepository _account;
         private readonly IConfiguration _configuration;
 
-        public AccountService(IAccountRepository accountServices, IConfiguration configuration)
+        public AccountService(IAccountRepository accountRepository, IConfiguration configuration)
         {
-            _account = accountServices ?? throw new ArgumentNullException(nameof(accountServices));
+            _account = accountRepository ?? throw new ArgumentNullException(nameof(accountRepository));
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
         }
 
@@ -72,11 +72,11 @@ namespace BussinessLayer
             throw new NotImplementedException();
         }
 
-        public async Task<string> Update(User user)
+        public async Task<string> Update(Profile profile)
         {
             try
             {
-                return await _account.Update(user);
+                return await _account.Update(profile);
             }
             catch (Exception ex)
             {

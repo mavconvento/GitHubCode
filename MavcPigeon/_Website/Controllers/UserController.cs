@@ -52,5 +52,22 @@ namespace _Website.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, new CustomMesageError(ex.Message).Message);
             }
         }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> UpdateProfile([FromForm] Profile profile)
+        {
+            try
+            {
+                return Ok(this.Content(await _account.Update(profile), "application/json"));
+            }
+            catch (Exception ex)
+            {
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "", "");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomMesageError(ex.Message).Message);
+            }
+        }
+
     }
 }
+
+

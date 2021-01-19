@@ -145,7 +145,7 @@ namespace PegionClocking
                     string path = "";
                     while (index <= recordCount)
                     {
-                        path = this.txtDestination.Text + "\\" + this.txtFilename.Text + "_" + index + ".xlsx";
+                        path = this.txtDestination.Text + "\\" + this.txtFilename.Text + "_" + index + ".xls";
                         System.IO.File.Copy(this.txtTemplate.Text, path, true);
                         GenerateCardNow(stickerNumber.CardSelectAll(), path, index, recordCount);
                         index += 1;

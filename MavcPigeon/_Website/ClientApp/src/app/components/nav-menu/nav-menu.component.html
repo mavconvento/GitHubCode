@@ -1,5 +1,5 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
     <div class="container">
       <a class="navbar-brand" [routerLink]="['/']"><img src="" />MAVC Pigeon Clocking</a>
       <button class="navbar-toggler"
@@ -18,18 +18,6 @@
               [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
           </li>
-          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
-          </li>
-          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/online-clocking']">Online Clocking</a>
-          </li>
-          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/race-result']">Race Result</a>
-          </li>
-          <!--<li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
-        </li>-->
           <li *ngIf="!(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/login']">Login</a>
           </li>

@@ -43,12 +43,14 @@
     <None Remove="ClientApp\src\app\helpers\error.interceptor.ts" />
     <None Remove="ClientApp\src\app\helpers\helpers.ts" />
     <None Remove="ClientApp\src\app\helpers\jwt.interceptor.ts" />
+    <None Remove="ClientApp\src\app\models\profile.ts" />
     <None Remove="ClientApp\src\app\models\result.ts" />
     <None Remove="ClientApp\src\app\models\token.ts" />
     <None Remove="ClientApp\src\app\models\user.ts" />
     <None Remove="ClientApp\src\app\services\alert.service.ts" />
     <None Remove="ClientApp\src\app\services\authentication.service.ts" />
     <None Remove="ClientApp\src\app\services\base.service.ts" />
+    <None Remove="ClientApp\src\app\services\image.service.ts" />
     <None Remove="ClientApp\src\app\services\race.service.ts" />
     <None Remove="ClientApp\src\app\services\token.service.ts" />
     <None Remove="ClientApp\src\app\services\user.service.ts" />
@@ -61,6 +63,15 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\src\assets\img\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\app\models\profile.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\services\image.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

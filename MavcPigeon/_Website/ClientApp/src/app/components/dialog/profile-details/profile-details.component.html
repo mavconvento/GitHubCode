@@ -1,0 +1,26 @@
+<h4 mat-dialog-title>{{title}}</h4>
+<mat-dialog-content [formGroup]="form">
+  <div class="profile">
+    <img mat-card-image *ngIf="photo" src={{photo}} alt="photo">
+    <div class="example-button-row" style="padding-top:5px">
+      <input hidden type="file" accept='image/*' (change)="onFileSelected($event)" #fileInput />
+      <button mat-raised-button color="primary" (click)="fileInput.click()">Get Photo</button>
+      <!--<button mat-raised-button color="primary">Upload</button>-->
+    </div>
+  </div>
+  <br />
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+    <mat-form-field>
+      <input matInput
+             placeholder="Loft Name"
+             formControlName="loftName">
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<br />
+<mat-dialog-actions>
+  <div class="flex-container" fxLayout="row" fxLayoutGap="2px">
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+  </div>
+</mat-dialog-actions>

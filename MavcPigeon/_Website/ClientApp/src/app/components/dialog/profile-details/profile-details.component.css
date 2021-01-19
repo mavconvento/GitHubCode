@@ -1,0 +1,8 @@
+.mat-card-image {
+  width: 150px;
+  height: 150px;
+}
+
+/*.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}*/

@@ -30,7 +30,8 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',
-            templateUrl: './app.component.html'
+            templateUrl: './app.component.html',
+            styleUrls: ['./app.component.css']
         }),
         __metadata("design:paramtypes", [router_1.Router,
             authentication_service_1.AuthenticationService

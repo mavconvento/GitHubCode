@@ -27,6 +27,10 @@ var UserService = /** @class */ (function () {
     UserService.prototype.register = function (user) {
         return this.http.post(this._baseUrl + 'api/user/register', user);
     };
+    UserService.prototype.updateProfile = function (formData) {
+        var getURL = this._baseUrl + 'api/user/UpdateProfile';
+        return this.http.post(getURL, formData);
+    };
     UserService.prototype.delete = function (id) {
         return this.http.delete(this._baseUrl + 'user');
     };

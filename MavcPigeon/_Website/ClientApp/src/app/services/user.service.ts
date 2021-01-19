@@ -22,6 +22,12 @@ export class UserService {
     return this.http.post(this._baseUrl + 'api/user/register', user);
   }
 
+  updateProfile(formData: FormData): Observable<boolean | any> {
+    let getURL = this._baseUrl + 'api/user/UpdateProfile';
+
+    return this.http.post<boolean>(getURL, formData);
+  }
+
   delete(id: number) {
     return this.http.delete(this._baseUrl + 'user');
   }

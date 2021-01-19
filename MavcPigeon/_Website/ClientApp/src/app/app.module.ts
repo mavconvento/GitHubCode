@@ -24,6 +24,9 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RaceResultComponent } from './components/race-result/race-result.component';
 import { OnlineClockingComponent } from './components/online-clocking/online-clocking.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { ProfileDetailsComponent } from './components/dialog/profile-details/profile-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LinkNumberComponent } from './components/dialog/link-number/link-number.component';
 
 @NgModule({
   declarations: [
@@ -39,11 +42,14 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
     ProfileComponent,
     RaceResultComponent,
     OnlineClockingComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    ProfileDetailsComponent,
+    LinkNumberComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
@@ -67,6 +73,7 @@ import { MainMenuComponent } from './components/main-menu/main-menu.component';
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ProfileDetailsComponent]
 })
 export class AppModule { }
