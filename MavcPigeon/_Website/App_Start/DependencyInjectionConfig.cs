@@ -6,6 +6,7 @@ using DomainObject.AppServices;
 using BussinessLayer.Contracts;
 using BussinessLayer;
 using Repository.Contracts;
+using Repository.Helper;
 using Repository;
 using Microsoft.Extensions.DependencyInjection;
 using BussinessLayer.Helper;
@@ -20,12 +21,15 @@ namespace _Website.App_Start
             services.AddScoped<IExceptionService, ExceptionService>();
             services.AddScoped<IFileDownloadUpload, FileDownloadUpload>();
             services.AddScoped<IImageService, ImageService>();
-
+            services.AddScoped<IRaceService, RaceService>();
 
             //repository
             services.AddScoped<IAccountRepository, AccountRepository>();
             services.AddScoped<IExceptionRepository, ExceptionRepository>();
             services.AddScoped<IImageRepository, ImageRepository>();
+            services.AddScoped<IOTPCodeRepository, OtpRepository>();
+            services.AddScoped<ICommonRepository, CommonRepository>();
+            services.AddScoped<IRaceRepository, RaceRepository>();
         }
     }
 }

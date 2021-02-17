@@ -13,7 +13,6 @@ exports.RegisterComponent = void 0;
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
-var operators_1 = require("rxjs/operators");
 var authentication_service_1 = require("../../services/authentication.service");
 var alert_service_1 = require("../../services/alert.service");
 var user_service_1 = require("../../services/user.service");
@@ -58,9 +57,10 @@ var RegisterComponent = /** @class */ (function () {
         }
         this.loading = true;
         this.userService.register(this.registerForm.value)
-            .pipe(operators_1.first())
             .subscribe(function (data) {
-            _this.alertService.successNotification('Registration Complete.');
+            console.log(data);
+            _this.alertService.successNotification("Registration Complete.");
+            console.log(data);
             _this.router.navigate(['/login']);
         }, function (error) {
             _this.loading = false;

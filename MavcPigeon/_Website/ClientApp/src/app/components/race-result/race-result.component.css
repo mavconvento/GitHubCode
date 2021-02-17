@@ -1,0 +1,26 @@
+.mat-footer-row,
+.mat-header-row,
+.mat-row {
+  display: inline-flex;
+  min-width: 100%;
+}
+
+.mat-column-Rank {
+  flex: 0 0 70px;
+}
+
+.mat-column-MemberName {
+  flex: 0 0 230px;
+}
+
+.mat-column-Arrival {
+  flex: 0 0 150px;
+}
+
+.mat-column-TotalEntry {
+  flex: 0 0 70px;
+}
+
+.mat-elevation-z8 {
+  overflow-x: auto;
+}

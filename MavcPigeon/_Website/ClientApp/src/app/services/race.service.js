@@ -1,17 +1,4 @@
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -28,27 +15,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.RaceService = void 0;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
-var operators_1 = require("rxjs/operators");
-var base_service_1 = require("./base.service");
-var helpers_1 = require("../helpers/helpers");
-var RaceService = /** @class */ (function (_super) {
-    __extends(RaceService, _super);
-    function RaceService(http, helper, baseUrl) {
-        var _this = _super.call(this, helper) || this;
-        _this.http = http;
-        _this._baseUrl = baseUrl;
-        return _this;
+var RaceService = /** @class */ (function () {
+    function RaceService(http, baseUrl) {
+        this.http = http;
+        this._baseUrl = baseUrl;
     }
-    RaceService.prototype.getResult = function () {
-        var getURL = this._baseUrl + 'api/weatherforecast/get';
-        this.getUrl = getURL;
-        return this.http.get(this.getUrl, _super.prototype.header.call(this)).pipe(operators_1.catchError(_super.prototype.handleError));
+    RaceService.prototype.getRaceResult = function (formData) {
+        var getURL = this._baseUrl + 'api/race/getRaceResult';
+        return this.http.post(getURL, formData);
+    };
+    RaceService.prototype.getRaceDetails = function (formData) {
+        var getURL = this._baseUrl + 'api/race/getRaceDetails';
+        return this.http.post(getURL, formData);
+    };
+    RaceService.prototype.getRaceEntry = function (formData) {
+        var getURL = this._baseUrl + 'api/race/getRaceEntry';
+        return this.http.post(getURL, formData);
+    };
+    RaceService.prototype.getRaceCategory = function (dbName, clubName) {
+        return this.http.get(this._baseUrl + 'api/race/getRaceCategory?dbName=' + dbName + "&clubName=" + clubName);
+    };
+    RaceService.prototype.getRaceGroup = function (dbName, clubName) {
+        return this.http.get(this._baseUrl + 'api/race/getRaceGroup?dbName=' + dbName + "&clubName=" + clubName);
+    };
+    RaceService.prototype.getBalance = function (mobilenumber) {
+        return this.http.get(this._baseUrl + 'api/race/getBalance?mobileNumber=' + mobilenumber);
+    };
+    RaceService.prototype.onlineClocking = function (formData) {
+        var getURL = this._baseUrl + 'api/race/onlineClocking';
+        return this.http.post(getURL, formData);
     };
     RaceService = __decorate([
-        __param(2, core_1.Inject('BASE_URL')),
-        __metadata("design:paramtypes", [http_1.HttpClient, helpers_1.Helpers, String])
+        core_1.Injectable({ providedIn: 'root' }),
+        __param(1, core_1.Inject('BASE_URL')),
+        __metadata("design:paramtypes", [http_1.HttpClient, String])
     ], RaceService);
     return RaceService;
-}(base_service_1.BaseService));
+}());
 exports.RaceService = RaceService;
 //# sourceMappingURL=race.service.js.map

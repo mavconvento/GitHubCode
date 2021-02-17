@@ -7,8 +7,11 @@ import { RouterModule } from '@angular/router';
 import 'hammerjs';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { JwtInterceptor } from './helpers/jwt.interceptor'
-import { ErrorInterceptor } from './helpers/error.interceptor'
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor } from './helpers/error.interceptor';
+
+//filterpipe
+import { MobileListFilterPipe } from './components/shared/mobilelist-filter.pipe';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
@@ -24,13 +27,24 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RaceResultComponent } from './components/race-result/race-result.component';
 import { OnlineClockingComponent } from './components/online-clocking/online-clocking.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
-import { ProfileDetailsComponent } from './components/dialog/profile-details/profile-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LinkNumberComponent } from './components/dialog/link-number/link-number.component';
+
+//dialog
+import { LinkNumberDialogComponent } from './components/dialog/link-number/link-number.component';
+import { OnlineClockingDialogComponent } from './components/dialog/online-clocking/online-clocking.component';
+import { ConfirmdialogComponent } from './components/dialog/confirmdialog/confirmdialog.component';
+import { ProfileDetailsDialogComponent } from './components/dialog/profile-details/profile-details.component';
+import { ForgotPasswordComponent } from './components/dialog/forgot-password/forgot-password.component';
+
+//youtube
+import { YouTubePlayerModule } from "@angular/youtube-player";
+import { TutorialsComponent } from './components/tutorials/tutorials.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    //filterpipe
+    MobileListFilterPipe,
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
@@ -43,13 +57,20 @@ import { LinkNumberComponent } from './components/dialog/link-number/link-number
     RaceResultComponent,
     OnlineClockingComponent,
     MainMenuComponent,
-    ProfileDetailsComponent,
-    LinkNumberComponent
+
+    //dialog
+    ProfileDetailsDialogComponent,
+    LinkNumberDialogComponent,
+    OnlineClockingDialogComponent,
+    ConfirmdialogComponent,
+    ForgotPasswordComponent,
+    TutorialsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     BrowserAnimationsModule,
+    YouTubePlayerModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
@@ -61,19 +82,20 @@ import { LinkNumberComponent } from './components/dialog/link-number/link-number
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'logout', component: LogoutComponent },
+      { path: 'tutorials', component: TutorialsComponent },
     ]),
     FlexLayoutModule,
     AppMaterialModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
   ],
   bootstrap: [AppComponent],
-  entryComponents: [ProfileDetailsComponent]
+  entryComponents: [ProfileDetailsDialogComponent, ForgotPasswordComponent, LinkNumberDialogComponent, OnlineClockingDialogComponent, ConfirmdialogComponent]
 })
 export class AppModule { }

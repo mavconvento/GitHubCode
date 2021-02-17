@@ -13,5 +13,8 @@ namespace DomainObject
         public Guid UserID { get; set; }
         public IFormFile Image { get; set; }
         public String LoftName { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public Guid? FileUploadId { get; set; }
     }
 }

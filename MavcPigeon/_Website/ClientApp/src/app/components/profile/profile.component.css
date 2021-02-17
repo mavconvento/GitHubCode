@@ -14,3 +14,13 @@
     width : 150px;
     height: 150px;
 }
+
+.mobile-indent
+{
+    margin-left:10px;
+    padding-left:100px;
+}
+
+mat-raised-button {
+  width: 50px;
+}

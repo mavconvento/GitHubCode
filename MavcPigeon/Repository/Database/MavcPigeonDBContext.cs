@@ -22,6 +22,8 @@ namespace Repository.Database
         }
 
         public DbSet<User> User { get; set; }
+        public DbSet<OTPCodes> OTPCode { get; set; }
+        public DbSet<LoadMonitoring> LoadMonitorings { get; set; }
         public DbSet<FileUpload> FileUploads { get; set; }
         public DbSet<ExceptionLog> ExceptionLogs { get; set; }
 

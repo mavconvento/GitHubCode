@@ -6,6 +6,8 @@ import { TokenService } from '../../services/token.service';
 import { Helpers } from '../../helpers/helpers';
 import { AuthenticationService } from '../../services/authentication.service'
 import {  AlertService } from '../../services/alert.service'
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ForgotPasswordComponent } from '../dialog/forgot-password/forgot-password.component';
 
 @Component({
   selector: 'app-login',
@@ -35,6 +37,7 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
 
   constructor(
+    private dialog: MatDialog,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
@@ -79,5 +82,25 @@ export class LoginComponent implements OnInit {
           this.alertService.errorNotification(error);
           this.loading = false;
         });
+  }
+
+  forgotPassword() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+
+    dialogConfig.data = {
+      title: 'Forgot Password'
+    };
+
+    const dialogRef = this.dialog.open(ForgotPasswordComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe(
+      data => {
+        console.log(data);
+      });
+
+    console.log("forgot password");
   }
 }

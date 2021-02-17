@@ -53,8 +53,8 @@ var AlertService = /** @class */ (function () {
     function AlertService(router) {
         this.router = router;
     }
-    AlertService.prototype.simpleNotification = function () {
-        sweetalert2_all_min_js_1.default.fire('Simple Notification');
+    AlertService.prototype.simpleNotification = function (message) {
+        sweetalert2_all_min_js_1.default.fire('', message, 'success');
     };
     AlertService.prototype.successNotification = function (message) {
         sweetalert2_all_min_js_1.default.fire('', message, 'success');

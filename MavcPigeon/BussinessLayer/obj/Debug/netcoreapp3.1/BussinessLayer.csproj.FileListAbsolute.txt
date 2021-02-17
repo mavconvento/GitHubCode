@@ -1,7 +1,3 @@
-C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfoInputs.cache
-C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfo.cs
-C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CoreCompileInputs.cache
-C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csprojAssemblyReference.cache
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.deps.json
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.pdb
@@ -9,6 +5,10 @@ C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcor
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\Repository.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\DomainObject.pdb
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csprojAssemblyReference.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfoInputs.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfo.cs
+C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CoreCompileInputs.cache
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CopyComplete
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.pdb

@@ -9,8 +9,8 @@ export class AlertService {
   constructor(private router: Router) {
   }
 
-  simpleNotification() {
-    swal.fire('Simple Notification');
+  simpleNotification(message: string) {
+    swal.fire('', message,'success');
   }
 
   successNotification(message:string) {
@@ -18,7 +18,6 @@ export class AlertService {
   }
 
   errorNotification(message: any) {
-
     swal.fire('', message, 'error')
   }
 

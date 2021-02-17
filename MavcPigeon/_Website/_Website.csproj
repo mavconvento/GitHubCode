@@ -11,11 +11,13 @@
 	<TypeScriptEmitDecoratorMetadata>True</TypeScriptEmitDecoratorMetadata>
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <UserSecretsId>c60c4619-dc3a-4abe-80dd-72797ce077bb</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.10" />
@@ -26,6 +28,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="System.Drawing.Common" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\shared\mobilelist-filter.pipe.ts" />
     <None Remove="ClientApp\src\app\config\config.ts" />
     <None Remove="ClientApp\src\app\helpers\auth.guard.ts" />
     <None Remove="ClientApp\src\app\helpers\canActivateAuthGuard.ts" />
@@ -43,13 +47,17 @@
     <None Remove="ClientApp\src\app\helpers\error.interceptor.ts" />
     <None Remove="ClientApp\src\app\helpers\helpers.ts" />
     <None Remove="ClientApp\src\app\helpers\jwt.interceptor.ts" />
+    <None Remove="ClientApp\src\app\models\clubname.ts" />
+    <None Remove="ClientApp\src\app\models\entry.ts" />
     <None Remove="ClientApp\src\app\models\profile.ts" />
     <None Remove="ClientApp\src\app\models\result.ts" />
     <None Remove="ClientApp\src\app\models\token.ts" />
     <None Remove="ClientApp\src\app\models\user.ts" />
+    <None Remove="ClientApp\src\app\services\account.service.ts" />
     <None Remove="ClientApp\src\app\services\alert.service.ts" />
     <None Remove="ClientApp\src\app\services\authentication.service.ts" />
     <None Remove="ClientApp\src\app\services\base.service.ts" />
+    <None Remove="ClientApp\src\app\services\compress-image.service.ts" />
     <None Remove="ClientApp\src\app\services\image.service.ts" />
     <None Remove="ClientApp\src\app\services\race.service.ts" />
     <None Remove="ClientApp\src\app\services\token.service.ts" />
@@ -62,11 +70,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\assets\img\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\app\models\clubname.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\models\entry.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Update="ClientApp\src\app\models\profile.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\services\account.service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\services\compress-image.service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Update="ClientApp\src\app\services\image.service.ts">

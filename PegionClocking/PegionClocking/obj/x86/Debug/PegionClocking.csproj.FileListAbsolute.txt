@@ -320,3 +320,4 @@ C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debu
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csproj.GenerateResource.Cache
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.exe.manifest
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.application
+C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\obj\x86\Debug\PegionClocking.csprojResolveAssemblyReference.cache

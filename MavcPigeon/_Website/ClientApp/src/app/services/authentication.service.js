@@ -58,6 +58,12 @@ var AuthenticationService = /** @class */ (function () {
     AuthenticationService.prototype.logout = function () {
         // remove user from local storage and set current user to null
         localStorage.removeItem('currentUser');
+        localStorage.removeItem('profileImageID');
+        localStorage.removeItem('primary');
+        localStorage.removeItem('clubs');
+        localStorage.removeItem('mobile');
+        localStorage.removeItem('onlineClockingClub');
+        localStorage.removeItem('selectedClub');
         this.isUserLoginSubject.next(false);
         this.currentUserSubject.next(null);
     };

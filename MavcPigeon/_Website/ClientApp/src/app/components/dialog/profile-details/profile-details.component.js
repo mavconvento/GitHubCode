@@ -48,7 +48,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProfileDetailsComponent = void 0;
+exports.ProfileDetailsDialogComponent = void 0;
 var core_1 = require("@angular/core");
 var core_2 = require("@angular/core");
 var forms_1 = require("@angular/forms");
@@ -57,63 +57,90 @@ var guid_typescript_1 = require("guid-typescript");
 var alert_service_1 = require("../../../services/alert.service");
 var user_service_1 = require("../../../services/user.service");
 var authentication_service_1 = require("../../../services/authentication.service");
-var ProfileDetailsComponent = /** @class */ (function () {
-    function ProfileDetailsComponent(fb, userService, alertService, authenticationService, dialogRef, data) {
+var compress_image_service_1 = require("../../../services/compress-image.service");
+var ProfileDetailsDialogComponent = /** @class */ (function () {
+    function ProfileDetailsDialogComponent(fb, userService, alertService, authenticationService, dialogRef, compressImage, data) {
         this.fb = fb;
         this.userService = userService;
         this.alertService = alertService;
         this.authenticationService = authenticationService;
         this.dialogRef = dialogRef;
-        console.log(data);
+        this.compressImage = compressImage;
+        this.IsSave = false;
         this.title = data.title;
+        this.fileUploadID = data.fileUploadID;
         this.id = guid_typescript_1.Guid.create();
     }
-    ProfileDetailsComponent.prototype.ngOnInit = function () {
+    ProfileDetailsDialogComponent.prototype.ngOnInit = function () {
         var currentUser = this.authenticationService.currentUserValue;
         this.form = this.fb.group({
             loftName: [currentUser.loftName, []],
+            firstname: [currentUser.firstName, []],
+            lastName: [currentUser.lastName, []],
             photo: ['', []]
         });
     };
-    ProfileDetailsComponent.prototype.onFileSelected = function (events) {
-        console.log(events);
-        this.fileToUpload = events.target.files[0];
+    ProfileDetailsDialogComponent.prototype.onFileSelected = function (events) {
+        var _this = this;
+        var image = events.target.files[0];
+        console.log(image.size);
+        this.compressImage.compress(image)
+            .subscribe(function (compressedImage) {
+            _this.fileToUpload = compressedImage;
+            console.log(_this.fileToUpload);
+            //use original image if convert images is large
+            if (image.size < compressedImage.size) {
+                _this.fileToUpload = image;
+            }
+        });
+        //console.log(this.fileToUpload.size)
         this.preview(events.target.files);
-        //console.log(this.fileToUpload);
     };
     ;
-    Object.defineProperty(ProfileDetailsComponent.prototype, "f", {
+    Object.defineProperty(ProfileDetailsDialogComponent.prototype, "f", {
         // convenience getter for easy access to form fields
         get: function () { return this.form.controls; },
         enumerable: false,
         configurable: true
     });
-    ProfileDetailsComponent.prototype.save = function () {
+    ProfileDetailsDialogComponent.prototype.save = function () {
         return __awaiter(this, void 0, void 0, function () {
             var formData, currentUser;
             var _this = this;
             return __generator(this, function (_a) {
+                this.IsSave = true;
                 formData = new FormData();
                 currentUser = this.authenticationService.currentUserValue;
-                //console.log(this.fileToUpload);
-                //console.log(this.id.toString());
                 formData.append('image', this.fileToUpload);
                 formData.append('userID', currentUser.userID);
                 formData.append('LoftName', this.f.loftName.value);
+                formData.append('FirstName', this.f.firstname.value);
+                formData.append('LastName', this.f.lastName.value);
+                if (this.fileUploadID)
+                    formData.append('fileUploadID', this.fileUploadID);
                 this.userService.updateProfile(formData).subscribe(function (data) {
-                    localStorage.setItem("profileImageID", data.content);
+                    //console.log(JSON.parse(data.content));
+                    var result = JSON.parse(data.content);
+                    if (result[0].FileUploadId) {
+                        localStorage.setItem("profileImageID", result[0].FileUploadId);
+                        currentUser.fileUploadID = result[0].FileUploadId;
+                    }
+                    else
+                        localStorage.removeItem("profileImageID");
                     currentUser.loftName = _this.f.loftName.value;
+                    currentUser.firstName = _this.f.firstname.value;
+                    currentUser.lastName = _this.f.lastName.value;
                     localStorage.setItem('currentUser', JSON.stringify(currentUser));
-                    //console.log(data.content);
                     _this.dialogRef.close();
                     //alert notification
                     _this.alertService.successNotification("Updating profile success.");
-                });
+                    _this.IsSave = false;
+                }, function (error) { _this.alertService.errorNotification(error); _this.IsSave = false; });
                 return [2 /*return*/];
             });
         });
     };
-    ProfileDetailsComponent.prototype.preview = function (files) {
+    ProfileDetailsDialogComponent.prototype.preview = function (files) {
         var _this = this;
         if (files.length === 0)
             return;
@@ -129,23 +156,24 @@ var ProfileDetailsComponent = /** @class */ (function () {
             _this.photo = reader.result;
         };
     };
-    ProfileDetailsComponent.prototype.close = function () {
+    ProfileDetailsDialogComponent.prototype.close = function () {
         this.dialogRef.close();
     };
-    ProfileDetailsComponent = __decorate([
+    ProfileDetailsDialogComponent = __decorate([
         core_2.Component({
             selector: 'app-profile-details',
             templateUrl: './profile-details.component.html',
             styleUrls: ['./profile-details.component.css']
         }),
-        __param(5, core_1.Inject(material_1.MAT_DIALOG_DATA)),
+        __param(6, core_1.Inject(material_1.MAT_DIALOG_DATA)),
         __metadata("design:paramtypes", [forms_1.FormBuilder,
             user_service_1.UserService,
             alert_service_1.AlertService,
             authentication_service_1.AuthenticationService,
-            material_1.MatDialogRef, Object])
-    ], ProfileDetailsComponent);
-    return ProfileDetailsComponent;
+            material_1.MatDialogRef,
+            compress_image_service_1.CompressImageService, Object])
+    ], ProfileDetailsDialogComponent);
+    return ProfileDetailsDialogComponent;
 }());
-exports.ProfileDetailsComponent = ProfileDetailsComponent;
+exports.ProfileDetailsDialogComponent = ProfileDetailsDialogComponent;
 //# sourceMappingURL=profile-details.component.js.map

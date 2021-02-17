@@ -12,8 +12,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Helpers = void 0;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
+var alert_service_1 = require("../services/alert.service");
+var authentication_service_1 = require("../services/authentication.service");
+var race_service_1 = require("../services/race.service");
+var user_service_1 = require("../services/user.service");
 var Helpers = /** @class */ (function () {
-    function Helpers() {
+    function Helpers(authenticationService, alertService, raceService, userService) {
+        this.authenticationService = authenticationService;
+        this.alertService = alertService;
+        this.raceService = raceService;
+        this.userService = userService;
         this.authenticationChanged = new rxjs_1.Subject();
     }
     Helpers.prototype.isAuthenticated = function () {
@@ -52,7 +60,10 @@ var Helpers = /** @class */ (function () {
     };
     Helpers = __decorate([
         core_1.Injectable({ providedIn: 'root' }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [authentication_service_1.AuthenticationService,
+            alert_service_1.AlertService,
+            race_service_1.RaceService,
+            user_service_1.UserService])
     ], Helpers);
     return Helpers;
 }());

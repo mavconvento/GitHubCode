@@ -1,0 +1,34 @@
+<h6 mat-dialog-title style="text-align:center">{{title}}</h6>
+<mat-dialog-content [formGroup]="form">
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px" *ngIf="isPasaload">
+      <span>Current Balance: {{pasaloadBalance | number:'1.2-2'}}</span>
+  </div>
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px" *ngIf="isPasaload">
+    <mat-form-field>
+      <input type="text" matInput
+             placeholder="Mobile Number"
+             formControlName="mobileNumberLoadReceiver">
+    </mat-form-field>
+  </div>
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px" *ngIf="isLoadCard">
+    <mat-form-field>
+      <input type="text" matInput
+             placeholder="Pin Number"
+             formControlName="pinNumber">
+    </mat-form-field>
+  </div>
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px" *ngIf="isPasaload">
+    <mat-form-field>
+      <input type="text" matInput
+             placeholder="Pasaload Amount"
+             formControlName="amount">
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+<br />
+<mat-dialog-actions>
+  <div class="flex-container" fxLayout="row" fxLayoutGap="2px">
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="submit()">Send</button>
+  </div>
+</mat-dialog-actions>

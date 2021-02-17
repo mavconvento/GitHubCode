@@ -15,9 +15,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImageService = void 0;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
-var helpers_1 = require("../helpers/helpers");
 var ImageService = /** @class */ (function () {
-    function ImageService(http, helper, baseUrl) {
+    function ImageService(http, baseUrl) {
         this.http = http;
         this._baseUrl = baseUrl;
     }
@@ -26,8 +25,8 @@ var ImageService = /** @class */ (function () {
     };
     ImageService = __decorate([
         core_1.Injectable({ providedIn: 'root' }),
-        __param(2, core_1.Inject('BASE_URL')),
-        __metadata("design:paramtypes", [http_1.HttpClient, helpers_1.Helpers, String])
+        __param(1, core_1.Inject('BASE_URL')),
+        __metadata("design:paramtypes", [http_1.HttpClient, String])
     ], ImageService);
     return ImageService;
 }());

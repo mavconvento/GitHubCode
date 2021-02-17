@@ -12,6 +12,16 @@
   <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
     <mat-form-field>
       <input matInput
+             placeholder="First Name"
+             formControlName="firstname">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+             placeholder="Last Name"
+             formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
              placeholder="Loft Name"
              formControlName="loftName">
     </mat-form-field>
@@ -21,6 +31,6 @@
 <mat-dialog-actions>
   <div class="flex-container" fxLayout="row" fxLayoutGap="2px">
     <button class="mat-raised-button" (click)="close()">Close</button>
-    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+    <button class="mat-raised-button mat-primary" [disabled]="IsSave" (click)="save()">Save</button>
   </div>
 </mat-dialog-actions>

@@ -15,14 +15,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/common/http");
-var helpers_1 = require("../helpers/helpers");
 var UserService = /** @class */ (function () {
-    function UserService(http, helper, baseUrl) {
+    function UserService(http, baseUrl) {
         this.http = http;
         this._baseUrl = baseUrl;
     }
     UserService.prototype.getAll = function () {
         return this.http.get(this._baseUrl + 'user');
+    };
+    UserService.prototype.getLinkMobileList = function (id) {
+        return this.http.get(this._baseUrl + 'api/user/GetMobileLinkList/' + id);
     };
     UserService.prototype.register = function (user) {
         return this.http.post(this._baseUrl + 'api/user/register', user);
@@ -31,13 +33,33 @@ var UserService = /** @class */ (function () {
         var getURL = this._baseUrl + 'api/user/UpdateProfile';
         return this.http.post(getURL, formData);
     };
+    UserService.prototype.linkMobileNumber = function (formData) {
+        var getURL = this._baseUrl + 'api/user/LinkMobileNumber';
+        return this.http.post(getURL, formData);
+    };
     UserService.prototype.delete = function (id) {
         return this.http.delete(this._baseUrl + 'user');
     };
+    UserService.prototype.getLinkMobileByEmail = function (email) {
+        var getURL = this._baseUrl + 'api/user/GetMobileByEmail?email=' + email;
+        return this.http.get(getURL);
+    };
+    UserService.prototype.forgotPassword = function (email, mobile) {
+        var getURL = this._baseUrl + 'api/user/SendPassword?email=' + email + '&mobile=' + mobile;
+        return this.http.get(getURL);
+    };
+    UserService.prototype.getVideo = function (type) {
+        var getURL = this._baseUrl + 'api/user/getVideo?type=' + type;
+        return this.http.get(getURL);
+    };
+    UserService.prototype.getMemberCoordinates = function (memberidno, clubname, dbname) {
+        var getURL = this._baseUrl + 'api/user/getMemberCoordinates?memberidno=' + memberidno + '&clubname=' + clubname + '&dbname=' + dbname;
+        return this.http.get(getURL);
+    };
     UserService = __decorate([
         core_1.Injectable({ providedIn: 'root' }),
-        __param(2, core_1.Inject('BASE_URL')),
-        __metadata("design:paramtypes", [http_1.HttpClient, helpers_1.Helpers, String])
+        __param(1, core_1.Inject('BASE_URL')),
+        __metadata("design:paramtypes", [http_1.HttpClient, String])
     ], UserService);
     return UserService;
 }());

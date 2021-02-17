@@ -17,6 +17,8 @@ var app_material_module_1 = require("./app-material/app-material.module");
 var flex_layout_1 = require("@angular/flex-layout");
 var jwt_interceptor_1 = require("./helpers/jwt.interceptor");
 var error_interceptor_1 = require("./helpers/error.interceptor");
+//filterpipe
+var mobilelist_filter_pipe_1 = require("./components/shared/mobilelist-filter.pipe");
 var app_component_1 = require("./app.component");
 var nav_menu_component_1 = require("./components/nav-menu/nav-menu.component");
 var home_component_1 = require("./components/home/home.component");
@@ -31,9 +33,16 @@ var profile_component_1 = require("./components/profile/profile.component");
 var race_result_component_1 = require("./components/race-result/race-result.component");
 var online_clocking_component_1 = require("./components/online-clocking/online-clocking.component");
 var main_menu_component_1 = require("./components/main-menu/main-menu.component");
-var profile_details_component_1 = require("./components/dialog/profile-details/profile-details.component");
 var animations_1 = require("@angular/platform-browser/animations");
+//dialog
 var link_number_component_1 = require("./components/dialog/link-number/link-number.component");
+var online_clocking_component_2 = require("./components/dialog/online-clocking/online-clocking.component");
+var confirmdialog_component_1 = require("./components/dialog/confirmdialog/confirmdialog.component");
+var profile_details_component_1 = require("./components/dialog/profile-details/profile-details.component");
+var forgot_password_component_1 = require("./components/dialog/forgot-password/forgot-password.component");
+//youtube
+var youtube_player_1 = require("@angular/youtube-player");
+var tutorials_component_1 = require("./components/tutorials/tutorials.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -41,6 +50,8 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
+                //filterpipe
+                mobilelist_filter_pipe_1.MobileListFilterPipe,
                 nav_menu_component_1.NavMenuComponent,
                 home_component_1.HomeComponent,
                 counter_component_1.CounterComponent,
@@ -53,13 +64,19 @@ var AppModule = /** @class */ (function () {
                 race_result_component_1.RaceResultComponent,
                 online_clocking_component_1.OnlineClockingComponent,
                 main_menu_component_1.MainMenuComponent,
-                profile_details_component_1.ProfileDetailsComponent,
-                link_number_component_1.LinkNumberComponent
+                //dialog
+                profile_details_component_1.ProfileDetailsDialogComponent,
+                link_number_component_1.LinkNumberDialogComponent,
+                online_clocking_component_2.OnlineClockingDialogComponent,
+                confirmdialog_component_1.ConfirmdialogComponent,
+                forgot_password_component_1.ForgotPasswordComponent,
+                tutorials_component_1.TutorialsComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
                 http_1.HttpClientModule,
                 animations_1.BrowserAnimationsModule,
+                youtube_player_1.YouTubePlayerModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forRoot([
@@ -71,20 +88,21 @@ var AppModule = /** @class */ (function () {
                     { path: 'login', component: login_component_1.LoginComponent },
                     { path: 'register', component: register_component_1.RegisterComponent },
                     { path: 'logout', component: logout_component_1.LogoutComponent },
+                    { path: 'tutorials', component: tutorials_component_1.TutorialsComponent },
                 ]),
                 flex_layout_1.FlexLayoutModule,
                 app_material_module_1.AppMaterialModule
             ],
             providers: [
                 { provide: http_1.HTTP_INTERCEPTORS, useClass: jwt_interceptor_1.JwtInterceptor, multi: true },
-                { provide: http_1.HTTP_INTERCEPTORS, useClass: error_interceptor_1.ErrorInterceptor, multi: true },
+                { provide: http_1.HTTP_INTERCEPTORS, useClass: error_interceptor_1.ErrorInterceptor, multi: true }
             ],
             schemas: [
                 core_1.CUSTOM_ELEMENTS_SCHEMA,
                 core_1.NO_ERRORS_SCHEMA
             ],
             bootstrap: [app_component_1.AppComponent],
-            entryComponents: [profile_details_component_1.ProfileDetailsComponent]
+            entryComponents: [profile_details_component_1.ProfileDetailsDialogComponent, forgot_password_component_1.ForgotPasswordComponent, link_number_component_1.LinkNumberDialogComponent, online_clocking_component_2.OnlineClockingDialogComponent, confirmdialog_component_1.ConfirmdialogComponent]
         })
     ], AppModule);
     return AppModule;

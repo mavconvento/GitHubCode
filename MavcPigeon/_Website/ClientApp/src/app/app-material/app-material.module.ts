@@ -30,7 +30,8 @@ import {
   MatGridListModule,
   MatRadioModule,
   MatDatepickerModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatNativeDateModule
 } from '@angular/material';
 
 
@@ -68,6 +69,7 @@ import {
     MatRadioModule,
     MatDatepickerModule,
     MatTooltipModule,
+    MatNativeDateModule
   ],
   exports: [
     MatAutocompleteModule,
@@ -99,6 +101,7 @@ import {
     MatRadioModule,
     MatDatepickerModule,
     MatTooltipModule,
+    MatNativeDateModule
     ]
 })
 export class AppMaterialModule { }

@@ -7,12 +7,12 @@ describe('ProfileDetailsComponent', function () {
     var fixture;
     beforeEach(testing_1.async(function () {
         testing_1.TestBed.configureTestingModule({
-            declarations: [profile_details_component_1.ProfileDetailsComponent]
+            declarations: [profile_details_component_1.ProfileDetailsDialogComponent]
         })
             .compileComponents();
     }));
     beforeEach(function () {
-        fixture = testing_1.TestBed.createComponent(profile_details_component_1.ProfileDetailsComponent);
+        fixture = testing_1.TestBed.createComponent(profile_details_component_1.ProfileDetailsDialogComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

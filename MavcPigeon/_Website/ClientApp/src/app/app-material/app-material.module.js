@@ -47,6 +47,7 @@ var AppMaterialModule = /** @class */ (function () {
                 material_1.MatRadioModule,
                 material_1.MatDatepickerModule,
                 material_1.MatTooltipModule,
+                material_1.MatNativeDateModule
             ],
             exports: [
                 material_1.MatAutocompleteModule,
@@ -78,6 +79,7 @@ var AppMaterialModule = /** @class */ (function () {
                 material_1.MatRadioModule,
                 material_1.MatDatepickerModule,
                 material_1.MatTooltipModule,
+                material_1.MatNativeDateModule
             ]
         })
     ], AppMaterialModule);

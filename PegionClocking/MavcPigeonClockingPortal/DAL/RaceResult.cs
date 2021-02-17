@@ -155,6 +155,8 @@ namespace MavcPigeonClockingPortal.DAL
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);
                 dbconn.sqlConn.Close();
+
+
                 return dataResult;
             }
             catch (Exception ex)

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LinkNumberComponent } from './link-number.component';
+import { LinkNumberDialogComponent } from './link-number.component';
 
 describe('LinkNumberComponent', () => {
-  let component: LinkNumberComponent;
-  let fixture: ComponentFixture<LinkNumberComponent>;
+  let component: LinkNumberDialogComponent;
+  let fixture: ComponentFixture<LinkNumberDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LinkNumberComponent ]
+      declarations: [LinkNumberDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LinkNumberComponent);
+    fixture = TestBed.createComponent(LinkNumberDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

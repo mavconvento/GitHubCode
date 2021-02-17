@@ -16,8 +16,11 @@ var forms_1 = require("@angular/forms");
 var operators_1 = require("rxjs/operators");
 var authentication_service_1 = require("../../services/authentication.service");
 var alert_service_1 = require("../../services/alert.service");
+var material_1 = require("@angular/material");
+var forgot_password_component_1 = require("../dialog/forgot-password/forgot-password.component");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(formBuilder, route, router, authenticationService, alertService) {
+    function LoginComponent(dialog, formBuilder, route, router, authenticationService, alertService) {
+        this.dialog = dialog;
         this.formBuilder = formBuilder;
         this.route = route;
         this.router = router;
@@ -61,6 +64,20 @@ var LoginComponent = /** @class */ (function () {
             _this.loading = false;
         });
     };
+    LoginComponent.prototype.forgotPassword = function () {
+        var dialogConfig = new material_1.MatDialogConfig();
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+        dialogConfig.hasBackdrop = true;
+        dialogConfig.data = {
+            title: 'Forgot Password'
+        };
+        var dialogRef = this.dialog.open(forgot_password_component_1.ForgotPasswordComponent, dialogConfig);
+        dialogRef.afterClosed().subscribe(function (data) {
+            console.log(data);
+        });
+        console.log("forgot password");
+    };
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'app-login',
@@ -81,7 +98,8 @@ var LoginComponent = /** @class */ (function () {
         //  //}
         //}
         ,
-        __metadata("design:paramtypes", [forms_1.FormBuilder,
+        __metadata("design:paramtypes", [material_1.MatDialog,
+            forms_1.FormBuilder,
             router_1.ActivatedRoute,
             router_1.Router,
             authentication_service_1.AuthenticationService,

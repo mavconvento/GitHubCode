@@ -14,12 +14,16 @@ export class MainMenuComponent implements OnInit {
   user$: Observable<User>;
 
   constructor(private authentication: AuthenticationService) {
-    this.isLoggedIn$ = this.authentication.Islogin;
-    this.user$ = this.authentication.currentUser;
+    var local = localStorage.getItem("currentUser");
+
+    if (local == null) {
+      this.authentication.logout();
+    }
   };
 
   ngOnInit() {
-
+    this.isLoggedIn$ = this.authentication.Islogin;
+    this.user$ = this.authentication.currentUser;
   };
 
   collapse() {

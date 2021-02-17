@@ -6,17 +6,20 @@ import { Guid } from "guid-typescript";
 import { AlertService } from '../../../services/alert.service';
 import { UserService } from '../../../services/user.service';
 import { AuthenticationService } from '../../../services/authentication.service';
+import { CompressImageService } from '../../../services/compress-image.service';
 
 @Component({
   selector: 'app-profile-details',
   templateUrl: './profile-details.component.html',
   styleUrls: ['./profile-details.component.css']
 })
-export class ProfileDetailsComponent implements OnInit {
+export class ProfileDetailsDialogComponent implements OnInit {
   form: FormGroup;
   title: string;
   fileToUpload: File;
   id: Guid;
+  fileUploadID: string;
+  IsSave: boolean = false;
 
   public imagePath;
   photo: any;
@@ -27,11 +30,13 @@ export class ProfileDetailsComponent implements OnInit {
     private userService: UserService,
     private alertService: AlertService,
     private authenticationService: AuthenticationService,
-    private dialogRef: MatDialogRef<ProfileDetailsComponent>,
+    private dialogRef: MatDialogRef<ProfileDetailsDialogComponent>,
+    private compressImage: CompressImageService,
+
     @Inject(MAT_DIALOG_DATA) data) {
 
-    console.log(data);
     this.title = data.title;
+    this.fileUploadID = data.fileUploadID;
     this.id = Guid.create();
   }
 
@@ -40,41 +45,71 @@ export class ProfileDetailsComponent implements OnInit {
     
     this.form = this.fb.group({
       loftName: [currentUser.loftName, []],
+      firstname: [currentUser.firstName, []],
+      lastName: [currentUser.lastName, []],
       photo:['',[]]
         });
   }
 
   onFileSelected(events) {
-    console.log(events)
-    this.fileToUpload = events.target.files[0];
+    let image: File = events.target.files[0]
+
+
+    console.log(image.size)
+    this.compressImage.compress(image)
+      .subscribe(compressedImage => {
+        this.fileToUpload = compressedImage;
+        console.log(this.fileToUpload);
+
+        //use original image if convert images is large
+        if (image.size < compressedImage.size) {
+            this.fileToUpload = image;
+        }
+      })
+
+    //console.log(this.fileToUpload.size)
     this.preview(events.target.files);
-    //console.log(this.fileToUpload);
   };
 
   // convenience getter for easy access to form fields
   get f() { return this.form.controls; }
 
   async save() {
+    this.IsSave = true;
     var formData = new FormData();
     let currentUser = this.authenticationService.currentUserValue;
-
-    //console.log(this.fileToUpload);
-    //console.log(this.id.toString());
 
     formData.append('image', this.fileToUpload);
     formData.append('userID', currentUser.userID);
     formData.append('LoftName', this.f.loftName.value);
+    formData.append('FirstName', this.f.firstname.value);
+    formData.append('LastName', this.f.lastName.value);
+
+    if (this.fileUploadID)
+       formData.append('fileUploadID', this.fileUploadID);
 
     this.userService.updateProfile(formData).subscribe(data => {
-      localStorage.setItem("profileImageID", data.content)
+      //console.log(JSON.parse(data.content));
+      var result = JSON.parse(data.content)
+
+      if (result[0].FileUploadId) {
+        localStorage.setItem("profileImageID", result[0].FileUploadId)
+        currentUser.fileUploadID = result[0].FileUploadId
+      }
+      else
+        localStorage.removeItem("profileImageID");
+
       currentUser.loftName = this.f.loftName.value;
+      currentUser.firstName = this.f.firstname.value;
+      currentUser.lastName = this.f.lastName.value;
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
-      //console.log(data.content);
+
       this.dialogRef.close();
 
       //alert notification
       this.alertService.successNotification("Updating profile success.");
-    });
+      this.IsSave = false;
+    }, error => { this.alertService.errorNotification(error); this.IsSave = false; });
   }
 
   preview(files) {

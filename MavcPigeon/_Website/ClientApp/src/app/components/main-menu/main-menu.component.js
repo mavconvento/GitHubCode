@@ -16,11 +16,15 @@ var MainMenuComponent = /** @class */ (function () {
     function MainMenuComponent(authentication) {
         this.authentication = authentication;
         this.isExpanded = false;
-        this.isLoggedIn$ = this.authentication.Islogin;
-        this.user$ = this.authentication.currentUser;
+        var local = localStorage.getItem("currentUser");
+        if (local == null) {
+            this.authentication.logout();
+        }
     }
     ;
     MainMenuComponent.prototype.ngOnInit = function () {
+        this.isLoggedIn$ = this.authentication.Islogin;
+        this.user$ = this.authentication.currentUser;
     };
     ;
     MainMenuComponent.prototype.collapse = function () {

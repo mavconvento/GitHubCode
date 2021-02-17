@@ -1,1 +1,52 @@
-<p>online-clocking works!</p>
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <div class="flex-container mat-divider-bottom-space rounded-lg shawdow" style="text-align:center; padding-left:20px" fxLayout="column" fxLayoutGap="2px">
+      <br />
+      <p style="text-align:left; font-weight:bold">Online Clocking</p>
+      <br />
+      <span *ngIf="noLinkMobileMessage" style="color: red; text-align:left">No mobile number is link to your account. <br /> Go to profile to link mobile number.</span>
+      <br />
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput readonly
+               placeholder="Mobile Number (Primary Number)"
+               formControlName="MobileNumber">
+      </mat-form-field>
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput readonly
+               placeholder="Total Load"
+               formControlName="TotalLoad">
+      </mat-form-field>
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput formControlName="ClubName" [matAutocomplete]="autowos" placeholder="Club Name">
+        <mat-autocomplete #autowos="matAutocomplete">
+          <mat-option *ngFor="let item of clubList" [value]="item.clubabbreviation">
+            {{item.clubabbreviation}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <div class="flex-container" style="text-align:center;" fxlex="100%" fxLayout="row" fxLayoutGap="20px">
+        <div class="flex-container" style="text-align:left;">
+          <mat-form-field style="width:300px; padding-right:20px;">
+            <input type="text" matInput
+                   [matAutocomplete]="autokeys"
+                   placeholder="Keyword/Sticker"
+                   formControlName="Message"
+                   (input)="clearKeys($event.target.value)">
+            <mat-autocomplete #autokeys="matAutocomplete">
+              <mat-option *ngFor="let item of keywordList" [value]="item">
+                {{item}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+        </div>
+      </div>
+      <button [disabled]="noLinkMobileMessage" class="mat-raised-button mat-primary" style="width:100px; text-align:center" (click)="onlineClocking()">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1" ></span>
+        SEND
+      </button>
+      <br />
+    </div>
+  </div>
+</form>
