@@ -76,6 +76,10 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.btnTestReadTags = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtTestRing = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,7 +121,7 @@
             // bntCapture
             // 
             this.bntCapture.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntCapture.Location = new System.Drawing.Point(12, 495);
+            this.bntCapture.Location = new System.Drawing.Point(12, 525);
             this.bntCapture.Name = "bntCapture";
             this.bntCapture.Size = new System.Drawing.Size(478, 23);
             this.bntCapture.TabIndex = 11;
@@ -159,7 +163,7 @@
             // 
             this.imgCapture.BackColor = System.Drawing.Color.White;
             this.imgCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgCapture.Location = new System.Drawing.Point(12, 279);
+            this.imgCapture.Location = new System.Drawing.Point(12, 309);
             this.imgCapture.Name = "imgCapture";
             this.imgCapture.Size = new System.Drawing.Size(222, 176);
             this.imgCapture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -216,7 +220,7 @@
             // 
             this.txtRingNumber.BackColor = System.Drawing.Color.White;
             this.txtRingNumber.Enabled = false;
-            this.txtRingNumber.Location = new System.Drawing.Point(105, 126);
+            this.txtRingNumber.Location = new System.Drawing.Point(105, 156);
             this.txtRingNumber.Name = "txtRingNumber";
             this.txtRingNumber.Size = new System.Drawing.Size(183, 20);
             this.txtRingNumber.TabIndex = 4;
@@ -224,7 +228,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 128);
+            this.label3.Location = new System.Drawing.Point(28, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 23;
@@ -233,7 +237,7 @@
             // txtColor
             // 
             this.txtColor.Enabled = false;
-            this.txtColor.Location = new System.Drawing.Point(291, 195);
+            this.txtColor.Location = new System.Drawing.Point(291, 225);
             this.txtColor.MaxLength = 2;
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(51, 20);
@@ -242,7 +246,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 197);
+            this.label4.Location = new System.Drawing.Point(72, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 25;
@@ -251,7 +255,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(248, 198);
+            this.label5.Location = new System.Drawing.Point(248, 228);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(37, 13);
             this.label5.TabIndex = 27;
@@ -261,7 +265,7 @@
             // 
             this.cbmSex.Enabled = false;
             this.cbmSex.FormattingEnabled = true;
-            this.cbmSex.Location = new System.Drawing.Point(105, 193);
+            this.cbmSex.Location = new System.Drawing.Point(105, 223);
             this.cbmSex.Name = "cbmSex";
             this.cbmSex.Size = new System.Drawing.Size(115, 21);
             this.cbmSex.TabIndex = 6;
@@ -293,7 +297,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(16, 551);
+            this.btnSave.Location = new System.Drawing.Point(16, 581);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 23);
             this.btnSave.TabIndex = 12;
@@ -304,7 +308,7 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(104, 551);
+            this.btnNew.Location = new System.Drawing.Point(104, 581);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(121, 23);
             this.btnNew.TabIndex = 13;
@@ -328,7 +332,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(288, 123);
+            this.label7.Location = new System.Drawing.Point(288, 153);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 20);
             this.label7.TabIndex = 31;
@@ -360,7 +364,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(265, 279);
+            this.pictureBox1.Location = new System.Drawing.Point(265, 309);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(225, 176);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -370,7 +374,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(9, 263);
+            this.label11.Location = new System.Drawing.Point(9, 293);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 37;
@@ -389,7 +393,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(12, 461);
+            this.button3.Location = new System.Drawing.Point(12, 491);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(222, 23);
             this.button3.TabIndex = 9;
@@ -400,7 +404,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(265, 461);
+            this.button4.Location = new System.Drawing.Point(265, 491);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(225, 23);
             this.button4.TabIndex = 10;
@@ -411,7 +415,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(231, 551);
+            this.button5.Location = new System.Drawing.Point(231, 581);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(136, 23);
             this.button5.TabIndex = 14;
@@ -423,7 +427,7 @@
             // 
             this.btnSync.Enabled = false;
             this.btnSync.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSync.Location = new System.Drawing.Point(373, 551);
+            this.btnSync.Location = new System.Drawing.Point(373, 581);
             this.btnSync.Name = "btnSync";
             this.btnSync.Size = new System.Drawing.Size(115, 23);
             this.btnSync.TabIndex = 15;
@@ -435,7 +439,7 @@
             // 
             this.txtrfid.BackColor = System.Drawing.Color.White;
             this.txtrfid.Enabled = false;
-            this.txtrfid.Location = new System.Drawing.Point(105, 159);
+            this.txtrfid.Location = new System.Drawing.Point(105, 189);
             this.txtrfid.MaxLength = 8;
             this.txtrfid.Name = "txtrfid";
             this.txtrfid.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
@@ -445,7 +449,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(43, 162);
+            this.label10.Location = new System.Drawing.Point(43, 192);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 13);
             this.label10.TabIndex = 44;
@@ -456,7 +460,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(288, 159);
+            this.label12.Location = new System.Drawing.Point(288, 189);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(16, 20);
             this.label12.TabIndex = 45;
@@ -467,7 +471,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(222, 192);
+            this.label13.Location = new System.Drawing.Point(222, 222);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(16, 20);
             this.label13.TabIndex = 46;
@@ -478,7 +482,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(342, 194);
+            this.label14.Location = new System.Drawing.Point(342, 224);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(16, 20);
             this.label14.TabIndex = 47;
@@ -489,7 +493,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(222, 228);
+            this.label15.Location = new System.Drawing.Point(222, 258);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(16, 20);
             this.label15.TabIndex = 50;
@@ -499,7 +503,7 @@
             // 
             this.cmbCategory.Enabled = false;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(105, 229);
+            this.cmbCategory.Location = new System.Drawing.Point(105, 259);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(115, 21);
             this.cmbCategory.TabIndex = 8;
@@ -507,7 +511,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(48, 233);
+            this.label16.Location = new System.Drawing.Point(48, 263);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(55, 13);
             this.label16.TabIndex = 49;
@@ -517,7 +521,7 @@
             // 
             this.btnRead.Enabled = false;
             this.btnRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRead.Location = new System.Drawing.Point(306, 158);
+            this.btnRead.Location = new System.Drawing.Point(306, 188);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(121, 23);
             this.btnRead.TabIndex = 5;
@@ -539,7 +543,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(20, 97);
+            this.label18.Location = new System.Drawing.Point(20, 130);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(469, 13);
             this.label18.TabIndex = 56;
@@ -579,11 +583,59 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // btnTestReadTags
+            // 
+            this.btnTestReadTags.Enabled = false;
+            this.btnTestReadTags.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTestReadTags.Location = new System.Drawing.Point(306, 95);
+            this.btnTestReadTags.Name = "btnTestReadTags";
+            this.btnTestReadTags.Size = new System.Drawing.Size(121, 23);
+            this.btnTestReadTags.TabIndex = 60;
+            this.btnTestReadTags.Text = "READ TAGS";
+            this.btnTestReadTags.UseVisualStyleBackColor = true;
+            this.btnTestReadTags.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(288, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(16, 20);
+            this.label9.TabIndex = 63;
+            this.label9.Text = "*";
+            // 
+            // txtTestRing
+            // 
+            this.txtTestRing.BackColor = System.Drawing.Color.White;
+            this.txtTestRing.Enabled = false;
+            this.txtTestRing.Location = new System.Drawing.Point(105, 96);
+            this.txtTestRing.MaxLength = 8;
+            this.txtTestRing.Name = "txtTestRing";
+            this.txtTestRing.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtTestRing.Size = new System.Drawing.Size(183, 20);
+            this.txtTestRing.TabIndex = 61;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(43, 99);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 62;
+            this.label17.Text = "Test Ring : ";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
             // frmPhotoCapture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 583);
+            this.ClientSize = new System.Drawing.Size(1094, 615);
+            this.Controls.Add(this.btnTestReadTags);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtTestRing);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
@@ -697,6 +749,10 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnTestReadTags;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtTestRing;
+        private System.Windows.Forms.Label label17;
     }
 }
 

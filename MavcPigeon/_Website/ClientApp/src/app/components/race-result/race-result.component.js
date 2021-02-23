@@ -37,15 +37,18 @@ var RaceResultComponent = /** @class */ (function () {
         this.previousClub = "";
         this.loading = false;
         this.isMobile = false;
+        this.isMobileDetails = false;
+        this.isMobileSummary = true;
         this.TotalBirdEntry = "0";
         this.ReleaseLat = "";
         this.ReleaseLong = "";
         this.displayedColumns = ["Rank", "MemberName", "Location", "TotalEntry", "RingNumber", "Distance", "Arrival", "Flight", "Speed", "Remarks"];
         this.displayedColumnsMobile = ["Rank", "Details"];
+        this.displayedColumnsMobileSummary = ["RankMobile", "MemberDetails", "LocationMobile", "RingNumberMobile", "SpeedMobile", "SourceMobile"];
         this.length = 0;
         this.pageIndex = 0;
-        this.pageSize = 10;
-        this.pageSizeOptions = [10, 20, 50, 100, 200];
+        this.pageSize = 50;
+        this.pageSizeOptions = [25, 50, 100, 200];
         this.displayedColumns_entry = ["RingNumber"];
         this.length_entry = 0;
         this.pageIndex_entry = 0;
@@ -90,7 +93,8 @@ var RaceResultComponent = /** @class */ (function () {
             Group: [''],
             MobileNumber: ['', forms_1.Validators.required],
             DbName: ['', forms_1.Validators.required],
-            UserID: ['', forms_1.Validators.required]
+            UserID: ['', forms_1.Validators.required],
+            mobileView: ["2", forms_1.Validators.required],
         });
         if (!localStorage.getItem("clubs")) {
             this.GetMobileList();
@@ -101,6 +105,17 @@ var RaceResultComponent = /** @class */ (function () {
         if (localStorage.getItem('selectedClub')) {
             this.form.controls["ClubFullName"].setValue(localStorage.getItem('selectedClub'));
         }
+    };
+    RaceResultComponent.prototype.changeView = function (option) {
+        if (option.value == "1") {
+            this.isMobileDetails = true;
+            this.isMobileSummary = false;
+        }
+        else if (option.value == "2") {
+            this.isMobileDetails = false;
+            this.isMobileSummary = true;
+        }
+        console.log(option.value);
     };
     RaceResultComponent.prototype.GetMobileList = function () {
         var _this = this;
@@ -187,7 +202,7 @@ var RaceResultComponent = /** @class */ (function () {
         var _this = this;
         this.raceService.getRaceResult(this.form.value).subscribe(function (data) {
             _this.raceResultCollection = JSON.parse(data.content);
-            console.log(_this.raceResultCollection);
+            //console.log(this.raceResultCollection);
             _this.length = _this.raceResultCollection.length;
             _this.dataSource.data = _this.raceResultCollection;
             _this.loading = false;
@@ -206,7 +221,7 @@ var RaceResultComponent = /** @class */ (function () {
             _this.raceDetails = details.Table;
             //race entry
             _this.raceEntryCollection = details.Table1;
-            console.log(details.Table1);
+            //console.log(details.Table1);
             _this.length_entry = _this.raceEntryCollection.length;
             _this.dataSource_entry.data = _this.raceEntryCollection;
             if (_this.raceDetails[0]) {
@@ -233,13 +248,22 @@ var RaceResultComponent = /** @class */ (function () {
             _this.alertService.errorNotification(error);
         });
     };
-    //seachClub(event) {
-    //  if (event != "") {
-    //    this.clubList = this.clubList.filter(x => x.dbName.search(event));
-    //  }
-    //  else
-    //    this.clubList = this.clubListOriginal;
-    //}
+    RaceResultComponent.prototype.seachClub = function (event) {
+        var clubCollection = JSON.parse(localStorage.getItem("clubs"));
+        var clubSearch = clubCollection.filter(function (x) { return x.ClubName.toUpperCase().indexOf(event.toUpperCase()) > -1; });
+        var cl = new Array();
+        clubSearch.forEach(function (item) {
+            var c = new clubname_1.Club;
+            c.clubId = item.ClubID;
+            c.clubabbreviation = item.clubabbreviation;
+            c.dbName = item.dbName;
+            c.name = item.ClubName;
+            cl.push(c);
+        });
+        //console.log(event.toUpper);
+        //console.log(clubSearch);
+        this.clubList = cl;
+    };
     RaceResultComponent.prototype.SetClubCollection = function () {
         var clubCollection = JSON.parse(localStorage.getItem("clubs"));
         var cl = new Array();

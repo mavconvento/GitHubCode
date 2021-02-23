@@ -30,7 +30,7 @@ var LoginComponent = /** @class */ (function () {
         this.submitted = false;
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/profile']);
         }
     }
     LoginComponent.prototype.ngOnInit = function () {
@@ -39,7 +39,7 @@ var LoginComponent = /** @class */ (function () {
             password: ['', forms_1.Validators.required]
         });
         // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/profile';
     };
     Object.defineProperty(LoginComponent.prototype, "f", {
         // convenience getter for easy access to form fields

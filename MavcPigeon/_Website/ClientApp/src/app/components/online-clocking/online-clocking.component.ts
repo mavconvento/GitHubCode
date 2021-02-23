@@ -19,7 +19,7 @@ export class OnlineClockingComponent implements OnInit {
   loading: boolean; false;
   mobileList: any;
   noLinkMobileMessage: boolean = false;
-  keywordList: string[] = ["FORECAST","CUT-OFF","STATUS"]
+  keywordList: string[] = ["FORECAST", "CUT-OFF", "STATUS"]
 
   constructor(
     private fb: FormBuilder,
@@ -66,7 +66,7 @@ export class OnlineClockingComponent implements OnInit {
 
       this.getMobileNumber();
       this.getLoadBalance();
-    } 
+    }
   }
 
   getMobileNumber() {
@@ -89,9 +89,33 @@ export class OnlineClockingComponent implements OnInit {
 
   get f() { return this.form.controls; }
 
+  seachClub(event) {
+      var clubCollection = JSON.parse(localStorage.getItem("clubs"));
+      var clubSearch = clubCollection.filter(x => x.ClubName.toUpperCase().indexOf(event.toUpperCase()) > -1 && x.MemberClubID != '');
+
+      var cl = new Array<Club>();
+
+      clubSearch.forEach(item => {
+        var c = new Club;
+
+        c.clubId = item.ClubID;
+        c.clubabbreviation = item.clubabbreviation;
+        c.dbName = item.dbName;
+        c.name = item.ClubName;
+        cl.push(c);
+      });
+
+      this.clubList = cl;
+
+      //if (this.clubList.length == 1) {
+      //  this.form.controls["ClubName"].setValue(this.clubList[0].clubabbreviation);
+      //}
+  }
+
+
   onlineClocking() {
     let keyword = this.form.controls["Message"].value;
-    let clubname: string = this.form.controls["ClubName"].value;
+    let clubname: string = this.form.controls["ClubName"].value.toUpperCase();
 
     this.form.controls["DbName"].setValue("");
     //this.form.controls["ClubName"].setValue("");
@@ -143,7 +167,7 @@ export class OnlineClockingComponent implements OnInit {
         this.alertService.errorNotification(result.Table[0].Result)
       }
       this.loading = false;
-      
+
       this.getLoadBalance();
     }, error => {
       this.alertService.errorNotification(error);
@@ -160,7 +184,7 @@ export class OnlineClockingComponent implements OnInit {
       localStorage.setItem("clubs", JSON.stringify(data.Table));
       localStorage.setItem("mobile", JSON.stringify(data.Table1));
 
-      
+
       var club = JSON.parse(localStorage.getItem("clubs"));
       this.clubList = club.filter(x => x.MemberClubID != '')
 

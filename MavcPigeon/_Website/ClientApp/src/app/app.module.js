@@ -19,6 +19,7 @@ var jwt_interceptor_1 = require("./helpers/jwt.interceptor");
 var error_interceptor_1 = require("./helpers/error.interceptor");
 //filterpipe
 var mobilelist_filter_pipe_1 = require("./components/shared/mobilelist-filter.pipe");
+var clublist_filter_pipe_1 = require("./components/shared/clublist-filter.pipe");
 var app_component_1 = require("./app.component");
 var nav_menu_component_1 = require("./components/nav-menu/nav-menu.component");
 var home_component_1 = require("./components/home/home.component");
@@ -52,6 +53,7 @@ var AppModule = /** @class */ (function () {
                 app_component_1.AppComponent,
                 //filterpipe
                 mobilelist_filter_pipe_1.MobileListFilterPipe,
+                clublist_filter_pipe_1.ClubListFilterPipe,
                 nav_menu_component_1.NavMenuComponent,
                 home_component_1.HomeComponent,
                 counter_component_1.CounterComponent,

@@ -14,3 +14,12 @@ C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Deb
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.dll
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DataLayer.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DataLayer.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DomainObjects.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DomainObjects.pdb
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.dll
+C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.pdb

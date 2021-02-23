@@ -18,7 +18,7 @@
                formControlName="TotalLoad">
       </mat-form-field>
       <mat-form-field style="width:280px;">
-        <input type="text" matInput formControlName="ClubName" [matAutocomplete]="autowos" placeholder="Club Name">
+        <input type="text" matInput formControlName="ClubName" [matAutocomplete]="autowos" placeholder="Club Name" (input)="seachClub($event.target.value)">
         <mat-autocomplete #autowos="matAutocomplete">
           <mat-option *ngFor="let item of clubList" [value]="item.clubabbreviation">
             {{item.clubabbreviation}}

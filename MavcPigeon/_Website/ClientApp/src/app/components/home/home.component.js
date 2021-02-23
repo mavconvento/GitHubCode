@@ -30,16 +30,7 @@ var HomeComponent = /** @class */ (function () {
         this.getScreenSize();
     }
     HomeComponent.prototype.ngOnInit = function () {
-        //this.videoId = "HrjrRmkImCs";
-        //this.userService.getVideo("main").subscribe(data => {
-        //  var result = JSON.parse(data.content);
-        //  console.log(result);
-        //  this.videoTitle = result.Table[0].Title;
-        //  this.videoId = result.Table[0].VideoID;
-        //}, error => { this.alertService.errorNotification(error) }
-        //)
-        //setTimeout(() => {                          
-        //}, 3000);
+        this.GetMobileList();
     };
     HomeComponent.prototype.getScreenSize = function (event) {
         this.scrHeight = window.innerHeight;
@@ -61,6 +52,12 @@ var HomeComponent = /** @class */ (function () {
             var data = JSON.parse(result.content);
             localStorage.setItem("clubs", JSON.stringify(data.Table));
             localStorage.setItem("mobile", JSON.stringify(data.Table1));
+            var club = JSON.parse(localStorage.getItem("clubs"));
+            var mobile = JSON.parse(localStorage.getItem("mobile"));
+            var primary = mobile.filter(function (x) { return x.IsMain == true; });
+            if (primary.length > 0) {
+                localStorage.setItem("primary", primary[0].MobileNumber);
+            }
         }, function (error) {
             _this.alertService.errorNotification(error);
         });

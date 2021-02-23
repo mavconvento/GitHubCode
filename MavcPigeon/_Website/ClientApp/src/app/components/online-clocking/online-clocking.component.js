@@ -14,6 +14,7 @@ var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var helpers_1 = require("../../helpers/helpers");
+var clubname_1 = require("../../models/clubname");
 var alert_service_1 = require("../../services/alert.service");
 var authentication_service_1 = require("../../services/authentication.service");
 var race_service_1 = require("../../services/race.service");
@@ -83,9 +84,26 @@ var OnlineClockingComponent = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    OnlineClockingComponent.prototype.seachClub = function (event) {
+        var clubCollection = JSON.parse(localStorage.getItem("clubs"));
+        var clubSearch = clubCollection.filter(function (x) { return x.ClubName.toUpperCase().indexOf(event.toUpperCase()) > -1 && x.MemberClubID != ''; });
+        var cl = new Array();
+        clubSearch.forEach(function (item) {
+            var c = new clubname_1.Club;
+            c.clubId = item.ClubID;
+            c.clubabbreviation = item.clubabbreviation;
+            c.dbName = item.dbName;
+            c.name = item.ClubName;
+            cl.push(c);
+        });
+        this.clubList = cl;
+        //if (this.clubList.length == 1) {
+        //  this.form.controls["ClubName"].setValue(this.clubList[0].clubabbreviation);
+        //}
+    };
     OnlineClockingComponent.prototype.onlineClocking = function () {
         var keyword = this.form.controls["Message"].value;
-        var clubname = this.form.controls["ClubName"].value;
+        var clubname = this.form.controls["ClubName"].value.toUpperCase();
         this.form.controls["DbName"].setValue("");
         //this.form.controls["ClubName"].setValue("");
         this.form.controls["Keyword"].setValue("");

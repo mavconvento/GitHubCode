@@ -7,6 +7,7 @@
 
 .mat-column-Rank {
   flex: 0 0 70px;
+  vertical-align:top;
 }
 
 .mat-column-MemberName {
@@ -17,10 +18,76 @@
   flex: 0 0 150px;
 }
 
+/*.mat-column-Rn {
+  flex: 0 0 50px;
+}*/
+
+
+.mat-column-SourceMobile {
+  flex: 0 0 40px;
+}
+
+
+
+.mat-column-RankMobile {
+  flex: 0 40px;
+}
+
+.mat-column-LocationMobile {
+  flex: 0 50px;
+  padding-left:5px;
+}
+
+
 .mat-column-TotalEntry {
   flex: 0 0 70px;
 }
 
 .mat-elevation-z8 {
   overflow-x: auto;
+}
+
+
+/*mobile css*/
+.mobile .mat-header-cell:first-of-type {
+  padding-left: 10px;
+}
+
+.mobile .mat-cell:first-of-type {
+  padding-left: 10px;
+}
+
+.mobile .mat-header-cell {
+  font-size: 12px;
+}
+
+.mobile .mat-cell {
+  font-size: 11px;
+}
+
+.mobile .mat-header-row, .mobile .mat-row {
+  min-height: inherit;
+}
+
+
+
+/*mobile summary css*/
+.mobilesummary .mat-header-cell:first-of-type {
+  padding-left: 10px;
+}
+
+.mobilesummary .mat-cell:first-of-type {
+  padding-left: 10px;
+}
+
+.mobilesummary .mat-header-cell {
+  font-size: 9px;
+}
+
+.mobilesummary .mat-cell {
+  font-size: 9px;
+}
+
+.mobilesummary .mat-header-row, .mobilesummary .mat-row {
+  min-height: 20px;
 }

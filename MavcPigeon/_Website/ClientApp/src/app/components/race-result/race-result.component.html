@@ -1,8 +1,8 @@
 <form [formGroup]="form">
-  <div class="form-group">
+  <div class="form-group" style="font-size:13px">
     <div class="flex-container mat-divider-bottom-space" fxLayout="column" fxLayoutGap="2px">
       <mat-form-field>
-        <input type="text" matInput formControlName="ClubFullName" [matAutocomplete]="autowos" placeholder="Club Name">
+        <input type="text" matInput formControlName="ClubFullName" [matAutocomplete]="autowos" placeholder="Club Name" (input)="seachClub($event.target.value)">
         <mat-autocomplete #autowos="matAutocomplete">
           <mat-option *ngFor="let item of clubList" [value]="item.name">
             {{item.name}}
@@ -52,13 +52,13 @@
     </div>
     <hr />
     <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
-      <h6>Bird Entry(s)</h6>
+      <h7>Bird Entry(s)</h7>
       <span *ngIf="TotalBirdEntry != '0'">Total Entry: {{TotalBirdEntry}}</span>
       <div *ngIf="!dataSource_entry">No bird(s) entry.</div>
       <div *ngIf="dataSource_entry">
         <div fxLayoutAlign="space-between" fxLayout="row">
           <div fxFlex="300px" class="mat-elevation-z8">
-            <mat-table #table [dataSource]="dataSource_entry" matSort>
+            <mat-table #table class="mobile" [dataSource]="dataSource_entry" matSort>
               <ng-container matColumnDef="RingNumber">
                 <mat-header-cell *matHeaderCellDef>Ring Number</mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.BandNumber}} </mat-cell>
@@ -109,7 +109,7 @@
       </div>
     </div>
     <div *ngIf="isMobile" class="flex-container" fxLayout="column" fxLayoutGap="20px">
-      <mat-form-field >
+      <mat-form-field>
         <input type="text" matInput formControlName="FilterName" placeholder="Search Name">
       </mat-form-field>
       <mat-form-field>
@@ -140,11 +140,21 @@
     </div>
     <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
       <h6>Race Result(s)</h6>
+      <br *ngIf="!isMobile" />
+      <mat-radio-group *ngIf="isMobile" aria-label="Select an option" (change)="changeView($event)" formControlName="mobileView">
+        <mat-radio-button style="padding-top:10px" value="2">Summary View</mat-radio-button>
+        <mat-radio-button style="padding-left:20px; padding-top:10px" value="1">Details View</mat-radio-button>
+      </mat-radio-group>
+      <button class="mat-raised-button mat-primary" style="width:200px;" (click)="ViewResult()">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Refresh Result
+      </button>
+      <br />
       <div *ngIf="!dataSource">No bird(s) has been arrived.</div>
       <div *ngIf="dataSource">
         <div fxLayoutAlign="space-between" fxLayout="row">
           <div fxFlex="100%" class="mat-elevation-z8">
-            <mat-table #table [dataSource]="dataSource" *ngIf="scrWidth < 1008">
+            <mat-table #table [dataSource]="dataSource" class="mobile" *ngIf="isMobile && isMobileDetails">
               <ng-container matColumnDef="Rank">
                 <mat-header-cell *matHeaderCellDef>Rank</mat-header-cell>
                 <mat-cell *matCellDef="let element">
@@ -155,21 +165,50 @@
                 <mat-header-cell *matHeaderCellDef>Details</mat-header-cell>
                 <mat-cell *matCellDef="let element">
                   <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
-                    <span style="font-weight:bold;">Member Name: {{element.MemberName}}</span>
+                    <span style="font-weight:bold;">{{element.MemberName}}</span>
                     <span>Total Entry: {{element.TotalEntry}}</span>
                     <span>Band Number: {{element.RingNumber}}</span>
-                    <!--<span>Band Number: {{element.Code}}</span>-->
                     <span>Distance (KM): {{element.Distance}}</span>
                     <span>Arrival: {{element.Arrival}}</span>
                     <span>Flight: {{element.Flight}}</span>
                     <span>Speed: {{element.Speed | number:'1.2-3'}}</span>
-                    <span>Remarks: {{element.Remarks}}</span>
+                    <span>Source: {{element.Remarks}}</span>
                     <span (click)="ViewMaps(element)" style="font-weight:bold; color:cadetblue;"><u>Click to View Location</u></span>
                   </div>
                 </mat-cell>
               </ng-container>
               <mat-header-row *matHeaderRowDef="displayedColumnsMobile"></mat-header-row>
               <mat-row *matRowDef="let row; columns: displayedColumnsMobile;"></mat-row>
+            </mat-table>
+            <mat-table #table [dataSource]="dataSource" class="mobilesummary" matSort *ngIf="isMobileSummary && isMobile">
+              <ng-container matColumnDef="RankMobile">
+                <mat-header-cell *matHeaderCellDef>Rank</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.Rank}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="MemberDetails">
+                <mat-header-cell *matHeaderCellDef>Member Name</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <span>{{element.MemberName}}</span>
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="LocationMobile">
+                <mat-header-cell *matHeaderCellDef>Map</mat-header-cell>
+                <mat-cell *matCellDef="let element"><span (click)="ViewMaps(element)" style="font-weight:bold; color:cadetblue;"><u>View</u></span></mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="RingNumberMobile">
+                <mat-header-cell *matHeaderCellDef>Ring #</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.RingNumber}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="SpeedMobile">
+                <mat-header-cell *matHeaderCellDef>Speed</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.Speed | number:'1.2-3'}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="SourceMobile">
+                <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.Remarks}}</mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumnsMobileSummary"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumnsMobileSummary;"></mat-row>
             </mat-table>
             <mat-table #table [dataSource]="dataSource" matSort *ngIf="scrWidth > 1008">
               <ng-container matColumnDef="Rank">
@@ -192,10 +231,6 @@
                 <mat-header-cell *matHeaderCellDef>Ring Number</mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.RingNumber}} </mat-cell>
               </ng-container>
-              <!--<ng-container matColumnDef="Code">
-                <mat-header-cell *matHeaderCellDef>Code</mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.Code}} </mat-cell>
-              </ng-container>-->
               <ng-container matColumnDef="Distance">
                 <mat-header-cell *matHeaderCellDef>Distance (KM)</mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.Distance}} </mat-cell>

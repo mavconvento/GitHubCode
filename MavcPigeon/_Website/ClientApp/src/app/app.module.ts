@@ -12,6 +12,7 @@ import { ErrorInterceptor } from './helpers/error.interceptor';
 
 //filterpipe
 import { MobileListFilterPipe } from './components/shared/mobilelist-filter.pipe';
+import { ClubListFilterPipe } from './components/shared/clublist-filter.pipe';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
@@ -45,6 +46,7 @@ import { TutorialsComponent } from './components/tutorials/tutorials.component';
     AppComponent,
     //filterpipe
     MobileListFilterPipe,
+    ClubListFilterPipe,
     NavMenuComponent,
     HomeComponent,
     CounterComponent,

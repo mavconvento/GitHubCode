@@ -39,6 +39,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\shared\clublist-filter.pipe.ts" />
     <None Remove="ClientApp\src\app\components\shared\mobilelist-filter.pipe.ts" />
     <None Remove="ClientApp\src\app\config\config.ts" />
     <None Remove="ClientApp\src\app\helpers\auth.guard.ts" />
@@ -70,6 +71,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\app\components\shared\clublist-filter.pipe.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Update="ClientApp\src\app\models\clubname.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

@@ -37,6 +37,8 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
   previousClub: string = "";
   loading: boolean = false;
   isMobile: boolean = false;
+  isMobileDetails: boolean = false;
+  isMobileSummary: boolean = true;
   scrHeight: any;
   scrWidth: any;
 
@@ -56,6 +58,9 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
   dataSource: MatTableDataSource<Result>;
   displayedColumns: string[] = ["Rank", "MemberName", "Location", "TotalEntry", "RingNumber" , "Distance", "Arrival", "Flight", "Speed", "Remarks"];
   displayedColumnsMobile: string[] = ["Rank", "Details"];
+  displayedColumnsMobileSummary: string[] = ["RankMobile", "MemberDetails", "LocationMobile", "RingNumberMobile","SpeedMobile","SourceMobile"];
+
+
   //@ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   @ViewChild('paginator', { static: false }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: false }) set sort(sort: MatSort) {
@@ -64,8 +69,8 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
 
   length: number = 0;
   pageIndex: number = 0;
-  pageSize: number = 10;
-  pageSizeOptions: number[] = [10, 20, 50, 100, 200];
+  pageSize: number = 50;
+  pageSizeOptions: number[] = [25, 50, 100, 200];
 
 
   //race entry datasource
@@ -102,7 +107,7 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
     this.scrWidth = window.innerWidth;
 
     if (this.scrWidth < 1008) {
-      this.isMobile = true;
+     this.isMobile = true;
     }
     else {
       this.isMobile = false;
@@ -130,7 +135,8 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
       Group: [''],
       MobileNumber: ['', Validators.required],
       DbName: ['', Validators.required],
-      UserID: ['', Validators.required]
+      UserID: ['', Validators.required],
+      mobileView: ["2", Validators.required],
     });
 
     if (!localStorage.getItem("clubs")) {
@@ -144,6 +150,21 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
     if (localStorage.getItem('selectedClub')) {
       this.form.controls["ClubFullName"].setValue(localStorage.getItem('selectedClub'))
     }
+  }
+
+  changeView(option) {
+    if (option.value == "1") {
+      this.isMobileDetails = true;
+      this.isMobileSummary = false;
+    }
+
+    else if (option.value == "2") {
+      this.isMobileDetails = false;
+      this.isMobileSummary = true;
+    }
+     
+
+    console.log(option.value);
   }
 
   GetMobileList() {
@@ -244,7 +265,7 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
   GetResult() {
     this.raceService.getRaceResult(this.form.value).subscribe(data => {
       this.raceResultCollection = JSON.parse(data.content);
-      console.log(this.raceResultCollection);
+      //console.log(this.raceResultCollection);
       this.length = this.raceResultCollection.length;
       this.dataSource.data = this.raceResultCollection;
       this.loading = false;
@@ -267,7 +288,7 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
       //race entry
       this.raceEntryCollection = details.Table1;
 
-      console.log(details.Table1);
+      //console.log(details.Table1);
       
       this.length_entry = this.raceEntryCollection.length;
       this.dataSource_entry.data = this.raceEntryCollection;
@@ -299,14 +320,27 @@ export class RaceResultComponent implements OnInit, AfterViewInit {
       });
   }
 
-  //seachClub(event) {
-  //  if (event != "") {
+  seachClub(event) {
+    var clubCollection = JSON.parse(localStorage.getItem("clubs"));
 
-  //    this.clubList = this.clubList.filter(x => x.dbName.search(event));
-  //  }
-  //  else
-  //    this.clubList = this.clubListOriginal;
-  //}
+    var clubSearch = clubCollection.filter(x => x.ClubName.toUpperCase().indexOf(event.toUpperCase()) > -1);
+    
+    var cl = new Array<Club>();
+
+    clubSearch.forEach(item => {
+      var c = new Club;
+
+      c.clubId = item.ClubID;
+      c.clubabbreviation = item.clubabbreviation;
+      c.dbName = item.dbName;
+      c.name = item.ClubName;
+      cl.push(c);
+    });
+
+    //console.log(event.toUpper);
+    //console.log(clubSearch);
+    this.clubList = cl;
+  }
 
   SetClubCollection() {
     var clubCollection = JSON.parse(localStorage.getItem("clubs"));
