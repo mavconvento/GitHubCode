@@ -86,3 +86,16 @@ C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SMSModule\obj\Deb
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.dll
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.xml
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\bin\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\bin\Debug\SerialPortTester.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.vbproj.AssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.vbproj.CoreCompileInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.vbproj.CopyComplete
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SMSModule\obj\Debug\SMSModule.pdb

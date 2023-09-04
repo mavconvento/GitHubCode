@@ -16,7 +16,7 @@ Public Class DatabaseConnection
 
         Dim connectionstring As String = sysdir & "\ConnectionString.inf"
 
-        servername = "204.93.160.206"
+        servername = "198.38.94.72"
         username = "sa"
         password = "06242009"
 

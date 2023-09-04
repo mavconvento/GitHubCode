@@ -45,10 +45,35 @@ namespace PegionClocking.DAL
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
-                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", DateRelease.Date);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", DateRelease.Date.Year.ToString() + "-" + DateRelease.Date.Month.ToString() + "-" + DateRelease.Date.Day.ToString());
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceCategory", RaceCategoryName);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceCategoryGroup", RaceCategoryGroupName);
                 dbconn.sqlComm.Parameters.AddWithValue("@Name", Name);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public DataSet ReComputeResult()
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("ReComputeResult");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate",  DateRelease.Date.Year.ToString() + "-" + DateRelease.Date.Month.ToString() + "-" + DateRelease.Date.Day.ToString());
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);
@@ -70,13 +95,14 @@ namespace PegionClocking.DAL
 
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@Content", "");
                 dbconn.sqlComm.Parameters.AddWithValue("@Sender", Sender);
                 dbconn.sqlComm.Parameters.AddWithValue("@StickerNumber", StickerCode);
                 dbconn.sqlComm.Parameters.AddWithValue("@Arrival", Arrival);
-                dbconn.sqlComm.Parameters.AddWithValue("@RaceReleaseDate", DateRelease);
-                dbconn.sqlComm.Parameters.AddWithValue("@Source", source);
+                dbconn.sqlComm.Parameters.AddWithValue("@RaceReleaseDate", DateRelease.Date.Year.ToString() + "-" + DateRelease.Date.Month.ToString() + "-" + DateRelease.Date.Day.ToString());
+                dbconn.sqlComm.Parameters.AddWithValue("@Source", "Back-up");
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
@@ -100,7 +126,7 @@ namespace PegionClocking.DAL
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
-                dbconn.sqlComm.Parameters.AddWithValue("@Date", DateRelease);
+                dbconn.sqlComm.Parameters.AddWithValue("@Date", DateRelease.Date.Year.ToString() + "-" + DateRelease.Date.Month.ToString() + "-" + DateRelease.Date.Day.ToString());
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);
@@ -125,7 +151,8 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@StickerCode", StickerCode);
-                dbconn.sqlComm.Parameters.AddWithValue("@PigeonID", PigeonID);
+                dbconn.sqlComm.Parameters.AddWithValue("@PigeonID", PigeonID); 
+                dbconn.sqlComm.Parameters.AddWithValue("@UserID", UserID);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

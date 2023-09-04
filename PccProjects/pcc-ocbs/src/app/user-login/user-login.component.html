@@ -1,0 +1,36 @@
+<form [formGroup]="myform">
+  <div class="form-group" style="text-align:center;">
+    <div style="text-align:center;">
+      <br />
+      <h2>
+        OCBS Login
+      </h2>
+      <div>
+        <label for="username" style="font-weight: bold; font-size: 15px;margin-left: 20px;">
+          User ID :
+        </label>
+        <input class="textbox" id="username" type="text" style="width: 150px;  font-size: 15px;"
+          formControlName="username" />
+      </div>
+      <br />
+      <div>
+        <label for="password" style="font-weight: bold; font-size: 15px;">
+          Password :
+        </label>
+        <input class="textbox" id="password" type="password" style="width: 150px;  font-size: 15px;"
+          formControlName="password" />
+      </div>
+      <div *ngIf="isShow" style="margin-top: 15px;">
+        <span style="color:red; font-weight: bold; font-size: 12px;">{{errorMessage}}</span>
+      </div>
+      <div style="text-align:center; margin-right: 90px; margin-top: 10px;">
+        <span style="font-size: 13px; "><b>No Account? <span style="color:red; cursor:pointer"
+              (click)="onRegister()">Create
+              One</span></b></span>
+      </div>
+      <br />
+      <button (click)="onLogin()" class="button"
+        style="background-color: rgb(17, 108, 212); color: white;">Login</button>
+    </div>
+  </div>
+</form>

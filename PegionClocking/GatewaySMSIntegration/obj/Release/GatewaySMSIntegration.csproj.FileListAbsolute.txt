@@ -9,3 +9,16 @@ C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\R
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Release\GatewaySMSIntegration.csprojResolveAssemblyReference.cache
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Release\GatewaySMSIntegration.exe
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Release\GatewaySMSIntegration.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\GatewaySMSIntegration.exe.config
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Release\GatewaySMSIntegration.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Release\GatewaySMSIntegration.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\GatewaySMSIntegration.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\GatewaySMSIntegration.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\DataAccess.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\Newtonsoft.Json.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\SMSWindowService.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\SerialPortTester.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\DataAccess.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\SMSWindowService.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\bin\Release\Newtonsoft.Json.xml
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\GatewaySMSIntegration\obj\Release\GatewaySMSIntegration.csprojResolveAssemblyReference.cache

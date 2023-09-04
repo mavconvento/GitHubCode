@@ -69,9 +69,12 @@
             this.btnRead = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button6
@@ -89,7 +92,7 @@
             // 
             this.lblcount.AutoSize = true;
             this.lblcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcount.Location = new System.Drawing.Point(878, 11);
+            this.lblcount.Location = new System.Drawing.Point(878, 231);
             this.lblcount.Name = "lblcount";
             this.lblcount.Size = new System.Drawing.Size(72, 13);
             this.lblcount.TabIndex = 88;
@@ -166,7 +169,7 @@
             this.txtRingNumber.Location = new System.Drawing.Point(110, 186);
             this.txtRingNumber.Name = "txtRingNumber";
             this.txtRingNumber.ReadOnly = true;
-            this.txtRingNumber.Size = new System.Drawing.Size(183, 20);
+            this.txtRingNumber.Size = new System.Drawing.Size(187, 20);
             this.txtRingNumber.TabIndex = 8;
             // 
             // btnNew
@@ -195,7 +198,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(490, 11);
+            this.label6.Location = new System.Drawing.Point(490, 231);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 82;
@@ -208,9 +211,9 @@
             this.dtList.AllowUserToOrderColumns = true;
             this.dtList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtList.Location = new System.Drawing.Point(493, 27);
+            this.dtList.Location = new System.Drawing.Point(493, 247);
             this.dtList.Name = "dtList";
-            this.dtList.Size = new System.Drawing.Size(533, 489);
+            this.dtList.Size = new System.Drawing.Size(533, 269);
             this.dtList.TabIndex = 61;
             // 
             // label5
@@ -505,11 +508,35 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(490, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.TabIndex = 106;
+            this.label9.Text = "Bird(s) List:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(493, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(533, 190);
+            this.dataGridView1.TabIndex = 105;
+            // 
             // frmEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 576);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRead);
@@ -558,6 +585,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,5 +633,7 @@
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

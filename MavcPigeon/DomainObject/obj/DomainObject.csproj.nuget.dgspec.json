@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Adams\\MyProjects\\GitHub\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj": {}
+    "C:\\Users\\Mark Adams\\Documents\\MyFiles\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj": {}
   },
   "projects": {
-    "C:\\Adams\\MyProjects\\GitHub\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj": {
+    "C:\\Users\\Mark Adams\\Documents\\MyFiles\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Adams\\MyProjects\\GitHub\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj",
+        "projectUniqueName": "C:\\Users\\Mark Adams\\Documents\\MyFiles\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj",
         "projectName": "DomainObject",
-        "projectPath": "C:\\Adams\\MyProjects\\GitHub\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj",
-        "packagesPath": "C:\\Users\\82245\\.nuget\\packages\\",
-        "outputPath": "C:\\Adams\\MyProjects\\GitHub\\GitHubCode\\MavcPigeon\\DomainObject\\obj\\",
+        "projectPath": "C:\\Users\\Mark Adams\\Documents\\MyFiles\\GitHubCode\\MavcPigeon\\DomainObject\\DomainObject.csproj",
+        "packagesPath": "C:\\Users\\Mark Adams\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mark Adams\\Documents\\MyFiles\\GitHubCode\\MavcPigeon\\DomainObject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\82245\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mark Adams\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -73,12 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win-x64": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -12,3 +12,17 @@ C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcor
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CopyComplete
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.deps.json
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\BussinessLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\DomainObject.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\Repository.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\DomainObject.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\bin\Debug\netcoreapp3.1\Repository.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfoInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.AssemblyInfo.cs
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.CopyComplete
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Debug\netcoreapp3.1\BussinessLayer.csproj.AssemblyReference.cache

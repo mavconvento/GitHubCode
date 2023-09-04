@@ -21,7 +21,7 @@ namespace PigeonIDSystem
         public Int64 PigeonID { get; set; }
         public String ActionType { get; set; }
         public String ClubName { get; set; }
-
+        public String ActionOrigin { get; set; }
         public frmPhotoCapture()
         {
             InitializeComponent();
@@ -91,10 +91,10 @@ namespace PigeonIDSystem
             this.txtMemberID.Text = "";
             this.txtName.Text = "";
             this.txtRingNumber.Text = "";
-            this.cbmSex.SelectedIndex = -1;
+            //this.cbmSex.SelectedIndex = -1;
             this.cmbCategory.SelectedIndex = -1;
             this.txtrfid.Text = "";
-            this.txtColor.Text = "";
+            //this.txtColor.Text = "";
             this.imgCapture.Image = null;
             this.pictureBox1.Image = null;
             this.dtList.DataSource = null;
@@ -183,7 +183,12 @@ namespace PigeonIDSystem
                 cock.Value = "COCK";
                 cbmSex.Items.Add(cock);
 
-                cbmSex.SelectedIndex = -1;
+                ComboboxItem na = new ComboboxItem();
+                na.Text = "NA";
+                na.Value = "NA";
+                cbmSex.Items.Add(na);
+
+                //cbmSex.SelectedIndex = -1;
 
                 ComboboxItem yb = new ComboboxItem();
                 yb.Text = "YB";
@@ -229,9 +234,9 @@ namespace PigeonIDSystem
                         //clear control
                         this.txtRingNumber.Text = "";
                         this.txtrfid.Text = "";
-                        this.cbmSex.SelectedIndex = -1;
+                        //this.cbmSex.SelectedIndex = -1;
                         this.cmbCategory.SelectedIndex = -1;
-                        this.txtColor.Text = "";
+                        //this.txtColor.Text = "";
                         this.PigeonID = 0;
                         this.imgCapture.Image = null;
                         this.pictureBox1.Image = null;
@@ -381,6 +386,13 @@ namespace PigeonIDSystem
                         seqNumber++;
                     }
 
+                }
+
+                if (ActionOrigin == "Search")
+                {
+                    DataRow[] drcol = pigeonList.Select().OrderBy(u => u["BandNumber"]).ToArray();
+                    pigeonList = drcol.CopyToDataTable();
+                    ActionOrigin = "";
                 }
 
                 dtList.DataSource = pigeonList;
@@ -545,11 +557,12 @@ namespace PigeonIDSystem
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+           try
             {
                 if (this.txtMemberID.Text != "")
                 {
                     ControlEnabled(true);
+                    ActionOrigin = "Search";
                     GetMemberName(this.txtMemberID.Text);
                     GetPigeonList(this.txtMemberID.Text);
                     this.txtName.Focus();
@@ -646,15 +659,26 @@ namespace PigeonIDSystem
                 string MemberIDNo = txtMemberID.Text;
                 if (MemberIDNo != "")
                 {
-                    if (MessageBox.Show("Are you sure. You would like to delete this member?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Are you sure. You would like to delete banded birds record?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         string path = ReadText.ReadFilePath("datapath");
-                        File.Delete(path + "\\members\\" + MemberIDNo + ".txt"); //memberdetails
                         File.Delete(path + "\\pigeonlist\\" + MemberIDNo + ".txt"); //memberpigeonlist
-                        Directory.Delete(path + "\\pigeonDetails\\" + MemberIDNo, true);
-                        Directory.Delete(path + "\\images\\" + MemberIDNo, true);
+
+                        if (Directory.Exists(path + "\\pigeonDetails\\" + MemberIDNo)) Directory.Delete(path + "\\pigeonDetails\\" + MemberIDNo, true);
+                        if (Directory.Exists(path + "\\images\\" + MemberIDNo)) Directory.Delete(path + "\\images\\" + MemberIDNo, true);
+
                         MessageBox.Show("Record Deleted.", "Delete Record");
-                        ClearControl();
+
+                        ActionOrigin = "Search";
+                        GetPigeonList(this.txtMemberID.Text);
+
+                        this.txtRingNumber.Text = "";
+                        this.cmbCategory.SelectedIndex = -1;
+                        this.txtrfid.Text = "";
+                        this.imgCapture.Image = null;
+                        this.pictureBox1.Image = null;
+                        this.dtList.DataSource = null;
+                        PigeonID = 0;
                     }
                 }
 
@@ -766,6 +790,31 @@ namespace PigeonIDSystem
             frmReadRFID readRFID = new frmReadRFID();
             readRFID.ShowDialog();
             this.txtTestRing.Text = readRFID.RFIDTags;
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = (DataTable)this.dtList.DataSource;
+
+                frmSyncEclock sync = new frmSyncEclock();
+                sync.DataList = dt;
+                sync.ClubName = ClubName;
+                sync.MemberID = this.txtMemberID.Text;
+                sync.MemberName = this.txtName.Text;
+                sync.TestRing = this.txtTestRing.Text;
+
+                sync.ActionType = "READBANDED";
+                sync.ShowDialog();
+                GetPigeonList(this.txtMemberID.Text);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 

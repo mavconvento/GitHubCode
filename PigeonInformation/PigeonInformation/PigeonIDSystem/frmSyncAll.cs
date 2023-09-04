@@ -35,6 +35,7 @@ namespace PigeonIDSystem
             if (ActionType == "ENTRYDB")
             {
                 string filepath = pathSyncApplication + "\\entrylogs.txt";
+                this.checkBox1.Visible = true;
                 if (File.Exists(filepath))
                 {
                     File.Delete(filepath);
@@ -447,6 +448,7 @@ namespace PigeonIDSystem
             sync.ClubName = ClubName;
             sync.DateRelease = DateRelease;
             sync.ActionType = ActionType;
+            sync.IsCopyLastCategory = this.checkBox1.Checked;
             sync.ShowDialog();
 
             if (ActionType == "ENTRYDB")

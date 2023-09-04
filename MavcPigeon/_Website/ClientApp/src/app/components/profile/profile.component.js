@@ -22,8 +22,9 @@ var account_service_1 = require("../../services/account.service");
 var authentication_service_1 = require("../../services/authentication.service");
 var alert_service_1 = require("../../services/alert.service");
 var helpers_1 = require("../../helpers/helpers");
+var router_1 = require("@angular/router");
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(dialog, authenticationService, imageService, userService, accountService, alertService, helper) {
+    function ProfileComponent(dialog, authenticationService, imageService, userService, accountService, alertService, helper, router) {
         this.dialog = dialog;
         this.authenticationService = authenticationService;
         this.imageService = imageService;
@@ -31,12 +32,18 @@ var ProfileComponent = /** @class */ (function () {
         this.accountService = accountService;
         this.alertService = alertService;
         this.helper = helper;
+        this.router = router;
         this.totalLoad = "0";
         this.picture = "7d033eb5-80ac-4ad1-88be-e39c33fe1f47";
+        this.isPha = false;
     }
     ProfileComponent.prototype.ngOnInit = function () {
         var currentUser = this.authenticationService.currentUserValue;
         this.userID = currentUser.userID;
+        if (localStorage.getItem("userlogin") == "pha.mavcpigeon@gmail.com") {
+            this.isPha = true;
+            console.log(this.isPha);
+        }
         //set profileImageID
         if (currentUser.fileUploadID) {
             localStorage.setItem("profileImageID", currentUser.fileUploadID);
@@ -166,13 +173,14 @@ var ProfileComponent = /** @class */ (function () {
     };
     ProfileComponent.prototype.getMemberCoordinates = function (item) {
         console.log(item);
-        this.userService.getMemberCoordinates(item.MemberClubID, item.clubabbreviation, item.dbName).subscribe(function (data) {
-            var result = JSON.parse(data.content);
-            if (result.Table.length > 0) {
-                window.open('https://www.google.com/maps/place/' + result.Table[0].Lat + ' ' + result.Table[0].Long, '_blank');
-            }
-            console.log((JSON.parse(data.content)).Table);
-        });
+        this.router.navigate(["/distance", item.clubabbreviation, item.MemberClubID, item.dbName]);
+        //this.userService.getMemberCoordinates(item.MemberClubID, item.clubabbreviation, item.dbName).subscribe(data => {
+        //  var result = JSON.parse(data.content);
+        //  if (result.Table.length > 0) {
+        //    window.open('https://www.google.com/maps/place/' + result.Table[0].Lat + ' ' + result.Table[0].Long, '_blank');
+        //  }
+        //  console.log((JSON.parse(data.content)).Table)
+        //});
     };
     ProfileComponent.prototype.GetMobileList = function () {
         var _this = this;
@@ -216,7 +224,8 @@ var ProfileComponent = /** @class */ (function () {
             user_service_1.UserService,
             account_service_1.AccountService,
             alert_service_1.AlertService,
-            helpers_1.Helpers])
+            helpers_1.Helpers,
+            router_1.Router])
     ], ProfileComponent);
     return ProfileComponent;
 }());

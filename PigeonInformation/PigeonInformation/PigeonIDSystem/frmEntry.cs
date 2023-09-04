@@ -20,10 +20,12 @@ namespace PigeonIDSystem
         public Int64 PigeonID { get; set; }
         public String ActionType { get; set; }
         public String EntryList { get; set; }
+        public String Action { get; set; }
         public frmEntry()
         {
             InitializeComponent();
             dtList.DoubleClick += new EventHandler(grid_DoubleClick);
+            dataGridView1.DoubleClick += new EventHandler(dataGridView1_DoubleClick);
         }
 
         private void Entry_Load(object sender, EventArgs e)
@@ -92,6 +94,40 @@ namespace PigeonIDSystem
                                 MessageBox.Show("Record Deleted.", "Delete Record");
                             }
                         }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridView datagrid = this.dtList;
+                int index;
+                //Int64 PigeonID;
+                //String BandNumber = "";
+                String RFID = "";
+                if (dataGridView1.RowCount > 0)
+                {
+                    if (dataGridView1.CurrentCell.Value.ToString() == "SELECT")
+                    {
+                        if (this.txtrfid.Text != "")
+                        {
+                            if ((MessageBox.Show("Bird not yet save, Are sure you want to proceed?", "Warning", MessageBoxButtons.YesNo) == DialogResult.No))
+                            {
+                                return;
+                            }
+                        }
+
+                        index = dataGridView1.CurrentRow.Index;
+                        RFID = Convert.ToString(dataGridView1.Rows[Convert.ToInt32(index)].Cells[2].Value);
+                        Action = "Selected";
+                        this.txtrfid.Text = RFID;
                     }
                 }
             }
@@ -227,7 +263,7 @@ namespace PigeonIDSystem
 
                 string entryDirectory = path + "\\entry\\" + dateString;
                 string filepath = entryDirectory + "\\" + memberid + ".txt";
-
+                EntryList = "";
                 if (File.Exists(filepath))
                 {
                     string[] entryCollection = ReadText.ReadTextFile(filepath);
@@ -298,7 +334,9 @@ namespace PigeonIDSystem
                     txtColor.Text = pigeonDetailsCollection[4];
                     txtCategory.Text = pigeonDetailsCollection[2];
                     LoadImage(txtrfid.Text, txtMemberID.Text);
-                    Save();
+
+                    if (Action != "Selected") Save();
+                    Action = "";
                 }
                 else
                 {
@@ -318,6 +356,7 @@ namespace PigeonIDSystem
                     EntryList = "";
                     ControlState(true);
                     GetPigeonList(this.txtMemberID.Text);
+                    GetBandedPigeonList(this.txtMemberID.Text);
                     GetMemberName(this.txtMemberID.Text);
                     this.txtrfid.Focus();
                 }
@@ -331,6 +370,92 @@ namespace PigeonIDSystem
             {
 
                 MessageBox.Show(EX.Message, "Error");
+            }
+        }
+
+        private void GetBandedPigeonList(string memberid)
+        {
+            try
+            {
+                DataTable pigeonList = new DataTable();
+
+                DataColumn dc1 = new DataColumn();
+                dc1.ColumnName = " ";
+
+                //DataColumn dc2 = new DataColumn();
+                //dc2.ColumnName = "DELETE";
+
+                //DataColumn dc3 = new DataColumn();
+                //dc3.ColumnName = "SeqNo";
+
+                DataColumn dc4 = new DataColumn();
+                dc4.ColumnName = "BandNumber";
+
+                DataColumn dc5 = new DataColumn();
+                dc5.ColumnName = "TagID";
+
+                DataColumn dc6 = new DataColumn();
+                dc6.ColumnName = "Category";
+
+                DataColumn dc7 = new DataColumn();
+                dc7.ColumnName = "Sex";
+
+                DataColumn dc8 = new DataColumn();
+                dc8.ColumnName = "Color";
+
+                pigeonList.Columns.Add(dc1);
+                //pigeonList.Columns.Add(dc2);
+                //pigeonList.Columns.Add(dc3);
+                pigeonList.Columns.Add(dc4);
+                pigeonList.Columns.Add(dc5);
+                pigeonList.Columns.Add(dc6);
+                pigeonList.Columns.Add(dc7);
+                pigeonList.Columns.Add(dc8);
+
+                ////add test ring on the top list
+                //DataRow drtest = pigeonList.NewRow();
+                //drtest["EDIT"] = "";
+                //drtest["DELETE"] = "";
+                //drtest["SeqNo"] = 1.ToString();
+                //drtest["BandNumber"] = "TEST RING";
+                //drtest["TagID"] = this.txtTestRing.Text;
+                //drtest["Category"] = "BOTH";
+                //drtest["Color"] = "NA";
+                //drtest["Sex"] = "NA";
+                //pigeonList.Rows.Add(drtest);
+
+                string path = ReadText.ReadFilePath("datapath");
+                string filepath = path + "\\pigeonlist\\" + memberid + ".txt";
+                if (File.Exists(filepath))
+                {
+                    string[] pigeonCollection = ReadText.ReadTextFile(filepath);
+                    int seqNumber = 2;
+                    foreach (string item in pigeonCollection)
+                    {
+                        string[] value = item.Split('|');
+                        DataRow dr = pigeonList.NewRow();
+                        dr[" "] = "SELECT";
+                        //dr["DELETE"] = "DELETE";
+                        //dr["SeqNo"] = seqNumber.ToString();
+                        dr["BandNumber"] = value[1].ToString();
+                        dr["TagID"] = value[2].ToString();
+                        dr["Category"] = value[3].ToString();
+                        dr["Color"] = value[4].ToString();
+                        dr["Sex"] = value[5].ToString();
+                        pigeonList.Rows.Add(dr);
+                        seqNumber++;
+                    }
+
+                }
+
+                DataRow[] drcol = pigeonList.Select().OrderBy(u => u["BandNumber"]).ToArray();
+                pigeonList = drcol.CopyToDataTable();
+                dataGridView1.DataSource = pigeonList;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 

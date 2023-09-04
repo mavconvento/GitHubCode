@@ -68,7 +68,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(308, 229);
+            this.button1.Location = new System.Drawing.Point(310, 234);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(102, 28);
@@ -94,11 +94,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(77, 49);
+            this.label4.Location = new System.Drawing.Point(114, 57);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(579, 45);
+            this.label4.Size = new System.Drawing.Size(488, 45);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Welcome to PKC Management";
+            this.label4.Text = "Welcome to MAVC Admin";
             // 
             // pictureBox2
             // 

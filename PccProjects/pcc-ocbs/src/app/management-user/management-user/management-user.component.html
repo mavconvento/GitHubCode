@@ -1,0 +1,98 @@
+<form [formGroup]="myform">
+  <div class="form-group" style="text-align: center;">
+    <div style="text-align: center; margin-top: 10px; padding-top: 10px;">
+      <h2>User Management</h2>
+    </div>
+    <div style="margin-left: 15px;">
+      <div>
+        <label for="username" style="font-weight: bold; font-size: 15px;">
+          Username :
+        </label>
+        <input class="textbox" id="username" type="text" style="width: 150px;  font-size: 15px;"
+          formControlName="username" />
+      </div>
+      <br />
+      <div style="margin-right: 20px;">
+        <label for="firstname" style="font-weight: bold; font-size: 15px;margin-left: 20px;">
+          Firstname :
+        </label>
+        <input class="textbox" id="firstname" type="text" style="width: 150px;  font-size: 15px;"
+          formControlName="firstname" />
+      </div>
+      <br />
+      <div style="margin-right: 20px;">
+        <label for="lastname" style="font-weight: bold; font-size: 15px;margin-left: 20px;">
+          Lastname :
+        </label>
+        <input class="textbox" id="lastname" type="text" style="width: 150px;  font-size: 15px;"
+          formControlName="lastname" />
+      </div>
+      <br />
+      <mat-form-field style="width:280px;">
+        <mat-label>Company</mat-label>
+        <mat-select formControlName="companyid">
+          <mat-option *ngFor="let item of companyList" [value]="item.CompanyId">
+            {{item.CompanyName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br />
+      <mat-form-field style="width:280px;">
+        <mat-label>User Role</mat-label>
+        <mat-select formControlName="roleid">
+          <mat-option *ngFor="let item of roleList" [value]="item.RoleId">
+            {{item.Description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br />
+      <input type="checkbox" id="isactive" formControlName="isactive" value="isactive" [checked]="isChecked">IsActive
+    </div>
+    <br />
+    <div *ngIf="isShow" style="margin-top: 15px; text-align: center;">
+      <span style="color:green; font-weight: bold; font-size: 15px;">{{errorMessage}}</span>
+    </div>
+    <div style="text-align: center;">
+      <button (click)="Update()"
+        style="background-color: red; margin-top: 10px; color: white; width: 200px; height: 35px !important;">Update</button>
+      <button (click)="back()"
+        style="background-color: rgb(32, 9, 134); margin-top: 10px; color: white; width: 200px; height: 35px !important;">BACK</button>
+    </div>
+    <br />
+    <div>
+      <label for="searchuser" style="font-weight: bold; font-size: 15px;">
+        Search User (Firstname/LastName/Status):
+      </label>
+      <input class="textbox" id="searchuser" type="text" style="width: 150px;  font-size: 15px; margin-right: 80px;"
+        formControlName="searchuser" (input)="onChange($event.target.value)" />
+    </div>
+    <br />
+    <div>
+      <table mat-table [dataSource]="userList" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="userid">
+          <th mat-header-cell *matHeaderCellDef>UserID</th>
+          <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+        </ng-container>
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef>UserName</th>
+          <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="firstname">
+          <th mat-header-cell *matHeaderCellDef>First Name</th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef>Status</th>
+          <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+        </ng-container>
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element"><span style="color:green; cursor: pointer; font-weight: bold;"
+              (click)="onUserEdit(element.companyId,element.userId)">EDIT</span></td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <br />
+  </div>
+</form>

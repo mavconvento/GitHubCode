@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMS Pigeon Clocking.exe" size="26504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMS Pigeon Clocking.exe" size="25600">
       <assemblyIdentity name="SMS Pigeon Clocking" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>DFua1AxJMaG34Z4NszNE0raCC+Y=</dsig:DigestValue>
+        <dsig:DigestValue>89Q4mjd/kO+jCZ+UpqyUNSaepPk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>5R/lC/NCm1/BzZTZNhg0T4SBu50=</dsig:DigestValue>
+        <dsig:DigestValue>ip3zgvCZhth4vG8IWUoIkqa40Q4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ZVgqq1ackE4K4/YITSok3tNXpG8=</dsig:DigestValue>
+        <dsig:DigestValue>2z4iDQh2buVLb/FpvpJjgaImYdo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

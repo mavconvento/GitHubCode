@@ -14,53 +14,76 @@ namespace SyncEclock
     class Program
     {
         public static String MemberID { get; set; }
+        public static String MemberName { get; set; }
         public static String DateRelease { get; set; }
         public static String DataPath { get; set; }
         public static String ClubName { get; set; }
         public static DateTime ReleaseDate { get; set; }
+        public static String IsCopyLastCategory { get; set; }
+        public static String TestRing { get; set; }
         static void Main(string[] args)
         {
-
-            string path = AppDomain.CurrentDomain.BaseDirectory;
-            string filepath = path + "resultinfo.txt";
-            string Actionfilepath = path + "Action.txt";
-
-            string[] pigeonCollection = ReadText.ReadTextFile(filepath);
-            string[] actionValue = ReadText.ReadTextFile(Actionfilepath);
-
-
-            if (actionValue[0].ToUpper() == "RESULTRACE")
+            try
             {
-                MemberID = pigeonCollection[0];
-                DateRelease = pigeonCollection[1];
-                DataPath = pigeonCollection[2].Trim();
-                GetResult("RACE");
+                string path = AppDomain.CurrentDomain.BaseDirectory;
+                string filepath = path + "resultinfo.txt";
+                string Actionfilepath = path + "Action.txt";
 
-            }
-            if (actionValue[0].ToUpper() == "RESULTTRAINING")
-            {
-                MemberID = pigeonCollection[0];
-                DateRelease = pigeonCollection[1];
-                DataPath = pigeonCollection[2].Trim();
-                GetResult("TRAINING");
+                string[] pigeonCollection = ReadText.ReadTextFile(filepath);
+                string[] actionValue = ReadText.ReadTextFile(Actionfilepath);
 
+
+                if (actionValue[0].ToUpper() == "RESULTRACE")
+                {
+                    MemberID = pigeonCollection[0];
+                    DateRelease = pigeonCollection[1];
+                    DataPath = pigeonCollection[2].Trim();
+                    GetResult("RACE");
+
+                }
+                else if (actionValue[0].ToUpper() == "RESULTTRAINING")
+                {
+                    MemberID = pigeonCollection[0];
+                    DateRelease = pigeonCollection[1];
+                    DataPath = pigeonCollection[2].Trim();
+                    GetResult("TRAINING");
+
+                }
+                else if (actionValue[0].ToUpper() == "READBANDED")
+                {
+                    MemberID = pigeonCollection[0];
+                    MemberName = pigeonCollection[1];
+                    TestRing = pigeonCollection[2];
+                    DataPath = pigeonCollection[3].Trim();
+                    ReadBandedFromEclock();
+
+                }
+                else if (actionValue[0].ToUpper() == "RESULTDB")
+                {
+                    ClubName = pigeonCollection[0];
+                    DateRelease = pigeonCollection[1];
+                    DataPath = pigeonCollection[2].Trim();
+                    ReleaseDate = Convert.ToDateTime(pigeonCollection[3]);
+                    SyncResultToDatabase();
+                }
+                else if (actionValue[0].ToUpper() == "ENTRYDB")
+                {
+                    ClubName = pigeonCollection[0];
+                    DateRelease = pigeonCollection[1];
+                    IsCopyLastCategory = pigeonCollection[2];
+                    DataPath = pigeonCollection[3].Trim();
+                    ReleaseDate = Convert.ToDateTime(pigeonCollection[4]);
+                    SyncEntryToDatabase();
+                }
+
+               DataPath = DataPath + "\\";
             }
-            else if (actionValue[0].ToUpper() == "RESULTDB")
+            catch (Exception ex)
             {
-                ClubName = pigeonCollection[0];
-                DateRelease = pigeonCollection[1];
-                DataPath = pigeonCollection[2].Trim();
-                ReleaseDate = Convert.ToDateTime(pigeonCollection[3]);
-                SyncResultToDatabase();
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
             }
-            else if (actionValue[0].ToUpper() == "ENTRYDB")
-            {
-                ClubName = pigeonCollection[0];
-                DateRelease = pigeonCollection[1];
-                DataPath = pigeonCollection[2].Trim();
-                ReleaseDate = Convert.ToDateTime(pigeonCollection[3]);
-                SyncEntryToDatabase();
-            }
+            
         }
 
         private static void SyncResultToDatabase()
@@ -174,15 +197,6 @@ namespace SyncEclock
                                                     //string[] datacol = { MemberID, item, value[1], value[2], value[3] };
                                                     System.IO.File.WriteAllLines(resultFileName, resultdetails); //memberpigeonlist
 
-                                                    //using (StreamWriter sw = File.AppendText(resultFileName))
-                                                    //{
-                                                    //    sw.WriteLine(rdetails[2]);
-                                                    //}
-
-                                                    //using (StreamWriter sw = File.AppendText(resultFileName))
-                                                    //{
-                                                    //    sw.WriteLine(rdetails[3]);
-                                                    //}
                                                 }
 
                                             }
@@ -247,6 +261,7 @@ namespace SyncEclock
                                     entryObject.RaceCategoryGroupName = "EClock";
                                     entryObject.RFID = entry;
                                     entryObject.MobileNumber = "";
+                                    entryObject.IsCopyLastCategory = IsCopyLastCategory;
 
                                     if (File.Exists(MobileFileName))
                                     {
@@ -385,7 +400,7 @@ namespace SyncEclock
                                 String inComingData = eclock.ReceiveDataResult("$Race$" + rtype + item + "#", comPort);
                                 if (inComingData != "")
                                 {
-                                    PrintData(inComingData, item);
+                                    PrintData(inComingData,item);
                                     //eclock.SendData("Done" + item + "#", commPort);
                                     transmit = true;
                                 }
@@ -407,6 +422,7 @@ namespace SyncEclock
                 throw ex;
             }
         }
+
 
         private static void PrintData(string data, string item)
         {
@@ -465,6 +481,169 @@ namespace SyncEclock
                 Console.WriteLine("No Result");
             }
 
+        }
+
+        private static void ReadBandedFromEclock()
+        {
+            try
+            {
+                Eclock eclock = new Eclock();
+                string serialPort = eclock.GetPort();
+                string[] ports = SerialPort.GetPortNames();
+                string comPortNumber = "";
+
+                foreach (var item in ports)
+                {
+                    if (serialPort.Contains(item)) comPortNumber = item;
+                }
+
+                SerialPort comPort = new SerialPort(comPortNumber, 9600, Parity.None, 8, StopBits.One);
+                if (!String.IsNullOrEmpty(comPortNumber))
+                {
+
+                    DataPath = DataPath.Trim();
+
+                    eclock.SendData("$Stat$", comPort);
+                    System.Threading.Thread.Sleep(1000);
+
+                    for (int i = 1; i <= 1500; i++)
+                    {
+                        bool transmit = false;
+                        while (!transmit)
+                        {
+                            //eclock.SendData(, comPort);
+                            String inComingData = eclock.ReceiveDataResult("$Read$" + i.ToString() + "#", comPort);
+                            
+                            if (inComingData != "")
+                            {
+                                if (inComingData.Contains("noresult")) 
+                                    i = 1501;
+                                else
+                                    PrintReadData(inComingData, i.ToString());
+                                transmit = true;
+                            }
+                        }
+                    }
+
+                    eclock.SendData("$Done$|#", comPort);
+                }
+                //Console.ReadLine();
+                Console.WriteLine("Banded Sync Completed....");
+                System.Threading.Thread.Sleep(2000);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private static void PrintReadData(string data, string index)
+        {
+            Console.WriteLine();
+            String[] value = data.Split('|');
+            if (value[1] != "noresult")
+            {
+                Console.WriteLine("**************************");
+                Console.WriteLine("Record # " + index);
+                Console.WriteLine("Ring Number: " + value[1]);
+                Console.WriteLine("RFID: " + value[2]);
+                Console.WriteLine("Category: " + value[3]);
+                Console.WriteLine("**************************");
+
+                if (value[1] != "TEST RING") SavetoFile(value[1], value[2], value[3]);
+            }
+            else
+            {
+                Console.WriteLine("No Result");
+            }
+
+        }
+
+        private static Boolean SavetoFile(string BandNumber, string RFID, string Category)
+        {
+            try
+            {
+                string path = DataPath.Trim();
+                string detailspath = path + "\\pigeondetails\\" + MemberID + "\\" + RFID + ".txt";
+                string memberpath = path + "\\members\\" + MemberID + ".txt";
+                string pigeonlistpath = path + "\\pigeonlist\\" + MemberID + ".txt";
+
+
+                string Sex = "NA";
+                string Color = "NA";
+                //string Category = "YB";
+
+
+                string[] memberDetails = { MemberID, MemberName, TestRing };
+                string[] pigeonDetails = { BandNumber, RFID, Category, Sex, Color };
+
+                string[] pigeonList = SetPigeonList("", 0.ToString(), BandNumber, Sex, Color, RFID, Category, MemberID).ToArray();
+
+                System.IO.File.WriteAllLines(memberpath, memberDetails); //memberdetails
+                System.IO.File.WriteAllLines(pigeonlistpath, pigeonList); //memberpigeonlist
+
+                string pigeondetailsDirectory = path + "\\pigeondetails\\" + MemberID;
+                if (!Directory.Exists(pigeondetailsDirectory))
+                {
+                    Directory.CreateDirectory(pigeondetailsDirectory);
+                }
+                System.IO.File.WriteAllLines(detailspath, pigeonDetails); //pigeondetails
+
+
+                string pigeonimageDirectory = path + "\\images\\" + MemberID;
+                if (!Directory.Exists(pigeonimageDirectory))
+                {
+                    Directory.CreateDirectory(pigeonimageDirectory);
+                }
+
+                return true;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private static List<string> SetPigeonList(string action, string PigeonID, string BandNumber, string Sex, string Color, string RFID, String Category,string memberid)
+        {
+            try
+            {
+                string path = DataPath.Trim();
+                string pigeonlistpath = path + "\\pigeonlist\\" + memberid + ".txt";
+
+                string[] pigeonCollection = ReadText.ReadTextFile(pigeonlistpath);
+
+                List<string> pigeonListCollection = new List<string>();
+
+                if (pigeonCollection != null)
+                {
+                    foreach (var item in pigeonCollection)
+                    {
+                        if (!item.Contains(RFID) && !item.Contains(BandNumber))
+                        {
+                            pigeonListCollection.Add(item);
+                        }
+                    }
+                }
+
+                int count = 1;
+                if (pigeonListCollection.Count > 0) count = pigeonListCollection.Count();
+
+                if (string.IsNullOrEmpty(action))
+                {
+                    pigeonListCollection.Add(count + "|" + BandNumber + "|" + RFID + "|" + Category + "|" + Color + "|" + Sex);
+                }
+
+                return pigeonListCollection;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }

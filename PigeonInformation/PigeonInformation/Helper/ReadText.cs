@@ -25,7 +25,7 @@ namespace Helper
                         path = tr.ReadLine();
                     }
 
-                    path = path + ReadClub("club");
+                    path = path + "\\" + ReadClub("club");
                 }
 
                 return path;

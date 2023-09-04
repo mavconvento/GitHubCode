@@ -92,6 +92,22 @@ namespace PegionClocking.BIZ
                 throw ex;
             }
         }
+
+        public DataSet ReComputeResult()
+        {
+            try
+            {
+                raceResult = new DAL.RaceResult();
+                DataSet dataResult = new DataSet();
+                PopulateDataLayer();
+                dataResult = raceResult.ReComputeResult();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public DataSet RaceResultDelete()
         {
             try

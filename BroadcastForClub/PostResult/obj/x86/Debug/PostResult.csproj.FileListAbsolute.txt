@@ -79,3 +79,12 @@ C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PostResult\obj\x8
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.csproj.GenerateResource.Cache
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.exe
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\PostResult\obj\x86\Debug\PostResult.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\bin\Debug\PostResult.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\bin\Debug\PostResult.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\obj\x86\Debug\PostResult.csproj.AssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\obj\x86\Debug\PostResult.frmPostResult.resources
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\obj\x86\Debug\PostResult.Properties.Resources.resources
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\obj\x86\Debug\PostResult.csproj.GenerateResource.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\obj\x86\Debug\PostResult.csproj.CoreCompileInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\obj\x86\Debug\PostResult.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\PostResult\obj\x86\Debug\PostResult.pdb

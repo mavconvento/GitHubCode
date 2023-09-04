@@ -267,14 +267,14 @@
             // inbox1ToolStripMenuItem1
             // 
             this.inbox1ToolStripMenuItem1.Name = "inbox1ToolStripMenuItem1";
-            this.inbox1ToolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
+            this.inbox1ToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.inbox1ToolStripMenuItem1.Text = "Inbox 1";
             this.inbox1ToolStripMenuItem1.Click += new System.EventHandler(this.inbox1ToolStripMenuItem1_Click);
             // 
             // inbox2ToolStripMenuItem
             // 
             this.inbox2ToolStripMenuItem.Name = "inbox2ToolStripMenuItem";
-            this.inbox2ToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.inbox2ToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.inbox2ToolStripMenuItem.Text = "Inbox 2";
             this.inbox2ToolStripMenuItem.Click += new System.EventHandler(this.inbox2ToolStripMenuItem_Click);
             // 
@@ -466,13 +466,13 @@
             // storageToolStripMenuItem
             // 
             this.storageToolStripMenuItem.Name = "storageToolStripMenuItem";
-            this.storageToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.storageToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.storageToolStripMenuItem.Text = "Inbox";
             // 
             // clockingToolStripMenuItem
             // 
             this.clockingToolStripMenuItem.Name = "clockingToolStripMenuItem";
-            this.clockingToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.clockingToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.clockingToolStripMenuItem.Text = "Outbox";
             // 
             // label1
@@ -486,7 +486,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Version 10.0";
+            this.label1.Text = "Version 10.2";
             // 
             // label2
             // 
@@ -498,9 +498,9 @@
             this.label2.Location = new System.Drawing.Point(66, 406);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 13);
+            this.label2.Size = new System.Drawing.Size(215, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Powered by : Pilipinas Kalapati Clocking";
+            this.label2.Text = "Powered by : MAVC Pigeon Clocking";
             // 
             // label3
             // 
@@ -509,7 +509,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(66, 424);
+            this.label3.Location = new System.Drawing.Point(66, 419);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 13);

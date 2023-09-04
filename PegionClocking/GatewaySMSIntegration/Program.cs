@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 namespace GatewaySMSIntegration
 {
@@ -12,14 +14,14 @@ namespace GatewaySMSIntegration
         static void Main(string[] args)
         {
             //Delete_outgoing("PR-MARKA754822_4H5EX");
-            ProcessReply();
+            ProcessReply().Wait();
 
-            //PostMessageForReply("09688530922","Testing","sample sending");
+            //PostMessageForReply("+639688530922","This number is already Registered to JOHNDEE V. CONVENTO  with MemberID :000253.Load: 353,003.00","sample sending").Wait();
         }
 
-        private static void ProcessReply()
+        private static async Task ProcessReply()
         {
-            start:
+        start:
             try
             {
                 DataSet dsResult = new DataSet();
@@ -44,19 +46,49 @@ namespace GatewaySMSIntegration
                             string InboxID = item["InboxID"].ToString();
 
                             //send sms reply
-                            string Status = PostMessageForReply(Sender, ReplyMessage, SMSContent);
-                            Console.WriteLine("==============================================================");
-                            Console.WriteLine("      ModemID: " + modemID);
-                            Console.WriteLine("   SMSContent: " + SMSContent);
-                            Console.WriteLine(" ReplyMessage: " + ReplyMessage);
-                            Console.WriteLine("       Sender: " + Sender);
-                            Console.WriteLine("      Keyword: " + Keyword);
-                            Console.WriteLine("       Status: " + Status);
-                            Console.WriteLine("    ReplyTime: " + DateTime.Today.ToShortDateString() + " " + DateTime.Today.ToLongTimeString());
-                            Console.WriteLine("==============================================================");
+                            if (ReplyMessage != "")
+                            {
+                                string Status = await PostMessageForReply(Sender, ReplyMessage, SMSContent);
+                                Console.WriteLine("==============================================================");
+                                Console.WriteLine("      ModemID: " + modemID);
+                                Console.WriteLine("   SMSContent: " + SMSContent);
+                                //Console.WriteLine(" ReplyMessage: " + ReplyMessage);
+                                Console.WriteLine("       Sender: " + Sender);
+                                Console.WriteLine("      Keyword: " + Keyword);
+                                Console.WriteLine("       Status: " + Status);
+                                Console.WriteLine("    ReplyTime: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
+                                Console.WriteLine("==============================================================");
 
-                            //save outbox into database
-                            gateway.SMSGatewayOutboxSave("local", SMSContent, Keyword, Sender, Status, InboxID);
+                                //save outbox into database
+                                gateway.SMSGatewayOutboxSave("local", SMSContent, Keyword, Sender, Status, InboxID);
+                            }
+                            else if (item["Keyword"].ToString() == "DELAYTEXT")
+                            {
+                                Console.WriteLine("==============================================================");
+                                Console.WriteLine("      ModemID: " + modemID);
+                                Console.WriteLine("   SMSContent: " + SMSContent);
+                                //Console.WriteLine(" ReplyMessage: " + ReplyMessage);
+                                Console.WriteLine("       Sender: " + Sender);
+                                Console.WriteLine("      Keyword: " + Keyword);
+                                Console.WriteLine("       Status: " + "DELAYTEXT");
+                                Console.WriteLine("    ReplyTime: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
+                                Console.WriteLine("==============================================================");
+                            }
+                            else
+                            {
+                                Console.WriteLine("==============================================================");
+                                Console.WriteLine("      ModemID: " + modemID);
+                                Console.WriteLine("   SMSContent: " + SMSContent);
+                                //Console.WriteLine(" ReplyMessage: " + ReplyMessage);
+                                Console.WriteLine("       Sender: " + Sender);
+                                Console.WriteLine("      Keyword: " + Keyword);
+                                Console.WriteLine("       Status: " + "FAILED");
+                                Console.WriteLine("    ReplyTime: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
+                                Console.WriteLine("==============================================================");
+                            }
+
+
+                            
                         }
                     }
                 }
@@ -68,13 +100,15 @@ namespace GatewaySMSIntegration
                 goto start;
             }
         }
-        private static string PostMessageForReply(string MobileNumber, string ReplyMessage, string SMSContent)
+        private static async Task<string> PostMessageForReply(string MobileNumber, string ReplyMessage, string SMSContent)
         {
-            string SenderID = "MAVC-PKC";
-
+            string SenderID = "ITS-MAVC";
+            string email = "mavconvento@gmail.com";
+            string password = "172227cv@M";
             //if (SMSContent.ToUpper().Contains("RMCOLR")) SenderID = "RMC-OLR";
 
-            var ret = itexmo(MobileNumber, ReplyMessage, "PR-MARKA754822_4H5EX", SenderID, "nc]xkei6ti");
+            var ret = await itexmo(MobileNumber, ReplyMessage, "PR-MARKA754822_4H5EX", SenderID, email, password);
+
             var status = "";
             if (ret.ToString() == "0")
             {
@@ -127,6 +161,7 @@ namespace GatewaySMSIntegration
                         status = "Invalid preferred server number.";
                         break;
                     default:
+                        status = ret.ToString();
                         break;
                 }
             }
@@ -136,29 +171,34 @@ namespace GatewaySMSIntegration
         //########################################################################################
         //iTexmo API for C# / ASP --> go to www.itexmo.com/developers.php for API Documentation
         //########################################################################################
-        private static object itexmo(string Number, string Message, string API_CODE, string SenderID,string Password, Boolean isImportant = false)
+        private static async Task<string> itexmo(string Number, string Message, string API_CODE, string SenderID, string email, string Password, Boolean isImportant = false)
         {
-            object functionReturnValue = null;
-            using (System.Net.WebClient client = new System.Net.WebClient())
+            try
             {
-                System.Collections.Specialized.NameValueCollection parameter = new System.Collections.Specialized.NameValueCollection();
-                string url = "https://www.itexmo.com/php_api/api.php";
-                parameter.Add("1", Number);
-                parameter.Add("2", Message);
-                parameter.Add("3", API_CODE);
-                parameter.Add("6", SenderID);
-                parameter.Add("passwd", Password);
+                var itextmoparam = new ItextMoParameter() { ApiCode = API_CODE, Email = email, Message = Message, Password = Password, Recipients = new string[] { Number }, SenderId = SenderID };
+                var json = Newtonsoft.Json.JsonConvert.SerializeObject(itextmoparam);
+                var data = new System.Net.Http.StringContent(json, Encoding.UTF8, "application/json");
 
-
-                if (isImportant)
+                var url = "https://api.itexmo.com/api/broadcast";
+                using (var client = new HttpClient())
                 {
-                    parameter.Add("5", "HIGH");
-                }
+                    var response = await client.PostAsync(url, data);
+                    string result = response.Content.ReadAsStringAsync().Result;
+                    var itxtres = JsonConvert.DeserializeObject<ItextMoResponse>(result);
 
-                dynamic rpb = client.UploadValues(url, "POST", parameter);
-                functionReturnValue = (new System.Text.UTF8Encoding()).GetString(rpb);
+                    if (!itxtres.Error)
+                    {
+                        return "0";
+                    }
+
+                    return itxtres.Message;
+                }
             }
-            return functionReturnValue;
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
         private static object Delete_outgoing(string API_CODE)
         {

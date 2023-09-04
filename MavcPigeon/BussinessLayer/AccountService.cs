@@ -115,21 +115,24 @@ namespace BussinessLayer
                     var resultMesage = "";
 
                     if (result != "")
-                        resultMesage = "Success";
+                    {
+                        var message = new StringBuilder();
 
+                        message.Append("MAVC Mobile Link OTPCode: " + linkMobile.OtpCode + ". ");
+                        //message.Append("Valid for 5 mins. Do not disclose One-Time Password.");
+
+                        //sendotp
+                        Helper.Helper helper = new Helper.Helper(_configuration);
+
+                        if (_configuration["ItextMo:IsSendOTPViaITextMo"] == "TRUE")
+                        {
+                            var otpSendStatus = await helper.itexmo(linkMobile.MobileNumber, message.ToString());
+                        }
+                   
+                        resultMesage = "Success";
+                    }
                     else
                         resultMesage = "Error during sending OTPCode.";
-
-                    //var message = new StringBuilder();
-                    
-                    //message.Append("Your OTP is " + linkMobile.OtpCode + ". ");
-                    //message.Append("Valid for 5 mins. Do not disclose One-Time Password.");
-
-                    ////sendotp
-                    //Helper.Helper helper = new Helper.Helper(_configuration);
-                    //var otpSendStatus = await helper.itexmo(linkMobile.MobileNumber, message.ToString());
-
-                    //if (otpSendStatus.ToString() == "0")
 
                     return resultMesage;
                 }
@@ -228,7 +231,7 @@ namespace BussinessLayer
 
                 throw ex;
             }
-            
+
         }
 
         public async Task<string> ValidateMobileNumber(string email, string mobile)
@@ -241,7 +244,7 @@ namespace BussinessLayer
                 if (result.Tables.Count > 0)
                 {
                     if (result.Tables[0].Rows.Count > 0)
-                         resultMesage = "Success";
+                        resultMesage = "Success";
                     else
                         resultMesage = "Error during sending password.";
                 }
@@ -253,7 +256,7 @@ namespace BussinessLayer
 
                 throw ex;
             }
-            
+
         }
 
         public async Task<DataSet> GetMemberCoordinates(string memberidno, string clubname, string dbname)

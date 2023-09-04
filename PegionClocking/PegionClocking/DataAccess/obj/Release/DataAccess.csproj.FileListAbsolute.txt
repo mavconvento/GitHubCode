@@ -2,3 +2,7 @@ C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\b
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\bin\Release\DataAccess.pdb
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Release\DataAccess.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Release\DataAccess.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\PegionClocking\DataAccess\bin\Release\DataAccess.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\PegionClocking\DataAccess\bin\Release\DataAccess.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Release\DataAccess.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\PegionClocking\DataAccess\obj\Release\DataAccess.pdb

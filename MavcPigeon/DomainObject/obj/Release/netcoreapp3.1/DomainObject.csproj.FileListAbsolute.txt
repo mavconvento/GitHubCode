@@ -7,3 +7,12 @@ C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcor
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.csproj.CoreCompileInputs.cache
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\bin\Release\netcoreapp3.1\DomainObject.deps.json
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\bin\Release\netcoreapp3.1\DomainObject.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\bin\Release\netcoreapp3.1\DomainObject.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.AssemblyInfoInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.AssemblyInfo.cs
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.csproj.CoreCompileInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.csproj.AssemblyReference.cache

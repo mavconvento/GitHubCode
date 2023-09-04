@@ -83,3 +83,14 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrat
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.exe.config
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.exe
 C:\Users\mavc\Desktop\GitHubCode\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.exe.config
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\Integrate_Inbox.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\DataAccess.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\SMSWindowService.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\DataAccess.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\bin\Debug\SMSWindowService.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\Integrate_Inbox\obj\x86\Debug\Integrate_Inbox.csprojResolveAssemblyReference.cache

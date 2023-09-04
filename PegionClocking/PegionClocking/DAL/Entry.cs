@@ -30,6 +30,7 @@ namespace PegionClocking.DAL
         public string RaceCategoryName { get; set; }
         public string RaceCategoryGroupName { get; set; }
         public string StickerCode { get; set; }
+        public String RFIDCode { get; set; }
         public Int64 BandID { get; set; }
         public string RingNumber { get; set; }
         public string BarcodeBandID { get; set; }
@@ -88,6 +89,7 @@ namespace PegionClocking.DAL
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceCategoryGroup", RaceCategoryGroupName);
                 dbconn.sqlComm.Parameters.AddWithValue("@MemberID", MemberID);
                 dbconn.sqlComm.Parameters.AddWithValue("@StickerCode", StickerCode);
+                dbconn.sqlComm.Parameters.AddWithValue("@RFIDCode", RFIDCode);
                 dbconn.sqlComm.Parameters.AddWithValue("@RingNumber", RingNumber);
                 dbconn.sqlComm.Parameters.AddWithValue("@BarCodeEntryID", BarcodeBandID);
                 dbconn.sqlComm.Parameters.AddWithValue("@BandID", BandID);
@@ -205,6 +207,7 @@ namespace PegionClocking.DAL
 
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@RaceReleasePointID", RaceReleasePointID);
@@ -233,6 +236,7 @@ namespace PegionClocking.DAL
 
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 //dbconn.sqlComm.Parameters.AddWithValue("@RaceReleasePointID", RaceReleasePointID);

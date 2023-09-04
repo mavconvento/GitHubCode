@@ -1,0 +1,56 @@
+<form [formGroup]="myform">
+  <div class="form-group" style="text-align:center;">
+    <div style="text-align:center;">
+      <br />
+      <h2>
+        User Registration
+      </h2>
+      <div>
+        <label for="username" style="font-weight: bold; font-size: 15px;">
+          Username :
+        </label>
+        <input class="textbox" id="username" type="text" style="width: 150px;  font-size: 15px;"
+          formControlName="username" />
+      </div>
+      <br />
+      <div>
+        <label for="password" style="font-weight: bold; font-size: 15px;">
+          Password :
+        </label>
+        <input class="textbox" id="password" type="password" style="width: 150px;  font-size: 15px;"
+          formControlName="password" />
+      </div>
+      <br />
+      <div style="margin-right: 60px;">
+        <label for="retypepassword" style="font-weight: bold; font-size: 15px;">
+          Re-Type Password :
+        </label>
+        <input class="textbox" id="retypepassword" type="password" style="width: 150px;  font-size: 15px;"
+          formControlName="retypepassword" />
+      </div>
+      <br />
+      <div style="margin-right: 20px;">
+        <label for="firstname" style="font-weight: bold; font-size: 15px;margin-left: 20px;">
+          Firstname:
+        </label>
+        <input class="textbox" id="firstname" type="text" style="width: 150px;  font-size: 15px;"
+          formControlName="firstname" />
+      </div>
+      <br />
+      <div style="margin-right: 20px;">
+        <label for="lastname" style="font-weight: bold; font-size: 15px;margin-left: 20px;">
+          Lastname :
+        </label>
+        <input class="textbox" id="lastname" type="text" style="width: 150px;  font-size: 15px;"
+          formControlName="lastname" />
+      </div>
+      <br />
+      <div *ngIf="isShow" style="margin-top: 15px;">
+        <span style="color:red; font-weight: bold; font-size: 12px;">{{errorMessage}}</span>
+      </div>
+      <br />
+      <button (click)="onSubmit()" class="button"
+        style="background-color: rgb(17, 108, 212); color: white;">Login</button>
+    </div>
+  </div>
+</form>

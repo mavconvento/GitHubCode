@@ -1,0 +1,22 @@
+<header>
+  <nav id="main" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container" style="padding-left:10px">
+      <div>
+        <ul class="navbar-nav flex-grow">
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item"  [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/profile']">Profile</a>
+          </li>
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/online-clocking']">Entry Submission</a>
+          </li>
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/race-result']">Program</a>
+          </li>
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/logs']">Logs</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

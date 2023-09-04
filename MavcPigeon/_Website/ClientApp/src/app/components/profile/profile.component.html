@@ -13,14 +13,14 @@
         <span>Primary Number: {{primaryMobileNumber}}</span>
         <span>E-Clock Number: {{eclockMobileNumber}}</span>
         <span>Total Load: {{totalLoad | number:'1.2-2'}}</span>
-        <span (click)="openProfileDialog()" title="Edit Profile"><mat-icon style="font-size:15px">edit</mat-icon></span>
+        <span (click)="openProfileDialog()" title="Edit Profile"><mat-icon style="font-size:15px; cursor:pointer;">edit</mat-icon></span>
       </div>
     </div>
   </div>
   <br />
   <div class="flex-container" fxLayout="column" fxLayoutGap="10px">
-    <div class="flex-container" fxLayout="row" fxLayoutGap="10px">
-      <span style="width:250px;" (click)="openLinkMobileDialog()" title="Link Mobile Number."><mat-icon style="font-size:15px; font-weight:bold; color:green;">add</mat-icon>Link registered mobile number.</span>
+    <div class="flex-container" fxLayout="row" fxLayoutGap="10px" *ngIf="!isPha">
+      <span style="width:280px; cursor:pointer; color:brown" (click)="openLinkMobileDialog()" title="Link Mobile Number."><mat-icon style="font-size:15px; font-weight:bold; color:green;">add</mat-icon><u>Link your registered mobile number.</u></span>
       <!--<span style="width:250px;" (click)="openLinkMobileDialog()" title="Register new mobile number."><mat-icon style="font-size:15px; font-weight:bold; color:green;">add</mat-icon>Register new mobile number.</span>-->
     </div>
     <div class="flex-container" fxLayout="row" fxLayoutGap="10px">
@@ -37,7 +37,7 @@
           <span>MemberID : {{item.MemberClubID}}</span>
         </mat-list-item>
         <mat-list-item>
-          <span (click)="getMemberCoordinates(item)" style="font-weight:bold; color:cadetblue"><u>Click to View Location</u></span>
+          <span (click)="getMemberCoordinates(item)" style="font-weight:bold; color:dodgerblue; cursor:pointer;"><u>Click to View Distance</u></span>
         </mat-list-item>
       </div>
       <mat-list-item style="margin-left:20px; padding-left:20px;">

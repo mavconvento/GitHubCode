@@ -1,16 +1,19 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+  <nav id="main" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container" style="padding-left:10px">
       <div>
         <ul class="navbar-nav flex-grow">
-          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/profile']">Profile</a>
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item"  [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/profile']">Profile</a>
           </li>
-          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/online-clocking']">Online Clocking</a>
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/online-clocking']">Online Clocking</a>
           </li>
-          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/race-result']">Race Result</a>
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/race-result']">Race Result</a>
+          </li>
+          <li *ngIf="(isLoggedIn$ | async) as isLogin" class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link text-dark" style="padding-left:5px" [routerLink]="['/logs']">Logs</a>
           </li>
         </ul>
       </div>

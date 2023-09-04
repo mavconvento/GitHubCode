@@ -1,0 +1,38 @@
+<form [formGroup]="myform">
+  <div class="form-group">
+    <div style="text-align:center">
+      <h1>OCBS PLATFORM</h1>
+      <div>
+        <label for="teller" style="font-weight: bold; font-size: 25px;">
+          Teller Name
+        </label><br />
+        <input id="teller" type="text" style="width: 300px; font-size: 25px; text-align: center; margin-top: 20px;"
+          readonly formControlName="teller" />
+      </div>
+      <br />
+      <button *ngIf="!isAdmin" (click)="onBetting()" style="background-color: red">START BETTING</button><br />
+      <div *ngIf="isAdmin">
+        <button (click)="onUnclaimed()" style="background-color: rgb(22, 8, 83);  margin-top: 10px;">UNCLAIMED
+          TICKETS</button><br />
+        <button (click)="onFight()" style="background-color: red; margin-top: 10px;">FIGHT
+          MANAGEMENT</button><br />
+        <button (click)="onPoints()" style="background-color: rgb(22, 8, 83); margin-top: 10px;">POINTS
+          MANAGEMENT</button><br />
+        <button (click)="showOdds()" style="background-color: red; margin-top: 10px;">SHOW
+          ODDS</button><br />
+        <button (click)="onBettingHistory()" style="background-color: rgb(22, 8, 83);  margin-top: 10px;">BETTING
+          HISTORY</button><br />
+        <button (click)="onEvent()" style="background-color: red; margin-top: 10px;">EVENT
+          MANAGEMENT</button><br />
+        <button (click)="onUser()" style="background-color: rgb(22, 8, 83); margin-top: 10px;">USER
+          MANAGEMENT</button><br />
+      </div>
+      <br>
+      <button (click)="logout()" style="background-color: green; margin-top: 10px;">LOGOUT</button>
+      <div *ngIf="isShow" style="margin-top: 15px;">
+        <span style="color:red; font-weight: bold; font-size: 12px;">{{errorMessage}}</span>
+      </div>
+    </div>
+    <br />
+  </div>
+</form>

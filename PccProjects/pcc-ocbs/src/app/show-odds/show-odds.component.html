@@ -1,0 +1,90 @@
+<div style="text-align: center; font-weight: bolder; font-size: 30px; margin-top: 50px; padding-top: 50px;">
+  <span style="color:black; font-weight: bold;">Fight #: {{fightno}}</span><br />
+  <span
+    style="color:black; font-weight: bold; font-size: 25px !important; margin-bottom: 10px;">{{buttonclosedlabel}}</span><br />
+  <span style="color:red">{{winnerlabel}}</span><br />
+  <div class="outer-container">
+    <div class="inner-container">
+      <div class="centered-content">
+        <table>
+          <tr>
+            <td style="background-color: red; width: 200px;">
+              <span>MERON</span>
+            </td>
+            <td></td>
+            <td style="background-color: rgba(93, 101, 238, 0.793); width: 200px;">WALA</td>
+          </tr>
+          <tr>
+            <td>{{merontotal | number}}</td>
+            <td>TOTAL BET</td>
+            <td>{{walatotal | number}}</td>
+          </tr>
+          <tr>
+            <td>{{meronodd | number}}</td>
+            <td>PAYOUT</td>
+            <td>{{walaodd | number}}</td>
+          </tr>
+        </table>
+      </div>
+      <div style="text-align: center; margin-left: 80px;">
+        <button (click)="back()"
+          style="background-color: rgb(32, 9, 134); margin-top: 10px; height: 35px !important;">BACK</button>
+      </div>
+    </div>
+  </div>
+  <!-- <div style="margin-bottom: 15px;">
+    <span style="color: red;">MERON TOTAL BET: {{merontotal | number}}</span><br />
+    <span style="color: red;">PAYOUT : {{meronodd | number}}</span>
+  </div>
+  <div style="margin-bottom: 15px;">
+    <span style="color: blue;">WALA TOTAL BET: {{walatotal | number}}</span><br />
+    <span style="color: blue;">PAYOUT : {{walaodd | number}}</span>
+  </div> -->
+  <!-- <div style="margin-bottom: 15px;">
+    <span style="color: green;">DRAW TOTAL BET: {{drawtotal | number}}</span>
+  </div> -->
+</div>
+<!-- <div class="winodd" id="container_2">
+  <table mdbTable>
+    <tbody>
+      <tr *ngFor="let el of items">
+        <td>
+          <div class="circlered" *ngIf="el.Row6=='M'"></div>
+          <div class="circleblue" *ngIf="el.Row6=='W'"></div>
+          <div class="circlegreen" *ngIf="el.Row6=='D'"></div>
+          <div class="circlegray" *ngIf="el.Row6=='C'"></div>
+        </td>
+        <td>
+          <div class="circlered" *ngIf="el.Row5=='M'"></div>
+          <div class="circleblue" *ngIf="el.Row5=='W'"></div>
+          <div class="circlegreen" *ngIf="el.Row5=='D'"></div>
+          <div class="circlegray" *ngIf="el.Row5=='C'"></div>
+        </td>
+        <td>
+          <div class="circlered" *ngIf="el.Row4=='M'"></div>
+          <div class="circleblue" *ngIf="el.Row4=='W'"></div>
+          <div class="circlegreen" *ngIf="el.Row4=='D'"></div>
+          <div class="circlegray" *ngIf="el.Row4=='C'"></div>
+        </td>
+        <td>
+          <div class="circlered" *ngIf="el.Row3=='M'"></div>
+          <div class="circleblue" *ngIf="el.Row3=='W'"></div>
+          <div class="circlegreen" *ngIf="el.Row3=='D'"></div>
+          <div class="circlegray" *ngIf="el.Row3=='C'"></div>
+        </td>
+        <td>
+          <div class="circlered" *ngIf="el.Row2=='M'"></div>
+          <div class="circleblue" *ngIf="el.Row2=='W'"></div>
+          <div class="circlegreen" *ngIf="el.Row2=='D'"></div>
+          <div class="circlegray" *ngIf="el.Row2=='C'"></div>
+        </td>
+        <td>
+          <div class="circlered" *ngIf="el.Row1=='M'"></div>
+          <div class="circleblue" *ngIf="el.Row1=='W'"></div>
+          <div class="circlegreen" *ngIf="el.Row1=='D'"></div>
+          <div class="circlegray" *ngIf="el.Row1=='C'"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->

@@ -1,0 +1,12 @@
+.textbox
+{
+    border-radius: 10px;
+    border: 2px solid #2123ad;
+    text-align: center;
+}
+
+.button
+{
+    border-radius: 10px;
+    width: 100px;
+}

@@ -28,3 +28,16 @@ C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\De
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Debug\SyncEclock.csproj.CopyComplete
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Debug\SyncEclock.exe
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Debug\SyncEclock.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\SyncEclock.exe.config
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\SyncEclock.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\SyncEclock.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\BusinessLayer.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\DataLayer.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\DomainObjects.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\Helper.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\BusinessLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\DataLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\DomainObjects.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\bin\Debug\Helper.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Debug\SyncEclock.exe
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\SyncEclock\obj\Debug\SyncEclock.pdb

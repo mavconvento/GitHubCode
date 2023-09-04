@@ -215,3 +215,12 @@ C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
 C:\Adams\GitHub\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\bin\Debug\SMSModule.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\bin\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\bin\Debug\SMSModule.xml
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.Resources.resources
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.vbproj.GenerateResource.Cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.xml
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PegionClocking\SMSModule\obj\Debug\SMSModule.vbprojResolveAssemblyReference.cache

@@ -1,0 +1,7 @@
+.shawdow {
+  box-sizing: border-box;
+  border: 1px solid grey;
+  padding: 0 5px;
+  box-shadow: 5px 10px #888888;
+  background-color: white;
+}

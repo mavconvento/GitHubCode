@@ -41,10 +41,11 @@ namespace DataLayer
                 dbconn.sqlComm.Parameters.AddWithValue("@RFID", entry.RFID);
                 dbconn.sqlComm.Parameters.AddWithValue("@MemberIDNo", entry.MemberIDNo);
                 dbconn.sqlComm.Parameters.AddWithValue("@BirdCategory", entry.RaceCategoryName);
-                dbconn.sqlComm.Parameters.AddWithValue("@DateRelease", entry.ReleaseDate);
+                dbconn.sqlComm.Parameters.AddWithValue("@DateRelease", entry.ReleaseDate.Year.ToString() + "-" + entry.ReleaseDate.Month.ToString() + "-" + entry.ReleaseDate.Day.ToString());
                 dbconn.sqlComm.Parameters.AddWithValue("@RingNumber", entry.RingNumber);
                 dbconn.sqlComm.Parameters.AddWithValue("@MobileNumber", entry.MobileNumber);
-                
+                dbconn.sqlComm.Parameters.AddWithValue("@IsCopyLastCategory", entry.IsCopyLastCategory);
+
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = dbconn.sqlComm;
                 da.Fill(dataResult);

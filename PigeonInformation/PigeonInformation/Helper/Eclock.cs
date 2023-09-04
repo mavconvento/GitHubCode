@@ -88,7 +88,7 @@ namespace Helper
                     default:
                         break;
                 }
-                Time = Time + daysOfWeek.ToString() + now.Hour.ToString().PadLeft(2, '0') + now.Minute.ToString().PadLeft(2, '0') + now.Second.ToString().PadLeft(2, '0') + "x#";
+                Time = Time + daysOfWeek.ToString() + now.Hour.ToString().PadLeft(2, '0') + now.Minute.ToString().PadLeft(2, '0') + (now.Second + 1).ToString().PadLeft(2, '0') + "x#";
                 comPort.Open();
                 foreach (char item in Time)
                 {
@@ -147,6 +147,8 @@ namespace Helper
                 while (Isread)
                 {
                     incommingData = comPort.ReadExisting();
+                    System.Threading.Tasks.Task.Delay(2000);
+
                     counter++;
 
                     if (incommingData.Contains("dataend") & incommingData.Contains("datastart"))
@@ -156,7 +158,7 @@ namespace Helper
 
                         foreach (var item in value)
                         {
-                            if (item == "datastart")
+                            if (item.Contains("datastart"))
                             {
                                 string rfid = value[index + 1];
                                 if (rfid.Length >= 5)
@@ -246,13 +248,18 @@ namespace Helper
             foreach (ManagementObject property in Ports)
             {
                 if (property.GetPropertyValue("Name") != null)
-                    if (property.GetPropertyValue("Name").ToString().Contains("USB") &&
+                    if ((property.GetPropertyValue("Name").ToString().Contains("USB") || (property.GetPropertyValue("Name").ToString().Contains("Arduino"))) &&
                         property.GetPropertyValue("Name").ToString().Contains("COM"))
                     {
                         Console.WriteLine(property.GetPropertyValue("Name").ToString());
                         device = property.GetPropertyValue("Name").ToString();
 
                         if (device.Contains("USB-SERIAL CH340"))
+                        {
+                            value = device;
+                            break;
+                        }
+                        else if (device.Contains("Arduino Mega 2560"))
                         {
                             value = device;
                             break;

@@ -23,3 +23,10 @@ C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLa
 C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.dll
 C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DataLayer.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DataLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DomainObjects.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\bin\Debug\DomainObjects.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DataLayer\obj\Debug\DataLayer.csprojResolveAssemblyReference.cache

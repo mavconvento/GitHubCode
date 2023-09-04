@@ -1,0 +1,19 @@
+<div style="margin-left: 5px;">
+    <span style="font-size: 15px; font-weight: bold;">OCBS Platform</span><br />
+    <span style="font-size: 12px; font-weight: bold;">{{title}} Receipt</span>
+    <br /><br />
+    <span style="font-size: 12px;"><b>Fight #: </b>{{fightNo}}</span>
+    <br />
+    <span style="font-size: 12px;"><b>Winner: </b>{{winner}}</span>
+    <br />
+    <span style="font-size: 12px;"><b>Bet Amount: </b>{{betAmount|number}}</span>
+    <br />
+    <span style="font-size: 12px;"><b>Win Odds: </b>{{winodds}}</span>
+    <br />
+    <span style="font-size: 12px;"><b>Payout: </b>{{totalwin}}</span>
+    <br />
+    <br />
+    <span style="font-size: 12px; font-weight: bold;">Teller: {{teller}}</span>
+    <br />
+    <button (click)="onPrintInvoice()" style="font-size: 12px; font-weight: bold;">Confirmed</button>
+</div>

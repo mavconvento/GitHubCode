@@ -13,3 +13,9 @@ C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.csprojResolveAssemblyReference.cache
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.dll
 C:\Adams\GitHub\GitHubCode\Backup Project\PegionClockingSMS_v3\SerialPortTester\obj\Debug\SerialPortTester.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SerialPortTester\bin\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SerialPortTester\bin\Debug\SerialPortTester.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SerialPortTester\obj\Debug\SerialPortTester.csproj.AssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SerialPortTester\obj\Debug\SerialPortTester.csproj.CoreCompileInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SerialPortTester\obj\Debug\SerialPortTester.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\BroadcastForClub\SerialPortTester\obj\Debug\SerialPortTester.pdb

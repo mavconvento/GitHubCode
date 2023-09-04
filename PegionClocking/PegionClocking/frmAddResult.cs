@@ -19,6 +19,7 @@ namespace PegionClocking
         public String MobileNumber { get; set; }
         public String CallFrom { get; set; }
         public String Source { get; set; }
+        public Int64  UserID { get; set; }
         #endregion
 
         #region Events
@@ -80,6 +81,7 @@ namespace PegionClocking
 
                 BIZ.RaceResult raceresult = new BIZ.RaceResult();
                 raceresult.ClubID = ClubID;
+                raceresult.UserID = UserID;
                 raceresult.StickerCode = txtStickerCode.Text;
                 raceresult.ReleasedDate = DateRelease;
                 raceresult.Sender = txtSender.Text;

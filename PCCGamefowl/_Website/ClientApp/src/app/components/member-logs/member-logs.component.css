@@ -1,0 +1,20 @@
+
+
+.mat-column-Reciever {
+  font-size: 11px;
+  flex: 0 0 90px;
+  vertical-align: top;
+}
+
+.mat-column-Details {
+  font-size: 11px;
+  vertical-align: top;
+}
+
+
+.mat-column-ReplyMessage {
+  font-size: 11px;
+  vertical-align: top;
+  padding-left:5px;
+}
+

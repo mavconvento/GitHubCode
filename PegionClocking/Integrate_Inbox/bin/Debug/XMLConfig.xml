@@ -21,5 +21,8 @@
     <additionalDelay>2000</additionalDelay>
     <replyDelay>2000</replyDelay>
     <integrationType>1</integrationType>
+	<applicationStartMode>auto</applicationStartMode>  <!--value must be auto/manual-->
+    <testMobileNumber>09985754822</testMobileNumber> 
+    <autostartdelay>5</autostartdelay> 
   </smssettings>
 </systemsetting>

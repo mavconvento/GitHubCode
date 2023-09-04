@@ -710,11 +710,19 @@ namespace PigeonProgram
                 frmReadRFID readRFID = new frmReadRFID();
                 readRFID.ShowDialog();
                 this.txtrfid.Text = readRFID.RFIDTags;
-                if (txtrfid.Text != "" && PigeonID == 0)
+
+                if (readRFID.RFIDTags != "")
                 {
-                    GetPigeonDetails();
-                    ShowPeds();
+                    if (txtrfid.Text != "" && PigeonID == 0)
+                    {
+                        GetPigeonDetails();
+                        ShowPeds();
+                    }
                 }
+                else
+                    PigeonID = 0;
+
+                
             }
             catch (Exception ex)
             {
@@ -771,6 +779,11 @@ namespace PigeonProgram
                 LoadPigeonList();
                 this.cmbParentCock.SelectedItem = frmPigeonDetails.AddBird.ToUpper();
             }
+        }
+
+        private void cmbParentCock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -106,7 +106,7 @@ namespace PigeonIDSystem
 
             foreach (var item in value)
             {
-                if (item == "datastart")
+                if (item.Contains("datastart"))
                 {
                     string rfid = value[index + 1];
                     if (rfid != "noresult" && rfid != "0")

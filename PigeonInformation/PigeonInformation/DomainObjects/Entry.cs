@@ -16,5 +16,6 @@ namespace DomainObjects
         public string RaceCategoryName { get; set; }
         public string RaceCategoryGroupName { get; set; }
         public String MobileNumber { get; set; }
+        public String IsCopyLastCategory { get; set; }
     }
 }

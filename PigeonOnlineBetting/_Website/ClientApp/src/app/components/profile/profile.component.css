@@ -1,0 +1,26 @@
+.child-1 {
+  background-color: orange;
+}
+
+.child-2 {
+  background-color: yellow;
+}
+
+.child-3 {
+  background-color: green;
+}
+
+.mat-card-image{
+    width : 150px;
+    height: 150px;
+}
+
+.mobile-indent
+{
+    margin-left:10px;
+    padding-left:100px;
+}
+
+mat-raised-button {
+  width: 50px;
+}

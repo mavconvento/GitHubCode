@@ -14,6 +14,8 @@ import { Observable } from 'rxjs';
 import { parse } from 'url';
 import { Helpers } from '../../helpers/helpers';
 import { Club } from '../../models/clubname';
+import { Router } from '@angular/router';
+import { flatMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -36,6 +38,7 @@ export class ProfileComponent implements OnInit {
   clubName: string;
   dbName: string;
   picture: string = "7d033eb5-80ac-4ad1-88be-e39c33fe1f47";
+  isPha: Boolean = false;
 
   constructor(
     private dialog: MatDialog,
@@ -44,12 +47,19 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private accountService: AccountService,
     private alertService: AlertService,
-    private helper: Helpers
+    private helper: Helpers,
+    private router: Router
   ) { }
 
   ngOnInit() {
     let currentUser = this.authenticationService.currentUserValue;
     this.userID = currentUser.userID;
+
+
+    if (localStorage.getItem("userlogin") == "pha.mavcpigeon@gmail.com") {
+      this.isPha = true;
+      console.log(this.isPha);
+    }
 
     //set profileImageID
     if (currentUser.fileUploadID) {
@@ -204,13 +214,14 @@ export class ProfileComponent implements OnInit {
 
   getMemberCoordinates(item: any) {
     console.log(item);
-    this.userService.getMemberCoordinates(item.MemberClubID, item.clubabbreviation, item.dbName).subscribe(data => {
-      var result = JSON.parse(data.content);
-      if (result.Table.length > 0) {
-        window.open('https://www.google.com/maps/place/' + result.Table[0].Lat + ' ' + result.Table[0].Long, '_blank');
-      }
-      console.log((JSON.parse(data.content)).Table)
-    });
+    this.router.navigate(["/distance", item.clubabbreviation, item.MemberClubID, item.dbName])
+    //this.userService.getMemberCoordinates(item.MemberClubID, item.clubabbreviation, item.dbName).subscribe(data => {
+    //  var result = JSON.parse(data.content);
+    //  if (result.Table.length > 0) {
+    //    window.open('https://www.google.com/maps/place/' + result.Table[0].Lat + ' ' + result.Table[0].Long, '_blank');
+    //  }
+    //  console.log((JSON.parse(data.content)).Table)
+    //});
   }
 
   GetMobileList() {

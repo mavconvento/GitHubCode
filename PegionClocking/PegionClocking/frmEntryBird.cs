@@ -43,6 +43,7 @@ namespace PegionClocking
         public String StickerCode { get; set; }
         public Int64 BandID { get; set; }
         public String RingNumber { get; set; }
+        public String RFID { get; set; }
         public String BarcodeBandID { get; set; }
         public DataTable RaceReleasePointData { get; set; }
         public DataTable MemberDetailsData { get; set; }
@@ -384,6 +385,7 @@ namespace PegionClocking
                         txtMemberIDNo.Text = MemberIDNo;
                         txtStickerCode.Text = StickerCode;
                         txtRingNumber.Text = RingNumber;
+                        txtrfid.Text = RFID;
                         break;
                 }
             }
@@ -547,7 +549,7 @@ namespace PegionClocking
                     {
                         lblLabelStickerCredit.Visible = true;
                         lblStickerCredit.Visible = true;
-                        lblStickerCredit.Text = dtresult.Tables[0].Rows[0]["Credit"].ToString();
+                        lblStickerCredit.Text = "1";//dtresult.Tables[0].Rows[0]["Credit"].ToString();
                     }
                 }
             }
@@ -565,6 +567,8 @@ namespace PegionClocking
                 RaceScheduleCategoryName = lblRaceScheduleCategory.Text;
                 StickerCode = txtStickerCode.Text;
                 RingNumber = txtRingNumber.Text;
+                RFID = txtrfid.Text;
+                
                 BarcodeBandID = txtEntryIdentity.Text;  //txtEntryBarcodeID.Text;
                 RaceReleasePointID = Convert.ToInt64(txtReleasePointID.Text);
                 this.lblMemberEntryLabel.Text = "Entry List of " + MemberIDNo;
@@ -656,7 +660,10 @@ namespace PegionClocking
                             BandID = (Int64)datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value;
                             RingNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value.ToString();
                             StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[8].Value.ToString();
-                            txtEntryIdentity.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[9].Value);
+                            RFID = datagrid.Rows[Convert.ToInt32(index)].Cells[10].Value.ToString();
+                            //txtEntryIdentity.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[12].Value);
+                            this.cmbRaceCategory.SelectedItem = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[11].Value);
+                            this.cmbGroupCategory.SelectedItem = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[12].Value);
                             PopulateControlValue("MemberDataFromGrid");
                             GetMemberDetails();
                         }
@@ -724,6 +731,7 @@ namespace PegionClocking
                         RingNumber = datagrid.Rows[Convert.ToInt32(index)].Cells[4].Value.ToString();
                         StickerCode = datagrid.Rows[Convert.ToInt32(index)].Cells[5].Value.ToString();
                         txtEntryBarcodeID.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[6].Value);
+                        txtrfid.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[7].Value);
                         PopulateControlValue("MemberDataFromGrid");
                         GetMemberDetails();
                     }
@@ -742,9 +750,13 @@ namespace PegionClocking
                 Int64 index;
                 if (datagrid.RowCount > 0)
                 {
-                    index = datagrid.CurrentRow.Index;
-                    BandID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
-                    txtRingNumber.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
+                    if ((string)datagrid.CurrentCell.Value.ToString() == "SELECT")
+                    {
+                        index = datagrid.CurrentRow.Index;
+                        BandID = Convert.ToInt64(datagrid.Rows[Convert.ToInt32(index)].Cells[1].Value);
+                        //txtRingNumber.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[2].Value);
+                        txtRingNumber.Text = Convert.ToString(datagrid.Rows[Convert.ToInt32(index)].Cells[3].Value);
+                    }                   
                 }
             }
             catch (Exception ex)
@@ -787,6 +799,7 @@ namespace PegionClocking
                         entry.BandID = BandID;
                         entry.RingNumber = RingNumber;
                         entry.BarcodeBandID = BarcodeBandID;
+                        entry.RFID = RFID;
                         break;
                     case Common.Common.RaceEntryClassType.RaceReleasePoint:
                         raceReleasePoint.ClubID = ClubID;
@@ -880,6 +893,7 @@ namespace PegionClocking
                             this.txtStickerCode.Text = "";
                             this.txtEntryIdentity.Text = "";
                             this.BandID = 0;
+                            this.txtrfid.Text = "";
                             this.txtRingNumber.Focus();
                             GetMemberRingEnrolled();
                         }
@@ -925,8 +939,13 @@ namespace PegionClocking
 
 
 
+
         #endregion
 
-     
+        //allows only number
+        private void txtStickerCode_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

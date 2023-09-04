@@ -1,0 +1,80 @@
+<form [formGroup]="myform">
+  <div class="form-group">
+    <div style="text-align:center">
+      <h1>POINTS - MANAGEMENT</h1>
+      <mat-form-field style="width:280px;">
+        <mat-label>Teller</mat-label>
+        <mat-select formControlName="Teller" (selectionChange)="searchteller($event.value)">
+          <mat-option *ngFor="let item of tellerlist" [value]="item.UserName">
+            {{item.FirstName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br />
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput placeholder="Amount" formControlName="Amount">
+      </mat-form-field><br />
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput placeholder="Cash Advance" readonly formControlName="cash_advance">
+      </mat-form-field><br />
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput placeholder="Total Betting" readonly formControlName="total_betting">
+      </mat-form-field><br />
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput placeholder="Total Payout" readonly formControlName="total_payout">
+      </mat-form-field><br />
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput placeholder="Cash On-Hand" readonly formControlName="total_balance">
+      </mat-form-field><br />
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput placeholder="Total Commission" readonly formControlName="commission">
+      </mat-form-field>
+      <div style="margin-top: 10px;">
+        <p style="background-color: rgb(27, 4, 71); height:30px; margin-left: 20px; margin-right: 20px;">
+          <span style="font-size: 25px; font-weight: bold; color: white;">REQUEST TYPE</span>
+        </p>
+        <p style="font-size: 20px; font-weight: bolder;">
+          <input type="radio" value="Load" formControlName="Type" (click)="onStatusClick('Load')">Request Load <br />
+          <input type="radio" value="Cash Advance" formControlName="Type" (click)="onStatusClick('Cash Advance')"
+            style="margin-left: 8px;">Cash Advance <br />
+          <input type="radio" value="Closing Load" formControlName="Type" (click)="onStatusClick('Closing Load')"
+            style="margin-left: 25px;">Closing Balance
+        </p>
+      </div>
+      <button (click)="tellerSave()" style="background-color: red">SAVE POINTS</button><br />
+    </div>
+    <div *ngIf="isShow" style="margin-top: 15px; text-align: center;">
+      <span style="color:green; font-weight: bold; font-size: 15px;">{{errorMessage}}</span>
+    </div>
+  </div>
+  <div>
+    <div style="text-align: justify; margin-left: 20px;">
+      <h2>Points History</h2>
+    </div>
+    <table mat-table [dataSource]="pointslist" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="pointsamount">
+        <th mat-header-cell *matHeaderCellDef> Amount</th>
+        <td mat-cell *matCellDef="let element"> {{element.PointsAmount}} </td>
+      </ng-container>
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef> Type</th>
+        <td mat-cell *matCellDef="let element"> {{element.Type}} </td>
+      </ng-container>
+      <ng-container matColumnDef="approvedby">
+        <th mat-header-cell *matHeaderCellDef> Approved By</th>
+        <td mat-cell *matCellDef="let element"> {{element.ApprovedBy}} </td>
+      </ng-container>
+      <ng-container matColumnDef="daterequested">
+        <th mat-header-cell *matHeaderCellDef> Date Requested</th>
+        <td mat-cell *matCellDef="let element"> {{element.DateRequested}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <div style="text-align: center;">
+    <button (click)="back()"
+      style="background-color: rgb(32, 9, 134); margin-top: 10px; height: 35px !important;">BACK</button>
+    <br />
+  </div>
+</form>

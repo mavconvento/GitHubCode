@@ -1,0 +1,13 @@
+<h6 mat-dialog-title style="text-align:center">{{title}}</h6>
+<mat-dialog-content>
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+    <span>{{message}}</span>
+  </div>
+</mat-dialog-content>
+<br />
+<mat-dialog-actions>
+  <div class="flex-container" fxLayout="row" fxLayoutGap="2px">
+    <button class="mat-raised-button mat-primary" (click)="close(true)">Yes</button>
+    <button class="mat-raised-button mat-primary" (click)="close(false)">No</button>
+  </div>
+</mat-dialog-actions>

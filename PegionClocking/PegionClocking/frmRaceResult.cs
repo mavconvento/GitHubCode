@@ -82,6 +82,7 @@ namespace PegionClocking
                 addResult.DateRelease = dateTimePicker1.Value.Date;
                 addResult.ClubID = ClubID;
                 addResult.Source = "Back-up";
+                addResult.UserID = UserID;
                 addResult.ShowDialog();
                 ViewResult();
             }
@@ -118,6 +119,7 @@ namespace PegionClocking
                                 raceResult.ClubID = ClubID;
                                 raceResult.PigeonID = PigeonID;
                                 raceResult.StickerCode = StickerCode;
+                                raceResult.UserID = UserID;
                                 raceResult.RaceResultDelete();
                                 MessageBox.Show("Race result succesfully deleted", "Delete Record");
                                 ViewResult();
@@ -208,7 +210,7 @@ namespace PegionClocking
             lblLap.Text = "";
             lblTotalBirds.Text = "";
             lblTotalSMSCount.Text = "";
-            lblClockingPercentage.Text = "";
+            label6.Text = "";
         }
         private void ViewResult()
         {
@@ -231,10 +233,10 @@ namespace PegionClocking
                         lblLap.Text = dtResult.Tables[0].Rows[0]["Lap"].ToString();
                         lblTotalBirds.Text = dtResult.Tables[0].Rows[0]["TotalBird"].ToString();
                         lblTotalSMSCount.Text = dtResult.Tables[0].Rows[0]["SMSCount"].ToString();
-                        lblClockingPercentage.Text = "0 %";
+                        label6.Text = "0 %";
                         if (lblTotalBirds.Text != "0" && lblTotalBirds.Text != "" && lblTotalSMSCount.Text != "")
                         {
-                            lblClockingPercentage.Text = Convert.ToString(Math.Round(Convert.ToDecimal(Decimal.Parse(lblTotalSMSCount.Text) / Decimal.Parse(lblTotalBirds.Text) * 100),2)) + " %";
+                            label6.Text = Convert.ToString(Math.Round(Convert.ToDecimal(Decimal.Parse(lblTotalSMSCount.Text) / Decimal.Parse(lblTotalBirds.Text) * 100),2)) + " %";
                         }
                         version = dtResult.Tables[0].Rows[0]["Version"].ToString();
                     }
@@ -248,6 +250,7 @@ namespace PegionClocking
                             //dataGridView1.Columns[2].DefaultCellStyle.Format = "#,##0.00";
                             dataGridView1.Columns[2].DefaultCellStyle.Format = "#,##0.00";
                             dataGridView1.Columns[3].DefaultCellStyle.Format = "#,##0.00";
+                            dataGridView1.Columns[0].Visible = false;
                         }
                     }
                 }
@@ -269,6 +272,38 @@ namespace PegionClocking
             addResult.Text = "Add Race Result From Bundy Clock";
             addResult.ShowDialog();
             ViewResult();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataSet dtResult = new DataSet();
+                raceResult = new BIZ.RaceResult();
+
+                ClearControl();
+                GetControlValue();
+                PopulateBusinessLayer(Common.Common.RaceResult.RaceResult);
+                dtResult = raceResult.ReComputeResult();
+
+                if (dtResult.Tables.Count > 0)
+                {
+                    if (dtResult.Tables[0].Rows.Count > 0)
+                    {
+                        MessageBox.Show(dtResult.Tables[0].Rows[0]["Remarks"].ToString(), "Re-Compute Result");
+                    } 
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(Common.Common.CustomError(ex.Message), "Error");
+            }
         }
     }
 }

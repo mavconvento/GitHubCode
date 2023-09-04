@@ -80,6 +80,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtTestRing = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -242,6 +243,7 @@
             this.txtColor.Name = "txtColor";
             this.txtColor.Size = new System.Drawing.Size(51, 20);
             this.txtColor.TabIndex = 7;
+            this.txtColor.Text = "NA";
             // 
             // label4
             // 
@@ -269,6 +271,7 @@
             this.cbmSex.Name = "cbmSex";
             this.cbmSex.Size = new System.Drawing.Size(115, 21);
             this.cbmSex.TabIndex = 6;
+            this.cbmSex.Text = "NA";
             this.cbmSex.SelectedIndexChanged += new System.EventHandler(this.cbmSex_SelectedIndexChanged);
             // 
             // dtList
@@ -280,7 +283,7 @@
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtList.Location = new System.Drawing.Point(506, 29);
             this.dtList.Name = "dtList";
-            this.dtList.Size = new System.Drawing.Size(576, 489);
+            this.dtList.Size = new System.Drawing.Size(576, 516);
             this.dtList.TabIndex = 10;
             this.dtList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtList_CellContentClick);
             // 
@@ -352,7 +355,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(895, 552);
+            this.button2.Location = new System.Drawing.Point(895, 581);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 23);
             this.button2.TabIndex = 16;
@@ -419,7 +422,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(136, 23);
             this.button5.TabIndex = 14;
-            this.button5.Text = "&DELETE MEMBER";
+            this.button5.Text = "&DELETE BANDED";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -427,9 +430,9 @@
             // 
             this.btnSync.Enabled = false;
             this.btnSync.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSync.Location = new System.Drawing.Point(373, 581);
+            this.btnSync.Location = new System.Drawing.Point(506, 580);
             this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(115, 23);
+            this.btnSync.Size = new System.Drawing.Size(152, 23);
             this.btnSync.TabIndex = 15;
             this.btnSync.Text = "SYNC &E-CLOCK";
             this.btnSync.UseVisualStyleBackColor = true;
@@ -473,9 +476,8 @@
             this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Location = new System.Drawing.Point(222, 222);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(16, 20);
+            this.label13.Size = new System.Drawing.Size(0, 20);
             this.label13.TabIndex = 46;
-            this.label13.Text = "*";
             // 
             // label14
             // 
@@ -484,9 +486,8 @@
             this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.Location = new System.Drawing.Point(342, 224);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(16, 20);
+            this.label14.Size = new System.Drawing.Size(0, 20);
             this.label14.TabIndex = 47;
-            this.label14.Text = "*";
             // 
             // label15
             // 
@@ -495,9 +496,8 @@
             this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Location = new System.Drawing.Point(222, 258);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(16, 20);
+            this.label15.Size = new System.Drawing.Size(0, 20);
             this.label15.TabIndex = 50;
-            this.label15.Text = "*";
             // 
             // cmbCategory
             // 
@@ -532,9 +532,9 @@
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(661, 552);
+            this.button6.Location = new System.Drawing.Point(664, 551);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(152, 23);
+            this.button6.Size = new System.Drawing.Size(149, 23);
             this.button6.TabIndex = 52;
             this.button6.Text = "SYNC &TIME";
             this.button6.UseVisualStyleBackColor = true;
@@ -552,7 +552,7 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(895, 523);
+            this.button8.Location = new System.Drawing.Point(895, 552);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(187, 23);
             this.button8.TabIndex = 57;
@@ -563,7 +563,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(506, 522);
+            this.button7.Location = new System.Drawing.Point(506, 551);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(152, 23);
             this.button7.TabIndex = 58;
@@ -575,7 +575,7 @@
             // 
             this.button9.Enabled = false;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(506, 551);
+            this.button9.Location = new System.Drawing.Point(664, 580);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(149, 23);
             this.button9.TabIndex = 59;
@@ -627,11 +627,23 @@
             this.label17.Text = "Test Ring : ";
             this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(373, 580);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(115, 23);
+            this.button10.TabIndex = 64;
+            this.button10.Text = "READ ECLOCK";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
             // frmPhotoCapture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 615);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.btnTestReadTags);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtTestRing);
@@ -753,6 +765,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTestRing;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button10;
     }
 }
 

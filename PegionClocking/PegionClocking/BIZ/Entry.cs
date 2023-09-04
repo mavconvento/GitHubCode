@@ -30,6 +30,7 @@ namespace PegionClocking.BIZ
         public string StickerCode { get; set; }
         public Int64 BandID { get; set; }
         public string RingNumber { get; set; }
+        public String RFID { get; set; }
         public string BarcodeBandID { get; set; }
         public DateTime ReleaseDate { get; set; }
         #endregion
@@ -238,6 +239,7 @@ namespace PegionClocking.BIZ
                     entry.BarcodeBandID = BarcodeBandID;
                     entry.ReleaseDate = ReleaseDate;
                     entry.MemberID = MemberID;
+                    entry.RFIDCode = RFID;
                 }
                 else if (type == "releasepoint")
                 {

@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PegionClocking.exe" size="10318848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PegionClocking.exe" size="10322432">
       <assemblyIdentity name="PegionClocking" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BWESbicF4E/jta92oe1wdSdML3YU5OBeNiX9c0iXFx8=</dsig:DigestValue>
+        <dsig:DigestValue>//AtCRGNIMNrthIbXAcj08d89/bQW82e3B23wDzzI9Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

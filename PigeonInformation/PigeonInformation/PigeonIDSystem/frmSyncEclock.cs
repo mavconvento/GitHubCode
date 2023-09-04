@@ -24,6 +24,9 @@ namespace PigeonIDSystem
 
         public DateTime DateRelease { get; set; }
         public String MemberID { get; set; }
+        public String MemberName { get; set; }
+        public String TestRing { get; set; }
+        public Boolean IsCopyLastCategory { get; set; }
 
         public frmSyncEclock()
         {
@@ -39,6 +42,10 @@ namespace PigeonIDSystem
                     DataStartIndex = Convert.ToInt32(this.txtCount.Text);
                     DataEndtIndex = Convert.ToInt32(this.txtto.Text);
                     SyncBanded();
+                }
+                if (ActionType == "READBANDED")
+                {
+                    SyncReadBanded(ActionType);
                 }
                 else if (ActionType == "ENTRY")
                 {
@@ -93,19 +100,7 @@ namespace PigeonIDSystem
                 }
                 else if (ActionType == "CLOCK")
                 {
-                    Eclock eclock = new Eclock();
-                    string serialPort = eclock.GetPort();
-                    string[] ports = SerialPort.GetPortNames();
-                    string commPort = "";
-                    foreach (var item in ports)
-                    {
-                        if (serialPort.Contains(item)) commPort = item;
-                    }
-
-                    if (commPort != "")
-                    {
-                        eclock.SyncTime(commPort);
-                    }
+                    SyncTime();
                     this.Close();
                 }
             }
@@ -113,6 +108,59 @@ namespace PigeonIDSystem
             {
 
                 Common.Logs(ex.Message);
+            }
+        }
+
+        private void SyncTime()
+        {
+            try
+            {
+                Eclock eclock = new Eclock();
+                string serialPort = eclock.GetPort();
+                string[] ports = SerialPort.GetPortNames();
+                string commPort = "";
+                foreach (var item in ports)
+                {
+                    if (serialPort.Contains(item)) commPort = item;
+                }
+
+                if (commPort != "")
+                {
+                    eclock.SyncTime(commPort);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void SyncReadBanded(string action)
+        {
+            try
+            {
+                string path = AppDomain.CurrentDomain.BaseDirectory + "SyncApplication";
+                string filepath = path + "\\resultinfo.txt";
+                string Actionfilepath = path + "\\action.txt";
+
+                //string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
+
+                string[] args = { MemberID, MemberName, TestRing, ReadText.ReadFilePath("datapath") };
+                string[] actionargs = { action, "LOCAL" };
+
+                System.IO.File.WriteAllLines(filepath, args); //pigeondetails
+                System.IO.File.WriteAllLines(Actionfilepath, actionargs); //pigeondetails
+
+                var process = Process.Start(path + "\\SyncEclock.exe");
+                process.WaitForExit();
+                var exitCode = process.ExitCode;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
 
@@ -185,7 +233,7 @@ namespace PigeonIDSystem
 
                 string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
 
-                string[] args = { ClubName, dateString, ReadText.ReadFilePath("datapath"), this.DateRelease.ToShortDateString() };
+                string[] args = { ClubName, dateString, this.IsCopyLastCategory ? "YES" : "NO", ReadText.ReadFilePath("datapath"), this.DateRelease.ToShortDateString() };
                 string[] actionargs = { "ENTRYDB" };
 
                 System.IO.File.WriteAllLines(filepath, args); //pigeondetails
@@ -217,15 +265,14 @@ namespace PigeonIDSystem
             {
 
                 //eclock.SyncTime(commPort);
-                DataTable dt = new DataTable();
-                dt = DataList;
+                DataRow[] dr = DataList.Select().OrderBy(u => u["BandNumber"]).ToArray();
 
                 eclock.SendData("$Stat$", commPort);
-                progressBar1.Maximum = dt.Rows.Count;
+                progressBar1.Maximum = dr.Count();
                 System.Threading.Thread.Sleep(2500);
 
                 int counter = 1;
-                foreach (DataRow item in dt.Rows)
+                foreach (DataRow item in dr)
                 {
                     if (counter >= DataStartIndex && counter <= DataEndtIndex)
                     {
@@ -240,7 +287,7 @@ namespace PigeonIDSystem
                         }
 
                         String bandedData = "$BaNd$" +
-                                        ClubName + "|" +
+                                        ClubName.Replace(@"\", "") + "|" +
                                         item["BandNumber"].ToString() + "|" +
                                         item["TagID"].ToString() + "|" +
                                         item["Category"].ToString() + "|" +
@@ -257,6 +304,10 @@ namespace PigeonIDSystem
                 }
 
                 eclock.SendData("$Done$|#", commPort);
+                System.Threading.Thread.Sleep(1000);
+
+                //sync time always
+                SyncTime();
                 MessageBox.Show("Data sync", "Eclock Sync");
                 this.Close();
             }
@@ -277,6 +328,10 @@ namespace PigeonIDSystem
                 }
 
                 eclock.SendData("$UnLo$", commPort);
+                //sync time always
+                System.Threading.Thread.Sleep(1000);
+                SyncTime();
+
                 this.Close();
             }
             catch (Exception ex)

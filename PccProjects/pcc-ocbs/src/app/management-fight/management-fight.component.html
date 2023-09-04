@@ -1,0 +1,56 @@
+<form [formGroup]="myform">
+  <div class="form-group">
+    <div style="text-align:center">
+      <h1>FIGHT - MANAGEMENT</h1>
+      <div>
+        <label for="fightno" style="font-weight: bold; font-size: 25px;">
+          Fight #:
+        </label>
+        <input id="fightno" type="text" style="width: 70px; font-size: 25px; text-align: center;"
+          formControlName="fightno" />
+        <button (click)="onNextFight()"
+          style="background-color: rgb(6, 63, 30); margin-left: 10px; color: white; height: 33px !important; width: 70px !important; font-size: 25px !important;">Next</button>
+      </div>
+      <br />
+      <div style="margin-top: 10px;">
+        <p style="background-color: rgb(27, 4, 71); height:30px; margin-left: 20px; margin-right: 20px;">
+          <span style="font-size: 25px; font-weight: bold; color: white;">Fight Status</span>
+        </p>
+        <p style="font-size: 20px; font-weight: bolder;">
+          <input type="radio" value="PENDING" formControlName="status" (click)="onStatusClick('PENDING')">Pending
+          <input type="radio" value="OPEN" formControlName="status" (click)="onStatusClick('OPEN')">Open<br /><br />
+          <input type="radio" value="OPEN (MERON ONLY)" formControlName="status"
+            (click)="onStatusClick('OPEN (MERON ONLY)')">Open (Meron Only)
+          <input type="radio" value="OPEN (WALA ONLY)" formControlName="status"
+            (click)="onStatusClick('OPEN (WALA ONLY)')">Open (Wala Only)<br /><br />
+          <input type="radio" value="CANCEL" formControlName="status" (click)="onStatusClick('CANCEL')">Cancel
+          <input type="radio" value="CLOSE" formControlName="status" (click)="onStatusClick('CLOSE')">Close
+          <input type="radio" value="DONE" formControlName="status" (click)="onStatusClick('DONE')">Done<br /><br />
+          <input type="checkbox" id="lastcall" formControlName="lastCall" value="Lastcall" [checked]="isChecked"
+            (click)="onLastCallClick($event.target.checked)">Last
+          Call Betting
+        </p>
+      </div>
+      <div style="margin-top: 50px;" *ngIf="isHidden">
+        <p style="background-color: rgb(27, 4, 71); height:30px; margin-left: 20px; margin-right: 20px;">
+          <span style="font-size: 25px; font-weight: bold; color: white;">Declare Winner</span>
+        </p>
+        <p style="font-size: 20px; font-weight: bolder;">
+          <input type="radio" value="MERON" formControlName="declare" (click)="onWinnerClick('MERON')">Meron
+          <input type="radio" value="WALA" formControlName="declare" (click)="onWinnerClick('WALA')">Wala
+          <input type="radio" value="DRAW" formControlName="declare" (click)="onWinnerClick('DRAW')">Draw
+          <input type="radio" value="CANCEL" formControlName="declare" (click)="onWinnerClick('CANCEL')">Cancel
+        </p>
+      </div>
+      <button (click)="FightSave('update')" style="background-color: red">SAVE FIGHT</button><br /><br />
+      <button (click)="FightPrint()" style="background-color: green; height: 35px !important;">PRINT
+        REPORT</button><br />
+      <button (click)="back()"
+        style="background-color: rgb(32, 9, 134); margin-top: 10px; height: 35px !important;">BACK</button>
+      <br />
+    </div>
+    <div *ngIf="isShow" style="margin-top: 15px; text-align: center;">
+      <span style="color:green; font-weight: bold; font-size: 15px;">{{errorMessage}}</span>
+    </div>
+  </div>
+</form>

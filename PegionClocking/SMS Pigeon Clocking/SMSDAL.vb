@@ -43,7 +43,7 @@ Public Class SMSDAL
     Public Function InboxSaveToLocal(ByVal SMSID As String, ByVal SMSContent As String, ByVal Sender As String, ByVal SMSDate As String, ByVal SMSTime As String, ByVal ModemIDValue As String) As String
         Dim sysdir As String = ""
         sysdir = My.Application.Info.DirectoryPath
-        Dim strFile As String = sysdir + "\SMSStorage\InboxLog_" & DateTime.Today.ToString("dd-MMM-yyyy") & ".txt"
+        Dim strFile As String = sysdir + "\Integrate\SMSStorage\InboxLog_" & DateTime.Today.ToString("dd-MMM-yyyy") & ".txt"
         Dim sw As StreamWriter
         Try
             If (Not File.Exists(strFile)) Then
