@@ -210,7 +210,7 @@ namespace PegionClocking
             lblLap.Text = "";
             lblTotalBirds.Text = "";
             lblTotalSMSCount.Text = "";
-            label6.Text = "";
+            //label6.Text = "";
         }
         private void ViewResult()
         {
@@ -233,10 +233,10 @@ namespace PegionClocking
                         lblLap.Text = dtResult.Tables[0].Rows[0]["Lap"].ToString();
                         lblTotalBirds.Text = dtResult.Tables[0].Rows[0]["TotalBird"].ToString();
                         lblTotalSMSCount.Text = dtResult.Tables[0].Rows[0]["SMSCount"].ToString();
-                        label6.Text = "0 %";
+                        //label6.Text = "0 %";
                         if (lblTotalBirds.Text != "0" && lblTotalBirds.Text != "" && lblTotalSMSCount.Text != "")
                         {
-                            label6.Text = Convert.ToString(Math.Round(Convert.ToDecimal(Decimal.Parse(lblTotalSMSCount.Text) / Decimal.Parse(lblTotalBirds.Text) * 100),2)) + " %";
+                            //label6.Text = Convert.ToString(Math.Round(Convert.ToDecimal(Decimal.Parse(lblTotalSMSCount.Text) / Decimal.Parse(lblTotalBirds.Text) * 100),2)) + " %";
                         }
                         version = dtResult.Tables[0].Rows[0]["Version"].ToString();
                     }

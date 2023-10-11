@@ -67,15 +67,8 @@ namespace PigeonIDSystem
 
         private void button5_Click(object sender, EventArgs e)
         {
-            //DataTable dt = new DataTable();
-            //dt = (DataTable)this.dtList.DataSource;
 
-            frmSyncEclock sync = new frmSyncEclock();
-            //sync.DataList = dt;
-            //sync.ClubName = ClubName;
-            //sync.DataStartIndex = ;
-            //sync.DataEndtIndex = dt.Rows.Count;
-            sync.ActionType = "UPLOADPROGRAM";
+            frmRaceCode sync = new frmRaceCode();
             sync.ShowDialog();
 
         }

@@ -16,3 +16,4 @@ C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Rel
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.pdb
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.csproj.AssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Release\netcoreapp3.1\DomainObject.GeneratedMSBuildEditorConfig.editorconfig

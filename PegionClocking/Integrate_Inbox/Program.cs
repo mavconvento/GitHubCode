@@ -76,7 +76,7 @@ namespace Integrate_Inbox
                         Keyword = "";
 
                         Console.WriteLine(modemID + ":Start Inbox Integration from Web to Local");
-                        Console.WriteLine("Start Time: " + DateTime.Today.ToShortDateString() + " " + DateTime.Today.ToLongTimeString());
+                        Console.WriteLine("Start Time: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
                         foreach (DataRow item in dtResult.Tables[0].Rows)
                         {
                             id = item["ID"].ToString();
@@ -85,7 +85,7 @@ namespace Integrate_Inbox
 
                             integrateInbox.UpdateInboxImport("web", id, ReplyMessage, Keyword);
                         }
-                        Console.WriteLine("Finished Inbox Integration from Web to Local. Process End Time: " + DateTime.Today.ToShortDateString() + " " + DateTime.Today.ToLongTimeString());
+                        Console.WriteLine("Finished Inbox Integration from Web to Local. Process End Time: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
                     }
                 } while (a < 2);
             }
@@ -115,14 +115,14 @@ namespace Integrate_Inbox
                         ReplyMessage = "";
                         Keyword = "";
                         Console.WriteLine(modemID + "Start Inbox Integration from Local to Web");
-                        Console.WriteLine("Start Time: " + DateTime.Today.ToShortDateString() + " " + DateTime.Today.ToLongTimeString());
+                        Console.WriteLine("Start Time: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
                         foreach (DataRow item in dtResult.Tables[0].Rows)
                         {
                             id = item["ID"].ToString();
                             integrateInbox.SaveInbox("web", item["SMSID"].ToString(), item["SMSContent"].ToString(), item["Sender"].ToString(), item["SMSDate"].ToString(), item["SMSTime"].ToString(), item["ActivationCode"].ToString(), item["ModemID"].ToString(), item["IsProcess"].ToString(), Common.GetSource(), out ReplyMessage, out Keyword);
                             integrateInbox.UpdateInboxImport("local", id, ReplyMessage, Keyword);
                         }
-                        Console.WriteLine("Finished Inbox Integration from Local to Web. Process End Time: " + DateTime.Today.ToShortDateString() + " " + DateTime.Today.ToLongTimeString());
+                        Console.WriteLine("Finished Inbox Integration from Local to Web. Process End Time: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString());
                     }
                 } while (a < 2);
             }

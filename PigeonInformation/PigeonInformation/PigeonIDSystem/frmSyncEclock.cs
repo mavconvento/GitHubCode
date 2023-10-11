@@ -17,7 +17,10 @@ namespace PigeonIDSystem
     public partial class frmSyncEclock : Form
     {
         public String ClubName { get; set; }
+        public string ClubID { get; set; }
         public DataTable DataList { get; set; }
+        public string RaceCode { get; set; }
+        public DateTime LiberDate { get; set; }
         public String ActionType { get; set; }
         public int DataStartIndex { get; set; }
         public int DataEndtIndex { get; set; }
@@ -72,6 +75,14 @@ namespace PigeonIDSystem
                 else if (ActionType == "RESULTTRAINING")
                 {
                     SyncResult(ActionType);
+                }
+                else if (ActionType == "TOPPIGEONPIGDATA")
+                {
+                    SyncTopPigeonPigData(ActionType);
+                }
+                else if (ActionType == "TOPPIGEONPIGRACEDATA")
+                {
+                    SyncTopPigeonPigRaceData(ActionType);
                 }
                 else if (ActionType == "UPLOADPROGRAM")
                 {
@@ -220,6 +231,62 @@ namespace PigeonIDSystem
             }
         }
 
+        private void SyncTopPigeonPigRaceData(string actionType)
+        {
+            try
+            {
+                string path = AppDomain.CurrentDomain.BaseDirectory + "SyncApplication";
+                string filepath = path + "\\resultinfo.txt";
+                string Actionfilepath = path + "\\action.txt";
+
+                //string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
+
+                string[] args = { ClubName, RaceCode, LiberDate.ToShortDateString()};
+                string[] actionargs = { actionType };
+
+                System.IO.File.WriteAllLines(filepath, args); //pigeondetails
+                System.IO.File.WriteAllLines(Actionfilepath, actionargs); //pigeondetails
+
+                var process = Process.Start(path + "\\SyncEclock.exe");
+                process.WaitForExit();
+                var exitCode = process.ExitCode;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void SyncTopPigeonPigData(string actionType)
+        {
+            try
+            {
+                string path = AppDomain.CurrentDomain.BaseDirectory + "SyncApplication";
+                string filepath = path + "\\resultinfo.txt";
+                string Actionfilepath = path + "\\action.txt";
+
+                //string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
+
+                string[] args = { ClubName};
+                string[] actionargs = { "TOPPIGEONPIGDATA" };
+
+                System.IO.File.WriteAllLines(filepath, args); //pigeondetails
+                System.IO.File.WriteAllLines(Actionfilepath, actionargs); //pigeondetails
+
+                var process = Process.Start(path + "\\SyncEclock.exe");
+                process.WaitForExit();
+                var exitCode = process.ExitCode;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
 
         private void SyncEntryInDatabase()
         {
@@ -233,7 +300,7 @@ namespace PigeonIDSystem
 
                 string dateString = this.DateRelease.Year.ToString() + this.DateRelease.Month.ToString().PadLeft(2, '0') + this.DateRelease.Day.ToString().PadLeft(2, '0');
 
-                string[] args = { ClubName, dateString, this.IsCopyLastCategory ? "YES" : "NO", ReadText.ReadFilePath("datapath"), this.DateRelease.ToShortDateString() };
+                string[] args = { ClubName, ClubID, RaceCode, dateString, this.IsCopyLastCategory ? "YES" : "NO", ReadText.ReadFilePath("datapath"), this.DateRelease.ToShortDateString() };
                 string[] actionargs = { "ENTRYDB" };
 
                 System.IO.File.WriteAllLines(filepath, args); //pigeondetails

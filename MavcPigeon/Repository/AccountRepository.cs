@@ -55,6 +55,7 @@ namespace Repository
                         FirstName = dataResult.Tables[0].Rows[0]["FirstName"].ToString(),
                         LastName = dataResult.Tables[0].Rows[0]["LastName"].ToString(),
                         LoftName = dataResult.Tables[0].Rows[0]["LoftName"].ToString(),
+                        EclockID = dataResult.Tables[0].Rows[0]["EclockID"].ToString(),
                         UserID = (Guid?)dataResult.Tables[0].Rows[0]["UserID"],
                         UserName = dataResult.Tables[0].Rows[0]["UserName"].ToString()
                     };
@@ -99,6 +100,7 @@ namespace Repository
                 dbconn.sqlComm.Parameters.AddWithValue("@LoftName", profile.LoftName);
                 dbconn.sqlComm.Parameters.AddWithValue("@FirstName", profile.FirstName);
                 dbconn.sqlComm.Parameters.AddWithValue("@LastName", profile.LastName);
+                dbconn.sqlComm.Parameters.AddWithValue("@EclockId", profile.EClockID);
                 dbconn.sqlComm.Parameters.AddWithValue("@FileUploadId", profile.FileUploadId);
 
                 if (profile.Image != null)

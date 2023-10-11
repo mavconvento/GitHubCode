@@ -33,22 +33,24 @@
             this.txtDataPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(205, 88);
+            this.button1.Location = new System.Drawing.Point(169, 123);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
+            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.TabIndex = 4;
             this.button1.Text = "SAVE";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 23);
+            this.textBox1.Location = new System.Drawing.Point(134, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(146, 20);
             this.textBox1.TabIndex = 1;
@@ -56,16 +58,16 @@
             // 
             // txtDataPath
             // 
-            this.txtDataPath.Location = new System.Drawing.Point(87, 49);
+            this.txtDataPath.Location = new System.Drawing.Point(15, 97);
             this.txtDataPath.Name = "txtDataPath";
-            this.txtDataPath.Size = new System.Drawing.Size(342, 20);
-            this.txtDataPath.TabIndex = 2;
+            this.txtDataPath.Size = new System.Drawing.Size(422, 20);
+            this.txtDataPath.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Location = new System.Drawing.Point(58, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 3;
@@ -75,17 +77,36 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 54);
+            this.label2.Location = new System.Drawing.Point(15, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Data Path:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 52);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Top Pigeon ClubID:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(134, 50);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(146, 20);
+            this.textBox2.TabIndex = 2;
+            // 
             // frmSetClub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 130);
+            this.ClientSize = new System.Drawing.Size(449, 153);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDataPath);
@@ -109,5 +130,7 @@
         private System.Windows.Forms.TextBox txtDataPath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -1,0 +1,76 @@
+<form [formGroup]="myform">
+  <div class="form-group">
+    <div style="text-align: center; margin-top: 10px; padding-top: 10px;">
+      <h2>Betting Report Summary</h2>
+    </div>
+    <div style="margin-left: 15px;">
+      <mat-form-field style="width:300px;">
+        <mat-label>Events</mat-label>
+        <mat-select formControlName="Events" (selectionChange)="searchevent($event.value)">
+          <mat-option *ngFor="let item of eventList" [value]="item.EventId">
+            {{item.Description}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div style="text-align: center;">
+      <button (click)="back()"
+        style="background-color: rgb(32, 9, 134); margin-top: 10px; color: white; width: 200px; height: 35px !important;">BACK</button>
+    </div>
+    <br />
+    <div *ngIf="!isMobile">
+      <table mat-table [dataSource]="bettingreportlist" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="fightNo">
+          <th mat-header-cell *matHeaderCellDef> Fight No.</th>
+          <td mat-cell *matCellDef="let element"> {{element.FightNo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="meron">
+          <th mat-header-cell *matHeaderCellDef> Meron</th>
+          <td mat-cell *matCellDef="let element"> {{element.Meron | number: '1.2-2'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="wala">
+          <th mat-header-cell *matHeaderCellDef> Wala</th>
+          <td mat-cell *matCellDef="let element"> {{element.Wala | number: '1.2-2'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="total">
+          <th mat-header-cell *matHeaderCellDef> Total Amount</th>
+          <td mat-cell *matCellDef="let element"> {{element.TotalAmount | number: '1.2-2'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="commission">
+          <th mat-header-cell *matHeaderCellDef> Commission</th>
+          <td mat-cell *matCellDef="let element"> {{element.Commission |number: '1.2-2'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="declare">
+          <th mat-header-cell *matHeaderCellDef> Declare</th>
+          <td mat-cell *matCellDef="let element"> {{element.Declare}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <div *ngIf="isMobile">
+      <table style="font-size: 18px;" mat-table [dataSource]="bettingreportlist" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="fightNo">
+          <th mat-header-cell *matHeaderCellDef> Fight No.</th>
+          <td style="text-align:left; vertical-align:text-top" mat-cell *matCellDef="let element">
+            <b>{{element.FightNo}}</b>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="details">
+          <th mat-header-cell *matHeaderCellDef> Details</th>
+          <td mat-cell *matCellDef="let element">
+            <b>Winner: {{element.Declare}}</b><br />
+            <b>Meron:</b> {{element.Meron | number: '1.2-2'}} <br />
+            <b>Wala:</b> {{element.Wala | number: '1.2-2'}} <br />
+            <b>Total Amount:</b> {{element.TotalAmount | number: '1.2-2'}}<br />
+            <b>Commission:</b> {{element.Commission |number: '1.2-2'}}<br /> <br />
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsMobile"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsMobile;"></tr>
+      </table>
+    </div>
+  </div>
+</form>

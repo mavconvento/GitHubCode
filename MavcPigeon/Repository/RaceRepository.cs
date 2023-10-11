@@ -98,9 +98,55 @@ namespace Repository
                 da.Fill(dataResult);
                 dbconn.sqlConn.Close();
 
-
-                dbconn.sqlComm.ExecuteReaderAsync();
+                //dbconn.sqlComm.ExecuteReaderAsync();
                 
+                if (dataResult.Tables.Count > 0)
+                {
+                    return await Task<DataTable>.FromResult(dataResult.Tables[0]);
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+        }
+
+        public async Task<DataTable> GetLocation(RaceFilter raceFilter)
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("LocationSelectAll", raceFilter.ClubName, raceFilter.DbName);
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.AddWithValue("@ClubID", 0);
+                //dbconn.sqlComm.Parameters.AddWithValue("@ClubName", raceFilter.ClubName);
+                //dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", raceFilter.DateRelease);
+                //dbconn.sqlComm.Parameters.AddWithValue("@RaceCategory", raceFilter.Category == null ? "All" : raceFilter.Category);
+                //dbconn.sqlComm.Parameters.AddWithValue("@RaceCategoryGroup", raceFilter.Group == null ? "All" : raceFilter.Group);
+                //dbconn.sqlComm.Parameters.AddWithValue("@Version", 0);
+                //dbconn.sqlComm.Parameters.AddWithValue("@Name", raceFilter.FilterName);
+                //dbconn.sqlComm.Parameters.AddWithValue("@IsFromWeb", 1);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+
+                //dbconn.sqlComm.ExecuteReaderAsync();
+
                 if (dataResult.Tables.Count > 0)
                 {
                     return await Task<DataTable>.FromResult(dataResult.Tables[0]);
@@ -203,6 +249,43 @@ namespace Repository
             }
         }
 
+        public async Task<DataSet> QRCodeClocking(string qrcode)
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("QRCodeClockingSave");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.AddWithValue("@qrcode", qrcode);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+
+                if (dataResult.Tables.Count > 0)
+                {
+                    return await Task<DataSet>.FromResult(dataResult);
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+        }
         public async Task<DataTable> GetRaceEntry(RaceFilter raceFilter)
         {
             try

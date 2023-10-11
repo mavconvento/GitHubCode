@@ -1,19 +1,24 @@
 <div style="margin-left: 5px;">
-    <span style="font-size: 15px; font-weight: bold;">OCBS Platform</span><br />
-    <span style="font-size: 12px; font-weight: bold;">{{title}} Receipt</span>
+    <span style="font-size: 50px; font-weight: bold;">OCBS Platform</span><br />
+    <span style="font-size: 30px; font-weight: bold;">{{title}} Receipt</span>
     <br /><br />
-    <span style="font-size: 12px;"><b>Fight #: </b>{{fightNo}}</span>
+    <span style="font-size: 30px;"><b>Fight #: </b>{{fightNo}}</span>
     <br />
-    <span style="font-size: 12px;"><b>Winner: </b>{{winner}}</span>
+    <span style="font-size: 30px;"><b>Barcode: </b>{{barcode}}</span>
     <br />
-    <span style="font-size: 12px;"><b>Bet Amount: </b>{{betAmount|number}}</span>
+    <span style="font-size: 30px;"><b>Bet Amount: </b>{{betAmount|number}}</span>
     <br />
-    <span style="font-size: 12px;"><b>Win Odds: </b>{{winodds}}</span>
+    <span *ngIf="!isCancel" style="font-size: 30px;"><b>Winner: </b>{{winner}}</span>
     <br />
-    <span style="font-size: 12px;"><b>Payout: </b>{{totalwin}}</span>
+    <span *ngIf="!isCancel" style="font-size: 30px;"><b>Win Odds: </b>{{winodds}}</span>
+    <br />
+    <span *ngIf="!isCancel" style="font-size: 30px;"><b>Payout: </b>{{totalwin}}</span>
     <br />
     <br />
-    <span style="font-size: 12px; font-weight: bold;">Teller: {{teller}}</span>
+    <span style="font-size: 30px; font-weight: bold;">Teller: {{teller}}</span>
     <br />
-    <button (click)="onPrintInvoice()" style="font-size: 12px; font-weight: bold;">Confirmed</button>
+    <button (click)="onPrintInvoice()" style="font-size: 30px; font-weight: bold;">Confirmed</button>
+    <!-- <button (click)="onRePrintInvoice()" style="font-size: 15px; font-weight: bold;">Re-Print</button> -->
+    <br />
+    <br />
 </div>

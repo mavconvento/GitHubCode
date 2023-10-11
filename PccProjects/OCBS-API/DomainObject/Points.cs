@@ -13,5 +13,6 @@ namespace DomainObject
         public Decimal Amount { get; set; }
         public string Type { get; set; }
         public Int64 Eventid { get; set; }
+        public string SVPassword { get; set; }
     }
 }

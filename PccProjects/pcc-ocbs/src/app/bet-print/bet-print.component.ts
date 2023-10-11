@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { PrintService } from '../print.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-bet-print',
   templateUrl: './bet-print.component.html',
@@ -27,14 +28,12 @@ export class BetPrintComponent implements OnInit, AfterViewInit {
     this.betType = this.route.snapshot.params['betType'];
     this.teller = this.route.snapshot.params['teller'];
     this.barcodeValue = this.route.snapshot.params['barcodeValue'];
-
     this.eventname = localStorage.getItem("eventname");
   }
 
   ngAfterViewInit() {
-    const invoiceIds = [];
-    this.printService.printDocument('invoice', invoiceIds);
-    //setTimeout(() => {this.router.navigate(['/'])},1000);
+    //const invoiceIds = [];
+    //this.printService.printDocument('invoice', invoiceIds);
   }
 
   onPrintInvoice() {

@@ -6,6 +6,7 @@ import { EventsService } from '../services/event.services';
 import { HelperService } from '../services/helper.services';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ConfirmDialogComponent } from '../dialog/confirm-dialog/confirm-dialog.component';
+import { ReportsService } from '../services/report.services';
 
 
 @Component({
@@ -20,12 +21,14 @@ export class ManagementFightComponent implements OnInit, AfterViewInit {
   isHidden: boolean = false;
   isLastCall: boolean = false;
   isChecked: boolean = true;
+  IsDone: boolean = false;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
     private betting: BettingService,
     private event: EventsService,
+    private report: ReportsService,
     private helper: HelperService,
     private dialog: MatDialog,
   ) { }
@@ -57,7 +60,7 @@ export class ManagementFightComponent implements OnInit, AfterViewInit {
 
       this.event.GetFights(result.EventId).subscribe(x => {
         var x = JSON.parse(x.content);
-        // console.table(x);
+        //console.table(x);
         if (x.requestStatus == 'success') {
           localStorage.setItem("fightNo", x.fightNo);
           localStorage.setItem("fightStatus", x.status);
@@ -66,7 +69,10 @@ export class ManagementFightComponent implements OnInit, AfterViewInit {
           this.myform.controls["status"].setValue(x.status);
           this.onStatusClick(x.status);
           this.onWinnerClick(x.declare);
+
           this.isChecked = x.isLastCall;
+          if (x.status == 'DONE' || x.status == 'CANCEL') this.IsDone = true;
+          else this.IsDone = false;
         }
       })
     }, error => { this.showerror(error.error.message) });
@@ -96,7 +102,6 @@ export class ManagementFightComponent implements OnInit, AfterViewInit {
       this.isHidden = true
       this.isChecked = false;
     }
-
     else if (value == 'CANCEL')
       this.myform.controls["declare"].setValue('CANCEL');
     else {
@@ -143,15 +148,15 @@ export class ManagementFightComponent implements OnInit, AfterViewInit {
   FightPrint() {
     let fightno = Number(this.myform.controls["fightno"].value);
     let eventid = Number(localStorage.getItem("eventId"));
-    this.event.GetBettingReportByFightNo(eventid, fightno).subscribe(x => {
+    this.report.GetBettingReportByFightNo(eventid, fightno).subscribe(x => {
       var x = JSON.parse(x.content);
-      console.table(x);
-      this.PrintReport(x.TotalAmount, x.EventId, x.FightNo, x.Status, x.Declare, x.Commission, x.PayoutOdd);
+      //console.table(x);
+      this.PrintReport(x.TotalAmount, x.EventId, x.FightNo, x.Status, x.Declare, x.Commission, x.PayoutOdd, x.Meron, x.Wala);
     });
   }
 
-  PrintReport(totalAmount: string, eventId: string, fightNo: string, status: string, declare: string, commission: string, odds: string) {
-    this.router.navigate(['/reportprint', { totalAmount: totalAmount, eventId: eventId, fightNo: fightNo, status: status, declare: declare, commission: commission, odds: odds }])
+  PrintReport(totalAmount: string, eventId: string, fightNo: string, status: string, declare: string, commission: string, odds: string, meron: string, wala: string) {
+    this.router.navigate(['/reportprint', { totalAmount: totalAmount, eventId: eventId, fightNo: fightNo, status: status, declare: declare, commission: commission, odds: odds, meron: meron, wala: wala }])
   }
 
   FightSave(action: string) {
@@ -167,13 +172,20 @@ export class ManagementFightComponent implements OnInit, AfterViewInit {
     this.myform.controls["eventid"].setValue(localStorage.getItem("eventId"))
     this.myform.controls["userid"].setValue(localStorage.getItem("userId"))
     this.myform.controls["lastCall"].setValue(this.isChecked);
-    this.event.FightOfflineSave(this.myform.value).subscribe(x => {
-      this.isShow = true;
-      this.showError("Fight Details Save.")
-    }, error => {
-      this.showError(error.error);
-      fightno = fightno - 1;
-      this.myform.controls["fightno"].setValue(fightno.toString());
-    });
+
+    if (this.myform.controls["status"].value == 'DONE' && this.myform.controls["declare"].value == '')
+      this.showError('No declare winner selected.');
+    else {
+      this.event.FightOfflineSave(this.myform.value).subscribe(x => {
+        this.isShow = true;
+        this.onGetEventDetails();
+        this.showError("Fight Details Save.")
+      }, error => {
+        this.showError(error.error);
+        fightno = fightno - 1;
+        this.myform.controls["fightno"].setValue(fightno.toString());
+      });
+    }
+
   }
 }

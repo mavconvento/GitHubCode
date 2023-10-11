@@ -39,6 +39,7 @@ export class UserLoginComponent implements OnInit {
   onLogin() {
     this.user.Login(this.myform.value).subscribe(data => {
       var result = JSON.parse(data.content)
+      //console.log(result);
       if (result.Status == 'success') {
         localStorage.setItem("tokenBearer", result.platformBearerToken);
         localStorage.setItem("firstName", result.firstName);
@@ -48,6 +49,7 @@ export class UserLoginComponent implements OnInit {
         localStorage.setItem("companyId", result.companyId);
         localStorage.setItem("roleDescription", result.roleDescription);
         localStorage.setItem("lasttransaction", Date());
+        localStorage.setItem("IsSuperAdmin", result.IsSuperAdmin);
         this.router.navigate(["/main"]);
       }
       else

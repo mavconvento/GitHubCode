@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
 import { DecimalPipe } from '@angular/common';
 import { BettingService } from '../services/betting.services';
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./show-odds.component.css']
 })
 export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
+  @ViewChild('content') content: ElementRef;
   meronodd: string;
   merontotal: string;
   walaodd: string;
@@ -22,21 +23,35 @@ export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
   buttonclosedlabel: string;
   fightno: string;
   items: any
+  fightCollection: Array<any>;
+  fightCollectionPlot: any;
   currentFight: string
   winnerlabel: string
   isLastCall: boolean;
+  meronEntryName: string;
+  walaEntryName: string
+  prevStatus: string;
 
+  displayedColumns: string[] = ['fightno', 'declare'];
 
   constructor(
     private betting: BettingService,
     private router: Router,
     private event: EventsService,) {
-    this.mySub = interval(3000).subscribe((func => {
+    this.mySub = interval(1000).subscribe((func => {
       this.GetOdd()
     }));
 
-    this.mystatus = interval(1000).subscribe((func => {
-      if (localStorage.getItem("fightStatus") != "CLOSE") this.buttonclosedlabel = "";
+    this.mystatus = interval(3500).subscribe((func => {
+      if (localStorage.getItem("fightStatus") != "CLOSE") {
+        this.buttonclosedlabel = "";
+        if (this.isLastCall && localStorage.getItem("fightStatus") != "DONE") {
+          setTimeout(() => {
+            this.winnerlabel = 'LAST CALL BETTING';
+          }, 500);
+          this.winnerlabel = ''
+        }
+      }
 
       setTimeout(() => {
         this.SetFightStatus();
@@ -46,6 +61,12 @@ export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.onGetEventDetails();
+  }
+
+  scrollToBottom = () => {
+    try {
+      this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
+    } catch (err) { }
   }
 
   onGetEventDetails() {
@@ -60,10 +81,11 @@ export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
           localStorage.setItem("fightStatus", x.status);
           localStorage.setItem("fightId", x.fightId);
 
-          console.log(x);
+          this.GetFightHistory();
+          this.GetFightHistoryForPlotting();
+
           if (x.isLastCall) {
             this.isLastCall = true;
-            this.winnerlabel = 'LAST CALL BETTING';
           }
           else {
             this.isLastCall = false;
@@ -76,7 +98,7 @@ export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   SetFightStatus() {
     var fightStatus = localStorage.getItem("fightStatus");
-    this.buttonclosedlabel = "BETTING IS " + fightStatus;
+    if (fightStatus != 'DONE') this.buttonclosedlabel = "BETTING IS " + fightStatus;
   }
 
   ngOnDestroy(): void {
@@ -100,12 +122,30 @@ export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
     this.router.navigate(['/main']);
   }
 
+  GetFightHistory() {
+    let eventid = localStorage.getItem("eventId");
+    this.event.GetFightHistory(eventid).subscribe(x => {
+      var result = JSON.parse(x.content)
+      this.fightCollection = result;
+      console.log(result);
+      this.scrollToBottom();
+    })
+  }
+
+  GetFightHistoryForPlotting() {
+    let eventid = localStorage.getItem("eventId");
+    this.event.GetFightHistoryPlotting(eventid).subscribe(x => {
+      var result = JSON.parse(x.content);
+      this.fightCollectionPlot = result;
+      //console.log(result);
+    })
+  }
+
   GetOdd() {
     let eventid = localStorage.getItem("eventId");
     this.winnerlabel = '';
     this.event.GetCurrentFightOdds(eventid).subscribe(x => {
       var result = JSON.parse(x.content);
-      console.log(result);
       this.merontotal = result.MeronTotal;
       this.meronodd = result.MeronOdds;
 
@@ -120,11 +160,21 @@ export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
         this.currentFight = result.fightNo
       }
 
-      if (result.declare != '')
+      if (result.declare == 'CANCEL')
+        this.winnerlabel = 'CANCELLED FIGHT'
+      else if (result.declare != '')
         this.winnerlabel = result.declare + ' ' + 'WINS'
       else {
+        this.isLastCall = false;
         if (result.status == 'CLOSE') this.winnerlabel = ''
-        else if (result.isLastCall) this.winnerlabel = 'LAST CALL BETTING'
+        else if (result.isLastCall) {
+          this.isLastCall = true;
+        }
+      }
+
+      if (result.status == 'DONE') {
+        this.GetFightHistory();
+        this.GetFightHistoryForPlotting();
       }
 
       localStorage.setItem("fightStatus", result.status);

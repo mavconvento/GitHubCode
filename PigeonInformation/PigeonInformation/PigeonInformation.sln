@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.572
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PigeonIDSystem", "PigeonIDSystem\PigeonIDSystem.csproj", "{78AB47CE-6F47-4F44-B5B1-4EBE00E8A259}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainObjects", "DomainObjects\DomainObjects.csproj", "{8323F288-B807-4DFA-B5AF-45DC0BFA1A14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramLoader", "ConsoleApp1\ProgramLoader.csproj", "{84EFB320-4F62-4F6C-B9B4-ABB70A1CDFB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrate_TopPigeon", "Integrate_TopPigeon\Integrate_TopPigeon.csproj", "{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,14 @@ Global
 		{84EFB320-4F62-4F6C-B9B4-ABB70A1CDFB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84EFB320-4F62-4F6C-B9B4-ABB70A1CDFB0}.Release|x86.ActiveCfg = Release|Any CPU
 		{84EFB320-4F62-4F6C-B9B4-ABB70A1CDFB0}.Release|x86.Build.0 = Release|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Debug|x86.Build.0 = Debug|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Release|x86.ActiveCfg = Release|Any CPU
+		{DF89E919-B43C-4666-9CEB-DDD24FE2BB52}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

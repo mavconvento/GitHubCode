@@ -12,8 +12,11 @@ namespace DomainObject
         public string Winner { get; set; }
         public string WalaOdds { get; set; }
         public string WalaTotal { get; set; }
+        public string WalaBet { get; set; }
         public string MeronOdds { get; set; }
         public string MeronTotal { get; set; }
+        public string MeronBet { get; set; }
         public string DrawTotal { get; set; }
+        public string DrawBet { get; set; }
     }
 }

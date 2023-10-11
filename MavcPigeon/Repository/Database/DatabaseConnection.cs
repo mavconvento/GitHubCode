@@ -6,13 +6,20 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Primitives;
+using Microsoft.IdentityModel.Protocols;
 
 namespace Repository.Database
 {
     public class DatabaseConnection
     {
+       // private readonly IConfiguration _configuration;
+
         #region Constants
         private const string cryptoKey = "cryptoKey";
+        private const string serverip = "198.38.94.72"; //server 1
+        //private const string serverip = "198.38.86.120"; //server 2
         #endregion
 
         #region Variables
@@ -27,6 +34,9 @@ namespace Repository.Database
 
         #region Private Methods
         private static readonly byte[] EncryptDecrypt = new byte[8] { 240, 3, 45, 29, 0, 76, 173, 59 };
+
+        public string this[string key] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         private static string Encrypt(string s)
         {
             if (s == null || s.Length == 0) return string.Empty;
@@ -142,11 +152,13 @@ namespace Repository.Database
         {
             try
             {
-                //string connstr = "Address=204.93.160.206;database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
-                string connstr = "Address=198.38.94.72;database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
+                
+               
                 sqlConn =new SqlConnection();
                 sqlComm=new SqlCommand();
-                
+
+                string connstr = "Address=" + serverip + ";database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
+
                 if (type != "" || dbName != "")
                 {
                     if (String.IsNullOrEmpty(dbName))
@@ -154,7 +166,7 @@ namespace Repository.Database
                         dbName = await this.GetDBName(type);
                     }
 
-                    connstr = "Address=198.38.94.72;database=pigeonclocking_" + dbName + ";user id=sa;pwd=06242009";
+                    connstr = "Address=" + serverip  + ";database=pigeonclocking_" + dbName + ";user id=sa;pwd=06242009";
                 }
                 sqlConn.ConnectionString = connstr;
                 sqlComm.Connection = sqlConn;

@@ -31,10 +31,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.lblcount = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.imgCapture = new System.Windows.Forms.PictureBox();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.txtRingNumber = new System.Windows.Forms.TextBox();
             this.btnNew = new System.Windows.Forms.Button();
@@ -56,7 +54,6 @@
             this.bntStart = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtrfid = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -71,20 +68,32 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblTotalManual = new System.Windows.Forms.Label();
+            this.lblTotalTopPigeon = new System.Windows.Forms.Label();
+            this.txtRaceCode = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtLiberationPoint = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgCapture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).BeginInit();
             this.SuspendLayout();
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(858, 543);
+            this.button6.Location = new System.Drawing.Point(729, 522);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(168, 23);
+            this.button6.Size = new System.Drawing.Size(305, 44);
             this.button6.TabIndex = 71;
-            this.button6.Text = "SYNC ALL TO DATABASE";
+            this.button6.Text = "PROCESS TOP PIGEON ENTRY TO MAVC";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -92,7 +101,7 @@
             // 
             this.lblcount.AutoSize = true;
             this.lblcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcount.Location = new System.Drawing.Point(878, 231);
+            this.lblcount.Location = new System.Drawing.Point(883, 9);
             this.lblcount.Name = "lblcount";
             this.lblcount.Size = new System.Drawing.Size(72, 13);
             this.lblcount.TabIndex = 88;
@@ -107,22 +116,12 @@
             this.label11.Size = new System.Drawing.Size(91, 13);
             this.label11.TabIndex = 87;
             this.label11.Text = "Pigeon Photo :";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(252, 340);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(225, 176);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 86;
-            this.pictureBox1.TabStop = false;
+            this.label11.Visible = false;
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(912, 518);
+            this.button2.Location = new System.Drawing.Point(538, 594);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 23);
             this.button2.TabIndex = 73;
@@ -134,28 +133,17 @@
             // 
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtName.Location = new System.Drawing.Point(110, 108);
+            this.txtName.Location = new System.Drawing.Point(106, 145);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(308, 20);
             this.txtName.TabIndex = 5;
             // 
-            // imgCapture
-            // 
-            this.imgCapture.BackColor = System.Drawing.Color.White;
-            this.imgCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imgCapture.Location = new System.Drawing.Point(14, 340);
-            this.imgCapture.Name = "imgCapture";
-            this.imgCapture.Size = new System.Drawing.Size(222, 176);
-            this.imgCapture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgCapture.TabIndex = 62;
-            this.imgCapture.TabStop = false;
-            // 
             // txtColor
             // 
             this.txtColor.BackColor = System.Drawing.Color.White;
             this.txtColor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtColor.Location = new System.Drawing.Point(242, 223);
+            this.txtColor.Location = new System.Drawing.Point(238, 252);
             this.txtColor.MaxLength = 2;
             this.txtColor.Name = "txtColor";
             this.txtColor.ReadOnly = true;
@@ -166,7 +154,7 @@
             // 
             this.txtRingNumber.BackColor = System.Drawing.Color.White;
             this.txtRingNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtRingNumber.Location = new System.Drawing.Point(110, 186);
+            this.txtRingNumber.Location = new System.Drawing.Point(106, 215);
             this.txtRingNumber.Name = "txtRingNumber";
             this.txtRingNumber.ReadOnly = true;
             this.txtRingNumber.Size = new System.Drawing.Size(187, 20);
@@ -175,9 +163,9 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(232, 542);
+            this.btnNew.Location = new System.Drawing.Point(227, 533);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(119, 23);
+            this.btnNew.Size = new System.Drawing.Size(146, 32);
             this.btnNew.TabIndex = 14;
             this.btnNew.Text = "NEW MEMBER";
             this.btnNew.UseVisualStyleBackColor = true;
@@ -186,9 +174,9 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(12, 541);
+            this.btnSave.Location = new System.Drawing.Point(12, 533);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 23);
+            this.btnSave.Size = new System.Drawing.Size(95, 31);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -198,11 +186,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(490, 231);
+            this.label6.Location = new System.Drawing.Point(427, 231);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.Size = new System.Drawing.Size(164, 13);
             this.label6.TabIndex = 82;
-            this.label6.Text = "Entry List:";
+            this.label6.Text = "Manual Entry (with Sticker):";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dtList
             // 
@@ -211,16 +200,16 @@
             this.dtList.AllowUserToOrderColumns = true;
             this.dtList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtList.Location = new System.Drawing.Point(493, 247);
+            this.dtList.Location = new System.Drawing.Point(427, 247);
             this.dtList.Name = "dtList";
-            this.dtList.Size = new System.Drawing.Size(533, 269);
+            this.dtList.Size = new System.Drawing.Size(293, 269);
             this.dtList.TabIndex = 61;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(196, 226);
+            this.label5.Location = new System.Drawing.Point(192, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 81;
@@ -230,7 +219,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(69, 226);
+            this.label4.Location = new System.Drawing.Point(65, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 80;
@@ -240,7 +229,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 188);
+            this.label3.Location = new System.Drawing.Point(14, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 79;
@@ -250,7 +239,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(59, 111);
+            this.label2.Location = new System.Drawing.Point(55, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 78;
@@ -259,9 +248,8 @@
             // txtMemberID
             // 
             this.txtMemberID.BackColor = System.Drawing.Color.White;
-            this.txtMemberID.Enabled = false;
             this.txtMemberID.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMemberID.Location = new System.Drawing.Point(110, 68);
+            this.txtMemberID.Location = new System.Drawing.Point(106, 119);
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(213, 20);
             this.txtMemberID.TabIndex = 3;
@@ -270,7 +258,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 70);
+            this.label1.Location = new System.Drawing.Point(32, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 77;
@@ -349,38 +337,28 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(114, 27);
+            this.dateTimePicker1.Location = new System.Drawing.Point(107, 10);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(209, 20);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(23, 30);
+            this.label17.Location = new System.Drawing.Point(16, 13);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(88, 13);
             this.label17.TabIndex = 97;
             this.label17.Text = "Release Date:";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(329, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "SET";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(303, 141);
+            this.label12.Location = new System.Drawing.Point(295, 170);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(16, 20);
             this.label12.TabIndex = 101;
@@ -390,7 +368,7 @@
             // 
             this.txtrfid.BackColor = System.Drawing.Color.White;
             this.txtrfid.Enabled = false;
-            this.txtrfid.Location = new System.Drawing.Point(110, 146);
+            this.txtrfid.Location = new System.Drawing.Point(106, 175);
             this.txtrfid.MaxLength = 8;
             this.txtrfid.Name = "txtrfid";
             this.txtrfid.ReadOnly = true;
@@ -402,7 +380,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(37, 148);
+            this.label10.Location = new System.Drawing.Point(33, 177);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 13);
             this.label10.TabIndex = 100;
@@ -412,7 +390,7 @@
             // 
             this.txtSex.BackColor = System.Drawing.Color.White;
             this.txtSex.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtSex.Location = new System.Drawing.Point(110, 223);
+            this.txtSex.Location = new System.Drawing.Point(106, 252);
             this.txtSex.MaxLength = 2;
             this.txtSex.Name = "txtSex";
             this.txtSex.ReadOnly = true;
@@ -421,23 +399,21 @@
             // 
             // btnSync
             // 
-            this.btnSync.Enabled = false;
             this.btnSync.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSync.Location = new System.Drawing.Point(642, 544);
+            this.btnSync.Location = new System.Drawing.Point(427, 522);
             this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(120, 23);
+            this.btnSync.Size = new System.Drawing.Size(291, 44);
             this.btnSync.TabIndex = 15;
-            this.btnSync.Text = "SYNC E-CLOCK";
+            this.btnSync.Text = "SYNC TOP PIGEON RACE DATA TO MAVC";
             this.btnSync.UseVisualStyleBackColor = true;
-            this.btnSync.Visible = false;
             this.btnSync.Click += new System.EventHandler(this.button1_Click);
             // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(114, 541);
+            this.button5.Location = new System.Drawing.Point(114, 533);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 23);
+            this.button5.Size = new System.Drawing.Size(106, 31);
             this.button5.TabIndex = 13;
             this.button5.Text = "CLEAR";
             this.button5.UseVisualStyleBackColor = true;
@@ -445,9 +421,9 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(329, 66);
+            this.button7.Location = new System.Drawing.Point(325, 117);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(93, 23);
+            this.button7.Size = new System.Drawing.Size(89, 23);
             this.button7.TabIndex = 4;
             this.button7.Text = "SET";
             this.button7.UseVisualStyleBackColor = true;
@@ -457,7 +433,7 @@
             // 
             this.txtCategory.BackColor = System.Drawing.Color.White;
             this.txtCategory.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCategory.Location = new System.Drawing.Point(110, 259);
+            this.txtCategory.Location = new System.Drawing.Point(106, 288);
             this.txtCategory.MaxLength = 2;
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
@@ -468,7 +444,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(40, 262);
+            this.label7.Location = new System.Drawing.Point(36, 291);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 103;
@@ -478,18 +454,19 @@
             // 
             this.btnRead.Enabled = false;
             this.btnRead.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRead.Location = new System.Drawing.Point(325, 144);
+            this.btnRead.Location = new System.Drawing.Point(313, 173);
             this.btnRead.Name = "btnRead";
-            this.btnRead.Size = new System.Drawing.Size(93, 23);
+            this.btnRead.Size = new System.Drawing.Size(101, 23);
             this.btnRead.TabIndex = 7;
             this.btnRead.Text = "READ TAGS";
             this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Visible = false;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(493, 544);
+            this.button1.Location = new System.Drawing.Point(389, 619);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 23);
             this.button1.TabIndex = 15;
@@ -500,7 +477,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(493, 519);
+            this.button4.Location = new System.Drawing.Point(389, 594);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(143, 23);
             this.button4.TabIndex = 104;
@@ -512,7 +489,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(490, 9);
+            this.label9.Location = new System.Drawing.Point(429, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 106;
@@ -525,16 +502,140 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(493, 25);
+            this.dataGridView1.Location = new System.Drawing.Point(428, 25);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(533, 190);
+            this.dataGridView1.Size = new System.Drawing.Size(609, 190);
             this.dataGridView1.TabIndex = 105;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToOrderColumns = true;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(726, 247);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(311, 269);
+            this.dataGridView2.TabIndex = 107;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(726, 231);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(133, 13);
+            this.label8.TabIndex = 108;
+            this.label8.Text = "Top Pigeon Entry List:";
+            // 
+            // lblTotalManual
+            // 
+            this.lblTotalManual.AutoSize = true;
+            this.lblTotalManual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalManual.Location = new System.Drawing.Point(627, 231);
+            this.lblTotalManual.Name = "lblTotalManual";
+            this.lblTotalManual.Size = new System.Drawing.Size(40, 13);
+            this.lblTotalManual.TabIndex = 109;
+            this.lblTotalManual.Text = "Total:";
+            // 
+            // lblTotalTopPigeon
+            // 
+            this.lblTotalTopPigeon.AutoSize = true;
+            this.lblTotalTopPigeon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalTopPigeon.Location = new System.Drawing.Point(928, 230);
+            this.lblTotalTopPigeon.Name = "lblTotalTopPigeon";
+            this.lblTotalTopPigeon.Size = new System.Drawing.Size(40, 13);
+            this.lblTotalTopPigeon.TabIndex = 110;
+            this.lblTotalTopPigeon.Text = "Total:";
+            // 
+            // txtRaceCode
+            // 
+            this.txtRaceCode.BackColor = System.Drawing.Color.White;
+            this.txtRaceCode.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtRaceCode.Location = new System.Drawing.Point(158, 39);
+            this.txtRaceCode.Name = "txtRaceCode";
+            this.txtRaceCode.ReadOnly = true;
+            this.txtRaceCode.Size = new System.Drawing.Size(158, 20);
+            this.txtRaceCode.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(16, 42);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 13);
+            this.label13.TabIndex = 112;
+            this.label13.Text = "TopPigeon Race Code :";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(19, 95);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(403, 13);
+            this.label18.TabIndex = 113;
+            this.label18.Text = "==================================================================";
+            // 
+            // txtLiberationPoint
+            // 
+            this.txtLiberationPoint.BackColor = System.Drawing.Color.White;
+            this.txtLiberationPoint.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtLiberationPoint.Location = new System.Drawing.Point(158, 65);
+            this.txtLiberationPoint.Name = "txtLiberationPoint";
+            this.txtLiberationPoint.ReadOnly = true;
+            this.txtLiberationPoint.Size = new System.Drawing.Size(256, 20);
+            this.txtLiberationPoint.TabIndex = 114;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(55, 68);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(104, 13);
+            this.label14.TabIndex = 115;
+            this.label14.Text = "Liberation Point :";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(227, 340);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(184, 176);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 86;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
+            // imgCapture
+            // 
+            this.imgCapture.BackColor = System.Drawing.Color.White;
+            this.imgCapture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgCapture.Location = new System.Drawing.Point(14, 340);
+            this.imgCapture.Name = "imgCapture";
+            this.imgCapture.Size = new System.Drawing.Size(190, 176);
+            this.imgCapture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgCapture.TabIndex = 62;
+            this.imgCapture.TabStop = false;
+            this.imgCapture.Visible = false;
             // 
             // frmEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 576);
+            this.ClientSize = new System.Drawing.Size(1046, 578);
+            this.Controls.Add(this.txtLiberationPoint);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.txtRaceCode);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lblTotalTopPigeon);
+            this.Controls.Add(this.lblTotalManual);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
@@ -549,7 +650,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtrfid);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button6);
@@ -582,10 +682,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Entry";
             this.Load += new System.EventHandler(this.Entry_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgCapture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -620,7 +721,6 @@
         private System.Windows.Forms.Button bntStart;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtrfid;
         private System.Windows.Forms.Label label10;
@@ -635,5 +735,14 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTotalManual;
+        private System.Windows.Forms.Label lblTotalTopPigeon;
+        private System.Windows.Forms.TextBox txtRaceCode;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtLiberationPoint;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -15,7 +15,9 @@ export class ReportPrintComponent implements OnInit {
   status: string;
   declare: string;
   commission: string;
-  odds: string
+  odds: string;
+  wala: string;
+  meron: string;
 
   winodds: string;
   title: string;
@@ -36,11 +38,13 @@ export class ReportPrintComponent implements OnInit {
     this.declare = this.route.snapshot.params['declare'];
     this.commission = this.route.snapshot.params['commission'];
     this.odds = this.route.snapshot.params['odds'];
+    this.meron = this.route.snapshot.params['meron'];
+    this.wala = this.route.snapshot.params['wala'];
   }
 
   ngAfterViewInit() {
-    const invoiceIds = [];
-    this.printService.printDocument('invoice', invoiceIds);
+    //const invoiceIds = [];
+    //this.printService.printDocument('invoice', invoiceIds);
   }
 
   onPrintInvoice() {

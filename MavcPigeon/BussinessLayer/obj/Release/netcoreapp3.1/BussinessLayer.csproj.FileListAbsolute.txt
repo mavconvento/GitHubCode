@@ -26,3 +26,4 @@ C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\R
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.pdb
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.csproj.AssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\BussinessLayer\obj\Release\netcoreapp3.1\BussinessLayer.GeneratedMSBuildEditorConfig.editorconfig

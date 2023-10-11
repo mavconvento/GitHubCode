@@ -18,7 +18,7 @@ export class UnClaimedTicketComponent implements OnInit {
   tellerlist: Array<any>;
 
   //table colums
-  displayedColumns: string[] = ['referenceid', 'fightno', 'amount'];
+  displayedColumns: string[] = ['referenceid', 'fightno', 'amount', 'teller'];
 
   constructor(
     private betting: BettingService,

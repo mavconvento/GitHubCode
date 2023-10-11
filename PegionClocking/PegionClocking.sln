@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewaySMSIntegration", "Ga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "PegionClocking\DataAccess\DataAccess.csproj", "{4D63ECE3-668A-47EF-A936-A0C0CA2124AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integrate_TopPigeonResult", "Integrate_TopPigeonResult\Integrate_TopPigeonResult.csproj", "{18598609-ECB1-437D-9FEB-CB566C61A905}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -204,6 +206,18 @@ Global
 		{4D63ECE3-668A-47EF-A936-A0C0CA2124AE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4D63ECE3-668A-47EF-A936-A0C0CA2124AE}.Release|x86.ActiveCfg = Release|Any CPU
 		{4D63ECE3-668A-47EF-A936-A0C0CA2124AE}.Release|x86.Build.0 = Release|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Debug|x86.Build.0 = Debug|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Release|x86.ActiveCfg = Release|Any CPU
+		{18598609-ECB1-437D-9FEB-CB566C61A905}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -898,7 +898,7 @@ namespace PegionClocking
                             GetMemberRingEnrolled();
                         }
                         EntryListGetByMemberIDNo();
-                        EntryListGetByRaceReleasePoint();
+                        //EntryListGetByRaceReleasePoint();
                         GetStickerCredit();
                     }
                     else
@@ -945,7 +945,12 @@ namespace PegionClocking
         //allows only number
         private void txtStickerCode_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+            //e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void txtStickerCode_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

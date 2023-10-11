@@ -12,6 +12,7 @@ namespace BusinessLayer.Contracts
     public interface IBettings
     {
         Task<Betting> BettingSave(Bet bet, string token);
+        Task<Betting> GetBettingSaved(Bet bet, string referenceid, string fightno, string eventid, Int64 userid, string token);
         Task<Claim> GetBettingByRefId(string eventid, string refId, string token, Int64 userid, string platformUserId, bool isOffline);
         Task<Betting> GetCancelBettingByRefId(string eventid, string refId, string token, Int64 userid, string platformUserId, bool isOffline);
         Task<string> ClaimPayout(Payout payout);
@@ -20,9 +21,11 @@ namespace BusinessLayer.Contracts
         Task<DomainObject.PlatformObject.PlatformCurrentPoints> TellerPointSave(Points points);
         Task<List<DomainObject.DatabaseObject.PlotWinner>> GetPlotWinner(string eventid);
         Task<List<Betting>> GetBettingByFightNo(string fightno, string eventid, Int64 userid);
+        Task<List<Betting>> GetHighBettingByFightNo(string fightno, string eventid, Int64 userid);
         Task<List<UnClaimed>> GetUnClaimedTicket(string eventid, Int64 userid);
         Task<List<PointsHistory>> GetPointHistory(string eventid, Int64 userid);
         Task<List<UnClaimed>> GetClaimedTicket(string eventid, Int64 userid);
         Task<List<UnClaimed>> GetBettingHistoryByEvent(string eventid, Int64 userid);
+        Task<List<UnClaimed>> GetLastClaims(string eventid, long userid);
     }
 }

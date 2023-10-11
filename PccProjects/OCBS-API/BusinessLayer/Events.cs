@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DomainObject.PlatformObject;
 using Newtonsoft.Json;
+using System.Data;
 
 namespace BusinessLayer
 {
@@ -59,18 +60,18 @@ namespace BusinessLayer
             }
         }
 
-        public async Task<DomainObject.DatabaseObject.BettingReport> BettingReportByFightNo(Int64 eventId, Int64 fightno)
-        {
-            try
-            {
-                return await _eventRepository.BettingReportByFightNo(eventId, fightno);
-            }
-            catch (Exception ex)
-            {
+        //public async Task<DomainObject.DatabaseObject.BettingReport> BettingReportByFightNo(Int64 eventId, Int64 fightno)
+        //{
+        //    try
+        //    {
+        //        return await _eventRepository.BettingReportByFightNo(eventId, fightno);
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw new Exception(ex.Message);
-            }    
-        }
+        //        throw new Exception(ex.Message);
+        //    }    
+        //}
 
         public async Task<Fight> GetFight(string eventId, string token, Int64 userid, string platformuserid, bool isOffline)
         {
@@ -114,6 +115,7 @@ namespace BusinessLayer
                 var merontotal = result.bet.Where(x => x.bet_type == "MERON").FirstOrDefault().totalBet.ToString();
                 var walatotal = result.bet.Where(x => x.bet_type == "WALA").FirstOrDefault().totalBet.ToString();
                 var drawtotal = result.bet.Where(x => x.bet_type == "DRAW").FirstOrDefault().totalBet.ToString();
+
                 var odd = new Odd()
                 {
                     fightId = result.details.fightId.ToString(),
@@ -126,6 +128,9 @@ namespace BusinessLayer
                     WalaTotal = walatotal,
                     DrawTotal = drawtotal,
                     MeronTotal = merontotal,
+                    WalaBet = result.details.userwalatotalbet.ToString(),
+                    MeronBet = result.details.usermerontotalbet.ToString(),
+                    DrawBet = result.details.userdrawtotalbet.ToString(),
                     declare = result.details.declare,
                     requestStatus = "success",
                     userRole = result.details.userRole
@@ -200,9 +205,183 @@ namespace BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<List<DomainObject.DatabaseObject.FightHistory>> GetFightHistory(long eventid, long userid)
+        {
+            try
+            {
+                return await _eventRepository.GetFightHistory(eventid, userid,false);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<System.Data.DataTable> GetFightHistoryForPlotting(long eventid, long userid)
+        {
+            try
+            {
+                DataTable result = new DataTable("PlottingResult");
+               
+                for (int i = 0; i < 90; i++)
+                {
+                    result.Columns.Add("Col" + i, typeof(String));
+                }
+
+                for (int x = 0; x < 6; x++)
+                {
+                    DataRow dataRow;
+                    dataRow = result.NewRow();
+                    for (int i = 0; i < 90; i++)
+                    {
+                        dataRow[i] = "";
+                    }
+                    result.Rows.Add(dataRow);
+                }
+                
+                //result.Columns.Add("Col" + 1);
+                //DataRow
+                var fightHistories = await _eventRepository.GetFightHistory(eventid, userid, true);
+                string prevValue = "";
+                int lastrow = -1;
+                int lastcol = -1;
+                int lastcoldiffvalue = 0;
+                int lastbeforeL = 0;
+                int tempmaxrow = 5;
+                int maxrowwithvalue = -1;
+                bool firstCol = true;
+                foreach (var item in fightHistories)
+                {
+                    if(item.Declare != "")
+                    {
+                        if (prevValue != item.Declare && item.Declare != "DRAW" && item.Declare != "CANCEL" && prevValue != "")
+                        {
+
+                            lastrow = 0;
+                            tempmaxrow = 5;
+
+                            if (lastbeforeL > 0)
+                            {
+                                if (firstCol)
+                                   lastcoldiffvalue = 0;
+                                else
+                                   lastcoldiffvalue = lastbeforeL;
+
+                                lastbeforeL = 0;
+                            }
+                            else if (firstCol) 
+                                lastcoldiffvalue = 0;
+
+                            
+                            lastcol = lastcoldiffvalue;
+                            lastcol++;
+                            lastcoldiffvalue = lastcol;
+                            result.Rows[lastrow][lastcoldiffvalue] = item.Declare;
+                            firstCol = false;
+
+                            if (lastcoldiffvalue > maxrowwithvalue) maxrowwithvalue = lastcoldiffvalue;
+                            lastcoldiffvalue = lastcol;
+                            //lastrow++;
+                        }
+                        else
+                        {
+
+                            if (lastrow < tempmaxrow)
+                            {
+                                lastrow++;
+                                if (result.Rows[lastrow][lastcoldiffvalue].ToString() != "")
+                                {
+                                    lastrow--;
+                                    tempmaxrow = lastrow;
+                                    if (lastbeforeL == 0) lastbeforeL = lastcoldiffvalue;
+                                    lastcoldiffvalue++;
+
+                                    if (lastrow <= 0)
+                                    {
+                                        lastbeforeL = lastcoldiffvalue;
+                                    }
+                                }
+                            } 
+                            else
+                            {
+                                if (lastbeforeL == 0) lastbeforeL = lastcoldiffvalue;
+                                lastcoldiffvalue++;
+
+                                if (lastrow <= 0)
+                                {
+                                    lastbeforeL = lastcoldiffvalue;
+                                }
+                            }
+                                
+                            result.Rows[lastrow][lastcoldiffvalue] = item.Declare;
+                            if (lastcoldiffvalue > maxrowwithvalue) maxrowwithvalue = lastcoldiffvalue;
+                        }
+
+                        if (item.Declare == "WALA" || item.Declare == "MERON")
+                        {
+                            prevValue = item.Declare;
+                        }
+                    }
+                }
+
+                if (maxrowwithvalue >= 40) return Plotting(result, maxrowwithvalue);
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        private DataTable Plotting(DataTable dtrecord, int maxcol)
+        {
+            try
+            {
+                DataTable result = new DataTable("Plotting");
+
+                for (int i = 0; i < 40; i++)
+                {
+                    result.Columns.Add("Col" + i, typeof(String));
+                }
+
+                for (int x = 0; x < 6; x++)
+                {
+                    DataRow dataRow;
+                    dataRow = result.NewRow();
+                    for (int i = 0; i < 40; i++)
+                    {
+                        dataRow[i] = "";
+                    }
+                    result.Rows.Add(dataRow);
+                }
+
+                
+                for (int x = 0; x < 6; x++)
+                {
+                    int counter = -1;
+                    for (int i = maxcol - 39; i <= maxcol; i++)
+                    {
+                        counter++;
+                        if (counter < 40)
+                        {
+                            result.Rows[x][counter] = dtrecord.Rows[x]["Col" + i];
+                        }
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
     }
+
 }

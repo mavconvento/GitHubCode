@@ -23,6 +23,7 @@ namespace DomainObject
         public DateTime DateCreated { get; set; }
         public String LoftName { get; set; }
         public Guid? FileUploadID { get; set; }
+        public String EclockID { get; set; }
 
         [NotMapped]
         public string Token { get; set; }

@@ -1,0 +1,30 @@
+<h6 mat-dialog-title>{{title}}</h6>
+<mat-dialog-content [formGroup]="form">
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px" *ngIf="!isOtp">
+    <mat-form-field>
+      <input type="text" matInput 
+             placeholder="Mobile Number"
+             formControlName="mobileNumber">
+    </mat-form-field>
+  </div>
+  <div class="flex-container" fxLayout="column" fxLayoutGap="2px" *ngIf="isOtp">
+    <span>ENTER OTP CODE : 0000</span>
+    <mat-form-field>
+      <input type="text" matInput
+             placeholder="OTP Code"
+             formControlName="otpCode">
+    </mat-form-field>
+    <!--<span>OTP is disabled until Feb 21, 2021</span><br />
+  <span>Click Validate OTP to proceed.</span>-->
+    <!--<span style="font-size:12px">Please wait your otp until 2 minutes.</span>-->
+    <!--<a (click)="Resend('GetOTP')" [disabled]="IsResend" style="color:blue; font-weight:bold; font-size:12px; cursor:grab;"><u>Tap to resend</u></a>-->
+  </div>
+</mat-dialog-content>
+<br />
+<mat-dialog-actions>
+  <div class="flex-container" fxLayout="row" fxLayoutGap="2px">
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="linkMobileNumber('GetOTP')" *ngIf="!isOtp">Link Now</button>
+    <button class="mat-raised-button mat-primary" (click)="linkMobileNumber('OTPValidation')" *ngIf="isOtp">Validate OTP</button>
+  </div>
+</mat-dialog-actions>

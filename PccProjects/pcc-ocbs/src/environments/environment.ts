@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiurl: "https://localhost:44373"
-  // apiurl: "http://192.168.90.222/bettingapi"
+  //apiurl: "http://192.168.0.200/bettingapi"
 };
 
 /*

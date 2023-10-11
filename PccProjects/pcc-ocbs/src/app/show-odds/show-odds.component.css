@@ -1,20 +1,34 @@
-#container_2 {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(270deg);
+.odds td {
+    border: 3px solid black;
+    margin: 5px;
 }
 
-table,
-th,
-td {
-    border: 1px solid black;
+.mat-header-cell {
+    font-size: 25px;
+}
+
+.mat-cell {
+    font-size: 25px;
+    text-align: left;
+}
+
+.plot td {
+    border: 3px solid black;
+    margin: 1px;
+    padding: 1px;
+    width: 35px;
+    height: 35px;
+}
+
+.result td {
+    border: 3px solid black;
+    margin: 0px;
+    width: 40px;
 }
 
 td {
     margin: 5px;
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 button {
@@ -23,6 +37,11 @@ button {
     font-weight: bold;
     color: white;
     font-size: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    /* Remove cell spacing */
 }
 
 .outer-container {
@@ -43,5 +62,81 @@ button {
     display: inline-block;
     /* background: #fff; */
     /* padding: 20px; */
-    border: 1px solid #000;
+    /*border: 1px solid #000 */
+}
+
+.oddsheader td {
+    width: 600px !important;
+    color: white;
+}
+
+.odds {
+    font-size: 110px;
+}
+
+.circlered {
+    background: red;
+}
+
+.circlegray {
+    background: gray;
+}
+
+.circleblue {
+    background: rgb(15, 15, 131);
+
+}
+
+.circlegreen {
+    background: green;
+}
+
+.circle td div {
+    width: 35px;
+    height: 35px;
+    -moz-border-radius: 35px;
+    -webkit-border-radius: 35px;
+    border-radius: 35px;
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    vertical-align: auto;
+}
+
+.bc {
+    color: white;
+    font-size: 43px;
+    padding: 5px;
+}
+
+.bcggreen {
+    background: green;
+}
+
+.bcgred {
+    background: red;
+}
+
+.bcggray {
+    background: gray;
+}
+
+.bcgblue {
+    background: rgb(15, 15, 131);
+}
+
+.wbcggreen {
+    background: rgba(6, 70, 6, 0.935);
+}
+
+.wbcgred {
+    background: rgba(142, 13, 13, 0.849);
+}
+
+.wbcggray {
+    background: rgba(61, 59, 59, 0.883);
+}
+
+.wbcgblue {
+    background: rgba(2, 2, 49, 0.878);
 }

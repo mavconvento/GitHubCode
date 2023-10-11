@@ -42,10 +42,17 @@ namespace BusinessLayer
                 {
                     bet.platformRefId = result.inserId.ToString();
                     betting = await _betting.BettingSave(bet);
-                    betting.Message = result.message;
-                    betting.CurrentPoints = result.current_points;
-                    betting.EventId = bet.eventId;
-                    betting.Status = "success";
+
+                    if (!string.IsNullOrEmpty(betting.ReferenceId))
+                    {
+                        var returnbetting = new Betting();
+                        returnbetting = await this.GetBettingSaved(bet, betting.ReferenceId, betting.FightNo, betting.EventId, bet.userId, token);
+
+                        if (string.IsNullOrEmpty(returnbetting.ReferenceId)) 
+                            throw new Exception("Betting Error Detected, Try Again!");
+                        else
+                            betting = returnbetting;
+                    }
                 }
                 else
                 {
@@ -55,6 +62,32 @@ namespace BusinessLayer
                     betting.Status = "failed";
                 }
                     
+                return betting;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<Betting> GetBettingSaved(Bet bet, string referenceid, string fightno, string eventid, Int64 userid, string token)
+        {
+            try
+            {
+                var betting = new Betting();
+                var playerBet = new PlatfromPlayerBet() { amount = Decimal.Parse(bet.betAmount), bet = bet.betType, Event = int.Parse(bet.eventId), fightId = int.Parse(bet.fightId), fightNumber = int.Parse(bet.fightNo) };
+
+                PlatformBetResponse result = new PlatformBetResponse();
+                result = new PlatformBetResponse() { success = 1 };
+
+                bet.platformRefId = result.inserId.ToString();
+                betting = await _betting.GetBettingSaved(referenceid, fightno, eventid, userid, token);
+                betting.Message = result.message;
+                betting.CurrentPoints = result.current_points;
+                betting.EventId = bet.eventId;
+                betting.Status = "success";
+
                 return betting;
             }
             catch (Exception ex)
@@ -102,7 +135,18 @@ namespace BusinessLayer
                 throw new Exception(ex.Message);
             }
         }
+        public async Task<List<Betting>> GetHighBettingByFightNo(string fightno, string eventid, long userid)
+        {
+            try
+            {
+                return await _betting.GetHighBettingByFightNo(fightno, eventid, userid);
+            }
+            catch (Exception ex)
+            {
 
+                throw new Exception(ex.Message);
+            }
+        }
         public async Task<Claim> GetBettingByRefId(string eventid, string refId, string token, Int64 userid, string platformUserId, bool isOffline)
         {
             try
@@ -147,6 +191,12 @@ namespace BusinessLayer
                             claim.Win = String.Format("{0:#,##0.00}", win);
                         }
                     }
+                    else if (winner.winner == "DRAW" || winner.winner == "CANCEL")
+                    {
+                        claim.FightNo = betting.FightNo;
+                        claim.Odds = String.Format("{0:#,##0.00}", 0);
+                        claim.Win = String.Format("{0:#,##0.00}", betting.Amount);
+                    }
                     else
                     {
                         claim.Status = "This ticket is not a winner";
@@ -178,7 +228,6 @@ namespace BusinessLayer
             }
 
         }
-
         public async Task<PlatformCurrentPoints> GetCurrentPoints(string token, string platformUserId, Int64 userid, bool isOffline, Int64 eventid)
         {
             try
@@ -272,6 +321,18 @@ namespace BusinessLayer
             try
             {
                 return await _betting.GetBettingHistoryByEvent(eventid, userid);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<List<UnClaimed>> GetLastClaims(string eventid, long userid)
+        {
+            try
+            {
+                return await _betting.GetLastClaims(eventid, userid);
             }
             catch (Exception ex)
             {

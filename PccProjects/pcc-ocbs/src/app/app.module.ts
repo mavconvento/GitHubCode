@@ -7,14 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PrintLayoutComponent } from './print-layout/print-layout.component';
 import { InvoiceComponent } from './invoice/invoice.component';
-import {PrintService} from './print.service';
+import { PrintService } from './print.service';
 import { PccOcbsComponent } from './pcc-ocbs/pcc-ocbs.component';
 import { BetPrintComponent } from './bet-print/bet-print.component';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ClaimsPrintComponent } from './claims-print/claims-print.component';
 import { MainOcbsComponent } from './main-ocbs/main-ocbs.component';
-import { DecimalPipe,formatNumber } from '@angular/common';
+import { DecimalPipe, formatNumber } from '@angular/common';
 import { OddsPrintComponent } from './odds-print/odds-print.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
@@ -31,6 +31,10 @@ import { BettingHistoryComponent } from './betting-history/betting-history.compo
 import { ReportPrintComponent } from './reportprint/report-print/report-print.component';
 import { ManagementUserComponent } from './management-user/management-user/management-user.component';
 import { UserRegistrationComponent } from './management-user/user-registration/user-registration.component';
+import { MoneyCounterComponent } from './money-counter/money-counter/money-counter.component';
+import { ReportsummaryComponent } from './reportprint/reportsummary/reportsummary.component';
+import { AutoFocus } from './services/autofocus.directive';
+import { ManagementMonitoringComponent } from './management-monitoring/management-monitoring.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +57,11 @@ import { UserRegistrationComponent } from './management-user/user-registration/u
     BettingHistoryComponent,
     ReportPrintComponent,
     ManagementUserComponent,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    MoneyCounterComponent,
+    ReportsummaryComponent,
+    AutoFocus,
+    ManagementMonitoringComponent
   ],
   imports: [
     BrowserModule,
@@ -66,8 +74,8 @@ import { UserRegistrationComponent } from './management-user/user-registration/u
     AppMaterialModule,
     NgxBarcodeModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},PrintService, DecimalPipe],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }, PrintService, DecimalPipe],
   bootstrap: [AppComponent],
-  entryComponents: [ConfirmDialogComponent,ConfirmFightnoComponent]
+  entryComponents: [ConfirmDialogComponent, ConfirmFightnoComponent]
 })
 export class AppModule { }

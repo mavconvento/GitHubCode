@@ -68,6 +68,7 @@ export class UserRegistrationComponent implements OnInit, AfterViewInit {
 
     this.user.UserSave(this.myform.value).subscribe(x => {
       var result = JSON.parse(x.content)
+      console.log(result);
       if (result == 'success') {
         //this.clear();
         this.showerror("User registration is complete.")
@@ -77,7 +78,10 @@ export class UserRegistrationComponent implements OnInit, AfterViewInit {
       }
       else this.showerror(result)
 
-    }, error => { this.showerror(error.error.message) });
+    }, error => {
+      console.log(error);
+      this.showerror(error.error)
+    });
   }
 
   clear() {

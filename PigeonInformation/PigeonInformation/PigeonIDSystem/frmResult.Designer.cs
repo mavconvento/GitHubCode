@@ -57,7 +57,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(331, 70);
+            this.button7.Location = new System.Drawing.Point(334, 107);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(93, 23);
             this.button7.TabIndex = 108;
@@ -69,20 +69,21 @@
             // 
             this.btnSync.Enabled = false;
             this.btnSync.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSync.Location = new System.Drawing.Point(15, 549);
+            this.btnSync.Location = new System.Drawing.Point(15, 475);
             this.btnSync.Name = "btnSync";
             this.btnSync.Size = new System.Drawing.Size(182, 23);
             this.btnSync.TabIndex = 117;
             this.btnSync.Text = "SYNC E-CLOCK RACE";
             this.btnSync.UseVisualStyleBackColor = true;
+            this.btnSync.Visible = false;
             this.btnSync.Click += new System.EventHandler(this.btnSync_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(330, 29);
+            this.button3.Location = new System.Drawing.Point(392, 23);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 23);
+            this.button3.Size = new System.Drawing.Size(93, 24);
             this.button3.TabIndex = 106;
             this.button3.Text = "SET";
             this.button3.UseVisualStyleBackColor = true;
@@ -92,7 +93,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(24, 34);
+            this.label17.Location = new System.Drawing.Point(15, 28);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(88, 13);
             this.label17.TabIndex = 138;
@@ -100,19 +101,20 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 31);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(106, 25);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(209, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(280, 22);
             this.dateTimePicker1.TabIndex = 105;
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(604, 549);
+            this.button6.Location = new System.Drawing.Point(392, 446);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(168, 23);
+            this.button6.Size = new System.Drawing.Size(380, 52);
             this.button6.TabIndex = 123;
-            this.button6.Text = "SYNC TO DATABASE";
+            this.button6.Text = "SEND TOP PIGEON RESULT TO MAVC  DATABASE";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -120,7 +122,7 @@
             // 
             this.lblcount.AutoSize = true;
             this.lblcount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcount.Location = new System.Drawing.Point(622, 149);
+            this.lblcount.Location = new System.Drawing.Point(622, 68);
             this.lblcount.Name = "lblcount";
             this.lblcount.Size = new System.Drawing.Size(72, 13);
             this.lblcount.TabIndex = 137;
@@ -129,19 +131,20 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(604, 520);
+            this.button2.Location = new System.Drawing.Point(218, 442);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(168, 23);
             this.button2.TabIndex = 125;
             this.button2.Text = "PRINT LIST";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtName.Location = new System.Drawing.Point(112, 112);
+            this.txtName.Location = new System.Drawing.Point(115, 230);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(308, 20);
@@ -150,19 +153,20 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(15, 520);
+            this.btnNew.Location = new System.Drawing.Point(15, 446);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(182, 23);
             this.btnNew.TabIndex = 116;
             this.btnNew.Text = "NEW MEMBER";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Visible = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 149);
+            this.label6.Location = new System.Drawing.Point(12, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 134;
@@ -175,7 +179,7 @@
             this.dtList.AllowUserToOrderColumns = true;
             this.dtList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtList.Location = new System.Drawing.Point(15, 165);
+            this.dtList.Location = new System.Drawing.Point(15, 84);
             this.dtList.Name = "dtList";
             this.dtList.Size = new System.Drawing.Size(757, 345);
             this.dtList.TabIndex = 118;
@@ -184,7 +188,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 115);
+            this.label2.Location = new System.Drawing.Point(63, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 130;
@@ -195,7 +199,7 @@
             this.txtMemberID.BackColor = System.Drawing.Color.White;
             this.txtMemberID.Enabled = false;
             this.txtMemberID.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtMemberID.Location = new System.Drawing.Point(112, 72);
+            this.txtMemberID.Location = new System.Drawing.Point(115, 109);
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.Size = new System.Drawing.Size(213, 20);
             this.txtMemberID.TabIndex = 107;
@@ -204,7 +208,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 74);
+            this.label1.Location = new System.Drawing.Point(40, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 13);
             this.label1.TabIndex = 129;
@@ -285,21 +289,21 @@
             // 
             this.btnSyncTraining.Enabled = false;
             this.btnSyncTraining.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSyncTraining.Location = new System.Drawing.Point(203, 549);
+            this.btnSyncTraining.Location = new System.Drawing.Point(203, 475);
             this.btnSyncTraining.Name = "btnSyncTraining";
             this.btnSyncTraining.Size = new System.Drawing.Size(183, 23);
             this.btnSyncTraining.TabIndex = 139;
             this.btnSyncTraining.Text = "SYNC E-CLOCK TRAINING RESULT";
             this.btnSyncTraining.UseVisualStyleBackColor = true;
+            this.btnSyncTraining.Visible = false;
             this.btnSyncTraining.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 584);
+            this.ClientSize = new System.Drawing.Size(784, 529);
             this.Controls.Add(this.btnSyncTraining);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.btnSync);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label17);
@@ -307,7 +311,6 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.lblcount);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtList);
@@ -321,6 +324,8 @@
             this.Controls.Add(this.bntContinue);
             this.Controls.Add(this.bntStop);
             this.Controls.Add(this.bntStart);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.txtName);
             this.Name = "frmResult";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Result";

@@ -107,14 +107,31 @@ namespace OCBS_API.Controllers
             }
         }
 
-        [HttpGet("[action]/{id}/{userid}/{fightno}")]
-        public async Task<IActionResult> GetBettingReportByFightNo([FromRoute(Name = "id")] Int64 eventId, [FromRoute(Name = "userid")] Int64 userid, [FromRoute(Name = "fightno")] Int64 fightno)
+        [HttpGet("[action]/{id}/{userid}")]
+        public async Task<IActionResult> GetFightHistory([FromRoute(Name = "id")] Int64 eventId, [FromRoute(Name = "userid")] Int64 userid)
         {
             try
             {
                 string token = "";
                 if (!String.IsNullOrEmpty(Request.Headers["tokenBearer"])) token = Request.Headers["tokenBearer"];
-                return Ok(this.Content(JsonConvert.SerializeObject(await _events.BettingReportByFightNo(eventId, fightno)), "application/json"));
+                return Ok(this.Content(JsonConvert.SerializeObject(await _events.GetFightHistory(eventId,userid)), "application/json"));
+            }
+            catch (Exception ex)
+            {
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomError(ex.Message).Message);
+            }
+
+        }
+
+        [HttpGet("[action]/{id}/{userid}")]
+        public async Task<IActionResult> GetFightHistoryForPlotting([FromRoute(Name = "id")] Int64 eventId, [FromRoute(Name = "userid")] Int64 userid)
+        {
+            try
+            {
+                string token = "";
+                if (!String.IsNullOrEmpty(Request.Headers["tokenBearer"])) token = Request.Headers["tokenBearer"];
+                return Ok(this.Content(JsonConvert.SerializeObject(await _events.GetFightHistoryForPlotting(eventId, userid)), "application/json"));
             }
             catch (Exception ex)
             {

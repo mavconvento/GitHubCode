@@ -31,7 +31,12 @@ namespace PegionClocking
         {
             try
             {
-                GenerateSticker();
+                if (this.checkBox2.Checked)
+                {
+                    GenerateQRCodeSticker();
+                }
+                else
+                    GenerateSticker();
             }
             catch (Exception ex)
             {
@@ -61,6 +66,40 @@ namespace PegionClocking
                         path = this.txtDestination.Text + "\\" + this.txtFilename.Text + "_" + index + ".xls";
                         System.IO.File.Copy(this.txtTemplate.Text, path, true);
                         GenerateNow(stickerNumber.StickerSelectAll(), path, index, recordCount,format, this.txtDestination.Text, this.txtFilename.Text + "_" + index);
+                        index += 1;
+                    }
+                    MessageBox.Show("Sticker Generated sucessfully", "Sticker Generation");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void GenerateQRCodeSticker()
+        {
+            try
+            {
+                string format = "EXCEL";
+
+                if (this.radioButton2.Checked)
+                {
+                    format = "PDF";
+                }
+
+                DAL.StickerNumber stickerNumber = new DAL.StickerNumber();
+
+                if (this.txtFileCount.Text != "" && this.txtDestination.Text != "" && this.txtFilename.Text != "" && this.txtTemplate.Text != "")
+                {
+                    Int64 recordCount = Convert.ToInt64(this.txtFileCount.Text);
+                    Int64 index = 1;
+                    string path = "";
+                    while (index <= recordCount)
+                    {
+                        path = this.txtDestination.Text + "\\" + this.txtFilename.Text + "_" + index + ".xlsx";
+                        System.IO.File.Copy(this.txtTemplate.Text, path, true);
+                        GenerateNow(stickerNumber.QRCodeStickerSelectAll(), path, index, recordCount, format, this.txtDestination.Text, this.txtFilename.Text + "_" + index);
                         index += 1;
                     }
                     MessageBox.Show("Sticker Generated sucessfully", "Sticker Generation");

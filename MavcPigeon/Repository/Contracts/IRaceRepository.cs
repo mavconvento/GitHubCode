@@ -17,7 +17,8 @@ namespace Repository.Contracts
         Task<DataTable> GetRaceEntry(RaceFilter raceFilter);
 
         Task<DataTable> GetBalance(string mobileNumber);
+        Task<DataSet> QRCodeClocking(string qrcode);
         Task<DataSet> OnlineClocking(OnlineClocking online);
-
+        Task<DataTable> GetLocation(RaceFilter raceFilter);
     }
 }

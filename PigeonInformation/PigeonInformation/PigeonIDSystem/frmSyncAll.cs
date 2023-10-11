@@ -16,6 +16,8 @@ namespace PigeonIDSystem
     public partial class frmSyncAll : Form
     {
         public String ClubName { get; set; }
+        public String RaceCode { get; set; }
+        public string ClubID { get; set; }
         public DataTable DataList { get; set; }
         public String ActionType { get; set; }
         public DateTime DateRelease { get; set; }
@@ -52,7 +54,16 @@ namespace PigeonIDSystem
                 }
                 ReadResultLogs();
             }
-            
+            //else if (ActionType == "TOPPIGEONPIGDATA")
+            //{
+
+            //    string filepath = pathSyncApplication + "\\toppigeonsynclogs.txt";
+            //    if (File.Exists(filepath))
+            //    {
+            //        File.Delete(filepath);
+            //    }
+            //    ReadResultLogs();
+            //}
         }
 
         private void grid_DoubleClick(object sender, EventArgs e)
@@ -336,10 +347,10 @@ namespace PigeonIDSystem
                 dc2.ColumnName = "MemberIDNo";
 
                 DataColumn dc3 = new DataColumn();
-                dc3.ColumnName = "TagID";
+                dc3.ColumnName = "Ring";
 
                 DataColumn dc4 = new DataColumn();
-                dc4.ColumnName = "Ring";
+                dc4.ColumnName = "BackTime";
 
                 DataColumn dc5 = new DataColumn();
                 dc5.ColumnName = "Remarks";
@@ -366,8 +377,8 @@ namespace PigeonIDSystem
                         DataRow dr = entrylistlogs.NewRow();
                         dr["RETRY"] = "RETRY";
                         dr["MemberIDNo"] = value[0].ToString();
-                        dr["TagID"] = value[1].ToString();
-                        dr["Ring"] = value[2].ToString();
+                        dr["Ring"] = value[1].ToString();
+                        dr["Backtime"] = value[2].ToString();
                         dr["Remarks"] = value[3].ToString();
                         entrylistlogs.Rows.Add(dr);
                     }
@@ -446,8 +457,11 @@ namespace PigeonIDSystem
         {
             frmSyncEclock sync = new frmSyncEclock();
             sync.ClubName = ClubName;
+            sync.ClubID = ClubID;
             sync.DateRelease = DateRelease;
+            sync.LiberDate = DateRelease;
             sync.ActionType = ActionType;
+            sync.RaceCode = RaceCode;
             sync.IsCopyLastCategory = this.checkBox1.Checked;
             sync.ShowDialog();
 

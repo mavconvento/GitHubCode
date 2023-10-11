@@ -1,0 +1,10 @@
+button {
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+table {
+    margin-left: 10px;
+    padding-right: 10px;
+    width: 95%;
+}

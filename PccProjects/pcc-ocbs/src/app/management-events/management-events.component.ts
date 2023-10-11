@@ -72,6 +72,8 @@ export class ManagementEventsComponent implements OnInit {
     this.event.EventOfflineSave(this.myform.value).subscribe(x => {
       this.isShow = true;
       this.GetEventList();
+      this.myform.controls['eventId'].setValue("0")
+      this.myform.controls['event_name'].setValue("")
       this.showError("Event Save.");
     });
   }

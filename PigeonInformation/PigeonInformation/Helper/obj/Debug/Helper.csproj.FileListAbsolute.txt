@@ -21,6 +21,7 @@ C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper
 C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\Helper\bin\Debug\Helper.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\Helper\bin\Debug\Helper.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.csproj.CoreCompileInputs.cache
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.pdb
-C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.csprojResolveAssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\Helper\obj\Debug\Helper.csproj.AssemblyReference.cache

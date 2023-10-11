@@ -1,0 +1,13 @@
+button {
+    height: 90px;
+    width: 300px;
+    font-weight: bold;
+    color: white;
+    font-size: 40px;
+}
+
+table {
+    margin-left: 10px;
+    padding-right: 10px;
+    width: 95%;
+}

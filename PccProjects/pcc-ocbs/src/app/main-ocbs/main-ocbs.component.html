@@ -10,26 +10,35 @@
           readonly formControlName="teller" />
       </div>
       <br />
-      <button *ngIf="!isAdmin" (click)="onBetting()" style="background-color: red">START BETTING</button><br />
+      <!-- <button *ngIf="!isAdmin" (click)="onBetting()" style="background-color: red">START BETTING</button><br /> -->
+      <button (click)="onBetting()" style="background-color: red">START BETTING</button><br />
+      <button (click)="onBettingHistory()" style="background-color: rgb(22, 8, 83);  margin-top: 5px;">BETTING
+        HISTORY</button><br />
       <div *ngIf="isAdmin">
-        <button (click)="onUnclaimed()" style="background-color: rgb(22, 8, 83);  margin-top: 10px;">UNCLAIMED
-          TICKETS</button><br />
-        <button (click)="onFight()" style="background-color: red; margin-top: 10px;">FIGHT
+        <button (click)="onFight()" style="background-color: red; margin-top: 5px;">FIGHT
           MANAGEMENT</button><br />
-        <button (click)="onPoints()" style="background-color: rgb(22, 8, 83); margin-top: 10px;">POINTS
-          MANAGEMENT</button><br />
-        <button (click)="showOdds()" style="background-color: red; margin-top: 10px;">SHOW
+        <button (click)="showOdds()" style="background-color: rgb(22, 8, 83); margin-top: 5px;">SHOW
           ODDS</button><br />
-        <button (click)="onBettingHistory()" style="background-color: rgb(22, 8, 83);  margin-top: 10px;">BETTING
-          HISTORY</button><br />
-        <button (click)="onEvent()" style="background-color: red; margin-top: 10px;">EVENT
+        <button (click)="onEvent()" style="background-color: red; margin-top: 5px;">EVENT
           MANAGEMENT</button><br />
-        <button (click)="onUser()" style="background-color: rgb(22, 8, 83); margin-top: 10px;">USER
+        <button (click)="onUser()" style="background-color: rgb(22, 8, 83); margin-top: 5px;">USER
           MANAGEMENT</button><br />
       </div>
+      <div *ngIf="isAdmin || isSupervisor">
+        <button (click)="onPoints()" style="background-color: red; margin-top: 5px;">POINTS
+          MANAGEMENT</button><br />
+        <button (click)="onReport()" style="background-color:  rgb(22, 8, 83); margin-top: 5px;">BETTING
+          REPORT</button><br />
+        <button (click)="onUnclaimed()" style="background-color:  red;  margin-top: 5px;">UNCLAIMED
+          TICKETS</button><br />
+        <button (click)="onBetMonitoring()" style="background-color:  rgb(22, 8, 83);  margin-top: 5px;">BET
+          MONITORING</button><br />
+      </div>
+      <button (click)="onMoneyCounter()" style="background-color:red;  margin-top: 5px;">MONEY
+        COUNTER</button>
       <br>
       <button (click)="logout()" style="background-color: green; margin-top: 10px;">LOGOUT</button>
-      <div *ngIf="isShow" style="margin-top: 15px;">
+      <div *ngIf="isShow" style="margin-top: 25px;">
         <span style="color:red; font-weight: bold; font-size: 12px;">{{errorMessage}}</span>
       </div>
     </div>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -12,7 +13,7 @@ namespace PegionClocking
     public partial class frmLogin : Form
     {
         #region Constants
-        const string VERSION = "10.2";
+        const string VERSION = "11.0";
         #endregion
 
         #region Variable
@@ -36,6 +37,31 @@ namespace PegionClocking
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+
+            string server = "";
+            string sysDir = "C:\\MAVCSERVER"; //AppDomain.CurrentDomain.BaseDirectory;
+            string connectionString = sysDir + "\\server.inf";
+
+            if (File.Exists(connectionString))
+            {
+                TextReader tr = new StreamReader(connectionString);
+                using (tr)
+                {
+                    server = tr.ReadLine();
+                }
+            }
+
+            if (server == "SERVER 2")
+            {
+                this.radioButton2.Checked = true;
+            }
+            else
+            {
+                this.radioButton1.Checked = true;
+            }
+
+
+            this.label1.Text = server.ToUpper();
             this.lblversion.Text = "Version " + VERSION;
             Common.Global.ClubNameConnection = "";
         }
@@ -47,6 +73,22 @@ namespace PegionClocking
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string server = "";
+            string sysDir = "C:\\MAVCSERVER"; //AppDomain.CurrentDomain.BaseDirectory;
+            string connectionString = sysDir + "\\server.inf";
+
+            if (this.radioButton2.Checked) server = "SERVER 2";
+            else server = "SERVER 1";
+
+            if (!Directory.Exists(sysDir)) Directory.CreateDirectory(sysDir);
+
+            if (File.Exists(connectionString)) File.Delete(connectionString);
+
+            using (StreamWriter sw = File.CreateText(connectionString))
+            {
+                sw.WriteLine(server);
+            }
+
             Login();
         }
 

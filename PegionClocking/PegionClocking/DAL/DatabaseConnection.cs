@@ -15,7 +15,8 @@ namespace PegionClocking.DAL
         //production
         private const string cryptoKey = "cryptoKey";
         //private const string SERVERNAME = "204.93.160.206"; 198.38.94.72
-        private const string SERVERNAME = "198.38.94.72";
+        private const string SERVERNAME = "198.38.94.72"; ////SERVER 1
+        private const string SERVERNAME2 = "198.38.86.120"; //SERVER 2
         private const string DATABASENAME = "pigeon_mavcpigeonclocking";
         private const string USERNAME = "sa";
         private const string PASSWORD = "06242009";
@@ -81,21 +82,35 @@ namespace PegionClocking.DAL
         {
             try
             {
-                string sysDir = "";
+                //string sysDir = "";
                 string connectionString = "";
-                sysDir = AppDomain.CurrentDomain.BaseDirectory;
-                connectionString = sysDir + "\\ConnectionString" + type + ".inf";
+                string server = "";
+                string sysDir = "C:\\MAVCSERVER"; //AppDomain.CurrentDomain.BaseDirectory;
+                //sysDir = AppDomain.CurrentDomain.BaseDirectory;
+                connectionString = sysDir + "\\server" + type + ".inf";
 
                 if (File.Exists(connectionString))
                 {
                     TextReader tr = new StreamReader(connectionString);
                     using (tr)
                     {
-                        servername = SERVERNAME; //Decrypt(tr.ReadLine());
-                        databasename = DATABASENAME; //Decrypt(tr.ReadLine());
-                        username = USERNAME; //Decrypt(tr.ReadLine());
-                        password = PASSWORD; //Decrypt(tr.ReadLine());
+                        server = tr.ReadLine();
                     }
+                }
+
+                if (server == "SERVER 2")
+                {
+                    servername = SERVERNAME2; //Decrypt(tr.ReadLine());
+                    databasename = DATABASENAME; //Decrypt(tr.ReadLine());
+                    username = USERNAME; //Decrypt(tr.ReadLine());
+                    password = PASSWORD; //Decrypt(tr.ReadLine());
+                }
+                else
+                {
+                    servername = SERVERNAME; //Decrypt(tr.ReadLine());
+                    databasename = DATABASENAME; //Decrypt(tr.ReadLine());
+                    username = USERNAME; //Decrypt(tr.ReadLine());
+                    password = PASSWORD; //Decrypt(tr.ReadLine());
                 }
             }
             catch (Exception ex)

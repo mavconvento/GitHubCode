@@ -5,6 +5,8 @@ import { BettingService } from '../services/betting.services';
 import { EventsService } from '../services/event.services';
 import { UserService } from '../services/user.services';
 import { HelperService } from '../services/helper.services';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { ConfirmFightnoComponent } from '../dialog/confirm-fightno/confirm-fightno.component';
 
 @Component({
   selector: 'app-management-points',
@@ -28,16 +30,17 @@ export class ManagementPointsComponent implements OnInit, AfterViewInit {
     private betting: BettingService,
     private event: EventsService,
     private user: UserService,
+    private dialog: MatDialog
   ) { }
 
   ngAfterViewInit(): void {
     this.onGetEventDetails();
-    //this.helper.refreshTranDate();
   }
 
   ngOnInit() {
     this.myform = this.formBuilder.group({
       Teller: ['', Validators.required],
+      SVPassword: ['', Validators.required],
       Amount: [''],
       UserId: ['', Validators.required],
       TellerId: ['', Validators.required],
@@ -49,10 +52,13 @@ export class ManagementPointsComponent implements OnInit, AfterViewInit {
       total_betting: ['', Validators.required],
       commission: ['', Validators.required],
     });
+
+    this.myform.controls["Type"].setValue("Cash Advance");
   }
 
   searchteller(event) {
-    var tellerSearch = this.tellerlist.filter(x => x.UserName.toUpperCase().indexOf(event.toUpperCase()) > -1);
+    console.log(event)
+    var tellerSearch = this.tellerlist.filter(x => x.UserName == event);
     this.myform.controls["cash_advance"].setValue(Number(tellerSearch[0].CashAdvance));
     this.myform.controls["total_betting"].setValue(Number(tellerSearch[0].TotalBetRunning).toFixed(2));
     this.myform.controls["total_payout"].setValue(Number(tellerSearch[0].Payout).toFixed(2));
@@ -60,6 +66,34 @@ export class ManagementPointsComponent implements OnInit, AfterViewInit {
     this.myform.controls["total_balance"].setValue(Number(tellerSearch[0].CashOnhand).toFixed(2));
 
     this.getpointhistory(tellerSearch[0].Userid);
+  }
+
+  confirmCashout() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+
+    dialogConfig.data = {
+      title: 'Teller Cashout.',
+      message: 'Enter Confirmation Password',
+      password: ''
+    };
+
+    if (this.myform.controls['Amount'].value != '') {
+      if (Number(this.myform.controls['Amount'].value) < 0) {
+        const dialogRef = this.dialog.open(ConfirmFightnoComponent, dialogConfig);
+        dialogRef.afterClosed().subscribe(
+          data => {
+            console.log(data);
+            if (data.password != '') {
+              this.tellerSave(data.password);
+            }
+          });
+      }
+      else
+        this.tellerSave('');
+    }
   }
 
   onStatusClick(value: string): void {
@@ -74,7 +108,9 @@ export class ManagementPointsComponent implements OnInit, AfterViewInit {
   }
 
   async getTellers(id: string, eventid: string): Promise<any> {
-    var data = await this.user.GetTellerList(id, eventid, 0).toPromise();
+    let userid = Number(localStorage.getItem('userId'))
+    if (localStorage.getItem('roleDescription') == 'Admin' || localStorage.getItem('roleDescription') == 'Supervisor') userid = 0;
+    var data = await this.user.GetTellerList(id, eventid, userid).toPromise();
     return JSON.parse(data.content);
   }
 
@@ -93,8 +129,8 @@ export class ManagementPointsComponent implements OnInit, AfterViewInit {
     }, error => { this.showerror(error.error.message) });
   }
 
-
   showerror(message: string) {
+    console.log(message);
     this.errorMessage = message;
     this.isShow = true;
     setTimeout(() => {
@@ -103,15 +139,16 @@ export class ManagementPointsComponent implements OnInit, AfterViewInit {
     }, 3000);
   }
 
-  tellerSave() {
+  tellerSave(svPassword: string) {
     var tel = this.tellerlist.filter(x => x.UserName == this.myform.controls["Teller"].value)
     this.myform.controls["TellerId"].setValue(tel[0].Userid.toString());
     this.myform.controls["UserId"].setValue(localStorage.getItem("userId"));
     this.myform.controls["Eventid"].setValue(localStorage.getItem("eventId"));
+    this.myform.controls["SVPassword"].setValue(svPassword);
     this.betting.TellerPointSave(this.myform.value).subscribe(x => {
       this.onGetEventDetails();
       this.myform.controls["Type"].setValue('');
       this.myform.controls["Amount"].setValue('');
-    });
+    }, error => { this.showerror(error.error) });
   }
 }

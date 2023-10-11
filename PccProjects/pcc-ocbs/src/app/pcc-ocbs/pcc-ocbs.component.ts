@@ -19,11 +19,11 @@ import { UserService } from '../services/user.services';
 export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
   myform: FormGroup;
   teller: string;
-  title = 'OCBS PLATFORM';
+  title = 'COCKPIT PLATFORM';
   location: string;
-  isMeron: boolean = true;
-  isWala: boolean = true;
-  isDraw: boolean = true;
+  isMeron: boolean = false;
+  isWala: boolean = false;
+  isDraw: boolean = false;
   fightNo: string = null;
   betAmount: string = null;
   buttonclosedlabel: string = null;
@@ -36,20 +36,33 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
   totalMeronBet: string;
   totalWalaBet: string;
   totalDrawBet: string;
+  meronBet: string;
+  walaBet: string;
+  drawBet: string;
   mySub: Subscription;
   mystatus: Subscription;
+  myPointsRefresh: Subscription;
   current_points: string;
   isOffline: boolean;
   isAdmin: boolean = false;
   isMaster: boolean = false;
   isVip: boolean = false;
+  isBooster: boolean = false;
+  isSupervisor: boolean = false;
   cashOnHand: string;
   commission: string;
   bettinglist: Array<any>;
+  claimlist: Array<any>;
   isHidden: boolean = false;
-
+  isLastCall: boolean = false;
+  walapayout: String = "0";
+  meronpayout: String = "0";
+  isStatusChange: boolean = false;
+  prevStatus: string;
+  isClosed: boolean = false;
   //table colums
-  displayedColumns: string[] = ['referenceid', 'bettype', 'amount', 'reprint'];
+  displayedColumns: string[] = ['reprint', 'referenceid', 'bettype', 'amount', 'cancel'];
+  displayedClaimColumns: string[] = ['reprint', 'referenceid', 'fightno', 'bettype', 'payout'];
 
   constructor(
     public printService: PrintService,
@@ -61,20 +74,27 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     private helper: HelperService,
     private user: UserService
   ) {
-    this.mySub = interval(5000).subscribe((func => {
+    this.mySub = interval(1000).subscribe((func => {
       this.closed()
     }))
 
-    this.mystatus = interval(1000).subscribe((func => {
+    this.myPointsRefresh = interval(8000).subscribe((func => {
+      this.GetCashOnHand();
+      //this.getBettingByFightNo();
+    }))
+
+    this.mystatus = interval(1500).subscribe((func => {
       if (localStorage.getItem("fightStatus") != "CLOSE") this.buttonclosedlabel = "";
       setTimeout(() => {
         this.SetFightStatus();
       }, 500);
     }))
   }
+
   ngOnDestroy(): void {
     this.mySub.unsubscribe();
     this.mystatus.unsubscribe();
+    this.myPointsRefresh.unsubscribe();
   }
 
   ngOnInit() {
@@ -107,25 +127,23 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.helper.refreshTranDate();
+    //this.refresh();
+    this.GetCashOnHand();
+    this.getBettingByFightNo();
+    this.getLastClaims();
+  }
+
+  cashIn() {
+    this.router.navigate(['/points'])
   }
 
   refresh() {
     this.eventId = localStorage.getItem("eventId");
     var fightNo = localStorage.getItem("fightNo");
     var fightId = localStorage.getItem("fightId");
-    var meronodd = localStorage.getItem("meronodd");
-    var walaodd = localStorage.getItem("walaodd");
-    var winner = localStorage.getItem("winner");
     var betfightNo = localStorage.getItem("betfightNo");
 
-    this.totalWalaBet = localStorage.getItem("WalaTotalBet");
-    this.totalMeronBet = localStorage.getItem("MeronTotalBet");
-    this.totalDrawBet = localStorage.getItem("DrawTotalBet");
-
     if (fightNo != 'null') this.myform.controls["fightNo"].setValue(fightNo);
-    if (meronodd != 'null') this.myform.controls["meronOdds"].setValue(meronodd);
-    if (walaodd != 'null') this.myform.controls["walaOdds"].setValue(walaodd);
-    if (winner != 'null') this.myform.controls["winner"].setValue(winner);
     if (betfightNo != 'null') this.myform.controls['betfightNo'].setValue(betfightNo);
     if (fightId != 'null') this.myform.controls['fightId'].setValue(fightId);
 
@@ -133,13 +151,15 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     if (localStorage.getItem("roleDescription") == "Admin") this.isAdmin = true;
     if (localStorage.getItem("roleDescription") == "MasterAgent") this.isMaster = true;
     if (localStorage.getItem("roleDescription") == "VIP") this.isVip = true;
+    if (localStorage.getItem("roleDescription") == "SuperVisor") this.isSupervisor = true;
 
     this.closed();
-    this.SetFightStatus();
-    this.GetCurrentPoints();
-    this.GetCashOnHand();
-    this.getBettingByFightNo();
-    this.onStatusClick('PAYOUT');
+
+    //default to cancel if supervisor or admin
+    if (this.isSupervisor) this.onStatusClick('CANCEL');
+    else if (this.isAdmin) this.onStatusClick('CANCEL');
+    else
+      this.onStatusClick('PAYOUT');
   }
 
   GetCurrentPoints() {
@@ -162,7 +182,6 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
       }
       else
         this.cashOnHand = Number(result[0].CashOnhand).toFixed(2);
-
     })
   }
 
@@ -190,8 +209,30 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(
       data => {
+        console.log(data)
         if (data) {
           this.bettingSave(betType);
+        }
+      });
+  }
+
+  confirmCancel(refid: string, amount: string, betType: string) {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.hasBackdrop = true;
+
+    this.myform.controls["refId"].setValue(refid);
+    dialogConfig.data = {
+      title: 'Cancel Confirmation.',
+      message: 'Are you sure? You want to cancel ' + amount + ' bet in ' + betType
+    };
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(
+      data => {
+        if (data) {
+          this.cancelBet(true);
         }
       });
   }
@@ -217,7 +258,7 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.isPayout = false;
 
     if (Value.length == 6) {
-      if (this.myform.controls["payoutstatus"].value == 'CANCEL') this.cancelBet();
+      if (this.myform.controls["payoutstatus"].value == 'CANCEL' && localStorage.getItem("roleDescription") != 'Teller' && localStorage.getItem("roleDescription") != 'MasterAgent' && localStorage.getItem("roleDescription") != 'Player') this.cancelBet(false);
       else this.claims();
     }
   }
@@ -227,7 +268,7 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.myform.controls["eventId"].setValue(localStorage.getItem("eventId"));
     this.myform.controls["userId"].setValue(localStorage.getItem("userId"));
     this.myform.controls["platformUserId"].setValue(localStorage.getItem("platformUserId"));
-    this.myform.controls["fightNo"].setValue(localStorage.getItem("fightNo"));
+    //this.myform.controls["fightNo"].setValue(localStorage.getItem("fightNo"));
     this.myform.controls["fightId"].setValue(localStorage.getItem("fightId"));
 
     if (localStorage.getItem("IsOffline") == "true") {
@@ -242,7 +283,6 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
       //call the invoice printing
       if (result.Status == "success") {
         this.successmessage = result.Message;
-        this.getBettingByFightNo();
 
         localStorage.setItem("MeronTotalBet", result.MeronTotalBet);
         localStorage.setItem("WalaTotalBet", result.WalaTotalBet)
@@ -254,16 +294,17 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
             this.refresh();
             this.myform.controls["betAmount"].setValue('');
           }
-          else this.onPrintInvoice(betType, result.ReferenceId);
+          else this.onPrintInvoice(betType, result.ReferenceId, result.Amount, result.FightNo);
         }, 500);
       }
       else {
         this.showError(result.Message);
       }
-    }, error => { console.log(error.error); this.showError(error.error.message) });
+    }, error => { console.log(error.error); this.showError(error.error) });
   }
 
   showError(message: string) {
+    //console.log(message);
     this.invalidmessage = message;
     setTimeout(() => {
       this.invalidmessage = "";
@@ -272,17 +313,27 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   onRePrint(betType: string, barcodeValue: string, amount: string) {
     this.fightNo = this.myform.controls["fightNo"].value;
-    this.betAmount = amount;
+    //this.betAmount = amount;
     localStorage.setItem("fightNo", this.fightNo);
-    this.router.navigate(['/betprint', { fightNo: this.fightNo, betAmount: this.betAmount, betType: betType, teller: this.teller, barcodeValue: barcodeValue }])
+    this.router.navigate(['/betprint', { fightNo: this.fightNo, betAmount: amount, betType: betType, teller: this.teller, barcodeValue: barcodeValue }])
 
   }
 
-  onPrintInvoice(betType: string, barcodeValue: string) {
-    this.fightNo = this.myform.controls["fightNo"].value;
-    this.betAmount = this.myform.controls["betAmount"].value;
-    localStorage.setItem("fightNo", this.fightNo);
-    this.router.navigate(['/betprint', { fightNo: this.fightNo, betAmount: this.betAmount, betType: betType, teller: this.teller, barcodeValue: barcodeValue }])
+  onPrintInvoice(betType: string, barcodeValue: string, amount: string, fightNo: string) {
+    //this.fightNo = fightNo;
+    //this.betAmount = betAmount;
+    localStorage.setItem("fightNo", fightNo);
+    this.router.navigate(['/betprint', { fightNo: fightNo, betAmount: amount, betType: betType, teller: this.teller, barcodeValue: barcodeValue }])
+  }
+
+  getLastClaims() {
+    var userid = localStorage.getItem("userId");
+    var evid = localStorage.getItem("eventId");
+
+    this.betting.GetLastClaims(evid, userid).subscribe(x => {
+      var result = JSON.parse(x.content);
+      this.claimlist = result;
+    });
   }
 
   getBettingByFightNo() {
@@ -307,36 +358,50 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
   closed() {
     this.event.GetCurrentFightOdds(this.eventId).subscribe(x => {
       var x = JSON.parse(x.content);
+      //console.table(x);
       if (x.requestStatus == 'success') {
         localStorage.setItem("fightNo", x.fightNo);
         localStorage.setItem("fightId", x.fightId);
         localStorage.setItem("fightStatus", x.status);
+        localStorage.setItem("declare", x.declare);
 
-        //console.log(x)
-        //check user role
+        this.isVip = false
+        this.isBooster = false;
+        this.isMaster = false;
+        this.isSupervisor = false;
         if (x.userRole == 'VIP') this.isVip = true;
-        else (this.isVip = false)
-        //console.log(this.isVip);
+        if (x.userRole == 'Booster') this.isBooster = true;
+        if (x.userRole == 'MasterAgent') this.isMaster = true;
+        if (x.userRole == 'Supervisor') this.isSupervisor = true;
+
         this.myform.controls["fightNo"].setValue(x.fightNo);
         this.isMeron = true;
         this.isWala = true;
         this.isDraw = true;
+        this.isLastCall = x.isLastCall;
 
         if (x.status == 'DONE' || x.status == 'CANCEL' || x.status == 'PENDING') {
           this.totalWalaBet = "0";
           this.totalMeronBet = "0";
           this.totalDrawBet = "0";
-
-          localStorage.setItem("MeronTotalBet", "0");
-          localStorage.setItem("WalaTotalBet", "0")
-          localStorage.setItem("DrawTotalBet", "0")
-
-          this.GetCurrentPoints();
-          this.GetCashOnHand();
-          this.getBettingByFightNo();
+          this.walaBet = "0";
+          this.meronBet = "0";
+          this.drawBet = "0";
+          this.meronpayout = "0";
+          this.walapayout = "0"
+        }
+        else {
+          this.walapayout = x.WalaOdds;
+          this.meronpayout = x.MeronOdds;
+          this.walaBet = x.WalaBet;
+          this.meronBet = x.MeronBet;
+          this.drawBet = x.DrawBet;
+          this.totalMeronBet = x.MeronTotal;
+          this.totalWalaBet = x.WalaTotal;
+          this.totalDrawBet = x.DrawTotal;
         }
 
-        if (!this.isMaster && !this.isVip) {
+        if (!this.isMaster && !this.isVip && !this.isBooster) {
           if (x.status == 'OPEN (WALA ONLY)') this.isMeron = false;
           if (x.status == 'OPEN (MERON ONLY)') this.isWala = false;
         }
@@ -346,6 +411,7 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
           this.isWala = false;
           this.isMeron = false;
           this.isHidden = false;
+          this.isLastCall = false;
         }
       }
     })
@@ -353,7 +419,19 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   SetFightStatus() {
     var fightStatus = localStorage.getItem("fightStatus");
-    this.buttonclosedlabel = "BETTING IS " + fightStatus;
+    var declare = localStorage.getItem("declare");
+
+    //hide cancel button if fight is close or done
+    if (fightStatus == 'DONE' || fightStatus == 'CLOSE') this.isClosed = true;
+    else this.isClosed = false;
+
+    if (fightStatus == 'DONE' || fightStatus == 'CANCEL') {
+      if (declare != 'CANCEL' && declare != '') this.buttonclosedlabel = declare + ' WINS'
+      else this.buttonclosedlabel = 'CANCELLED FIGHT'
+    }
+    else
+      this.buttonclosedlabel = "BETTING IS " + fightStatus;
+
   }
 
   printodds() {
@@ -422,6 +500,7 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     let betfightNo: string = localStorage.getItem("betfightNo");
     let odds: string = localStorage.getItem("odds");
     let payoutAmount = this.myform.controls["totalWin"].value;
+    let barcode = this.myform.controls["refId"].value;
 
     var request: any = {};
     request.eventId = localStorage.getItem("eventId");
@@ -435,11 +514,15 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.betting.PayoutClaims(request).subscribe(x => {
       var x = JSON.parse(x.content);
       this.myform.controls["refId"].setValue('');
-      this.router.navigate(['/claims', { winner: winner, betAmount: betwin, totalwin: payoutAmount, teller: this.teller, fightNo: betfightNo, winodds: odds, title: 'Claims' }])
+      this.router.navigate(['/claims', { barcode: barcode, winner: winner, betAmount: betwin, totalwin: payoutAmount, teller: this.teller, fightNo: betfightNo, winodds: odds, title: 'Claims' }])
     }, error => { this.showError(error.error) })
   }
 
-  cancelBet() {
+  reprintpayout(barcode: string, winner: string, betwin: string, payoutAmount: string, betfightNo: string, odds: string) {
+    this.router.navigate(['/claims', { barcode: barcode, winner: winner, betAmount: betwin, totalwin: payoutAmount, teller: this.teller, fightNo: betfightNo, winodds: odds, title: 'Claims' }])
+  }
+
+  cancelBet(isPrint: boolean) {
     let refid: string;
     refid = this.myform.controls["refId"].value;
 
@@ -447,7 +530,7 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
       var x = JSON.parse(x.content);
       if (x.Status == "success") {
         this.myform.controls["betWin"].setValue(x.Amount);
-        this.cancelBetting();
+        this.cancelBetting(x.BettingId, isPrint);
       }
       else {
         this.payoutErrorMessage = x.Status;
@@ -462,12 +545,13 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
     }, error => { this.showError(error.error) })
   }
 
-  cancelBetting() {
+  cancelBetting(id: string, isPrint: boolean) {
     let betwin: string = this.myform.controls["betWin"].value;
-
+    let refid = this.myform.controls["refId"].value;
     var request: any = {};
+
     request.eventId = localStorage.getItem("eventId");
-    request.referenceId = this.myform.controls["refId"].value;
+    request.referenceId = id.toString(); //pass referenceid as bettingid //this.myform.controls["refId"].value;
     request.userId = localStorage.getItem("userId");
 
     this.betting.CancelBetting(request).subscribe(x => {
@@ -479,7 +563,7 @@ export class PccOcbsComponent implements OnInit, AfterViewInit, OnDestroy {
         localStorage.setItem("DrawTotalBet", x.DrawTotalBet)
 
         this.myform.controls["refId"].setValue('');
-        this.router.navigate(['/claims', { winner: '', betAmount: betwin, totalwin: '0', teller: this.teller, fightNo: x.FightNo, winodds: '0', title: 'Cancel' }])
+        this.router.navigate(['/claims', { winner: '', betAmount: betwin, totalwin: '0', teller: this.teller, fightNo: x.FightNo, winodds: '0', title: 'Cancel', isprint: isPrint, barcode: refid }])
       }
       else {
         this.payoutErrorMessage = x.Status;

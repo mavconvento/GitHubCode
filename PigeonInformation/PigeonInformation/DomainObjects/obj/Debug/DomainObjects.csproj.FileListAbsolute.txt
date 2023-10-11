@@ -15,6 +15,7 @@ C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\Domain
 C:\Adams\MyProjects\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.pdb
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Debug\DomainObjects.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csproj.CoreCompileInputs.cache
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.pdb
-C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csprojResolveAssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csproj.AssemblyReference.cache

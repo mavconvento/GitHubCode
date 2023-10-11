@@ -13,7 +13,7 @@ namespace PegionClocking
     {
         #region Variable
         BIZ.User user;
-        BIZ.Club club;
+        //BIZ.Club club;
         #endregion
 
         #region Properties

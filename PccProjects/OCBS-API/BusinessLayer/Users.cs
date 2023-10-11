@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Repository.Contracts;
 using DomainObject.PlatformObject;
 using Microsoft.Extensions.Configuration;
+using Subscription;
 
 namespace BusinessLayer
 {
@@ -17,22 +18,28 @@ namespace BusinessLayer
         private readonly IUsersRepository _usersRepository;
         private readonly IPlatform _platform;
         private readonly IConfiguration _configuration;
+        private readonly ISubscriptions _subscription;
 
 
-        public Users(IUsersRepository usersRepository, IPlatform platform, IConfiguration config)
+        public Users(IUsersRepository usersRepository, IPlatform platform, IConfiguration config, ISubscriptions subscription)
         {
             _usersRepository = usersRepository ?? throw new ArgumentNullException(nameof(usersRepository));
             _platform = platform ?? throw new ArgumentNullException(nameof(platform));
             _configuration = config ?? throw new ArgumentNullException(nameof(config));
+            _subscription = subscription ?? throw new ArgumentNullException(nameof(subscription));
         }
         public async Task<User> Authenticate(UserLogin user)
         {
             try
             {
+
                 var relativeurl = "login";
                 var login = await _usersRepository.Authenticate(user);
                 if (login.Status == "success")
                 {
+                    //validate application expiration and server date for Web and Database
+                    if (_subscription.GetApplicationExpired(login.LoginDate)) throw new Exception("Application is Locked! Contact your Application Admin.");
+
                     if (login.IsOffline)
                     {
                         login.platformBearerToken = _configuration["Platform:token"];

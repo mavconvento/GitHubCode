@@ -3,6 +3,7 @@ import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/cor
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { BarcodeScannerLivestreamModule } from "ngx-barcode-scanner";
 
 import 'hammerjs';
 import { AppMaterialModule } from './app-material/app-material.module';
@@ -95,7 +96,8 @@ import { PedigreeComponent } from './components/pedigree/pedigree.component';
       { path: 'distance/:clubname/:memberidno/:dbname', component: MemberDistanceComponent },
     ]),
     FlexLayoutModule,
-    AppMaterialModule
+    AppMaterialModule,
+    BarcodeScannerLivestreamModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

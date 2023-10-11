@@ -125,7 +125,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(282, 95);
             this.button5.TabIndex = 7;
-            this.button5.Text = "UPLOAD PROGRAM";
+            this.button5.Text = "REQUEST RACECODE";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 

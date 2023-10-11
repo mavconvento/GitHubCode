@@ -53,6 +53,8 @@ namespace Repository
                                     results.platformUserId = reader["PlatformUserId"].ToString();
                                     results.IsOffline = (Boolean)reader["IsOffline"];
                                     results.companyId = (Int64)reader["CompanyId"];
+                                    results.IsSuperAdmin = (bool)reader["IsSuperAdmin"];
+                                    results.LoginDate = (DateTime)reader["datelogin"];
                                 }
                             }
                         }
@@ -287,7 +289,6 @@ namespace Repository
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
-                throw;
             }
 
         }

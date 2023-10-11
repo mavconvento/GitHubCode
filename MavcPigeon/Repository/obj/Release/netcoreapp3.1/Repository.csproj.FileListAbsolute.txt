@@ -22,3 +22,4 @@ C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\Repository\obj\Relea
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\Repository\obj\Release\netcoreapp3.1\Repository.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\Repository\obj\Release\netcoreapp3.1\Repository.pdb
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\Repository\obj\Release\netcoreapp3.1\Repository.csproj.AssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\Repository\obj\Release\netcoreapp3.1\Repository.GeneratedMSBuildEditorConfig.editorconfig

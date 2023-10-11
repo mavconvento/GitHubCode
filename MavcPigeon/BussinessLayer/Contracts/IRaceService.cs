@@ -13,9 +13,10 @@ namespace BussinessLayer.Contracts
         Task<DataSet> GetRaceDetails(RaceFilter raceFilter);
         Task<DataTable> GetBirdCategory(string dbName = "", string clubName = "");
         Task<DataTable> GetGroupCategory(string dbName = "", string clubName = "");
-
         Task<DataTable> GetRaceEntry(RaceFilter raceFilter);
         Task<DataTable> GetBalance(string mobileNumber);
         Task<DataSet> OnlineClocking(OnlineClocking online);
+        Task<DataSet> QRCodeClocking(string qrcode);
+        Task<DataTable> GetLocation(RaceFilter raceFilter);
     }
 }

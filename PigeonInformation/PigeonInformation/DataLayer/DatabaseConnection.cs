@@ -15,6 +15,7 @@ namespace DataLayer
         //production
         private const string cryptoKey = "cryptoKey";
         private const string SERVERNAME = "198.38.94.72";
+        private const string SERVERNAME2 = "198.38.86.120";
         private const string DATABASENAME = "pigeon_mavcpigeonclocking";
         private const string USERNAME = "sa";
         private const string PASSWORD = "06242009";
@@ -76,25 +77,58 @@ namespace DataLayer
             }
             return result;
         }
-        private void ReadConnecntionStringFile(string type = "")
+        private void ReadConnecntionStringFile(string type = "",bool islocal = false)
         {
             try
             {
-                //string sysDir = "";
-                //string connectionString = "";
-                //sysDir = AppDomain.CurrentDomain.BaseDirectory;
-                //connectionString = sysDir + "\\ConnectionString" + type + ".inf";
+                string sysDir = "";
+                string connectionString = "";
+                sysDir = AppDomain.CurrentDomain.BaseDirectory;
+                connectionString = sysDir + @"\SyncApplication\mavcserver" + type + ".txt";
+                string rootconnectionString = sysDir + @"\mavcserver" + type + ".txt";
+                string localRootConString = sysDir + @"\localserver" + type + ".txt";
+                string server = "";
 
-                //if (File.Exists(connectionString))
-                //{
-                //    TextReader tr = new StreamReader(connectionString);
-                //    using (tr)
-                //    {
-                        
-                //    }
-                //}
 
-                servername = SERVERNAME; //Decrypt(tr.ReadLine());
+                if (islocal)
+                {
+                    if (File.Exists(localRootConString))
+                    {
+                        TextReader tr = new StreamReader(localRootConString);
+                        using (tr)
+                        {
+                            servername = tr.ReadLine();
+                        }
+                    }
+                }
+                else
+                {
+                    //check if file is in root directory
+                    if (File.Exists(rootconnectionString))
+                    {
+                        TextReader tr = new StreamReader(rootconnectionString);
+                        using (tr)
+                        {
+                            servername = tr.ReadLine();
+                        }
+                    }
+                    else if (File.Exists(connectionString))
+                    {
+                        TextReader tr = new StreamReader(connectionString);
+                        using (tr)
+                        {
+                            server = tr.ReadLine();
+                        }
+                    }
+
+                    if (server == "server 2")
+                    {
+                        servername = SERVERNAME2; //Decrypt(tr.ReadLine());
+                    }
+                    else
+                        servername = SERVERNAME; //Decrypt(tr.ReadLine());
+                }
+                
                 databasename = DATABASENAME; //Decrypt(tr.ReadLine());
                 username = USERNAME; //Decrypt(tr.ReadLine());
                 password = PASSWORD; //Decrypt(tr.ReadLine());
@@ -115,6 +149,25 @@ namespace DataLayer
                 sqlComm = new SqlCommand();
                 this.ReadConnecntionStringFile(dbname);
                 databasename = "pigeon_mavcpigeonclocking";
+                sqlConn.ConnectionString = "Address=" + servername + ";database=" + databasename + ";user id=" + username + ";pwd=" + password;
+                sqlComm.Connection = sqlConn;
+                sqlComm.CommandText = procName;
+                sqlComm.CommandType = System.Data.CommandType.StoredProcedure;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void DatabaseConnTopPigeon(string procName, string dbname = "")
+        {
+            try
+            {
+                sqlConn = new SqlConnection();
+                sqlComm = new SqlCommand();
+                this.ReadConnecntionStringFile(dbname, true);
+                databasename = "TopPigeonEclock";
                 sqlConn.ConnectionString = "Address=" + servername + ";database=" + databasename + ";user id=" + username + ";pwd=" + password;
                 sqlComm.Connection = sqlConn;
                 sqlComm.CommandText = procName;

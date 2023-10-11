@@ -56,6 +56,7 @@ namespace PegionClocking.DAL
 
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
+                dbconn.sqlComm.CommandTimeout = 0;
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.Parameters.AddWithValue("@ClubID", ClubID);
                 dbconn.sqlComm.Parameters.AddWithValue("@UserID", UserID);

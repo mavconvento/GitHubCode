@@ -97,10 +97,23 @@ namespace DataAccess
                 }
                 else
                 {
-                    servername = "198.38.94.72";
-                    databasename = "pigeon_mavcpigeonclocking";
-                    username = "sa";
-                    password = "06242009";
+                    connectionString = sysDir + "\\ConnectionString_webDB.inf";
+                    if (File.Exists(connectionString))
+                    {
+                        TextReader tr = new StreamReader(connectionString);
+                        using (tr)
+                        {
+                            servername = tr.ReadLine(); //Decrypt();
+                            databasename = tr.ReadLine(); //Decrypt();
+                            username = tr.ReadLine(); //Decrypt();
+                            password = tr.ReadLine(); //Decrypt();
+                        }
+                    }
+
+                    //servername = "198.38.94.72";
+                    //databasename = "pigeon_mavcpigeonclocking";
+                    //username = "sa";
+                    //password = "06242009";
                 }
 
 
@@ -113,7 +126,7 @@ namespace DataAccess
         #endregion
 
         #region Public Methods
-        public void DatabaseConn(string procName, string clubname = "")
+        public void DatabaseConn(string procName, string clubname = "",string clubserver="")
         {
             try
             {
@@ -121,11 +134,11 @@ namespace DataAccess
                 sqlComm = new SqlCommand();
                 this.ReadConnecntionStringFile();
                 if (clubname != "") databasename = "pigeonclocking_" + clubname;
+                if (clubserver != "") servername = clubserver;
                 sqlConn.ConnectionString = "Address=" + servername + ";database=" + databasename + ";user id=" + username + ";pwd=" + password;
                 sqlComm.Connection = sqlConn;
                 sqlComm.CommandText = procName;
                 sqlComm.CommandType = System.Data.CommandType.StoredProcedure;
-
             }
             catch (Exception ex)
             {

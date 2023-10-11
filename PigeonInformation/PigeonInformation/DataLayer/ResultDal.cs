@@ -51,6 +51,35 @@ namespace DataLayer
                 throw ex;
             }
         }
+
+        public DataTable GetResultListByDate(DateTime liberDate)
+        {
+            try
+            {
+                Common sqlparam = new Common();
+                DataTable dt = new DataTable();
+                MySqlDataConnection mySqlDatabaseConnection = new MySqlDataConnection();
+                string query = @"SELECT t.*,IFNULL(d.OtherClub,1) IsRegistered,d.E_Ring,d.loftno FROM tec_pigracedata t
+                                left join tec_pigdata d on t.PringNo = d.PringNo
+                                where t.LiberDate = @liberDate and backtime is not null;";
+
+                DataTable param = sqlparam.sqlParam();
+                DataRow dr = param.NewRow();
+                dr["key"] = "@liberDate";
+                dr["value"] = liberDate.ToShortDateString();
+
+                param.Rows.Add(dr);
+
+                dt = mySqlDatabaseConnection.Select(query, param);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         #endregion
 
         #region Private Methods

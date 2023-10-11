@@ -1,62 +1,82 @@
-<form [formGroup]="myform">
+<form [formGroup]="myform" autocomplete="off">
   <div class="form-group">
     <div style="text-align:center">
-      <h2>
+      <!-- <h2>
         {{title}}
-      </h2>
-      <span *ngIf="isOffline" style="font-weight: bold;">(OFFLINE)</span><br /><br />
-      <div>
-        <span style="color:red; font-weight: bold;">{{buttonclosedlabel}}</span><br /><br />
-        <label for="fightNo" style="font-weight: bold; font-size: 25px;margin-left: 43px;">
+      </h2> -->
+      <!-- <span *ngIf="isOffline" style="font-weight: bold;">(OFFLINE)</span><br /> -->
+      <!-- <br /> -->
+      <div style="margin-top: 10px; margin-bottom: 10px;">
+        <span style="color:red; font-weight: bold;">{{buttonclosedlabel}}</span><br />
+        <span *ngIf="isLastCall" style="color:white; font-weight: bold; background-color: red;">LAST
+          CALL
+          BETTING
+        </span><br /><br />
+        <label for="fightNo" style="font-weight: bold; font-size: 25px;">
           Fight # :
         </label>
-        <input id="fightNo" type="text" style="width: 50px;  font-size: 25px;" formControlName="fightNo" />
+        <input id="fightNo" type="text" style="width: 50px; height: 20px;  text-align: center; font-size: 25px;"
+          readonly formControlName="fightNo" />
       </div>
-      <br />
       <div>
         <label for="betAmount" style="font-weight: bold; font-size: 25px;">
           Bet :
         </label>
-        <input id="betAmount" type="text" style="width: 140px; font-size: 25px; margin-right: 10px;"
+        <input id="betAmount" name="betAmount" type="text" style="width: 140px; font-size: 25px; margin-right: 10px;"
           formControlName="betAmount" />
         <button (click)="clearbet()"
           style="background-color: rgb(32, 9, 134); margin-top: 10px; color: white; width: 100px; height: 35px !important;">CLEAR</button>
       </div>
-
-      <br />
       <div style="margin-bottom: 10px;">
         <span style="color: green;"><b>{{successmessage}}</b></span>
         <span style="color: red;"><b>{{invalidmessage}}</b></span>
       </div>
       <div>
         <button (click)="onBetAdd('100')"
-          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px;">100</button>
+          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px; width: 60px;">100</button>
         <button (click)="onBetAdd('300')"
-          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px;">300</button>
+          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px; width: 60px;">300</button>
         <button (click)="onBetAdd('500')"
-          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px;">500</button>
+          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px; width: 60px;">500</button>
         <button (click)="onBetAdd('1000')"
-          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px;">1K</button>
+          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px; width: 60px;">1K</button>
         <button (click)="onBetAdd('5000')"
-          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px;">5K</button>
+          style="background-color: rgb(6, 63, 30); color: white; padding-right: 10px; margin-right: 10px; width: 60px;">5K</button>
       </div>
       <br />
-      <div>
+      <div style="margin-bottom: 5px; padding: 0;">
         <table style="font-size: 20px;">
           <tr>
             <th style="background-color: rgb(233, 16, 16); font-weight: bold; color: white; height: 30px;">MERON</th>
+            <th style="background-color: black; font-weight: bold; color: white;"></th>
             <th style="background-color: rgb(2, 2, 59); font-weight: bold; color: white;">WALA</th>
           </tr>
-          <tr style="height: 30px; font-weight: bold; font-size: 25px;">
+          <tr class="withborder" style="height: 30px; font-weight: bold; font-size: 20px;">
             <td>
-              {{totalMeronBet | number}}
+              {{totalMeronBet | number : '1.2-2'}}
             </td>
+            <td style="background-color: black; color:white; font-size: 12;"><span>TOTAL</span></td>
             <td>
-              {{totalWalaBet | number}}
+              {{totalWalaBet | number : '1.2-2'}}
             </td>
           </tr>
-          <tr>
-            <td colspan="2" style="margin-bottom: 50px; padding-bottom: 20px;"></td>
+          <tr class="withborder" style="height: 30px; font-weight: bold; font-size: 20px;">
+            <td>
+              {{meronBet | number : '1.2-2'}}
+            </td>
+            <td style="background-color: black; color:white; font-size: 12;"><span>BET</span></td>
+            <td>
+              {{walaBet | number : '1.2-2'}}
+            </td>
+          </tr>
+          <tr class="withborder" style="height: 30px; font-weight: bold; font-size: 20px;">
+            <td>
+              {{meronpayout | number : '1.2-2'}}
+            </td>
+            <td style="background-color: black; color:white; font-size: 12;"><span>PAYOUT</span></td>
+            <td>
+              {{walapayout | number : '1.2-2'}}
+            </td>
           </tr>
           <tr>
             <td>
@@ -65,6 +85,7 @@
               <button *ngIf="!isMeron" [disabled]
                 style="background-color: red; padding-right: 10px; margin-right: 10px;">CLOSED</button>
             </td>
+            <td></td>
             <td>
               <button (click)="confirmBet('WALA')" *ngIf="isWala"
                 style="background-color: skyblue; padding-right: 10px; margin-right: 10px;">WALA</button>
@@ -74,8 +95,8 @@
           </tr>
         </table>
       </div>
-      <br />
-      <div *ngIf="!isOffline">
+      <!-- <br /> -->
+      <!-- <div *ngIf="!isOffline">
         <table>
           <tr style="font-weight: bold; color: white;">
             <td style="width: 100px; background-color: green;">
@@ -89,61 +110,83 @@
             </td>
           </tr>
         </table>
-      </div>
-      <span *ngIf="!isOffline" style="font-weight: bold; font-size: 20px;">Current Points:
-        {{current_points|number}}</span><br />
-      <span *ngIf="isOffline" style="font-weight: bold; font-size: 20px;">Cash On-Hand: {{cashOnHand|number}}</span>
-      <br />
-      <hr>
-      <div style="margin: 0px; padding:0px" *ngIf="!isVip">
+      </div> -->
+      <!-- <span *ngIf="!isOffline" style="font-weight: bold; font-size: 20px;">Current Points:
+        {{current_points|number}}</span><br /> -->
+      <span *ngIf="!isVip" style="font-weight: bold; font-size: 20px;">Cash On-Hand: {{cashOnHand|number :
+        '1.2-2'}}</span>
+      <span *ngIf="isVip" style="font-weight: bold; font-size: 20px; margin-right: 10px;">Points: {{cashOnHand|number :
+        '1.2-2'}}</span>
+      <span class="circle" style="padding-right: 7px; margin-left: 5px;" *ngIf="!isVip"><span style="cursor: pointer;"
+          (click)="cashIn()">
+          +</span></span>
+      <hr style="margin: 5px 0 0 0; padding:0">
+      <div style="margin: 0; padding:0" *ngIf="!isVip">
         <div>
-          <span style="font-size: 20px; font-weight: bolder; ">CLAIM TICKETS</span>
-          <br />
-          <br />
-          <div style="margin-top: 10px;">
-            <p style="font-size: 20px; font-weight: bolder;">
-              <input type="radio" value="PAYOUT" formControlName="payout" (click)="onStatusClick('PAYOUT')">Payout
+          <div style="margin-top: 5px;">
+            <p *ngIf="isAdmin || isSupervisor" style="font-size: 20px; font-weight: bolder;">
+              <input type="radio" value="PAYOUT" formControlName="payout" (click)="onStatusClick('PAYOUT')">Claim Payout
               <input type="radio" value="CANCEL" formControlName="payout" (click)="onStatusClick('CANCEL')">Cancel
+              Ticket
             </p>
           </div>
           <div>
             <label for="refId" style="font-weight: bold; font-size: 20px;">
               Ticket Barcode
             </label><br />
-            <input id="refId" type="text" style="width: 200px; margin-top: 5px; font-size: 20px; text-align: center; "
-              formControlName="refId" (input)="onChange($event.target.value)" />
+            <input id="refId" type="text" name="refid"
+              style="width: 200px; margin-top: 5px; font-size: 20px; text-align: center; " formControlName="refId"
+              (input)="onChange($event.target.value)" />
           </div>
         </div>
         <div style="margin-bottom: 10px; margin-top: 10px;">
           <span style="color: red;"><b>{{payoutErrorMessage}}</b></span>
         </div>
-        <br />
-        <button (click)="claimpayout()" *ngIf="isPayout"
-          style="background-color: black; color: white; width: 304px; margin-right: 10px">CLAIMS</button>
       </div>
       <br />
     </div>
     <div>
       <table mat-table [dataSource]="bettinglist" class="mat-elevation-z8">
         <!-- Position Column -->
+        <ng-container matColumnDef="reprint">
+          <th mat-header-cell *matHeaderCellDef>Re-Print</th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="!isVip">
+              <img *ngIf="element.Status != 'Cancelled'" style=" cursor: pointer; height: 25px; width:40px"
+                src="assets/image/printer.png" alt="print"
+                (click)="onRePrint(element.BetType,element.ReferenceId,element.Amount)" />
+            </div>
+          </td>
+        </ng-container>
         <ng-container matColumnDef="referenceid">
           <th mat-header-cell *matHeaderCellDef> Barcode</th>
-          <td mat-cell *matCellDef="let element"> {{element.ReferenceId}} </td>
+          <td mat-cell *matCellDef="let element">
+            <span *ngIf="element.Status == 'Cancelled'" style="color: red;">{{element.ReferenceId}}</span>
+            <span *ngIf="element.Status != 'Cancelled'">{{element.ReferenceId}}</span>
+          </td>
         </ng-container>
         <ng-container matColumnDef="bettype">
           <th mat-header-cell *matHeaderCellDef> Bet Type</th>
-          <td mat-cell *matCellDef="let element"> {{element.BetType}} </td>
+          <td mat-cell *matCellDef="let element">
+            <span *ngIf="element.Status == 'Cancelled'" style="color: red;">{{element.BetType}}</span>
+            <span *ngIf="element.Status != 'Cancelled'">{{element.BetType}}</span>
+          </td>
         </ng-container>
         <ng-container matColumnDef="amount">
           <th mat-header-cell *matHeaderCellDef> Amount</th>
-          <td mat-cell *matCellDef="let element"> {{element.Amount}} </td>
+          <td mat-cell *matCellDef="let element">
+            <span *ngIf="element.Status == 'Cancelled'" style="color: red;">{{element.Amount}}</span>
+            <span *ngIf="element.Status != 'Cancelled'">{{element.Amount}}</span>
+          </td>
         </ng-container>
-        <ng-container matColumnDef="reprint">
-          <th mat-header-cell *matHeaderCellDef> </th>
+        <ng-container matColumnDef="cancel">
+          <th mat-header-cell *matHeaderCellDef>Cancel</th>
           <td mat-cell *matCellDef="let element">
             <div *ngIf="!isVip">
-              <img style=" cursor: pointer; height: 25px; width:40px" src="assets/image/printer.png" alt="print"
-                (click)="onRePrint(element.BetType,element.ReferenceId,element.Amount)" />
+              <img *ngIf="element.Status != 'Cancelled'" style=" cursor: pointer; height: 30px; width:30px"
+                src="assets/image/cancel.png" alt="print"
+                (click)="confirmCancel(element.ReferenceId,element.Amount,element.BetType)" />
+              <span *ngIf="element.Status == 'Cancelled'" style="color: red;">{{element.Status}}</span>
             </div>
           </td>
         </ng-container>
@@ -152,6 +195,45 @@
       </table>
     </div>
     <br>
+    <div>
+      <div style="text-align: center;">
+        <h3 style="margin-left: 10px;">Last Payout List</h3>
+      </div>
+      <table mat-table [dataSource]="claimlist" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="reprint">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <div *ngIf="!isVip">
+              <img style=" cursor: pointer; height: 25px; width:40px" src="assets/image/printer.png" alt="print"
+                (click)="reprintpayout(element.ReferenceId,element.WinningSide,element.BetAmount,element.Payout,element.FightNo,element.Odds)" />
+            </div>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="referenceid">
+          <th mat-header-cell *matHeaderCellDef> Barcode</th>
+          <td mat-cell *matCellDef="let element">{{element.ReferenceId}}
+        </ng-container>
+        <ng-container matColumnDef="fightno">
+          <th mat-header-cell *matHeaderCellDef> Fight #</th>
+          <td mat-cell *matCellDef="let element" style="text-align: center;">{{element.FightNo}}</td>
+        </ng-container>
+        <ng-container matColumnDef="bettype">
+          <th mat-header-cell *matHeaderCellDef> Bet Type</th>
+          <td mat-cell *matCellDef="let element">{{element.BetType}}</td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef> Amount</th>
+          <td mat-cell *matCellDef="let element">{{element.BetAmount}}</td>
+        </ng-container> -->
+        <ng-container matColumnDef="payout">
+          <th mat-header-cell *matHeaderCellDef> Payout</th>
+          <td mat-cell *matCellDef="let element">{{element.Payout}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedClaimColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedClaimColumns;"></tr>
+      </table>
+    </div>
     <br>
     <div style="text-align: center;">
       <button (click)="back()"

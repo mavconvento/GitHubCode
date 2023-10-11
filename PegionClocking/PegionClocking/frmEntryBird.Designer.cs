@@ -307,6 +307,7 @@ namespace PegionClocking
             this.txtStickerCode.Name = "txtStickerCode";
             this.txtStickerCode.Size = new System.Drawing.Size(143, 21);
             this.txtStickerCode.TabIndex = 12;
+            this.txtStickerCode.TextChanged += new System.EventHandler(this.txtStickerCode_TextChanged);
             this.txtStickerCode.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtStickerCode_KeyDown);
             this.txtStickerCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStickerCode_KeyPress);
             // 

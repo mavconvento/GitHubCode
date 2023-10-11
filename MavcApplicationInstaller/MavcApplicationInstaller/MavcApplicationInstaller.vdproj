@@ -250,7 +250,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2A7DF6772B9D01DDE9287B1719C9BAD7"
+        "OwnerKey" = "8:_D1078C1C70B5432D9CD593C135EEB9BA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_84C46D397E354195808ABCC199654726"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -262,13 +268,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D1078C1C70B5432D9CD593C135EEB9BA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_84C46D397E354195808ABCC199654726"
+        "OwnerKey" = "8:_2A7DF6772B9D01DDE9287B1719C9BAD7"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1268,23 +1268,23 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Mavc Application"
-        "ProductCode" = "8:{F5F3D907-B39A-4E79-A489-9BEE93AAEC5D}"
-        "PackageCode" = "8:{84859BEC-CBC6-4CC2-AAAE-9FCF4FE8694A}"
+        "ProductCode" = "8:{EDE5F8F7-3D47-4C76-A62A-9ABAB61DD664}"
+        "PackageCode" = "8:{F31A7ED0-C522-423F-8674-48E52A48919E}"
         "UpgradeCode" = "8:{917DC5AF-AA0B-405B-82FD-500F53A1E801}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2"
-        "Manufacturer" = "8:Mark Adams"
+        "ProductVersion" = "8:3"
+        "Manufacturer" = "8:MAVC I.T Solutions"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Mavc Admin Application"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Mark Adams"
         "Keywords" = "8:"
-        "ARPCOMMENTS" = "8:"
+        "ARPCOMMENTS" = "8:MAVC Application"
         "ARPURLINFOABOUT" = "8:"
         "ARPPRODUCTICON" = "8:_1436313D0AB44C159F58D80A4CC8CE7F"
         "ARPIconIndex" = "3:0"

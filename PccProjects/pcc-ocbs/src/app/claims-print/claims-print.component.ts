@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+//import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PrintService } from '../print.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -16,12 +16,17 @@ export class ClaimsPrintComponent implements OnInit {
   fightNo: string
   winodds: string;
   title: string;
+  isPrint: boolean;
+  barcode: string;
+  isCancel: boolean = false;
+  betType: string;
 
   constructor(
     private route: ActivatedRoute,
     private printService: PrintService,
     private router: Router
   ) { }
+
 
   ngOnInit() {
     this.winner = this.route.snapshot.params['winner'];
@@ -31,12 +36,21 @@ export class ClaimsPrintComponent implements OnInit {
     this.fightNo = this.route.snapshot.params['fightNo'];
     this.winodds = this.route.snapshot.params['winodds'];
     this.title = this.route.snapshot.params['title'];
+    this.isPrint = this.route.snapshot.params['isprint'];
+    this.barcode = this.route.snapshot.params['barcode'];
+
+    if (this.title == 'Cancel') this.isCancel = true;
+    //this.betType = this.route.snapshot.params['bettype'];
   }
 
   ngAfterViewInit() {
+    //this.onRePrintInvoice();
+  }
+
+  onRePrintInvoice() {
     const invoiceIds = [];
-    this.printService.printDocument('invoice', invoiceIds);
-    //setTimeout(() => {this.router.navigate(['/'])},1000);
+    if (this.isPrint) this.printService.printDocument('invoice', invoiceIds);
+    else if (this.winner == 'WALA' || this.winner == 'MERON') this.printService.printDocument('invoice', invoiceIds);
   }
 
   onPrintInvoice() {

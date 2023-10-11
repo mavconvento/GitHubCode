@@ -27,10 +27,12 @@ namespace PigeonIDSystem
                 string sysDir = AppDomain.CurrentDomain.BaseDirectory;
                 string path = sysDir;
 
-                if (this.textBox1.Text != "" && this.txtDataPath.Text != "")
+                if (this.textBox1.Text != "" && this.txtDataPath.Text != "" && this.textBox2.Text != "")
                 { 
-                    System.IO.File.WriteAllText(path + "club.txt", this.textBox1.Text + @"\");
+                    System.IO.File.WriteAllText(path + "club.inf", this.textBox1.Text + @"\");
+                    System.IO.File.WriteAllText(path + "clubid.inf", this.textBox2.Text);
                     System.IO.File.WriteAllText(path + "datapath.inf", this.txtDataPath.Text);
+                   
                     Common.CreateStorageFolder();
                 }
                 
@@ -47,8 +49,10 @@ namespace PigeonIDSystem
         private void SetClub_Load(object sender, EventArgs e)
         {
             string sysDir = AppDomain.CurrentDomain.BaseDirectory;
-            string filepath = sysDir + "club.txt";
+            string filepath = sysDir + "club.inf";
             string datapath = sysDir + "datapath.inf";
+            string clubidpath = sysDir + "clubid.inf";
+
             this.textBox1.Focus();
             if (File.Exists(filepath))
             {
@@ -62,6 +66,13 @@ namespace PigeonIDSystem
             {
                 string[] pathlist = ReadText.ReadTextFile(datapath);
                 this.txtDataPath.Text = pathlist[0].ToString();
+                //this.button1.Text = "Update";
+            }
+
+            if (File.Exists(clubidpath))
+            {
+                string[] pathlist = ReadText.ReadTextFile(clubidpath);
+                this.textBox2.Text = pathlist[0].ToString();
                 //this.button1.Text = "Update";
             }
         }

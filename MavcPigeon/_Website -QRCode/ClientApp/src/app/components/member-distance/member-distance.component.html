@@ -1,0 +1,95 @@
+<form [formGroup]="form">
+  <div class="form-group" style="font-size:13px">
+    <p style="text-align:center; font-weight:bold; font-size:20px">Member Distance</p>
+    <br />
+    <div class="flex-container" fxLayout="column">
+      <div class="flex-container" fxLayout="column">
+        <!--<span>Global ID: {{globalID}}</span>-->
+        <span style="font-weight:bold">NAME: {{name}}</span>
+        <span>COORDINATES: {{coordinates}}</span>
+        <span (click)="viewDistanceMap()" style="font-weight:bold; color:dodgerblue; cursor:pointer;"><u>Click to View Location</u></span>
+      </div>
+    </div>
+    <br />
+    <div>
+      <mat-radio-group aria-label="Select an option" (change)="changeView($event)" formControlName="distance">
+        <mat-radio-button style="padding-top:10px" value="North">North</mat-radio-button>
+        <mat-radio-button style="padding-left:20px; padding-top:10px" value="South">South</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div *ngIf="dataSource" [hidden]="!isNorth">
+      <h6 style="font-weight:bold;">North Release Point</h6>
+      <div fxLayoutAlign="space-between" fxLayout="row">
+        <div fxFlex="100%" class="mat-elevation-z8">
+          <mat-table #table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="ReleasePoint">
+              <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.ReleasePoint}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Coordinates">
+              <mat-header-cell *matHeaderCellDef>Coordinates</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+                  <span>{{element.Latitude}}</span>
+                  <span>{{element.Longtitude}}</span>
+                </div>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Distance">
+              <mat-header-cell *matHeaderCellDef>Distance</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.Distance}} KM </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <div *ngIf="length < 1" style="background-color:white; padding-left:20px; padding-top:20px; font-weight:bold;"><span>No record(s) found.</span> </div>
+          <mat-paginator #paginator
+                         [length]="length"
+                         [pageIndex]="pageIndex"
+                         [pageSize]="pageSize"
+                         [pageSizeOptions]="pageSizeOptions"
+                         [showFirstLastButtons]="true"
+                         (page)="getNext($event)">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="dataSource2" [hidden]="!isSouth">
+      <h6 style="font-weight:bold;">South Release Point</h6>
+      <div fxLayoutAlign="space-between" fxLayout="row">
+        <div fxFlex="100%" class="mat-elevation-z8">
+          <mat-table #table [dataSource]="dataSource2" matSort>
+            <ng-container matColumnDef="ReleasePoint">
+              <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.ReleasePoint}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Coordinates">
+              <mat-header-cell *matHeaderCellDef>Coordinates</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+                  <span>{{element.Latitude}}</span>
+                  <span>{{element.Longtitude}}</span>
+                </div>
+              </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="Distance">
+              <mat-header-cell *matHeaderCellDef>Distance</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.Distance}} KM </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <div *ngIf="length < 1" style="background-color:white; padding-left:20px; padding-top:20px; font-weight:bold;"><span>No record(s) found.</span> </div>
+          <mat-paginator #paginator2
+                         [length]="length2"
+                         [pageIndex]="pageIndex2"
+                         [pageSize]="pageSize2"
+                         [pageSizeOptions]="pageSizeOptions2"
+                         [showFirstLastButtons]="true"
+                         (page)="getNext2($event)">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

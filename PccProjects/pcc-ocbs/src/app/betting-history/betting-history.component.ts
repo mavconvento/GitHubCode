@@ -40,9 +40,17 @@ export class BettingHistoryComponent implements OnInit {
   onGetEventDetails() {
     this.event.GetEvents().subscribe(x => {
       var result = JSON.parse(x.content)
+      var role = localStorage.getItem("roleDescription");
+      var userid = localStorage.getItem("userId");
+
       localStorage.setItem("eventId", result.EventId);
       this.getTellers(localStorage.getItem('companyId'), result.EventId).then(x => {
-        this.tellerlist = x;
+        if (role == 'Admin' || role == 'Supervisor')
+          this.tellerlist = x;
+        else {
+          this.tellerlist = x.filter(a => a.Userid == userid);
+        }
+
         if (this.myform.controls["Teller"].value != '' && this.myform.controls["Teller"].value != null) this.searchteller(this.myform.controls["Teller"].value);
       });
     }, error => { this.showerror(error.error.message) });
@@ -76,7 +84,7 @@ export class BettingHistoryComponent implements OnInit {
     this.betting.GetBettingHistoryByEvent(localStorage.getItem("eventId"), userid).subscribe(x => {
       var result = JSON.parse(x.content);
       this.bettinglist = result;
-      console.table(result);
+      //console.log(this.bettinglist);
     });
   }
 }

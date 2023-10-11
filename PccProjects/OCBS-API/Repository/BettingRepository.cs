@@ -131,6 +131,49 @@ namespace Repository
                             {
                                 results.Status = reader["Status"].ToString();
                                 results.FightNo = reader["FightNo"].ToString();
+                                results.ReferenceId = reader["ReferenceId"].ToString();
+                                results.EventId = reader["EventId"].ToString();
+                                results.PlatformRefId = reader["PlatformRefId"].ToString();
+                            }
+                        }
+                    }
+                }
+
+                return results;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<Betting> GetBettingSaved(string referenceid, string fightno, string eventid, Int64 userid , string token)
+        {
+            try
+            {
+                //var result = await _dbconn.ExecuteReadAsync("GetTestTable", null, null);
+                Betting results = new Betting();
+
+                string connString = await _dbconn.DBConnection();
+
+                using (SqlConnection sql = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("GetBettingSaved", sql))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Eventid", eventid);
+                        cmd.Parameters.AddWithValue("@FightNo", fightno);
+                        cmd.Parameters.AddWithValue("@UserID", userid);
+                        cmd.Parameters.AddWithValue("@PlatformRefId", referenceid);
+
+                        await sql.OpenAsync();
+
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                results.Status = reader["Status"].ToString();
+                                results.FightNo = reader["FightNo"].ToString();
                                 results.Amount = reader["Amount"].ToString();
                                 results.BetType = reader["BetType"].ToString();
                                 results.ReferenceId = reader["ReferenceId"].ToString();
@@ -220,6 +263,50 @@ namespace Repository
                         cmd.Parameters.AddWithValue("@EventId", eventid);
                         cmd.Parameters.AddWithValue("@UserId", userid);
 
+                        await sql.OpenAsync();
+
+
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                results.Add(new Betting()
+                                {
+                                    Amount = reader["Amount"].ToString(),
+                                    BetType = reader["BetType"].ToString(),
+                                    ReferenceId = reader["Barcode"].ToString(),
+                                    Status = reader["Status"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+
+                return results;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<List<Betting>> GetHighBettingByFightNo(string fightno, string eventid, Int64 userid)
+        {
+            try
+            {
+                //var result = await _dbconn.ExecuteReadAsync("GetTestTable", null, null);
+                List<Betting> results = new List<Betting>();
+
+                string connString = await _dbconn.DBConnection();
+
+                using (SqlConnection sql = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("GetHighBettingByFightNo", sql))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@fightno", fightno);
+                        cmd.Parameters.AddWithValue("@EventId", eventid);
+                        cmd.Parameters.AddWithValue("@UserId", userid);
 
                         await sql.OpenAsync();
 
@@ -232,7 +319,9 @@ namespace Repository
                                 {
                                     Amount = reader["Amount"].ToString(),
                                     BetType = reader["BetType"].ToString(),
-                                    ReferenceId = reader["Barcode"].ToString()
+                                    ReferenceId = reader["Barcode"].ToString(),
+                                    FightNo = reader["FightNo"].ToString(),
+                                    Status = reader["Status"].ToString()
                                 });
                             }
                         }
@@ -302,6 +391,7 @@ namespace Repository
                         cmd.Parameters.AddWithValue("@TellerId", points.TellerId);
                         cmd.Parameters.AddWithValue("@Amount", points.Amount);
                         cmd.Parameters.AddWithValue("@Type", points.Type);
+                        cmd.Parameters.AddWithValue("@SVPassword", points.SVPassword);
 
                         await sql.OpenAsync();
 
@@ -394,7 +484,8 @@ namespace Repository
                                 {
                                     ReferenceId = reader["ReferenceId"].ToString(),
                                     FightNo = reader["FightNo"].ToString(),
-                                    BetAmount = reader["Amount"].ToString()
+                                    BetAmount = reader["Amount"].ToString(),
+                                    Teller = reader["FirstName"].ToString() 
                                 });
                             }
                         }
@@ -525,7 +616,53 @@ namespace Repository
                                     BetAmount = reader["Amount"].ToString(),
                                     Payout = reader["Payout"].ToString(),
                                     Odds = reader["Odds"].ToString(),
-                                    Teller = reader["Teller"].ToString()
+                                    Teller = reader["Teller"].ToString(),
+                                    Status = reader["Status"].ToString()
+                                });
+                            }
+                        }
+                    }
+                }
+
+                return results;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
+        public async Task<List<UnClaimed>> GetLastClaims(string eventid, long userid)
+        {
+            try
+            {
+                List<UnClaimed> results = new List<UnClaimed>();
+
+                string connString = await _dbconn.DBConnection();
+
+                using (SqlConnection sql = new SqlConnection(connString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("GetLastClaims", sql))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@EventId", eventid);
+                        cmd.Parameters.AddWithValue("@Userid", userid);
+
+                        await sql.OpenAsync();
+
+                        using (var reader = await cmd.ExecuteReaderAsync())
+                        {
+                            while (await reader.ReadAsync())
+                            {
+                                results.Add(new UnClaimed()
+                                {
+                                    ReferenceId = reader["ReferenceId"].ToString(),
+                                    FightNo = reader["FightNo"].ToString(),
+                                    BetAmount = reader["Amount"].ToString(),
+                                    Payout = reader["Payout"].ToString(),
+                                    Odds = reader["Odds"].ToString(),
+                                    BetType = reader["BetType"].ToString(),
+                                    WinningSide = reader["WinningSide"].ToString()
                                 });
                             }
                         }

@@ -146,7 +146,42 @@ namespace PigeonIDSystem
             try
             {
                 string sysDir = AppDomain.CurrentDomain.BaseDirectory;
-                string filepath = sysDir + "club.txt";
+                string filepath = sysDir + "club.inf";
+
+                if (!File.Exists(filepath))
+                {
+                    frmSetClub clubform = new frmSetClub();
+                    clubform.ShowDialog();
+                }
+                else
+                {
+                    if (File.Exists(filepath))
+                    {
+                        string[] clublist = ReadText.ReadTextFile(filepath);
+                        return clublist[0];
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+
+                return "";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public static string GetClubID()
+        {
+            try
+            {
+                string sysDir = AppDomain.CurrentDomain.BaseDirectory;
+                string filepath = sysDir + "clubid.inf";
 
                 if (!File.Exists(filepath))
                 {

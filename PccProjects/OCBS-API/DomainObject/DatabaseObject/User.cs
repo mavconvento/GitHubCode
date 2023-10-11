@@ -19,6 +19,8 @@ namespace DomainObject.DatabaseObject
         public string platformUserId { get; set; }
         public bool IsOffline { get; set; }
         public string Status { get; set; }
+        public bool IsSuperAdmin { get; set; }
+        public DateTime LoginDate { get; set; }
 
         //additional parameters
         public Int64 RoleId { get; set; }

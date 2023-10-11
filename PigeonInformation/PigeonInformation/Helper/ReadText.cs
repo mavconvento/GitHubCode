@@ -43,7 +43,7 @@ namespace Helper
                 string sysDir = "";
                 string path = "";
                 sysDir = AppDomain.CurrentDomain.BaseDirectory;
-                path = sysDir + "\\" + filename + ".txt";
+                path = sysDir + filename + ".inf";
                 if (File.Exists(path))
                 {
                     System.IO.TextReader tr = new StreamReader(path);

@@ -10,6 +10,8 @@ namespace DomainObject.DatabaseObject
     {
         public string EventId { get; set; }
         public string FightNo { get; set; }
+        public string Meron { get; set; }
+        public string Wala { get; set; }
         public string TotalAmount { get; set; }
         public string Status { get; set; }
         public string Declare { get; set; }

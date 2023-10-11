@@ -14,5 +14,8 @@ namespace DomainObject.PlatformObject
         public string declare { get; set; }
         public bool isLastCall { get; set; }
         public string userRole { get; set; }
+        public Decimal usermerontotalbet { get; set; }
+        public Decimal userwalatotalbet { get; set; }
+        public Decimal userdrawtotalbet { get; set; }
     }
 }

@@ -23,5 +23,19 @@ namespace BusinessLayer
             }
 
         }
+
+        public DataTable GetResultListByDate(DateTime liberDate)
+        {
+            try
+            {
+                DataLayer.ResultDal dal = new DataLayer.ResultDal();
+                return dal.GetResultListByDate(liberDate);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

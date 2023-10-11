@@ -1,0 +1,278 @@
+<form [formGroup]="form">
+  <div class="form-group" style="font-size:13px">
+    <div class="flex-container mat-divider-bottom-space" fxLayout="column" fxLayoutGap="2px">
+      <mat-form-field>
+        <input type="text" matInput formControlName="ClubFullName" [matAutocomplete]="autowos" placeholder="Club Name" (input)="seachClub($event.target.value)">
+        <mat-autocomplete #autowos="matAutocomplete">
+          <mat-option *ngFor="let item of clubList" [value]="item.name">
+            {{item.name}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" style="width: 200px">
+        <mat-label>Race Date :</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="LiberationDate">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+          <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+        </mat-datepicker-toggle>
+        <mat-datepicker #picker style="width: 100px"></mat-datepicker>
+      </mat-form-field>
+      <div class="flex-container" fxLayout="row" fxLayoutGap="10px">
+        <button class="mat-raised-button mat-primary" (click)="ViewResult()">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          View Result
+        </button>
+      </div>
+    </div>
+    <hr />
+    <div *ngIf="!isMobile" class="flex-container" fxLayout="column" fxLayoutGap="2px">
+      <div fxLayoutAlign="space-between center" fxLayout="row">
+        <div fxFlex="30%"><span style="font-weight:bold">Liberation : {{LocationName}}</span></div>
+        <div fxFlex="30%"> </div>
+      </div>
+      <div fxLayoutAlign="space-between center" fxLayout="row">
+        <div fxFlex="30%"><span>Time Release: {{ReleaseTime}}</span></div>
+        <div fxFlex="30%"><span>Min Speed: {{MinSpeed}}</span></div>
+      </div>
+      <div fxLayoutAlign="space-between center" fxLayout="row">
+        <div fxFlex="30%"><span>Total Entry: {{TotalBird}}</span></div>
+        <div fxFlex="30%" *ngIf="IsTimeStop"><span>Stop Time (Day 1): {{StopTimeFrom}}</span></div>
+      </div>
+      <div fxLayoutAlign="space-between center" fxLayout="row">
+        <div fxFlex="30%"><span>Total Arrived: {{SMSCount}}</span></div>
+        <div fxFlex="30%" *ngIf="IsTimeStop"><span>Start Time (Day 2): {{StopTimeTo}}</span></div>
+      </div>
+      <br />
+      <span *ngIf="ReleaseLat != ''" (click)="ViewReleaseMaps()" style="font-weight:bold; color:cadetblue;"><u>Click to View Release Point</u></span>
+    </div>
+    <div *ngIf="isMobile" class="flex-container" fxLayout="column" fxLayoutGap="2px">
+      <div fxFlex="30%"><span style="font-weight:bold">Liberation : {{LocationName}}</span></div>
+      <div fxFlex="30%"><span>Time Release: {{ReleaseTime}}</span></div>
+      <div fxFlex="30%"><span>Min Speed: {{MinSpeed}}</span></div>
+      <!--<div fxFlex="30%"><span>Total Entry: {{TotalBird}}</span></div>-->
+      <div fxFlex="30%"><span>Total Entry: N/A</span></div>
+      <div fxFlex="30%"><span>Total Arrived: {{SMSCount}}</span></div>
+      <br />
+      <div fxFlex="30%" *ngIf="IsTimeStop"><span>Stop Time (Day 1): {{StopTimeFrom}}</span></div>
+      <div fxFlex="30%" *ngIf="IsTimeStop"><span>Start Time (Day 2): {{StopTimeTo}}</span></div>
+      <br />
+      <div fxFlex="30%"><span *ngIf="ReleaseLat != ''" (click)="ViewReleaseMaps()" style="font-weight:bold; color:cadetblue;"><u>Click to View Release Point</u></span></div>
+    </div>
+    <hr />
+    <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+      <h7>Bird Entry(s)</h7>
+      <span *ngIf="TotalBirdEntry != '0'">Total Entry: {{TotalBirdEntry}}</span>
+      <div *ngIf="!dataSource_entry">No bird(s) entry.</div>
+      <div *ngIf="dataSource_entry">
+        <div fxLayoutAlign="space-between" fxLayout="row">
+          <div fxFlex="300px" class="mat-elevation-z8">
+            <mat-table #table class="mobile" [dataSource]="dataSource_entry" matSort>
+              <ng-container matColumnDef="RingNumber">
+                <mat-header-cell *matHeaderCellDef>Ring Number</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.BandNumber}} </mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns_entry"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns_entry;"></mat-row>
+            </mat-table>
+            <mat-paginator #paginator_entry [length]="length_entry"
+                           [pageIndex]="pageIndex_entry"
+                           [pageSize]="pageSize_entry"
+                           [pageSizeOptions]="pageSizeOptions_entry"
+                           [showFirstLastButtons]="true"
+                           (page)="getNext_entry($event)">
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <h6>Filter(s)</h6>
+    <div *ngIf="!isMobile" class="flex-container" fxLayout="row" fxLayoutGap="20px">
+      <mat-form-field style="width:200px;">
+        <input type="text" matInput formControlName="FilterName" placeholder="Search Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="Category" [matAutocomplete]="autocat" placeholder="Category">
+        <mat-autocomplete #autocat="matAutocomplete">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let item of categoryCollection" [value]="item.DESCRIPTION">
+            {{ item.DESCRIPTION }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field style="width:300px;">
+        <input type="text" matInput formControlName="Group" [matAutocomplete]="autogroup" placeholder="Group">
+        <mat-autocomplete #autogroup="matAutocomplete">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let item of groupCollection" [value]="item.RaceGroup">
+            {{ item.RaceGroup }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <div class="flex-container">
+        <button class="mat-raised-button mat-primary" (click)="ViewResult()">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Search
+        </button>
+      </div>
+    </div>
+    <div *ngIf="isMobile" class="flex-container" fxLayout="column" fxLayoutGap="20px">
+      <mat-form-field>
+        <input type="text" matInput formControlName="FilterName" placeholder="Search Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="Category" [matAutocomplete]="autocat" placeholder="Category">
+        <mat-autocomplete #autocat="matAutocomplete">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let item of categoryCollection" [value]="item.DESCRIPTION">
+            {{ item.DESCRIPTION }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <mat-form-field>
+        <input type="text" matInput formControlName="Group" [matAutocomplete]="autogroup" placeholder="Group">
+        <mat-autocomplete #autogroup="matAutocomplete">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let item of groupCollection" [value]="item.RaceGroup">
+            {{ item.RaceGroup }}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <div class="flex-container" style="text-align:center;">
+        <button class="mat-raised-button mat-primary" (click)="ViewResult()">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Search
+        </button>
+      </div>
+      <br />
+    </div>
+    <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+      <h6>Race Result(s)</h6>
+      <br *ngIf="!isMobile" />
+      <mat-radio-group *ngIf="isMobile" aria-label="Select an option" (change)="changeView($event)" formControlName="mobileView">
+        <mat-radio-button style="padding-top:10px" value="2">Summary View</mat-radio-button>
+        <mat-radio-button style="padding-left:20px; padding-top:10px" value="1">Details View</mat-radio-button>
+      </mat-radio-group>
+      <button class="mat-raised-button mat-primary" style="width:200px;" (click)="ViewResult()">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Refresh Result
+      </button>
+      <br />
+      <div *ngIf="dataSource">
+        <div fxLayoutAlign="space-between" fxLayout="row">
+          <div fxFlex="100%" class="mat-elevation-z8">
+            <mat-table #table [dataSource]="dataSource" class="mobile" *ngIf="isMobile && isMobileDetails">
+              <ng-container matColumnDef="Rank">
+                <mat-header-cell *matHeaderCellDef>Rank</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.Rank}}
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Details">
+                <mat-header-cell *matHeaderCellDef>Details</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+                    <span style="font-weight:bold;">{{element.MemberName}}</span>
+                    <span>Total Entry: {{element.TotalEntry}}</span>
+                    <span>Band Number: {{element.RingNumber}}</span>
+                    <span>Distance (KM): {{element.Distance}}</span>
+                    <span>Arrival: {{element.Arrival}}</span>
+                    <span>Flight: {{element.Flight}}</span>
+                    <span>Speed: {{element.Speed | number:'1.2-3'}}</span>
+                    <span>Source: {{element.Remarks}}</span>
+                    <span (click)="ViewMaps(element)" style="font-weight:bold; color:cadetblue;"><u>Click to View Location</u></span>
+                  </div>
+                </mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumnsMobile"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumnsMobile;"></mat-row>
+            </mat-table>
+            <mat-table #table [dataSource]="dataSource" class="mobilesummary" matSort *ngIf="isMobileSummary && isMobile">
+              <ng-container matColumnDef="RankMobile">
+                <mat-header-cell *matHeaderCellDef>Rank</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.Rank}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="MemberDetails">
+                <mat-header-cell *matHeaderCellDef>Member Name</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <span>{{element.MemberName}}</span>
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="LocationMobile">
+                <mat-header-cell *matHeaderCellDef>Map</mat-header-cell>
+                <mat-cell *matCellDef="let element"><span (click)="ViewMaps(element)" style="font-weight:bold; color:cadetblue; cursor:pointer"><u>View</u></span></mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="RingNumberMobile">
+                <mat-header-cell *matHeaderCellDef>Ring #</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.RingNumber}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="SpeedMobile">
+                <mat-header-cell *matHeaderCellDef>Speed</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.Speed | number:'1.2-3'}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="SourceMobile">
+                <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.Remarks}}</mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumnsMobileSummary"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumnsMobileSummary;"></mat-row>
+            </mat-table>
+            <mat-table #table [dataSource]="dataSource" matSort *ngIf="scrWidth > 1008">
+              <ng-container matColumnDef="Rank">
+                <mat-header-cell *matHeaderCellDef>Rank</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Rank}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="MemberName">
+                <mat-header-cell *matHeaderCellDef>Member Name</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.MemberName}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Location">
+                <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+                <mat-cell *matCellDef="let element"><span (click)="ViewMaps(element)" style="font-weight: bold; color: cadetblue; cursor: pointer"><u>View</u></span></mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="TotalEntry">
+                <mat-header-cell *matHeaderCellDef>Total Entry</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.TotalEntry}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="RingNumber">
+                <mat-header-cell *matHeaderCellDef>Ring Number</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.RingNumber}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Distance">
+                <mat-header-cell *matHeaderCellDef>Distance (KM)</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Distance}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Arrival">
+                <mat-header-cell *matHeaderCellDef>Arrival</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Arrival}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Flight">
+                <mat-header-cell *matHeaderCellDef>Flight</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Flight}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Speed">
+                <mat-header-cell *matHeaderCellDef>Speed (MPM)</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Speed | number:'1.2-3'}} </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="Remarks">
+                <mat-header-cell *matHeaderCellDef>Source</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Remarks}} </mat-cell>
+              </ng-container>
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <div *ngIf="length < 1" style="background-color:white; padding-left:20px; padding-top:20px; font-weight:bold;"><span>No bird(s) has been arrived.</span> </div>
+            <mat-paginator #paginator
+                           [length]="length"
+                           [pageIndex]="pageIndex"
+                           [pageSize]="pageSize"
+                           [pageSizeOptions]="pageSizeOptions"
+                           [showFirstLastButtons]="true"
+                           (page)="getNext($event)">
+            </mat-paginator>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

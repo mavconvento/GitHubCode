@@ -3,3 +3,9 @@ C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Release\DomainObjects.csproj.CoreCompileInputs.cache
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Release\DomainObjects.dll
 C:\Adams\GitHub\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Release\DomainObjects.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Release\DomainObjects.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\bin\Release\DomainObjects.pdb
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Release\DomainObjects.csproj.AssemblyReference.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Release\DomainObjects.csproj.CoreCompileInputs.cache
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Release\DomainObjects.dll
+C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Release\DomainObjects.pdb

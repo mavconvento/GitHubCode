@@ -1,0 +1,77 @@
+<form [formGroup]="myform">
+  <div class="form-group" style="margin-left: 5px;">
+    <div style="text-align: center; margin-top: 20px;">
+      <h1>Money Counter</h1>
+    </div>
+    <div>
+      <label for="ten" style="font-weight: bold; font-size: 25px; margin-left: 30px;">
+        10 X
+      </label>
+      <input id="ten" type="text" class="inputclass" (input)="onChange()" formControlName="ten" />
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL: {{ten|number :
+        '1.2-2'}}</span>
+    </div>
+    <div>
+      <label for="twenty" style="font-weight: bold; font-size: 25px; margin-left: 30px;">
+        20 X
+      </label>
+      <input id="twenty" type="text" class="inputclass" (input)="onChange()" formControlName="twenty" />
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL: {{twenty|number :
+        '1.2-2'}}</span>
+    </div>
+    <div>
+      <label for="fifty" style="font-weight: bold; font-size: 25px; margin-left: 30px;">
+        50 X
+      </label>
+      <input id="fifty" type="text" class="inputclass" (input)="onChange()" formControlName="fifty" />
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL: {{fifty|number :
+        '1.2-2'}}</span>
+    </div>
+    <div>
+      <label for="onehundred" style="font-weight: bold; font-size: 25px; margin-left: 20px;">
+        100 X
+      </label>
+      <input id="onehundred" type="text" class="inputclass" (input)="onChange()" formControlName="onehundred" />
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL: {{onehundred|number :
+        '1.2-2'}}</span>
+    </div>
+    <div>
+      <label for="twohundred" style="font-weight: bold; font-size: 25px; margin-left: 20px;">
+        200 X
+      </label>
+      <input id="twohundred" type="text" class="inputclass" (input)="onChange()" formControlName="twohundred" />
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL: {{twohundred|number :
+        '1.2-2'}}</span>
+    </div>
+    <div>
+      <label for="fivehundred" style="font-weight: bold; font-size: 25px; margin-left: 20px;">
+        500 X
+      </label>
+      <input id="fivehundred" type="text" class="inputclass" (input)="onChange()" formControlName="fivehundred" />
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL: {{fivehundred|number :
+        '1.2-2'}}</span>
+    </div>
+    <div>
+      <label for="onethousand" style="font-weight: bold; font-size: 25px; margin-left: 10px;">
+        1000 X
+      </label>
+      <input id="onethousand" type="text" class="inputclass" (input)="onChange()" formControlName="onethousand" />
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL: {{onethousand|number :
+        '1.2-2'}}</span>
+    </div>
+    <br />
+    <div>
+      <span style="font-weight: bold; font-size: 20px; margin-left: 10px;">TOTAL AMOUNT: {{total|number :
+        '1.2-2'}}</span>
+      <!-- <label for="total" style="font-weight: bold; font-size: 25px; margin-left: 35px;">
+        Total
+      </label>
+      <input id="total" type="text" style="width: 200px; font-size: 25px; text-align: center; margin-top: 20px;"
+        (input)="onChange()" formControlName="total" /> -->
+    </div>
+    <div style="text-align: center;">
+      <button (click)="back()"
+        style="background-color: red; margin-top: 10px; color: white; width: 200px; height: 35px !important;">BACK</button>
+    </div>
+  </div>
+</form>

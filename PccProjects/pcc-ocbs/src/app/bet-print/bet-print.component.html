@@ -1,18 +1,25 @@
-<div style="margin-left: 5px; width: 200px;">
-    <span style="font-size: 18px; font-weight: bold;">OCBS Platform</span><br />
-    <span style="font-size: 15px; font-weight: bold;">Betting Receipt</span><br /><br />
-    <span style="font-size: 18px; font-weight: bold;">
+<div style="margin-left: 5px;" id="pdfTable" #pdfTable>
+    <span style="font-size: 50px; font-weight: bold;">OCBS Platform</span><br />
+    <span style="font-size: 30px; font-weight: bold;">Betting Receipt</span><br /><br />
+    <span style="font-size: 30px; font-weight: bold;">
         {{eventname}}
     </span>
     <br />
     <br />
-    <ngx-barcode [bc-value]="barcodeValue" [bc-display-value]="true" [bc-height]="30"></ngx-barcode>
+    <div style="font-size: 30; text-align: center;">
+        <ngx-barcode [bc-value]="barcodeValue" bc-font-size="30" [bc-display-value]="true" [bc-width]="4"
+            [bc-height]="95"></ngx-barcode>
+    </div>
     <br />
-    <span style="font-size: 15px;"><b>Fight #: </b>{{fightNo}}</span>
+    <span style="font-size: 30px;"><b>Fight #: </b>{{fightNo}}</span>
     <br />
-    <span style="font-size: 15px;"><b>Bet Amount: </b>{{betAmount|number}}</span>
+    <span style="font-size: 30px;"><b>Bet Amount: </b>{{betAmount|number}}</span>
     <br />
     <br />
-    <span style="font-size: 12px; font-weight: bold;">Teller: {{teller}}</span><br />
-    <button (click)="onPrintInvoice()" style="font-size: 15px; font-weight: bold;">{{betType}}</button>
+    <span style="font-size: 30px; font-weight: bold;">Teller: {{teller}}</span><br />
+    <button (click)="onPrintInvoice()" style="font-size: 30px; font-weight: bold;">{{betType}}</button>
+    <!-- <button class="btn btn-primary" (click)="downloadAsPDF()">Export To PDF</button> -->
+    <br />
+    <br />
+
 </div>

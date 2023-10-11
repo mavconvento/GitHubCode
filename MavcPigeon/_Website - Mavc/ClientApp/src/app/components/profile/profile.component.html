@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="flex-container" fxLayout="row" fxLayoutGap="10px">
+    <div>
+      <img *ngIf="!profileImage" mat-card-image src="../../../assets/img/blank.png" alt="profile">
+      <img *ngIf="profileImage" mat-card-image src="{{profileImage}}" alt="profile">
+    </div>
+    <div class="flex-container" fxLayout="column">
+      <div class="flex-container" fxLayout="column">
+        <!--<span>Global ID: {{globalID}}</span>-->
+        <span>Name: {{name}}</span>
+        <span>Loft Name: {{loftName}}</span>
+        <span>Email Address: {{emailAddress}}</span>
+        <span>Primary Number: {{primaryMobileNumber}}</span>
+        <span>E-Clock Number: {{eclockMobileNumber}}</span>
+        <span>Total Load: {{totalLoad | number:'1.2-2'}}</span>
+        <span (click)="openProfileDialog()" title="Edit Profile"><mat-icon style="font-size:15px; cursor:pointer;">edit</mat-icon></span>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="flex-container" fxLayout="column" fxLayoutGap="10px">
+    <div class="flex-container" fxLayout="row" fxLayoutGap="10px" *ngIf="!isPha">
+      <span style="width:280px; cursor:pointer; color:brown" (click)="openLinkMobileDialog()" title="Link Mobile Number."><mat-icon style="font-size:15px; font-weight:bold; color:green;">add</mat-icon><u>Link your registered mobile number.</u></span>
+      <!--<span style="width:250px;" (click)="openLinkMobileDialog()" title="Register new mobile number."><mat-icon style="font-size:15px; font-weight:bold; color:green;">add</mat-icon>Register new mobile number.</span>-->
+    </div>
+    <div class="flex-container" fxLayout="row" fxLayoutGap="10px">
+      <button class="mat-raised-button mat-primary" (click)="openOnlineClockingDialog('LOADCARD')">LOAD CARD</button>
+      <button class="mat-raised-button mat-primary" (click)="openOnlineClockingDialog('PASALOAD')" *ngIf="isAllowPasaload">PASALOAD</button>
+    </div>
+    <span>Registered Club and Mobile No. </span>  
+    <ng-container *ngFor="let item of clubList; let i = index">
+      <div class="flex-container" fxLayout="column" fxLayoutGap="2px">
+        <mat-list-item>
+          <span style="font-weight: bold;">{{item.ClubName}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span>MemberID : {{item.MemberClubID}}</span>
+        </mat-list-item>
+        <mat-list-item>
+          <span (click)="getMemberCoordinates(item)" style="font-weight:bold; color:dodgerblue; cursor:pointer;"><u>Click to View Distance</u></span>
+        </mat-list-item>
+      </div>
+      <mat-list-item style="margin-left:20px; padding-left:20px;">
+        <ng-container *ngFor="let c of mobileList | mobileFilter: item.ClubID">
+          <div class="flex-container" fxLayout="row" fxLayoutGap="10px">
+            <span>{{c.MobileNumber}} <span style="font-weight:bold" *ngIf="c.IsMain">(Primary Number)</span></span>
+            <span *ngIf="!c.IsMain">{{c.LoadBalance | number:'1.2-2'}}</span>
+            <button class="mat-raised-button mat-primary" (click)="Unreg(c.MobileNumber,c.ClubAbbreviation,c.dbName)" *ngIf="!c.IsMain">UNREG</button>
+            <button class="mat-raised-button mat-primary" (click)="SetAsPrimary(c.MobileNumber)" *ngIf="!c.IsMain">SET AS PRIMARY</button>
+          </div>
+        </ng-container>
+      </mat-list-item>
+      <br />
+    </ng-container>
+  </div>
+</div>

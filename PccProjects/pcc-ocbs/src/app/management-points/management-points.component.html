@@ -19,9 +19,9 @@
       <mat-form-field style="width:280px;">
         <input type="text" matInput placeholder="Total Betting" readonly formControlName="total_betting">
       </mat-form-field><br />
-      <mat-form-field style="width:280px;">
+      <!-- <mat-form-field style="width:280px;">
         <input type="text" matInput placeholder="Total Payout" readonly formControlName="total_payout">
-      </mat-form-field><br />
+      </mat-form-field><br />-->
       <mat-form-field style="width:280px;">
         <input type="text" matInput placeholder="Cash On-Hand" readonly formControlName="total_balance">
       </mat-form-field><br />
@@ -33,14 +33,18 @@
           <span style="font-size: 25px; font-weight: bold; color: white;">REQUEST TYPE</span>
         </p>
         <p style="font-size: 20px; font-weight: bolder;">
-          <input type="radio" value="Load" formControlName="Type" (click)="onStatusClick('Load')">Request Load <br />
+          <!-- <input type="radio" value="Load" formControlName="Type" (click)="onStatusClick('Load')">Request Load <br /> -->
           <input type="radio" value="Cash Advance" formControlName="Type" (click)="onStatusClick('Cash Advance')"
             style="margin-left: 8px;">Cash Advance <br />
-          <input type="radio" value="Closing Load" formControlName="Type" (click)="onStatusClick('Closing Load')"
-            style="margin-left: 25px;">Closing Balance
+          <!-- <input type="radio" value="Closing Load" formControlName="Type" (click)="onStatusClick('Closing Load')"
+            style="margin-left: 25px;">Closing Balance -->
         </p>
       </div>
-      <button (click)="tellerSave()" style="background-color: red">SAVE POINTS</button><br />
+      <button (click)="confirmCashout()" style="background-color: red">SAVE POINTS</button>
+      <!-- <div style="text-align: center;"> -->
+      <button (click)="back()" style="background-color: rgb(32, 9, 134); margin-top: 10px;">BACK</button>
+      <br />
+      <!-- </div> -->
     </div>
     <div *ngIf="isShow" style="margin-top: 15px; text-align: center;">
       <span style="color:green; font-weight: bold; font-size: 15px;">{{errorMessage}}</span>
@@ -71,10 +75,5 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  </div>
-  <div style="text-align: center;">
-    <button (click)="back()"
-      style="background-color: rgb(32, 9, 134); margin-top: 10px; height: 35px !important;">BACK</button>
-    <br />
   </div>
 </form>

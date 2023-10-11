@@ -14,5 +14,8 @@ namespace DomainObject.DatabaseObject
         public string Odds { get; set; }
         public string Payout { get; set; }
         public string Teller { get; set; }
+        public string Status { get; set; }
+        public string WinningSide { get; set; }
+        public string BetType { get; set; }
     }
 }

@@ -16,6 +16,10 @@ export class BettingService extends BettingServiceBase {
     return this.httpClient.get(apiUrl + "/GetBettingHistoryByEvent/" + eventid + "/" + userid, this.requestOptions);
   }
 
+  GetLastClaims(eventid: string, userid: string): Observable<any> {
+    return this.httpClient.get(apiUrl + "/GetLastClaims/" + eventid + "/" + userid, this.requestOptions);
+  }
+
   GetPointsHistory(eventid: string, userid: string): Observable<any> {
     return this.httpClient.get(apiUrl + "/GetPointsHistory/" + eventid + "/" + userid, this.requestOptions);
   }
@@ -30,6 +34,10 @@ export class BettingService extends BettingServiceBase {
 
   GetBettingByFightNo(eventid: string, fightNo: string): Observable<any> {
     return this.httpClient.get(apiUrl + "/GetBettingByFightNo/" + eventid + "/" + localStorage.getItem("userId") + "/" + fightNo, this.requestOptions);
+  }
+
+  GetHighBettingByFightNo(eventid: string, fightNo: string): Observable<any> {
+    return this.httpClient.get(apiUrl + "/GetHighBettingByFightNo/" + eventid + "/" + localStorage.getItem("userId") + "/" + fightNo, this.requestOptions);
   }
 
   GetPlotWinners(eventid: string): Observable<any> {

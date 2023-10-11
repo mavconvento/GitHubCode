@@ -15,6 +15,7 @@ namespace DomainObject
         public String LoftName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string EClockID { get; set; }
         public Guid? FileUploadId { get; set; }
     }
 }

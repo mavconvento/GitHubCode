@@ -45,5 +45,24 @@ namespace DataLayer
                 throw ex;
             }
         }
+
+        public DataTable sqlParam()
+        {
+            DataTable mysqlParam = new DataTable();
+
+            DataColumn dc2 = new DataColumn();
+            dc2.ColumnName = "key";
+
+            DataColumn dc3 = new DataColumn();
+            dc3.ColumnName = "value";
+
+
+            //pigeonList.Columns.Add(dc1);
+            mysqlParam.Columns.Add(dc2);
+            mysqlParam.Columns.Add(dc3);
+
+            return mysqlParam;
+
+        }
     }
 }

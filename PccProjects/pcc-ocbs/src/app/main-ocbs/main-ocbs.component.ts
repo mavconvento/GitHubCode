@@ -14,6 +14,8 @@ export class MainOcbsComponent implements OnInit {
   errorMessage: string;
   isShow: boolean = false;
   isAdmin: boolean = false;
+  isSuperAdmin: boolean = false;
+  isSupervisor: boolean = false;
 
   constructor(
     private router: Router,
@@ -28,7 +30,11 @@ export class MainOcbsComponent implements OnInit {
 
     this.myform.controls["teller"].setValue(localStorage.getItem("firstName"))
     if (localStorage.getItem("roleDescription") == "Admin") this.isAdmin = true;
+    if (localStorage.getItem("IsSuperAdmin") == 'true') this.isSuperAdmin = true;
+    if (localStorage.getItem("roleDescription") == 'Supervisor') this.isSupervisor = true;
+    this.GetCurrentEvent();
   }
+
   // convenience getter for easy access to form fields
   get myFormControl() { return this.myform.controls; }
 
@@ -36,10 +42,9 @@ export class MainOcbsComponent implements OnInit {
     this.router.navigate(['/users'])
   }
 
-  onBetting() {
+  GetCurrentEvent() {
     this.event.GetEvents().subscribe(x => {
       var result = JSON.parse(x.content)
-      //console.log(result);
       localStorage.setItem("teller", this.myform.controls["teller"].value);
       localStorage.setItem("eventId", result.EventId);
       localStorage.setItem("eventname", result.Description)
@@ -51,10 +56,13 @@ export class MainOcbsComponent implements OnInit {
           localStorage.setItem("fightNo", x.fightNo);
           localStorage.setItem("fightStatus", x.status);
           localStorage.setItem("fightId", x.fightId);
-          this.router.navigate(['/'])
         }
       })
     }, error => { this.showerror(error.error.message) });
+  }
+
+  onBetting() {
+    this.router.navigate(['/'])
   }
 
   logout() {
@@ -74,6 +82,14 @@ export class MainOcbsComponent implements OnInit {
     this.router.navigate(['/unclaimed'])
   }
 
+  onBetMonitoring() {
+    this.router.navigate(['/betmonitoring'])
+  }
+
+  onMoneyCounter() {
+    this.router.navigate(['/moneycounter'])
+  }
+
   onFight() {
     this.router.navigate(['/fight'])
   }
@@ -84,6 +100,10 @@ export class MainOcbsComponent implements OnInit {
 
   onEvent() {
     this.router.navigate(['/events'])
+  }
+
+  onReport() {
+    this.router.navigate(['/reportsummary'])
   }
 
   onPoints() {

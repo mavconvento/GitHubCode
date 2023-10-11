@@ -1,21 +1,28 @@
 <div style="margin-left: 5px;">
-  <span style="font-size: 18px; font-weight: bold;">OCBS Platform</span><br />
-  <span style="font-size: 15px; font-weight: bold;">Betting Report Receipt</span>
+  <span style="font-size: 50px; font-weight: bold;">OCBS Platform</span><br />
+  <span style="font-size: 30px; font-weight: bold;">Betting Report Receipt</span>
   <br /><br />
-  <span style="font-size: 15px;"><b>EventID : </b>{{eventId}}</span>
+  <span style="font-size: 30px;"><b>EventID: </b>{{eventId}}</span>
   <br />
-  <span style="font-size: 15px;"><b>Fight #: </b>{{fightNo}}</span>
+  <span style="font-size: 30px;"><b>Fight #: </b>{{fightNo}}</span>
   <br />
-  <span style="font-size: 15px;"><b>Total Amount: </b>{{totalAmount|number}}</span>
+  <span style="font-size: 30px;"><b>Meron: </b>{{meron|number}}</span>
   <br />
-  <span style="font-size: 15px;"><b>Commission: </b>{{commission|number}}</span>
+  <span style="font-size: 30px;"><b>Wala: </b>{{wala|number}}</span>
   <br />
-  <span style="font-size: 15px;"><b>Payout Odds: </b>{{odds|number}}</span>
+  <span style="font-size: 30px;"><b>Total Amount: </b>{{totalAmount|number}}</span>
   <br />
-  <span style="font-size: 15px;"><b>Status: </b>{{status}}</span>
+  <span style="font-size: 30px;"><b>Commission: </b>{{commission|number}}</span>
   <br />
-  <span style="font-size: 15px;"><b>Winner: </b>{{declare}}</span>
+  <span style="font-size: 30px;"><b>Payout Odds: </b>{{odds|number}}</span>
+  <br />
+  <span style="font-size: 30px;"><b>Status: </b>{{status}}</span>
+  <br />
+  <span style="font-size: 30px;"><b>Winner: </b>{{declare}}</span>
   <br />
   <br />
-  <button (click)="onPrintInvoice()" style="font-size: 15px; font-weight: bold;">Confirmed</button>
+  <button (click)="onPrintInvoice()" style="font-size: 30px; font-weight: bold;">Confirmed</button>
+  <br />
+  <br />
+  <hr />
 </div>

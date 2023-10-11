@@ -53,6 +53,20 @@ namespace BussinessLayer
             }
         }
 
+
+        public async Task<DataSet> QRCodeClocking(string qrcode)
+        {
+            try
+            {
+                return await this._race.QRCodeClocking(qrcode);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public async Task<DataTable> GetBirdCategory(string dbName = "", string clubName = "")
         {
             try
@@ -110,6 +124,19 @@ namespace BussinessLayer
             try
             {
                 return await this._race.GetRaceResult(raceFilter);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<DataTable> GetLocation(RaceFilter raceFilter)
+        {
+            try
+            {
+                return await this._race.GetLocation(raceFilter);
             }
             catch (Exception ex)
             {

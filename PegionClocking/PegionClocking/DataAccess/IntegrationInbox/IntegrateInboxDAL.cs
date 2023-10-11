@@ -24,7 +24,6 @@ namespace DataAccess.IntegrationInbox
                 DataSet dtResult = new DataSet();
                 dbconn = new DatabaseConnection(dbSource);
                 dbconn.DatabaseConn("GetInbox");
-
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.CommandTimeout = 0;
@@ -85,8 +84,9 @@ namespace DataAccess.IntegrationInbox
             {
                 DataSet dtResult = new DataSet();
                 string clubname = ValidateClub("local", SMSContent);
+                string clubserver = GetClubServer("local", SMSContent);
                 dbconn = new DatabaseConnection(dbSource);
-                dbconn.DatabaseConn("InboxSave", clubname);
+                dbconn.DatabaseConn("InboxSave", clubname, clubserver);
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.CommandTimeout = 0;
@@ -220,6 +220,39 @@ namespace DataAccess.IntegrationInbox
                     dbconn.sqlConn.Close();
                 }
                 return clubName;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private string GetClubServer(string dbSource, string smscontent)
+        {
+            try
+            {
+                string clubserver = "";
+                DataSet dtResult = new DataSet();
+                dbconn = new DatabaseConnection(dbSource);
+                if (Common.GetConnStringTypeSource() == "local") //for club backup storage
+                {
+                    clubserver = Common.DBName();
+                }
+                else
+                {
+                    dbconn.DatabaseConn("GetClubServerName");
+                    if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                    dbconn.sqlConn.Open();
+                    dbconn.sqlComm.CommandTimeout = 0;
+                    dbconn.sqlComm.Parameters.Clear();
+                    dbconn.sqlComm.Parameters.AddWithValue("@SMSContent", smscontent);
+                    dbconn.sqlComm.Parameters.Add("@ClubName", SqlDbType.VarChar, 5000).Direction = ParameterDirection.Output;
+                    dbconn.sqlComm.ExecuteNonQuery();
+                    clubserver = Convert.ToString(dbconn.sqlComm.Parameters["@ClubName"].Value);
+                    dbconn.sqlConn.Close();
+                }
+                return clubserver;
             }
             catch (Exception ex)
             {

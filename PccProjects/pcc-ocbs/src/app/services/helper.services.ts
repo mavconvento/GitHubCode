@@ -22,13 +22,14 @@ export class HelperService {
     localStorage.setItem("roleDescription", null);
     localStorage.setItem("lasttransaction", null);
     localStorage.setItem("eventname", null);
+    localStorage.setItem("IsSuperAdmin", null);
     this.ClearOcbsLocalStorage();
   }
 
   ClearOcbsLocalStorage() {
-    localStorage.setItem("WalaTotalBet", "0.00")
-    localStorage.setItem("MeronTotalBet", "0.00")
-    localStorage.setItem("DrawTotalBet", "0.00")
+    // localStorage.setItem("WalaTotalBet", "0.00")
+    // localStorage.setItem("MeronTotalBet", "0.00")
+    // localStorage.setItem("DrawTotalBet", "0.00")
     localStorage.setItem("eventId", null)
     localStorage.setItem("fightNo", null);
     localStorage.setItem("fightId", null);

@@ -1,3 +1,18 @@
-<p>
-  confirm-fightno works!
-</p>
+<form [formGroup]="myform" autocomplete="off">
+  <div class="form-group">
+    <div style="text-align:center">
+      <h5>Cashout Confirmation</h5>
+      <div>
+        <label for="svPassword" style="font-weight: bold; font-size: 25px;">
+          SV Password:
+        </label>
+        <input id="svPassword" name="svPassword" type="password"
+          style="width: 140px; font-size: 25px; margin-right: 10px;" formControlName="svPassword" />
+      </div>
+      <div style="margin-top: 20px;">
+        <button style="margin-right: 5px; background-color: green !important;" (click)="close(true)">Confirm</button>
+        <button (click)="close(false)">Cancel</button>
+      </div>
+    </div>
+  </div>
+</form>

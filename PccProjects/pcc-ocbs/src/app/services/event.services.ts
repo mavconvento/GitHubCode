@@ -2,8 +2,7 @@ import { Injectable, Inject } from '@angular/core'
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs'
 import { environment } from "../../environments/environment";
-import { BettingServiceBase } from './base-services/betting.services.base';
-import { EventsServiceBase } from './base-services/event.services';
+import { EventsServiceBase } from './base-services/event.services.base';
 import { HelperService } from './helper.services';
 
 const apiUrl = environment.apiurl + '/api/event';
@@ -12,8 +11,6 @@ const apiUrl = environment.apiurl + '/api/event';
   providedIn: 'root'
 })
 export class EventsService extends EventsServiceBase {
-
-
   headerDict = {
     'tokenBearer': localStorage.getItem("tokenBearer")
   }
@@ -21,6 +18,14 @@ export class EventsService extends EventsServiceBase {
   requestOptions = {
     headers: new HttpHeaders(this.headerDict),
   };
+
+  GetFightHistory(eventId: string): Observable<any> {
+    return this.httpClient.get(apiUrl + "/GetFightHistory/" + eventId + "/" + localStorage.getItem("userId"), this.requestOptions);
+  }
+
+  GetFightHistoryPlotting(eventId: string): Observable<any> {
+    return this.httpClient.get(apiUrl + "/GetFightHistoryForPlotting/" + eventId + "/" + localStorage.getItem("userId"), this.requestOptions);
+  }
 
   GetEventById(eventId: number): Observable<any> {
     return this.httpClient.get(apiUrl + "/GetEventById/" + localStorage.getItem("companyId") + "/" + eventId, this.requestOptions);
@@ -42,9 +47,9 @@ export class EventsService extends EventsServiceBase {
     return this.httpClient.get(apiUrl + "/GetEvent/" + localStorage.getItem("userId") + "/" + localStorage.getItem("platformUserId") + "/" + localStorage.getItem("IsOffline"), this.requestOptions);
   }
 
-  GetBettingReportByFightNo(eventId: number, fightno: number): Observable<any> {
-    return this.httpClient.get(apiUrl + "/GetBettingReportByFightNo/" + eventId + "/" + localStorage.getItem("userId") + "/" + fightno, this.requestOptions);
-  }
+  // GetBettingReportByFightNo(eventId: number, fightno: number): Observable<any> {
+  //   return this.httpClient.get(apiUrl + "/GetBettingReportByFightNo/" + eventId + "/" + localStorage.getItem("userId") + "/" + fightno, this.requestOptions);
+  // }
 
   FightOfflineSave(params: any): Observable<any> {
     return this.httpClient.post(apiUrl + "/OfflineFightSave", params, this.requestOptions);

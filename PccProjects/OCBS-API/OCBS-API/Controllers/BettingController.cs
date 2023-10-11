@@ -183,6 +183,23 @@ namespace OCBS_API.Controllers
 
 
         }
+        [HttpGet("[action]/{id}/{userid}/{fightno}")]
+        public async Task<IActionResult> GetHighBettingByFightNo([FromRoute(Name = "id")] string eventId, [FromRoute(Name = "userid")] Int64 userid, [FromRoute(Name = "fightno")] string fightno)
+        {
+            try
+            {
+                string token = "";
+                if (!String.IsNullOrEmpty(Request.Headers["tokenBearer"])) token = Request.Headers["tokenBearer"];
+                return Ok(this.Content(JsonConvert.SerializeObject(await _betting.GetHighBettingByFightNo(fightno, eventId, userid)), "application/json"));
+            }
+            catch (Exception ex)
+            {
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomError(ex.Message).Message);
+            }
+
+
+        }
 
         [HttpGet("[action]/{id}/{userid}")]
         public async Task<IActionResult> GetUnclaimedTicket([FromRoute(Name = "id")] string eventId, [FromRoute(Name = "userid")] Int64 userid)
@@ -226,6 +243,23 @@ namespace OCBS_API.Controllers
                 string token = "";
                 if (!String.IsNullOrEmpty(Request.Headers["tokenBearer"])) token = Request.Headers["tokenBearer"];
                 return Ok(this.Content(JsonConvert.SerializeObject(await _betting.GetBettingHistoryByEvent(eventId, userid)), "application/json"));
+            }
+            catch (Exception ex)
+            {
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomError(ex.Message).Message);
+            }
+
+
+        }
+        [HttpGet("[action]/{id}/{userid}")]
+        public async Task<IActionResult> GetLastClaims([FromRoute(Name = "id")] string eventId, [FromRoute(Name = "userid")] Int64 userid)
+        {
+            try
+            {
+                string token = "";
+                if (!String.IsNullOrEmpty(Request.Headers["tokenBearer"])) token = Request.Headers["tokenBearer"];
+                return Ok(this.Content(JsonConvert.SerializeObject(await _betting.GetLastClaims(eventId, userid)), "application/json"));
             }
             catch (Exception ex)
             {

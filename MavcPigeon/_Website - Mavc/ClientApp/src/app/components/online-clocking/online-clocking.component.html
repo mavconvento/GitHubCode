@@ -1,0 +1,58 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <div *ngIf="isPha">
+      <spa style="color:red"><b>Not Available in Pha Mc Arthur National Race</b></spa>
+    </div>
+    <div class="flex-container mat-divider-bottom-space rounded-lg shawdow" style="text-align:center; padding-left:20px"
+      fxLayout="column" fxLayoutGap="2px" *ngIf="!isPha">
+      <br />
+      <p style="text-align:center; font-weight:bold">Online Clocking</p>
+      <br />
+      <span *ngIf="noLinkMobileMessage" style="color: red; text-align:left">No mobile number is link to your account.
+        <br /> Go to profile to link mobile number.</span>
+      <br />
+      <zxing-scanner></zxing-scanner>
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput readonly placeholder="Mobile Number (Primary Number)"
+          formControlName="MobileNumber">
+      </mat-form-field>
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput readonly placeholder="Total Load" formControlName="TotalLoad">
+      </mat-form-field>
+      <mat-form-field style="width:280px;">
+        <input type="text" matInput formControlName="ClubName" [matAutocomplete]="autowos" placeholder="Club Name"
+          (input)="seachClub($event.target.value)">
+        <mat-autocomplete #autowos="matAutocomplete">
+          <mat-option *ngFor="let item of clubList" [value]="item.clubabbreviation">
+            {{item.clubabbreviation}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <div class="flex-container" style="text-align:center;" fxlex="100%" fxLayout="row" fxLayoutGap="20px">
+        <div class="flex-container" style="text-align:left;">
+          <mat-form-field style="width:200px; padding-right:20px;">
+            <input type="text" matInput placeholder="Sticker Only" formControlName="Message">
+          </mat-form-field>
+          <button [disabled]="noLinkMobileMessage" class="mat-raised-button mat-primary"
+            style="width:80px; text-align:center" (click)="onlineClocking('sticker')">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            SEND
+          </button>
+        </div>
+      </div>
+      <div class="flex-container" style="text-align:center;" fxlex="100%" fxLayout="row" fxLayoutGap="20px">
+        <button [disabled]="noLinkMobileMessage" class="mat-raised-button mat-primary"
+          style="width:130px; text-align:center" (click)="onlineClocking('forecast')">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          FORECAST
+        </button>
+        <button [disabled]="noLinkMobileMessage" class="mat-raised-button mat-primary"
+          style="width:130px; text-align:center" (click)="onlineClocking('cutoff')">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          CUT-OFF
+        </button>
+      </div>
+      <br />
+    </div>
+  </div>
+</form>

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject, Input, OnInit } from '@angular/core';   
+import { AfterViewInit, Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ConfirmDialogService } from 'src/app/services/ConfirmDialogService';
 
@@ -10,13 +10,13 @@ import { ConfirmDialogService } from 'src/app/services/ConfirmDialogService';
 export class ConfirmDialogComponent implements OnInit, AfterViewInit {
   title: string;
   message: string;
-  data:any;
+  data: any;
   constructor(
     private dialogRef: MatDialogRef<ConfirmDialogComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
 
     this.data = data;
-   
+
   }
 
   ngOnInit() {
@@ -25,10 +25,9 @@ export class ConfirmDialogComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-   
   }
 
-  close(confirm:boolean) {
+  close(confirm: boolean) {
     this.dialogRef.close(confirm);
   }
 
