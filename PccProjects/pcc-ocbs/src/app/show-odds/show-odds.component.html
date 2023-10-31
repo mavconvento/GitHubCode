@@ -5,48 +5,17 @@
         <table>
           <tr>
             <td>
-              <div style="vertical-align: top;">
-                <table>
-                  <tr>
-                    <td>
-                      <div #content style="overflow-y: scroll; height:850px;">
-                        <span style="font-size: 60px;">FIGHTS</span>
-                        <table class="result" style="margin-right: 10px;">
-                          <tbody>
-                            <tr *ngFor="let el of fightCollection">
-                              <td style="font-size: 42px;">
-                                {{el.FightNo}}
-                              </td>
-                              <td>
-                                <div class="bcgred bc" *ngIf="el.Declare=='MERON'">{{el.Declare}}</div>
-                                <div class="bcgblue bc" *ngIf="el.Declare=='WALA'">{{el.Declare}}</div>
-                                <div class="bcggreen bc" *ngIf="el.Declare=='DRAW'">{{el.Declare}}</div>
-                                <div class="bcggray bc" *ngIf="el.Declare=='CANCEL'">{{el.Declare}}</div>
-                              </td>
-                              <td>
-                                <div class="wbcgred bc" *ngIf="el.Remarks=='DEHADO'">{{el.Remarks}}</div>
-                                <div class="wbcgblue bc" *ngIf="el.Remarks=='LLAMADO'">{{el.Remarks}}</div>
-                                <div class="wbcggreen bc" *ngIf="el.Remarks=='DRAW'">{{el.Remarks}}</div>
-                                <div class="wbcggray bc" *ngIf="el.Remarks=='CANCEL'">{{el.Remarks}}</div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-              </div>
-            </td>
-            <td>
               <table>
                 <tr style="height: 40px;">
-                  <td colspan="3">
-                    <span style="color:red; font-weight: bold; font-size: 95px;">Fight #: {{fightno}}</span><br />
+                  <td style="text-align: right !important;">
+                    <span style="color:red; font-weight: bold; font-size: 85px">Fight #:
+                      {{fightno}}</span>
+                  </td>
+                  <td colspan="2">
                     <span *ngIf="this.winnerlabel == ''"
-                      style="color:black; font-weight: bold; font-size: 75px !important; margin-bottom: 10px;">{{buttonclosedlabel}}</span><br />
+                      style="color:black; font-weight: bold; font-size: 85px !important; margin-bottom: 10px;">{{buttonclosedlabel}}</span>
                     <span *ngIf="this.winnerlabel != ''"
-                      style="color:rgb(28, 13, 113); font-size: 75px;">{{winnerlabel}}</span><br />
+                      style="color:rgb(28, 13, 113); font-size: 85px;">{{winnerlabel}}</span><br />
                   </td>
                 </tr>
                 <tr class="oddsheader odds">
@@ -55,263 +24,239 @@
                   <td style="background-color: rgb(32, 9, 134);">WALA</td>
                 </tr>
                 <tr class="odds">
-                  <td>{{merontotal | number}}</td>
-                  <td style="padding: 10px;">TOTAL</td>
-                  <td>{{walatotal | number}}</td>
+                  <td style="background-color: black; color: white;">{{merontotal | number}}</td>
+                  <td style="padding: 5px; background-color: black; color: white;">TOTAL</td>
+                  <td style="background-color: black; color: white;">{{walatotal | number}}</td>
                 </tr>
                 <tr class="odds">
-                  <td>{{meronodd | number}}</td>
-                  <td>ODDS</td>
-                  <td>{{walaodd | number}}</td>
+                  <td style="background-color: black; color: white;">{{meronodd | number}}</td>
+                  <td style="padding: 5px; background-color: black; color: white;">ODDS</td>
+                  <td style="background-color: black; color: white;">{{walaodd | number}}</td>
                 </tr>
                 <tr>
                   <td colspan="3">
-                    <div style="width:100%;">
-                      <table class="plot" style="margin-top:5px">
-                        <tbody>
-                          <tr class="circle" *ngFor="let el of fightCollectionPlot">
-                            <td>
-                              <div class="circlered" *ngIf="el.Col0=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col0=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col0=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col0=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col1=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col1=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col1=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col1=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col2=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col2=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col2=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col2=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col3=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col3=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col3=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col3=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col4=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col4=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col4=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col4=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col5=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col5=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col5=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col5=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col6=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col6=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col6=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col6=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col7=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col7=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col7=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col7=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col8=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col8=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col8=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col8=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col9=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col9=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col9=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col9=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col10=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col10=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col10=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col10=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col11=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col11=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col11=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col11=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col12=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col12=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col12=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col12=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col13=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col13=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col13=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col13=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col14=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col14=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col14=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col14=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col15=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col15=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col15=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col15=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col16=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col16=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col16=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col16=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col17=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col17=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col17=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col17=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col18=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col18=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col18=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col18=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col19=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col19=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col19=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col19=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col20=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col20=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col20=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col20=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col21=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col21=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col21=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col21=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col22=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col22=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col22=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col22=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col23=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col23=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col23=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col23=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col24=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col24=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col24=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col24=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col25=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col25=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col25=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col25=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col26=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col26=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col26=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col26=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col27=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col27=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col27=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col27=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col28=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col28=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col28=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col28=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col29=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col29=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col29=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col29=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col30=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col30=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col30=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col30=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col31=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col31=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col31=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col31=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col32=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col32=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col32=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col32=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col33=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col33=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col33=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col33=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col34=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col34=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col34=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col34=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col35=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col35=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col35=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col35=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col36=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col36=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col36=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col36=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col37=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col37=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col37=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col37=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col38=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col38=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col38=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col38=='CANCEL'"></div>
-                            </td>
-                            <td>
-                              <div class="circlered" *ngIf="el.Col39=='MERON'"></div>
-                              <div class="circleblue" *ngIf="el.Col39=='WALA'"></div>
-                              <div class="circlegreen" *ngIf="el.Col39=='DRAW'"></div>
-                              <div class="circlegray" *ngIf="el.Col39=='CANCEL'"></div>
-                            </td>
-                          </tr>
-                        </tbody>
+                    <div style="vertical-align: top;">
+                      <table>
+                        <tr>
+                          <td>
+                            <div #content style="overflow-y: scroll; height:350px;">
+                              <!-- <span style="font-size: 60px;">FIGHTS</span> -->
+                              <table class="result" style="margin-right: 10px;">
+                                <tbody>
+                                  <tr *ngFor="let el of fightCollection">
+                                    <td style="font-size: 50px;">
+                                      {{el.FightNo}}
+                                    </td>
+                                    <td>
+                                      <div class="bcgred bc" *ngIf="el.Declare=='MERON'">{{el.Declare}}
+                                        <span class="wbcgred bc" *ngIf="el.Remarks=='L'">({{el.Remarks}})</span>
+                                        <span class="wbcgblue bc" *ngIf="el.Remarks=='D'">({{el.Remarks}})</span>
+                                      </div>
+                                      <div class="bcgblue bc" *ngIf="el.Declare=='WALA'">{{el.Declare}}
+                                        <span style="padding-left: 20px;"></span><span style="padding-left: 40px;"
+                                          class="wbcgred bc" *ngIf="el.Remarks=='L'">({{el.Remarks}})</span>
+                                        <span style="padding-left: 20px;"></span><span class="wbcgblue bc"
+                                          *ngIf="el.Remarks=='D'">({{el.Remarks}})</span>
+                                      </div>
+                                      <div class="bcggreen bc" *ngIf="el.Declare=='DRAW'">{{el.Declare}}</div>
+                                      <div class="bcggray bc" *ngIf="el.Declare=='CANCEL'">{{el.Declare}}</div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                          <td>
+                            <div style="width:100%; padding-bottom: 50px;">
+                              <table class="plot" style="margin-top:5px">
+                                <tbody>
+                                  <tr class="circle" *ngFor="let el of fightCollectionPlot">
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col0=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col0=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col0=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col0=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col1=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col1=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col1=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col1=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col2=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col2=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col2=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col2=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col3=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col3=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col3=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col3=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col4=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col4=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col4=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col4=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col5=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col5=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col5=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col5=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col6=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col6=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col6=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col6=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col7=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col7=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col7=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col7=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col8=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col8=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col8=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col8=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col9=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col9=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col9=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col9=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col10=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col10=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col10=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col10=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col11=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col11=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col11=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col11=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col12=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col12=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col12=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col12=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col13=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col13=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col13=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col13=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col14=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col14=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col14=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col14=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col15=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col15=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col15=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col15=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col16=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col16=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col16=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col16=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col17=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col17=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col17=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col17=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col18=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col18=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col18=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col18=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col19=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col19=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col19=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col19=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col20=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col20=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col20=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col20=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col21=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col21=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col21=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col21=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col22=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col22=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col22=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col22=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col23=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col23=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col23=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col23=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col24=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col24=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col24=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col24=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col25=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col25=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col25=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col25=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col26=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col26=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col26=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col26=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col27=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col27=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col27=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col27=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col28=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col28=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col28=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col28=='CANCEL'"></div>
+                                    </td>
+                                    <td>
+                                      <div class="circlered" *ngIf="el.Col29=='MERON'"></div>
+                                      <div class="circleblue" *ngIf="el.Col29=='WALA'"></div>
+                                      <div class="circlegreen" *ngIf="el.Col29=='DRAW'"></div>
+                                      <div class="circlegray" *ngIf="el.Col29=='CANCEL'"></div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
                       </table>
                     </div>
                   </td>
@@ -320,10 +265,6 @@
             </td>
           </tr>
         </table>
-      </div>
-      <div style="text-align: center; margin-left: 80px;">
-        <button (click)="back()"
-          style="background-color: rgb(32, 9, 134); margin-top: 10px; height: 35px !important;">BACK</button>
       </div>
     </div>
   </div>

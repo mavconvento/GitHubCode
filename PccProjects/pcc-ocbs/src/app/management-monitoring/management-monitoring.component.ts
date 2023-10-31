@@ -29,7 +29,7 @@ export class ManagementMonitoringComponent implements OnInit, OnDestroy {
     private event: EventsService,
     private router: Router
   ) {
-    this.mySub = interval(8000).subscribe((func => {
+    this.mySub = interval(20000).subscribe((func => {
       this.closed()
     }))
   }

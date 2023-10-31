@@ -16,4 +16,3 @@ C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Deb
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.csproj.CoreCompileInputs.cache
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.pdb
-C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\MavcPigeon\DomainObject\obj\Debug\netcoreapp3.1\DomainObject.csproj.AssemblyReference.cache

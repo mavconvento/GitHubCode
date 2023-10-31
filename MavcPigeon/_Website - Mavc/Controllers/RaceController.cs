@@ -42,6 +42,48 @@ namespace _Website.Controllers
         }
 
         [HttpPost("[action]")]
+        public async Task<IActionResult> TopigeonTrainingSave([FromBody] TopigeonTraining value)
+        {
+            try
+            {
+                return Ok(this.Content(JsonConvert.SerializeObject(await _race.TopigeonTrainingSave(value)), "application/json"));
+            }
+            catch (Exception ex)
+            {
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomMesageError(ex.Message).Message);
+            }
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetTopigeonTraining([FromBody] TopigeonTraining value)
+        {
+            try
+            {
+                return Ok(this.Content(JsonConvert.SerializeObject(await _race.GetTopigeonTraining(value)), "application/json"));
+            }
+            catch (Exception ex)
+            {
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomMesageError(ex.Message).Message);
+            }
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> GetTrainingResult([FromBody] TopigeonTraining value)
+        {
+            try
+            {
+                return Ok(this.Content(JsonConvert.SerializeObject(await _race.GetTrainingResult(value)), "application/json"));
+            }
+            catch (Exception ex)
+            {
+                //ExceptionLog exception = await _exceptionService.UpsertException(ex, "GetUserRoles", "","");
+                return StatusCode((int)HttpStatusCode.InternalServerError, new CustomMesageError(ex.Message).Message);
+            }
+        }
+
+        [HttpPost("[action]")]
         public async Task<IActionResult> GetLocation([FromBody] RaceFilter raceFilter)
         {
             try

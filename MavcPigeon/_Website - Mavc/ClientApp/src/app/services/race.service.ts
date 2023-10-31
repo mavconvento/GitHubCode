@@ -5,8 +5,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 
 @Injectable({ providedIn: 'root' })
-export class RaceService
-{
+export class RaceService {
   private _baseUrl: string;
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this._baseUrl = baseUrl;
@@ -16,6 +15,12 @@ export class RaceService
     let getURL = this._baseUrl + 'api/race/getRaceResult';
     return this.http.post<any>(getURL, formData);
   }
+
+  getLocation(formData: FormData): Observable<any> {
+    let getURL = this._baseUrl + 'api/race/getLocation';
+    return this.http.post<any>(getURL, formData);
+  }
+
 
   getRaceDetails(formData: FormData): Observable<any> {
     let getURL = this._baseUrl + 'api/race/getRaceDetails';
@@ -44,8 +49,22 @@ export class RaceService
     return this.http.post<any>(getURL, formData);
   }
 
- qrCodeClocking(qrcode: string): Observable<any> {
+  qrCodeClocking(qrcode: string): Observable<any> {
     return this.http.get(this._baseUrl + 'api/race/qrCodeClocking?qrcode=' + qrcode);
   }
 
+  topigeonTrainingSave(formData: FormData): Observable<any> {
+    let getURL = this._baseUrl + 'api/race/TopigeonTrainingSave';
+    return this.http.post<any>(getURL, formData);
+  }
+
+  getTopigeonTraining(formData: FormData): Observable<any> {
+    let getURL = this._baseUrl + 'api/race/GetTopigeonTraining';
+    return this.http.post<any>(getURL, formData);
+  }
+
+  getTrainingResult(formData: FormData): Observable<any> {
+    let getURL = this._baseUrl + 'api/race/GetTrainingResult';
+    return this.http.post<any>(getURL, formData);
+  }
 }

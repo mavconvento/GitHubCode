@@ -37,5 +37,19 @@ namespace BusinessLayer
                 throw ex;
             }
         }
+
+        public DataSet EclockTrainingSave(DomainObjects.Training result)
+        {
+            try
+            {
+                DataLayer.ResultDal dal = new DataLayer.ResultDal();
+                return dal.EclockTrainingSave(result);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
     }
 }

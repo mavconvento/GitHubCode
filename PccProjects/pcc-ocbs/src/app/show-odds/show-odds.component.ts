@@ -98,7 +98,7 @@ export class ShowOddsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   SetFightStatus() {
     var fightStatus = localStorage.getItem("fightStatus");
-    if (fightStatus != 'DONE') this.buttonclosedlabel = "BETTING IS " + fightStatus;
+    if (fightStatus != 'DONE') this.buttonclosedlabel = fightStatus;
   }
 
   ngOnDestroy(): void {

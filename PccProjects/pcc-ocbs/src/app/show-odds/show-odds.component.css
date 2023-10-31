@@ -16,8 +16,8 @@
     border: 3px solid black;
     margin: 1px;
     padding: 1px;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
 }
 
 .result td {
@@ -66,12 +66,17 @@ table {
 }
 
 .oddsheader td {
-    width: 600px !important;
+    width: 750px !important;
     color: white;
 }
 
 .odds {
     font-size: 110px;
+
+}
+
+.odds td {
+    border-color: white !important;
 }
 
 .circlered {
@@ -92,21 +97,21 @@ table {
 }
 
 .circle td div {
-    width: 35px;
-    height: 35px;
-    -moz-border-radius: 35px;
-    -webkit-border-radius: 35px;
-    border-radius: 35px;
+    width: 44px;
+    height: 40px;
+    -moz-border-radius: 43px;
+    -webkit-border-radius: 43px;
     color: white;
     text-align: center;
-    font-size: 28px;
+    font-size: 35px;
     vertical-align: auto;
 }
 
 .bc {
     color: white;
-    font-size: 43px;
+    font-size: 60px;
     padding: 5px;
+    width: 350px;
 }
 
 .bcggreen {

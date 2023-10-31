@@ -373,7 +373,7 @@ namespace DataLayer
             }
         }
 
-        public DataSet EclockReturnBirdSave(string clubid, string clockId, DateTime backdate, string ering, string action, bool saveRecord)
+        public DataSet EclockReturnBirdSave(string clubid, string clockId, DateTime backdate, string ering, string action, bool saveRecord, string remarks)
         {
             try
             {
@@ -389,6 +389,7 @@ namespace DataLayer
                 dbconn.sqlComm.Parameters.AddWithValue("@E_ring", ering);
                 dbconn.sqlComm.Parameters.AddWithValue("@BackDate", backdate);
                 dbconn.sqlComm.Parameters.AddWithValue("@Action", action);
+                dbconn.sqlComm.Parameters.AddWithValue("@Remarks", remarks);
                 dbconn.sqlComm.Parameters.AddWithValue("@SaveRecord", saveRecord);
 
                 SqlDataAdapter da = new SqlDataAdapter();

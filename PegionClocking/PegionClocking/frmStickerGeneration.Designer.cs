@@ -238,6 +238,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmStickerGeneration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Sticker / Card Generation";
             this.Load += new System.EventHandler(this.frmStickerGeneration_Load);
             this.ResumeLayout(false);

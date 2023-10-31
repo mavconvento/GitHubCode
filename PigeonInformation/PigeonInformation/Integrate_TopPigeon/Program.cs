@@ -36,33 +36,40 @@ namespace Integrate_TopPigeon
                     }
                 }
 
-                
+
                 DataSet racecodeCollection = new DataSet();
                 EclockEntryBLL eclockEntryBLL = new EclockEntryBLL();
                 TopPigeonSyncDataBLL topPigeonSyncDataBLL = new TopPigeonSyncDataBLL();
 
+                DataTable dtresult = new DataTable();
                 racecodeCollection = eclockEntryBLL.GetTopPigeonRaceCode();
+
+                if (action == "training") dtresult = racecodeCollection.Tables[0];
+                else dtresult = racecodeCollection.Tables[1];
 
                 Console.WriteLine("Start Time :" + DateTime.Now.ToString());
                 if (racecodeCollection.Tables.Count > 0)
                 {
-                    if (racecodeCollection.Tables[0].Rows.Count > 0)
+                    if (dtresult.Rows.Count > 0)
                     {
-                        foreach (DataRow item in racecodeCollection.Tables[0].Rows)
+                        foreach (DataRow item in dtresult.Rows)
                         {
                             Console.WriteLine("Processing Top Pigeon result for " + item["Clubname"].ToString());
 
                             string racecode = "";
+                            string releasedate = ""; //DateTime.Now.Year.ToString();
                             if (action == "training")
                             {
-                                racecode = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString().PadLeft(2) + DateTime.Now.Day.ToString().PadLeft(2,'0');
+                                racecode = DateTime.Now.Year.ToString() + DateTime.Now.Month.ToString().PadLeft(2) + DateTime.Now.Day.ToString().PadLeft(2, '0');
+                                releasedate = DateTime.Now.Year.ToString();
                             }
                             else
                             {
                                 racecode = item["RaceCode"].ToString();
+                                releasedate = Convert.ToDateTime(item["ReleaseDate"]).Year.ToString();
                             }
 
-                            TopPigeonAPIResponce result = await GetTopPigeonWebResult(racecode, Convert.ToDateTime(item["ReleaseDate"]).Year.ToString(), item["ClubId"].ToString(), action);
+                            TopPigeonAPIResponce result = await GetTopPigeonWebResult(racecode, releasedate, item["ClubId"].ToString(), action);
 
                             if (result.Data != null)
                             {
@@ -72,7 +79,7 @@ namespace Integrate_TopPigeon
                                 {
 
                                     DataSet dataSet = new DataSet();
-                                    dataSet = topPigeonSyncDataBLL.EclockReturnBirdSave(item["Clubname"].ToString(), iresult.deviceno, Convert.ToDateTime(iresult.backtime), iresult.ringno.Substring(0, iresult.ringno.Length - 2),action, false);
+                                    dataSet = topPigeonSyncDataBLL.EclockReturnBirdSave(item["Clubname"].ToString(), iresult.deviceno, Convert.ToDateTime(iresult.backtime), iresult.ringno.Substring(0, iresult.ringno.Length - 2), action, false,"");
                                     count++;
                                     Console.WriteLine("Record No. :" + count);
                                     if (dataSet.Tables.Count > 0)
@@ -81,8 +88,14 @@ namespace Integrate_TopPigeon
                                         {
                                             if (dataSet.Tables[0].Rows[0]["Remarks"].ToString() == "New Record")
                                             {
-                                                ProcessResult(iresult, item["ClubName"].ToString());
-                                                topPigeonSyncDataBLL.EclockReturnBirdSave(item["Clubname"].ToString(), iresult.deviceno, Convert.ToDateTime(iresult.backtime), iresult.ringno.Substring(0, iresult.ringno.Length - 2), action, true);
+                                                string daterelease = DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString().PadLeft(2) + "-" + DateTime.Now.Day.ToString().PadLeft(2, '0');
+                                                string status = "";
+                                                if (action == "training")
+                                                    status = ProcessTraining(iresult, daterelease);
+                                                else
+                                                    status = ProcessResult(iresult, item["ClubName"].ToString());
+
+                                                topPigeonSyncDataBLL.EclockReturnBirdSave(item["Clubname"].ToString(), iresult.deviceno, Convert.ToDateTime(iresult.backtime), iresult.ringno.Substring(0, iresult.ringno.Length - 2), action, true, status);
                                             }
                                             else
                                             {
@@ -99,7 +112,8 @@ namespace Integrate_TopPigeon
                                 }
                             }
 
-                            eclockEntryBLL.TopPigeonRaceCodeSave(new TopPigeonRaceCode() { RaceCode = item["RaceCode"].ToString(), Action = "UpdateBacktime", ClubID = item["ClubId"].ToString(), LastBackTime = DateTime.Now, ReleaseDate = Convert.ToDateTime(item["ReleaseDate"]) });
+                            if (action != "training")
+                                eclockEntryBLL.TopPigeonRaceCodeSave(new TopPigeonRaceCode() { RaceCode = item["RaceCode"].ToString(), Action = "UpdateBacktime", ClubID = item["ClubId"].ToString(), LastBackTime = DateTime.Now, ReleaseDate = Convert.ToDateTime(item["ReleaseDate"]) });
                         }
                     }
                 }
@@ -119,14 +133,57 @@ namespace Integrate_TopPigeon
 
         }
 
-        private static void ProcessResult(ApiResponse result, string clubname)
+        private static string ProcessTraining(ApiResponse result, string releasedate)
+        {
+            try
+            {
+                ResultBLL resultBLL = new ResultBLL();
+
+                DomainObjects.Training dObject = new DomainObjects.Training
+                {
+                    EClockId = result.deviceno,
+                    BackTime = result.backtime.ToString().Substring(0, 19),
+                    RingNo = result.pring_no,
+                    ReleaseDate = releasedate
+                };
+
+                DataSet dtResult = new DataSet();
+                dtResult = resultBLL.EclockTrainingSave(dObject);
+
+                if (dtResult.Tables.Count > 0)
+                {
+                    if (dtResult.Tables[0].Rows.Count > 0)
+                    {
+                        String Remarks = dtResult.Tables[0].Rows[0]["Remarks"].ToString();
+
+                        Console.WriteLine("----------------");
+                        Console.WriteLine("ClockID: " + result.deviceno);
+                        Console.WriteLine("Ring No: " + result.pring_no);
+                        Console.WriteLine("BackTime: " + result.backtime.ToString().Substring(0, 19));
+                        Console.WriteLine(Remarks);
+                        Console.WriteLine("----------------");
+
+                        return Remarks.ToUpper();
+                    }
+                }
+
+                return "";
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private static string ProcessResult(ApiResponse result, string clubname)
         {
             try
             {
                 ResultBLL resultBLL = new ResultBLL();
 
                 //sample ECLOCK 0001 15204188 19/07/05 07:48:18
-                String ResultStringFormat = "ECLOCK " + result.deviceno + " " + result.ringno.Substring(0, result.ringno.Length-2) + " " +  result.backtime.ToString().Substring(2, 17);
+                String ResultStringFormat = "ECLOCK " + result.deviceno + " " + result.ringno.Substring(0, result.ringno.Length - 2) + " " + result.backtime.ToString().Substring(2, 17);
                 DomainObjects.Result dObject = new DomainObjects.Result
                 {
                     ClubName = clubname,
@@ -158,8 +215,12 @@ namespace Integrate_TopPigeon
                             }
                         }
                         Console.WriteLine("----------------");
+
+                        return Remarks.ToUpper();
                     }
                 }
+
+                return "";
             }
             catch (Exception ex)
             {
@@ -182,10 +243,10 @@ namespace Integrate_TopPigeon
                     url = @"https://www.topigeon.com/api/?act=get_train&traindate=" + racecode + "&raceyear=" + year + "&uname=" + configCol[1] + "&ukey=" + configCol[0] + "&clubno=" + clubid;
 
                 }
-                else 
+                else
                     url = @"https://www.topigeon.com/api/?act=get_race&raceno=" + racecode + "&raceyear=" + year + "&uname=" + configCol[1] + "&ukey=" + configCol[0] + "&clubno=" + clubid;
-                
-                
+
+
                 using (var client = new HttpClient())
                 {
                     var response = await client.GetAsync(url);

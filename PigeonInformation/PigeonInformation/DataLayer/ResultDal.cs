@@ -52,6 +52,35 @@ namespace DataLayer
             }
         }
 
+        public DataSet EclockTrainingSave(DomainObjects.Training result)
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("TrainingResultSave");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.Parameters.AddWithValue("@EClockId", result.EClockId);
+                dbconn.sqlComm.Parameters.AddWithValue("@RingNo", result.RingNo);
+                dbconn.sqlComm.Parameters.AddWithValue("@BackTime", result.BackTime.Replace("/","-"));
+                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", result.ReleaseDate);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+                return dataResult;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public DataTable GetResultListByDate(DateTime liberDate)
         {
             try

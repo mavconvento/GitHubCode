@@ -10,6 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Club } from '../../models/clubname';
+import { Location } from '../../models/location';
 import { Entry } from '../../models/entry';
 import { Result } from '../../models/result';
 import { AlertService } from '../../services/alert.service';
@@ -18,6 +19,7 @@ import { RaceService } from '../../services/race.service';
 import { HostListener } from "@angular/core";
 import { Helpers } from '../../helpers/helpers';
 import { UserService } from '../../services/user.service';
+import { TrainingResult } from 'src/app/models/trainingresult';
 //import { conditionallyCreateMapObjectLiteral } from '@angular/compiler/src/render3/view/util';
 
 @Component({
@@ -30,18 +32,22 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
   clubList: Array<Club>;
   clubListOriginal: Array<Club>;
   raceDetails: any;
-  raceResultCollection: Result[];
+  raceResultCollection: TrainingResult[];
+  //raceTrainingCollection: TrainingResult[];
+  raceLocationCollection: Location[];
   raceEntryCollection: Entry[];
   categoryCollection: any;
   groupCollection: any;
   previousClub: string = "";
-  loading: boolean = false; 
+  loading: boolean = false;
   isMobile: boolean = false;
   isMobileDetails: boolean = false;
   isMobileSummary: boolean = true;
   scrHeight: any;
   scrWidth: any;
 
+  //checkbox label
+  isSubscribedToEmailsMessage: string = "Custom Release Point"
 
   //race details
   LocationName: string;
@@ -58,9 +64,9 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
 
   //race result data source
   dataSource: MatTableDataSource<Result>;
-  displayedColumns: string[] = ["Rank", "MemberName", "Location", "TotalEntry", "RingNumber" , "Distance", "Arrival", "Flight", "Speed", "Remarks"];
+  displayedColumns: string[] = ["Rank", "RingNumber", "Distance", "Backtime", "Flight", "Speed"];
   displayedColumnsMobile: string[] = ["Rank", "Details"];
-  displayedColumnsMobileSummary: string[] = ["RankMobile", "MemberDetails", "LocationMobile", "RingNumberMobile","SpeedMobile","SourceMobile"];
+  displayedColumnsMobileSummary: string[] = ["RankMobile", "RingNumberMobile", "BacktimeMobile", "SpeedMobile"];
 
 
   //@ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
@@ -109,7 +115,7 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
     this.scrWidth = window.innerWidth;
 
     if (this.scrWidth < 1008) {
-     this.isMobile = true;
+      this.isMobile = true;
     }
     else {
       this.isMobile = false;
@@ -120,40 +126,76 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
     this.dataSource_entry.paginator = this.paginator_entry;
   }
-
 
   ngOnInit() {
     this.form = this.fb.group({
       ClubID: ['', Validators.required],
+      EclockId: ['', Validators.required],
       LiberationDate: ['', Validators.required],
+      Liberation: ['', Validators.required],
       DateRelease: ['', Validators.required],
       FilterName: [''],
-      ClubFullName: ['', Validators.required],
-      ClubName: ['', Validators.required],
+      ClubFullName: [''],
+      ClubName: [''],
       Category: [''],
       Group: [''],
       MobileNumber: ['', Validators.required],
-      DbName: ['', Validators.required],
       UserID: ['', Validators.required],
       mobileView: ["2", Validators.required],
+      ReleaseTime: ['', Validators.required],
+      CustomTraining: [false, Validators.required],
+      LatDeg: [''],
+      LatMin: [''],
+      LatSec: [''],
+      LatSign: [''],
+      LongDeg: [''],
+      LongMin: [''],
+      LongSec: [''],
+      LongSign: ['']
     });
-
 
     this.GetMobileList();
 
-    //if (!localStorage.getItem("clubs")) {
-    //  this.GetMobileList();
-    //}
-    //else
-    //  this.SetClubCollection();
-
     this.form.controls["LiberationDate"].setValue(new Date())
+    this.form.get("Liberation").valueChanges.subscribe(x => this.getLocation(x));
+    this.form.get("LiberationDate").valueChanges.subscribe(x => this.GetTopigeonTraining());
 
     if (localStorage.getItem('selectedClub')) {
       this.form.controls["ClubFullName"].setValue(localStorage.getItem('selectedClub'))
+    }
+
+    this.GetTopigeonTraining();
+  }
+
+  getLocation(event) {
+
+    this.form.controls["LatDeg"].setValue("");
+    this.form.controls["LatMin"].setValue("");
+    this.form.controls["LatSec"].setValue("");
+    this.form.controls["LatSign"].setValue("");
+    this.form.controls["LongDeg"].setValue("");
+    this.form.controls["LongMin"].setValue("");
+    this.form.controls["LongSec"].setValue("");
+    this.form.controls["LongSign"].setValue("");
+
+    if (event != "") {
+      if (this.raceLocationCollection != null) {
+        var loc = this.raceLocationCollection.filter(x => x.LocationName == event);
+
+        if (loc.length > 0) {
+          var coor = loc[0].Coordinates.split(" ", 20)
+          this.form.controls["LatDeg"].setValue(coor[0]);
+          this.form.controls["LatMin"].setValue(coor[1]);
+          this.form.controls["LatSec"].setValue(coor[2]);
+          this.form.controls["LatSign"].setValue(coor[3]);
+          this.form.controls["LongDeg"].setValue(coor[5]);
+          this.form.controls["LongMin"].setValue(coor[6]);
+          this.form.controls["LongSec"].setValue(coor[7]);
+          this.form.controls["LongSign"].setValue(coor[8]);
+        }
+      }
     }
   }
 
@@ -167,7 +209,7 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
       this.isMobileDetails = false;
       this.isMobileSummary = true;
     }
-     
+
 
     //console.log(option.value);
   }
@@ -207,42 +249,32 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
   }
 
   ViewResult() {
-    var clubIndex = this.clubList.filter(x => x.name == this.form.controls["ClubFullName"].value)
-    this.form.controls["DbName"].setValue(clubIndex[0].dbName);
-    this.form.controls["ClubName"].setValue(clubIndex[0].clubabbreviation);
+    this.GetTopigeonTraining();
+  }
 
+  SaveTraining() {
+
+    this.loading = true;
+
+    if (this.form.controls["ClubFullName"].value != "") {
+      var clubIndex = this.clubList.filter(x => x.name == this.form.controls["ClubFullName"].value)
+      this.form.controls["ClubName"].setValue(clubIndex[0].clubabbreviation);
+
+      if (this.previousClub != clubIndex[0].clubabbreviation) {
+        this.previousClub = clubIndex[0].clubabbreviation;
+      }
+    }
     var release = new Date();
     release = this.form.controls["LiberationDate"].value;
     let formatRelease = release.getFullYear().toString() + "-" + (release.getMonth() + 1).toString() + "-" + release.getDate().toString()
     this.form.controls["DateRelease"].setValue(formatRelease);
 
-    this.loading = true;
-    if (this.previousClub != clubIndex[0].clubabbreviation) {
-      this.GetCategory(clubIndex[0].dbName, clubIndex[0].clubabbreviation);
-      this.GetGRoup(clubIndex[0].dbName, clubIndex[0].clubabbreviation);
-      this.previousClub = clubIndex[0].clubabbreviation;
-    }
-
-    this.GetRaceDetails();
-    this.GetResult();
+    //this.GetRaceDetails();
+    this.TopigeonTrainingSave();
 
     //set last select club
     localStorage.setItem('selectedClub', this.form.controls["ClubFullName"].value);
   }
-
-  //GetRaceEntry() {
-  //  let user = this.authenticationService.currentUserValue;
-  //  this.form.controls["UserID"].setValue(user.userID.toString());
-
-  //  this.raceService.getRaceEntry(this.form.value).subscribe(data => {
-  //    this.raceEntryCollection = JSON.parse(data.content);
-  //    this.length_entry = this.raceEntryCollection.length;
-  //    this.dataSource_entry.data = this.raceEntryCollection;
-  //    console.log(data.content);
-  //  }, error => {
-  //    this.alertService.errorNotification(error);
-  //  })
-  //}
 
   ViewMaps(item) {
     //console.log(item);
@@ -267,14 +299,95 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
     });
   }
 
+  TopigeonTrainingSave() {
+
+    this.form.controls["EclockId"].setValue(localStorage.getItem("eclockID"));
+    var userlog = JSON.parse(localStorage.getItem("currentUser"));
+    //console.log(userlog.userID);
+    this.form.controls["UserID"].setValue(userlog.userID);
+    this.raceService.topigeonTrainingSave(this.form.value).subscribe(data => {
+      var result = JSON.parse(data.content);
+      //console.log(result)
+
+      this.GetTopigeonTraining();
+      this.loading = false;
+
+    }, error => {
+      this.alertService.errorNotification(error);
+      this.loading = false;
+    });
+  }
+
+  GetTopigeonTraining() {
+    var release = new Date();
+    release = this.form.controls["LiberationDate"].value;
+    let formatRelease = release.getFullYear().toString() + "-" + (release.getMonth() + 1).toString() + "-" + release.getDate().toString()
+    this.form.controls["DateRelease"].setValue(formatRelease);
+
+    var userlog = JSON.parse(localStorage.getItem("currentUser"));
+    this.form.controls["UserID"].setValue(userlog.userID);
+    this.form.controls["EclockId"].setValue(localStorage.getItem("eclockID"));
+
+    this.raceService.getTopigeonTraining(this.form.value).subscribe(data => {
+      var result = JSON.parse(data.content);
+      //console.log(result)
+      if (result.Table.length > 0) {
+        this.form.controls["Liberation"].setValue(result.Table[0].Liberation)
+        this.form.controls["ReleaseTime"].setValue(result.Table[0].ReleaseTime)
+        this.form.controls["LatDeg"].setValue(result.Table[0].LatDegree)
+        this.form.controls["LatMin"].setValue(result.Table[0].LatMin)
+        this.form.controls["LatSec"].setValue(result.Table[0].LatSec)
+        this.form.controls["LatSign"].setValue(result.Table[0].LatSign)
+        this.form.controls["LongDeg"].setValue(result.Table[0].LongDegree)
+        this.form.controls["LongMin"].setValue(result.Table[0].LongMin)
+        this.form.controls["LongSec"].setValue(result.Table[0].LongSec)
+        this.form.controls["LongSign"].setValue(result.Table[0].LongSign)
+      }
+      else {
+        this.form.controls["ClubFullName"].setValue("");
+        this.form.controls["Liberation"].setValue("");
+        this.form.controls["ReleaseTime"].setValue("");
+        this.form.controls["LatDeg"].setValue("");
+        this.form.controls["LatMin"].setValue("");
+        this.form.controls["LatSec"].setValue("");
+        this.form.controls["LatSign"].setValue("");
+        this.form.controls["LongDeg"].setValue("");
+        this.form.controls["LongMin"].setValue("");
+        this.form.controls["LongSec"].setValue("");
+        this.form.controls["LongSign"].setValue("");
+      }
+    }, error => {
+      this.alertService.errorNotification(error);
+      this.loading = false;
+    });
+
+    this.GetResult();
+  }
+
   GetResult() {
-    this.raceService.getRaceResult(this.form.value).subscribe(data => {
+    this.raceService.getTrainingResult(this.form.value).subscribe(data => {
       this.raceResultCollection = JSON.parse(data.content);
-      //console.log(this.raceResultCollection);
+
+      //console.table(this.raceResultCollection);
       this.length = this.raceResultCollection.length;
       this.dataSource.data = this.raceResultCollection;
       this.loading = false;
 
+    }, error => {
+      this.alertService.errorNotification(error);
+      this.loading = false;
+    });
+  }
+
+  GetLocation() {
+    var clubIndex = this.clubList.filter(x => x.name == this.form.controls["ClubFullName"].value)
+    //this.form.controls["DbName"].setValue(clubIndex[0].dbName);
+    this.form.controls["ClubName"].setValue(clubIndex[0].clubabbreviation);
+    this.form.controls["ClubID"].setValue(clubIndex[0].clubId.toString());
+
+    this.raceService.getLocation(this.form.value).subscribe(data => {
+      this.raceLocationCollection = JSON.parse(data.content);
+      //console.log(this.raceLocationCollection);
     }, error => {
       this.alertService.errorNotification(error);
       this.loading = false;
@@ -293,8 +406,8 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
       //race entry
       this.raceEntryCollection = details.Table1;
 
-      console.log(details.Table);
-      
+      //console.log(details.Table);
+
       this.length_entry = this.raceEntryCollection.length;
       this.dataSource_entry.data = this.raceEntryCollection;
 
@@ -313,7 +426,7 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
           this.StopTimeTo = this.raceDetails[0].StopTo;
           this.IsTimeStop = true;
         }
-        
+
       }
       else {
         this.LocationName = "";
@@ -338,8 +451,8 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
   seachClub(event) {
     var clubCollection = JSON.parse(localStorage.getItem("clubs"));
 
-    var clubSearch = clubCollection.filter(x => x.ClubName.toUpperCase().indexOf(event.toUpperCase()) > -1);
-    
+    var clubSearch = clubCollection.filter(x => x.ClubName.indexOf(event.value) > -1);
+
     var cl = new Array<Club>();
 
     clubSearch.forEach(item => {
@@ -352,9 +465,8 @@ export class RaceTopigeonComponent implements OnInit, AfterViewInit {
       cl.push(c);
     });
 
-    //console.log(event.toUpper);
-    //console.log(clubSearch);
-    this.clubList = cl;
+    this.GetLocation();
+    this.form.controls["Liberation"].setValue(" ");
   }
 
   SetClubCollection() {

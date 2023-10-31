@@ -58,7 +58,12 @@ namespace BussinessLayer
         {
             try
             {
-                return await this._race.QRCodeClocking(qrcode);
+                string action = "";
+                if (qrcode.Length == 6)
+                {
+                    action = "server2";
+                }
+                return await this._race.QRCodeClocking(qrcode, action);
             }
             catch (Exception ex)
             {
@@ -137,6 +142,45 @@ namespace BussinessLayer
             try
             {
                 return await this._race.GetLocation(raceFilter);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<DataSet> TopigeonTrainingSave(TopigeonTraining value)
+        {
+            try
+            {
+                return await this._race.TopigeonTrainingSave(value);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<DataSet> GetTopigeonTraining(TopigeonTraining value)
+        {
+            try
+            {
+                return await this._race.GetTopigeonTraining(value);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<DataTable> GetTrainingResult(TopigeonTraining value)
+        {
+            try
+            {
+                return await this._race.GetTrainingResult(value);
             }
             catch (Exception ex)
             {

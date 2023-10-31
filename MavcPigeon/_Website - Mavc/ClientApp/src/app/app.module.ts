@@ -97,7 +97,7 @@ import { RaceTopigeonComponent } from './components/race-topigeon/race-topigeon.
       { path: 'tutorials', component: TutorialsComponent },
       { path: 'logs', component: MemberLogsComponent },
       { path: 'qr', component: QRCodeClockingComponent },
-      { path: 'topigeon', component: RaceTopigeonComponent },
+      { path: 'topigeon', component: RaceTopigeonComponent, canActivate: [AuthGuard] },
       { path: 'distance/:clubname/:memberidno/:dbname', component: MemberDistanceComponent },
     ]),
     FlexLayoutModule,

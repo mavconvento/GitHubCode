@@ -226,7 +226,8 @@ namespace BusinessLayer
             try
             {
                 DataTable result = new DataTable("PlottingResult");
-               
+                int diff = 10;
+
                 for (int i = 0; i < 90; i++)
                 {
                     result.Columns.Add("Col" + i, typeof(String));
@@ -328,7 +329,7 @@ namespace BusinessLayer
                     }
                 }
 
-                if (maxrowwithvalue >= 40) return Plotting(result, maxrowwithvalue);
+                if (maxrowwithvalue >= 40- diff) return Plotting(result, maxrowwithvalue, diff);
 
                 return result;
             }
@@ -338,13 +339,14 @@ namespace BusinessLayer
             }
         }
 
-        private DataTable Plotting(DataTable dtrecord, int maxcol)
+        private DataTable Plotting(DataTable dtrecord, int maxcol, int diff)
         {
             try
             {
+                
                 DataTable result = new DataTable("Plotting");
 
-                for (int i = 0; i < 40; i++)
+                for (int i = 0; i < (40- diff); i++)
                 {
                     result.Columns.Add("Col" + i, typeof(String));
                 }
@@ -353,7 +355,7 @@ namespace BusinessLayer
                 {
                     DataRow dataRow;
                     dataRow = result.NewRow();
-                    for (int i = 0; i < 40; i++)
+                    for (int i = 0; i < (40- diff); i++)
                     {
                         dataRow[i] = "";
                     }
@@ -364,10 +366,10 @@ namespace BusinessLayer
                 for (int x = 0; x < 6; x++)
                 {
                     int counter = -1;
-                    for (int i = maxcol - 39; i <= maxcol; i++)
+                    for (int i = maxcol - (39- diff); i <= maxcol; i++)
                     {
                         counter++;
-                        if (counter < 40)
+                        if (counter < (40- diff))
                         {
                             result.Rows[x][counter] = dtrecord.Rows[x]["Col" + i];
                         }

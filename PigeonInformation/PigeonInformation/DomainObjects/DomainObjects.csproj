@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Entry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Training.cs" />
     <Compile Include="Result.cs" />
     <Compile Include="TopPigeonAPIResponce.cs" />
     <Compile Include="TopPigeonParameters.cs" />

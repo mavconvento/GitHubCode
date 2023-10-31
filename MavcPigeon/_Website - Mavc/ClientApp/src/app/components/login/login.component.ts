@@ -5,7 +5,7 @@ import { first } from 'rxjs/operators';
 import { TokenService } from '../../services/token.service';
 import { Helpers } from '../../helpers/helpers';
 import { AuthenticationService } from '../../services/authentication.service'
-import {  AlertService } from '../../services/alert.service'
+import { AlertService } from '../../services/alert.service'
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ForgotPasswordComponent } from '../dialog/forgot-password/forgot-password.component';
 
@@ -82,6 +82,8 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          console.log(data.eclockID);
+          localStorage.setItem("eclockID", data.eclockID);
           localStorage.setItem("userlogin", this.f.username.value);
           localStorage.setItem("userpassword", this.f.password.value);
           this.router.navigate([this.returnUrl]);

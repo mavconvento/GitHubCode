@@ -149,7 +149,7 @@ namespace SyncEclock
                 {
 
                     //sample ECLOCK 0001 15204188 19/07/05 07:48:18
-                    String ResultStringFormat = "ECLOCK " + item["ClockId"].ToString() + " " + item["E_Ring"].ToString() + " " + item["Backtime"].ToString().Substring(0, 17);
+                    String ResultStringFormat = "ECLOCK " + item["ClockId"].ToString() + " " + item["E_Ring"].ToString() + " " + item["Backtime"].ToString().Substring(2, 17);
                     DomainObjects.Result dObject = new DomainObjects.Result
                     {
                         ClubName = ClubName,
@@ -169,13 +169,13 @@ namespace SyncEclock
                             if (!Remarks.ToUpper().Contains("SUCCESS"))
                             {
                                 //string[] rdetails = Remarks.Split('|');
-
-                                String LogContents = item["loftno"].ToString() + "|" + item["PRingNo"].ToString() + "|" + item["Backtime"].ToString().Substring(0, 17) + "|" + Remarks + "|";
+                                if (Remarks.Contains("Bird Already Clock")) Remarks = "";
+                                String LogContents = item["loftno"].ToString() + "|" + item["PRingNo"].ToString() + "|" + item["Backtime"].ToString().Substring(2, 17) + "|" + Remarks + "|";
 
                                 Console.WriteLine("----------------");
                                 Console.WriteLine("MemberID:" + item["loftno"].ToString());
                                 Console.WriteLine("Ring No:" + item["PRingNo"].ToString());
-                                Console.WriteLine("BackTime:" + item["Backtime"].ToString().Substring(0, 17));
+                                Console.WriteLine("BackTime:" + item["Backtime"].ToString().Substring(2, 17));
                                 Console.WriteLine(Remarks);
                                 Console.WriteLine("----------------");
 
@@ -199,7 +199,7 @@ namespace SyncEclock
                                 Console.WriteLine("----------------");
                                 Console.WriteLine("MemberID:" + item["loftno"].ToString());
                                 Console.WriteLine("Ring No:" + item["PRingNo"].ToString());
-                                Console.WriteLine("BackTime:" + item["Backtime"].ToString().Substring(0, 17));
+                                Console.WriteLine("BackTime:" + item["Backtime"].ToString().Substring(2, 17));
                                 Console.WriteLine(Remarks);
                                 Console.WriteLine("----------------");
                             }
@@ -335,7 +335,7 @@ namespace SyncEclock
                 {
                     if (item["IsRegistered"].ToString() == "1")
                     {
-                        ProcessEntrySaveToDatabase(item["LoftNo"].ToString(), item["E_ring"].ToString(), "TOP Pigeon");
+                        ProcessEntrySaveToDatabase(item["LoftNo"].ToString(), item["PRingNo"].ToString(), item["E_ring"].ToString(), "TOP Pigeon");
                     }
                 }
             }
@@ -376,7 +376,7 @@ namespace SyncEclock
                             string[] filenameValue = filename[filename.Length - 1].Split('.');
                             foreach (var entry in entryList)
                             {
-                                ProcessEntrySaveToDatabase(filenameValue[0], entry, "Manual Entry");
+                                ProcessEntrySaveToDatabase(filenameValue[0], "", entry, "Manual Entry");
                             }
                         }
                     }
@@ -389,14 +389,18 @@ namespace SyncEclock
             }
         }
 
-        private static void ProcessEntrySaveToDatabase(string memberid, string e_ring, string source)
+        private static void ProcessEntrySaveToDatabase(string memberid,string pringno, string e_ring, string source)
         {
             MemberBLL memberBLL = new MemberBLL();
             string path = DataPath;
             string dateString = DateRelease;
 
             DataTable dt = new DataTable();
-            dt = memberBLL.GetPigeonInfoByRingNo(e_ring, memberid);
+            if (pringno == "")
+            {
+                dt = memberBLL.GetPigeonInfoByRingNo(e_ring, memberid);
+                pringno = dt.Rows[0]["PRingNo"].ToString();
+            }
 
             string rootApplicationDirectory = AppDomain.CurrentDomain.BaseDirectory;
             string entryDirectory = path + "entry\\" + dateString;
@@ -408,10 +412,10 @@ namespace SyncEclock
             entryObject.Clubname = ClubName;
             entryObject.MemberIDNo = memberid;
             entryObject.ReleaseDate = ReleaseDate;
-            entryObject.RingNumber = dt.Rows[0]["PRingNo"].ToString();
+            entryObject.RingNumber = pringno;  //dt.Rows[0]["PRingNo"].ToString();
             entryObject.RaceCategoryName = "None";
             entryObject.RaceCategoryGroupName = "EClock";
-            entryObject.RFID = dt.Rows[0]["E_ring"].ToString();
+            entryObject.RFID = e_ring;  //dt.Rows[0]["E_ring"].ToString();
             entryObject.MobileNumber = "";
             entryObject.IsCopyLastCategory = IsCopyLastCategory;
 

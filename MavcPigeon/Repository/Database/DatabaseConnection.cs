@@ -148,16 +148,21 @@ namespace Repository.Database
         #endregion
 
         #region Public Methods
-        public async void DatabaseConn(string procName,string type = "", string dbName = "")
+        public async void DatabaseConn(string procName, string type = "", string dbName = "", string action = "")
         {
             try
             {
-                
+                string server = "";
                
                 sqlConn =new SqlConnection();
                 sqlComm=new SqlCommand();
 
-                string connstr = "Address=" + serverip + ";database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
+                if (action == "server2")
+                    server = "198.38.86.120";
+                else
+                    server = serverip;
+
+                string connstr = "Address=" + server + ";database=pigeon_mavcpigeonclocking;user id=sa;pwd=06242009";
 
                 if (type != "" || dbName != "")
                 {

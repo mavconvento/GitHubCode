@@ -18,4 +18,3 @@ C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInforma
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csproj.CoreCompileInputs.cache
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.dll
 C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.pdb
-C:\Users\Mark Adams\Documents\MyFiles\GitHubCode\PigeonInformation\PigeonInformation\DomainObjects\obj\Debug\DomainObjects.csproj.AssemblyReference.cache

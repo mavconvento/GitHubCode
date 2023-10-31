@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using excel = Microsoft.Office.Interop.Excel;
 
@@ -133,7 +134,9 @@ namespace PegionClocking
                 foreach (DataRow dtrow in data.Rows)
                 {
                     ws.Cells[rowCounter, 2] = dtrow["Outter"].ToString();
+                    Thread.Sleep(300);
                     ws.Cells[rowCounter, 3] = dtrow["Inner"].ToString();
+                    Thread.Sleep(300);
                     rowCounter += 1;
                 }
 

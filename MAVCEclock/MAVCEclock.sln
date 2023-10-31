@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MAVCEclock", "MAVCEclock\MAVCEclock.vdproj", "{03C429B0-CA40-4AE3-BA72-819BF7B5D7F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03C429B0-CA40-4AE3-BA72-819BF7B5D7F6}.Debug|Default.ActiveCfg = Debug
+		{03C429B0-CA40-4AE3-BA72-819BF7B5D7F6}.Debug|Default.Build.0 = Debug
+		{03C429B0-CA40-4AE3-BA72-819BF7B5D7F6}.Release|Default.ActiveCfg = Release
+		{03C429B0-CA40-4AE3-BA72-819BF7B5D7F6}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

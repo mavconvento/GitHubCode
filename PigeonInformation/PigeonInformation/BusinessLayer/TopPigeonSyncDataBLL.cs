@@ -99,12 +99,12 @@ namespace BusinessLayer
 
         }
 
-        public DataSet EclockReturnBirdSave(string clubid, string clockId, DateTime backdate, string ering, string action, bool saveRecord)
+        public DataSet EclockReturnBirdSave(string clubid, string clockId, DateTime backdate, string ering, string action, bool saveRecord, string remarks)
         {
             try
             {
                 DataLayer.TopPigeonSyncDataDal topPigeonDal = new TopPigeonSyncDataDal();
-                return topPigeonDal.EclockReturnBirdSave(clubid, clockId, backdate, ering, action, saveRecord);
+                return topPigeonDal.EclockReturnBirdSave(clubid, clockId, backdate, ering, action, saveRecord, remarks);
             }
             catch (Exception ex)
             {

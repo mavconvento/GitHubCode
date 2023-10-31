@@ -72,6 +72,136 @@ namespace Repository
             }
         }
 
+        public async Task<DataSet> TopigeonTrainingSave(TopigeonTraining value)
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("TopigeonTrainingListSave");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.AddWithValue("@ClockId", value.EclockId);
+                dbconn.sqlComm.Parameters.AddWithValue("@ClubName", value.ClubName);
+                dbconn.sqlComm.Parameters.AddWithValue("@Liberation", value.Liberation);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", value.DateRelease);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseTime", value.ReleaseTime);
+                dbconn.sqlComm.Parameters.AddWithValue("@LatDegree", value.LatDeg);
+                dbconn.sqlComm.Parameters.AddWithValue("@LatMin", value.LatMin);
+                dbconn.sqlComm.Parameters.AddWithValue("@LatSec", value.LatSec);
+                dbconn.sqlComm.Parameters.AddWithValue("@LatSign", value.LatSign);
+                dbconn.sqlComm.Parameters.AddWithValue("@LongDegree", value.LongDeg);
+                dbconn.sqlComm.Parameters.AddWithValue("@LongMin", value.LongMin);
+                dbconn.sqlComm.Parameters.AddWithValue("@LongSec", value.LongSec);
+                dbconn.sqlComm.Parameters.AddWithValue("@LongSign", value.LongSign);
+                dbconn.sqlComm.Parameters.AddWithValue("@UserID", value.UserID);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+
+                if (dataResult.Tables.Count > 0)
+                {
+                    return await Task<DataSet>.FromResult(dataResult);
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+        }
+
+        public async Task<DataSet> GetTopigeonTraining(TopigeonTraining value)
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("GetTopigeonTraining");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.AddWithValue("@ClockId", value.EclockId);
+                dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", value.DateRelease);
+                dbconn.sqlComm.Parameters.AddWithValue("@UserID", value.UserID);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+
+                if (dataResult.Tables.Count > 0)
+                {
+                    return await Task<DataSet>.FromResult(dataResult);
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+        }
+
+        public async Task<DataTable> GetTrainingResult(TopigeonTraining value)
+        {
+            try
+            {
+                DataSet dataResult = new DataSet();
+                dbconn = new DatabaseConnection();
+                dbconn.DatabaseConn("GetTrainingResult");
+
+                if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
+                dbconn.sqlConn.Open();
+                dbconn.sqlComm.Parameters.Clear();
+                dbconn.sqlComm.CommandTimeout = 0;
+                dbconn.sqlComm.Parameters.AddWithValue("@ClockId", value.EclockId);
+                dbconn.sqlComm.Parameters.AddWithValue("@DateRelease", value.DateRelease);
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = dbconn.sqlComm;
+                da.Fill(dataResult);
+                dbconn.sqlConn.Close();
+
+                if (dataResult.Tables.Count > 0)
+                {
+                    return await Task<DataTable>.FromResult(dataResult.Tables[0]);
+                }
+
+                return null;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                dbconn.sqlConn.Close();
+                dbconn.sqlConn.Dispose();
+                SqlConnection.ClearPool(dbconn.sqlConn);
+            }
+        }
+
         public async Task<DataTable> GetRaceResult(RaceFilter raceFilter)
         {
             try
@@ -131,7 +261,7 @@ namespace Repository
                 dbconn.sqlConn.Open();
                 dbconn.sqlComm.Parameters.Clear();
                 dbconn.sqlComm.CommandTimeout = 0;
-                dbconn.sqlComm.Parameters.AddWithValue("@ClubID", 0);
+                dbconn.sqlComm.Parameters.AddWithValue("@ClubID", raceFilter.ClubID);
                 //dbconn.sqlComm.Parameters.AddWithValue("@ClubName", raceFilter.ClubName);
                 //dbconn.sqlComm.Parameters.AddWithValue("@ReleaseDate", raceFilter.DateRelease);
                 //dbconn.sqlComm.Parameters.AddWithValue("@RaceCategory", raceFilter.Category == null ? "All" : raceFilter.Category);
@@ -249,13 +379,13 @@ namespace Repository
             }
         }
 
-        public async Task<DataSet> QRCodeClocking(string qrcode)
+        public async Task<DataSet> QRCodeClocking(string qrcode, string action)
         {
             try
             {
                 DataSet dataResult = new DataSet();
                 dbconn = new DatabaseConnection();
-                dbconn.DatabaseConn("QRCodeClockingSave");
+                dbconn.DatabaseConn("QRCodeClockingSave","","",action);
 
                 if (dbconn.sqlConn.State == ConnectionState.Open) dbconn.sqlConn.Close();
                 dbconn.sqlConn.Open();

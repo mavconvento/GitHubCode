@@ -106,6 +106,7 @@ export class ProfileDetailsDialogComponent implements OnInit {
       currentUser.lastName = this.f.lastName.value;
       currentUser.eClockID = this.f.eClockID.value;
       localStorage.setItem('currentUser', JSON.stringify(currentUser));
+      localStorage.setItem("eclockID", this.f.eClockID.value);
 
       this.dialogRef.close();
 

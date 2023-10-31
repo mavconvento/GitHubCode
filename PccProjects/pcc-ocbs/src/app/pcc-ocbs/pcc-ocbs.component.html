@@ -95,24 +95,6 @@
           </tr>
         </table>
       </div>
-      <!-- <br /> -->
-      <!-- <div *ngIf="!isOffline">
-        <table>
-          <tr style="font-weight: bold; color: white;">
-            <td style="width: 100px; background-color: green;">
-              <span>DRAW</span>
-            </td>
-            <td style="background-color: black; color: white; width: 150px;">
-              <span>{{totalDrawBet | number}}</span>
-            </td>
-            <td style="text-align: left;">
-              <button (click)="confirmBet('DRAW')" *ngIf="isDraw" style="background-color: green;">DRAW</button>
-            </td>
-          </tr>
-        </table>
-      </div> -->
-      <!-- <span *ngIf="!isOffline" style="font-weight: bold; font-size: 20px;">Current Points:
-        {{current_points|number}}</span><br /> -->
       <span *ngIf="!isVip" style="font-weight: bold; font-size: 20px;">Cash On-Hand: {{cashOnHand|number :
         '1.2-2'}}</span>
       <span *ngIf="isVip" style="font-weight: bold; font-size: 20px; margin-right: 10px;">Points: {{cashOnHand|number :
@@ -222,10 +204,6 @@
           <th mat-header-cell *matHeaderCellDef> Bet Type</th>
           <td mat-cell *matCellDef="let element">{{element.BetType}}</td>
         </ng-container>
-        <!-- <ng-container matColumnDef="amount">
-          <th mat-header-cell *matHeaderCellDef> Amount</th>
-          <td mat-cell *matCellDef="let element">{{element.BetAmount}}</td>
-        </ng-container> -->
         <ng-container matColumnDef="payout">
           <th mat-header-cell *matHeaderCellDef> Payout</th>
           <td mat-cell *matCellDef="let element">{{element.Payout}}</td>

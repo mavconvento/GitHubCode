@@ -18,5 +18,8 @@ namespace BussinessLayer.Contracts
         Task<DataSet> OnlineClocking(OnlineClocking online);
         Task<DataSet> QRCodeClocking(string qrcode);
         Task<DataTable> GetLocation(RaceFilter raceFilter);
+        Task<DataSet> TopigeonTrainingSave(TopigeonTraining value);
+        Task<DataSet> GetTopigeonTraining(TopigeonTraining value);
+        Task<DataTable> GetTrainingResult(TopigeonTraining value);
     }
 }
